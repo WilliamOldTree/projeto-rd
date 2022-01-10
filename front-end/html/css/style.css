@@ -1,0 +1,434 @@
+/* LINKS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* ZERANDO CONFIGURACOES */
+
+html, header, body, footer {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto'; 
+}
+
+
+
+/* HEADER */
+
+/* Header superior */
+#header-up{
+    height: 80px; 
+    background-color:#AF9787 ;
+    color: white;
+    padding: 0px ;
+    margin: 0px;
+}
+
+#cont1{
+    height: 80px;     
+}
+
+.row-up{
+    height: 80px;
+    align-items: center;
+}
+
+#input-cep{
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #AF9787;
+    color: white;
+}
+
+#input-cep::placeholder{
+    color: #261C1A;
+    font-family: Roboto;
+    background-color: #AF9787;
+    border-color: #AF9787;
+    color: white;
+    font-size: 14px;
+}
+
+#cep{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    padding: 0px 0px;
+}
+
+#nav-itens{
+    display: flex;
+    justify-content: center;       
+}
+
+#nav-itens a{
+    text-decoration: none;
+    color: white;
+    font-size: 21px;
+    padding: 12px;
+    font-weight: 500;
+}
+
+#nav-itens a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: white;
+}
+
+#canvas{
+    display: flex;
+    justify-content: center;
+}
+
+#btn-canvas{
+    width: 65px;
+    height: 50px;
+    background-color: #AF9787; 
+    border: none;
+}
+
+.offcanvas-header{
+    background-color: #AF9787;
+    color: #261C1A;
+    
+      
+}
+
+.offcanvas-header h5{
+    margin: 0px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+#menu-canvas{
+    padding: 0px 0px;
+}
+
+
+.row-canvas{
+    height: 80px;
+    
+}
+
+.offcanvas-body{
+    background-color: #E5E5E5;
+}
+
+.login-canvas {
+    height: 80px;
+    display: flex;
+    
+}
+
+
+.login-canvas a {
+    margin-top: 15px;
+    text-decoration: none;       
+}
+
+.login-canvas a h5 {
+    margin-top: 5px;
+    font-size: 18px;
+    color: #261C1A;
+    font-weight: 900;       
+}
+
+.menu-list1{
+    margin-top: 50px;
+}
+
+.menu-list1 a{
+    text-decoration: none;
+    color: #261C1A;
+}
+
+.menu-list1 a:hover{
+    cursor: pointer;
+    text-decoration:underline;
+    color: #261C1A;  
+}
+
+.perfil{
+    display: flex;       
+}
+
+/* Header inferior */
+
+#header-down{
+    height: 110px;
+    background-color: #E5E5E5;
+}
+
+#cont2{
+    height: 110px;    
+}
+
+#row-down{
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+    text-align: center;   
+}
+
+#search{
+    display: flex;
+    justify-content: center;
+
+}
+
+#search input{
+    width: 500px;
+    height: 40px;
+    color: #261C1A;
+}
+
+#icons{
+    display: flex;
+    justify-content: start;
+}
+
+/* CONTEUDO */
+section{
+    height: 800px;
+}
+
+
+/* FOOTER */
+
+
+/* Footer superior */
+#footer-up{
+    background-color: #E5E5E5;
+    color: #261C1A;
+    height: 250px;
+    
+  
+
+}
+/* Footer inferior */
+#footer-down{
+    background-color: #AF9787;
+    color: #261C1A;
+    height: 30px;
+    display: flex;
+    text-align:left;
+        
+}
+
+#footer-itens{
+   height: 250px;
+}
+
+#empresa{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+#empresa ul{
+    padding: 0;
+}
+
+#empresa li{
+    display: flex;
+    justify-content: start;
+    padding: 3px;
+    
+}
+
+#empresa a{
+    text-decoration: none;
+    color: #261C1A;
+}
+
+#empresa a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #261C1A;
+}
+#empresa h5{
+    font-weight: 700;
+}
+
+#sociais{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#sociais a{
+    text-decoration: none;
+    color: #261C1A;
+    
+}
+
+#sociais ul{
+    padding: 0;
+    
+}
+
+#sociais a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color:#261C1A;
+}
+
+#sociais a img{
+    text-decoration: none;
+    color: #261C1A;
+    margin-right: 5px;
+    
+}
+.imgTwitter{
+    margin-left: -20px;
+}
+.imgInsta{
+    margin-left: 0px;
+}
+.imgFace{
+    margin-left: -5px;
+}
+
+#sociais li{
+    display: flex;
+    justify-content: start;
+    padding: 5px;
+}
+
+#sociais h5{
+    font-weight: 700;
+}
+
+#sac{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#sac a{
+    text-decoration: none;
+    color: #261C1A;
+}
+#sac ul{
+    padding: 0;
+}
+
+#sac a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #261C1A;
+}
+
+.imgEmail{
+    margin-left: -30px;
+}
+.imgFone{
+    margin-left: -10px;
+}
+
+#sac a img{
+    text-decoration: none;
+    color: #261C1A;
+    margin-right: 5px;
+}
+
+#sac li{
+    display: flex;
+    justify-content: start;
+    padding: 5px;
+}
+
+#sac h5{
+    font-weight: 700;
+}
+
+#pagamentos{
+    margin-top: 10px;
+}
+#pagamentos h5{
+    font-weight: 1000;
+}
+#pay1{
+    height: 50px;
+}
+#pay2{
+    height: 50px;
+}
+#pay3{
+    margin-top: 10px;
+    height: 50px;
+}
+
+#amazon-pay{
+    display: flex;
+    justify-content:space-around; 
+}
+#google-pay{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+#aplle-pay{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+#master{
+    display: flex;
+    justify-content: space-around;
+}
+#visa{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+#maestro{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+
+#pix{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    padding: 0;
+}
+
+#paypal{
+    padding: 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+#boleto{
+    padding: 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;   
+}
+
+#pagamentos h5{
+    font-weight: 700;
+    text-align: center;
+}
+
+
+#copyright h6{
+    display: flex;
+    margin: 0;
+    height: 30px;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 300;
+}
