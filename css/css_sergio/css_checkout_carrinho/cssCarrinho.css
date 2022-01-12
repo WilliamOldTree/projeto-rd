@@ -8,7 +8,7 @@
     font-family: 'Roboto', sans-serif;
     font-style: large bold;
     padding: 0;
-    margin-top: 10px;
+    margin-top: -10px;
     margin-bottom: 10px;
 }
 
@@ -16,14 +16,14 @@
 {
     position: absolute;
     content: url(../imagens/icons/carrinhoLogo.png);
-    margin-left: 90px;
-    margin-top: -15px; 
+    margin-left: 50px;
+    margin-top: -15px;
 }
 
 .txtCart
 {
     margin-top: 10px;
-    margin-left: 160px;
+    margin-left: 120px;
     font-size: 25px;
     text-decoration-style: both dashed;
 }
@@ -32,14 +32,60 @@
 .itemCart 
 {
     width: 100%;
-    height: 600px;
+    height: auto;
+}
+.card-body
+{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color:#f7f7f7;
+}
+.tabelaCard
+{
+    width: 100%;
+}
+.table
+{
+    width: 100%;
+    height: auto;
+    padding: 0;
+}
+.table tr
+{
+    margin: 0px;
+    font-size: 13px;
+    width: 100%;
+}
+table, th, td {
+    border:none;
+    
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+table, tr {
+    border:none;
+    width: 100%;
+}
+.qtdTb
+{
+   text-align: center;
+   width: 100%;
 }
 
+tr td  img .btnExcluir
+{
+   margin-right: -10px;
+}
 .dadosCompra
 {
-    margin-top: 10px;
+    margin-top: 0px;
     padding: 0;
     width: 100%;
+    height: 530px;
+    align-items: center;
 }
 
 .btnComprar 
@@ -50,13 +96,20 @@
     background-color: #F27507;
     border-bottom-style: solid #261C1A;
 }
+.btnComprar:hover{
+    background-color: darkorange;
+}
 
 .btnCCompra
 {
-    margin-top: 10px;
-    margin-left: -65px;
+    width: 300px;
+    margin-top: 5px;
+    margin-left: -70px;
     margin-bottom: 10px;
     background-color: #00A846;
+}
+.btnCCompra:hover{
+    background-color: #34d175;
 }
 
 .crdTotla
@@ -94,6 +147,7 @@
     width: 300px;
     font-size: 16px;
     margin-top:10px;
+    color: #261C1A;
 }
 
 .cartoesCart ul h6
