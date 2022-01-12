@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link type="image/x-icon" rel="shortcut icon" href="./imagens/img/Logo.png">
+    <title>Politeismo Shop</title>
+    <link rel="stylesheet" href="./cssHeader/style.css">
+    <link rel="stylesheet" href="./cssPagCartao/cssPagCartao.css">
+    <link rel="stylesheet" href="./cssFooter/footer.css">
+</head>
+
+<body>
+    <!-- Inicio do Header -->
+    <header class="headerTop">
+        <div class="container containerHeader1">
+            <div class="row">
+                <div class="col-3">
+                    <form class="form-inline imgLocal">
+                        <div>
+                            <img class="cep" src="./imagens/icons/local.png">
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="text" readonly class="iptCep form-control-plaintext" id=""
+                                value=" Digite seu CEP.">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <nav class="nav navbar navbar-expand-lg navbar-light">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">
+                                        <h5>Católica</h5>
+                                    </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">
+                                        <h5>Evangélica</h5>
+                                    </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">
+                                        <h5>Espírita</h5>
+                                    </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link " href="#">
+                                        <h5>Budista</h5>
+                                    </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link " href="#">
+                                        <h5>Judaica</h5>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-3">
+                    <img class="hamburguer" src="./imagens/img/Bars.png">
+                </div>
+            </div>
+        </div>
+        <div class="container containerHeader2">
+            <div class="row">
+                <div class="col-3">
+                    <form class="form-inline">
+                        <div>
+                            <img class="logo" src="./imagens/img/Logo2.png">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <div class="form-group mb-2">
+                        <input type="text" readonly class="iptHeader2 form-control-plaintext" id=""
+                            placeholder=" O que está procurando?" img src="./imagens/icons/lupa.png">
+                    </div>
+                </div>
+                <div class="divImg col-3">
+                    <img class="img1" src="./imagens/icons/login.png">
+                    <img class="img2" src="./imagens/icons/love.png">
+                    <img class="img3" src="./imagens/icons/sac.png">
+                    <img class="img4" src="./imagens/icons/cart.png">
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Final Header -->
+    <br>
+
+    <br>
+    <!-- Inicio Pagina Pagamento Cartão -->
+    <div class="container tituloPag">
+        <div class="row">
+            <div class="col-12 pagamento">
+                <h3 class="txtPag">Pagamento</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container ">
+        <div class="row">
+            <div class="col-12">
+                <form class="row g-3 formPag">
+                    <div class="col-4">
+                        <label for="inputEstado" class="form-label"><b>Selecione a Forma de Pagamento.</b></label><br>
+                        <select id="inputEstado" class="form-select slctCartoes">
+                            <option selected>Cartões...</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    <div class="col-3 container">
+                        <div class="container cartoesCart">
+                            <div class="row">
+                                <div class="col-12">
+                                    <ul>
+                                        <li><span class="applePay"></span></li>
+                                        <li><span class="amazonPay"></span></li>
+                                        <li><span class="googlePay"></span></li>
+                                        <li><span class="maestroPay"></span></li>
+                                        <li><span class="paypalPay"></span></li>
+                                        <li><span class="visaPay"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <label for="inputNomeTitular" class="form-label lblNomeTitular">* Nome Titular</label>
+                        <input type="text" class="form-control iptNomeTitular" id="inputNomeTitular"
+                            placeholder="Nome Titular">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputNumeroCartao" class="form-label lblNumeroCartao">* Numero do Cartão</label>
+                        <input type="text" class="form-control iptNumeroCartao" id="inputNumeroCartao"
+                            placeholder="Numero do Cartão">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputDataValidade" class="form-label lblDataValidade">* Data Validade</label>
+                        <input type="text" class="form-control iptDataValidade" id="inputDataValidade"
+                            placeholder="09/28">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputNumeroCvv" class="form-label lblCvv">* CVV</label>
+                        <input type="text" class="form-control iptCvv" id="inputCvv" placeholder="123">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputParcelar" class="form-label lblParcelar">* Parcelar em Até</label>
+                        <select id="inputParcelar" class="form-select slctParcelar">
+                            <option selected>1 X de R$ 60,00</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <button type="button" class="btn btnConcluir">Concluir Pagamento</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- Final Pagina Pagamento Cartão -->
+
+    <br>
+    <!-- Inicio Footer -->
+    <footer>
+        <div class="container footer">
+            <div class="row">
+                <div class="col-3">
+                    <div>
+                        <ul>
+                            <h4>Institucional</h4>
+                            <li>
+                                <h6 class="empresa" style="text-align:left">Empresa</h6>
+                            </li>
+                            <li>
+                                <h6 class="comprar" style="text-align:left">Como Comprar<h6>
+                            </li>
+                            <li>
+                                <h6 class="seguranca" style="text-align:left">Segurança</h6>
+                            </li>
+                            <li>
+                                <h6 class="envio" style="text-align:left">Envio</h6>
+                            </li>
+                            <li>
+                                <h6 class="pagamento" style="text-align:left">Pagamento</h6>
+                            </li>
+                            <li>
+                                <h6 class="garantia" style="text-align:left">Garantia</h6>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="redes">
+                        <ul>
+                            <h4>Redes Sociais</h4>
+                            <li>
+                                <h6 class="insta">Instagram</h6>
+                            </li>
+                            <li>
+                                <h6 class="face">Facebook</h6>
+                            </li>
+                            <li>
+                                <h6 class="twit">Twitter</h6>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div>
+                        <ul>
+                            <h4>Atendimento</h4>
+                            <li>
+                                <h6 class=" whats">Whatsapp</h6>
+                            </li>
+                            <li>
+                                <h6 class="email">Email</h6>
+                            </li>
+                            <li>
+                                <h6 class="telefone">Telefone</h6>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="container cartoes">
+                        <div class="row">
+                            <div class="col-12">
+                                <ul>
+                                    <h4>Formas de Pagamento</h4>
+                                    <h6>Cartões de Crédito</h6>
+                                    <li><span class="applePay"></span></li>
+                                    <li><span class="amazonPay"></span></li>
+                                    <li><span class="googlePay"></span></li>
+                                    <li><span class="maestroPay"></span></li>
+                                    <li><span class="paypalPay"></span></li>
+                                    <li><span class="visaPay"></span></li>
+                                    <li><span class="boletoPay"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Inicio Footer 2 -->
+        <div class="container footer2">
+            <div class="row">
+                <div class="col-12">
+                </div>
+            </div>
+        </div>
+        <!-- Fim Footer2 -->
+    </footer>
+    <!-- Final Footer -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

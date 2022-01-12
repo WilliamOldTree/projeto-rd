@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
+
+
+.title{
+    margin-top: 27px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+hr{
+    width: 1160px;
+    height: 0px;
+    background-color: #261C1A;
+    border: 1px solid #261C1A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.container-senha{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+#caixaSenha{
+    width: 464px;
+    height: 281px;
+    top: 80px;
+    background: #FFFFFF;
+    border: 2px solid #261C1A;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+.subTitulo{
+    margin-top: 30px;
+    text-align: center;
+    width: 434px;
+    height: 64px;
+    font-weight: bold;
+    font-size: 25px;
+    color: #261C1A;
+}    
+    
+#textoSenha{
+    left: 20px; 
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 21px;
+    color: #3C4043;
+    position: relative;
+    font-weight: 700;
+}
+
+#senha{
+    width: 413px;
+    height: 42px;
+    left: 20px;
+    bottom: 1px;
+    border: 2px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+    position: relative;
+}
+
+#enviar{
+    width: 79px;
+    height: 26px;
+    margin-left: 26px;
+    top: 6px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;      
+    position: relative;  
+    text-align: center;    
+}
+        
+.btn.emailEnviar{
+    width: 150px;
+    height: 50px;
+    left: 157px;
+    background: #34A853;
+    border-radius: 10px;
+    position: relative;
+    font-size: 22px;
+}        
+        
+button.btn.emailEnviar:hover{
+    background: #34d175;
+}        
+
+html,body{
+    width: 100%;
+    height: 100%;
+} 
+
+a{
+    text-decoration: none;
+}
+
+.bg-modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.75);
+    position: fixed;
+    z-index: 2;
+    top: -100%;
+    display: block;
+    transition: 350ms;
+}
+.modal{
+    width: 50%;
+    height: 25%;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 30px auto 0 auto;
+    align-items: center;
+}
+
+.modal span{
+    float: right;
+    font-size: 50px;
+    color: #000;
+    margin: 20px,20px;
+    transition: 350ms;
+    cursor: pointer;
+}
+
+.modal span :hover{
+    color: #990000;
+    transition: 350ms;
+}
+
+.texto-span{
+    position: absolute;
+    width: 539px;
+    height: 62px;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #261C1A;
+}
+        
+
+       
+            
+        
+            
+            
