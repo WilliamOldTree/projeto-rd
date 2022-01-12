@@ -132,11 +132,7 @@ html, header, body, footer {
     margin-top: 5px;
     font-size: 18px;
     color: #261C1A;
-    font-weight: 900;
-    position: relative;
-    align-items: center;    
-    left: 70px;
-    bottom: 2px;   
+    font-weight: 900;       
 }
 
 .menu-list1{

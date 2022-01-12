@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
+
+
+.container-img{
+    position: relative;
+width: 1163px;
+height: 888px;
+}
+.imgproduto1{
+    position: absolute;
+    width: 441px;
+    height: 438px;
+    left: 24px;
+    top: 49px;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+}
+
+.imgproduto1:hover{
+    transform: scale(1.1);
+    box-shadow: 0 5px 5px #AF9787;
+}
+
+.imgproduto2{
+    position: absolute;
+    width: 441px;
+    height: 438px;
+    left: 24px;
+    top: 49px;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+}
+
+.imgproduto2:hover{
+    transform: scale(1.1);
+    box-shadow: 0 5px 5px #AF9787;
+}
+
+
+.imgproduto3{
+    position: absolute;
+    width: 114px;
+    height: 116px;
+    left: 24px;
+    top: 519px;
+    border: 1px solid #666666;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.imgproduto3:hover{
+    transform: scale(1.1);
+    box-shadow: 0 5px 5px #AF9787;
+    border: 3px solid #261C1A;
+    border-radius: 10px;
+}
+
+.imgproduto4{
+    position: absolute;
+width: 115px;
+height: 120.42px;
+left: 159px;
+top: 519px;
+border: 1px solid #666666;
+box-sizing: border-box;
+cursor: pointer;
+}
+
+.imgproduto4:hover{
+    transform: scale(1.1);
+    box-shadow: 0 5px 5px #AF9787;
+    border: 3px solid #261C1A;
+    border-radius: 10px;
+}
+
+.verDetalhes{
+    position: absolute;
+width: 160px;
+height: 34px;
+left: 24px;
+top: 647px;
+font-weight: 700;
+font-size: 18px;
+color: #261C1A;
+cursor: pointer;
+}
+
+.verDetalhes:hover{
+    text-decoration: underline;
+    color: #261C1A;
+}
+
+.title-produto{
+    position: absolute;
+    width: 612px;
+    height: 32px;
+    left: 534px;
+    top: 43px;
+    font-weight: bold;
+    font-size: 25px;
+    color: #261C1A;
+}
+
+.cod-produto{
+    position: absolute;
+width: 140px;
+height: 21px;
+left: 534px;
+top: 81px;
+font-weight: 300;
+font-size: 14px;
+color: #261C1A;
+}
+
+.line-1{
+    position: absolute;
+width: 626px;
+height: 0px;
+left: 527px;
+top: 100px;
+border: 1px solid #666666;
+background-color: #666666;
+}
+
+#quantidade{
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    left: 534px;
+    top: 130px;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.qtd{
+    position: absolute;
+    width: 93px;
+    height: 21px;
+    left: 616px;
+    top: 145px;
+    font-weight: 300;
+    font-size: 16px;
+    color: #666666;
+}
+
+.preco{  
+position: absolute;
+width: 121px;
+height: 35px;
+left: 534px;
+top: 190px;
+font-weight: bold;
+font-size: 25px;
+color: #261C1A;
+}
+
+.parcela{
+    position: absolute;
+    width: 233px;
+    height: 21px;
+    left: 650px;
+    top: 202px;
+font-weight: 300;
+font-size: 16px;
+display: flex;
+align-items: center;
+color: #666666;
+}
+
+.btn.compra{
+    position: absolute;
+width: 241px;
+height: 54px;
+left: 534px;
+top: 255px;
+background: #F27507;
+border-radius: 10px;
+color: #FFFFFF;
+font-weight: 700;
+font-size: 22px;
+}
+
+.btn.compra:hover{
+    background: darkorange;
+    color: #FFFFFF;
+}
+
+.btn.favoritar{
+position: absolute;
+width: 300x;
+height: 45px;
+left: 534px;
+top: 345px;
+background: #00A846;
+border-radius: 10px;
+color: #FFFFFF;
+font-weight: 500;
+font-size: 18px;
+}
+
+.btn.favoritar:hover{
+    background: #34d175;
+    color: #FFFFFF;
+}
+
+#cep-frete{
+    position: absolute;
+width: 488px;
+height: 141px;
+left: 527px;
+top: 434px;
+opacity: 0.5;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 5px;
+}
+
+.line-2{
+    position: absolute;
+width: 626px;
+height: 0px;
+left: 527px;
+top: 618px;
+border: 1px solid #666666;
+background: #666666;
+}
+
+.infcep1{
+    position: absolute;
+width: 245px;
+height: 32px;
+left: 14px;
+top: 13px;
+font-weight: 700;
+font-size: 18px;
+color: #3C4043;
+}
+
+.img-cart{
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    left: 14px;
+    top: 64px;
+}
+
+.infcep2{
+    position: absolute;
+width: 143px;
+height: 32px;
+left: 77px;
+top: 76px;
+font-weight: 500;
+font-size: 16px;
+}
+
+.btn.cep{
+    position: absolute;
+width: 110px;
+height: 40px;
+left: 365px;
+top: 60px;
+background: #3C4043;
+border-radius: 0px 10px 10px 0px;
+color: #FFFFFF;
+}
+
+#entrada-cep{
+    position: absolute;
+width: 123px;
+height: 40px;
+left: 242px;
+top: 60px;
+background: #FFFFFF;
+border: 2px solid #3C4043;
+box-sizing: border-box;
+border-radius: 10px 0px 0px 10px;
+}
+
+#button-addon2:hover{
+    background-color: darkslategray;
+}
+
+.infcep3{
+    text-decoration: none;
+position: absolute;
+width: 143px;
+height: 23px;
+left: 244px;
+top: 109px;
+font-weight: 500;
+font-size: 16px;
+color: #3C4043;
+}
+
+.infcep3:hover{
+    text-decoration: underline;
+    color: #3C4043;
+    cursor: pointer;
+}
+
+.pagamentos-title{
+    margin-top: 20px;
+    font-weight: 700;
+font-size: 18px;
+color: #666666;
+}
+
+.pagamentos-subtitle{
+    font-size: 16px;
+    color: #666666;
+}
+
+#formas-pagamentos{
+    position: absolute;
+    width: 222px;
+    height: 175px;
+    left: 527px;
+    top: 645px;
+}
+
+#caixa-title-desc{
+    margin-top: 30px;
+width: 1129px;
+height: 80px;
+border: 1px solid #261C1A;
+border-radius: 10px 10px 0px 0px;
+}
+
+.title-descricao{
+    margin-left: 28px;
+    margin-top: 20px;
+width: 138px;
+height: 42px;
+font-weight: 700;
+font-size: 30px;
+}
+
+#caixa-descricao{
+width: 1129px;
+height: 500px;
+border: 1px solid #261C1A;
+box-sizing: border-box;
+text-align: justify;
+}
+
+.descricao-produto{
+    position: absolute;
+    margin-left: 28px;
+    margin-top: 20px;
+    width: 1024px;
+    height: 256px;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: justify;
+    color: #261C1A;
+}
+
+.descricao-produto2{
+    position: absolute;
+margin-top: 200px;
+margin-left: 28px;
+width: 1024px;
+height: 207px;
+font-size: 18px;
+line-height: 25px;
+text-align: justify;
+color: #261C1A;
+}
+
+.title-relacionados{
+    margin-top: 50px;
+font-weight: 700;
+font-size: 30px;
+text-align: center;
+color: #000000;
+margin-bottom: 45px;
+}
+
+
+.imagensCaixa
+{
+
+    margin: 10px 0px 10px 0px;
+    width:100%; 
+    margin-bottom: 50px; 
+}
+
+.card 
+{
+    
+    height: 410px;
+    width: 90%;
+    background-color: white;
+    border: 1px solid rgb(177, 174, 174);   
+}
+.card
+{
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+}
+.card .img 
+{
+    height: 100%;
+    width: 100%;
+}
+.card .img img 
+{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 3px; 
+}
+.card .img img:hover{
+    
+    transform: scale(1.10);
+    transition: 0.2s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border:1px solid #261C1A;
+    cursor: pointer;
+    box-shadow: 0 5px 6px #AF9787;
+}
+
+
+.card .content 
+{
+    padding: 10px 20px;
+    
+}
+
+.card .content .title  
+{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card .content .sub-title  
+{
+    font-size: 16px;
+    font-weight: 600;
+    color: #261C1A;
+    line-height: -20px;
+}
+
+.card .content p
+{
+    text-align: justify;
+    margin: 10px 0;
+}
+
+.card .content .btn
+{
+    display: block;
+    text-align: center;
+    margin: 10px 0px 0px -20px;
+}
+
+.card .content .btn button
+{
+    background-color: #F27507;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    padding: 5px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 100%;
+    margin-bottom: -10px;
+    margin-left: 10px;
+}
+
+.card .content .btn button:hover
+{
+    transform: scale(1.2);
+    box-shadow: 0 5px 5px #AF9787;
+}

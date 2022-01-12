@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
+
+.titulo
+{
+    width: 100%;
+    height: 65px;
+    border-bottom: 1px solid #261C1A;
+    font-family: 'Roboto', sans-serif;
+    font-style: large bold;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.carrinho::before
+{
+    position: absolute;
+    content: url(../imagens/icons/carrinhoLogo.png);
+    margin-left: 90px;
+    margin-top: -15px; 
+}
+
+.txtCart
+{
+    margin-top: 10px;
+    margin-left: 160px;
+    font-size: 25px;
+    text-decoration-style: both dashed;
+}
+/* fim Titulo e Linha */
+
+.itemCart 
+{
+    width: 100%;
+    height: 600px;
+}
+
+.dadosCompra
+{
+    margin-top: 10px;
+    padding: 0;
+    width: 100%;
+}
+
+.btnComprar 
+{
+    width: 300px;
+    margin-left: -70px;
+    margin-bottom: 5px;
+    background-color: #F27507;
+    border-bottom-style: solid #261C1A;
+}
+
+.btnCCompra
+{
+    margin-top: 10px;
+    margin-left: -65px;
+    margin-bottom: 10px;
+    background-color: #00A846;
+}
+
+.crdTotla
+{
+    padding: 0;
+    width: 310px;
+    height: auto;
+    margin-left: -65px;
+    align-items: left;
+}
+
+.crdTotla ul h6
+{
+    margin-top:-20px;
+    margin-left: 100px;
+    margin-bottom:-5px;
+    
+}
+
+.cartoesCart
+{   
+    width: 100%;
+    height: 600px;
+    margin-top:10px;
+    margin-left: -50px; 
+}
+
+.cartoesCart ul li
+{
+    list-style: none;
+}
+
+.cartoesCart ul h5
+{   
+    width: 300px;
+    font-size: 16px;
+    margin-top:10px;
+}
+
+.cartoesCart ul h6
+{   
+    width: 300px;
+    font-size: 16px;
+    margin-top:10px;
+}
+
+.applePay2::before
+{
+    position: absolute;
+    content: url(../imagens/icons/apple-pay.png);
+    margin-left: -50px;
+    margin-top: -17px;
+    width: 50px;
+    height:auto; 
+}
+
+.amazonPay2::before
+{
+    position: absolute;
+    content: url(../imagens/icons/amazon-pay.png);
+    margin-left: 30px;
+    margin-top: -15px; 
+}
+
+.googlePay2::before
+{
+    position: absolute;
+    content: url(../imagens/icons/google-pay.png);
+    margin-left: 115px;
+    margin-top: -15px; 
+}
+.maestroPay2::before
+{
+    position: absolute;
+    content: url(../imagens/icons/maestro.png);
+    margin-left: -50px;
+    margin-top: 35px; 
+}
+.paypalPay2::before
+{
+    position: absolute;
+    content: url(../imagens/icons/paypal.png);
+    margin-left: 50px;
+    margin-top: 55px; 
+}
+.visaPay2::before
+{
+    position: absolute;
+    content: url(../imagens/icons/visa.png);
+    margin-left: 115px;
+    margin-top: 40px; 
+}
+.boletoPay2::before
+{
+    position: absolute;
+    content: url(../imagens/icons/codigo-de-barras.png);
+    margin-left: -35px;
+    margin-top: 110px; 
+}
