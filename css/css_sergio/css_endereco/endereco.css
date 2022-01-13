@@ -137,7 +137,7 @@
     background-color: #00A846;
     color: white;
 }
-.btnProximo{
+.btnProximo:hover{
     background-color: #34d175;
     color: white;
     border: 1px solid #00A846;

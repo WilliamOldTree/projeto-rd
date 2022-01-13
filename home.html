@@ -11,10 +11,9 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link type="image/x-icon" rel="shortcut icon" href="./imagens/img/Logo.png">
   <title>Politeismo Shop</title>
-  <link rel="stylesheet" href="./cssHeader/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./cssHome/cssHome.css">
+  <link rel="stylesheet" href="./css/default/default.css">
+  <link rel="stylesheet" href="./css/css_sergio/css_home/cssHome.css">
   
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -140,12 +139,12 @@
   <div class="container">
   <div class="container banner1">
     <section >
-      <img src="./imagens/img/banner2.png" class="imgBanner">
+      <img src="./images/imagens/banner2.png" class="imgBanner">
     </section>
     <div class=" btnBanner1">
       <div class="row">
         <div class="col-12">
-          <div class="btn-group">
+          <div class="btn-group grupoBotoes">
             <a href="#" class="btn btn-primary" aria-current="page">
               <div>
                 <span class="iconFrete"></span>
@@ -194,10 +193,11 @@
 <div class="container containerSlider">
   <div class="row">
     <div class="col-12">
-    <div class="slider owl-carousel">
+    <div class="row">
+    <div class="slider owl-carousel owl-carousel owl-theme containerCarrossel">
       <div class="card">
         <div class="img">
-          <img src="./imagens/img/buda-meditando.png" alt="">
+          <img src="./images/imagens/buda-meditando.png" alt="">
         </div>
         <div class="content">
           <div class="title">Produto Descrição</div>
@@ -211,7 +211,7 @@
 
       <div class="card">
         <div class="img">
-          <img src="./imagens/img/pulseira1.jpg" alt="">
+          <img src="./images/imagens/pulseira1.jpg" alt="">
         </div>
         <div class="content">
           <div class="title">Pulseira Coroa da Providência São José</div>
@@ -224,7 +224,7 @@
       </div>
       <div class="card">
         <div class="img">
-          <img src="./imagens/img/colar.jpg" alt="">
+          <img src="./images/imagens/colar.jpg" alt="">
         </div>
         <div class="content">
           <div class="title">Colar Duplo Medalha Cruzes Amor de Mãe</div>
@@ -238,7 +238,7 @@
 
       <div class="card">
         <div class="img">
-          <img src="./imagens/img/Camisa-Indio-Tupi.jpg" alt="">
+          <img src="./images/imagens/Camisa-Indio-Tupi.jpg" alt="">
         </div>
         <div class="content">
           <div class="title">Camisa Indio Tupi</div>
@@ -252,7 +252,7 @@
 
       <div class="card">
         <div class="img">
-          <img src="./imagens/img/camisa-sao-jorge.jpg" alt="">
+          <img src="./images/imagens/camisa-sao-jorge.jpg" alt="">
         </div>
         <div class="content">
           <div class="title">Camisa São Jorge</div>
@@ -266,7 +266,7 @@
       
       <div class="card">
         <div class="img">
-          <img src="./imagens/img/contos-judaicos.png" alt="">
+          <img src="./images/imagens/contos-judaicos.png" alt="">
         </div>
         <div class="content">
           <div class="title">Contos Judaicos</div>
@@ -280,6 +280,7 @@
     </div>
   </div>
   </div>
+  </div>
 </div>
 <!-- Final carrossel Produtos em Destaque-->
 <!-- Inicio Imagens-->
@@ -287,22 +288,22 @@
   <div class="row">
       <div class="col-3">
         <div class="imagens">
-          <img src="./imagens/img/Cavaleiros-de-Jesus.jpg" class="img1">
+          <img src="./images/imagens/quadro.png" class="img1">
         </div>  
       </div>
       <div class="col-3">
         <div class="imagens">
-          <img src="./imagens/img/Aruanda-Robson-Pinheiro.jpg" class="img2">
+          <img src="./images/imagens/cruz.png" class="img2">
         </div>  
       </div>
       <div class="col-3">
         <div class="imagens">
-          <img src="./imagens/img/Chico-Xavier-Inédito.jpg" class="img3">
+          <img src="./images/imagens/Chico-Xavier-Inédito.jpg" class="img3">
         </div>  
       </div>
       <div class="col-3">
         <div class="imagens">
-          <img src="./imagens/img/Preces-Espíritas.jpg" class="img4">
+          <img src="./images/imagens/Preces-Espíritas.jpg" class="img4">
         </div>  
       </div>
     </div>
@@ -313,7 +314,7 @@
   <div class="row">
     <div class="col-12">
       <div class="banner2">
-        <img src="./imagens/img/banner-d-baixo.png" class="imgBanner2">
+        <img src="./images/imagens/banner-d-baixo.png" class="imgBanner2">
       </div>
     </div>
   </div>
@@ -425,13 +426,15 @@
 </footer>
   <!-- Final Footer -->
 </div>
+
 <script>
   $(".slider").owlCarousel({
    loop: true,
    autoplay: true,
    autoplayTimeout: 2000, //2000ms = 2s;
    autoplayHoverPause: true,
-  }); 
+  });
+
  </script>
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
