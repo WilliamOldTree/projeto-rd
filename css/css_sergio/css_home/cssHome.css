@@ -29,6 +29,7 @@
 {
     width: 100%;
     display: flex;
+    flex-direction: row;
 }
 .btnBanner1
 {
@@ -55,7 +56,7 @@
 
 .btnBanner1 .btn:hover
 {
-    transform: scale(1.10);
+    transform: scale(1.1);
     transition: 0.2s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border:1px solid #261C1A;
     cursor: pointer;
@@ -276,7 +277,7 @@
     border-radius: 10px;
     cursor: pointer;
     transition: 0.2s;
-    width: 200px;
+    width: 100%;
     margin-bottom: -10px;
 }
 
