@@ -16,7 +16,7 @@
 .endereco::before
 {
     position: absolute;
-    content: url(../imagens/icons/entrega.png);
+    content: url(../../../images/icons/entrega.png);
     margin-left: 80px;
     margin-top: -20px; 
 }
@@ -31,62 +31,77 @@
 
 .formEnd
 {   
-    width: 100%;
+    width: 40%;
     height: auto;
     margin-top: 50px;
     margin-bottom: 40px;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #261C1A;
-    border-radius: 3px;    
+    border-radius: 3px; 
+    display: flex;
+    justify-content:center;
+    align-items:center; 
 }
 
 .iptEndereco
 {
+    width: 350px;
     margin-bottom: 10px;
     border: 1px solid #261C1A;
 }
 
 .iptNumero
 {
-    width: 170px;
+    width: 110px;
     border: 1px solid #261C1A;
+    margin-left: 120px;
+}
+.lblNumero
+{
+    margin-left: 120px;
 }
 
 .iptComplemento
 {
+    width: 300px;
     margin-bottom: 10px;
     border: 1px solid #261C1A;
 }
 
 #inputCep
 {
-    margin-bottom: 10px;
+   
     border: 1px solid #261C1A;
-    width: 300px;
+    width: 160px;
+    margin-left: 70px;
+}
+.lblCep
+{
+    margin-left: 70px;
 }
 
 .iptBairro
 {
+    width: 300px;
     margin-bottom: 10px;
     border: 1px solid #261C1A;
 }
 
 .slctEstado
 {
-    width:100px;
-    margin-top: 5px;
+    width:150px;
     border: 1px solid #261C1A;
 }
 
 .lblCidade
 {
-    margin-left: -150px;
+    margin-left: -78px;
 }
 .iptCidade
 {
-    margin-left: -150px;
+    margin-left: -78px;
     border: 1px solid #261C1A;
-    width: 305px;
+    width: 307px;
 }
 
 .iptCheck
@@ -103,7 +118,7 @@
     margin-bottom: 10px;
 }
 
-.btnProximo
+/* .btnProximo
 {
     width: 200px;
     background-color: #34A853;
@@ -111,4 +126,19 @@
     border: 1px solid green;
     margin-top: 10px;
     margin-left: 890px;
+} */
+
+.btnProximo
+{
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 170px;
+    margin-bottom: 10px;
+    background-color: #00A846;
+    color: white;
+}
+.btnProximo{
+    background-color: #34d175;
+    color: white;
+    border: 1px solid #00A846;
 }
