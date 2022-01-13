@@ -52,14 +52,18 @@
 
 .iptNumero
 {
+
     width: 130px;
+
     border: 1px solid #261C1A;
     margin-left: 120px;
 }
 .lblNumero
 {
     margin-left: 120px;
+
     
+
 }
 
 .iptComplemento
@@ -73,7 +77,9 @@
 {
    
     border: 1px solid #261C1A;
+
     width: 180px;
+
     margin-left: 70px;
 }
 .lblCep
@@ -102,8 +108,9 @@
 {
     margin-left: -78px;
     border: 1px solid #261C1A;
+
     width: 327px;
-}
+
 
 .iptCheck
 {
@@ -112,6 +119,7 @@
     margin-left: 0px;
     margin-top: 15px;
 }
+
 .iptCheck:hover
 {
     background-color: #34d175;
@@ -121,6 +129,7 @@
 .lblCheck
 {
     margin-top: 13px;
+
     margin-left: 20px;
     margin-bottom: 10px;
 }
@@ -139,7 +148,9 @@
 {
     width: 300px;
     margin-top: 10px;
+
     margin-left: 218px;
+
     margin-bottom: 10px;
     background-color: #00A846;
     color: white;

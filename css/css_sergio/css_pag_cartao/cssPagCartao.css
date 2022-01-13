@@ -9,12 +9,16 @@
     font-style: large bold;
     padding: 0;
     margin-bottom: 10px;
+
+
 }
 
 .txtPag::before
 {
     position: absolute;
+
     content: url(../../../images/icons/pagamento-cartao.png);
+
     margin-left: -80px;
     margin-top: -20px; 
 }
@@ -29,7 +33,9 @@
 
 .formPag
 {   
+
     width: 100%;
+
     height: auto;
     margin-top: 20px;
     margin-bottom: -20px;
@@ -52,8 +58,10 @@
 {   
     width: 100%;
     height: auto;
+
     margin-top:0px;
     margin-left: 0px; 
+
 }
 
 .cartoesCart ul li
@@ -75,6 +83,7 @@
     margin-top:10px;
 }
 
+
 .cartoesCart .applePay::before{
     position: absolute;
     content: url(../../../images/icons/apple-pay.png);
@@ -87,9 +96,11 @@
 {
     position: absolute;
     content: url(../../../images/icons/amazon-pay.png);
+
     margin-left: 30px;
     margin-top: -15px; 
 }
+
 
 .cartoesCart .googlePay::before
 {
@@ -102,10 +113,12 @@
 {
     position: absolute;
     content: url(../../../images/icons/maestro.png);
+
     margin-left: -50px;
     margin-top: 35px;
     width:24px; 
 }
+
 .cartoesCart .paypalPay::before
 {
     position: absolute;
@@ -117,6 +130,7 @@
 {
     position: absolute;
     content: url(../../../images/icons/visa.png);
+
     margin-left: 115px;
     margin-top: 40px; 
 }
@@ -179,5 +193,7 @@
     color:white;
     width: 200px;
     border: 1px solid #261C1A;
+
     margin-left: 0px;
+
 }

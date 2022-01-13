@@ -7,6 +7,7 @@
 
 
 ### *_Especialistas Supervisores_*
+
 - Andreia Assuncao Evangelista Dozza
 - Ivo La Puma
 - Jonas de Oliveira
@@ -19,6 +20,7 @@
 - Muryllo Soares Eleutério Severino
 - Sérgio Cauê Gomes
 - Denis William Nery Barbosa
+
 
 ### *_Tecnonologias desenvolvidas_*
 - [:heavy_check_mark:] Prototipagem Figman
