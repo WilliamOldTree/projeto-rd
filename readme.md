@@ -7,19 +7,21 @@
 
 
 ### *_Especialistas Supervisores_*
--  Andreia Assuncao Evangelista Dozza
--  Ivo La Puma
--  Jonas de Oliveira
--  Leonardo Antonio Barbosa
--  Raphael Gava de Andrade
+
+- Andreia Assuncao Evangelista Dozza
+- Ivo La Puma
+- Jonas de Oliveira
+- Leonardo Antonio Barbosa
+- Raphael Gava de Andrade
 
 ### *_Desenvolvedores participantes_*
--  Fabiola De Carvalho Santos
--  Leia Borges Santos de Jesus
--  Muryllo Soares Eleutério Severino
--  Sérgio Cauê Gomes
--  Denis William Nery Barbosa
+- Fabiola De Carvalho Santos
+- Leia Borges Santos de Jesus
+- Muryllo Soares Eleutério Severino
+- Sérgio Cauê Gomes
+- Denis William Nery Barbosa
+
 
 ### *_Tecnonologias desenvolvidas_*
 - [:heavy_check_mark:] Prototipagem Figman
-- [:heavy_check_mark:] Front-end - HTML, Bootstrap, CSS e Java Script
+- [:heavy_check_mark:] Front-end - HTML, Bootstrap, CSS e Java Script ...

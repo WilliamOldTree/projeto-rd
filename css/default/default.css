@@ -431,7 +431,9 @@ section{
     align-items: center;
     font-size: 12px;
     font-weight: 300;
+
 }
+
 
 @media(min-width:992px) and (max-width:1200px){
     #nav-itens a{
@@ -486,7 +488,3 @@ section{
 
 
 
-
-
-
-  
