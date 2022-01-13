@@ -140,64 +140,79 @@
             </div>
         </div>
     </div>
-    <div class="container ">
+    <div class="container">
         <div class="row">
-            <div class="col-12">
-                <form class="row g-3 formPag">
-                    <div class="col-4">
-                        <label for="inputEstado" class="form-label"><b>Selecione a Forma de Pagamento.</b></label><br>
-                        <select id="inputEstado" class="form-select slctCartoes">
-                            <option selected>Cartões...</option>
-                            <option>...</option>
-                        </select>
-                    </div>
-                    <div class="col-3 container">
-                        <div class="container cartoesCart">
-                            <div class="row">
-                                <div class="col-12">
-                                    <ul>
-                                        <li><span class="applePay"></span></li>
-                                        <li><span class="amazonPay"></span></li>
-                                        <li><span class="googlePay"></span></li>
-                                        <li><span class="maestroPay"></span></li>
-                                        <li><span class="paypalPay"></span></li>
-                                        <li><span class="visaPay"></span></li>
-                                    </ul>
+            <div class="col-6">
+                
+                <div class="container formCartao">
+                    <div class="row">
+                        <div class="col-12">
+                            <form class="row g-3 formPag">
+                                <div class="col-4">
+                                    <label for="inputEstado" class="form-label"><b>Selecione a Forma de Pagamento.</b></label><br>
+                                    <select id="inputEstado" class="form-select slctCartoes">
+                                        <option selected>Cartões...</option>
+                                        <option>...</option>
+                                    </select>
                                 </div>
-                            </div>
+                                <div class="col-3 container">
+                                    <div class="container cartoesCart">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <ul>
+                                                    <li><span class="applePay"></span></li>
+                                                    <li><span class="amazonPay"></span></li>
+                                                    <li><span class="googlePay"></span></li>
+                                                    <li><span class="maestroPay"></span></li>
+                                                    <li><span class="paypalPay"></span></li>
+                                                    <li><span class="visaPay"></span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <div class="col-6">
+                                    <label for="inputNomeTitular" class="form-label lblNomeTitular">* Nome Titular</label>
+                                    <input type="text" class="form-control iptNomeTitular" id="inputNomeTitular"
+                                        placeholder="Nome Titular">
+                                </div>
+                                <div class="col-6">
+                                    <label for="inputNumeroCartao" class="form-label lblNumeroCartao">* Numero do Cartão</label>
+                                    <input type="text" class="form-control iptNumeroCartao" id="inputNumeroCartao"
+                                        placeholder="Numero do Cartão">
+                                </div>
+                                <div class="col-6">
+                                    <label for="inputDataValidade" class="form-label lblDataValidade">* Data Validade</label>
+                                    <input type="text" class="form-control iptDataValidade" id="inputDataValidade"
+                                        placeholder="09/28">
+                                </div>
+                                <div class="col-6">
+                                    <label for="inputNumeroCvv" class="form-label lblCvv">* CVV</label>
+                                    <input type="text" class="form-control iptCvv" id="inputCvv" placeholder="123">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="inputParcelar" class="form-label lblParcelar">* Parcelar em Até</label>
+                                    <select id="inputParcelar" class="form-select slctParcelar">
+                                        <option selected>1 X de R$ 60,00</option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <button type="button" class="btn btnConcluir">Concluir Pagamento</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-6">
-                        <label for="inputNomeTitular" class="form-label lblNomeTitular">* Nome Titular</label>
-                        <input type="text" class="form-control iptNomeTitular" id="inputNomeTitular"
-                            placeholder="Nome Titular">
-                    </div>
-                    <div class="col-6">
-                        <label for="inputNumeroCartao" class="form-label lblNumeroCartao">* Numero do Cartão</label>
-                        <input type="text" class="form-control iptNumeroCartao" id="inputNumeroCartao"
-                            placeholder="Numero do Cartão">
-                    </div>
-                    <div class="col-6">
-                        <label for="inputDataValidade" class="form-label lblDataValidade">* Data Validade</label>
-                        <input type="text" class="form-control iptDataValidade" id="inputDataValidade"
-                            placeholder="09/28">
-                    </div>
-                    <div class="col-6">
-                        <label for="inputNumeroCvv" class="form-label lblCvv">* CVV</label>
-                        <input type="text" class="form-control iptCvv" id="inputCvv" placeholder="123">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="inputParcelar" class="form-label lblParcelar">* Parcelar em Até</label>
-                        <select id="inputParcelar" class="form-select slctParcelar">
-                            <option selected>1 X de R$ 60,00</option>
-                            <option>...</option>
-                        </select>
-                    </div>
+            </div>
+            <div class="col-6">
+                <div class="row">
                     <div class="col-12">
-                        <button type="button" class="btn btnConcluir">Concluir Pagamento</button>
+                        
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
