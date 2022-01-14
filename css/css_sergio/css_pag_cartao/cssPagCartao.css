@@ -9,13 +9,16 @@
     font-style: large bold;
     padding: 0;
     margin-bottom: 10px;
-    margin-top: 50px;
+
+
 }
 
 .txtPag::before
 {
     position: absolute;
-    content: url(../imagens/icons/pagamento-cartao.png);
+
+    content: url(../../../images/icons/pagamento-cartao.png);
+
     margin-left: -80px;
     margin-top: -20px; 
 }
@@ -30,7 +33,9 @@
 
 .formPag
 {   
-    width: 1138px;
+
+    width: 100%;
+
     height: auto;
     margin-top: 20px;
     margin-bottom: -20px;
@@ -53,8 +58,10 @@
 {   
     width: 100%;
     height: auto;
-    margin-top:-10px;
-    margin-left: -50px; 
+
+    margin-top:0px;
+    margin-left: 0px; 
+
 }
 
 .cartoesCart ul li
@@ -76,49 +83,54 @@
     margin-top:10px;
 }
 
-.applePay2::before{
+
+.cartoesCart .applePay::before{
     position: absolute;
-    content: url(../imagens/icons/apple-pay.png);
+    content: url(../../../images/icons/apple-pay.png);
     margin-left: -50px;
     margin-top: -17px;
-    width: 50px;
-    height:auto; 
+   
 }
 
-.amazonPay2::before
+.cartoesCart .amazonPay::before
 {
     position: absolute;
-    content: url(../imagens/icons/amazon-pay.png);
+    content: url(../../../images/icons/amazon-pay.png);
+
     margin-left: 30px;
     margin-top: -15px; 
 }
 
-.googlePay2::before
+
+.cartoesCart .googlePay::before
 {
     position: absolute;
-    content: url(../imagens/icons/google-pay.png);
+    content: url(../../../images/icons/google-pay.png);
     margin-left: 115px;
     margin-top: -15px; 
 }
-.maestroPay2::before
+.cartoesCart .maestroPay::before
 {
     position: absolute;
-    content: url(../imagens/icons/maestro.png);
+    content: url(../../../images/icons/maestro.png);
+
     margin-left: -50px;
     margin-top: 35px;
     width:24px; 
 }
-.paypalPay2::before
+
+.cartoesCart .paypalPay::before
 {
     position: absolute;
-    content: url(../imagens/icons/paypal.png);
+    content: url(../../../images/icons/paypal.png);
     margin-left: 50px;
     margin-top: 55px; 
 }
-.visaPay2::before
+.cartoesCart .visaPay::before
 {
     position: absolute;
-    content: url(../imagens/icons/visa.png);
+    content: url(../../../images/icons/visa.png);
+
     margin-left: 115px;
     margin-top: 40px; 
 }
@@ -181,5 +193,7 @@
     color:white;
     width: 200px;
     border: 1px solid #261C1A;
-    margin-left: 865px;
+
+    margin-left: 0px;
+
 }

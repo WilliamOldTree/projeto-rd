@@ -8,7 +8,7 @@
 
 .banner1 
 {
-    width: 1200px;
+    width: 100%;
     height: auto;
     margin-top: 0px;
     margin: 0px;
@@ -25,24 +25,30 @@
     margin-top: -22px;      
 }
 
+.grupoBotoes
+{
+    width: 100%;
+    display: flex;
+
+    flex-direction: row;
+
+}
 .btnBanner1
 {
     padding: 0px;
     margin: 0px;
+    margin-top:-585px;
     margin-left: 0px;
     width: 100%;
-    display: flex;
-    align-items:center;
-    justify-content: center;
 }
 
 .btnBanner1 .btn
 {
-    width: 295px;
+    width: 100%;
     height: 100px;
     border-radius: 0px 0px 0px 0px;
     border-left: 1px solid white;
-    border-top: 1px solid black;
+    border-top: 1px solid white;
     border-right: 1px solid white;
     border-bottom: 1px solid white;
     background-color: #C4C4C4;
@@ -52,7 +58,9 @@
 
 .btnBanner1 .btn:hover
 {
-    transform: scale(1.10);
+
+    transform: scale(1.1);
+
     transition: 0.2s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border:1px solid #261C1A;
     cursor: pointer;
@@ -63,7 +71,7 @@
 .iconFrete
 {
     position: absolute;
-    content: url(../imagens/icons/caminhao-de-entrega.png);
+    content: url(../../../images/icons/caminhao-de-entrega.png);
     margin-left: -140px;
     margin-top: 10px; 
 }
@@ -71,7 +79,7 @@
 .iconParcelamento
 {
     position: absolute;
-    content: url(../imagens/icons/cartao-do-banco.png);
+    content: url(../../../images/icons/cartao-do-banco.png);
     margin-left: -135px;
     margin-top: 10px; 
 }
@@ -79,14 +87,14 @@
 .iconAtendimento
 {
     position: absolute;
-    content: url(../imagens/icons/telefone.png);
+    content: url(../../../images/icons/telefone.png);
     margin-left: -125px;
     margin-top: 25px; 
 }
 .iconSeguranca
 {
     position: absolute;
-    content: url(../imagens/icons/security.png);
+    content: url(../../../images/icons/security.png);
     margin-left: -125px;
     margin-top: 25px; 
 }
@@ -163,50 +171,50 @@
     padding: 0px;
     margin: 0px;
     width: 100%;
-    box-sizing: border-box;
+    height: auto;
     font-family: 'Roboto', sans-serif;
 }
 
 .containerCarrossel
 {
     width: 100%;
-    height : 100%;
+    height : 500px;
     margin:0px 0px 0px 20px;
     margin-top: 30px;
     padding: 0px;
-    
-    
-}
-
-.slider
-{
-    padding: 0px;
-    width: 100%;
-    height: 550px;
     display: flex;
     flex: 2;
-    margin: 0px 0px 30px 0px;
-    margin-top: 30px; 
-}
-.slider .card 
+} 
+
+.containerCarrossel
 {
-    margin: 0px 0px 0px 40px;
-    height: 400px;
-    width: 270px;
+    width: 100%;
+}
+
+.containerCarrossel .card 
+{
+    margin: 0px -30px 0px 0px;
     background-color:#f7f7f7;
     border: 1px solid rgb(177, 174, 174);
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 .card
 {
-    margin: 0px -10px 0px 0px;
+    height: 400px;
+    width: 50%;
+    margin: 0px 0px 0px 30px;
     padding: 10px;
 }
-.slider .card .img 
+.card .img 
 {
     height: 100%;
     width: 100%;
 }
-.slider .card .img img 
+.card .img img 
 {
     height: 220px;
     width: 100%;
@@ -214,7 +222,7 @@
     border-radius: 3px;
     
 }
-.slider .card .img img:hover
+.card .img img:hover
 {
     transform: scale(1.10);
     transition: 0.2s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -224,40 +232,45 @@
 }
 
 
-.slider .card .content 
+.card .content 
 {
-    padding: 10px 20px;
+    width: 100%;
+    height: auto;
     
 }
 
-.slider .card .content .title  
+.card .content .title 
 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
 }
 
-.slider .card .content .sub-title  
+.card .content .sub-title  
 {
     font-size: 16px;
     font-weight: 600;
     color: #261C1A;
-    line-height: -20px;
+    
+    padding-left: 10px;
 }
 
-.slider .card .content p
+.card .content p
 {
     text-align: justify;
     margin: 10px 0;
 }
 
-.slider .card .content .btn
+.card .content .btn
 {
     display: block;
     text-align: center;
     margin: 10px 0px 0px -9px;
 }
 
-.slider .card .content .btn button
+.card .content .btn button
 {
     background-color: #F27507;
     color: #fff;
@@ -268,7 +281,9 @@
     border-radius: 10px;
     cursor: pointer;
     transition: 0.2s;
-    width: 200px;
+
+    width: 100%;
+
     margin-bottom: -10px;
 }
 
@@ -293,27 +308,27 @@
     margin-top: -40px;
     margin-left: 0px;
     padding: 0px;
-    border-radius:50%;
+    
 }
 .imagens
 {
     width: 100%;
     height: auto;
-    
+    margin-right: 5px;
 }
 .containerImagem .imagens .img1
 {
-    width: 200px;
-    height:200px;
+    width: 100%;
+    height:auto;
     border-radius:3px;
     
 }
 
 .containerImagem .imagens .img2
 {
-    width: 200px;
-    height:200px;
-    margin-left: 45px;
+    width: 100%;
+    height:auto;
+    
     border-radius:3px;
     
 }
@@ -321,17 +336,17 @@
 
 .containerImagem .imagens .img3
 {
-    width: 200px;
-    height:200px;
-    margin-left: 30px;
+    width: 100%;
+    height:auto;
+    
     border-radius:3px;
     
 }
 .containerImagem .imagens .img4
 {
-    width: 200px;
-    height:200px;
-    margin-left: 15px;
+    width: 100%;
+    height:auto;
+   
     border-radius:3px;
     
 }
@@ -342,7 +357,7 @@
     width: 100%;
     height: auto;
     padding: 0px;
-    margin-left: 100px;
+    /* margin-left: 100px; */
     margin-bottom: 100px;
 }
 .containerBanner2 .banner2
@@ -353,7 +368,7 @@
 }
 .containerBanner2 .banner2 .imgBanner2
 {
-    width: 900px;
+    width: 100%;
     height: 350px;
     border-radius: 10px;
 
