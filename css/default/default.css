@@ -196,7 +196,7 @@ html, header, body, footer {
 }
 
 /* CONTEUDO */
-section{
+.section{
     height: 800px;
 }
 
@@ -450,7 +450,6 @@ section{
         padding: 7px;
       }
     
-    
     #input-cep{
         width: 80px;
         height: 25px;
@@ -462,7 +461,7 @@ section{
 
     #canvas{
         display: flex;
-        justify-content:start;
+        justify-content:center;
     }
 
     #btn-canvas{
@@ -473,7 +472,7 @@ section{
     }
 
     #input-cep::placeholder{
-        font-size: 9px;
+        font-size: 8px;
         
     }
 
@@ -482,6 +481,46 @@ section{
         color: #261C1A;
         font-size: 12px;
     }
+    #empresa h5{
+        font-size: 16px;
+    }
+
+    #sociais a{
+        text-decoration: none;
+        color: #261C1A;
+        font-size: 12px;
+    }
+
+    #sociais h5{
+        font-size: 16px;
+    }
+
+    #atendimento a{
+        text-decoration: none;
+        color: #261C1A;
+        font-size: 12px;
+    }
+
+    #sac h5{
+        font-size: 16px;
+    }
+
+    #pagamentos h5{
+        font-size: 16px;
+    }
+
+    #pagamentos img{
+        width: 50%;
+        height: 40%;
+    }
+
+    @media (min-width:320px) and (max-width:768px){
+        #nav-itens{
+            display: none;
+        }
+    }
+    
+
   }
 
 
