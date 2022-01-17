@@ -140,7 +140,7 @@
     </div>
      <div class="container formEnd">
         <div class="row">
-            <div class="col-12">
+            <div class="col-6">
                   <form class="row g-3">
                     <div class="col-md-6">
                       <label for="" class="form-label lblEnd">* Endereço</label>
@@ -214,9 +214,48 @@
                       <button type="button" class="btn btn-success btnProximo">Proximo</button>
                     </div>
                   </form>
-
-
             </div>
+            <div class="col-6">
+                <div class="cardEnd">
+                    <div class="grid">
+                        <label class="card">
+                          <input name="plan" class="radio" type="radio" checked>
+                          
+                          <span class="plan-details">
+                            <span class="plan-type">Normal
+                            </span>
+                            <span class="plan-cost">R$1,50<span class="slash">/</span><abbr class="plan-cycle" title="month">mo</abbr></span>
+                            <span>1 dia(s) útil(eis).</span>
+                            <span>100 GB/mo</span>
+                            <span>1 concurrent build</span>
+                          </span>
+                        </label>
+                        <label class="card">
+                          <input name="plan" class="radio" type="radio">
+                          <span class="hidden-visually">Pro - $50 per month, 5 team members, 500 GB per month, 5 concurrent builds</span>
+                          <span class="plan-details" aria-hidden="true">
+                            <span class="plan-type">Pro</span>
+                            <span class="plan-cost">$50<span class="slash">/</span><span class="plan-cycle">mo</span></span>
+                            <span>5 team members</span>
+                            <span>500 GB/mo</span>
+                            <span>5 concurrent builds</span>
+                          </span>
+                        </label>
+                        <label class="card">
+                          <input name="plan" class="radio" type="radio">
+                          <span class="hidden-visually">Business - $200 per month, 5+ team members, 1000 GB per month, Unlimited builds</span>
+                          <span class="plan-details" aria-hidden="true">
+                            <span class="plan-type">Business</span>
+                            <span class="plan-cost">$200<span class="slash">/</span><span class="plan-cycle">mo</span></span>
+                            <span>5+ team members</span>
+                            <span>1000 GB/mo</span>
+                            <span>Unlimited builds</span>
+                          </span>
+                        </label>
+                      </div>
+                </div>
+            </div>
+
         </div>
     </div>
 <br>
