@@ -402,9 +402,18 @@ font-weight: bold;
 /* MENU RESPONSIVO */
 
 @media (max-width: 1200px){
+
+    .btn.pessoaF{
+        left: 25px;
+    }
+
+    .btn.pessoaJ{
+        left: 25px;
+    }
     .cadastroPessoaF {
-        width: 67%;
+        width: 630px;
         height: 769px;
+        left: 25px;
     }
 
     .campostopo{
@@ -588,6 +597,7 @@ font-weight: bold;
             height: 33px;
             left: 34px;
             top: 632px;
+            font-size: 14px;
         }
     
         .btn.formcadastroF{
@@ -600,23 +610,26 @@ font-weight: bold;
 }
 
 
-@media (max-width: 995px) {
+@media (max-width: 760px) {
 
     .btn.pessoaF{
-        width: 142px;
+        width: 140px;
         height: 40px;
-        font-size: 14px;
+        font-size: 12px;
+        left: 20px;
     }
     
     .btn.pessoaJ{
-        width: 142px;
+        width: 140px;
         height: 40px;
-        font-size: 14px;
+        font-size: 12px;
+        left: 25px;
     }
 
     .cadastroPessoaF {
         width: 334px;
         height: 984px;
+        left: 10px;
     }
 
     .campostopo{
@@ -625,10 +638,11 @@ font-weight: bold;
         left: 52px;
         top: 17px;
         text-align: center;
+        font-size: 14px;
     }
 
     .form-label1 {
-        width: 115px;
+        width: 120px;
         height: 21px;
         left: 28px;
         top: 59px;
@@ -658,7 +672,7 @@ font-weight: bold;
     }
 
     .form-label3 {
-        width: 115px;
+        width: 120px;
         height: 20px;
         left: 28px;
         top: 205px;
@@ -689,7 +703,7 @@ font-weight: bold;
     }
 
     .aviso-tel{
-        width: 200px;
+        width: 285px;
         height: 31px;
         left: 29px;
         top: 351px;
@@ -697,7 +711,7 @@ font-weight: bold;
     }
 
     .form-label5{
-        width: 177px;
+        width: 190px;
         height: 21px;
         left: 29px;
         top: 394px;
@@ -743,7 +757,7 @@ font-weight: bold;
     }
     
     .form-label8{
-        width: 127px;
+        width: 140px;
         height: 20px;
         left: 29px;
         top: 622px;
@@ -792,14 +806,14 @@ font-weight: bold;
             width: 20px;
             height: 18px;
             left: 50px;
-            top: 820px;
+            top: 830px;
         }
         
         .form-check-label{
             width: 237px;
             height: 16px;
             left: 61px;
-            top: 826px;
+            top: 836px;
         }
 
 
@@ -819,5 +833,132 @@ font-weight: bold;
             top: 921px;
             font-size: 18px;
         }
+}
 
+@media (max-width: 360px){
+    .btn.pessoaF{
+        left: 5px;
+    }
+
+    .btn.pessoaJ{
+        left: 5px;
+    }
+
+    .cadastroPessoaF {
+        left: 5px;
+    }
+}
+
+@media (max-width: 320px){
+
+    .cadastroPessoaF {
+        width: 302px;
+        left: 0px;
+    }
+
+    .campostopo{
+        left: 35px;
+    }
+
+    .form-label1 {
+        left: 15px;
+    }
+    
+    #nome{
+        left: 15px;
+    }
+
+    .form-label2 {
+        left: 15px;
+    }
+    
+    #cpf{
+        left: 15px;
+    }
+
+    .form-label3 {
+        left: 15px;
+    }
+    
+    #data{
+        left: 15px;
+    }
+
+    .form-label4 {
+        left: 15px;
+    }
+    
+    select.form-select{
+        left: 15px;
+    }
+
+    .aviso-tel{
+        left: 15px;
+        font-size: 12px;
+    }
+
+    .form-label5{
+        left: 15px;
+    }
+    
+    #telefone{
+        left: 15px;
+    }
+    
+    .form-label6{
+        left: 15px;
+    }
+    
+    #celular{
+        left: 15px;
+    }
+
+    .form-label7{
+        left: 15px;
+    }
+
+    #email{
+        left: 15px;
+    }
+    
+    .form-label8{
+        left: 15px;
+    }
+    
+    #email2{
+        left: 15px;
+    }
+
+    .form-label9{
+        left: 18px;
+        }
+        
+        #senha{
+            left: 18px;
+        }
+    
+        .form-label10{
+            left: 18px;
+        }
+        
+        
+        #senha2{
+            left: 18px;
+        }
+        
+        #exampleCheck1{
+            left: 45px;
+        }
+        
+        .form-check-label{
+            left: 50px;
+        }
+
+        .aviso-privacidade{
+            left: 15px;
+        }
+    
+        .btn.formcadastroF{
+            left: 42px;
+        }
 }
