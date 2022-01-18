@@ -134,7 +134,7 @@
 
     <div >
       <h2 class="title" > Recuperação de Senha</h2> 
-     <hr> 
+     <hr width="100%"> 
       </div>
     
      <div class="container"></div>
@@ -144,15 +144,34 @@
         <h1 class="subTitulo" >Esqueceu sua senha?</h1>
     
         <div class="mb-3" >
-          <label for="senha" class="form-label1">Digite uma nova senha</label>
-          <input type="password" class="form-control" id="senha">
+          <label for="senha" id="form-label1">*Digite uma nova senha:</label>
+          <input type="password" id="form-control">
         </div>
         <div class="mb-3">
-          <label for="senha" class="form-label2">Digite novamente a nova senha</label>
-          <input type="password" class="form-control" id="senha">
+          <label for="senha" id="form-label2">*Digite novamente a nova senha:</label>
+          <input type="password" id="form-control2" >
         </div>
-        <button class="btn formRedefinirSenha" type="submit">REDEFINIR</button>
+        <button class="btn formRedefinirSenha" type="button"  data-bs-toggle="modal" data-bs-target="#janelaModal">REDEFINIR</button>
        </form>  
+
+
+       <div id="janelaModal" class="modal">
+        <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-tilte">Senha redefinida com sucesso :). </h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+             <button class="botao1 tex1" type="button" data-bs-dismiss="modal">OK</button>
+       </div>
+     </div>         
+     </div>
+   </div>
+  </div>
+</form>
+</div>
+</div>
+</div>
+
      </div>
      
       <br><br><br><br><br><br><br>

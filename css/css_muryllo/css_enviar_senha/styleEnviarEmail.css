@@ -1,14 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    border: none;
+    outline: none;
+    font-family: Roboto;
+    box-sizing: border-box;
+  }
 
 
 .title{
     margin-top: 27px;
-    margin-left: 20px;
+    margin-left: 100px;
     font-weight: bold;
 }
 
 hr{
-    width: 1160px;
+    width: 100%;
     height: 0px;
     background-color: #261C1A;
     border: 1px solid #261C1A;
@@ -23,7 +32,7 @@ hr{
 
 #caixaSenha{
     width: 464px;
-    height: 281px;
+    height: 320px;
     top: 80px;
     background: #FFFFFF;
     border: 2px solid #261C1A;
@@ -55,36 +64,35 @@ hr{
 #senha{
     width: 413px;
     height: 42px;
-    left: 20px;
+    margin-left: 20px;
     bottom: 1px;
     border: 2px solid #979797;
     box-sizing: border-box;
     border-radius: 10px;
-    position: relative;
+ 
 }
 
 #enviar{
     width: 79px;
     height: 26px;
     margin-left: 26px;
-    top: 6px;
+    margin-top: 6px;
     font-weight: bold;
     font-size: 20px;
     line-height: 26px;
     display: flex;
     align-items: center;
-    color: #FFFFFF;      
-    position: relative;  
+    color: #FFFFFF;       
     text-align: center;    
 }
         
 .btn.emailEnviar{
     width: 150px;
     height: 50px;
-    left: 157px;
+    margin-left: 157px;
+    margin-top: 30px;
     background: #34A853;
     border-radius: 10px;
-    position: relative;
     font-size: 22px;
 }        
         
@@ -92,66 +100,342 @@ button.btn.emailEnviar:hover{
     background: #34d175;
 }        
 
-html,body{
-    width: 100%;
-    height: 100%;
-} 
 
-a{
-    text-decoration: none;
-}
 
-.bg-modal{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.75);
-    position: fixed;
-    z-index: 2;
-    top: -100%;
-    display: block;
-    transition: 350ms;
-}
-.modal{
-    width: 50%;
-    height: 25%;
-    background-color: #fff;
-    border: 1px solid black;
-    border-radius: 10px;
-    margin: 30px auto 0 auto;
-    align-items: center;
-}
 
-.modal span{
-    float: right;
-    font-size: 50px;
-    color: #000;
-    margin: 20px,20px;
-    transition: 350ms;
-    cursor: pointer;
-}
+#janelaModal{
+    background-color: #979797;
+   }
 
-.modal span :hover{
-    color: #990000;
-    transition: 350ms;
-}
 
-.texto-span{
+.modal-header{
+    
     position: absolute;
-    width: 539px;
-    height: 62px;
+    width: 523px;
+    height: 253px;
+    margin-top: 150px;
+    margin-left: 20px;
+    align-items: center;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    
+}
+
+h5{
+bottom: 20px;
+position: relative;
+left: 30px;
+}
+
+.btn-close{
+    position: relative;
+    bottom: 85px;
+}
+
+
+
+
+
+  .botao1{
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    margin-left: 220px;
+    align-items: center;
+    margin-top: 140px;
+    background: #34A853;
+    border-radius: 10px;
+    cursor: pointer;
     font-weight: bold;
-    font-size: 30px;
-    line-height: 35px;
+    font-size: 22px;
+    color: #FFFFFF;
+   }
+   .botao1 tex{
+    position: absolute;
+    width: 116px;
+    height: 26px;
+    left: 20px;
+    top: 9px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
     display: flex;
     align-items: center;
-    text-align: center;
-    justify-content: center;
-    color: #261C1A;
-}
-        
-
+    color: #FFFFFF;
+   }
+   .botao1.tex1:hover{
+    background-color: #34d175;
+    }
        
-            
+
+    
+    @media (min-width:320px) and (max-width:568px) {
         
+     .title{
+         right: 55px;
+         font-size: 21px;
+         font-weight: bold;
+         text-align: center;
+         justify-content: center;
+         position: relative;
+     }
+
+
+
+
+
+    #caixaSenha{
+        
+        width: 300px;
+        height: 350px;
+        top: 80px;
+        background: #FFFFFF;
+        border: 2px solid #261C1A;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+    }
+    
+    .subTitulo{
+        margin-top: 50px;
+        position: relative;
+        right: 65px;
+        text-align: center;
+        width: 434px;
+        height: 64px;
+        font-weight: bold;
+        font-size: 25px;
+        color: #261C1A;
+    }   
+    
+
+
+    #senha{
+        width: 253px;
+        height: 42px;
+        margin-left: 20px;
+        bottom: 1px;
+        border: 2px solid #979797;
+        box-sizing: border-box;
+        border-radius: 10px;
+     
+    }
+
+    .btn.emailEnviar{
+        width: 150px;
+        height: 50px;
+        margin-left: 80px;
+        margin-top: 30px;
+        background: #34A853;
+        border-radius: 10px;
+        font-size: 22px;
+        align-items: center;
+    }     
+
+   #janelaModal{
+    background-color: #979797;
+   }
+
+    .modal-header{
+    
+        position: absolute;
+        width: 293px;
+        height: 243px;
+        top: 10px;
+        left: -15px;
+        align-items: center;
+        background: #FFFFFF;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        
+    }
+    
+    h5{
+    bottom: 15px;
+    position: relative;
+    left: 30px;
+    }
+    
+    .btn-close{
+        position: relative;
+        bottom: 90px;
+        right: 10px;
+    }
+    
+    
+    
+    
+    
+      .botao1{
+        position: absolute;
+        width: 70px;
+        height: 50px;
+        margin-left: 100px;
+        align-items: center;
+        margin-top: 140px;
+        background: #34A853;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 22px;
+        color: #FFFFFF;
+       }
+       .botao1 tex{
+        position: absolute;
+        width: 116px;
+        height: 26px;
+        left: 20px;
+        top: 9px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+       }
+    
+    }
+
+    
+
+
+    @media (min-width:768px) and (max-width:1024px) {
+        
+        .title{
+            margin-top: 27px;
+            margin-left: 100px;
+            font-weight: bold;
+        }
+   
+  
+   
+       #caixaSenha{
+           
+           width: 550px;
+           height: 350px;
+           top: 80px;
+           background: #FFFFFF;
+           border: 2px solid #261C1A;
+           box-sizing: border-box;
+           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+           border-radius: 30px;
+       }
+       
+       .subTitulo{
+           margin-top: 50px;
+           position: relative;
+           left: 60px;
+           text-align: center;
+           width: 434px;
+           height: 64px;
+           font-weight: bold;
+           font-size: 25px;
+           color: #261C1A;
+       }    
+   
+       #textoSenha{
+        left: 50px; 
+        margin-top: 10px;
+        font-size: 18px;
+        line-height: 21px;
+        color: #3C4043;
+        position: relative;
+        font-weight: 700;
+    }
+
+       #senha{
+           width: 453px;
+           height: 42px;
+           margin-left: 50px;
+           bottom: 1px;
+           border: 2px solid #979797;
+           box-sizing: border-box;
+           border-radius: 10px;
+        
+       }
+   
+       .btn.emailEnviar{
+           width: 150px;
+           height: 50px;
+           margin-left: 210px;
+           margin-top: 30px;
+           background: #34A853;
+           border-radius: 10px;
+           font-size: 22px;
+           align-items: center;
+       }     
+   
+      #janelaModal{
+       background-color: #979797;
+      }
+   
+       .modal-header{
+       
+           position: absolute;
+           width: 493px;
+           height: 243px;
+           margin-top: 150px;
+           right: 10px;
+           align-items: center;
+           background: #FFFFFF;
+           box-sizing: border-box;
+           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+           border-radius: 10px;
+           
+       }
+       
+       h5{
+       bottom: 1px;
+       position: relative;
+       left: 30px;
+       }
+       
+       .btn-close{
+           position: relative;
+           bottom: 85px;
+           right: 10px;
+       }
+       
+       
+       
+       
+       
+         .botao1{
+           position: absolute;
+           width: 70px;
+           height: 50px;
+           margin-left: 210px;
+           align-items: center;
+           margin-top: 140px;
+           background: #34A853;
+           border-radius: 10px;
+           cursor: pointer;
+           font-weight: bold;
+           font-size: 22px;
+           color: #FFFFFF;
+          }
+          .botao1 tex{
+           position: absolute;
+           width: 116px;
+           height: 26px;
+           left: 20px;
+           top: 9px;
+           font-style: normal;
+           font-weight: bold;
+           font-size: 22px;
+           line-height: 26px;
+           display: flex;
+           align-items: center;
+           color: #FFFFFF;
+          }
+       
+       }
+           
+
             
             
