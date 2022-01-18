@@ -6,6 +6,7 @@
 width: 1163px;
 height: 888px;
 }
+
 .imgproduto1{
     position: absolute;
     width: 441px;
@@ -382,7 +383,6 @@ margin-bottom: 45px;
 
 .imagensCaixa
 {
-
     margin: 10px 0px 10px 0px;
     width:100%; 
     margin-bottom: 50px; 
@@ -390,12 +390,23 @@ margin-bottom: 45px;
 
 .card 
 {
-    
-    height: 410px;
-    width: 90%;
+    height: 430px;
+    width: 230px;
     background-color: white;
-    border: 1px solid rgb(177, 174, 174);   
+    border: 1px solid rgb(177, 174, 174);  
 }
+
+.title-card{
+    height: 45px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.sub-title2{
+    font-size: 12px;
+}
+
 .card
 {
     margin: 10px 0px 10px 0px;
@@ -470,6 +481,7 @@ margin-bottom: 45px;
     width: 100%;
     margin-bottom: -10px;
     margin-left: 10px;
+    margin-top: -10px;
 }
 
 .card .content .btn button:hover
@@ -477,3 +489,471 @@ margin-bottom: 45px;
     transform: scale(1.2);
     box-shadow: 0 5px 5px #AF9787;
 }
+
+
+
+@media (max-width: 1300px) {
+    .container-img{
+        width: 729px;
+        height: 726px;        
+    }
+
+    .imgproduto1{
+        width: 288px;
+        height: 282px;
+        left: 12px;
+        top: 46px;
+    }
+
+    .imgproduto2{
+        width: 288px;
+        height: 282px;
+        left: 12px;
+        top: 46px;
+    }
+
+    .imgproduto3{
+        width: 75px;
+        height: 77px;
+        left: 18px;
+        top: 343px;
+    }
+    
+    .imgproduto4{
+        width: 75px;
+        height: 77px;
+        left: 107px;
+        top: 343px;
+    }
+
+    .verDetalhes{
+        width: 131px;
+        height: 22px;
+        left: 18px;
+        top: 425px;
+    font-size: 16px;
+    }
+
+    .title-produto{
+        width: 370px;
+        height: 62px;
+        left: 326px;
+        top: 34px;
+        font-size: 22px;
+    }
+    
+    .cod-produto{
+        width: 142px;
+        height: 19px;
+        left: 325px;
+        top: 96px;
+    }
+    
+    .line-1{
+        width: 390px;
+        height: 0px;
+        left: 322px;
+        top: 110px;
+    }
+
+    #quantidade{
+        width: 61px;
+        height: 44px;
+        left: 326px;
+        top: 153px;
+    }
+
+    .qtd{
+        width: 99px;
+        height: 13px;
+        left: 396px;
+        top: 165px;
+    }
+    
+    .preco{  
+        width: 105px;
+        height: 22px;
+        left: 322px;
+        top: 226px;
+    }
+    
+    .parcela{
+        width: 181px;
+        height: 13px;
+        left: 435px;
+        top: 232px;
+    }
+    
+    .btn.compra{
+        width: 200px;
+        height: 50px;
+        left: 322px;
+        top: 275px;
+    font-size: 20px;
+    }
+
+    .btn.favoritar{
+        width: 260px;
+        height: 45px;
+        left: 322px;
+        top: 352px;
+        font-size: 16px;
+        }
+        
+        #cep-frete{
+            width: 387px;
+            height: 126px;
+            left: 322px;
+            top: 415px
+
+        }
+        
+        .line-2{
+            width: 390px;
+            height: 0px;
+            left: 322px;
+            top: 570px;
+        }
+        
+        .infcep1{
+            width: 206px;
+            height: 25px;
+            left: 16px;
+            top: 6px;
+            font-size: 16px;
+        }
+        
+        .img-cart{
+            width: 40px;
+            height: 40px;
+            left: 16px;
+            top: 45px;
+        }
+
+        .infcep2{
+            width: 120px;
+            height: 22px;
+            left: 62px;
+            top: 53px;
+
+        }
+        
+        .btn.cep{
+            width: 90px;
+            height: 40px;
+            left: 284px;
+            top: 45px;
+            font-size: 14px;
+        }
+        
+        #entrada-cep{
+            width: 90px;
+            height: 40px;
+            left: 194px;
+            top: 45px;
+        }
+
+        
+        .infcep3{
+            width: 128px;
+            height: 23px;
+            left: 194px;
+            top: 93px;
+            font-size: 14px;
+        }
+
+        .pagamentos-title{
+            width: 195px;
+            height: 26px;
+            left: 8px;
+            top: 4px;
+        }
+        
+        .pagamentos-subtitle{
+            top: 37px;
+        }
+        
+        #formas-pagamentos{
+            width: 205px;
+            height: 179px;
+            left: 325px;
+            top: 579px;
+        }
+
+        #caixa-title-desc{
+            width: 628px;
+            height: 73px;
+            margin-top: 120px;
+            margin-left: 40px;
+        }
+        
+        .title-descricao{
+            width: 143px;
+            height: 33px;
+        }
+        
+        #caixa-descricao{
+            width: 628px;
+            height: 540px;
+            margin-left: 40px;
+        }
+        
+        .descricao-produto{
+            width: 570px;
+            height: 350px;
+            font-size: 16px;
+        }
+        
+        .descricao-produto2{
+            width: 325px;
+            height: 230px;
+            font-size: 16px;
+            margin-top: 280px;
+
+        }
+        
+        .title-relacionados{
+            margin-top: 50px;
+        font-weight: 700;
+        font-size: 30px;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 45px;
+        }
+
+        .imagensCaixa {
+        margin-left: 40px;
+        }
+}
+
+@media (max-width: 750px) {
+    .container-img{
+        width: 288px;
+        height: 282px;
+        left: 11px;
+        top: 17px;      
+    }
+
+    .imgproduto1{
+        width: 288px;
+        height: 282px;
+        left: 11px;
+        top: 17px;
+    }
+
+    .imgproduto2{
+        width: 288px;
+        height: 282px;
+        left: 11px;
+        top: 17px;
+    }
+
+    .imgproduto3{
+        width: 75px;
+        height: 74px;
+        left: 13px;
+        top: 320px;
+    }
+    
+    .imgproduto4{
+        width: 75px;
+        height: 74px;
+        left: 104px;
+        top: 320px;
+    }
+
+    .verDetalhes{
+        width: 131px;
+        height: 22px;
+        left: 13px;
+        top: 395px;
+    }
+
+    .title-produto{
+        width: 286px;
+        height: 50px;
+        left: 11px;
+        top: 432px;
+    }
+    
+    .cod-produto{
+        width: 142px;
+        height: 19px;
+        left: 11px;
+        top: 493px;
+    }
+    
+    .line-1{
+        width: 290px;
+        height: 0px;
+        left: 11px;
+        top: 510px;
+    }
+
+    #quantidade{
+        width: 61px;
+        height: 44px;
+        left: 13px;
+        top: 559px;
+    }
+
+    .qtd{
+        width: 99px;
+        height: 13px;
+        left: 92px;
+        top: 575px;
+        font-size: 14px;
+    }
+    
+    .preco{  
+        width: 105px;
+        height: 22px;
+        left: 11px;
+        top: 621px;
+    }
+    
+    .parcela{
+        width: 181px;
+        height: 13px;
+        left: 120px;
+        top: 632px;
+        font-size: 14px;
+    }
+    
+    .btn.compra{
+        width: 200px;
+        height: 50px;
+        left: 11px;
+        top: 676px;
+    }
+
+    .btn.favoritar{
+        width: 270px;
+        height: 45px;
+        left: 13px;
+        top: 751px;
+        }
+        
+        #cep-frete{
+            width: 286px;
+            height: 179px;
+            left: 11px;
+            top: 837px;
+        }
+        
+        .line-2{
+            width: 290px;
+            height: 0px;
+            left: 11px;
+            top: 1040px;
+        }
+        
+        .infcep1{
+            width: 206px;
+            height: 25px;
+            left: 16px;
+            top: 6px;
+        }
+        
+        .img-cart{
+            width: 40px;
+            height: 40px;
+            left: 16px;
+            top: 51px;
+        }
+
+        .infcep2{
+            width: 120px;
+            height: 22px;
+            left: 62px;
+            top: 53px;
+        }
+        
+        .btn.cep{
+            width: 90px;
+            height: 40px;
+            left: 108px;
+            top: 93px;
+        }
+        
+        #entrada-cep{
+            width: 90px;
+            height: 40px;
+            left: 18px;
+            top: 93px;
+        }
+        
+        .infcep3{
+            width: 128px;
+            height: 23px;
+            left: 18px;
+            top: 141px;
+        }
+
+        .pagamentos-title{
+            width: 195px;
+            height: 26px;
+            left: 8px;
+            top: 4px;
+        }
+        
+        .pagamentos-subtitle{
+            width: 138px;
+            height: 20px;
+            left: 12px;
+            top: 37px;
+        }
+        
+        #formas-pagamentos{
+            width: 205px;
+            height: 179px;
+            left: 11px;
+            top: 1073px;
+        }
+
+        #caixa-title-desc{
+            width: 286px;
+            height: 47px;
+            margin-top: 1100px;
+            margin-left: 20px;
+        }
+        
+        .title-descricao{
+            width: 96px;
+            height: 2px;
+            font-size: 20px;
+            margin-top: 13px;
+            margin-left: 9px;
+        }
+        
+        #caixa-descricao{
+            width: 286px;
+            height: 850px;
+            margin-left: 20px;
+        }
+        
+        .descricao-produto{
+            width: 256px;
+            height: 627px;
+            margin-left: 9px;
+        }
+        
+        .descricao-produto2{
+            width: 260px;
+            height: 255px;
+            margin-top: 550px;
+            margin-left: -15px;
+        }
+        
+        .title-relacionados{
+            width: 262px;
+            height: 41px;
+            margin-left: 29px;
+            font-size: 22px;
+        }
+
+        .imagensCaixa{
+           margin-left: 40px;
+        }
+}
+
