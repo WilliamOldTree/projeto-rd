@@ -131,6 +131,7 @@
 
 <!-- Final Header -->
 <!-- Inicio Pagina Endereço -->
+   <div class="container">
     <div class="container tituloEnd">
         <div class="row">
             <div class="col-12 endereco">
@@ -138,127 +139,87 @@
             </div>
         </div>
     </div>
-     <div class="container formEnd">
+    <div class="container">
         <div class="row">
             <div class="col-6">
-                  <form class="row g-3">
-                    <div class="col-md-6">
-                      <label for="" class="form-label lblEnd">* Endereço</label>
-                      <input type="text" class="form-control iptEndereco" id="input" placeholder="Endereço">
-                    </div>
-                    <div class="col-md-6">
-                      <label for="inputNumero" class="form-label lblNumero">* Numero</label>
-                      <input type="text" class="form-control iptNumero" id="inputNumero" placeholder="Numero">
-                    </div>
-                    <div class="col-6">
-                      <label for="inputComplemento" class="form-label lblComplemento"> Complemento</label>
-                      <input type="text" class="form-control iptComplemento" id="inputComplemento" placeholder="Fundos, Casa 2, Ponto de Referencia e etc...">
-                    </div>
-                    <div class="col-6">
-                      <label for="inputCep" class="form-label lblCep">* CEP</label>
-                      <input type="text" class="form-control iptCep" id="inputCep" placeholder="CEP">
-                    </div>
+                <label for="inputEstado" class="form-label lblEstado">* Estado</label>
+                <select id="inputEstado" class="form-select slctEstado">
+                  <option selected>Estado</option>
+                  <option>AC</option>
+                  <option>AL</option>
+                  <option>AP</option>
+                  <option>AM</option>
+                  <option>BA</option>
+                  <option>CE</option>
+                  <option>ES</option>
+                  <option>GO</option>
+                  <option>MA</option>
+                  <option>MT</option>
+                  <option>MS</option>
+                  <option>MG</option>
+                  <option>PA</option>
+                  <option>PB</option>
+                  <option>PR</option>
+                  <option>PE</option>
+                  <option>PI</option>
+                  <option>RJ</option>
+                  <option>RN</option>
+                  <option>RS</option>
+                  <option>RO</option>
+                  <option>RR</option>
+                  <option>SC</option>
+                  <option>SP</option>
+                  <option>SE</option>
+                  <option>TO</option>
+                  <option>DF</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="inputZip" class="form-label lblCidade">* Cidade</label>
+                <input type="text" class="form-control iptCidade" id="inputZip" placeholder="Cidade">
+              </div>
+              <div class="col-md-6">
+                <label for="inputBairro" class="form-label lblBairro">* Bairro</label>
+                <input type="text" class="form-control iptBairro" id="inputBairro" placeholder="Bairro">
+              </div> 
+              <div class="col-12">
 
-                    <div class="col-md-6">
-                      <label for="inputEstado" class="form-label lblEstado">* Estado</label>
-                      <select id="inputEstado" class="form-select slctEstado">
-                        <option selected>Estado</option>
-                        <option>AC</option>
-                        <option>AL</option>
-                        <option>AP</option>
-                        <option>AM</option>
-                        <option>BA</option>
-                        <option>CE</option>
-                        <option>ES</option>
-                        <option>GO</option>
-                        <option>MA</option>
-                        <option>MT</option>
-                        <option>MS</option>
-                        <option>MG</option>
-                        <option>PA</option>
-                        <option>PB</option>
-                        <option>PR</option>
-                        <option>PE</option>
-                        <option>PI</option>
-                        <option>RJ</option>
-                        <option>RN</option>
-                        <option>RS</option>
-                        <option>RO</option>
-                        <option>RR</option>
-                        <option>SC</option>
-                        <option>SP</option>
-                        <option>SE</option>
-                        <option>TO</option>
-                        <option>DF</option>
-                      </select>
-                    </div>
-                    <div class="col-md-6">
-                      <label for="inputZip" class="form-label lblCidade">* Cidade</label>
-                      <input type="text" class="form-control iptCidade" id="inputZip" placeholder="Cidade">
-                    </div>
-                    <div class="col-md-6">
-                      <label for="inputBairro" class="form-label lblBairro">* Bairro</label>
-                      <input type="text" class="form-control iptBairro" id="inputBairro" placeholder="Bairro">
-                    </div>
-                    <div class="col-12">
+                <div class="">
 
-                      <div class="">
+                  <input class="form-check-input iptCheck" type="checkbox" id="gridCheck">
+                  <label class="form-check-label lblCheck" for="gridCheck">
+                    Usar este Endereço?
+                  </label>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="button" class="btn btn-success btnProximo">Proximo</button>
+              </div>
+            </form>
+      </div>
+      <div class="col-6 resumoEnd">
+          <div class="row">
+              <div class="col-12 container">
+                <form>
+                    <label>Endereço</label>
+                    <input type="radio" class="radioEnd">
+                    <
+                </form>  
+              </div>
+          </div>
 
-                        <input class="form-check-input iptCheck" type="checkbox" id="gridCheck">
-                        <label class="form-check-label lblCheck" for="gridCheck">
-                          Usar este Endereço?
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <button type="button" class="btn btn-success btnProximo">Proximo</button>
-                    </div>
-                  </form>
             </div>
             <div class="col-6">
-                <div class="cardEnd">
-                    <div class="grid">
-                        <label class="card">
-                          <input name="plan" class="radio" type="radio" checked>
-                          
-                          <span class="plan-details">
-                            <span class="plan-type">Normal
-                            </span>
-                            <span class="plan-cost">R$1,50<span class="slash">/</span><abbr class="plan-cycle" title="month">mo</abbr></span>
-                            <span>1 dia(s) útil(eis).</span>
-                            <span>100 GB/mo</span>
-                            <span>1 concurrent build</span>
-                          </span>
-                        </label>
-                        <label class="card">
-                          <input name="plan" class="radio" type="radio">
-                          <span class="hidden-visually">Pro - $50 per month, 5 team members, 500 GB per month, 5 concurrent builds</span>
-                          <span class="plan-details" aria-hidden="true">
-                            <span class="plan-type">Pro</span>
-                            <span class="plan-cost">$50<span class="slash">/</span><span class="plan-cycle">mo</span></span>
-                            <span>5 team members</span>
-                            <span>500 GB/mo</span>
-                            <span>5 concurrent builds</span>
-                          </span>
-                        </label>
-                        <label class="card">
-                          <input name="plan" class="radio" type="radio">
-                          <span class="hidden-visually">Business - $200 per month, 5+ team members, 1000 GB per month, Unlimited builds</span>
-                          <span class="plan-details" aria-hidden="true">
-                            <span class="plan-type">Business</span>
-                            <span class="plan-cost">$200<span class="slash">/</span><span class="plan-cycle">mo</span></span>
-                            <span>5+ team members</span>
-                            <span>1000 GB/mo</span>
-                            <span>Unlimited builds</span>
-                          </span>
-                        </label>
-                      </div>
-                </div>
+                
             </div>
 
         </div>
+
     </div>
-<br>
+
+
+   </div>
+    
 <!-- Final Pagina Endereço -->
 <!-- Inicio Footer -->
 <footer>
