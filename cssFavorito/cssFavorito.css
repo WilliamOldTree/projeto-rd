@@ -1,0 +1,210 @@
+
+.favoritos{
+    text-align:start;
+    font-size:"Roboto";
+    font-weight:bold;
+    font-size:40px;
+    margin-left: 250px;
+}
+
+
+.teste{
+    margin-top:80px;
+    color: black;
+    font-weight:bold;
+   align-items: justify;
+}
+
+.fotos{
+    display: flex;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.descricao{
+    margin-left: 180px;
+    font-family: "Roboto";
+    font-size: 10px:;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.btnComprarA  {
+    width: 140px;
+    margin-bottom: 10px;
+    background-color: #F27507;
+    margin-top: 60px;
+   
+}
+.btnComprarB {
+    width: 140px;
+    margin-bottom: 10px;
+    background-color: #F27507;
+    margin-top: 90px;
+   
+}
+
+.btnComprarC {
+    width: 140px;
+    margin-bottom: 10px;
+    background-color: #F27507;
+    margin-top: 90px;
+   
+}
+
+.btnComprarD {
+    width: 140px;
+    margin-bottom: 10px;
+    background-color: #F27507;
+    margin-top: 90px;
+   
+}
+
+
+.lixeira{
+    margin-top:75px;
+    display: flex;
+}
+
+.a{
+    margin-top:85px;
+    display: flex;
+}
+
+.b{
+    margin-top:85px;
+    display: flex;
+}
+.c{
+    margin-top:85px;
+    display: flex;
+}
+
+.quadrado { 
+position: absolute;
+width: 50%;
+height: 464px;
+left: 451px;
+background: #FFFFFF;
+border: 2px solid #261C1A;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+
+.nome { 
+	position: absolute;
+width: 72px;
+height: 22px;
+left: 140px;
+top: 82px;
+font-family: "Roboto";
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+
+color: #261C1A;
+}
+
+.nome1 {
+position: absolute;
+width: 72px;
+height: 22px;
+left: 140px;
+top: 105px;
+
+font-family: "Roboto";
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 18px;
+display: flex;
+align-items: center;
+
+color: #979797;
+}
+
+.e-mail{
+position: absolute;
+width: 72px;
+height: 22px;
+left: 140px;
+top: 152px;
+font-family: "Roboto";
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+
+color: #261C1A;
+}
+
+.e-mail1{
+    position: absolute;
+    width: 72px;
+    height: 22px;
+    left: 140px;
+    top: 184px;
+    
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    
+    color: #979797;
+    }
+
+.cpf {
+    position: absolute;
+    width: 72px;
+    height: 22px;
+    left: 140px;
+    top: 221px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    color: #261C1A;
+        }
+        
+.cpf1{
+    position: absolute;
+    width: 113px;
+    height: 20px;
+    left: 140px;
+    top: 247px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    
+    color: #979797;
+}
+
+.modal-comprar button{
+    background-color:rgb(240, 126, 33);
+    border: none;
+    align-items: center;
+    margin-top:72px;
+    width: 113px;
+    
+}

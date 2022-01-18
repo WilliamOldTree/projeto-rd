@@ -197,7 +197,7 @@ html, header, body, footer {
 
 /* CONTEUDO */
 .section{
-    height: 800px;
+    height: 500px;
 }
 
 
@@ -434,13 +434,13 @@ html, header, body, footer {
 
 }
 
-
+/* Resposividade footer e header */
 @media(min-width:992px) and (max-width:1200px){
     #nav-itens a{
       font-size: 16px;
     }
-  }
-  
+}
+
   @media (min-width:768px) and (max-width:992px){
     #nav-itens{
         justify-content: end;
@@ -448,7 +448,7 @@ html, header, body, footer {
     #nav-itens a{
         font-size: 13px;
         padding: 7px;
-      }
+    }
     
     #input-cep{
         width: 80px;
@@ -495,7 +495,7 @@ html, header, body, footer {
         font-size: 16px;
     }
 
-    #atendimento a{
+    #sac a{
         text-decoration: none;
         color: #261C1A;
         font-size: 12px;
@@ -512,18 +512,78 @@ html, header, body, footer {
     #pagamentos img{
         width: 50%;
         height: 40%;
+    } 
+}
+
+  @media screen and (max-width: 767px){
+    #nav-itens{
+        display: none;
     }
 
-    @media (min-width:320px) and (max-width:768px){
-        #nav-itens{
-            display: none;
-        }
+    #cep{
+        display: none;
     }
+    #icons{
+        display: none;
+    }
+    #canvas{
+        display: flex;
+        justify-content: end;
+    }
+
+    #logo{
+        height: auto;
+        width: 160px;
+        margin-right: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #header-down{
+        padding: 0px;
+        height: 130px;
+    }
+
+    #empresa a{
+        text-decoration: none;
+        color: #261C1A;
+        font-size: 12px;
+    }
+    #empresa h5{
+        font-size: 12px;
+    }
+
+    #sociais a{
+        text-decoration: none;
+        color: #261C1A;
+        font-size: 12px;
+    }
+
+    #sociais h5{
+        font-size: 12px;
+    }
+
+    #sac a{
+        text-decoration: none;
+        color: #261C1A;
+        font-size: 12px;
+    }
+
+    #sac h5{
+        font-size: 12px;
+    }
+
+    #pagamentos h5{
+        font-size: 12px;
+    }
+
+    #pagamentos img{
+        width: auto;
+        height: 20px;
+        
+    } 
+
     
-
   }
-
-
-
 
 

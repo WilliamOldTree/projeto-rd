@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
 
 .titulo
@@ -215,4 +216,5 @@ tr td  img .btnExcluir
     content: url(../../../images/icons/codigo-de-barras.png);
     margin-left: -35px;
     margin-top: 110px; 
+
 }
