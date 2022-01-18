@@ -197,7 +197,7 @@ html, header, body, footer {
 
 /* CONTEUDO */
 .section{
-    height: 800px;
+    height: 500px;
 }
 
 
@@ -515,7 +515,7 @@ html, header, body, footer {
     } 
 }
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 767px){
     #nav-itens{
         display: none;
     }
