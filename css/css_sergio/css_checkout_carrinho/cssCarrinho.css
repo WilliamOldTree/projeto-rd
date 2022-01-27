@@ -56,7 +56,8 @@
 .table tr
 {
     margin: 0px;
-    font-size: 13px;
+    font-size: 20px;
+
     width: 100%;
 }
 table, th, td {
@@ -110,12 +111,13 @@ tr td  img .btnExcluir
 .btnCCompra
 {
     width: 200px;
+    height: 50px;
     margin-top: 20px;
     margin-left: -70px;
     margin-bottom: 10px;
     background-color: #00A846;
     color: white;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 900;
 }
 .btnCCompra:hover{
@@ -124,7 +126,7 @@ tr td  img .btnExcluir
     border: 1px solid #00A846;
 }
 
-.crdTotla
+.crdTotal
 {
     padding: 0;
     width: 300px;
@@ -133,13 +135,17 @@ tr td  img .btnExcluir
     margin-top: 20px;
     align-items: left;
     border-radius: 3px;
+    
 }
+
 
 .crdTotla ul h6
 {
     margin-top:-20px;
     margin-left: 100px;
     margin-bottom:-5px;
+    font-size: 18px;
+
     
 }
 
@@ -168,8 +174,9 @@ tr td  img .btnExcluir
 {
     margin-left: 0px;
 }
-.liCarrinho h6
+.liCarrinho nobr
 {
     margin-top: 25px;
-    margin-left: 10px;
+    margin-left: 5px;
+    font-size: 18px;
 }
