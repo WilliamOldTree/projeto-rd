@@ -93,7 +93,7 @@ tr td  img .btnExcluir
 {
     width: 300px;
     margin-left: -70px;
-    margin-bottom: 5px;
+    margin-bottom: -8px;
     background-color: #F27507;
     border-bottom-style: solid #261C1A;
     color: white;
@@ -107,7 +107,7 @@ tr td  img .btnExcluir
 .btnCCompra
 {
     width: 300px;
-    margin-top: 5px;
+    margin-top: -40px;
     margin-left: -70px;
     margin-bottom: 10px;
     background-color: #00A846;
@@ -122,10 +122,11 @@ tr td  img .btnExcluir
 .crdTotla
 {
     padding: 0;
-    width: 310px;
+    width: 300px;
     height: auto;
-    margin-left: -65px;
+    margin-left: -70px;
     align-items: left;
+    border-radius: 3px;
 }
 
 .crdTotla ul h6
@@ -139,82 +140,30 @@ tr td  img .btnExcluir
 .cartoesCart
 {   
     width: 100%;
-    height: 600px;
+    height: auto;
     margin-top:10px;
-    margin-left: -50px; 
+    margin-left: -105px; 
 }
 
-.cartoesCart ul li
+.cartoesCart ul 
 {
+    
     list-style: none;
 }
 
-.cartoesCart ul h5
-{   
+.liCarrinho
+{
     width: 300px;
-    font-size: 16px;
-    margin-top:10px;
-    color: #261C1A;
+    height: auto;
+    margin-left: -10px;
+    display: flex;
 }
-
-.cartoesCart ul h6
-{   
-    width: 300px;
-    font-size: 16px;
-    margin-top:10px;
-}
-
-.applePay2::before
+.imgCaminhao
 {
-    position: absolute;
-    content: url(../../../images/icons/apple-pay.png);
-    margin-left: -50px;
-    margin-top: -17px;
-    width: 50px;
-    height:auto; 
+    margin-left: 0px;
 }
-
-.amazonPay2::before
+.liCarrinho h6
 {
-    position: absolute;
-    content: url(../../../images/icons/amazon-pay.png);
-    margin-left: 30px;
-    margin-top: -15px; 
-}
-
-.googlePay2::before
-{
-    position: absolute;
-    content: url(../../../images/icons/google-pay.png);
-    margin-left: 115px;
-    margin-top: -15px; 
-}
-.maestroPay2::before
-{
-    position: absolute;
-    content: url(../../../images/icons/maestro.png);
-    margin-left: -50px;
-    margin-top: 35px; 
-}
-.paypalPay2::before
-{
-    position: absolute;
-    content: url(../../../images/icons/paypal.png);
-    margin-left: 50px;
-    margin-top: 55px; 
-}
-.visaPay2::before
-{
-    position: absolute;
-    content: url(../../../images/icons/visa.png);
-    margin-left: 115px;
-    margin-top: 40px; 
-}
-.boletoPay2::before
-{
-    position: absolute;
-    content: url(../../../images/icons/codigo-de-barras.png);
-    margin-left: -35px;
-    margin-top: 110px; 
-
+    margin-top: 25px;
+    margin-left: 10px;
 }
