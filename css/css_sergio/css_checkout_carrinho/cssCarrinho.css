@@ -6,6 +6,7 @@
     width: 100%;
     height: 65px;
     border-bottom: 1px solid #261C1A;
+    box-shadow: 0px 4px rgba(0, 0, 0, 0.25);
     font-family: 'Roboto', sans-serif;
     font-style: large bold;
     padding: 0;
@@ -27,6 +28,7 @@
     font-size: 25px;
     text-decoration-style: both dashed;
     font-weight: 900;
+    color: #261C1A;
 }
 /* fim Titulo e Linha */
 
@@ -34,19 +36,36 @@
 {
     width: 100%;
     height: auto;
+    
+}
+.imgCard:hover
+{
+    transform: scale(1.10);
+    transition: 0.2s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border:1px solid #261C1A;
+    cursor: pointer;
+    box-shadow: 0 5px 6px #AF9787;
+}
+.card
+{
+    border: 1px solid rgb(177, 174, 174);
+    width: 790px;
 }
 .card-body
 {
-    width: 450px;
+    width: 100%;
     height: 100%;
     padding: 0;
     margin: 0;
-    background-color:#f7f7f7;
+    background-color:white;
+    color: #261C1A;
+    border-right: 1px solid rgb(177, 174, 174);
 }
 .tabelaCard
 {
     width: 100%;
-    height: auto;  
+    height: auto;
+    color: #261C1A;  
 }
 .table
 {
@@ -89,6 +108,7 @@ tr td  img .btnExcluir
     width: 100%;
     height: 530px;
     align-items: center;
+    color: #261C1A;
 }
 
 .btnComprar 
@@ -136,7 +156,7 @@ tr td  img .btnExcluir
     margin-top: 20px;
     align-items: left;
     border-radius: 3px;
-    
+    color: #261C1A;
 }
 
 
@@ -146,8 +166,7 @@ tr td  img .btnExcluir
     margin-left: 100px;
     margin-bottom:-5px;
     font-size: 18px;
-
-    
+    color: #261C1A; 
 }
 
 .cartoesCart
