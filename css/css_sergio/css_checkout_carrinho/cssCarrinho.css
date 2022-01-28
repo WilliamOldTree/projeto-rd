@@ -12,21 +12,21 @@
     margin-top: -20px;
     margin-bottom: 10px;
 }
-
-.carrinho::before
+.imgTitulo
 {
-    position: absolute;
-    content: url(../../../images/icons/carrinhoLogo1.png);
-    margin-left: 50px;
-    margin-top: -15px;
+    width: 4%;
+    padding: 0;
+    margin-bottom: -40px;
+    margin-left: 60px;
 }
 
 .txtCart
 {
-    margin-top: 10px;
+    margin-top: -5px;
     margin-left: 120px;
     font-size: 25px;
     text-decoration-style: both dashed;
+    font-weight: 900;
 }
 /* fim Titulo e Linha */
 
@@ -37,7 +37,7 @@
 }
 .card-body
 {
-    width: 100%;
+    width: 450px;
     height: 100%;
     padding: 0;
     margin: 0;
@@ -46,6 +46,7 @@
 .tabelaCard
 {
     width: 100%;
+    height: auto;  
 }
 .table
 {
@@ -60,14 +61,14 @@
 
     width: 100%;
 }
-table, th, td {
+.tabelaCard, th, td {
     border:none;
     
     width: 100%;
     padding: 0px;
     margin: 0px;
 }
-table, tr {
+.tabelaCard, tr {
     border:none;
     width: 100%;
 }
@@ -79,7 +80,7 @@ table, tr {
 
 tr td  img .btnExcluir
 {
-   margin-right: -10px;
+   margin-left: 10px;
 }
 .dadosCompra
 {
