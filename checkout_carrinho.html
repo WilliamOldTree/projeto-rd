@@ -145,18 +145,22 @@
             <div class="container titulo">
                 <div class="row">
                     <div class="col-12 carrinho">
+                        <img class="imgTitulo" src="./images/icons/carrinhoLogo.png">
                         <h3 class="txtCart">Carrinho</h3>
                     </div>
                 </div>
             </div>
+            <div class="linha">
+                <hr>
+            </div>
             <br>
             <div class="container itemCart">
                 <div class="row">
-                    <div class="col-8">
-                        <div class="card mb-3" style="max-width: 650px;">
+                    <div class="col-8 containerCard">
+                        <div class="card cardCarrrinho mb-3" style="max-width: 650px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="./images/imagens/buda-meditando.png" class="img-fluid rounded-start"
+                                    <img  src="./images/imagens/buda-meditando.png" class="img-fluid rounded-start imgCard"
                                         alt="...">
                                 </div>
                                 <div class="col-md-8">
@@ -169,15 +173,15 @@
                                                         <thead>
                                                             <tr>
                                                                 <th>Produto</th>
-                                                                <th scope="row">R$Valor</th>
+                                                                <th scope="row">Valor</th>
                                                                 <th>Quantidade</th>
                                                                 <th>Excluir</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td>Imagem Buda</td>
-                                                                <td scope="row">R$30,00</td>
+                                                                <td><nobr>Imagem Buda</nobr></td>
+                                                                <td scope="row">30,00</td>
                                                                 <td class="qtdTb">1</td>
                                                                 <td ><img class="btnExcluir" src="./images/icons/lixeira-de-reciclagem.png"></td>
                                                             </tr>
@@ -191,15 +195,15 @@
                             </div>
                         </div>
                         <!--  -->
-                        <div class="card mb-3" style="max-width: 650px;">
+                        <div class="card cardCarrrinho mb-3" style="max-width: 650px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="./images/imagens/buda-meditando.png" class="img-fluid rounded-start"
+                                    <img src="./images/imagens/buda-meditando.png" class="img-fluid rounded-start imgCard"
                                         alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <table class="table">
+                                        <table class="table tabelaCard">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">Produto</th>
@@ -210,8 +214,8 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>Imagem Buda</td>
-                                                    <td>R$30,00</td>
+                                                    <td><nobr>Imagem Buda</nobr></td>
+                                                    <td>30,00</td>
                                                     <td class="qtdTb">1</td>
                                                     <td><img class="btnExcluir" src="./images/icons/lixeira-de-reciclagem.png"></td>
                                                 </tr>
@@ -225,16 +229,16 @@
 
                     <div class="col-4 dadosCompra">
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <button class="btn btn-default btnComprar" type="button">FINALIZAR COMPRA</button>
-                            <div class="card crdTotla" style="width: 18rem;">
+                            <button class="btn btn-default btnComprar" type="button">COMPRAR</button>
+                            <div class="card crdTotal" >
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><b>Total:</b>
-                                        <h6>R$60,00</h6>
+                                    <li class="list-group-item"><nobr><b>Total: </b></nobr>
+                                        <b>R$ 60,00</b>
                                     </li>
                                 </ul>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><b>Em até:</b>
-                                        <h6>1x R$60,00</h6>
+                                    <li class="list-group-item"><b>Em até: </b>
+                                        <b>1x R$ 60,00</b>
                                     </li>
                                 </ul>
                             </div>
@@ -243,29 +247,12 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <ul>
-                                            <h5>Formas de Pagamento</h5>
-                                            <h6>Cartões de Crédito</h6>
-                                            <!-- <li><img src="./imagens/icons/apple-pay.png"></li>
-            <li><img src="./imagens/icons/amazon-pay.png"></li>
-            <li><img src="./imagens/icons/google-pay.png"></li>
-            <li><img src="./imagens/icons/maestro.png"></li>
-            <li><img src="./imagens/icons/paypal.png"></li>
-            <li><img src="./imagens/icons/visa.png"></li>
-            <li><img src="./imagens/icons/codigo-de-barras.png"></li>
-            <li><img src="./imagens/icons/pix.png"></li> -->
-                                            <li><span class="applePay2"></span></li>
-                                            <li><span class="amazonPay2"></span></li>
-                                            <li><span class="googlePay2"></span></li>
-                                            <li><span class="maestroPay2"></span></li>
-                                            <li><span class="paypalPay2"></span></li>
-                                            <li><span class="visaPay2"></span></li>
-                                            <li><span class="boletoPay2"></span></li>
-
+                                          <li class="liCarrinho"> <img class="imgCaminhao" src="./images/icons/caminhao-frete-home.png"><nobr>Chegará até o dia 3 de fevereiro</nobr></li>
+                                          <li><a href="#"><nobr>Pesquise outras formas de entrega</nobr></a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
 
@@ -379,6 +366,15 @@
         </div>
 
     </footer>
+    <!-- <div id="modal-cep" class="modal-container">
+        <div class="modal">
+            <h3>Digite seu CEP.</h3>
+            <form>
+                <input type="text" class="input" placeholder="Digite seu Cep">
+                <button type="button" class="btn btn-success">Calcular</button>
+            </form>
+        </div>
+    </div> -->
      <!-- BOOTSTRAP E CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
     integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"

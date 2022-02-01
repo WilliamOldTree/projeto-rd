@@ -34,13 +34,10 @@
     height: auto;
     margin-top: 50px;
     margin-bottom: 40px;
-    margin-left: 300px;
+    margin-left: 0px;
     padding: 10px;
     border: 1px solid #261C1A;
     border-radius: 3px; 
-    display: flex;
-    justify-content:center;
-    align-items:center; 
 }
 
 .iptEndereco
@@ -311,4 +308,6 @@
 
   } */
 
+
 }
+
