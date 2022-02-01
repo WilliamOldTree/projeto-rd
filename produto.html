@@ -134,189 +134,223 @@
 
    <!-- Início Página Produto -->
 
-   <div class="container">
-    <div class="container-img">
-      <img width="" class="imgproduto1"
-        src="./images/images-produto/terco_rustico_de_nossa_senhora_da_salette_1517_2_22b40d6ec8cc5ece8a7cd04832a0184d.jpg">
-        <img width="" class="imgproduto2"
-        src="./images/images-produto/terco_rustico_de_nossa_senhora_da_salette_1517_1_6a064438a5ab2b11e6206ca8079e6fee.jpg">
-      <img width="" class="imgproduto3"
-        src="./images/images-produto/terco_rustico_de_nossa_senhora_da_salette_1517_2_22b40d6ec8cc5ece8a7cd04832a0184d.jpg">
-      <img width="" class="imgproduto4"
-        src="./images/images-produto/terco_rustico_de_nossa_senhora_da_salette_1517_1_6a064438a5ab2b11e6206ca8079e6fee.jpg">
+    <!-- container produto -->
+    <div class="container">
 
-      <a class="verDetalhes" href="#detalhes">Mais Detalhes</a>
+        <nav id="caminho-links" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="caminho-links" href="./">Home</a></li>
+                <li class="breadcrumb-item"><a class="caminho-links" href="./">Católica</a></li>
+                <li class="breadcrumb-item"><a class="caminho-links" href="./">Terços</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Terço Rústico de Nossa Senhora da Salette</li>
+            </ol>
+        </nav>
+
+        <article class="row produtos-compra">
+            <figure class="col-md-6 mb-3 ">
+
+                <img width="90%" class="imgproduto1 img-fluid"
+                    src="./images/images-produto/terco_rustico_de_nossa_senhora_da_salette_1517_2_22b40d6ec8cc5ece8a7cd04832a0184d.jpg">
+
+                <img width="" class="imgproduto3"
+                    src="./images/images-produto/terco_rustico_de_nossa_senhora_da_salette_1517_2_22b40d6ec8cc5ece8a7cd04832a0184d.jpg">
+
+                <img width="" class="imgproduto4"
+                    src="./images/images-produto/terco_rustico_de_nossa_senhora_da_salette_1517_1_6a064438a5ab2b11e6206ca8079e6fee.jpg">
+
+            </figure>
+
+            <div class="col-md-6 mb-3">
+
+                <article class="produtos-conteudo">
+
+                    <h1 class="title-produto">Terço Rústico de Nossa Senhora da Salette</h1>
+                    <h6 class="cod-produto">Código: 04.06182</h6>
+                    <hr class="line-1">
+
+                    <article class="d-flex align-items-center">
+                        <input type="number" class="form-control" id="quantidade">
+                        <p class="qtd">Quantidade</p>
+                    </article>
+                </article>
+
+                <article class="produtos-preco">
+
+                    <article class="d-flex align-items-center">
+                        <strong class="preco">R$ 79,90 </strong>
+                        <span class="parcela">Em até 12x sem Juros</span>
+
+                    </article>
+
+                </article>
+
+                <article class="d-flex flex-column">
+                    <a class="verDetalhes flex-column" href="#detalhes">Mais Detalhes</a>
+
+                    <button class="btn compra" type="submit">
+                        COMPRAR
+                    </button>
+
+                    <button class="btn favoritar" type="submit">
+                        <img width="22" class="fav" src="./images/icons/fav.png">  Adicionar a lista de desejos
+                    </button>
+                </article>
+
+                <article id="cep-frete">
+                    <h6 class="infcep1">Calcule prazo de entrega</h6>
 
 
-      <h1 class="title-produto">Terço Rústico de Nossa Senhora da Salette</h1>
-      <h6 class="cod-produto">Código: 04.06182</h6>
+                    <p class="infcep2">Informe seu CEP</p>
 
-      <hr class="line-1">
+                    <article class="d-flex justify-content-center">
+                        <input type="text" class="form-control" id="entrada-cep">
+                        <button class="btn cep" type="button" id="button-addon2">CALCULAR</button>
+                    </article>
 
-      <input type="number" class="form-control" id="quantidade">
-      <p class="qtd">Quantidade</p>
-
-      <p class="preco">R$ 11,90</p>
-      <p class="parcela">ou 1x de R$ 11,90 Sem juros</p>
-
-      <button class="btn compra" type="submit">COMPRAR</button>
-
-      <button class="btn favoritar" type="submit"><img width="22" class="fav" src="./images/icons/fav.png"> Adicionar a
-        lista de desejos</button>
+                    <a class="infcep3" href="https://buscacepinter.correios.com.br/app/endereco/index.php?t">Não sabe o
+                        CEP?</a>
+                </article>
 
 
+                <hr class="line-2">
 
-      <div id="cep-frete">
-        <p class="infcep1">Calcule prazo de entrega</p>
+                <div class="col-6" id="pagamentos-produto">
+                    <h5 class="pagamentos-title">Formas de pagamento</h5>
+                    <p class="pagamentos-subtitle">Cartões de crédito</p>
+                    <div class="row" id="pay1">
+                        <div class="col-4" id="amazon-pay-cep">
+                            <img src="./images/icons/amazon-pay.png" alt="Amazon" width="50px" height="50px">
+                        </div>
+                        <div class="col-4" id="google-pay-cep">
+                            <img src="./images/icons/google-pay.png" alt="Google Pay" width="40px" height="40px">
+                        </div>
+                        <div class="col-4" id="aplle-pay-cep">
+                            <img src="./images/icons/apple-pay.png" alt="Apple Pay" width="40px" height="40px">
+                        </div>
+                    </div>
+                    <div class="row" id="pay2">
+                        <div class="col-4" id="master-cep">
+                            <img src="./images/icons/master.png" alt="Master Card" width="30px" height="30px">
+                        </div>
+                        <div class="col-4" id="visa-cep">
+                            <img src="./images/icons/visa.png" alt="visa" width="30px" height="30px">
+                        </div>
+                        <div class="col-4" id="maestro-cep">
+                            <img src="./images/icons/maestro.png" alt="Maestro" width="30px" height="30px">
+                        </div>
+                    </div>
+                    <div class="row" id="pay3">
+                        <div class="col-4" id="paypal-cep">
+                            <img src="./images/icons/paypal.png" alt="PayPal" width="30px" height="30px">
+                        </div>
+                        <div class="col-4" id="pix-cep">
+                            <img src="./images/icons/pix.png" alt="Pix" width="30px" height="30px">
+                        </div>
+                        <div class="col-4" id="boleto-cep">
+                            <img src="./images/icons/codigo-de-barras.png" alt="Boleto" width="30px" height="30px">
+                        </div>
+                    </div>
 
-        <img class="img-cart" src="./images/icons/caminhao-de-entrega.png">
-        <p class="infcep2">Informe seu CEP</p>
+                </div>
+
+            </div>
+        </article>
+
+        <h3 id="title-pag-produto">Descrição Geral</h3>
+        <hr id="line-pag-produto">
+
+        <p class="descricao-produto">
+            Este terço traz uma edição especial em homenagem ao Jubileu de 175 anos das aparições de
+            Nossa Senhora da Salette comemorado esse ano de 2021.
+            Feito em madeira natural de reflorestamento é amarrado manualmente com cordão escuro.
+            A medalha em madeira natural rústica traz de um lado a imagem de Nossa Senhora da Salette e
+            do outro o logotipo do Jubileu de 175 anos das aparições de Nossa Senhora da Salette.
+            Embalado individualmente com folheto com oração do Terço e Oração de Nossa Senhora da
+            Salette.
+            Leve consigo a presença de Nossa Senhora da Salette, por meio desse belíssimo terço.
+            Produto feito em madeira natural de reflorestamento, 100% nacional.
+        </p>
+
+        <p class="descricao-produto">
+            <li type="none">Tamanho da bolinha: 8 mm;</li>
+            <li type="none">Tamanho do Crucifixo: 5 cm;</li>
+            <li type="none">Tamanho do Terço inteiro: 40 cm;</li>
+            <li type="none">Material: bolas e medalha em madeira e crucifixo em metal "ouro velho";</li>
+            <li type="none">Acabamento: verniz fosco;</li>
+            <li type="none">Cor: madeira natural. </li>
+        </p>
 
 
-        <input type="text" class="form-control" id="entrada-cep">
-        <button class="btn cep" type="button" id="button-addon2">CALCULAR</button>
-        <a class="infcep3" href="https://buscacepinter.correios.com.br/app/endereco/index.php?t">Não sabe o CEP?</a>
-      </div>
-      <hr class="line-2">
+        <h3 id="title-pag-produto">Produtos Relacionados</h3>
+        <hr id="line-pag-produto">
 
-
-      <div id="formas-pagamentos">
-        <h5 class="pagamentos-title">Formas de pagamento</h5>
-        <p class="pagamentos-subtitle">Cartões de crédito</p>
-
-        <div class="row" id="pay1">
-          <div class="col-4" id="amazon-pay-produto">
-            <img src="./images/icons/amazon-pay.png" alt="Amazon" width="50px">
-          </div>
-          <div class="col-4" id="google-pay-produto">
-            <img src="./images/icons/google-pay.png" alt="Google Pay" width="50px">
-          </div>
-          <div class="col-4" id="aplle-pay-produto">
-            <img src="./images/icons/apple-pay.png" alt="Apple Pay" width="50px">
-          </div>
+        <div class="col-12 imagensCaixa1">
+            <div class="row g-1">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="img">
+                            <img src="./images/images-home/crucifixo_de_parede_c_cristo_em_resina_33_cm_123_1_20200805181826.webp"
+                                alt="">
+                        </div>
+                        <div class="content">
+                            <div class="title-card">Crucifixo de parede c/ Cristo</div>
+                            <div class="sub-title">R$ 30,00</div>
+                            <div class="sub-title2">ou 3x de R$ 26,33 Sem juros</div>
+                            <div class="btn">
+                                <button>ADICIONAR AO CARRINHO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="img">
+                            <img src="./images/images-home/talit.jpg" alt="">
+                        </div>
+                        <div class="content">
+                            <div class="title-card">Talit de lã c/ listras pretas</div>
+                            <div class="sub-title">R$ 129,30</div>
+                            <div class="sub-title2">até 3x de R$ 43,10 Sem juros</div>
+                            <div class="btn">
+                                <button>ADICIONAR AO CARRINHO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="img">
+                            <img src="./images/images-home/Iemanja-Branco.jpg" alt="">
+                        </div>
+                        <div class="content">
+                            <div class="title-card">Jogo de Iemanjá Branco</div>
+                            <div class="sub-title">R$ 220,00</div>
+                            <div class="sub-title2">ou 3x de R$ 73,33 Sem juros</div>
+                            <div class="btn">
+                                <button>ADICIONAR AO CARRINHO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card ">
+                        <div class="img">
+                            <img src="./images/images-home/Adja-chapa-aço-cabo-madeira-1.jpg" alt="">
+                        </div>
+                        <div class="content">
+                            <div class="title-card">Adja com 3 Bocas Aço Cabo de Madeira</div>
+                            <div class="sub-title">R$ 49,90</div>
+                            <div class="sub-title2">ou 3x de R$ 16,63 Sem juros</div>
+                            <div class="btn">
+                                <button>ADICIONAR AO CARRINHO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row" id="pay2">
-          <div class="col-4" id="master-produto">
-            <img src="./images/icons/master.png" alt="Master Card" width="40px">
-          </div>
-          <div class="col-4" id="visa-produto">
-            <img src="./images/icons/visa.png" alt="visa" width="50px">
-          </div>
-          <div class="col-4" id="paypal-produto">
-            <img src="./images/icons/paypal.png" alt="PayPal" width="30px">
-          </div>
-        </div>
-        <div class="row" id="pay3">
-          <div class="col-4" id="pix-produto">
-            <img src="./images/icons/pix.png" alt="Pix" width="30px">
-          </div>
-          <div class="col-4" id="boleto-produto">
-            <img src="./images/icons/codigo-de-barras.png" alt="Boleto" width="30px">
-          </div>
-        </div>
-      </div>
+      
     </div>
-
-    <!-- Descrição do Produto -->
-    <div id="caixa-title-desc">
-      <h3 id="detalhes" class="title-descricao">Descrição</h3>
-    </div>
-    <div id="caixa-descricao">
-      <p class="descricao-produto">
-        Este terço traz uma edição especial em homenagem ao Jubileu de 175 anos das aparições de Nossa Senhora da Salette comemorado esse ano de 2021.
-        Feito em madeira natural de reflorestamento é amarrado manualmente com cordão escuro.
-        A medalha em madeira natural rústica traz de um lado a imagem de Nossa Senhora da Salette e do outro o logotipo do Jubileu de 175 anos das aparições de Nossa Senhora da Salette.
-        Embalado individualmente com folheto com oração do Terço e Oração de Nossa Senhora da Salette.
-        Leve consigo a presença de Nossa Senhora da Salette, por meio desse belíssimo terço.
-        Produto feito em madeira natural de reflorestamento, 100% nacional.      
-      </p>
-              
-      <p>
-        <ul class="descricao-produto2">
-          <li type="none">Tamanho da bolinha: 8 mm;</li>
-          <li type="none">Tamanho do Crucifixo: 5 cm;</li>
-          <li type="none">Tamanho do Terço inteiro: 40 cm;</li>
-          <li type="none">Material: bolas e medalha em madeira e crucifixo em metal "ouro velho";</li>
-          <li type="none">Acabamento: verniz fosco;</li>
-          <li type="none">Cor: madeira natural. </li>
-        </ul>
-    </p> 
-    </div>
-
-    <!-- Cards Produtos relacionados -->
-
-    <h3 class="title-relacionados">Produtos Relacionados</h3>
-
-    <div class="col-12 imagensCaixa">
-      <div class="row g-1">
-        <div class="col-12 col-md-6 col-lg-3">
-              <div class="card">
-                  <div class="img">
-                      <img src="./images/images-produto/04.06209.1.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="title-card">Produto Descrição</div>
-                    <div class="sub-title">R$ 40,00</div>
-                    <div class="sub-title2">ou 2x de R$ 20,00 Sem juros</div>
-                      <div class="btn">
-                          <button>COMPRAR</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-3">
-              <div class="card">
-                  <div class="img">
-                      <img src="./images/images-produto/04.06333.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="title-card">Produto Descrição</div>
-                    <div class="sub-title">R$ 40,00</div>
-                    <div class="sub-title2">ou 2x de R$ 20,00 Sem juros</div>
-                      <div class="btn">
-                          <button>COMPRAR</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-3">
-              <div class="card">
-                  <div class="img">
-                      <img src="./images/images-produto/04.06447.1.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="title-card">Produto Descrição</div>
-                    <div class="sub-title">R$ 40,00</div>
-                    <div class="sub-title2">ou 2x de R$ 20,00 Sem juros</div>
-                      <div class="btn">
-                          <button>COMPRAR</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-3">
-              <div class="card ">
-                  <div class="img">
-                      <img src="./images/images-produto/04.06496-frente.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="title-card">Produto Descrição</div>
-                    <div class="sub-title">R$ 40,00</div>
-                    <div class="sub-title2">ou 2x de R$ 20,00 Sem juros</div>
-                      <div class="btn">
-                          <button>COMPRAR</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-    </div>
-
-
-  
-
-  </div>
-</div>
 
 
   <!-- Final Página Produto -->

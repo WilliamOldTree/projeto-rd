@@ -7,15 +7,11 @@
     font-weight: bold;
 }
 
-hr{
+.line-1{
     width: 100%;
-height: 0px;
-background-color: #261C1A;
-border: 1px solid #261C1A;
+border: 1px solid;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
-
 
 /* STYLE CONTANER CADASTRO E LOGIN*/
 
@@ -196,8 +192,6 @@ button.btn.formcadastro:hover{
 
     .login{
         margin-top: 20px;
-        margin-left: 20px;
-        margin-right: 27px;
         width: 300px;
         height: 311px;
         background: #FFFFFF;
