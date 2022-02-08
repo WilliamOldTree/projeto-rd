@@ -23,3 +23,4 @@
 ### *_Tecnonologias desenvolvidas_*
 - [:heavy_check_mark:] Prototipagem Figman
 - [:heavy_check_mark:] Front-end - HTML, Bootstrap, CSS e Java Script
+- [:heavy_check_mark:] Banco de Dados MySql, Modelagem Visual Paradigma e Dbevear
