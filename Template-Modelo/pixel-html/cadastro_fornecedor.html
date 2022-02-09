@@ -1,14 +1,9 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
         content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, severny admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, pixel  design, pixel  dashboard bootstrap 4 dashboard template">
@@ -24,14 +19,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Menu CSS -->
     <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
-    <!-- Animation CSS -->
+    <!-- animation CSS -->
     <link href="css/animate.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
-    <!-- color CSS you can use different color css from css/colors folder -->
-    <!-- We have chosen the skin-blue (blue.css) for this starter
-          page. However, you can choose any other skin from folder css / colors .
--->
+    <!-- color CSS -->
     <link href="css/colors/blue-dark.css" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -84,8 +76,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                     </li>
                     <li>
-                        <a href="perfil.html" class="waves-effect"><i class="fa fa-user fa-fw"
-                                aria-hidden="true"></i><span class="hide-menu">Perfil</span></a>
+                        <a href="cadastro_departamento.html" class="waves-effect"><i class="fa fa-list-ol fa-fw"
+                                aria-hidden="true"></i><span class="hide-menu">Departamentos</span></a>
+                    </li>
+                    <li>
+                        <a href="cadastro_categoria.html" class="waves-effect"><i class="fa fa-list-ol fa-fw"
+                                aria-hidden="true"></i><span class="hide-menu">Categorias</span></a>
+                    </li>
+                    <li>
+                        <a href="cadastro_fornecedor.html" class="waves-effect"><i class="fa fa-list-ol fa-fw"
+                                aria-hidden="true"></i><span class="hide-menu">Fornecedores</span></a>
+                    </li>
+                    <li>
+                        <a href="cadastro_produto.html" class="waves-effect"><i class="fa fa-list-ol fa-fw"
+                                aria-hidden="true"></i><span class="hide-menu">Produtos</span></a>
                     </li>
                     <li>
                         <a href="cliente.html" class="waves-effect"><i class="fa fa-table fa-fw"
@@ -95,8 +99,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="pedido.html" class="waves-effect"><i class="fa fa-table fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Pedidos</span></a>
                     </li>
-                    <li>
-                      <!-- <a href="fontawesome.html" class="waves-effect"><i class="fa fa-font fa-fw"
+                    <!-- <li>
+                      <a href="fontawesome.html" class="waves-effect"><i class="fa fa-font fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Icons</span></a>
                     </li>--> 
                     <!--<li>
@@ -107,12 +111,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="404.html" class="waves-effect"><i class="fa fa-info-circle fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Error 404</span></a>
                     </li>
-                </ul>
-                -->
+                </ul> 
                     <li>
                         <a href="blank.html" class="waves-effect"><i class="fa fa-columns fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Blank Page</span></a>
-                    </li>
+                    </li>-->
             </div>
         </div>
         <!-- Left navbar-header end -->
@@ -121,30 +124,132 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Blank Page </h4>
+                        <h4 class="page-title">Cadastro de Fornecedores</h4>
                     </div>
-                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a
+                    <!-- <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a
                             href="http://wrappixel.com/templates/pixeladmin/" target="_blank"
                             class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Upgrade
-                            to Pro</a>
+                            to Pro</a> -->
                         <ol class="breadcrumb">
-                            <li><a href="#">Dashboard</a></li>
-                            <li class="active">Blank Page</li>
+                            <li><a href="index.html">Menu</a></li>
+                            <li class="active">Fornecedores</li>
                         </ol>
                     </div>
-                    <!-- /.col-lg-12 -->
                 </div>
+                <!-- /.row -->
+                <!-- .row -->
                 <div class="row">
-                    <div class="col-md-12">
+                    <!-- <div class="col-md-4 col-xs-12">
                         <div class="white-box">
-                            <h3 class="box-title">Blank page</h3>
+                            <div class="user-bg"> <img width="100%" alt="user" src="../plugins/images/large/img1.jpg">
+                                <div class="overlay-box">
+                                    <div class="user-content">
+                                        <a href="javascript:void(0)"><img src="../plugins/images/users/genu.jpg"
+                                                class="thumb-lg img-circle" alt="img"></a>
+                                        <h4 class="text-white">User Name</h4>
+                                        <h5 class="text-white">info@myadmin.com</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-btm-box">
+                                <div class="col-md-4 col-sm-4 text-center">
+                                    <p class="text-purple"><i class="ti-facebook"></i></p>
+                                    <h1>258</h1>
+                                </div>
+                                <div class="col-md-4 col-sm-4 text-center">
+                                    <p class="text-blue"><i class="ti-twitter"></i></p>
+                                    <h1>125</h1>
+                                </div>
+                                <div class="col-md-4 col-sm-4 text-center">
+                                    <p class="text-danger"><i class="ti-dribbble"></i></p>
+                                    <h1>556</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-md-4 col-xs-12">
+                        <div class="white-box">
+                            <form class="form-horizontal form-material">
+                                <div class="form-group">
+                                    <label class="col-md-12">Razão Social</label>
+                                    <div class="col-md-12">
+                                        <input type="text" placeholder="Digite a Razão Social"
+                                            class="form-control form-control-line"> </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">CNPJ</label>
+                                    <div class="col-md-12">
+                                        <input type="text"  class="form-control form-control-line" placeholder="Digite o CNPJ">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="example-email" class="col-md-12">Email</label>
+                                    <div class="col-md-12">
+                                        <input type="email" placeholder="usuario@admin.com"
+                                            class="form-control form-control-line" name="example-email"
+                                            id="example-email"> </div>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label class="col-md-12">Phone No</label>
+                                    <div class="col-md-12">
+                                        <input type="text" placeholder="123 456 7890"
+                                            class="form-control form-control-line"> </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">Message</label>
+                                    <div class="col-md-12">
+                                        <textarea rows="5" class="form-control form-control-line"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-12">Select Country</label>
+                                    <div class="col-sm-12">
+                                        <select class="form-control form-control-line">
+                                            <option>London</option>
+                                            <option>India</option>
+                                            <option>Usa</option>
+                                            <option>Canada</option>
+                                            <option>Thailand</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-success">Update Profile</button>
+                                    </div>
+                                </div> -->
+                            </form>
                         </div>
                     </div>
+
+                    <div class="col-md-8 col-xs-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Razão Social</th>
+                                    <th>CNPJ</th>
+                                    <th>Email</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <!-- <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Deshmukh</td>
+                                    <td>Prohaska</td>
+                                    <td>@Genelia</td>
+                                    <td>admin</td>
+                                </tr>
+                            </tbody> -->
+                        </table>
+                    </div>
                 </div>
+                <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2020 &copy; Pixel Admin brought to you by <a
-                    href="https://www.wrappixel.com/">wrappixel.com</a> </footer>
+            <footer class="footer text-center"> 2022 &copy; Raia Drogasil QueroSerDev <a
+                    href="#">Politeísmo Shop</a> </footer>
         </div>
         <!-- /#page-wrapper -->
     </div>
