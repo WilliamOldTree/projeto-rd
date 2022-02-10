@@ -127,6 +127,7 @@ public class CategoriaController extends HttpServlet {
 			
 			try {
 				this.catDao.atualizarCategoria(cat);
+				System.out.println();
 			
 			} catch (SQLException e) {
 				e.printStackTrace();
