@@ -9,6 +9,10 @@ public class Categoria {
 		this.id = id;
 		this.nome = nome;
 	}
+	public Categoria(String nameBack) {
+		super();
+		this.nome = nameBack;
+	}
 	public int getId() {
 		return id;
 	}
