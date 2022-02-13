@@ -1,7 +1,7 @@
 package br.com.rd.model;
 
 public class Departamento {
-	private int id;
+	private Integer id;
 	private String nome;
 
 	public Departamento(String nome) {

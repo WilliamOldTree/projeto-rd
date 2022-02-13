@@ -1,18 +1,14 @@
 package br.com.rd.model;
 
 public class Categoria {
-	private int id;
+	private Integer id;
 	private String nome;
 	
-	public Categoria(int id, String nome) {
+	public Categoria(String nome) {
 		super();
-		this.id = id;
 		this.nome = nome;
 	}
-	public Categoria(String nameBack) {
-		super();
-		this.nome = nameBack;
-	}
+	
 	public int getId() {
 		return id;
 	}
