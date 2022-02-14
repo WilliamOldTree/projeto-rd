@@ -38,7 +38,7 @@ public class ListaClienteController extends HttpServlet {
 			e.printStackTrace();
 			
 		}
-		request.getRequestDispatcher("listCategoria.jsp").forward(request, response);
+		request.getRequestDispatcher("listCliente.jsp").forward(request, response);
 		
 	}
 
