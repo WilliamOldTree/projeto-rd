@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Cadastro de Categorias</title>
+<title>Lista de Produtos</title>
 <link rel="stylesheet" href="./css/default.css">
 <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
 </head>
@@ -15,12 +15,20 @@
 <style>
 
     .form{
-        width: 50%;
+        width: 40%;
         margin-top: 20px;
     }
     
     .btn.form{
          background-color: #AF9787;
+         margin-bottom:20px;
+         color: #FFFFFF;
+         font-weight: 500;
+    }
+    
+    .btn.formCrud{
+         background-color: #AF9787;
+         width:100px;
          color: #FFFFFF;
          font-weight: 500;
     }
@@ -29,15 +37,17 @@
         display: flex;
         justify-content: center;
     }
+    
+    .title{
+      margin-top: 20px;
+    }
     </style>
 <!-- STYLE DA PÁGINA  -->
 
-
 <body>
-
-  <header>
+   <header>
         <!-- header superior -->
-        
+
         <div class="container-fluid" id="header-up">
             <div class="container" id="cont1">
                 <div class="row row-up">
@@ -72,7 +82,7 @@
                                         </div>                                  
                                     </div>
                                 </div>
-
+                                
                                 <div class=menu-list1>
                                     <a class="nav-link active" id="navbar-brand" aria-current="page" href="formDepartamento.jsp">Cadastro Departamentos
                                         <hr width="160">
@@ -112,37 +122,55 @@
             </div>
         </div>
     </header>
-    <div class="container">
-        <div class="container-form">
-            
-            <div class="form">
-
-                <h1 class="title">Cadastro de Categorias</h1>
-
-	<form action="CategoriaController" method="post">
-		<c:choose>
-			<c:when test="${categoria == null }">
-				<label class="form-label">Categoria:</label><input style="width: 80%;" class="form-control" type="text" name="nome" required/>
-			     <br>
-				<button class="btn form"  type="submit" name="option" value="insert" role="button">Salvar</button>
-			</c:when>
-			<c:otherwise>
-				<input type="hidden" name="id" value="${categoria.id}"/>
-				<label class="form-label">Categoria:</label><input style="width: 80%;" class="form-control" type="text" name="nome" value="${categoria.nome}" required/>
-			    <br>
-				<button class="btn form" type="submit" name="option" value="update">Atualizar</button>
-			</c:otherwise>
-		</c:choose>
-	</form>
-            </div>
-        </div>
-    </div>
     
+<div class="container">
+    <h1 class="title">Lista de Produtos</h1>
+    <hr>
+	<form action="ProdutoController" method="post">
+		<button class="btn form" type="submit" name="option" value="insertForm">Cadastrar novo Produto</button>
+	</form>
+	
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Descrição</th>
+					<th>Volume</th>
+					<th>Peso</th>
+					<th>Situação</th>
+					<th>Preço</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="produto" items="${listaProduto}">
+					<tr>
+						<form action="ProdutoController" method="post">
+							<td>
+								<c:out value="${produto.id}"/>
+								<input type="hidden" name="id" value="${produto.id}"/>
+							</td>
+							<td><c:out value="${produto.descricao}"/></td>
+							<td><c:out value="${produto.volume}"/></td>
+							<td><c:out value="${produto.peso}"/></td>
+							<td><c:out value="${produto.situacao}"/></td>
+							<td><c:out value="${produto.preco}"/></td>
+
+							<td><button class="btn formCrud" type="submit" name="option" value="delete" style="margin-right: 10px;">Deletar</button>
+							    <button class="btn formCrud" type="submit" name="option" value="updateForm">Atualizar</button>
+							</td>
+						</form>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+</div>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
     integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
     crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"></script>
+	
 </body>
 </html>

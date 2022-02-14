@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Cadastro de Categorias</title>
+<title>Cadastro de Produto</title>
 <link rel="stylesheet" href="./css/default.css">
 <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
 </head>
@@ -117,18 +117,26 @@
             
             <div class="form">
 
-                <h1 class="title">Cadastro de Categorias</h1>
+                <h1 class="title">Cadastro de Produtos</h1>
 
-	<form action="CategoriaController" method="post">
+	<form action="ProdutoController" method="post">
 		<c:choose>
-			<c:when test="${categoria == null }">
-				<label class="form-label">Categoria:</label><input style="width: 80%;" class="form-control" type="text" name="nome" required/>
+			<c:when test="${produto == null }">
+				<label class="form-label">Descrição:</label><input style="width: 80%;" class="form-control" type="text" name="descricao" required/>
+				<label class="form-label">Volume:</label><input style="width: 80%;" class="form-control" type="text" name="volume" />
+				<label class="form-label">Peso:</label><input style="width: 80%;" class="form-control" type="text" name="peso" />
+				<label class="form-label">Situação:</label><input style="width: 80%;" class="form-control" type="text" name="situacao"/>
+				<label class="form-label">Preço:</label><input style="width: 80%;" class="form-control" type="text" name="preco"/>
 			     <br>
 				<button class="btn form"  type="submit" name="option" value="insert" role="button">Salvar</button>
 			</c:when>
 			<c:otherwise>
-				<input type="hidden" name="id" value="${categoria.id}"/>
-				<label class="form-label">Categoria:</label><input style="width: 80%;" class="form-control" type="text" name="nome" value="${categoria.nome}" required/>
+				<input type="hidden" name="id" value="${produto.id}"/>
+				<label class="form-label">Descrição:</label><input style="width: 80%;" class="form-control" type="text" name="descricao" value="${produto.descricao}" required/>
+				<label class="form-label">Volume:</label><input style="width: 80%;" class="form-control" type="text" name="volume" value="${produto.volume}" />
+				<label class="form-label">Peso:</label><input style="width: 80%;" class="form-control" type="text" name="peso" value="${produto.peso}" />
+				<label class="form-label">Situação:</label><input style="width: 80%;" class="form-control" type="text" name="situacao" value="${produto.situacao}" />
+				<label class="form-label">Preço:</label><input style="width: 80%;" class="form-control" type="text" name="preco" value="${produto.preco}" />
 			    <br>
 				<button class="btn form" type="submit" name="option" value="update">Atualizar</button>
 			</c:otherwise>

@@ -68,15 +68,15 @@ public class DepartamentoController extends HttpServlet {
 		request.getRequestDispatcher("formDepartamento.jsp").forward(request, response);
 	}
 	
-	private void insertDepartamento(HttpServletRequest tomate, HttpServletResponse alface) throws ServletException, IOException{
-		String nomeBack = tomate.getParameter("nome");
+	private void insertDepartamento(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		String nomeBack = request.getParameter("nome");
 		if (nomeBack != null) {
 			if (!nomeBack.equals("")){
 				Departamento cat1 = new Departamento(nomeBack);
 				this.dep.insert(cat1);
 			}
 		}
-		alface.sendRedirect("DepartamentoController");
+		response.sendRedirect("DepartamentoController");
 	}
 	
 	private void selectAllDepartamento(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
