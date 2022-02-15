@@ -146,10 +146,10 @@
 						<form action="ClienteController" method="post">
 							<td><c:out value="${cliente.nome}"/></td>
 							<td><c:out value="${cliente.email}"/></td>
-							<td><c:out value="${cliente.cpf}"/></td>
+							<td id="cpfcnpj"><c:out value="${cliente.cpf}"/></td>
 							<td><c:out value="${cliente.ddd}"/></td>
 							<td><c:out value="${cliente.contato}"/></td>
-							<td><button class="btn formCrud" type="submit" name="option" value="delete" style="margin-right: 10px;">Deletar</button>
+							<td><button class="btn formCrud" type="submit" name="option" value="delete" style="margin-right: 10px">Deletar</button>
 							    <button class="btn formCrud" type="submit" name="option" value="updateForm">Atualizar</button>
 							</td>
 						</form>
@@ -165,8 +165,33 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"></script>
+    <script type="text/javascript" src="WEBINF/lib/jquery.min.js"></script>
+     <script type="text/javascript" src="WEBINF/lib/jquery.mask.min.js"></script>
 	<script>
-		
-	<script>
+	$("#cpfcnpj").keydown(function(){
+	    try {
+	        $("#cpfcnpj").unmask();
+	    } catch (e) {}
+
+	    var tamanho = $("#cpfcnpj").val().length;
+
+	    if(tamanho < 11){
+	        $("#cpfcnpj").mask("999.999.999-99");
+	    } else {
+	        $("#cpfcnpj").mask("99.999.999/9999-99");
+	    }
+
+	    // ajustando foco
+	    var elem = this;
+	    setTimeout(function(){
+	        // mudo a posição do seletor
+	        elem.selectionStart = elem.selectionEnd = 10000;
+	    }, 0);
+	    // reaplico o valor para mudar o foco
+	    var currentValue = $(this).val();
+	    $(this).val('');
+	    $(this).val(currentValue);
+	});
+	</script>
 </body>
 </html>
