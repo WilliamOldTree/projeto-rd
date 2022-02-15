@@ -117,9 +117,9 @@
             
             <div class="form">
 
-                <h1 class="title">Cadastro de Produtoss</h1>
+                <h1 class="title">Cadastro de Produtos</h1>
 
-	<form action="CategoriaController" method="post">
+	<form action="ProdutoController" method="post">
 		<c:choose>
 			<c:when test="${produto == null }">
 				<label class="form-label">Produto:</label><input style="width: 80%;" class="form-control" type="text" name="nome" required/>
@@ -145,5 +145,4 @@
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"></script>
 </body>
-</html><%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+</html>

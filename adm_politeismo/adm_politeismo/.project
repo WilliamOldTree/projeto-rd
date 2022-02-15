@@ -34,6 +34,7 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+<<<<<<< HEAD:adm_politeismo/adm_politeismo/.project
 	<filteredResources>
 		<filter>
 			<id>1644772333038</id>
@@ -45,4 +46,6 @@
 			</matcher>
 		</filter>
 	</filteredResources>
+=======
+>>>>>>> 91616c18c7967b54bed6eaea67cee424c81290f0:adm_politeismo/.project
 </projectDescription>

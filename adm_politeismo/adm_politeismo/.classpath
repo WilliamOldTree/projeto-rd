@@ -26,6 +26,7 @@
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
+<<<<<<< HEAD:adm_politeismo/adm_politeismo/.classpath
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="target/generated-sources/annotations">
@@ -43,6 +44,9 @@
 			<attribute name="ignore_optional_problems" value="true"/>
 			<attribute name="m2e-apt" value="true"/>
 			<attribute name="test" value="true"/>
+=======
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+>>>>>>> 91616c18c7967b54bed6eaea67cee424c81290f0:adm_politeismo/.classpath
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
