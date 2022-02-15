@@ -1,31 +1,28 @@
 package br.com.rd.model;
 
 public class Produto {
-	private int id;
+	private Integer id;
 	private String descricao;
 	private Double volume;
 	private Double peso;
 	private String situacao;
 	private Double preco;
-	private int quantidade;
-	private Double desconto;
 	
-	public Produto(String descricao, Double volume, Double peso, String situacao, Double preco, int quantidade, Double desconto) {
+	
+	public Produto(String descricao, Double volume, Double peso, String situacao, Double preco) {
 		super();
 		this.descricao = descricao;
 		this.volume = volume;
 		this.peso = peso;
 		this.situacao = situacao;
 		this.preco = preco;
-		this.quantidade = quantidade;
-		this.desconto = desconto;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 	
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	
@@ -66,21 +63,5 @@ public class Produto {
 	}
 	public void setPreco(Double preco) {
 		this.preco = preco;
-	}
-	
-	public int getQuantidade() {
-		return quantidade;
-	}
-	
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}
-	
-	public Double getDesconto() {
-		return desconto;
-	}
-	
-	public void setDesconto(Double desconto) {
-		this.desconto = desconto;
 	}
 }

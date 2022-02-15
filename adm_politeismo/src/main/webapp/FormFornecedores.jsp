@@ -29,9 +29,10 @@
         display: flex;
         justify-content: center;
     }
+    
     </style>
+    
 <!-- STYLE DA PÁGINA  -->
-
 
 <body>
 
@@ -72,36 +73,35 @@
                                         </div>                                  
                                     </div>
                                 </div>
-
-                                <div class=menu-list1>
-                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="">Cadastro Departamentos
+                                    <div class=menu-list1>
+                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="formDepartamento.jsp">Cadastro Departamentos
                                         <hr width="160">
                                     </a>
                                     <a class="nav-link active" id="navbar-brand" aria-current="page" href="formCategoria.jsp">Cadastro Categorias
                                         <hr width="160">
                                     </a>
-                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="#" >Cadastro Produtos
+                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="formProduto.jsp">Cadastro Produtos
                                         <hr width="160">
                                     </a>
-                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Cadastro Fornecedores
+                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="FormFornecedores.jsp">Cadastro Fornecedores
                                         <hr width="160">
                                     </a>
-                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Lista Departamentos
+                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="listDepartamento.jsp">Lista Departamentos
                                         <hr width="160">
                                     </a>
                                     <a class="nav-link active" id="navbar-brand" aria-current="page" href="listCategoria.jsp">Lista Categorias
                                         <hr width="160">
                                     </a>
-                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Lista Produtos
+                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="listProduto.jsp">Lista Produtos
                                         <hr width="160">
                                     </a>
-                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Lista Fornecedores
+                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="listFornecedores.jsp">Lista Fornecedores
                                         <hr width="160">
                                     </a>
-                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Lista Clientes
+                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="">Lista Clientes
                                         <hr width="160">
                                     </a>
-                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Lista Pedidos
+                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="">Lista Pedidos
                                         <hr width="160">
                                     </a>
                                 </div>

@@ -69,15 +69,15 @@ public class CategoriaController extends HttpServlet {
 		request.getRequestDispatcher("formCategoria.jsp").forward(request, response);
 	}
 	
-	private void insertCategoria(HttpServletRequest tomate, HttpServletResponse alface) throws ServletException, IOException{
-		String nomeBack = tomate.getParameter("nome");
+	private void insertCategoria(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		String nomeBack = request.getParameter("nome");
 		if (nomeBack != null) {
 			if (!nomeBack.equals("")){
 				Categoria cat1 = new Categoria(nomeBack);
 				this.cat.insert(cat1);
 			}
 		}
-		alface.sendRedirect("CategoriaController");
+		response.sendRedirect("CategoriaController");
 	}
 	
 	private void selectAllCategorias(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{

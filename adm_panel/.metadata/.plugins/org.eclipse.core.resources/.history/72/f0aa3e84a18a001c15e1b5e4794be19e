@@ -1,0 +1,98 @@
+package br.com.rd.admPanel.controller;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import br.com.rd.admPanel.persistence.CategoriaDao;
+
+
+@WebServlet("/Categoria")
+public class CategoriaController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	private CategoriaDao catDao;
+	
+	
+  
+    public CategoriaController() throws ClassNotFoundException, SQLException {
+		super();
+		this.catDao = new CategoriaDao();
+    }
+
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		
+		
+	}//end doGet
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		String option = request.getParameter("option");
+		if (option == null  || option == "") {
+			// criar metodo de erro na tela			
+		}
+		
+		switch(option) {
+		
+		case ("inserirCat"):
+			iserirCat();
+		break;
+		
+		case ("deletarCat"):
+			deletarCat();
+		break;
+		
+		case ("consultarCat"):
+			consultarCat();
+		break;
+		
+		case ("listarCat"):
+			listarCat();
+		break;
+		
+		default:
+			mostrarCat();
+		
+		
+		}//end switch
+		
+	}//end doPost
+
+
+
+	private void mostrarCat() {
+		
+		
+	}
+
+
+	private void iserirCat() {
+		
+		
+	}
+	
+	private void deletarCat() {
+		
+		
+	}
+	
+	private void consultarCat() {
+		
+		
+	}
+	
+	private void listarCat() {
+		
+		
+	}
+	
+	
+}//end 
