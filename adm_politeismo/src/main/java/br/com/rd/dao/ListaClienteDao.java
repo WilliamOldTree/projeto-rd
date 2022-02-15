@@ -12,6 +12,8 @@ import br.com.rd.model.ListaCliente;
 public class ListaClienteDao {
 
 	public List <ListaCliente> listarClientes () throws SQLException{
+		
+		//private Connection ct;
 		Conexao c = Conexao.getInstance();
 		Connection con = c.getConnection();
 		
