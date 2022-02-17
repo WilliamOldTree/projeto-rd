@@ -1,5 +1,0 @@
-INDEX VERSION 1.4+C:\Users\Muryllo\Desktop\projeto-rd\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3684209671.index
-2095651046.index
-3191454131.index
-2107149903.index

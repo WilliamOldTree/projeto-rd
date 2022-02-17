@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.rd.dao.CategoriaDao;
 import br.com.rd.model.Categoria;
 
-
+/**
+ * Servlet implementation class CategoriaController
+ */
 @WebServlet("/CategoriaController")
 public class CategoriaController extends HttpServlet {
 	private static final long serialVersionUID = 1L;

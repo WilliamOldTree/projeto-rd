@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-C:\Users\Muryllo\Desktop\projeto-rd\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\622340649.index
-\adm_politeismo\src\main\java
