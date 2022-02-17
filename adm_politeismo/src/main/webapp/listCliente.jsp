@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Cadastro de Produto</title>
+<title>Lista de Clientes</title>
 <link rel="stylesheet" href="./css/default.css">
 <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
 </head>
@@ -15,12 +15,20 @@
 <style>
 
     .form{
-        width: 50%;
+        width: 40%;
         margin-top: 20px;
     }
     
     .btn.form{
          background-color: #AF9787;
+         margin-bottom:20px;
+         color: #FFFFFF;
+         font-weight: 500;
+    }
+    
+    .btn.formCrud{
+         background-color: #AF9787;
+         width:100px;
          color: #FFFFFF;
          font-weight: 500;
     }
@@ -29,15 +37,17 @@
         display: flex;
         justify-content: center;
     }
+    
+    .title{
+      margin-top: 20px;
+    }
     </style>
 <!-- STYLE DA P�GINA  -->
 
-
 <body>
-
-  <header>
+   <header>
         <!-- header superior -->
-        
+
         <div class="container-fluid" id="header-up">
             <div class="container" id="cont1">
                 <div class="row row-up">
@@ -72,36 +82,36 @@
                                         </div>                                  
                                     </div>
                                 </div>
-
+                                
                                 <div class=menu-list1>
-                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="formDepartamento.jsp">Cadastro Departamentos
+                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Cadastro Departamentos
                                         <hr width="160">
                                     </a>
                                     <a class="nav-link active" id="navbar-brand" aria-current="page" href="formCategoria.jsp">Cadastro Categorias
                                         <hr width="160">
                                     </a>
-                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="formProduto.jsp">Cadastro Produtos
+                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="#" href="">Cadastro Produtos
                                         <hr width="160">
                                     </a>
-                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="FormFornecedores.jsp">Cadastro Fornecedores
+                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Cadastro Fornecedores
                                         <hr width="160">
                                     </a>
-                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="listDepartamento.jsp">Lista Departamentos
+                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Lista Departamentos
                                         <hr width="160">
                                     </a>
                                     <a class="nav-link active" id="navbar-brand" aria-current="page" href="listCategoria.jsp">Lista Categorias
                                         <hr width="160">
                                     </a>
-                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="listProduto.jsp">Lista Produtos
+                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Lista Produtos
                                         <hr width="160">
                                     </a>
-                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="listFornecedores.jsp">Lista Fornecedores
+                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Lista Fornecedores
                                         <hr width="160">
                                     </a>
-                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="">Lista Clientes
+                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Lista Clientes
                                         <hr width="160">
                                     </a>
-                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="">Lista Pedidos
+                                    <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Lista Pedidos
                                         <hr width="160">
                                     </a>
                                 </div>
@@ -112,46 +122,47 @@
             </div>
         </div>
     </header>
-    <div class="container">
-        <div class="container-form">
-            
-            <div class="form">
-
-                <h1 class="title">Cadastro de Produtos</h1>
-
-        <form action="ProdutoController" method="post">
-            <c:choose>
-                <c:when test="${produto == null }">
-                    <label class="form-label">Descri��o:</label><input style="width: 80%;" class="form-control" type="text" name="descricao" required/>
-                    <label class="form-label">Volume:</label><input style="width: 80%;" class="form-control" type="text" name="volume" />
-                    <label class="form-label">Peso:</label><input style="width: 80%;" class="form-control" type="text" name="peso" />
-                    <label class="form-label">Situa��o:</label><input style="width: 80%;" class="form-control" type="text" name="situacao"/>
-                    <label class="form-label">Pre�o:</label><input style="width: 80%;" class="form-control" type="text" name="preco"/>
-                    <br>
-                    <button class="btn form"  type="submit" name="option" value="insert" role="button">Salvar</button>
-                </c:when>
-                <c:otherwise>
-                    <input type="hidden" name="id" value="${produto.id}"/>
-                    <label class="form-label">Descri��o:</label><input style="width: 80%;" class="form-control" type="text" name="descricao" value="${produto.descricao}" required/>
-                    <label class="form-label">Volume:</label><input style="width: 80%;" class="form-control" type="text" name="volume" value="${produto.volume}" />
-                    <label class="form-label">Peso:</label><input style="width: 80%;" class="form-control" type="text" name="peso" value="${produto.peso}" />
-                    <label class="form-label">Situa��o:</label><input style="width: 80%;" class="form-control" type="text" name="situacao" value="${produto.situacao}" />
-                    <label class="form-label">Pre�o:</label><input style="width: 80%;" class="form-control" type="text" name="preco" value="${produto.preco}" />
-                    <br>
-                    <button class="btn form" type="submit" name="option" value="update">Atualizar</button>
-                </c:otherwise>
-            </c:choose>
-        </form>
-            </div>
-        </div>
-    </div>
     
-    <script type="text/javascript">
+<div class="container">
+    <h1 class="title">Lista de Clientes</h1>
+    <hr>
+	<form action="ListaClienteController" method="post">
+		<button class="btn form" type="submit" name="option" value="insertForm">listar Clientes</button>
+	</form>
+	
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Email</th>
+					<th>CPF/CNPJ</th>
+					<th>DDD</th>
+					<th>Contato</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="cliente" items="${lista}">
+					<tr>
+						<form action="ClienteController" method="post">
+							<td ><c:out value="${cliente.nome}"/></td>
+							<td id="td-email"><c:out value="${cliente.email}"/></td>
+							<td id="td-cpf"><c:out value="${cliente.cpf}"/></td>
+							<td><c:out value="${cliente.ddd}"/></td>
+							<td id="td-phone"><c:out value="${cliente.contato}"/></td>
+							<td><button class="btn formCrud" type="submit" name="option" value="delete" style="margin-right: 10px">Deletar</button>
+							    <button class="btn formCrud" type="submit" name="option" value="updateForm">Atualizar</button>
+							</td>
+						</form>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+</div>
+	<script type="text/javascript">
         window.onload = function() {
-            $('#volume').mask('000.00', {reverse: true});
-            $('#peso').mask('000.00', {reverse: true});
-            $('.preco').mask('0.000,00', {reverse: true});
-
+            $('#td-cpf').mask('000.000.000-00');
+            $('#td-phone').mask('(00) 00000-0000');
+          
         }
 	
 	</script>
@@ -163,5 +174,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"></script>
+    <script type="text/javascript" src="WEBINF/lib/jquery.min.js"></script>
+     <script type="text/javascript" src="WEBINF/lib/jquery.mask.min.js"></script>
+	
 </body>
 </html>

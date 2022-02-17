@@ -146,7 +146,7 @@
 						<form action="ClienteController" method="post">
 							<td><c:out value="${cliente.nome}"/></td>
 							<td><c:out value="${cliente.email}"/></td>
-							<td id="cpfcnpj"><c:out value="${cliente.cpf}"/></td>
+							<td id="input-cpf"><c:out value="${cliente.cpf}"/></td>
 							<td><c:out value="${cliente.ddd}"/></td>
 							<td><c:out value="${cliente.contato}"/></td>
 							<td><button class="btn formCrud" type="submit" name="option" value="delete" style="margin-right: 10px">Deletar</button>
@@ -158,7 +158,17 @@
 			</tbody>
 		</table>
 </div>
-
+	<script type="text/javascript">
+        window.onload = function() {
+            $('#input-cpf').mask('000.000.000-00');
+            $('#input-cnpj').mask('00.000.000/0000-00', {reverse: true});
+            $('.input-phone').mask('(00) 00000-0000');
+          
+        }
+	
+	</script>
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.mask.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
     integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
     crossorigin="anonymous"></script>
@@ -167,31 +177,6 @@
     crossorigin="anonymous"></script>
     <script type="text/javascript" src="WEBINF/lib/jquery.min.js"></script>
      <script type="text/javascript" src="WEBINF/lib/jquery.mask.min.js"></script>
-	<script>
-	$("#cpfcnpj").keydown(function(){
-	    try {
-	        $("#cpfcnpj").unmask();
-	    } catch (e) {}
-
-	    var tamanho = $("#cpfcnpj").val().length;
-
-	    if(tamanho < 11){
-	        $("#cpfcnpj").mask("999.999.999-99");
-	    } else {
-	        $("#cpfcnpj").mask("99.999.999/9999-99");
-	    }
-
-	    // ajustando foco
-	    var elem = this;
-	    setTimeout(function(){
-	        // mudo a posição do seletor
-	        elem.selectionStart = elem.selectionEnd = 10000;
-	    }, 0);
-	    // reaplico o valor para mudar o foco
-	    var currentValue = $(this).val();
-	    $(this).val('');
-	    $(this).val(currentValue);
-	});
-	</script>
+	
 </body>
 </html>
