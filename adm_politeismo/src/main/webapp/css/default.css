@@ -1,6 +1,7 @@
 /* LINKS */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+
 /* ZERANDO CONFIGURACOES */
 
 html, header, body, footer {
@@ -9,14 +10,12 @@ html, header, body, footer {
     font-family: 'Roboto'; 
 }
 
-
-
 /* HEADER */
 
 /* Header superior */
 #header-up{
     height: 80px; 
-    background-color:#AF9787 ;
+    background-color: #516673;
     color: white;
     padding: 0px ;
     margin: 0px;
@@ -29,24 +28,6 @@ html, header, body, footer {
 .row-up{
     height: 80px;
     align-items: center;
-}
-
-#input-cep{
-    width: 120px;
-    height: 30px;
-    border-radius: 5px;
-    text-align: center;
-    background-color: #AF9787;
-    color: white;
-}
-
-#input-cep::placeholder{
-    color: #261C1A;
-    font-family: Roboto;
-    background-color: #AF9787;
-    border-color: #AF9787;
-    color: white;
-    font-size: 14px;
 }
 
 #cep{
@@ -83,13 +64,13 @@ html, header, body, footer {
 #btn-canvas{
     width: 65px;
     height: 50px;
-    background-color: #AF9787; 
+    background-color: #516673; 
     border: none;
 }
 
 .offcanvas-header{
-    background-color: #AF9787;
-    color: #261C1A;
+    background-color: #516673;
+    color: #FFFFFF;
 }
 
 .offcanvas-header h5{
@@ -116,45 +97,34 @@ html, header, body, footer {
     
 }
 
-.offcanvas-body{
-    background-color: #E5E5E5;
-}
-
-.login-canvas {
-    height: 80px;
-    display: flex;
-    
-}
-
-
 .login-canvas a {
     margin-top: 15px;
-    text-decoration: none;       
+    text-decoration: none;
+    height: 80px;
+    display: flex;
+    color:#516673;       
 }
 
 .login-canvas a h5 {
     margin-top: 5px;
     font-size: 18px;
-    color: #261C1A;
     font-weight: 900;       
 }
 
 .menu-list1 a{
     text-decoration: none;
-    color: #261C1A;
+    color:#516673;
 }
 
 .menu-list1 a:hover{
     cursor: pointer;
-    text-decoration:underline;
-    color: #261C1A;  
+    text-decoration: none;
+    color:#516673;
 }
 
 .perfil{
     display: flex;       
 }
-
-
 
 /* Resposividade footer e header */
 @media(min-width:992px) and (max-width:1200px){
@@ -177,8 +147,6 @@ html, header, body, footer {
         height: 25px;
         border-radius: 5px;
         text-align: center;
-        background-color: #AF9787;
-        color: white;
     }
 
     #canvas{
@@ -189,52 +157,12 @@ html, header, body, footer {
     #btn-canvas{
         width: 45px;
         height: 30px;
-        background-color: #AF9787; 
         border: none;
     }
 
     #input-cep::placeholder{
         font-size: 8px;
         
-    }
-
-    #empresa a{
-        text-decoration: none;
-        color: #261C1A;
-        font-size: 12px;
-    }
-    #empresa h5{
-        font-size: 16px;
-    }
-
-    #sociais a{
-        text-decoration: none;
-        color: #261C1A;
-        font-size: 12px;
-    }
-
-    #sociais h5{
-        font-size: 16px;
-    }
-
-    #sac a{
-        text-decoration: none;
-        color: #261C1A;
-        font-size: 12px;
-    }
-
-    #sac h5{
-        font-size: 16px;
-    }
-
-    #pagamentos h5{
-        font-size: 16px;
-    }
-
-    #pagamentos img{
-        width: 50%;
-        height: 40%;
-    } 
 }
 
   @media screen and (max-width: 767px){
@@ -260,48 +188,6 @@ html, header, body, footer {
         margin-top: 10px;
         margin-bottom: 10px;
     }
-
-    #header-down{
-        padding: 0px;
-        height: 130px;
-    }
-
-    #empresa a{
-        text-decoration: none;
-        color: #261C1A;
-        font-size: 12px;
-    }
-    #empresa h5{
-        font-size: 12px;
-    }
-
-    #sociais a{
-        text-decoration: none;
-        color: #261C1A;
-        font-size: 12px;
-    }
-
-    #sociais h5{
-        font-size: 12px;
-    }
-
-    #sac a{
-        text-decoration: none;
-        color: #261C1A;
-        font-size: 12px;
-    }
-
-    #sac h5{
-        font-size: 12px;
-    }
-
-    #pagamentos h5{
-        font-size: 12px;
-    }
-
-    #pagamentos img{
-        width: auto;
-        height: 20px;
         
     } 
     
