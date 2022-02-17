@@ -80,7 +80,7 @@ public class ProdutoController extends HttpServlet {
 		String precoBack = request.getParameter("preco");
 		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (situacaoBack != null) && (precoBack != null)){
 			if (!descricaoBack.equals("")){
-				Locale.setDefault(new Locale("US"));
+				Locale.setDefault(Locale.US);
 				Double volumeBack1 = Double.valueOf(volumeBack);
 				Double pesoBack1 = Double.valueOf(pesoBack);
 				Double precoBack1 = Double.valueOf(precoBack);
