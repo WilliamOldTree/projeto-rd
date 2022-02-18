@@ -125,9 +125,32 @@
 							<td><c:out value="${produto.peso}"/></td>
 							<td><c:out value="${produto.situacao}"/></td>
 							<td><c:out value="${produto.preco}"/></td>
-
-							<td><button class="btn formCrud1" type="submit" name="option" value="delete" style="margin-right: 10px;">Deletar</button>
+<td>
+	
+                                      <button class="btn formCrud1" type="button"  data-bs-toggle="modal" data-bs-target=".modal"  style="margin-right: 10px;">Deletar                   
+                                      </button>	 	
 							    <button class="btn formCrud2" type="submit" name="option" value="updateForm">Atualizar</button>
+					    
+<div class="modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">ATENÇÃO!!!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>tem certeza que deseja excluir esse cadastro?</p>
+      </div>
+      <div class="modal-footer">  
+        <button class="btn formCrud1" type="submit"  value="delete">Deletar</button>
+        <button type="button" class="btn btn-danger" data-dismiss=".modal">Cancelar</button>
+    
+      </div>
+    </div>
+  </div>
+</div>
 							</td>
 						</form>
 					</tr>
