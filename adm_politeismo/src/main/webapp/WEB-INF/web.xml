@@ -1,11 +1,3 @@
-<<<<<<< HEAD:adm_politeismo/adm_politeismo/src/main/webapp/WEB-INF/web.xml
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>adm_politeismo</display-name>
-  <welcome-file-list>
-  
-    <welcome-file>index.jsp</welcome-file>
-=======
 <?xml version="1.0" encoding="UTF-8"?> 
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
   <display-name>adm_politeismo</display-name>
@@ -15,7 +7,6 @@
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
->>>>>>> 91616c18c7967b54bed6eaea67cee424c81290f0:adm_politeismo/src/main/webapp/WEB-INF/web.xml
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
