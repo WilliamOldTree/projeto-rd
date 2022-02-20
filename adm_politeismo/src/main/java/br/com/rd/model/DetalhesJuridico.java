@@ -15,11 +15,9 @@ public class DetalhesJuridico {
 	private String cidade;
 	private String estado;
 	
-	public DetalhesJuridico(Integer id, String razao_social, String cnpj, String inscricao_estadual, String ddd,
-			String celular, String logradouro, String tipo_logradouro, String numeracao, String cep, String cidade,
-			String estado) {
+	public DetalhesJuridico(String razao_social, String cnpj, String inscricao_estadual, String ddd, String celular,
+			String logradouro, String tipo_logradouro, String numeracao, String cep, String cidade, String estado) {
 		super();
-		this.id = id;
 		this.razao_social = razao_social;
 		this.cnpj = cnpj;
 		this.inscricao_estadual = inscricao_estadual;
@@ -128,5 +126,8 @@ public class DetalhesJuridico {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-		
+	
+	
+	
+	
 }//end class
