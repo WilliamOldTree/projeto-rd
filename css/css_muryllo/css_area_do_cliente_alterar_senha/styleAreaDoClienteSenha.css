@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  border: none;
+  outline: none;
+  font-family: Roboto;
+  box-sizing: border-box;
+}
+
+
+.menu-list1 { 
+	width:313px;
+	height:534px;
+	position:absolute;
+}
+
+.menu-list2 { 
+	color:black;
+	width:147px;
+	height:27px;
+	position:absolute;
+	left:79px;
+	top:42px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:20px;font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+	
+}
+
+.menu-list3 { 
+	color:black;
+	width:147px;
+	height:27px;
+	position:absolute;
+	left:79px;
+	top:100px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.menu-list4 { 
+	color:black;
+	width:131px;
+	height:29px;
+	position:absolute;
+	left:79px;
+	top:156px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+.menu-list5 { 
+	color:black;
+	width:145px;
+	height:28px;
+	position:absolute;
+	left:78px;
+	top:208px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.menu-list6 { 
+	color:black;
+	width:146px;
+	height:33px;
+	position:absolute;
+	left:77px;
+	top:264px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.menu-list7 { 
+	color:black;
+	width:136px;
+	height:28px;
+	position:absolute;
+	left:78px;
+	top:320px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0; 
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.menu-list8 { 
+	color:black;
+	width:131px;
+	height:29px;
+	position:absolute;
+	left:79px;
+	top:378px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+
+.perfil{
+  position: relative;
+  margin-left: 0px;
+  top: 38px;
+ }
+ .te{
+  position: relative;
+  bottom: 70px;
+  font-weight: bold;
+  color: black;
+  left: 65px;
+  
+ }
+
+ .subTitulo{
+  position: relative;
+    width: 230px;
+    height: 51px;
+    left: 10px;
+    bottom: 70px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    
+    color: #261C1A;
+    
+    }
+
+ 
+
+    .container-caixaSenha{
+        position: relative;
+        width: 693px;
+        height: 500px;
+        left: 530px;
+        bottom: 0px;
+        background: #FFFFFF;
+        border: 2px solid #261C1A;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+    }
+  
+    .btn.formRedefinirSenha{
+        position: absolute;
+        width: 180px;
+        height: 50px;
+        left: 500px;
+        top: 540px;
+        background: #F27507;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 22px;
+        color: #FFFFFF;
+      }
+    
+      .btn formRedefinirSenha{
+        position: absolute;
+        width: 116px;
+        height: 26px;
+        left: 20px;
+        bottom: 129px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+      }
+    
+      .btn.formRedefinirSenha:hover{
+      background-color: darkorange;
+      color: #FFFFFF;
+      }
+
+      .modal-header{
+        position: absolute;
+        width: 823px;
+        height: 693px;
+        top: 2px;
+        left: 20px;
+        align-items: center;
+        background: #FFFFFF;
+        border: 2px solid #000000;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        
+    }
+
+ 
+
+    
+
+
+      .botao1{
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        left: 380px;
+        align-items: center;
+        top: 600px;
+        background: #34A853;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 22px;
+        color: #FFFFFF;
+       }
+       .botao1 tex{
+        position: absolute;
+        width: 116px;
+        height: 26px;
+        left: 20px;
+        top: 9px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+       }
+       .botao1.tex1:hover{
+        background-color: #34d175;
+        }
+
+
+     #titu{
+        position: absolute;
+        left: 15.00%;
+        right: 0%;
+        top: 0%;
+        bottom: 85%;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 29px;
+        display: flex;
+        align-items: center;
+        
+        color: #261C1A;
+        
+     }
+      
+      #linha{
+        position: absolute;
+        left: 2%;
+        right: 2%;
+        top: 8.34%;
+        bottom: 15.66%;
+        border: 1px solid #261C1A;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+      }
+
+      #form-label1{
+        font-weight: 700;
+        margin-left: 42px;
+        color: #3C4043;
+        font-size: 18px;
+        left: 10px;
+        position: relative;
+        top: 45px;
+          }
+
+  #form-control1{
+    margin-top: 9px;
+    width: 548px;
+    height: 40px;
+    left: 50px;
+    top:55px;
+    border: 2px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+    position: relative;
+  }  
+
+  #form-label2{
+    font-weight: 700;
+    margin-left: 42px;
+    color: #3C4043;
+    font-size: 18px;
+    left: 10px;
+    position: relative;
+    top: 65px;
+}
+
+#form-control2{
+margin-top: 9px;
+width: 528px;
+height: 40px;
+left: 50px;
+top:75px;
+border: 2px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+position: relative;
+}  
+
+
+#form-label3{
+  font-weight: 700;
+  margin-left: 42px;
+  color: #3C4043;
+  font-size: 18px;
+  left: 10px;
+  position: relative;
+  top: 105px;
+}
+
+#form-control3{
+margin-top: 9px;
+width: 528px;
+height: 40px;
+left: 50px;
+top:115px;
+border: 2px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+position: relative;
+}  
+
+
+
+button.btn-close{
+   bottom: 10px;
+   position: relative;
+   border: none;
+   background: #FFFFFF;
+   background: none;
+   font-size: 20px;
+}
+.botao{
+position: absolute;
+width: 100px;
+height: 50px;
+left: 190px;
+align-items: center;
+top: 120px;
+background: #34A853;
+border-radius: 10px;
+cursor: pointer;
+font-weight: bold;
+font-size: 22px;
+color: #FFFFFF;
+}
+.botao tex{
+position: absolute;
+width: 116px;
+height: 26px;
+left: 20px;
+top: 9px;
+font-style: normal;
+font-weight: bold;
+font-size: 22px;
+line-height: 26px;
+display: flex;
+align-items: center;
+color: #FFFFFF;
+}
+.botao.tex:hover{
+background-color: #34d175;
+}
+

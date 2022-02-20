@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Projeto Integrador Raia Drogasil
 
 ## Programa Quero ser Dev - Turma 7
@@ -25,3 +26,32 @@
 - [:heavy_check_mark:] Front-end - HTML, Bootstrap, CSS e Java Script
 - [:heavy_check_mark:] Banco de Dados MySql, Modelagem Visual Paradigma e Dbevear
 - [:heavy_check_mark:] Java Web com Servlets JSTL e JSP
+=======
+# Projeto Integrador Raia Drogasil
+
+## Programa Quero ser Dev - Turma 7
+
+#### O Projeto tem por objetivo a construção de um e-commerce sobre artigos religiosos.
+
+
+
+### *_Especialistas Supervisores_*
+
+- Andreia Assuncao Evangelista Dozza
+- Ivo La Puma
+- Jonas de Oliveira
+- Leonardo Antonio Barbosa
+- Raphael Gava de Andrade
+
+### *_Desenvolvedores participantes_*
+- Fabiola De Carvalho Santos
+- Leia Borges Santos de Jesus
+- Muryllo Soares Eleutério Severino
+- Sérgio Cauê Gomes
+- Denis William Nery Barbosa
+
+
+### *_Tecnonologias desenvolvidas_*
+- [:heavy_check_mark:] Prototipagem Figman
+- [:heavy_check_mark:] Front-end - HTML, Bootstrap, CSS e Java Script ...
+>>>>>>> 87eb4d3dba0fe69abaed67933df723ef96b86094

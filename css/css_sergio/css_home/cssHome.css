@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
+/* *
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+} */
+
+.banner1 
+{
+    width: 100%;
+    height: auto;
+    margin-top: 0px;
+    margin: 0px;
+    margin-left: -15px;
+    display: block;
+        
+}
+
+.imgBanner
+{
+    width: 100%;
+    height: 215px;
+    display: block;
+    margin-top: -22px;      
+}
+
+.grupoBotoes
+{
+    width: 100%;
+    display: flex;
+}
+.btnBanner1
+{
+    padding: 0px;
+    margin: 0px;
+    margin-top:-585px;
+    margin-left: 0px;
+    width: 100%;
+}
+
+.btnBanner1 .btn
+{
+    width: 100%;
+    height: 100px;
+    border-radius: 0px 0px 0px 0px;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    background-color: #C4C4C4;
+    color: #261C1A;
+    margin: 0;
+}
+
+.btnBanner1 .btn:hover
+{
+    transform: scale(1.10);
+    transition: 0.2s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border:1px solid #261C1A;
+    cursor: pointer;
+    box-shadow: 0 5px 6px #AF9787;
+}
+
+
+.iconFrete
+{
+    position: absolute;
+    content: url(../../../images/icons/caminhao-de-entrega.png);
+    margin-left: -140px;
+    margin-top: 10px; 
+}
+
+.iconParcelamento
+{
+    position: absolute;
+    content: url(../../../images/icons/cartao-do-banco.png);
+    margin-left: -135px;
+    margin-top: 10px; 
+}
+
+.iconAtendimento
+{
+    position: absolute;
+    content: url(../../../images/icons/telefone.png);
+    margin-left: -125px;
+    margin-top: 25px; 
+}
+.iconSeguranca
+{
+    position: absolute;
+    content: url(../../../images/icons/security.png);
+    margin-left: -125px;
+    margin-top: 25px; 
+}
+
+
+
+.tituloFrete
+{
+    font-size: 19px;
+}
+.subTituloFrete
+{
+    font-size: 18px;
+    margin-left: 54px;
+    margin-top: -20px;
+}
+.tituloParcelamento
+{
+    font-size: 19px;
+}
+.subTituloParcelamento
+{
+    font-size: 18px;
+    margin-left: 68px;
+    margin-top: -20px;
+}
+
+.tituloAtendimento
+{
+    font-size: 19px;
+}
+.subTituloAtendimento
+{
+    font-size: 18px;
+    margin-left: -30px;
+    margin-top: -20px;
+}
+
+.tituloSeguranca
+{
+    font-size: 19px;
+}
+.subTituloSeguranca
+{
+    font-size: 18px;
+    margin-left: 30px;
+    margin-top: -20px;
+}
+
+.tituloDestaque
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 65px;
+    border-bottom: 1px solid #261C1A;
+    font-family: 'Roboto', sans-serif;
+    font-style: large bold;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.txtDestaque
+{
+    margin-bottom: -30px;
+    padding: 0px;
+}
+/* Fim Banner1 e Botões */
+
+/* Inicio Carrossel */
+
+.containerSlider
+{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.containerCarrossel
+{
+    width: 100%;
+    height : 500px;
+    margin:0px 0px 0px 20px;
+    margin-top: 30px;
+    padding: 0px;
+    display: flex;
+    flex: 2;
+} 
+
+.containerCarrossel
+{
+    width: 100%;
+}
+
+.containerCarrossel .card 
+{
+    margin: 0px -30px 0px 0px;
+    background-color:#f7f7f7;
+    border: 1px solid rgb(177, 174, 174);
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.card
+{
+    height: 400px;
+    width: 50%;
+    margin: 0px 0px 0px 30px;
+    padding: 10px;
+}
+.card .img 
+{
+    height: 100%;
+    width: 100%;
+}
+.card .img img 
+{
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+    
+}
+.card .img img:hover
+{
+    transform: scale(1.10);
+    transition: 0.2s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border:1px solid #261C1A;
+    cursor: pointer;
+    box-shadow: 0 5px 6px #AF9787;
+}
+
+
+.card .content 
+{
+    width: 100%;
+    height: auto;
+    
+}
+
+.card .content .title 
+{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+}
+
+.card .content .sub-title  
+{
+    font-size: 16px;
+    font-weight: 600;
+    color: #261C1A;
+    
+    padding-left: 10px;
+}
+
+.card .content p
+{
+    text-align: justify;
+    margin: 10px 0;
+}
+
+.card .content .btn
+{
+    display: block;
+    text-align: center;
+    margin: 10px 0px 0px -9px;
+}
+
+.card .content .btn button
+{
+    background-color: #F27507;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    padding: 5px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 200px;
+    margin-bottom: -10px;
+}
+
+.slider .card .content .btn button:hover
+{
+    transform: scale(1.10);
+    transition: 0.2s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border:1px solid #261C1A;
+    cursor: pointer;
+    box-shadow: 0 5px 6px #AF9787;
+}
+
+
+
+
+.containerImagem
+{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: space-around;
+    margin-top: -40px;
+    margin-left: 0px;
+    padding: 0px;
+    
+}
+.imagens
+{
+    width: 100%;
+    height: auto;
+    margin-right: 5px;
+}
+.containerImagem .imagens .img1
+{
+    width: 100%;
+    height:auto;
+    border-radius:3px;
+    
+}
+
+.containerImagem .imagens .img2
+{
+    width: 100%;
+    height:auto;
+    
+    border-radius:3px;
+    
+}
+
+
+.containerImagem .imagens .img3
+{
+    width: 100%;
+    height:auto;
+    
+    border-radius:3px;
+    
+}
+.containerImagem .imagens .img4
+{
+    width: 100%;
+    height:auto;
+   
+    border-radius:3px;
+    
+}
+/* Final Imagens */
+/* Inicio Banner 2 */
+.containerBanner2
+{
+    width: 100%;
+    height: auto;
+    padding: 0px;
+    /* margin-left: 100px; */
+    margin-bottom: 100px;
+}
+.containerBanner2 .banner2
+{
+    width: 100%;
+    height: auto;
+    padding: 0px;
+}
+.containerBanner2 .banner2 .imgBanner2
+{
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+
+}
+
+
+
+/* Final Banner 2 */
+
+
+/* .carrinho::before
+{
+    position: absolute;
+    content: url(../imagens/icons/carrinhoLogo.png);
+    margin-left: 90px;
+    margin-top: -15px; 
+} */
+

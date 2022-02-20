@@ -1,0 +1,2108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
+
+
+*{
+  margin: 0;
+  padding: auto;
+  font-size: 100%;
+  border: none;
+  outline: none;
+  font-family: Roboto;
+  box-sizing: border-box;
+}
+
+
+
+#myModal{
+  background-color: #979797;
+}
+
+
+.menu-list1 { 
+	width:313px;
+	height:534px;
+	position:absolute;
+}
+
+.menu-list2 { 
+	color:black;
+	width:147px;
+	height:27px;
+	position:absolute;
+	left:79px;
+	top:42px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:20px;font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+	
+}
+
+.menu-list3 { 
+	color:black;
+	width:147px;
+	height:27px;
+	position:absolute;
+	left:79px;
+	top:100px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.menu-list4 { 
+	color:black;
+	width:131px;
+	height:29px;
+	position:absolute;
+	left:79px;
+	top:156px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+.menu-list5 { 
+	color:black;
+	width:145px;
+	height:28px;
+	position:absolute;
+	left:78px;
+	top:208px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.menu-list6 { 
+	color:black;
+	width:146px;
+	height:33px;
+	position:absolute;
+	left:77px;
+	top:264px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.menu-list7 { 
+	color:black;
+	width:136px;
+	height:28px;
+	position:absolute;
+	left:78px;
+	top:320px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0; 
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.menu-list8 { 
+	color:black;
+	width:131px;
+	height:29px;
+	position:absolute;
+	left:79px;
+	top:378px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+
+.perfil{
+  position: relative;
+  margin-left: 0px;
+  top: 38px;
+ }
+ .te{
+  position: relative;
+  bottom: 70px;
+  font-weight: bold;
+  color: black;
+  left: 65px;
+  
+ }
+ 
+.Titulo{
+  position: relative;
+    width: 230px;
+    height: 51px;
+    left: 780px;
+    bottom: 30px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    
+    color: #261C1A;
+    
+    }
+
+    #caixaDados{
+        position: relative;
+        width: 693px;
+        height: 500px;
+        left: 530px;
+        bottom: 0px;
+        background: #FFFFFF;
+        border: 2px solid #261C1A;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+    }
+    .lixeira{
+        position: relative;
+        top: 30px;
+        left: 500px;
+  
+     
+    }
+
+    .btn.formRedefinirSenha{
+        position: absolute;
+        width: 180px;
+        height: 50px;
+        left: 500px;
+        top: 540px;
+        background: #F27507;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 22px;
+        color: #FFFFFF;
+      }
+    
+      .btn formRedefinirSenha{
+        position: absolute;
+        width: 116px;
+        height: 26px;
+        left: 20px;
+        bottom: 129px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+      }
+    
+      .btn.formRedefinirSenha:hover{
+      background-color: darkorange;
+      color: #FFFFFF;
+      }
+
+      #tituloCEP{
+        position: relative;
+        width: 72px;
+        height: 22px;
+        left: 150px;
+        top: 55px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        color: #261C1A;
+        
+      }
+
+      #tituloEndereco{
+        position: relative;
+        width: 89px;
+        height: 22px;
+        left: 150px;
+        top: 102px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        color: #261C1A;
+    }
+
+    #tituloNumero{
+        position: absolute;
+        width: 38px;
+        height: 21px;
+        left: 150px;
+        top: 265px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        /* identical to box height */
+        display: flex;
+        align-items: center;
+        color: #261C1A; 
+    }
+
+    #tituloBairro{
+        position: relative;
+        width: 170px;
+        height: 27px;
+        left: 150px;
+        top: 215px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        color: #261C1A;  
+    }
+
+    #tituloEstado{
+        position: relative;
+        width: 77px;
+        height: 15px;
+        left: 440px;
+        bottom: 150px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        color: #261C1A
+    }
+    
+    #tituloComplemento{
+        position: relative;
+        width: 77px;
+        height: 15px;
+        left: 440px;
+        bottom: 95px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        color: #261C1A
+    }
+    
+    #tituloCidade{
+        position: relative;
+        width: 77px;
+        height: 15px;
+        left: 440px;
+        bottom: 40px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        color: #261C1A
+    }
+
+
+      #CEP{
+        position: relative;
+        width: 122px;
+        height: 12px;
+        left: 150px;
+        top: 78px;
+        
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        
+        color: #979797;
+        
+      }
+
+      #Endereco{
+
+        position: relative;
+        width: 122px;
+        height: 12px;
+        left: 150px;
+        top: 125px;
+        
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        
+        color: #979797;
+
+      }
+
+      #Numero{
+
+        position: relative;
+        width: 122px;
+        height: 12px;
+        left: 150px;
+        top: 200px;
+        
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        
+        color: #979797;
+
+      }
+
+      #Bairro{
+
+        position: relative;
+        width: 122px;
+        height: 12px;
+        left: 150px;
+        top: 230px;
+        
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        
+        color: #979797;
+
+      }
+
+      #Estado{
+
+
+        position: relative;
+        width: 122px;
+        height: 12px;
+        left: 440px;
+        bottom: 120px;
+        
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        
+        color: #979797;
+      }
+
+      #Complemento{
+
+        position: relative;
+        width: 122px;
+        height: 12px;
+        left: 440px;
+        bottom: 65px;
+        
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        
+        color: #979797;
+
+      }
+
+      #Cidade{
+
+        position: relative;
+        width: 122px;
+        height: 12px;
+        left: 440px;
+        bottom: 15px;
+        
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        
+        color: #979797;
+
+      }
+      .modal-header{
+        position: absolute;
+        width: 812px;
+        height: 693px;
+        top: 2px;
+        left: 20px;
+        background: #FFFFFF;
+        border: 2px solid #000000;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        
+    }
+
+ 
+
+     .botao{
+      position: absolute;
+      width: 150px;
+      height: 50px;
+      left: 580px;
+      align-items: center;
+      top: 600px;
+      background: #F27507;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 22px;
+      color: #FFFFFF;
+     }
+     .botao tex{
+      position: absolute;
+      width: 116px;
+      height: 26px;
+      left: 20px;
+      top: 9px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
+      display: flex;
+      align-items: center;
+      color: #FFFFFF;
+     }
+     .botao.tex:hover{
+      background-color: darkorange;
+      color: #FFFFFF;
+      }
+
+
+      .botao1{
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        left: 380px;
+        align-items: center;
+        top: 600px;
+        background: #34A853;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 22px;
+        color: #FFFFFF;
+       }
+       .botao1 tex{
+        position: absolute;
+        width: 116px;
+        height: 26px;
+        left: 20px;
+        top: 9px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+       }
+       .botao1.tex1:hover{
+        background-color: #34d175;
+        }
+
+
+     #titu{
+        position: absolute;
+        left: 15.00%;
+        right: 0%;
+        top: 0%;
+        bottom: 85%;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 29px;
+        display: flex;
+        align-items: center;
+        
+        color: #261C1A;
+        
+     }
+      
+      #linha{
+        position: absolute;
+        left: 2%;
+        right: 2%;
+        top: 8.34%;
+        bottom: 15.66%;
+        border: 1px solid #261C1A;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+      }
+
+    #form-label1{
+        font-weight: 700;
+        margin-left: 42px;
+        color: #3C4043;
+        font-size: 18px;
+        left: 25px;
+        position: relative;
+        bottom: 35px;
+    }
+
+  #form-control1{
+    margin-top: 9px;
+    width: 228px;
+    height: 40px;
+    right: 20px;
+    top:15px;
+    border: 2px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+    position: relative;
+  }  
+
+
+
+  #form-label2{
+    font-weight: 700;
+    margin-left: 42px;
+    color: #3C4043;
+    font-size: 18px;
+    left: 25px;
+    position: relative;
+    top: 10px;
+}
+
+#form-control2{
+margin-top: 9px;
+width: 383px;
+height: 40px;
+right: 60px;
+top:60px;
+border: 2px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+position: relative;
+}  
+
+
+
+
+#form-label3{
+font-weight: 700;
+margin-left: 42px;
+color: #3C4043;
+font-size: 18px;
+left: 475px;
+position: relative;
+bottom: 165px;
+}
+
+#form-control3{
+margin-top: 9px;
+width: 97px;
+height: 40px;
+left: 400px;
+bottom:115px;
+border: 2px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+position: relative;
+}  
+
+
+
+#form-label4{
+font-weight: 700;
+margin-left: 42px;
+color: #3C4043;
+font-size: 18px;
+left: 478px;
+position: relative;
+bottom: 10px;
+}
+
+#form-control4{
+margin-top: 9px;
+width: 194px;
+height: 40px;
+left: 420px;
+top:40px;
+border: 2px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+position: relative;
+}  
+
+
+
+#form-label5{
+font-weight: 700;
+margin-left: 42px;
+color: #3C4043;
+font-size: 18px;
+left: 475px;
+position: relative;
+bottom: 185px;
+}
+
+#form-control5{
+margin-top: 9px;
+width: 100px;
+height: 40px;
+left: 410px;
+bottom:135px;
+border: 2px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+position: relative;
+}  
+
+
+
+#form-label6{
+font-weight: 700;
+margin-left: 42px;
+color: #3C4043;
+font-size: 18px;
+left: 25px;
+position: relative;
+bottom: 145px;
+}
+
+#form-control6{
+margin-top: 9px;
+width: 374px;
+height: 40px;
+right: 95px;
+bottom:92px;
+border: 2px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+position: relative;
+}  
+
+#form-label7{
+  font-weight: 700;
+  margin-left: 42px;
+  color: #3C4043;
+  font-size: 18px;
+  left: 25px;
+  position: relative;
+  bottom: 95px;
+}
+
+#form-control7{
+margin-top: 9px;
+width: 194px;
+height: 40px;
+right: 40px;
+bottom:45px;
+border: 2px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+position: relative;
+}  
+
+
+ @media (max-width:1024px){
+                 hr{
+                   width: 65%;
+                 }
+                  
+              .menu-list1 { 
+                width:313px;
+                height:534px;
+                position:absolute;
+              }
+              
+              .menu-list2 { 
+                color:black;
+                width:147px;
+                height:27px;
+                position:absolute;
+                left:19px;
+                top:42px;
+                font-family:"Roboto";
+                text-align:left;
+                font-size:13px;
+                letter-spacing:0;
+                text-decoration: none;
+                font-weight:bold;
+                
+              }
+              
+              .menu-list3 { 
+                color:black;
+                width:147px;
+                height:27px;
+                position:absolute;
+                left:19px;
+                top:100px;
+                font-family:"Roboto";
+                text-align:left;
+                font-size:13px;
+                letter-spacing:0;
+                text-decoration: none;
+                font-weight:bold;
+              }
+              
+              .menu-list4 { 
+                color:black;
+                width:131px;
+                height:29px;
+                position:absolute;
+                left:19px;
+                top:156px;
+                font-family:"Roboto";
+                text-align:left;
+                font-size:13px;
+                letter-spacing:0;
+                text-decoration: none;
+                font-weight:bold;
+              }
+              .menu-list5 { 
+                color:black;
+                width:145px;
+                height:28px;
+                position:absolute;
+                left:19px;
+                top:208px;
+                font-family:"Roboto";
+                text-align:left;
+                font-size:13px;
+                letter-spacing:0;
+                text-decoration: none;
+                font-weight:bold;
+              }
+              
+              .menu-list6 { 
+                color:black;
+                width:146px;
+                height:33px;
+                position:absolute;
+                left:19px;
+                top:264px;
+                font-family:"Roboto";
+                text-align:left;
+                font-size:13px;
+                letter-spacing:0;
+                text-decoration: none;
+                font-weight:bold;
+              }
+              
+              .menu-list7 { 
+                color:black;
+                width:136px;
+                height:28px;
+                position:absolute;
+                left:19px;
+                top:320px;
+                font-family:"Roboto";
+                text-align:left;
+                font-size:13px;
+                letter-spacing:0; 
+                text-decoration: none;
+                font-weight:bold;
+              }
+              
+              .menu-list8 { 
+                color:black;
+                width:131px;
+                height:29px;
+                position:absolute;
+                left:19px;
+                top:378px;
+                font-family:"Roboto";
+                text-align:left;
+                font-size:13px;
+                letter-spacing:0;
+                text-decoration: none;
+                font-weight:bold;
+              }
+              
+              
+              .perfil{
+                position: relative;
+                margin-left: 0px;
+                top: 58px;
+                width: 50px;
+                height: 40px;
+               }
+               .te{
+                position: relative;
+                top: 15px;
+                font-weight: bold;
+                color: black;
+                left: 1px;
+                font-size: 10px;
+                
+               }
+
+               .Titulo{
+                position: relative;
+                  width: 230px;
+                  height: 51px;
+                  left: 374px;
+                  bottom: 90px;
+                  font-family: Roboto;
+                  font-style: normal;
+                  font-weight: bold;
+                  font-size: 30px;
+                  line-height: 20px;
+                  display: flex;
+                  align-items: center;
+                  
+                  color: #261C1A;
+                  
+                  }
+              
+                  #caixaDados{
+                      position: relative;
+                      width: 373px;
+                      height: 560px;
+                      left: 300px;
+                      bottom: 80px;
+                      background: #FFFFFF;
+                      border: 2px solid #261C1A;
+                      box-sizing: border-box;
+                      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                      border-radius: 30px;
+                  }
+                  .lixeira{
+                      position: relative;
+                      top: 100px;
+                      left: 270px;
+                
+                   
+                  }
+              
+                  .btn.formRedefinirSenha{
+                      position: absolute;
+                      width: 110px;
+                      height: 50px;
+                      left: 120px;
+                      top: 450px;
+                      background: #F27507;
+                      border-radius: 10px;
+                      cursor: pointer;
+                      font-weight: bold;
+                      font-size: 22px;
+                      color: #FFFFFF;
+                    }
+                  
+                    .btn formRedefinirSenha{
+                      position: absolute;
+                      width: 116px;
+                      height: 26px;
+                      left: 20px;
+                      bottom: 129px;
+                      font-style: normal;
+                      font-weight: bold;
+                      font-size: 22px;
+                      line-height: 26px;
+                      display: flex;
+                      align-items: center;
+                      color: #FFFFFF;
+                    }
+                  
+                    .btn.formRedefinirSenha:hover{
+                    background-color: darkorange;
+                    color: #FFFFFF;
+                    }
+              
+                    #tituloCEP{
+                      position: relative;
+                      width: 72px;
+                      height: 22px;
+                      left: 20px;
+                      top: 80px;
+                      font-family: Roboto;
+                      font-style: normal;
+                      font-weight: bold;
+                      font-size: 18px;
+                      line-height: 21px;
+                      display: flex;
+                      align-items: center;
+                      color: #261C1A;
+                      
+                    }
+              
+                    #tituloEndereco{
+                      position: relative;
+                      width: 89px;
+                      height: 22px;
+                      left: 20px;
+                      top: 105px;
+                      font-family: Roboto;
+                      font-style: normal;
+                      font-weight: bold;
+                      font-size: 18px;
+                      line-height: 21px;
+                      display: flex;
+                      align-items: center;
+                      color: #261C1A;
+                  }
+              
+                  #tituloNumero{
+                      position: absolute;
+                      width: 38px;
+                      height: 21px;
+                      left: 240px;
+                      top: 80px;
+                      font-family: Roboto;
+                      font-style: normal;
+                      font-weight: bold;
+                      font-size: 18px;
+                      line-height: 21px;
+                      display: flex;
+                      align-items: center;
+                      color: #261C1A; 
+                  }
+              
+                  #tituloBairro{
+                      position: relative;
+                      width: 170px;
+                      height: 27px;
+                      left: 20px;
+                      top: 100px;
+                      font-family: Roboto;
+                      font-style: normal;
+                      font-weight: bold;
+                      font-size: 18px;
+                      line-height: 21px;
+                      display: flex;
+                      align-items: center;
+                      color: #261C1A;  
+                  }
+              
+                  #tituloEstado{
+                      position: relative;
+                      width: 77px;
+                      height: 15px;
+                      left: 240px;
+                      bottom: 37px;
+                      font-family: Roboto;
+                      font-style: normal;
+                      font-weight: bold;
+                      font-size: 18px;
+                      line-height: 21px;
+                      display: flex;
+                      align-items: center;
+                      color: #261C1A
+                  }
+                  
+                  #tituloComplemento{
+                      position: relative;
+                      width: 77px;
+                      height: 15px;
+                      left: 240px;
+                      bottom: 9px;
+                      font-family: Roboto;
+                      font-style: normal;
+                      font-weight: bold;
+                      font-size: 18px;
+                      line-height: 21px;
+                      display: flex;
+                      align-items: center;
+                      color: #261C1A
+                  }
+                  
+                  #tituloCidade{
+                      position: relative;
+                      width: 77px;
+                      height: 15px;
+                      left: 20px;
+                      bottom: -25px;
+                      font-family: Roboto;
+                      font-style: normal;
+                      font-weight: bold;
+                      font-size: 15px;
+                      line-height: 21px;
+                      display: flex;
+                      align-items: center;
+                      color: #261C1A
+                  }
+              
+              
+                    #CEP{
+                      position: relative;
+                      width: 122px;
+                      height: 12px;
+                      left: 20px;
+                      top: 90px;
+                      
+                      font-family: Roboto;
+                      font-style: normal;
+                      font-weight: 500;
+                      font-size: 15px;
+                      line-height: 12px;
+                      display: flex;
+                      align-items: center;
+                      
+                      color: #979797;
+                      
+                    }
+              
+                    #Endereco{
+              
+                      position: relative;
+                      width: 122px;
+                      height: 12px;
+                      left: 20px;
+                      top: 120px;
+                      
+                      font-family: Roboto;
+                      font-style: normal;
+                      font-weight: 500;
+                      font-size: 15px;
+                      line-height: 18px;
+                      display: flex;
+                      align-items: center;
+                      
+                      color: #979797;
+              
+                    }
+              
+                    #Numero{
+              
+                      position: relative;
+                      width: 122px;
+                      height: 12px;
+                      left: 240px;
+                      top: 5px;
+                      
+                      font-family: Roboto;
+                      font-style: normal;
+                      font-weight: 500;
+                      font-size: 15px;
+                      line-height: 18px;
+                      display: flex;
+                      align-items: center;
+                      
+                      color: #979797;
+              
+                    }
+              
+                    #Bairro{
+              
+                      position: relative;
+                      width: 122px;
+                      height: 12px;
+                      left: 20px;
+                      top: 110px;
+                      
+                      font-family: Roboto;
+                      font-style: normal;
+                      font-weight: 500;
+                      font-size: 15px;
+                      line-height: 18px;
+                      display: flex;
+                      align-items: center;
+                      
+                      color: #979797;
+              
+                    }
+              
+                    #Estado{
+              
+              
+                      position: relative;
+                      width: 122px;
+                      height: 12px;
+                      left: 240px;
+                      bottom: 22px;
+                      
+                      font-family: Roboto;
+                      font-style: normal;
+                      font-weight: 500;
+                      font-size: 15px;
+                      line-height: 15px;
+                      display: flex;
+                      align-items: center;
+                      
+                      color: #979797;
+                    }
+              
+                    #Complemento{
+              
+                      position: relative;
+                      width: 122px;
+                      height: 12px;
+                      left: 240px;
+                      bottom: -10px;
+                      
+                      font-family: Roboto;
+                      font-style: normal;
+                      font-weight: 500;
+                      font-size: 15px;
+                      line-height: 15px;
+                      display: flex;
+                      align-items: center;
+                      
+                      color: #979797;
+              
+                    }
+              
+                    #Cidade{
+              
+                      position: relative;
+                      width: 122px;
+                      height: 12px;
+                      left: 20px;
+                      bottom: -45px;
+                      
+                      font-family: Roboto;
+                      font-style: normal;
+                      font-weight: 500;
+                      font-size: 15px;
+                      line-height: 18px;
+                      display: flex;
+                      align-items: center;
+                      
+                      color: #979797;
+              
+                    }
+                    .modal-header{
+                      position: absolute;
+                      width: 412px;
+                      height: 693px;
+                      top: 142px;
+                      left: 20px;
+                      background: #FFFFFF;
+                      border: 2px solid #000000;
+                      box-sizing: border-box;
+                      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                      border-radius: 10px;
+                      
+                  }
+              
+               
+              
+                   .botao{
+                    position: absolute;
+                    width: 100px;
+                    height: 50px;
+                    left: 80px;
+                    align-items: center;
+                    top: 570px;
+                    background: #F27507;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    font-size: 22px;
+                    color: #FFFFFF;
+                   }
+                   .botao tex{
+                    position: absolute;
+                    width: 116px;
+                    height: 26px;
+                    left: 20px;
+                    top: 9px;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 22px;
+                    line-height: 26px;
+                    display: flex;
+                    align-items: center;
+                    color: #FFFFFF;
+                   }
+                   .botao.tex:hover{
+                    background-color: darkorange;
+                    color: #FFFFFF;
+                    }
+              
+              
+                    .botao1{
+                      position: absolute;
+                      width: 125px;
+                      height: 50px;
+                      left: 220px;
+                      align-items: center;
+                      top: 570px;
+                      background: #34A853;
+                      border-radius: 10px;
+                      cursor: pointer;
+                      font-weight: bold;
+                      font-size: 22px;
+                      color: #FFFFFF;
+                     }
+                     .botao1 tex{
+                      position: absolute;
+                      width: 116px;
+                      height: 26px;
+                      left: 20px;
+                      top: 9px;
+                      font-style: normal;
+                      font-weight: bold;
+                      font-size: 22px;
+                      line-height: 26px;
+                      display: flex;
+                      align-items: center;
+                      color: #FFFFFF;
+                     }
+                     .botao1.tex1:hover{
+                      background-color: #34d175;
+                      }
+              
+              
+                   #titu{
+                      position: absolute;
+                      left: 15.00%;
+                      right: 0%;
+                      top: 0%;
+                      bottom: 85%;
+                      font-family: Roboto;
+                      font-style: normal;
+                      font-weight: bold;
+                      font-size: 25px;
+                      line-height: 29px;
+                      display: flex;
+                      align-items: center;
+                      
+                      color: #261C1A;
+                      
+                   }
+                    
+                    #linha{
+                      position: absolute;
+                      left: 2%;
+                      right: 2%;
+                      top: 8.34%;
+                      bottom: 15.66%;
+                      width: 95%;
+                      border: 1px solid #261C1A;
+                      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+                    }
+              
+                  #form-label1{
+                      font-weight: 700;
+                      margin-left: 42px;
+                      color: #3C4043;
+                      font-size: 15px;
+                      left: -50px;
+                      position: relative;
+                      bottom: 35px;
+                  }
+              
+                #form-control1{
+                  margin-top: 9px;
+                  width: 174px;
+                  height: 40px;
+                  left: -87px;
+                  top:15px;
+                  border: 2px solid #979797;
+                  box-sizing: border-box;
+                  border-radius: 10px;
+                  position: relative;
+                }  
+              
+              
+              
+                #form-label2{
+                  font-weight: 700;
+                  margin-left: 42px;
+                  color: #3C4043;
+                  font-size: 15px;
+                  left: -50px;
+                  position: relative;
+                  top: 10px;
+              }
+              
+              #form-control2{
+              margin-top: 9px;
+              width: 174px;
+              height: 40px;
+              left: -121px;
+              top:60px;
+              border: 2px solid #979797;
+              box-sizing: border-box;
+              border-radius: 10px;
+              position: relative;
+              }  
+              
+              
+              
+              
+              #form-label3{
+              font-weight: 700;
+              margin-left: 42px;
+              color: #3C4043;
+              font-size: 15px;
+              left: 185px;
+              position: relative;
+              bottom: 165px;
+              }
+              
+              #form-control3{
+              margin-top: 9px;
+              width: 97px;
+              height: 40px;
+              left: 125px;
+              bottom:115px;
+              border: 2px solid #979797;
+              box-sizing: border-box;
+              border-radius: 10px;
+              position: relative;
+              }  
+              
+              
+              
+              #form-label4{
+              font-weight: 700;
+              margin-left: 42px;
+              color: #3C4043;
+              font-size: 15px;
+              left: -50px;
+              position: relative;
+              bottom: 10px;
+              }
+              
+              #form-control4{
+              margin-top: 9px;
+              width: 174px;
+              height: 40px;
+              left: -97px;
+              top:40px;
+              border: 2px solid #979797;
+              box-sizing: border-box;
+              border-radius: 10px;
+              position: relative;
+              }  
+              
+              
+              
+              #form-label5{
+              font-weight: 700;
+              margin-left: 42px;
+              color: #3C4043;
+              font-size: 15px;
+              left: 185px;
+              position: relative;
+              bottom: 185px;
+              }
+              
+              #form-control5{
+              margin-top: 9px;
+              width: 112px;
+              height: 40px;
+              left: 131px;
+              bottom:135px;
+              border: 2px solid #979797;
+              box-sizing: border-box;
+              border-radius: 10px;
+              position: relative;
+              }  
+              
+              
+              
+              #form-label6{
+              font-weight: 700;
+              margin-left: 42px;
+              color: #3C4043;
+              font-size: 15px;
+              left: 185px;
+              position: relative;
+              bottom: 140px;
+              }
+              
+              #form-control6{
+              margin-top: 9px;
+              width: 124px;
+              height: 40px;
+              left: 85px;
+              bottom:90px;
+              border: 2px solid #979797;
+              box-sizing: border-box;
+              border-radius: 10px;
+              position: relative;
+              }  
+              
+              #form-label7{
+                font-weight: 700;
+                margin-left: 42px;
+                color: #3C4043;
+                font-size: 15px;
+                left: -50px;
+                position: relative;
+                bottom: 95px;
+              }
+              
+              #form-control7{
+              margin-top: 9px;
+              width: 174px;
+              height: 40px;
+              left: -103px;
+              bottom:45px;
+              border: 2px solid #979797;
+              box-sizing: border-box;
+              border-radius: 10px;
+              position: relative;
+              }  
+  
+               
+               
+            }
+            @media  (max-width:568px){
+              hr{
+                width: 65%;
+              }
+               
+           .menu-list1 { 
+            visibility: hidden;
+           }
+           
+          
+           
+           .perfil{
+            visibility: hidden;
+            }
+            .te{
+             visibility: hidden;
+             
+            }
+            
+            .Titulo{
+              position: relative;
+                width: 230px;
+                height: 51px;
+                left: 44px;
+                bottom: 90px;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 30px;
+                line-height: 20px;
+                display: flex;
+                align-items: center;
+                
+                color: #261C1A;
+                
+                }
+            
+                #caixaDados{
+                    position: relative;
+                    width: 273px;
+                    height: 560px;
+                    left: 20px;
+                    bottom: 80px;
+                    background: #FFFFFF;
+                    border: 2px solid #261C1A;
+                    box-sizing: border-box;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    border-radius: 30px;
+                }
+                .lixeira{
+                    position: relative;
+                    top: 150px;
+                    left: 120px;
+              
+                 
+                }
+            
+                .btn.formRedefinirSenha{
+                    position: absolute;
+                    width: 110px;
+                    height: 50px;
+                    left: 80px;
+                    top: 440px;
+                    background: #F27507;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    font-size: 22px;
+                    color: #FFFFFF;
+                  }
+                
+                  .btn formRedefinirSenha{
+                    position: absolute;
+                    width: 116px;
+                    height: 26px;
+                    left: 20px;
+                    bottom: 129px;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 22px;
+                    line-height: 26px;
+                    display: flex;
+                    align-items: center;
+                    color: #FFFFFF;
+                  }
+                
+                  .btn.formRedefinirSenha:hover{
+                  background-color: darkorange;
+                  color: #FFFFFF;
+                  }
+            
+                  #tituloCEP{
+                    position: relative;
+                    width: 72px;
+                    height: 22px;
+                    left: 20px;
+                    top: 80px;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 15px;
+                    line-height: 21px;
+                    display: flex;
+                    align-items: center;
+                    color: #261C1A;
+                    
+                  }
+            
+                  #tituloEndereco{
+                    position: relative;
+                    width: 89px;
+                    height: 22px;
+                    left: 20px;
+                    top: 105px;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 15px;
+                    line-height: 21px;
+                    display: flex;
+                    align-items: center;
+                    color: #261C1A;
+                }
+            
+                #tituloNumero{
+                    position: absolute;
+                    width: 38px;
+                    height: 21px;
+                    left: 180px;
+                    top: 80px;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 15px;
+                    line-height: 21px;
+                    display: flex;
+                    align-items: center;
+                    color: #261C1A; 
+                }
+            
+                #tituloBairro{
+                    position: relative;
+                    width: 170px;
+                    height: 27px;
+                    left: 20px;
+                    top: 100px;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 15px;
+                    line-height: 21px;
+                    display: flex;
+                    align-items: center;
+                    color: #261C1A;  
+                }
+            
+                #tituloEstado{
+                    position: relative;
+                    width: 77px;
+                    height: 15px;
+                    left: 180px;
+                    bottom: 37px;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 15px;
+                    line-height: 21px;
+                    display: flex;
+                    align-items: center;
+                    color: #261C1A
+                }
+                
+                #tituloComplemento{
+                    position: relative;
+                    width: 77px;
+                    height: 15px;
+                    left: 150px;
+                    bottom: 9px;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 15px;
+                    line-height: 21px;
+                    display: flex;
+                    align-items: center;
+                    color: #261C1A
+                }
+                
+                #tituloCidade{
+                    position: relative;
+                    width: 77px;
+                    height: 15px;
+                    left: 20px;
+                    bottom: -25px;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 15px;
+                    line-height: 21px;
+                    display: flex;
+                    align-items: center;
+                    color: #261C1A
+                }
+            
+            
+                  #CEP{
+                    position: relative;
+                    width: 122px;
+                    height: 12px;
+                    left: 20px;
+                    top: 90px;
+                    
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 12px;
+                    display: flex;
+                    align-items: center;
+                    
+                    color: #979797;
+                    
+                  }
+            
+                  #Endereco{
+            
+                    position: relative;
+                    width: 122px;
+                    height: 12px;
+                    left: 20px;
+                    top: 120px;
+                    
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 18px;
+                    display: flex;
+                    align-items: center;
+                    
+                    color: #979797;
+            
+                  }
+            
+                  #Numero{
+            
+                    position: relative;
+                    width: 122px;
+                    height: 12px;
+                    left: 180px;
+                    top: 5px;
+                    
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 18px;
+                    display: flex;
+                    align-items: center;
+                    
+                    color: #979797;
+            
+                  }
+            
+                  #Bairro{
+            
+                    position: relative;
+                    width: 122px;
+                    height: 12px;
+                    left: 20px;
+                    top: 110px;
+                    
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 18px;
+                    display: flex;
+                    align-items: center;
+                    
+                    color: #979797;
+            
+                  }
+            
+                  #Estado{
+            
+            
+                    position: relative;
+                    width: 122px;
+                    height: 12px;
+                    left: 180px;
+                    bottom: 22px;
+                    
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 15px;
+                    display: flex;
+                    align-items: center;
+                    
+                    color: #979797;
+                  }
+            
+                  #Complemento{
+            
+                    position: relative;
+                    width: 122px;
+                    height: 12px;
+                    left: 180px;
+                    bottom: -10px;
+                    
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 15px;
+                    display: flex;
+                    align-items: center;
+                    
+                    color: #979797;
+            
+                  }
+            
+                  #Cidade{
+            
+                    position: relative;
+                    width: 122px;
+                    height: 12px;
+                    left: 20px;
+                    bottom: -45px;
+                    
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 15px;
+                    line-height: 18px;
+                    display: flex;
+                    align-items: center;
+                    
+                    color: #979797;
+            
+                  }
+                  .modal-header{
+                    position: absolute;
+                    width: 312px;
+                    height: 693px;
+                    top: 2px;
+                    left: 20px;
+                    background: #FFFFFF;
+                    border: 2px solid #000000;
+                    box-sizing: border-box;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    border-radius: 10px;
+                    
+                }
+            
+             
+            
+                 .botao{
+                  position: absolute;
+                  width: 100px;
+                  height: 50px;
+                  left: 30px;
+                  align-items: center;
+                  top: 570px;
+                  background: #F27507;
+                  border-radius: 10px;
+                  cursor: pointer;
+                  font-weight: bold;
+                  font-size: 22px;
+                  color: #FFFFFF;
+                 }
+                 .botao tex{
+                  position: absolute;
+                  width: 116px;
+                  height: 26px;
+                  left: 20px;
+                  top: 9px;
+                  font-style: normal;
+                  font-weight: bold;
+                  font-size: 22px;
+                  line-height: 26px;
+                  display: flex;
+                  align-items: center;
+                  color: #FFFFFF;
+                 }
+                 .botao.tex:hover{
+                  background-color: darkorange;
+                  color: #FFFFFF;
+                  }
+            
+            
+                  .botao1{
+                    position: absolute;
+                    width: 125px;
+                    height: 50px;
+                    left: 160px;
+                    align-items: center;
+                    top: 570px;
+                    background: #34A853;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    font-size: 22px;
+                    color: #FFFFFF;
+                   }
+                   .botao1 tex{
+                    position: absolute;
+                    width: 116px;
+                    height: 26px;
+                    left: 20px;
+                    top: 9px;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 22px;
+                    line-height: 26px;
+                    display: flex;
+                    align-items: center;
+                    color: #FFFFFF;
+                   }
+                   .botao1.tex1:hover{
+                    background-color: #34d175;
+                    }
+            
+            
+                 #titu{
+                    position: absolute;
+                    left: 15.00%;
+                    right: 0%;
+                    top: 0%;
+                    bottom: 85%;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 25px;
+                    line-height: 29px;
+                    display: flex;
+                    align-items: center;
+                    
+                    color: #261C1A;
+                    
+                 }
+                  
+                  #linha{
+                    position: absolute;
+                    left: 2%;
+                    right: 2%;
+                    top: 8.34%;
+                    bottom: 15.66%;
+                    width: 95%;
+                    border: 1px solid #261C1A;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+                  }
+            
+                #form-label1{
+                    font-weight: 700;
+                    margin-left: 42px;
+                    color: #3C4043;
+                    font-size: 15px;
+                    left: -50px;
+                    position: relative;
+                    bottom: 35px;
+                }
+            
+              #form-control1{
+                margin-top: 9px;
+                width: 144px;
+                height: 40px;
+                left: -87px;
+                top:15px;
+                border: 2px solid #979797;
+                box-sizing: border-box;
+                border-radius: 10px;
+                position: relative;
+              }  
+            
+            
+            
+              #form-label2{
+                font-weight: 700;
+                margin-left: 42px;
+                color: #3C4043;
+                font-size: 15px;
+                left: -50px;
+                position: relative;
+                top: 10px;
+            }
+            
+            #form-control2{
+            margin-top: 9px;
+            width: 144px;
+            height: 40px;
+            left: -121px;
+            top:60px;
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+            position: relative;
+            }  
+            
+            
+            
+            
+            #form-label3{
+            font-weight: 700;
+            margin-left: 42px;
+            color: #3C4043;
+            font-size: 15px;
+            left: 135px;
+            position: relative;
+            bottom: 165px;
+            }
+            
+            #form-control3{
+            margin-top: 9px;
+            width: 67px;
+            height: 40px;
+            left: 75px;
+            bottom:115px;
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+            position: relative;
+            }  
+            
+            
+            
+            #form-label4{
+            font-weight: 700;
+            margin-left: 42px;
+            color: #3C4043;
+            font-size: 15px;
+            left: -50px;
+            position: relative;
+            bottom: 10px;
+            }
+            
+            #form-control4{
+            margin-top: 9px;
+            width: 144px;
+            height: 40px;
+            left: -97px;
+            top:40px;
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+            position: relative;
+            }  
+            
+            
+            
+            #form-label5{
+            font-weight: 700;
+            margin-left: 42px;
+            color: #3C4043;
+            font-size: 15px;
+            left: 135px;
+            position: relative;
+            bottom: 185px;
+            }
+            
+            #form-control5{
+            margin-top: 9px;
+            width: 92px;
+            height: 40px;
+            left: 81px;
+            bottom:135px;
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+            position: relative;
+            }  
+            
+            
+            
+            #form-label6{
+            font-weight: 700;
+            margin-left: 42px;
+            color: #3C4043;
+            font-size: 15px;
+            left: 130px;
+            position: relative;
+            bottom: 140px;
+            }
+            
+            #form-control6{
+            margin-top: 9px;
+            width: 84px;
+            height: 40px;
+            left: 30px;
+            bottom:90px;
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+            position: relative;
+            }  
+            
+            #form-label7{
+              font-weight: 700;
+              margin-left: 42px;
+              color: #3C4043;
+              font-size: 15px;
+              left: -50px;
+              position: relative;
+              bottom: 95px;
+            }
+            
+            #form-control7{
+            margin-top: 9px;
+            width: 144px;
+            height: 40px;
+            left: -103px;
+            bottom:45px;
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+            position: relative;
+            }  
+
+         }
+             

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polietismo Shop</title>
+
+    <!-- Links -->
+    <link rel="stylesheet" href="./css/css_leia/css_produto/produto.css">
+    <link rel="stylesheet" href="./css/default/default.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+
+<body>
+
+
+    <!--BEGINNER HEADER  -->
+    <header>
+
+
+        <!-- header superior -->
+        <div class="container-fluid" id="header-up">
+            <div class="container" id="cont1">
+                <div class="row row-up">
+                    <div class="col-2" id="cep">
+                        <div>
+                            <img src="./images/icons/local.png" alt="CEP" width="60%">
+                        </div>
+                        <div>
+                            <input id="input-cep" type="text" class="form-control" placeholder="Digite seu cep"
+                                aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+
+                    </div>
+                    <div class="col-7" id="nav-itens">
+                        <nav>
+                            <a href="">Católica</a>
+                            <a href="">Evangélica</a>
+                            <a href="">Espírita</a>
+                            <a href="">Africana</a>
+                            <a href="">Budista</a>
+                            <a href="">Judaica</a>
+                        </nav>
+                    </div>
+                    <div class="col-3" id="canvas">
+                        <button id="btn-canvas" type="button " data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img
+                                src="./images/icons/menu.png" alt="" width="70%"></button>
+
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                            aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <h5 id="offcanvasRightLabel">ÁREA DO CLIENTE</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="container">
+                                <div class="container" id="menu-canvas">
+                                    <div class="row row-canvas">
+                                        <div class="login-canvas">
+                                            <a href=""><img class="perfil" src="./images/icons/login.png" width="10%" alt="login"> <h5>Olá Jose da Silva</h5></a>    
+                                        </div>
+                                                                               
+                                    </div>
+                                </div>
+
+                                <div class=menu-list1>
+                                    <a class="menu-list2" href="">Meus Dados
+                                        <hr width="160">
+                                    </a>
+                                    <a class="menu-list3" href="">Meus Pedidos
+                                        <hr width="160">
+                                    </a>
+
+                                    <a class="menu-list4" href="">Meus Cartões
+                                        <hr width="160">
+                                    </a>
+                                    <a class="menu-list5" href="">Meus Endereço
+                                        <hr width="160">
+                                    </a>
+
+                                    <a class="menu-list6" href="">Meus Favoritos
+                                        <hr width="160">
+                                    </a>
+                                    <a class="menu-list7" href="">Alterar Senha
+                                        <hr width="160">
+                                    </a>
+                                    <a class="menu-list8" href="">Sair
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- header inferior -->
+        <div class="container-fluid" id="header-down">
+            <div class="container" id="cont2">
+                <div class="row" id="row-down">
+                    <div class="col-2" id="logo">
+                        <a href=""><img src="./images/logo.png" alt="LOGO" width="100%"></a>
+                    </div>
+                    <div class="col-7" id="search">
+                        <input type="text" class="form-control" placeholder="O que você está procurando? "
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2"><img
+                                src="./images/icons/pesquisa-de-lupa (1).png" width="20px" alt=""></button>
+                    </div>
+                    <div class="col-3" id="icons">
+                        <div class="col-3">
+                            <a href="#"><img src="./images/icons/login.png" alt="Login" width="40%"></a>
+                        </div>
+                        <div class="col-3">
+                            <a href="#"><img src="./images/icons/love.png" alt="Favoritos" width="40%"></a>
+                        </div>
+                        <div class="col-3">
+                            <a href="#"><img src="./images/icons/sac.png" alt="SAC" width="40%"></a>
+                        </div>
+                        <div class="col-3">
+                            <a href="#"><img src="./images/icons/cart.png" alt="Carrinho" width="40%"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+   <!-- Início Página Produto -->
+
+    <!-- container produto -->
+    <div class="container">
+
+        <nav id="caminho-links" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="caminho-links" href="./">Home</a></li>
+                <li class="breadcrumb-item"><a class="caminho-links" href="./">Católica</a></li>
+                <li class="breadcrumb-item"><a class="caminho-links" href="./">Terços</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Terço Rústico de Nossa Senhora da Salette</li>
+            </ol>
+        </nav>
+
+        <article class="row produtos-compra">
+            <figure class="col-md-6 mb-3 ">
+
+                <img width="90%" class="imgproduto1 img-fluid"
+                    src="./images/images-produto/terco_rustico_de_nossa_senhora_da_salette_1517_2_22b40d6ec8cc5ece8a7cd04832a0184d.jpg">
+
+                <img width="" class="imgproduto3"
+                    src="./images/images-produto/terco_rustico_de_nossa_senhora_da_salette_1517_2_22b40d6ec8cc5ece8a7cd04832a0184d.jpg">
+
+                <img width="" class="imgproduto4"
+                    src="./images/images-produto/terco_rustico_de_nossa_senhora_da_salette_1517_1_6a064438a5ab2b11e6206ca8079e6fee.jpg">
+
+            </figure>
+
+            <div class="col-md-6 mb-3">
+
+                <article class="produtos-conteudo">
+
+                    <h1 class="title-produto">Terço Rústico de Nossa Senhora da Salette</h1>
+                    <h6 class="cod-produto">Código: 04.06182</h6>
+                    <hr class="line-1">
+
+                    <article class="d-flex align-items-center">
+                        <input type="number" class="form-control" id="quantidade">
+                        <p class="qtd">Quantidade</p>
+                    </article>
+                </article>
+
+                <article class="produtos-preco">
+
+                    <article class="d-flex align-items-center">
+                        <strong class="preco">R$ 79,90 </strong>
+                        <span class="parcela">Em até 12x sem Juros</span>
+
+                    </article>
+
+                </article>
+
+                <article class="d-flex flex-column">
+                    <a class="verDetalhes flex-column" href="#detalhes">Mais Detalhes</a>
+
+                    <button class="btn compra" type="submit">
+                        COMPRAR
+                    </button>
+
+                    <button class="btn favoritar" type="submit">
+                        <img width="22" class="fav" src="./images/icons/fav.png">  Adicionar a lista de desejos
+                    </button>
+                </article>
+
+                <article id="cep-frete">
+                    <h6 class="infcep1">Calcule prazo de entrega</h6>
+
+
+                    <p class="infcep2">Informe seu CEP</p>
+
+                    <article class="d-flex justify-content-center">
+                        <input type="text" class="form-control" id="entrada-cep">
+                        <button class="btn cep" type="button" id="button-addon2">CALCULAR</button>
+                    </article>
+
+                    <a class="infcep3" href="https://buscacepinter.correios.com.br/app/endereco/index.php?t">Não sabe o
+                        CEP?</a>
+                </article>
+
+
+                <hr class="line-2">
+
+                <div class="col-6" id="pagamentos-produto">
+                    <h5 class="pagamentos-title">Formas de pagamento</h5>
+                    <p class="pagamentos-subtitle">Cartões de crédito</p>
+                    <div class="row" id="pay1">
+                        <div class="col-4" id="amazon-pay-cep">
+                            <img src="./images/icons/amazon-pay.png" alt="Amazon" width="50px" height="50px">
+                        </div>
+                        <div class="col-4" id="google-pay-cep">
+                            <img src="./images/icons/google-pay.png" alt="Google Pay" width="40px" height="40px">
+                        </div>
+                        <div class="col-4" id="aplle-pay-cep">
+                            <img src="./images/icons/apple-pay.png" alt="Apple Pay" width="40px" height="40px">
+                        </div>
+                    </div>
+                    <div class="row" id="pay2">
+                        <div class="col-4" id="master-cep">
+                            <img src="./images/icons/master.png" alt="Master Card" width="30px" height="30px">
+                        </div>
+                        <div class="col-4" id="visa-cep">
+                            <img src="./images/icons/visa.png" alt="visa" width="30px" height="30px">
+                        </div>
+                        <div class="col-4" id="maestro-cep">
+                            <img src="./images/icons/maestro.png" alt="Maestro" width="30px" height="30px">
+                        </div>
+                    </div>
+                    <div class="row" id="pay3">
+                        <div class="col-4" id="paypal-cep">
+                            <img src="./images/icons/paypal.png" alt="PayPal" width="30px" height="30px">
+                        </div>
+                        <div class="col-4" id="pix-cep">
+                            <img src="./images/icons/pix.png" alt="Pix" width="30px" height="30px">
+                        </div>
+                        <div class="col-4" id="boleto-cep">
+                            <img src="./images/icons/codigo-de-barras.png" alt="Boleto" width="30px" height="30px">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </article>
+
+        <h3 id="title-pag-produto">Descrição Geral</h3>
+        <hr id="line-pag-produto">
+
+        <p class="descricao-produto">
+            Este terço traz uma edição especial em homenagem ao Jubileu de 175 anos das aparições de
+            Nossa Senhora da Salette comemorado esse ano de 2021.
+            Feito em madeira natural de reflorestamento é amarrado manualmente com cordão escuro.
+            A medalha em madeira natural rústica traz de um lado a imagem de Nossa Senhora da Salette e
+            do outro o logotipo do Jubileu de 175 anos das aparições de Nossa Senhora da Salette.
+            Embalado individualmente com folheto com oração do Terço e Oração de Nossa Senhora da
+            Salette.
+            Leve consigo a presença de Nossa Senhora da Salette, por meio desse belíssimo terço.
+            Produto feito em madeira natural de reflorestamento, 100% nacional.
+        </p>
+
+        <p class="descricao-produto">
+            <li type="none">Tamanho da bolinha: 8 mm;</li>
+            <li type="none">Tamanho do Crucifixo: 5 cm;</li>
+            <li type="none">Tamanho do Terço inteiro: 40 cm;</li>
+            <li type="none">Material: bolas e medalha em madeira e crucifixo em metal "ouro velho";</li>
+            <li type="none">Acabamento: verniz fosco;</li>
+            <li type="none">Cor: madeira natural. </li>
+        </p>
+
+
+        <h3 id="title-pag-produto">Produtos Relacionados</h3>
+        <hr id="line-pag-produto">
+
+        <div class="col-12 imagensCaixa1">
+            <div class="row g-1">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="img">
+                            <img src="./images/images-home/crucifixo_de_parede_c_cristo_em_resina_33_cm_123_1_20200805181826.webp"
+                                alt="">
+                        </div>
+                        <div class="content">
+                            <div class="title-card">Crucifixo de parede c/ Cristo</div>
+                            <div class="sub-title">R$ 30,00</div>
+                            <div class="sub-title2">ou 3x de R$ 26,33 Sem juros</div>
+                            <div class="btn">
+                                <button>ADICIONAR AO CARRINHO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="img">
+                            <img src="./images/images-home/talit.jpg" alt="">
+                        </div>
+                        <div class="content">
+                            <div class="title-card">Talit de lã c/ listras pretas</div>
+                            <div class="sub-title">R$ 129,30</div>
+                            <div class="sub-title2">até 3x de R$ 43,10 Sem juros</div>
+                            <div class="btn">
+                                <button>ADICIONAR AO CARRINHO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="img">
+                            <img src="./images/images-home/Iemanja-Branco.jpg" alt="">
+                        </div>
+                        <div class="content">
+                            <div class="title-card">Jogo de Iemanjá Branco</div>
+                            <div class="sub-title">R$ 220,00</div>
+                            <div class="sub-title2">ou 3x de R$ 73,33 Sem juros</div>
+                            <div class="btn">
+                                <button>ADICIONAR AO CARRINHO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card ">
+                        <div class="img">
+                            <img src="./images/images-home/Adja-chapa-aço-cabo-madeira-1.jpg" alt="">
+                        </div>
+                        <div class="content">
+                            <div class="title-card">Adja com 3 Bocas Aço Cabo de Madeira</div>
+                            <div class="sub-title">R$ 49,90</div>
+                            <div class="sub-title2">ou 3x de R$ 16,63 Sem juros</div>
+                            <div class="btn">
+                                <button>ADICIONAR AO CARRINHO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+
+
+  <!-- Final Página Produto -->
+
+    <footer>
+        <div class="conteiner-fluid" id="footer-up">
+            <div class="container" id="cont1">
+                <div class="row" id="footer-itens">
+                    <div class="col-3" id="empresa">
+
+                        <ul>
+                            <h5>Institucional</h5>
+                            <a href="">
+                                <li>Empresa</li>
+                            </a>
+                            <a href="">
+                                <li>Como comprar</li>
+                            </a>
+                            <a href="">
+                                <li>Segurança</li>
+                            </a>
+                            <a href="">
+                                <li>Envio</li>
+                            </a>
+                            <a href="">
+                                <li>Pagamento</li>
+                            </a>
+                            <a href="">
+                                <li>Garantia</li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="col-3" id="sociais">
+                        <ul>
+                            <h5>Redes Sociais</h5>
+                            <li><a href="#"><img class="imgFace" src="./images/icons/facebook.png" alt="Facebook"
+                                        width="10%">Facebook</a></li>
+                            <li><a href="#"><img class="imgInsta" src="./images/icons/instagram.png" alt="Instagram"
+                                        width="10%">Instagram</a></li>
+                            <li><a href="#"><img class="imgTwitter" src="./images/icons/twitter.png" alt="Twitter" width="10%">Twitter</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-3" id="sac">
+
+                        <ul>
+                            <h5>Atendimento</h5>
+                            <li><a href="#"><img src="./images/icons/whatsapp.png" alt="WhatsApp"
+                                        width="10%">WhatsApp</a></li>
+                            <li><a href="#"><img class="imgEmail" src="./images/icons/o-email (1).png" alt="Email" width="10%">Email</a>
+                            </li>
+                            <li><a href="#"><img class="imgFone" src="./images/icons/placa-de-telefone (1).png" alt="Telefones"
+                                        width="10%">Telefone</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3" id="pagamentos">
+                        <h5>Formas de pagamento</h5>
+                        <div class="row" id="pay1">
+                            <div class="col-4" id="amazon-pay">
+                                <img src="./images/icons/amazon-pay.png" alt="Amazon" width="65%" height="90%">
+                            </div>
+                            <div class="col-4" id="google-pay">
+                                <img src="./images/icons/google-pay.png" alt="Google Pay" width="65%" height="90%">
+                            </div>
+                            <div class="col-4" id="aplle-pay">
+                                <img src="./images/icons/apple-pay.png" alt="Apple Pay" width="65%" height="90%">
+                            </div>
+                        </div>
+                        <div class="row" id="pay2">
+                            <div class="col-4" id="master">
+                                <img src="./images/icons/master.png" alt="Master Card" width="40%" height="75%">
+                            </div>
+                            <div class="col-4" id="visa">
+                                <img src="./images/icons/visa.png" alt="visa" width="50%" height="80%">
+                            </div>
+                            <div class="col-4" id="maestro">
+                                <img src="./images/icons/maestro.png" alt="Maestro" width="40%" height="70%">
+                            </div>
+                        </div>
+                        <div class="row" id="pay3">
+                            <div class="col-4" id="paypal">
+                                <img src="./images/icons/paypal.png" alt="PayPal" width="35%" height="75%">
+                            </div>
+                            <div class="col-4" id="pix">
+                                <img src="./images/icons/pix.png" alt="Pix" width="35%" height="75%">
+                            </div>
+                            <div class="col-4" id="boleto">
+                                <img src="./images/icons/codigo-de-barras.png" alt="Boleto" width="30%" height="60%">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="conteiner-fluid" id="footer-down">
+            <div class="container" id="copyright">
+                <h6>®Todos direitos reservados a RD-S/A Quero Ser Dev</h6>
+            </div>
+
+        </div>
+
+    </footer>
+</body>
+<!-- BOOTSTRAP E CSS -->
+
+<script src="./js/js_produto/produto.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,1664 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  border: none;
+  outline: none;
+  font-family: Roboto;
+  box-sizing: border-box;
+ 
+  flex-wrap: nowrap;
+}
+
+#myModal{
+  background-color: #979797;
+}
+
+.menu-list1 { 
+	width:313px;
+	height:534px;
+	position:absolute;
+}
+
+.menu-list2 { 
+	color:black;
+	width:147px;
+	height:27px;
+	position:absolute;
+	left:79px;
+	top:42px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:20px;font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+	
+}
+
+.menu-list3 { 
+	color:black;
+	width:147px;
+	height:27px;
+	position:absolute;
+	left:79px;
+	top:100px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.menu-list4 { 
+	color:black;
+	width:131px;
+	height:29px;
+	position:absolute;
+	left:79px;
+	top:156px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+.menu-list5 { 
+	color:black;
+	width:145px;
+	height:28px;
+	position:absolute;
+	left:78px;
+	top:208px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.menu-list6 { 
+	color:black;
+	width:146px;
+	height:33px;
+	position:absolute;
+	left:77px;
+	top:264px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.menu-list7 { 
+	color:black;
+	width:136px;
+	height:28px;
+	position:absolute;
+	left:78px;
+	top:320px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0; 
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.menu-list8 { 
+	color:black;
+	width:131px;
+	height:29px;
+	position:absolute;
+	left:79px;
+	top:378px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+
+.perfil{
+  position: relative;
+  margin-left: 0px;
+  top: 58px;
+ }
+ .te{
+  position: relative;
+  top: 20px;
+  font-weight: bold;
+  color: black;
+  left: 1px;
+  
+ }
+ 
+ 
+.Titulo{
+    position: relative;
+    width: 230px;
+    height: 51px;
+    left: 750px;
+    bottom: 50px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    
+    color: #261C1A;
+    
+    }
+
+    .container-caixaDados{
+        position: relative;
+        width: 723px;
+        height: 467px;
+        left: 500px;
+        bottom: 40px;
+        background: #FFFFFF;
+        border: 2px solid #261C1A;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+    }
+    .btn.formRedefinirSenha{
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        left: 320px;
+        top: 360px;
+        background: #F27507;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 22px;
+        color: #FFFFFF;
+      }
+    
+      .btn formRedefinirSenha{
+        position: absolute;
+        width: 116px;
+        height: 26px;
+        left: 20px;
+        bottom: 129px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+      }
+    
+      .btn.formRedefinirSenha:hover{
+      background-color: darkorange;
+      color: #FFFFFF;
+      }
+
+      #tituloNome{
+        position: relative;
+        width: 72px;
+        height: 22px;
+        left: 150px;
+        top: 35px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        color: #261C1A;
+        
+      }
+
+#tituloEmail{
+position: relative;
+width: 89px;
+height: 22px;
+left: 150px;
+top: 65px;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+color: #261C1A;
+    }
+
+    #tituloCPF{
+        position: absolute;
+        width: 38px;
+        height: 21px;
+        left: 150px;
+        top: 225px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        /* identical to box height */
+        display: flex;
+        align-items: center;
+        color: #261C1A;        
+    }
+
+    #tituloDNascimento{
+        position: relative;
+        width: 170px;
+        height: 27px;
+        left: 440px;
+        bottom: 145px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        color: #261C1A;        
+    }
+
+    #tituloTelefone{
+        position: relative;
+        width: 77px;
+        height: 15px;
+        left: 440px;
+        bottom: 109px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        color: #261C1A;        
+    }
+    
+    #Nome{
+position: relative;
+width: 72px;
+height: 22px;
+left: 150px;
+top: 30px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 18px;
+display: flex;
+align-items: center;
+color: #979797;
+    }
+
+    #Email{
+        position: relative;
+        width: 72px;
+        height: 22px;
+        left: 150px;
+        top: 65px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        color: #979797;
+            }
+
+            #CPF{
+                position: relative;
+                width: 72px;
+                height: 22px;
+                left: 150px;
+                top: 115px;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 18px;
+                display: flex;
+                align-items: center;
+                color: #979797;
+                    }
+
+                    #Data{
+                        position: relative;
+                        width: 72px;
+                        height: 22px;
+                        left: 440px;
+                        bottom: 150px;
+                        font-family: Roboto;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 15px;
+                        line-height: 18px;
+                        display: flex;
+                        align-items: center;
+                        color: #979797;
+                            }
+
+                            #Telefone{
+                                position: relative;
+                                width: 72px;
+                                height: 22px;
+                                left: 440px;
+                                bottom: 105px;
+                                font-family: Roboto;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 15px;
+                                line-height: 18px;
+                                display: flex;
+                                align-items: center;
+                                color: #979797;
+                                    }
+                                    
+                                    .modal-header{
+                                        position: absolute;
+                                        width: 823px;
+                                        height: 693px;
+                                        top: 2px;
+                                        left: 20px;
+                                        align-items: center;
+                                        background: #FFFFFF;
+                                        border: 2px solid #000000;
+                                        box-sizing: border-box;
+                                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                                        border-radius: 10px;
+                                        
+                                    }
+                        
+                                 
+
+                                     .botao{
+                                      position: absolute;
+                                      width: 150px;
+                                      height: 50px;
+                                      left: 380px;
+                                      align-items: center;
+                                      top: 600px;
+                                      background: #F27507;
+                                      border-radius: 10px;
+                                      cursor: pointer;
+                                      font-weight: bold;
+                                      font-size: 22px;
+                                      color: #FFFFFF;
+                                      border: none;
+                                     }
+                                     .botao tex{
+                                      position: absolute;
+                                      width: 116px;
+                                      height: 26px;
+                                      left: 20px;
+                                      top: 9px;
+                                      font-style: normal;
+                                      font-weight: bold;
+                                      font-size: 22px;
+                                      line-height: 26px;
+                                      display: flex;
+                                      align-items: center;
+                                      color: #FFFFFF;
+                                     }
+                                     .botao.tex:hover{
+                                      background-color: darkorange;
+                                      }
+
+                                     #titu{
+                                        position: absolute;
+                                        left: 15.00%;
+                                        right: 0%;
+                                        top: 0%;
+                                        bottom: 85%;
+                                        font-family: Roboto;
+                                        font-style: normal;
+                                        font-weight: bold;
+                                        font-size: 25px;
+                                        line-height: 29px;
+                                        display: flex;
+                                        align-items: center;
+                                        
+                                        color: #261C1A;
+                                        
+                                     }
+                                      
+                                      #linha{
+                                        position: absolute;
+                                        left: 2%;
+                                        right: 2%;
+                                        top: 8.34%;
+                                        bottom: 15.66%;
+                                        border: 1px solid #261C1A;
+                                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+                                      }
+
+                                    #form-label1{
+                                        font-weight: 700;
+                                        margin-left: 42px;
+                                        color: #3C4043;
+                                        font-size: 18px;
+                                        left: 25px;
+                                        position: relative;
+                                        top: 15px;
+                                    }
+
+                                  #form-control1{
+                                    margin-top: 9px;
+                                    width: 627px;
+                                    height: 40px;
+                                    left: 60px;
+                                    top:15px;
+                                    border: 2px solid #979797;
+                                    box-sizing: border-box;
+                                    border-radius: 10px;
+                                    position: relative;
+                                  }  
+                                
+
+
+                                  #form-label2{
+                                    font-weight: 700;
+                                    margin-left: 42px;
+                                    color: #3C4043;
+                                    font-size: 18px;
+                                    left: 25px;
+                                    position: relative;
+                                    top: 10px;
+                                }
+
+                              #form-control2{
+                                margin-top: 9px;
+                                width: 194px;
+                                height: 40px;
+                                right: 20px;
+                                top:60px;
+                                border: 2px solid #979797;
+                                box-sizing: border-box;
+                                border-radius: 10px;
+                                position: relative;
+                              }  
+                            
+
+
+
+                              #form-label3{
+                                font-weight: 700;
+                                margin-left: 42px;
+                                color: #3C4043;
+                                font-size: 18px;
+                                left: 355px;
+                                position: relative;
+                                bottom: 50px;
+                            }
+
+                          #form-control3{
+                            margin-top: 9px;
+                            width: 149px;
+                            height: 40px;
+                            left: 185px;
+                            bottom:2px;
+                            border: 2px solid #979797;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                            position: relative;
+                          }  
+                        
+
+
+                          #form-label4{
+                            font-weight: 700;
+                            margin-left: 42px;
+                            color: #3C4043;
+                            font-size: 18px;
+                            left: 25px;
+                            position: relative;
+                            top: 100px;
+                        }
+
+                      #form-control4{
+                        margin-top: 9px;
+                        width: 627px;
+                        height: 40px;
+                        right: 30px;
+                        top:150px;
+                        border: 2px solid #979797;
+                        box-sizing: border-box;
+                        border-radius: 10px;
+                        position: relative;
+                      }  
+                    
+
+
+                      #form-label5{
+                        font-weight: 700;
+                        margin-left: 42px;
+                        color: #3C4043;
+                        font-size: 18px;
+                        left: 25px;
+                        position: relative;
+                        bottom: 80px;
+                    }
+
+                  #form-control5{
+                    margin-top: 9px;
+                    width: 194px;
+                    height: 40px;
+                    right: 200px;
+                    bottom:30px;
+                    border: 2px solid #979797;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+                    position: relative;
+                  }  
+                
+
+
+                  #form-label6{
+                    font-weight: 700;
+                    margin-left: 42px;
+                    color: #3C4043;
+                    font-size: 18px;
+                    left: 355px;
+                    position: relative;
+                    bottom: 145px;
+                }
+
+              #form-control6{
+                margin-top: 9px;
+                width: 149px;
+                height: 40px;
+                left: 290px;
+                bottom:95px;
+                border: 2px solid #979797;
+                box-sizing: border-box;
+                border-radius: 10px;
+                position: relative;
+              }  
+            
+         
+                
+
+
+
+            
+
+
+
+
+
+            @media  (max-width:1024px){
+              hr{
+                width: 65%;
+              }
+               
+           .menu-list1 { 
+             width:313px;
+             height:534px;
+             position:absolute;
+           }
+           
+           .menu-list2 { 
+             color:black;
+             width:147px;
+             height:27px;
+             position:absolute;
+             left:19px;
+             top:-40px;
+             font-family:"Roboto";
+             text-align:left;
+             font-size:13px;
+             letter-spacing:0;
+             text-decoration: none;
+             font-weight:bold;
+             
+           }
+           
+           .menu-list3 { 
+             color:black;
+             width:147px;
+             height:27px;
+             position:absolute;
+             left:19px;
+             top:12px;
+             font-family:"Roboto";
+             text-align:left;
+             font-size:13px;
+             letter-spacing:0;
+             text-decoration: none;
+             font-weight:bold;
+           }
+           
+           .menu-list4 { 
+             color:black;
+             width:131px;
+             height:29px;
+             position:absolute;
+             left:19px;
+             top:56px;
+             font-family:"Roboto";
+             text-align:left;
+             font-size:13px;
+             letter-spacing:0;
+             text-decoration: none;
+             font-weight:bold;
+           }
+           .menu-list5 { 
+             color:black;
+             width:145px;
+             height:28px;
+             position:absolute;
+             left:19px;
+             top:100px;
+             font-family:"Roboto";
+             text-align:left;
+             font-size:13px;
+             letter-spacing:0;
+             text-decoration: none;
+             font-weight:bold;
+           }
+           
+           .menu-list6 { 
+             color:black;
+             width:146px;
+             height:33px;
+             position:absolute;
+             left:19px;
+             top:145px;
+             font-family:"Roboto";
+             text-align:left;
+             font-size:13px;
+             letter-spacing:0;
+             text-decoration: none;
+             font-weight:bold;
+           }
+           
+           .menu-list7 { 
+             color:black;
+             width:136px;
+             height:28px;
+             position:absolute;
+             left:19px;
+             top:190px;
+             font-family:"Roboto";
+             text-align:left;
+             font-size:13px;
+             letter-spacing:0; 
+             text-decoration: none;
+             font-weight:bold;
+           }
+           
+           .menu-list8 { 
+             color:black;
+             width:131px;
+             height:29px;
+             position:absolute;
+             left:19px;
+             top:240px;
+             font-family:"Roboto";
+             text-align:left;
+             font-size:13px;
+             letter-spacing:0;
+             text-decoration: none;
+             font-weight:bold;
+           }
+           
+           
+           .perfil{
+             position: relative;
+             margin-left: 0px;
+             top: 58px;
+             width: 50px;
+             height: 40px;
+            }
+            .te{
+             position: relative;
+             margin-bottom: 105px;
+             font-weight: bold;
+             color: black;
+             left: 6px;
+             font-size: 11px;
+             
+            }.Titulo{
+             position: relative;
+             width: 230px;
+             height: 51px;
+             left: 450px;
+             bottom: 40px;
+             
+             font-family: Roboto;
+             font-style: normal;
+             font-weight: bold;
+             font-size: 18px;
+             line-height: 35px;
+             display: flex;
+             align-items: center;
+             
+             color: #261C1A;
+             
+             }
+         
+             .container-caixaDados{
+                 position: relative;
+                 width: 455px;
+                 height: 307px;
+                 left: 280px;
+                 bottom: 40px;
+                 background: #FFFFFF;
+                 border: 2px solid #261C1A;
+                 box-sizing: border-box;
+                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                 border-radius: 30px;
+             }
+             .btn.formRedefinirSenha{
+                 position: absolute;
+                 width: 95px;
+                 height: 42px;
+                 left: 180px;
+                 top: 240px;
+                 background: #F27507;
+                 border-radius: 10px;
+                 cursor: pointer;
+                 font-weight: bold;
+                 font-size: 22px;
+                 color: #FFFFFF;
+               }
+             
+
+               #tituloNome{
+                 position: relative;
+                 width: 72px;
+                 height: 22px;
+                 left: 8px;
+                 top: 31px;
+                 font-family: Roboto;
+                 font-style: normal;
+                 font-weight: bold;
+                 font-size: 16px;
+                 line-height: 21px;
+                 display: flex;
+                 align-items: center;
+                 color: #261C1A;
+                 
+               }
+         
+         #tituloEmail{
+         position: relative;
+         width: 89px;
+         height: 22px;
+         left: 8px;
+         top: 15px;
+         font-family: Roboto;
+         font-style: normal;
+         font-weight: bold;
+         font-size: 16px;
+         line-height: 21px;
+         display: flex;
+         align-items: center;
+         color: #261C1A;
+             }
+         
+             #tituloCPF{
+                 position: absolute;
+                 width: 38px;
+                 height: 21px;
+                 left: 8px;
+                 top: 137px;
+                 font-family: Roboto;
+                 font-style: normal;
+                 font-weight: bold;
+                 font-size: 16px;
+                 line-height: 21px;
+                 display: flex;
+                 align-items: center;
+                 color: #261C1A;        
+             }
+         
+             #tituloDNascimento{
+                 position: relative;
+                 width: 170px;
+                 height: 27px;
+                 left: 298px;
+                 bottom: 144px;
+                 font-family: Roboto;
+                 font-style: normal;
+                 font-weight: bold;
+                 font-size: 16px;
+                 line-height: 21px;
+                 display: flex;
+                 align-items: center;
+                 color: #261C1A;        
+             }
+         
+             #tituloTelefone{
+                 position: relative;
+                 width: 77px;
+                 height: 15px;
+                 left: 298px;
+                 bottom: 162px;
+                 font-family: Roboto;
+                 font-style: normal;
+                 font-weight: bold;
+                 font-size: 16px;
+                 line-height: 21px;
+                 display: flex;
+                 align-items: center;
+                 color: #261C1A;        
+             }
+             
+             #Nome{
+         position: relative;
+         width: 72px;
+         height: 22px;
+         left: 8px;
+         top: 25px;
+         font-family: Roboto;
+         font-style: normal;
+         font-weight: 500;
+         font-size: 14px;
+         line-height: 18px;
+         display: flex;
+         align-items: center;
+         color: #979797;
+             }
+         
+             #Email{
+                 position: relative;
+                 width: 72px;
+                 height: 22px;
+                 left: 8px;
+                 top: 9px;
+                 font-family: Roboto;
+                 font-style: normal;
+                 font-weight: 500;
+                 font-size: 15px;
+                 line-height: 14px;
+                 display: flex;
+                 align-items: center;
+                 color: #979797;
+                     }
+         
+                     #CPF{
+                         position: relative;
+                         width: 72px;
+                         height: 22px;
+                         left: 8px;
+                         top: 25px;
+                         font-family: Roboto;
+                         font-style: normal;
+                         font-weight: 500;
+                         font-size: 14px;
+                         line-height: 18px;
+                         display: flex;
+                         align-items: center;
+                         color: #979797;
+                             }
+         
+                             #Data{
+                                 position: relative;
+                                 width: 72px;
+                                 height: 22px;
+                                 left: 298px;
+                                 bottom: 153px;
+                                 font-family: Roboto;
+                                 font-style: normal;
+                                 font-weight: 500;
+                                 font-size: 15px;
+                                 line-height: 18px;
+                                 display: flex;
+                                 align-items: center;
+                                 color: #979797;
+                                     }
+         
+                                     #Telefone{
+                                         position: relative;
+                                         width: 72px;
+                                         height: 22px;
+                                         left: 298px;
+                                         bottom: 162px;
+                                         font-family: Roboto;
+                                         font-style: normal;
+                                         font-weight: 500;
+                                         font-size: 15px;
+                                         line-height: 18px;
+                                         display: flex;
+                                         align-items: center;
+                                         color: #979797;
+                                             }
+
+
+                                             .modal-header{
+                                              position: absolute;
+                                              width: 423px;
+                                              height: 653px;
+                                              top: 165px;
+                                              left: 60px;
+                                              align-items: center;
+                                              background: #FFFFFF;
+                                              border: 2px solid #000000;
+                                              box-sizing: border-box;
+                                              box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                                              border-radius: 10px;
+                                              
+                                          }
+                              
+                                       
+      
+                                           .botao{
+                                            position: absolute;
+                                            width: 120px;
+                                            height: 50px;
+                                            left: 150px;
+                                            align-items: center;
+                                            top: 580px;
+                                            background: #F27507;
+                                            border-radius: 10px;
+                                            cursor: pointer;
+                                            font-weight: bold;
+                                            font-size: 22px;
+                                            color: #FFFFFF;
+                                            border: none;
+                                           }
+                                           .botao tex{
+                                            position: absolute;
+                                            width: 116px;
+                                            height: 26px;
+                                            left: 20px;
+                                            top: 9px;
+                                            font-style: normal;
+                                            font-weight: bold;
+                                            font-size: 22px;
+                                            line-height: 26px;
+                                            display: flex;
+                                            align-items: center;
+                                            color: #FFFFFF;
+                                           }
+                                           .botao.tex:hover{
+                                            background-color: darkorange;
+                                            }
+      
+                                           #titu{
+                                              position: absolute;
+                                              left: 15.00%;
+                                              right: 0%;
+                                              top: 0%;
+                                              bottom: 85%;
+                                              font-family: Roboto;
+                                              font-style: normal;
+                                              font-weight: bold;
+                                              font-size: 25px;
+                                              line-height: 29px;
+                                              display: flex;
+                                              align-items: center;
+                                              
+                                              color: #261C1A;
+                                              
+                                           }
+                                            
+                                            #linha{
+                                              position: absolute;
+                                              left: 2%;
+                                              right: 2%;
+                                              top: 8.34%;
+                                              bottom: 15.66%;
+                                              width: 95%;
+                                              border: 1px solid #261C1A;
+                                              box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+                                            }
+      
+                                          #form-label1{
+                                              font-weight: 700;
+                                              margin-left: 42px;
+                                              color: #3C4043;
+                                              font-size: 15px;
+                                              left: -45px;
+                                              position: relative;
+                                              top: -10px;
+                                          }
+      
+                                        #form-control1{
+                                          margin-top: 9px;
+                                          width: 357px;
+                                          height: 40px;
+                                          left: -5px;
+                                          top:-10px;
+                                          border: 2px solid #979797;
+                                          box-sizing: border-box;
+                                          border-radius: 10px;
+                                          position: relative;
+                                        }  
+                                      
+      
+      
+                                        #form-label2{
+                                          font-weight: 700;
+                                          margin-left: 42px;
+                                          color: #3C4043;
+                                          font-size: 15px;
+                                          left: -45px;
+                                          position: relative;
+                                          top: -15px;
+                                      }
+      
+                                    #form-control2{
+                                      margin-top: 9px;
+                                      width: 357px;
+                                      height: 40px;
+                                      left: -4px;
+                                      top:-15px;
+                                      border: 2px solid #979797;
+                                      box-sizing: border-box;
+                                      border-radius: 10px;
+                                      position: relative;
+                                    }  
+                                  
+      
+      
+      
+                                    #form-label3{
+                                      font-weight: 700;
+                                      margin-left: 42px;
+                                      color: #3C4043;
+                                      font-size: 15px;
+                                      left: -45px;
+                                      position: relative;
+                                      top: -5px;
+                                  }
+      
+                                #form-control3{
+                                  margin-top: 9px;
+                                  width: 129px;
+                                  height: 40px;
+                                  left: -185px;
+                                  bottom:-38px;
+                                  border: 2px solid #979797;
+                                  box-sizing: border-box;
+                                  border-radius: 10px;
+                                  position: relative;
+                                }  
+                              
+      
+      
+                                #form-label4{
+                                  font-weight: 700;
+                                  margin-left: 42px;
+                                  color: #3C4043;
+                                  font-size: 15px;
+                                  left: -45px;
+                                  position: relative;
+                                  top: 155px;
+                              }
+      
+                            #form-control4{
+                              margin-top: 9px;
+                              width: 357px;
+                              height: 40px;
+                              left: -5px;
+                              top:150px;
+                              border: 2px solid #979797;
+                              box-sizing: border-box;
+                              border-radius: 10px;
+                              position: relative;
+                            }  
+                          
+      
+      
+                            #form-label5{
+                              font-weight: 700;
+                              margin-left: 42px;
+                              color: #3C4043;
+                              font-size: 15px;
+                              left: -45px;
+                              position: relative;
+                              bottom: 30px;
+                          }
+      
+                        #form-control5{
+                          margin-top: 9px;
+                          width: 134px;
+                          height: 40px;
+                          left: -5px;
+                          bottom:30px;
+                          border: 2px solid #979797;
+                          box-sizing: border-box;
+                          border-radius: 10px;
+                          position: relative;
+                        }  
+                      
+      
+      
+                        #form-label6{
+                          font-weight: 700;
+                          margin-left: 42px;
+                          color: #3C4043;
+                          font-size: 15px;
+                          left: 185px;
+                          position: relative;
+                          bottom: 135px;
+                      }
+      
+                    #form-control6{
+                      margin-top: 9px;
+                      width: 134px;
+                      height: 40px;
+                      left: 70px;
+                      bottom:95px;
+                      border: 2px solid #979797;
+                      box-sizing: border-box;
+                      border-radius: 10px;
+                      position: relative;
+                    }  
+                                                                           
+         }
+         @media (max-width:568px){
+          hr{
+            width: 65%;
+          }
+           
+       .menu-list1 { 
+  
+         visibility: hidden;
+       }
+       
+       .menu-list2 { 
+    
+         visibility: hidden;
+         
+       }
+       
+       .menu-list3 { 
+  
+         visibility: hidden;
+       }
+       
+       .menu-list4 { 
+
+         visibility: hidden;
+       }
+       .menu-list5 { 
+
+         visibility: hidden;
+       }
+       
+       .menu-list6 { 
+
+         visibility: hidden;
+       }
+       
+       .menu-list7 { 
+
+         visibility: hidden;
+       }
+       
+       .menu-list8 { 
+ 
+         visibility: hidden;
+       }
+       
+       
+       .perfil{
+         position: relative;
+         margin-left: 0px;
+         top: 58px;
+         width: 50px;
+         height: 40px;
+         visibility: hidden;
+        }
+        .te{
+         position: relative;
+         top: 15px;
+         font-weight: bold;
+         color: black;
+         left: 6px;
+         font-size: 11px;
+         visibility: hidden;
+         
+        }.Titulo{
+         position: relative;
+         width: 230px;
+         height: 51px;
+         left: 110px;
+         bottom: 80px;
+         
+         font-family: Roboto;
+         font-style: normal;
+         font-weight: bold;
+         font-size: 18px;
+         line-height: 35px;
+         display: flex;
+         align-items: center;
+         
+         color: #261C1A;
+  
+         
+         }
+
+
+         
+     
+         .container-caixaDados{
+             position: relative;
+             width: 255px;
+             height: 407px;
+             left: 40px;
+             bottom: 80px;
+             background: #FFFFFF;
+             border: 2px solid #261C1A;
+             box-sizing: border-box;
+             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+             border-radius: 30px;
+         }
+         .btn.formRedefinirSenha{
+             position: absolute;
+             width: 95px;
+             height: 42px;
+             left: 80px;
+             top: 330px;
+             background: #F27507;
+             border-radius: 10px;
+             cursor: pointer;
+             font-weight: bold;
+             font-size: 22px;
+             color: #FFFFFF;
+           }
+         
+
+           #tituloNome{
+             position: relative;
+             width: 72px;
+             height: 22px;
+             left: 8px;
+             top: 31px;
+             font-family: Roboto;
+             font-style: normal;
+             font-weight: bold;
+             font-size: 16px;
+             line-height: 21px;
+             display: flex;
+             align-items: center;
+             color: #261C1A;
+             
+           }
+     
+     #tituloEmail{
+     position: relative;
+     width: 89px;
+     height: 22px;
+     left: 8px;
+     top: 15px;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: bold;
+     font-size: 16px;
+     line-height: 21px;
+     display: flex;
+     align-items: center;
+     color: #261C1A;
+         }
+     
+         #tituloCPF{
+             position: absolute;
+             width: 38px;
+             height: 21px;
+             left: 8px;
+             top: 137px;
+             font-family: Roboto;
+             font-style: normal;
+             font-weight: bold;
+             font-size: 16px;
+             line-height: 21px;
+             /* identical to box height */
+             display: flex;
+             align-items: center;
+             color: #261C1A;        
+         }
+     
+         #tituloDNascimento{
+             position: relative;
+             width: 170px;
+             height: 27px;
+             left: 8px;
+             top: 12px;
+             font-family: Roboto;
+             font-style: normal;
+             font-weight: bold;
+             font-size: 16px;
+             line-height: 21px;
+             display: flex;
+             align-items: center;
+             color: #261C1A;        
+         }
+     
+         #tituloTelefone{
+             position: relative;
+             width: 77px;
+             height: 15px;
+             left: 8px;
+             top: 2px;
+             font-family: Roboto;
+             font-style: normal;
+             font-weight: bold;
+             font-size: 16px;
+             line-height: 21px;
+             display: flex;
+             align-items: center;
+             color: #261C1A;        
+         }
+         
+         #Nome{
+     position: relative;
+     width: 72px;
+     height: 22px;
+     left: 8px;
+     top: 25px;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: 500;
+     font-size: 14px;
+     line-height: 18px;
+     display: flex;
+     align-items: center;
+     color: #979797;
+         }
+     
+         #Email{
+             position: relative;
+             width: 72px;
+             height: 22px;
+             left: 8px;
+             top: 9px;
+             font-family: Roboto;
+             font-style: normal;
+             font-weight: 500;
+             font-size: 15px;
+             line-height: 14px;
+             display: flex;
+             align-items: center;
+             color: #979797;
+                 }
+     
+                 #CPF{
+                     position: relative;
+                     width: 72px;
+                     height: 22px;
+                     left: 8px;
+                     top: 25px;
+                     font-family: Roboto;
+                     font-style: normal;
+                     font-weight: 500;
+                     font-size: 14px;
+                     line-height: 18px;
+                     display: flex;
+                     align-items: center;
+                     color: #979797;
+                         }
+     
+                         #Data{
+                             position: relative;
+                             width: 72px;
+                             height: 22px;
+                             left: 8px;
+                             top: 5px;
+                             font-family: Roboto;
+                             font-style: normal;
+                             font-weight: 500;
+                             font-size: 15px;
+                             line-height: 18px;
+                             display: flex;
+                             align-items: center;
+                             color: #979797;
+                                 }
+     
+                                 #Telefone{
+                                     position: relative;
+                                     width: 72px;
+                                     height: 22px;
+                                     left: 8px;
+                                     top: 1px;
+                                     font-family: Roboto;
+                                     font-style: normal;
+                                     font-weight: 500;
+                                     font-size: 15px;
+                                     line-height: 18px;
+                                     display: flex;
+                                     align-items: center;
+                                     color: #979797;
+                                         }
+
+                                         .modal-header{
+                                           position: absolute;
+                                           width: 383px;
+                                           height: 653px;
+                                           top: 2px;
+                                           left: 20px;
+                                           align-items: center;
+                                           background: #FFFFFF;
+                                           border: 2px solid #000000;
+                                           box-sizing: border-box;
+                                           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                                           border-radius: 10px;
+                                           
+                                       }
+                           
+                                    
+   
+                                        .botao{
+                                         position: absolute;
+                                         width: 120px;
+                                         height: 50px;
+                                         left: 120px;
+                                         align-items: center;
+                                         top: 580px;
+                                         background: #F27507;
+                                         border-radius: 10px;
+                                         cursor: pointer;
+                                         font-weight: bold;
+                                         font-size: 22px;
+                                         color: #FFFFFF;
+                                         border: none;
+                                        }
+                                        .botao tex{
+                                         position: absolute;
+                                         width: 116px;
+                                         height: 26px;
+                                         left: 20px;
+                                         top: 9px;
+                                         font-style: normal;
+                                         font-weight: bold;
+                                         font-size: 22px;
+                                         line-height: 26px;
+                                         display: flex;
+                                         align-items: center;
+                                         color: #FFFFFF;
+                                        }
+                                        .botao.tex:hover{
+                                         background-color: darkorange;
+                                         }
+   
+                                        #titu{
+                                           position: absolute;
+                                           left: 15.00%;
+                                           right: 0%;
+                                           top: 0%;
+                                           bottom: 85%;
+                                           font-family: Roboto;
+                                           font-style: normal;
+                                           font-weight: bold;
+                                           font-size: 25px;
+                                           line-height: 29px;
+                                           display: flex;
+                                           align-items: center;
+                                           
+                                           color: #261C1A;
+                                           
+                                        }
+                                         
+                                         #linha{
+                                           position: absolute;
+                                           left: 2%;
+                                           right: 2%;
+                                           top: 8.34%;
+                                           bottom: 15.66%;
+                                           width: 95%;
+                                           border: 1px solid #261C1A;
+                                           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+                                         }
+   
+                                       #form-label1{
+                                           font-weight: 700;
+                                           margin-left: 42px;
+                                           color: #3C4043;
+                                           font-size: 15px;
+                                           left: -45px;
+                                           position: relative;
+                                           top: -10px;
+                                       }
+   
+                                     #form-control1{
+                                       margin-top: 9px;
+                                       width: 250px;
+                                       height: 40px;
+                                       left: -5px;
+                                       top:-10px;
+                                       border: 2px solid #979797;
+                                       box-sizing: border-box;
+                                       border-radius: 10px;
+                                       position: relative;
+                                     }  
+                                   
+   
+   
+                                     #form-label2{
+                                       font-weight: 700;
+                                       margin-left: 42px;
+                                       color: #3C4043;
+                                       font-size: 15px;
+                                       left: -45px;
+                                       position: relative;
+                                       top: -15px;
+                                   }
+   
+                                 #form-control2{
+                                   margin-top: 9px;
+                                   width: 250px;
+                                   height: 40px;
+                                   left: -4px;
+                                   top:-15px;
+                                   border: 2px solid #979797;
+                                   box-sizing: border-box;
+                                   border-radius: 10px;
+                                   position: relative;
+                                 }  
+                               
+   
+   
+   
+                                 #form-label3{
+                                   font-weight: 700;
+                                   margin-left: 42px;
+                                   color: #3C4043;
+                                   font-size: 15px;
+                                   left: -45px;
+                                   position: relative;
+                                   top: -5px;
+                               }
+   
+                             #form-control3{
+                               margin-top: 9px;
+                               width: 128px;
+                               height: 40px;
+                               left: -185px;
+                               bottom:-38px;
+                               border: 2px solid #979797;
+                               box-sizing: border-box;
+                               border-radius: 10px;
+                               position: relative;
+                             }  
+                           
+   
+   
+                             #form-label4{
+                               font-weight: 700;
+                               margin-left: 42px;
+                               color: #3C4043;
+                               font-size: 15px;
+                               left: -45px;
+                               position: relative;
+                               top: 155px;
+                           }
+   
+                         #form-control4{
+                           margin-top: 9px;
+                           width: 250px;
+                           height: 40px;
+                           left: -5px;
+                           top:150px;
+                           border: 2px solid #979797;
+                           box-sizing: border-box;
+                           border-radius: 10px;
+                           position: relative;
+                         }  
+                       
+   
+   
+                         #form-label5{
+                           font-weight: 700;
+                           margin-left: 42px;
+                           color: #3C4043;
+                           font-size: 15px;
+                           left: -45px;
+                           position: relative;
+                           bottom: 30px;
+                       }
+   
+                     #form-control5{
+                       margin-top: 9px;
+                       width: 104px;
+                       height: 40px;
+                       left: -5px;
+                       bottom:30px;
+                       border: 2px solid #979797;
+                       box-sizing: border-box;
+                       border-radius: 10px;
+                       position: relative;
+                     }  
+                   
+   
+   
+                     #form-label6{
+                       font-weight: 700;
+                       margin-left: 42px;
+                       color: #3C4043;
+                       font-size: 15px;
+                       left: 130px;
+                       position: relative;
+                       bottom: 248px;
+                   }
+   
+                 #form-control6{
+                   margin-top: 9px;
+                   width: 104px;
+                   height: 40px;
+                   left: 75px;
+                   bottom:205px;
+                   border: 2px solid #979797;
+                   box-sizing: border-box;
+                   border-radius: 10px;
+                   position: relative;
+                 }  
+                                                                       
+     }
