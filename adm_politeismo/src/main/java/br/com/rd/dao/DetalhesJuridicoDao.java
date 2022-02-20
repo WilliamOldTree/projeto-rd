@@ -9,12 +9,9 @@ import br.com.rd.model.DetalhesJuridico;
 
 public class DetalhesJuridicoDao {
 
-	public DetalhesJuridicoDao(String rzSoc, String cnpj, String inscEst, String ddd, String celular, String tipoLograd,
-			String logradouro, String numeracao, String cep, String cidade, String estado) {
-		// TODO Auto-generated constructor stub
-	}
+	
 
-	public DetalhesJuridicoDao showDetalhes(Integer id) {
+	public DetalhesJuridico showDetalhes(Integer id) {
 
 		// conexao sql
 		Conexao c = Conexao.getInstance();
@@ -56,7 +53,7 @@ public class DetalhesJuridicoDao {
 			e.printStackTrace();
 		}
 
-		return null;
+		return dtJud;
 
 	}
 
