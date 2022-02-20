@@ -42,7 +42,7 @@ public class DetalhesJuridicoDao {
 				String estado = ("ESTADO");
 				
 				dtJud = new DetalhesJuridicoDao(rzSoc, cnpj, inscEst, ddd, celular, tipoLograd, logradouro, numeracao, cep, cidade, estado );
-				//dtJud.
+				//dtJud.setId(id);
 				
 				r.close();
 				p.close();
@@ -54,10 +54,7 @@ public class DetalhesJuridicoDao {
 			
 			e.printStackTrace();
 		}
-		
-		
-		
-		
+				
 		return null;
 		
 	}
