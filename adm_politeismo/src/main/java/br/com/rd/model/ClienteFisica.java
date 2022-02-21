@@ -31,7 +31,4 @@ public class ClienteFisica extends Cliente {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	
-	
-
 }//end class
