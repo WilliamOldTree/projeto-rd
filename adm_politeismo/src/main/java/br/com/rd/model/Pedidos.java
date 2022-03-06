@@ -14,7 +14,9 @@ public class Pedidos {
 	private Double volume;
 	private Double peso;
 	private Double preco;
+	private Double quantidade;
 	private Double total;
+	private String entrega;
 	private String endereco;
 	private String cep;
 	private String municipio;
@@ -27,7 +29,7 @@ public class Pedidos {
 	private String prazoEntrega;
 	private Double valorFrete;
 	private String statusEntrega;
-	private Date dataentrega;
+	private Date dataEntrega;
 	
 	
 	
@@ -43,13 +45,11 @@ public class Pedidos {
 	}
 
 
-
-
 	public Pedidos(Integer codigo, Date dataPedido, String nome, String cpfCnpj, String email, String contato,
-			String produto, Double volume, Double peso, Double preco, Double total, String endereco, String cep,
-			String municipio, String statusPedido, String statusPagamento, String instituicao, Double valorPago,
-			Date dataPagamento, String entregador, String prazoEntrega, Double valorFrete, String statusEntrega,
-			Date dataentrega) {
+			String produto, Double volume, Double peso, Double preco, Double quantidade, Double total, String entrega,
+			String endereco, String cep, String municipio, String statusPedido, String statusPagamento,
+			String instituicao, Double valorPago, Date dataPagamento, String entregador, String prazoEntrega,
+			Double valorFrete, String statusEntrega, Date dataEntrega) {
 		super();
 		this.codigo = codigo;
 		this.dataPedido = dataPedido;
@@ -61,7 +61,9 @@ public class Pedidos {
 		this.volume = volume;
 		this.peso = peso;
 		this.preco = preco;
+		this.quantidade = quantidade;
 		this.total = total;
+		this.entrega = entrega;
 		this.endereco = endereco;
 		this.cep = cep;
 		this.municipio = municipio;
@@ -74,10 +76,8 @@ public class Pedidos {
 		this.prazoEntrega = prazoEntrega;
 		this.valorFrete = valorFrete;
 		this.statusEntrega = statusEntrega;
-		this.dataentrega = dataentrega;
+		this.dataEntrega = dataEntrega;
 	}
-
-
 
 
 	public Integer getCodigo() {
@@ -85,13 +85,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
-
-
 
 
 	public Date getDataPedido() {
@@ -99,13 +95,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setDataPedido(Date dataPedido) {
 		this.dataPedido = dataPedido;
 	}
-
-
 
 
 	public String getNome() {
@@ -113,13 +105,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-
 
 
 	public String getCpfCnpj() {
@@ -127,13 +115,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setCpfCnpj(String cpfCnpj) {
 		this.cpfCnpj = cpfCnpj;
 	}
-
-
 
 
 	public String getEmail() {
@@ -141,13 +125,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-
 
 
 	public String getContato() {
@@ -155,13 +135,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setContato(String contato) {
 		this.contato = contato;
 	}
-
-
 
 
 	public String getProduto() {
@@ -169,13 +145,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setProduto(String produto) {
 		this.produto = produto;
 	}
-
-
 
 
 	public Double getVolume() {
@@ -183,13 +155,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setVolume(Double volume) {
 		this.volume = volume;
 	}
-
-
 
 
 	public Double getPeso() {
@@ -197,13 +165,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setPeso(Double peso) {
 		this.peso = peso;
 	}
-
-
 
 
 	public Double getPreco() {
@@ -211,13 +175,19 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
 
 
+	public Double getQuantidade() {
+		return quantidade;
+	}
+
+
+	public void setQuantidade(Double quantidade) {
+		this.quantidade = quantidade;
+	}
 
 
 	public Double getTotal() {
@@ -225,13 +195,19 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setTotal(Double total) {
 		this.total = total;
 	}
 
 
+	public String getEntrega() {
+		return entrega;
+	}
+
+
+	public void setEntrega(String entrega) {
+		this.entrega = entrega;
+	}
 
 
 	public String getEndereco() {
@@ -239,13 +215,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-
-
 
 
 	public String getCep() {
@@ -253,13 +225,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
-
-
 
 
 	public String getMunicipio() {
@@ -267,13 +235,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setMunicipio(String municipio) {
 		this.municipio = municipio;
 	}
-
-
 
 
 	public String getStatusPedido() {
@@ -281,13 +245,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setStatusPedido(String statusPedido) {
 		this.statusPedido = statusPedido;
 	}
-
-
 
 
 	public String getStatusPagamento() {
@@ -295,13 +255,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setStatusPagamento(String statusPagamento) {
 		this.statusPagamento = statusPagamento;
 	}
-
-
 
 
 	public String getInstituicao() {
@@ -309,13 +265,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setInstituicao(String instituicao) {
 		this.instituicao = instituicao;
 	}
-
-
 
 
 	public Double getValorPago() {
@@ -323,13 +275,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setValorPago(Double valorPago) {
 		this.valorPago = valorPago;
 	}
-
-
 
 
 	public Date getDataPagamento() {
@@ -337,13 +285,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setDataPagamento(Date dataPagamento) {
 		this.dataPagamento = dataPagamento;
 	}
-
-
 
 
 	public String getEntregador() {
@@ -351,13 +295,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setEntregador(String entregador) {
 		this.entregador = entregador;
 	}
-
-
 
 
 	public String getPrazoEntrega() {
@@ -365,13 +305,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setPrazoEntrega(String prazoEntrega) {
 		this.prazoEntrega = prazoEntrega;
 	}
-
-
 
 
 	public Double getValorFrete() {
@@ -379,13 +315,9 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setValorFrete(Double valorFrete) {
 		this.valorFrete = valorFrete;
 	}
-
-
 
 
 	public String getStatusEntrega() {
@@ -393,26 +325,19 @@ public class Pedidos {
 	}
 
 
-
-
 	public void setStatusEntrega(String statusEntrega) {
 		this.statusEntrega = statusEntrega;
 	}
 
 
-
-
-	public Date getDataentrega() {
-		return dataentrega;
+	public Date getDataEntrega() {
+		return dataEntrega;
 	}
 
 
-
-
-	public void setDataentrega(Date dataentrega) {
-		this.dataentrega = dataentrega;
+	public void setDataEntrega(Date dataEntrega) {
+		this.dataEntrega = dataEntrega;
 	}
-	
-	
+		
 
 }//end class
