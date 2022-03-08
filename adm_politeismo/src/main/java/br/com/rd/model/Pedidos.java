@@ -22,7 +22,9 @@ public class Pedidos {
 	private Double volume;
 	private Double peso;
 	private Double preco;
+	private Double quantidade;
 	private Double total;
+<<<<<<< HEAD
 =======
 	private String volume;
 	private String peso;
@@ -31,6 +33,9 @@ public class Pedidos {
 	private Double total;
 	private String entrega;
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+	private String entrega;
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	private String endereco;
 	private String cep;
 	private String municipio;
@@ -48,10 +53,14 @@ public class Pedidos {
 	private Double valorFrete;
 	private String statusEntrega;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private Date dataentrega;
 =======
 	private String dataEntrega;
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+	private Date dataEntrega;
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	
 	
 	
@@ -72,6 +81,7 @@ public class Pedidos {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 	public Pedidos(Integer codigo, Date dataPedido, String nome, String cpfCnpj, String email, String contato,
@@ -86,6 +96,13 @@ public class Pedidos {
 			String instituicao, Double valorPago, String dataPagamento, String entregador, String prazoEntrega,
 			Double valorFrete, String statusEntrega, String dataEntrega) {
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+	public Pedidos(Integer codigo, Date dataPedido, String nome, String cpfCnpj, String email, String contato,
+			String produto, Double volume, Double peso, Double preco, Double quantidade, Double total, String entrega,
+			String endereco, String cep, String municipio, String statusPedido, String statusPagamento,
+			String instituicao, Double valorPago, Date dataPagamento, String entregador, String prazoEntrega,
+			Double valorFrete, String statusEntrega, Date dataEntrega) {
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 		super();
 		this.codigo = codigo;
 		this.dataPedido = dataPedido;
@@ -98,12 +115,18 @@ public class Pedidos {
 		this.peso = peso;
 		this.preco = preco;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		this.total = total;
 =======
 		this.quantidade = quantidade;
 		this.total = total;
 		this.entrega = entrega;
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+		this.quantidade = quantidade;
+		this.total = total;
+		this.entrega = entrega;
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 		this.endereco = endereco;
 		this.cep = cep;
 		this.municipio = municipio;
@@ -117,6 +140,7 @@ public class Pedidos {
 		this.valorFrete = valorFrete;
 		this.statusEntrega = statusEntrega;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		this.dataentrega = dataentrega;
 	}
 
@@ -129,24 +153,36 @@ public class Pedidos {
 
 
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+		this.dataEntrega = dataEntrega;
+	}
+
+
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public Integer getCodigo() {
 		return codigo;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public Date getDataPedido() {
 =======
 	public String getDataPedido() {
@@ -156,8 +192,11 @@ public class Pedidos {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setDataPedido(Date dataPedido) {
 =======
 	public void setDataPedido(String dataPedido) {
@@ -167,108 +206,141 @@ public class Pedidos {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public String getNome() {
 		return nome;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public String getCpfCnpj() {
 		return cpfCnpj;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setCpfCnpj(String cpfCnpj) {
 		this.cpfCnpj = cpfCnpj;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public String getEmail() {
 		return email;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public String getContato() {
 		return contato;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setContato(String contato) {
 		this.contato = contato;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public String getProduto() {
 		return produto;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setProduto(String produto) {
 		this.produto = produto;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public Double getVolume() {
 =======
 	public String getVolume() {
@@ -278,8 +350,11 @@ public class Pedidos {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setVolume(Double volume) {
 =======
 	public void setVolume(String volume) {
@@ -289,8 +364,11 @@ public class Pedidos {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public Double getPeso() {
 =======
 	public String getPeso() {
@@ -300,8 +378,11 @@ public class Pedidos {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setPeso(Double peso) {
 =======
 	public void setPeso(String peso) {
@@ -311,8 +392,11 @@ public class Pedidos {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public Double getPreco() {
 =======
 	public String getPreco() {
@@ -322,13 +406,17 @@ public class Pedidos {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
 
 
+<<<<<<< HEAD
 =======
 	public void setPreco(String preco) {
 		this.preco = preco;
@@ -344,14 +432,25 @@ public class Pedidos {
 		this.quantidade = quantidade;
 	}
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+	public Double getQuantidade() {
+		return quantidade;
+	}
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 
 
-	public Double getTotal() {
-		return total;
+	public void setQuantidade(Double quantidade) {
+		this.quantidade = quantidade;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	public Double getTotal() {
+		return total;
+	}
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 
 
 =======
@@ -362,13 +461,20 @@ public class Pedidos {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	public String getEntrega() {
+		return entrega;
+	}
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 
 
-	public String getEndereco() {
-		return endereco;
+	public void setEntrega(String entrega) {
+		this.entrega = entrega;
 	}
 
 
+<<<<<<< HEAD
 =======
 	public String getEntrega() {
 		return entrega;
@@ -384,6 +490,11 @@ public class Pedidos {
 		return endereco;
 	}
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+	public String getEndereco() {
+		return endereco;
+	}
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 
 
 	public void setEndereco(String endereco) {
@@ -392,128 +503,167 @@ public class Pedidos {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public String getCep() {
 		return cep;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public String getMunicipio() {
 		return municipio;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setMunicipio(String municipio) {
 		this.municipio = municipio;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public String getStatusPedido() {
 		return statusPedido;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setStatusPedido(String statusPedido) {
 		this.statusPedido = statusPedido;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public String getStatusPagamento() {
 		return statusPagamento;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setStatusPagamento(String statusPagamento) {
 		this.statusPagamento = statusPagamento;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public String getInstituicao() {
 		return instituicao;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setInstituicao(String instituicao) {
 		this.instituicao = instituicao;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public Double getValorPago() {
 		return valorPago;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setValorPago(Double valorPago) {
 		this.valorPago = valorPago;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public Date getDataPagamento() {
 =======
 	public String getDataPagamento() {
@@ -523,8 +673,11 @@ public class Pedidos {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setDataPagamento(Date dataPagamento) {
 =======
 	public void setDataPagamento(String dataPagamento) {
@@ -534,98 +687,126 @@ public class Pedidos {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public String getEntregador() {
 		return entregador;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setEntregador(String entregador) {
 		this.entregador = entregador;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public String getPrazoEntrega() {
 		return prazoEntrega;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setPrazoEntrega(String prazoEntrega) {
 		this.prazoEntrega = prazoEntrega;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public Double getValorFrete() {
 		return valorFrete;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setValorFrete(Double valorFrete) {
 		this.valorFrete = valorFrete;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public String getStatusEntrega() {
 		return statusEntrega;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	public void setStatusEntrega(String statusEntrega) {
 		this.statusEntrega = statusEntrega;
 	}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 	public Date getDataentrega() {
 		return dataentrega;
+=======
+	public Date getDataEntrega() {
+		return dataEntrega;
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 	}
 
 
-
-
-	public void setDataentrega(Date dataentrega) {
-		this.dataentrega = dataentrega;
+	public void setDataEntrega(Date dataEntrega) {
+		this.dataEntrega = dataEntrega;
 	}
+<<<<<<< HEAD
 	
 	
 =======
@@ -639,5 +820,8 @@ public class Pedidos {
 	}
 		
 >>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
+=======
+		
+>>>>>>> 56dd0a2b798ccddc7abf43a6341a2a0dcd14e8d4
 
 }//end class
