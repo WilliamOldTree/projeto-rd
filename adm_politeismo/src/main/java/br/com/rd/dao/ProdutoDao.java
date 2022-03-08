@@ -13,12 +13,14 @@ public class ProdutoDao {
 		Connection con = c.getConnection();
 		
 		try {
-			PreparedStatement p = con.prepareStatement("insert into PRODUTO (DESCRICAO, VOLUME, PESO, SITUACAO, PRECO) values (?, ?, ?, ?, ?)");
+			PreparedStatement p = con.prepareStatement("insert into PRODUTO (DESCRICAO, VOLUME, PESO, SITUACAO, PRECO, ESTOQUE_PRODUTO, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE) values (?, ?, ?, ?, ?, ?, ?)");
 			p.setString(1, produto.getDescricao());
-			p.setDouble(2, produto.getVolume());
-			p.setDouble(3, produto.getPeso());
+			p.setString(2, produto.getVolume());
+			p.setString(3, produto.getPeso());
 			p.setString(4, produto.getSituacao());
-			p.setDouble(5, produto.getPreco());
+			p.setString(5, produto.getPreco());
+			p.setInt(6, produto.getQuantidade());
+			p.setInt(7, produto.getDesconto());
 			System.out.println(p);
 			p.executeUpdate();
 			System.out.println("Comando executado");
@@ -27,7 +29,6 @@ public class ProdutoDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 	
 	public ArrayList<Produto> selectAll(){
@@ -35,17 +36,19 @@ public class ProdutoDao {
 		Connection con = c.getConnection();
 		ArrayList<Produto> lista = new ArrayList<Produto>();
 		try {
-			PreparedStatement p = con.prepareStatement("select * from PRODUTO");
+			PreparedStatement p = con.prepareStatement("SELECT P.ID_PRODUTO, P.DESCRICAO, P.VOLUME, P.PESO, P.SITUACAO, P.PRECO, E.QUANTIDADE FROM PRODUTO P join ESTOQUE E on P.ESTOQUE_PRODUTO = E.ID_ESTOQUE\r\n"
+					 +"order by p.id_produto ;");
 			ResultSet r = p.executeQuery();			
 			
 			while (r.next()) {
 				Integer id = r.getInt("ID_PRODUTO");
 				String descricao = r.getString("DESCRICAO");
-				Double volume = r.getDouble("VOLUME");
-				Double peso = r.getDouble("PESO");
+				String volume = r.getString("VOLUME");
+				String peso = r.getString("PESO");
 				String situacao = r.getString("SITUACAO");
-				Double preco = r.getDouble("PRECO");
-				Produto pod = new Produto(descricao, volume, peso, situacao, preco);
+				String preco = r.getString("PRECO");
+				Integer quantidade = r.getInt("QUANTIDADE");
+				Produto pod = new Produto(descricao, volume, peso, situacao, preco, quantidade);
 				pod.setId(id);
 				lista.add(pod);
 			}
@@ -80,15 +83,14 @@ public class ProdutoDao {
 		Connection con = c.getConnection();
 		
 		try {
-			PreparedStatement p = con.prepareStatement("update PRODUTO set DESCRICAO = ?, VOLUME = ?, PESO = ?, SITUACAO = ?, PRECO = ? where ID_PRODUTO = ?");
+			PreparedStatement p = con.prepareStatement("update PRODUTO set DESCRICAO = ?, VOLUME = ?, PESO = ?, SITUACAO = ?, PRECO = ?, ESTOQUE_PRODUTO = ? where ID_PRODUTO = ? ");
 			p.setString(1, updateProduto.getDescricao());
-			p.setDouble(2, updateProduto.getVolume());
-			p.setDouble(3, updateProduto.getPeso());
+			p.setString(2, updateProduto.getVolume());
+			p.setString(3, updateProduto.getPeso());
 			p.setString(4, updateProduto.getSituacao());
-			p.setDouble(5, updateProduto.getPreco());
-			p.setInt(6, updateProduto.getId());
-			//p.setInt(7, updateProduto.getQuantidade());
-			//p.setDouble(8, updateProduto.getDesconto());
+			p.setString(5, updateProduto.getPreco());
+			p.setInt(6, updateProduto.getQuantidade());
+			p.setInt(7, updateProduto.getId());
 			
 			System.out.println(p);
 			p.executeUpdate();
@@ -110,14 +112,14 @@ public class ProdutoDao {
 			ResultSet r = p.executeQuery();			
 			
 			while (r.next()) {
-				//Integer id = r.getInt("id_produto");
 				String descricao = r.getString("DESCRICAO");
-				Double volume = r.getDouble("VOLUME");
-				Double peso = r.getDouble("PESO");
+				String volume = r.getString("VOLUME");
+				String peso = r.getString("PESO");
 				String situacao = r.getString("SITUACAO");
-				Double preco = r.getDouble("PRECO");
+				String preco = r.getString("PRECO");
+				Integer quantidade = r.getInt("ESTOQUE_PRODUTO");
 				
-				pod = new Produto(descricao, volume, peso, situacao, preco);
+				pod = new Produto(descricao, volume, peso, situacao, preco, quantidade);
 				pod.setId(id);
 			}
 			r.close();

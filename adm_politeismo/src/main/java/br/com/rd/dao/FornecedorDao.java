@@ -37,7 +37,7 @@ public ArrayList<Fornecedor> selectAll(){
 	Connection con = c.getConnection();
 	ArrayList<Fornecedor> lista = new ArrayList<Fornecedor>();
 	try {
-		PreparedStatement p = con.prepareStatement("SELECT * FROM fornecedor");
+		PreparedStatement p = con.prepareStatement("select * from fornecedor order by id_fornecedor ;");
 		ResultSet r = p.executeQuery();			
 		
 		while (r.next()) {
