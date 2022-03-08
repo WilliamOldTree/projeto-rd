@@ -1,19 +1,32 @@
 package br.com.rd.model;
 
+<<<<<<< HEAD
 import java.util.Date;
+=======
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 
 public class Pedidos {
 	
 	private Integer codigo;
+<<<<<<< HEAD
 	private Date dataPedido;
+=======
+	private String dataPedido;
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 	private String nome;
 	private String cpfCnpj;
 	private String email;
 	private String contato;
 	private String produto;
+<<<<<<< HEAD
 	private Double volume;
 	private Double peso;
 	private Double preco;
+=======
+	private String volume;
+	private String peso;
+	private String preco;
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 	private Double quantidade;
 	private Double total;
 	private String entrega;
@@ -24,17 +37,29 @@ public class Pedidos {
 	private String statusPagamento;
 	private String instituicao;
 	private Double valorPago;
+<<<<<<< HEAD
 	private Date dataPagamento;
+=======
+	private String dataPagamento;
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 	private String entregador;
 	private String prazoEntrega;
 	private Double valorFrete;
 	private String statusEntrega;
+<<<<<<< HEAD
 	private Date dataEntrega;
+=======
+	private String dataEntrega;
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 	
 	
 	
 	
+<<<<<<< HEAD
 	public Pedidos(Integer codigo, Date dataPedido, String nome, String cpfCnpj, String email, String contato) {
+=======
+	public Pedidos(Integer codigo, String dataPedido, String nome, String cpfCnpj, String email, String contato) {
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 		super();
 		this.codigo = codigo;
 		this.dataPedido = dataPedido;
@@ -45,11 +70,19 @@ public class Pedidos {
 	}
 
 
+<<<<<<< HEAD
 	public Pedidos(Integer codigo, Date dataPedido, String nome, String cpfCnpj, String email, String contato,
 			String produto, Double volume, Double peso, Double preco, Double quantidade, Double total, String entrega,
 			String endereco, String cep, String municipio, String statusPedido, String statusPagamento,
 			String instituicao, Double valorPago, Date dataPagamento, String entregador, String prazoEntrega,
 			Double valorFrete, String statusEntrega, Date dataEntrega) {
+=======
+	public Pedidos(Integer codigo, String dataPedido, String nome, String cpfCnpj, String email, String contato,
+			String produto, String volume, String peso, String preco, Double quantidade, Double total, String entrega,
+			String endereco, String cep, String municipio, String statusPedido, String statusPagamento,
+			String instituicao, Double valorPago, String dataPagamento, String entregador, String prazoEntrega,
+			Double valorFrete, String statusEntrega, String dataEntrega) {
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 		super();
 		this.codigo = codigo;
 		this.dataPedido = dataPedido;
@@ -90,12 +123,20 @@ public class Pedidos {
 	}
 
 
+<<<<<<< HEAD
 	public Date getDataPedido() {
+=======
+	public String getDataPedido() {
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 		return dataPedido;
 	}
 
 
+<<<<<<< HEAD
 	public void setDataPedido(Date dataPedido) {
+=======
+	public void setDataPedido(String dataPedido) {
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 		this.dataPedido = dataPedido;
 	}
 
@@ -150,32 +191,56 @@ public class Pedidos {
 	}
 
 
+<<<<<<< HEAD
 	public Double getVolume() {
+=======
+	public String getVolume() {
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 		return volume;
 	}
 
 
+<<<<<<< HEAD
 	public void setVolume(Double volume) {
+=======
+	public void setVolume(String volume) {
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 		this.volume = volume;
 	}
 
 
+<<<<<<< HEAD
 	public Double getPeso() {
+=======
+	public String getPeso() {
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 		return peso;
 	}
 
 
+<<<<<<< HEAD
 	public void setPeso(Double peso) {
+=======
+	public void setPeso(String peso) {
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 		this.peso = peso;
 	}
 
 
+<<<<<<< HEAD
 	public Double getPreco() {
+=======
+	public String getPreco() {
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 		return preco;
 	}
 
 
+<<<<<<< HEAD
 	public void setPreco(Double preco) {
+=======
+	public void setPreco(String preco) {
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 		this.preco = preco;
 	}
 
@@ -280,12 +345,20 @@ public class Pedidos {
 	}
 
 
+<<<<<<< HEAD
 	public Date getDataPagamento() {
+=======
+	public String getDataPagamento() {
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 		return dataPagamento;
 	}
 
 
+<<<<<<< HEAD
 	public void setDataPagamento(Date dataPagamento) {
+=======
+	public void setDataPagamento(String dataPagamento) {
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 		this.dataPagamento = dataPagamento;
 	}
 
@@ -330,12 +403,20 @@ public class Pedidos {
 	}
 
 
+<<<<<<< HEAD
 	public Date getDataEntrega() {
+=======
+	public String getDataEntrega() {
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 		return dataEntrega;
 	}
 
 
+<<<<<<< HEAD
 	public void setDataEntrega(Date dataEntrega) {
+=======
+	public void setDataEntrega(String dataEntrega) {
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 		this.dataEntrega = dataEntrega;
 	}
 		

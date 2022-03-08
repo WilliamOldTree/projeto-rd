@@ -5,8 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.Date;
 
+=======
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 import br.com.rd.model.Pedidos;
 
 public class PedidosDao {
@@ -39,7 +42,11 @@ public class PedidosDao {
 
 			while (rs.next()) {
 				Integer codigo = rs.getInt("CODIGO");
+<<<<<<< HEAD
 				Date dataPedido = rs.getDate("DATA");
+=======
+				String dataPedido = rs.getString("DATA");
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 				String nome = rs.getString("NOME");
 				String cpfCnpj = rs.getString("CPF/CNPJ");
 				String email = rs.getString("EMAIL");
@@ -248,20 +255,36 @@ public class PedidosDao {
 					+ "INNER JOIN\n"
 					+ "TIPO_STATUS_ENTREGA TSE\n"
 					+ "ON\n"
+<<<<<<< HEAD
 					+ "TSE.STATUS_ENTREGA_ID_STATUS_ENTREGA = SE.ID_STATUS_ENTREGA;");
+=======
+					+ "TSE.STATUS_ENTREGA_ID_STATUS_ENTREGA = SE.ID_STATUS_ENTREGA"
+					+ " ORDER BY CODIGO DESC;\r\n"
+					+ "");
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 			
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				Integer codigo = rs.getInt("CODIGO");
+<<<<<<< HEAD
 				Date dataPedido = rs.getDate("DATA");
+=======
+				String dataPedido = rs.getString("DATA");
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 				String nome = rs.getString("NOME");
 				String cpfCnpj = rs.getString("CPF/CNPJ");
 				String email = rs.getString("EMAIL");
 				String contato = rs.getString("CONTATO");
 				String produto = rs.getString("PRODUTO");
+<<<<<<< HEAD
 				Double volume =rs.getDouble("VOLUME");
 				Double peso = rs.getDouble("PESO");
 				Double preco = rs.getDouble("PRECO");
+=======
+				String volume =rs.getString("VOLUME");
+				String peso = rs.getString("PESO");
+				String preco = rs.getString("PRECO");
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 				Double quantidade = rs.getDouble("QUANTIDADE");
 				Double total = rs.getDouble("TOTAL");
 				String entrega = rs.getString("ENTREGA");
@@ -272,12 +295,20 @@ public class PedidosDao {
 				String statusPagamento = rs.getString("STATUS_PAGAMENTO");
 				String instituicao = rs.getString("INSTITUICAO");
 				Double valorPago = rs.getDouble("VALOR_PAGO");
+<<<<<<< HEAD
 				Date dataPgamento = rs.getDate("DATA");
+=======
+				String dataPgamento = rs.getString("DATA");
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 				String entregador = rs.getString("ENTREGADOR");
 				String prazoEntrega = rs.getString("PRAZO_ENTREGA");
 				Double valorFrete = rs.getDouble("FRETE");
 				String statusEntrega = rs.getString("STATUS_ENTREGA");
+<<<<<<< HEAD
 				Date dataEntrega = rs.getDate("DATA");
+=======
+				String dataEntrega = rs.getString("DATA");
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 				
 				Pedidos pDet = new Pedidos(codigo, dataPedido, nome, cpfCnpj, email, contato, produto, volume, peso, preco, quantidade, total, entrega, endereco, cep, municipo, statusPedido, statusPagamento, instituicao, valorPago, dataPgamento, entregador, prazoEntrega, valorFrete, statusEntrega, dataEntrega);
 				pDet.setCodigo(codigo);

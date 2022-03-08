@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package br.com.rd.model;
 
 public class Cliente {
@@ -31,3 +32,38 @@ public class Cliente {
 	}
 
 }//end class
+=======
+package br.com.rd.model;
+
+public class Cliente {
+	
+	private Integer id;
+	private String nome;
+	private String email;
+	public Cliente(Integer id, String nome, String email) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+}//end class
+>>>>>>> 0918a4fffc96c61f9513e9cbcf57aa129fdc1fad
