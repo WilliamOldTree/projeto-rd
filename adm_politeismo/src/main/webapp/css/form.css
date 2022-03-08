@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 /* LINKS */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 
     .form{
+=======
+  .form{
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
         width: 30%;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -24,5 +28,9 @@
     .title{
       margin-top: 20px;
       text-align: center;
+<<<<<<< HEAD
     }
 
+=======
+    }
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750

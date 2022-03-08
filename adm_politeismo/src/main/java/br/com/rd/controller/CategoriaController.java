@@ -15,6 +15,7 @@ import br.com.rd.model.Categoria;
 @WebServlet("/CategoriaController")
 public class CategoriaController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
 	private CategoriaDao cat;
 
        

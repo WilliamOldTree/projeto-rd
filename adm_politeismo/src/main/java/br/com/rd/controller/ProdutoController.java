@@ -1,8 +1,6 @@
 package br.com.rd.controller;
 
 import java.io.IOException;
-import java.util.Locale;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +26,7 @@ public class ProdutoController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
 		
 		doPost(request, response);
 	}
@@ -78,13 +76,27 @@ public class ProdutoController extends HttpServlet {
 		String pesoBack = request.getParameter("peso");
 		String situacaoBack = request.getParameter("situacao");
 		String precoBack = request.getParameter("preco");
-		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (situacaoBack != null) && (precoBack != null)){
+		String quantidadeBack = request.getParameter("quantidade");
+		String descontoBack = request.getParameter("desconto");
+		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (situacaoBack != null) && (precoBack != null) && (quantidadeBack != null)  && (descontoBack != null) ){
 			if (!descricaoBack.equals("")){
+<<<<<<< HEAD
 				Locale.setDefault(Locale.US);
 				Double volumeBack1 = Double.valueOf(volumeBack);
 				Double pesoBack1 = Double.valueOf(pesoBack);
 				Double precoBack1 = Double.valueOf(precoBack);
 				Produto prod1 = new Produto(descricaoBack,volumeBack1,pesoBack1,situacaoBack,precoBack1);
+=======
+				
+				//Double volumeBack1 = Double.valueOf(volumeBack);
+				//Double pesoBack1 = Double.valueOf(pesoBack);
+				//Double precoBack1 = Double.valueOf(precoBack);
+			
+				Integer quantidadeBack1 = Integer.parseInt(quantidadeBack);
+				Integer descontoBack1 = Integer.parseInt(descontoBack);
+				
+				Produto prod1 = new Produto(descricaoBack, volumeBack, pesoBack, situacaoBack, precoBack, quantidadeBack1,descontoBack1);
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 				this.prod.insert(prod1);
 			}
 		}
@@ -96,6 +108,7 @@ public class ProdutoController extends HttpServlet {
 		request.getRequestDispatcher("listProduto.jsp").forward(request, response);
 	}
 	
+
 	private void deleteProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String idBack = request.getParameter("id");
 		if (idBack != null) {
@@ -111,15 +124,14 @@ public class ProdutoController extends HttpServlet {
 		String pesoBack = request.getParameter("peso");
 		String situacaoBack = request.getParameter("situacao");
 		String precoBack = request.getParameter("preco");
+		String quantidadeBack = request.getParameter("quantidade");
 		String idBack = request.getParameter("id");
-		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (situacaoBack != null) && (precoBack != null)) {
+		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (situacaoBack != null) && (quantidadeBack != null) && (precoBack != null)) {
 			if (!descricaoBack.equals("")){
-				Locale.setDefault(new Locale("US"));
-				Double volumeBack1 = Double.valueOf(volumeBack);
-				Double pesoBack1 = Double.valueOf(pesoBack);
-				Double precoBack1 = Double.valueOf(precoBack);
+	
+				Integer quantidadeBack1 = Integer.parseInt(quantidadeBack);
 				Integer id = Integer.parseInt(idBack);
-				Produto prod1 = new Produto(descricaoBack,volumeBack1,pesoBack1,situacaoBack,precoBack1);
+				Produto prod1 = new Produto(descricaoBack, volumeBack, pesoBack, situacaoBack, precoBack, quantidadeBack1);
 				prod1.setId(id);
 				this.prod.updateProduto(prod1);
 			}

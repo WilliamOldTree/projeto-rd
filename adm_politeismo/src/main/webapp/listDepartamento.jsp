@@ -6,6 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Lista de Departamentos</title>
+<<<<<<< HEAD
 <link rel="stylesheet" href="./css/default.css">
 <link rel="stylesheet" href="./css/list.css">
 <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
@@ -35,6 +36,75 @@
                                     <div class="login-canvas">
                                         <a href="#"><h5>Usuário</h5></a>    
                                     </div>                                  
+=======
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/tabela.css">
+<link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <!-- header superior -->
+
+        <div class="container-fluid" id="header-up">
+            <div class="container" id="cont1">
+                <div class="row row-up">
+                    <div class="col-2" id="canvas">
+                        <button id="btn-canvas" type="button " data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft"><img src="./images/menu.png"
+                                alt="" width="70%"></button>
+
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft"
+                            aria-labelledby="offcanvasLeftLabel">
+                            <div class="offcanvas-header">
+                                <h5 id="offcanvasLeftLabel">POLITEÍSMO SHOP</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="container">
+                                <div class="container" id="menu-canvas">
+                                    <div class="row row-canvas">
+                                        <div class="login-canvas ">
+                                         		<c:choose>
+			                                        <c:when test=" ${sessionScope.email == null}">
+                                                        <a class="user_adm" href="./index.jsp">Faça seu Login</a> 
+			                                         </c:when>
+			                                        <c:otherwise>
+                                                        <a class="user_adm"> ${sessionScope.email}</a> 
+			                                         </c:otherwise>
+		                                        </c:choose>                                        
+		                                        
+		                                    </div>
+                                    </div>
+                                </div>
+                                <div class=menu-list1>
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
+                                    <hr width="160">
+                                </a>
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="DepartamentoController">Departamentos
+                                    <hr width="160">
+                                </a>
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="CategoriaController">Categorias
+                                    <hr width="160">
+                                </a>
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ProdutoController">Produtos
+                                    <hr width="160">
+                                </a>
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="FornecedorController">Fornecedores
+                                    <hr width="160">
+                                </a>
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteFisicaController">Clientes Fisícos
+                                    <hr width="160">
+                                 </a>
+                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteJuridicaController">Clientes Juridicos
+                                    <hr width="160">
+                                </a>
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController">Pedidos
+                                    <hr width="160">
+                                </a>
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="./index.jsp">Sair
+                                </a>
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
                                 </div>
                             </div>
                             <div class=menu-list1>
@@ -77,6 +147,16 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-8" id="nav-itens">
+                        <nav>
+                            <h4><b>PAINEL DE CONTROLE</b></h4>
+                        </nav>
+                    </div>
+                    <div class="col-2" id="cep">
+                        <div>
+                            <img src="./images/logo2.png" alt="" width="70%">
+                        </div>
+                    </div>
                 </div>
                 <div class="col-8" id="nav-itens">
                     <nav>
@@ -112,10 +192,11 @@
 				<c:forEach var="departamento" items="${listaDepartamento}">
 					<tr>
 						<form action="DepartamentoController" method="post">
-							<td>
+							<td data-label="ID">
 								<c:out value="${departamento.id}"/>
 								<input type="hidden" name="id" value="${departamento.id}"/>
 							</td>
+<<<<<<< HEAD
 							<td><c:out value="${departamento.nome}"/></td>
 							<td>
 	
@@ -143,6 +224,36 @@
     </div>
   </div>
 </div>
+=======
+							<td data-label="Departamento" ><c:out value="${departamento.nome}"/></td>
+							<td data-label="Ações">
+	
+                                      <button class="btn formCrud1" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete-${departamento.id}"  style="margin: 5px;">Deletar                   
+                                      </button>	 		
+							    <button class="btn formCrud2" type="submit" name="option" style="margin: 5px;" value="updateForm">Atualizar</button>
+					    
+                                <!-- INÍCIO DO MODAL DE DELETAR -->
+									<div class="modal fade" id="modal-delete-${departamento.id }" tabindex="-1" aria-labelledby="inicioModal" aria-hidden="true">
+									<form action="FornecedorController" method="post">
+									
+									
+									<input id="fornecedor" name="fornecedor" type="hidden" value="" />
+									
+										<div class="modal-dialog ">
+											<div class="modal-content ">
+												<div class="text-center px-3 py-3">
+													<p class=" text-danger">TEM CERTEZA QUE QUER EXCUIR ESSE REGISTRO?</p>
+												</div>
+												<div class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
+													<button  class="btn formCrud1" name="option" value="Entrou">Cancelar</button>
+  													<button class="btn formCrud1" type="submit" name="option" value="delete">Deletar</button>
+												</div>
+											</div>
+										</div>
+										</form>
+									</div>
+									<!-- FIM DO MODAL DE DELETAR -->	
+>>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 							</td>
 						</form>
 					</tr>

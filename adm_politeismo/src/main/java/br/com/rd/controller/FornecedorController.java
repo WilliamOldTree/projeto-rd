@@ -67,14 +67,14 @@ public class FornecedorController extends HttpServlet {
 	
 
 	private void showInsertFornecedor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		request.getRequestDispatcher("FormFornecedores.jsp").forward(request, response);
+		request.getRequestDispatcher("formFornecedores.jsp").forward(request, response);
 	}
 	
 	private void showUpdateFornecedor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Integer id = Integer.parseInt(request.getParameter("id"));
 		Fornecedor fornecdor = this.fc.selectById(id);
 		request.setAttribute("fornecedor", fornecdor);
-		request.getRequestDispatcher("FormFornecedores.jsp").forward(request, response);
+		request.getRequestDispatcher("formFornecedores.jsp").forward(request, response);
 	}
 	
 	private void insertFornecedor(HttpServletRequest tomate, HttpServletResponse alface) throws ServletException, IOException{
