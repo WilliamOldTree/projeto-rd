@@ -31,7 +31,7 @@ function Footer() {
                                     <Link to="/institucional/empresa">
                                         <li>Empresa</li>
                                     </Link>
-                                    <Link to="/">
+                                    <Link to="/institucional/processocompra">
                                         <li>Como comprar</li>
                                     </Link>
                                     <Link to="/">
