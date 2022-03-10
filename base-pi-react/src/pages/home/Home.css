@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.container{
+    padding: 0px;
+
+}
+
+.container{
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.img-topo2{
+    margin-top: 50px;
+}
+
+.img-topo2:hover{
+    box-shadow: 0 5px 5px #AF9787;
+    cursor: pointer;
+}
+
+.img-end{
+    box-shadow: 0 5px 5px #AF9787;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+#title-destaque{
+    text-align: center;
+    color: #261C1A;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+#line-1{
+    width: 100%;
+    border: 1px solid rgb(177, 174, 174);
+    background-color: rgb(177, 174, 174);
+    box-shadow: 0px 4px 4px rgb(177, 174, 174);
+    margin-bottom: 40px;
+}
+
+#cards-principal{
+    margin: 0%;
+}
+  
+.title-cards-principal{
+    width: 60px;
+    font-weight: 700;
+}
+  
+.cards-topo{
+    margin-top: 20px;
+}
+
+.cards-topo2{
+    margin-bottom: 40px;
+}
+
+.cards-principal{
+    background-color: #E5E5E5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    border: 1px solid rgb(177, 174, 174);  
+    font-size: 14px;
+    color: #261C1A;
+}
+  
+.cards-principal:hover{
+    background-color: gray;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.icon-frete{
+  margin-right: 5px;
+}
+
+@media (max-width: 767px) {
+    .img-end{
+        display: none;
+    }
+
+    #carouselExampleControls{
+        display: none;
+    }
+
+    .img-topo2{
+        margin-bottom: 30px;
+    }
+}
+
