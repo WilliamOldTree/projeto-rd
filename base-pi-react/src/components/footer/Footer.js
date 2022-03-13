@@ -34,16 +34,16 @@ function Footer() {
                                     <Link to="/institucional/processocompra">
                                         <li>Como comprar</li>
                                     </Link>
-                                    <Link to="/">
+                                    <Link to="/institucional/seguranca">
                                         <li>Segurança</li>
                                     </Link>
-                                    <Link to="/">
+                                    <Link to="/institucional/processoenvio">
                                         <li>Envio</li>
                                     </Link>
-                                    <Link to="/">
+                                    <Link to="/institucional/processopagamento">
                                         <li>Pagamento</li>
                                     </Link>
-                                    <Link to="/">
+                                    <Link to="/institucional/processogarantia">
                                         <li>Garantia</li>
                                     </Link>
                                 </ul>
