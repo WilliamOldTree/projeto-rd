@@ -2,7 +2,12 @@ import { Switch, Route } from "react-router-dom";
 import Home from './pages/home/Home'
 import Product from './pages/product/Product'
 import Cart from './pages/cart/Cart'
+<<<<<<< HEAD
 import { Empresa, ProcessoCompra, ProcessoEnvio, ProcessoGarantia, ProcessoPagamento, Seguranca } from "./pages/institucional";
+=======
+import { Empresa, ProcessoCompra } from "./pages/institucional";
+import Login from './pages/login/Login';
+>>>>>>> 3f0c6e0caec2f1f47550221d241e70e225ee0d9e
 
 export const Routes = () => {
     return (
@@ -16,6 +21,7 @@ export const Routes = () => {
             <Route path="/institucional/seguranca" component = {Seguranca}/>
             <Route path="/product" component={Product} />
             <Route path="/cart" component={Cart} />
+            <Route path="/login" component={Login} />
         </Switch>
-    )
+    );
 }
