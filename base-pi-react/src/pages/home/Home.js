@@ -67,7 +67,6 @@ function Home() {
                 <div className='cards-topo'>
                     <div id='cards-principal' className='row'>
                         <div className='col-12 col-md-6 col-lg-3 cards-principal'>
-
                             <div className='col-2 icon-frete'>
                                 <img width='40' src={Frete}/>
                             </div>
@@ -83,7 +82,7 @@ function Home() {
                             </div>
                             <div className='col-10'>
                                 <h6 className='title-cards-principal'>Parcelamento</h6>
-                                <p>Em até 6X no Cartão de Credito</p>
+                                <p>Em até 6x no cartão de Crédito</p>
                             </div>
                         </div>
 
@@ -112,7 +111,7 @@ function Home() {
                                     <h6 className='title-cards-principal'>Segurança</h6>
                                 </div>
                                 <div className='col-10'>
-                                    <p>Compre Com Segurança</p>
+                                    <p>Compre com segurança</p>
                                 </div>
                             </div>
                         </div>
@@ -164,7 +163,6 @@ function Home() {
                 <img className='img-end' src={BannerEnd}/>
             </div>
             <Footer/>
-            
         </>
     );
 }

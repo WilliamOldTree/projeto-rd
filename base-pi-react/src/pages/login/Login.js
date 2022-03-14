@@ -12,26 +12,26 @@ function Login() {
     return (
         <>
             <Header/>
-            <div class="container">
+            <div className='container'>
                  
-                <h2 class="title"><img width="55" class="imgUser" src={User} /> Identificação e Login</h2>
-                <hr class="line-1"/>
+                <h2 className='title'><img width='55' className='imgUser' src={User} /> Identificação e Login</h2>
+                <hr className='line-1'/>
 
-                <div class="container-login-cadastro">
+                <div className='container-login-cadastro'>
 
                     {/* INÍCIO FORM DE LOGIN */}
-                    <div class="login">
-                        <form class="form-login">
-                            <h4 class="title-login">Já é cliente Politeísmo Shop?</h4>
-                            <div class="mb-3">
-                                <label for="email" class="form-label1">E-mail</label>
-                                <input type="email" class="form-control" id="email"/>
-                                <div class ="mb-3">
-                                <label for="senha" class ="form-label2">Senha</label>
-                                <input type ="password" class ="form-control" id="senha"/>
+                    <div className='login'>
+                        <form className='form-login'>
+                            <h4 className='title-login'>Já é cliente Politeísmo Shop?</h4>
+                            <div className='mb-3'>
+                                <label for='email' className='form-label email-login'>E-mail</label>
+                                <input type='email' className='form-control' id='email'/>
+                                <div className ='mb-3'>
+                                <label for='senha' className ='form-label senha-login'>Senha</label>
+                                <input type ='password' className ='form-control' id='senha'/>
                                 </div>
-                                <button class ="btn formlogin" type ="submit">ENTRAR</button>
-                                <p class ="link-senha">Esqueceu a sua senha?</p>
+                                <button className ='btn formlogin' type ='submit'>ENTRAR</button>
+                                <p className ='link-senha'>Esqueceu a sua senha?</p>
                             </div>
                         </form>
                     </div>
@@ -39,18 +39,18 @@ function Login() {
 
 
                     {/* INÍCIO CONTAINER DE CADASTRO */}
-                    <div class="cadastro">
-                        <form class="form-login">
-                            <h4 class="title-cadastro">Ainda não é nosso cliente?</h4>
-                            <h6 class="subtitle-cadastro">O cadastro em nossa loja é simples e rápido.</h6>
+                    <div className='cadastro'>
+                        <form className='form-login'>
+                            <h4 className='title-cadastro'>Ainda não é nosso cliente?</h4>
+                            <h6 className='subtitle-cadastro'>O cadastro em nossa loja é simples e rápido.</h6>
 
-                            <p class="list-cadastro"><img width="18" class="imgcheck" src={Check}/> Localize seus pedidos
+                            <p className='list-cadastro'><img width='18' className='imgcheck' src={Check}/> Localize seus pedidos
                             </p>
-                            <p class="list-cadastro"><img width="18" class="imgcheck" src={Check}/> Favorite produtos
+                            <p className='list-cadastro'><img width='18' className='imgcheck' src={Check}/> Favorite produtos
                             </p>
-                            <p class="list-cadastro"><img width="18" class="imgcheck" src={Check}/> Receba Ofertas e ganhe descontos
+                            <p className='list-cadastro'><img width='18' className='imgcheck' src={Check}/> Receba Ofertas e ganhe descontos
                             </p>
-                            <button class="btn formcadastro" type="submit">CADASTRE-SE</button>
+                            <button className='btn formcadastro' type='submit'>CADASTRE-SE</button>
                         </form>
                     </div>
                     {/* FIM CONTAINER DE CADASTRO */}
