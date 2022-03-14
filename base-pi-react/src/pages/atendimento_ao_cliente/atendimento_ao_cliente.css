@@ -1,0 +1,391 @@
+
+
+.ButtonAtendimento:hover{
+background-color: #34d175;
+}
+
+#line_Area_AtendimentoCliente {
+    width     : 100%;
+    border    : 1px solid;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.tituloAtendimento {
+    color      : #261C1A;
+    margin-top : 27px;
+    margin-left: 100px;
+    position   : relative;
+    top        : 60px;
+    font-weight: bold;
+    font-size  : 25px;
+}
+.EnvieMensagem{
+    color      : #261C1A;
+    margin-top : 27px;
+    margin-left: 550px;
+    position   : relative;
+    top        : 110px;
+    font-weight: bold;
+    font-size  : 22px;
+}
+.FaleConosco{
+    color      : #261C1A;
+    font-weight: bold;
+    font-size  : 25px;
+    position   : relative;
+    text-align: center;
+    top: -45px;
+}
+.CampoObrigatorio{
+    color      : #261C1A;
+    margin-top : -27px;
+    margin-left: 80px;
+    position   : relative;
+    top        : 60px;
+    font-weight: bold;
+    font-size  : 20px;
+}
+
+
+.form-atendimento{
+width: 560px;
+height: 652px;
+background: #FFFFFF;
+border: 2px solid #261C1A;
+box-sizing: border-box;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+margin-top: 25%;
+position: relative;
+top: -200px;
+margin-left: 30%;
+}
+
+.ButtonAtendimento{
+    width: 105px;
+    height: 40px;
+    margin-left: 48%;
+    margin-top: -10%;
+    position: relative;
+    top: 120px;
+    left: 165px;
+    justify-content: center;
+    background: #34A853;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+#NomeAtendimento{
+    width: 490px;
+    border: 2px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+    align-items: center;
+    margin-left: 5%;
+    position: relative;
+    top: 80px;
+}
+
+#EmailAtendimento{
+    width: 490px;
+    border: 2px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+    align-items: center;
+    margin-left: 5%;
+    position: relative;
+    top: 80px;
+}
+
+#ContatoAtendimento{
+    width: 490px;
+    border: 2px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+    align-items: center;
+    margin-left: 5%;
+    position: relative;
+    top: 80px;
+
+}
+
+#AssuntoAtendimento{
+    width: 490px;
+    border: 2px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+    align-items: center;
+    margin-left: 5%;
+    position: relative;
+    top: 80px;
+
+}
+
+#MensagemAtendimento{
+    width: 490px;
+    border: 2px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+    align-items: center;
+    margin-left: 5%;
+    height: 200px;
+  position: relative;
+  top: 80px;
+}
+@media (max-width:1024px) {
+    .tituloAtendimento {
+        color      : #261C1A;
+        margin-top : 27px;
+        margin-left: 100px;
+        position   : relative;
+        top        : 60px;
+        font-weight: bold;
+        font-size  : 25px;
+    }
+    .EnvieMensagem{
+        color      : #261C1A;
+        margin-top : 27px;
+        margin-left: 250px;
+        position   : relative;
+        top        : 150px;
+        font-weight: bold;
+        font-size  : 22px;
+    }
+    .FaleConosco{
+        color      : #261C1A;
+        font-weight: bold;
+        font-size  : 25px;
+        position   : relative;
+        text-align: center;
+        top: -45px;
+    }
+    .CampoObrigatorio{
+        color      : #261C1A;
+        margin-top : -27px;
+        margin-left: 71px;
+        position   : relative;
+        top        : 60px;
+        font-weight: bold;
+        font-size  : 20px;
+    }
+    
+    
+    .form-atendimento{
+    width: 560px;
+    height: 652px;
+    background: #FFFFFF;
+    border: 2px solid #261C1A;
+    box-sizing: border-box;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-top: 40%;
+    position: relative;
+    top: -100px;
+    margin-left: 10%;
+    }
+    
+    .ButtonAtendimento{
+        width: 105px;
+        height: 40px;
+        margin-left: 48%;
+        margin-top: -10%;
+        position: relative;
+        top: 120px;
+        left: 165px;
+        justify-content: center;
+        background: #34A853;
+        border-radius: 10px;
+        border: none;
+        font-weight: bold;
+        color: #FFFFFF;
+    }
+    
+    #NomeAtendimento{
+        width: 490px;
+        border: 2px solid #979797;
+        box-sizing: border-box;
+        border-radius: 10px;
+        align-items: center;
+        margin-left: 5%;
+        position: relative;
+        top: 80px;
+    }
+    
+    #EmailAtendimento{
+        width: 490px;
+        border: 2px solid #979797;
+        box-sizing: border-box;
+        border-radius: 10px;
+        align-items: center;
+        margin-left: 5%;
+        position: relative;
+        top: 80px;
+    }
+    
+    #ContatoAtendimento{
+        width: 490px;
+        border: 2px solid #979797;
+        box-sizing: border-box;
+        border-radius: 10px;
+        align-items: center;
+        margin-left: 5%;
+        position: relative;
+        top: 80px;
+    
+    }
+    
+    #AssuntoAtendimento{
+        width: 490px;
+        border: 2px solid #979797;
+        box-sizing: border-box;
+        border-radius: 10px;
+        align-items: center;
+        margin-left: 5%;
+        position: relative;
+        top: 80px;
+    
+    }
+    
+    #MensagemAtendimento{
+        width: 490px;
+        border: 2px solid #979797;
+        box-sizing: border-box;
+        border-radius: 10px;
+        align-items: center;
+        margin-left: 5%;
+        height: 200px;
+      position: relative;
+      top: 80px;
+    }
+
+}
+
+@media (max-width:667px) {
+    .tituloAtendimento {
+        color      : #261C1A;
+        margin-top : 27px;
+        margin-left: 80px;
+        position   : relative;
+        top        : 60px;
+        font-weight: bold;
+        font-size  : 25px;
+    }
+    .EnvieMensagem{
+        color      : #261C1A;
+        margin-top : 27px;
+        margin-left: 100px;
+        position   : relative;
+        top        : 30px;
+        font-weight: bold;
+        font-size  : 18px;
+    }
+    .FaleConosco{
+        color      : #261C1A;
+        font-weight: bold;
+        font-size  : 25px;
+        position   : relative;
+        text-align: center;
+        top: -45px;
+    }
+    .CampoObrigatorio{
+        color      : #261C1A;
+        margin-top : -27px;
+        margin-left: 25px;
+        position   : relative;
+        top        : 60px;
+        font-weight: bold;
+        font-size  : 14px;
+    }
+    
+    
+    .form-atendimento{
+    width: 340px;
+    height: 652px;
+    background: #FFFFFF;
+    border: 2px solid #261C1A;
+    box-sizing: border-box;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-top: 40%;
+    position: relative;
+    top: -100px;
+    margin-left: 2%;
+    }
+    
+    .ButtonAtendimento{
+        width: 105px;
+        height: 40px;
+        margin-left: 48%;
+        margin-top: -10%;
+        position: relative;
+        top: 120px;
+        left: 65px;
+        justify-content: center;
+        background: #34A853;
+        border-radius: 10px;
+        border: none;
+        font-weight: bold;
+        color: #FFFFFF;
+    }
+    
+    #NomeAtendimento{
+        width: 300px;
+        border: 2px solid #979797;
+        box-sizing: border-box;
+        border-radius: 10px;
+        align-items: center;
+        margin-left: 5%;
+        position: relative;
+        top: 80px;
+    }
+    
+    #EmailAtendimento{
+        width: 300px;
+        border: 2px solid #979797;
+        box-sizing: border-box;
+        border-radius: 10px;
+        align-items: center;
+        margin-left: 5%;
+        position: relative;
+        top: 80px;
+    }
+    
+    #ContatoAtendimento{
+        width: 300px;
+        border: 2px solid #979797;
+        box-sizing: border-box;
+        border-radius: 10px;
+        align-items: center;
+        margin-left: 5%;
+        position: relative;
+        top: 80px;
+    
+    }
+    
+    #AssuntoAtendimento{
+        width: 300px;
+        border: 2px solid #979797;
+        box-sizing: border-box;
+        border-radius: 10px;
+        align-items: center;
+        margin-left: 5%;
+        position: relative;
+        top: 80px;
+    
+    }
+    
+    #MensagemAtendimento{
+        width: 300px;
+        border: 2px solid #979797;
+        box-sizing: border-box;
+        border-radius: 10px;
+        align-items: center;
+        margin-left: 5%;
+        height: 200px;
+      position: relative;
+      top: 80px;
+    }
+}

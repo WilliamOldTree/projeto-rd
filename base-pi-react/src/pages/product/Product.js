@@ -10,6 +10,9 @@ import Produto1 from '../../components/asserts/images/images-produto/terco_rusti
 import Produto2 from '../../components/asserts/images/images-produto/terco_rustico_de_nossa_senhora_da_salette_1517_1_6a064438a5ab2b11e6206ca8079e6fee.jpg';
 
 /* ICONS FORMA PAGAMENTO  */
+import Favoritar from '../../components/asserts/icons/fav.png';
+
+/* ICONS FORMA PAGAMENTO  */
 import Amazon from '../../components/asserts/icons/amazon-pay.png';
 import GooglePay from '../../components/asserts/icons/google-pay.png';
 import ApplePay from '../../components/asserts/icons/apple-pay.png';
@@ -19,6 +22,7 @@ import Maestro from '../../components/asserts/icons/maestro.png';
 import PayPal from '../../components/asserts/icons/paypal.png';
 import Pix from '../../components/asserts/icons/pix.png';
 import Boleto from '../../components/asserts/icons/codigo-de-barras.png';
+
 
 /* IMAGES CARDS RELACIONADOS */
 import RELACIONADO1 from '../../components/asserts/images/images-produto/04.06209.1.jpg';
@@ -65,7 +69,7 @@ function Product() {
 
                             <h1 className='title-produto'>Terço Rústico de Nossa Senhora da Salette</h1>
                             <h6 className='cod-produto'>Código: 04.06182</h6>
-                            <hr className='line-1' />
+                            <hr className='line-processo-produto' />
 
                             <article className='d-flex align-items-center'>
                                 <input type='number' className='form-control' id='quantidade' />
@@ -91,7 +95,7 @@ function Product() {
                             </button>
 
                             <button className='btn favoritar' type='submit'>
-                                <img width='22' className='fav' src='./images/icons/fav.png' />  Adicionar a lista de desejos
+                                <img width='22' className='fav' src={Favoritar} /> Adicionar a lista de desejos
                             </button>
                         </article>
 
@@ -108,7 +112,7 @@ function Product() {
                             <a className='infcep3' Link to='https://buscacepinter.correios.com.br/app/endereco/index.php?t'>Não sabe o CEP?</a>
                         </article>
 
-                        <hr className='line-2' />
+                        <hr className='line-processo-produto' />
 
                         <div className='col-6' id='pagamentos-produto'>
                             <h5 className='pagamentos-title'>Formas de pagamento</h5>
@@ -154,10 +158,10 @@ function Product() {
 
 
                 {/* DESCRIÇÃO PRODUTO */}
-                <h3 id='title-pag-produto'>Descrição Geral</h3>
+                <h3 id='detalhes'>Descrição Geral</h3>
                 <hr id='line-pag-produto' />
 
-                <p className='descricao-produto'>
+                <p className='descricao-produto' >
                     Este terço traz uma edição especial em homenagem ao Jubileu de 175 anos das aparições de
                     Nossa Senhora da Salette comemorado esse ano de 2021.
                     Feito em madeira natural de reflorestamento é amarrado manualmente com cordão escuro.

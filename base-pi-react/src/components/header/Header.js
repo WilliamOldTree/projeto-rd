@@ -56,33 +56,36 @@ function Header() {
                                             <div className="row row-canvas">
                                                 <div className="login-canvas">
                                                     <Link to="/"><img className="perfil" src={ Login } width="10%"
-                                                        alt="login" /></Link>
+                                                        alt="login" /> <h5>Olá Jose da Silva</h5></Link>
+                                                        
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div className="menu-list1">
-                                            <Link to="/" className="menu-list2">Meus Dados
-                                                <hr width="160" />
+                                        
+
+                                        <div  className='menu-list1'>
+                                            <Link to="area_cliente_dados" className='LinkArea'>Minha Conta
+                                            <hr className='MenuAreaCanvas'></hr>
                                             </Link>
-                                            <Link to="/" className="menu-list3">Meus Pedidos
-                                                <hr width="160" />
+                                            <Link to="area_cliente_pedidos" className='LinkArea'>Meus Pedidos
+                                            <hr className='MenuAreaCanvas'></hr>
                                             </Link>
 
-                                            <Link to="/" className="menu-list4">Meus Cartões
-                                                <hr width="160" />
+                                            <Link to="area_cliente_cartoes" className='LinkArea'>Meus Cartões
+                                            <hr className='MenuAreaCanvas'></hr>
                                             </Link>
-                                            <Link to="/" className="menu-list5">Meus Endereço
-                                                <hr width="160" />
+                                            <Link to="area_cliente_endereco" className='LinkArea'>Meus Endereço
+                                            <hr className='MenuAreaCanvas'></hr>
                                             </Link>
 
-                                            <Link to="/" className="menu-list6">Meus Favoritos
-                                                <hr width="160" />
+                                            <Link to="area_cliente_favoritos" className='LinkArea'>Meus Favoritos
+                                            <hr className='MenuAreaCanvas'></hr>
                                             </Link>
-                                            <Link to="/" className="menu-list7">Alterar Senha
-                                                <hr width="160" />
+                                            <Link to="area_cliente_senha" className='LinkArea'>Alterar Senha
+                                            <hr className='MenuAreaCanvas'></hr>
                                             </Link>
-                                            <Link to="/" className="menu-list8">Sair
+                                            <Link to="/" className='LinkArea'>Sair
                                             </Link>
                                         </div>
                                     </div>
