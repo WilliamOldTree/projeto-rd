@@ -2,6 +2,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from './pages/home/Home';
 import Product from './pages/product/Product';
 import Cart from './pages/cart/Cart';
+import { Empresa, ProcessoCompra, ProcessoEnvio, ProcessoGarantia, ProcessoPagamento, Seguranca } from "./pages/institucional";
 import Login from './pages/login/Login';
 import ClienteFisico from './pages/cadastro_ClienteFisico/Cadastro_ClienteFisico';
 import ClienteJuridico from './pages/cadastro_ClienteJuridico/Cadastro_ClienteJuridico';
@@ -15,7 +16,7 @@ import AreaEndereco from "./pages/area_cliente_enderecos/area_cliente_endereco";
 import AreaDados from "./pages/area_cliente_dados/area_cliente_dados";
 import AreaCartoes from "./pages/area_cliente_cartoes/area_cliente_cartoes";
 import AtendimentoCliente from "./pages/atendimento_ao_cliente/atendimento_ao_cliente";
-import { Empresa, ProcessoCompra } from "./pages/institucional";
+
 
 export const Routes = () => {
     return (
@@ -38,6 +39,10 @@ export const Routes = () => {
             <Route path="/atendimento_ao_cliente" component={AtendimentoCliente} />
             <Route path="/institucional/empresa" component={Empresa}/>
             <Route path="/institucional/processocompra" component={ProcessoCompra}/>
+            <Route path ="/institucional/processoenvio" component={ProcessoEnvio}/>
+            <Route path="/institucional/processogarantia" component={ProcessoGarantia}/>
+            <Route path="/institucional/processopagamento" component={ProcessoPagamento}/>
+            <Route path="/institucional/seguranca" component = {Seguranca}/>
         </Switch>
     );
 }
