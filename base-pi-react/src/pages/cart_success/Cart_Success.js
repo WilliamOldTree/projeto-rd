@@ -43,7 +43,7 @@ function Cart_Success() {
                                         </tr>
                                     </tbody>
                                 </table>
-                                <hr />
+                                <hr className='line-cart-success'/>
                             </div>
                         </div>
 
@@ -68,7 +68,7 @@ function Cart_Success() {
                                         </tr>
                                     </tbody>
                                 </table>
-                                <hr />
+                                <hr className='line-cart-success'/>
                             </div>
                         </div>
                         {/* END RESUMO DO PEDIDO */}

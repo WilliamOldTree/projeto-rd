@@ -16,8 +16,8 @@ function ClienteFisico() {
             {/* BEGGIN FORMULÁRIO CADASTRO DE CLIENTE FÍSICO*/}
             <div className='container'>
                 <h2 className='title'><img width='55' className='imgUser' src={User} /> Nova Conta</h2>
-
-                <hr/>
+                <hr className='line-1'/>
+                
                 <Link to='/cadastro_ClienteFisico' className='btn pessoaF fisico' role='button'>PESSOA FÍSICA</Link>
                 <Link to='/cadastro_ClienteJuridico' className='btn pessoaJ fisico' role='button'>PESSOA JURÍDICA</Link>
 

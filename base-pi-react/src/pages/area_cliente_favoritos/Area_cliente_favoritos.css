@@ -35,6 +35,10 @@ body {
     text-decoration: underline;
 }
 
+.menu-lines{
+    width: 160px;
+}
+
 .table {
     width          : 100%;
     border-collapse: collapse;
@@ -86,6 +90,10 @@ body {
 .btn-lixeira:hover {
     width : 22px;
     cursor: pointer;
+}
+
+.line-pedido{
+    width: 100%;
 }
 
 /*responsive*/

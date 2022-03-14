@@ -22,15 +22,19 @@ body {
     margin-bottom: 50px;
 }
 
-.menu-list a {
+.menu-list.pedidos a {
     text-decoration: none;
     color          : #261C1A;
     font-weight    : bold;
     font-size      : 18px;
 }
 
-.menu-list a:hover {
+.menu-list.pedidos a:hover {
     text-decoration: underline;
+}
+
+.menu-lines{
+    width: 160px;
 }
 
 .table {

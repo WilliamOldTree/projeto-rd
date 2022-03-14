@@ -16,8 +16,8 @@ function ClienteJuridico() {
             {/* BEGGIN FORMULÁRIO CADASTRO DE CLIENTE JURÍDICO*/}
             <div class="container">
                 <h2 class="title"><img width="55" class="imgUser" src={User}/> Nova Conta</h2>
-
                 <hr class="line-1" />
+                
                 <Link to="/cadastro_ClienteFisico" class="btn pessoaF juridico" role="button">PESSOA FÍSICA</Link>
                 <Link to="/cadastro_ClienteJuridico" class="btn pessoaJ juridico" role="button">PESSOA JURÍDICA</Link>
 

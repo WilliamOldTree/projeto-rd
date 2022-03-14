@@ -84,9 +84,10 @@
     color      : #261C1A;
 }
 
-.line-1 {
-    border          : 1px solid #666666;
-    background-color: #666666;
+.line-processo-produto {
+    border    : 1px solid #666666;
+    background: #666666;
+    width: 100%;
 }
 
 #quantidade {
@@ -276,8 +277,10 @@
 #line-pag-produto {
     border    : 1px solid #666666;
     background: #666666;
+    width: 100%;
 }
 
 #pay3 {
     margin-top: 10px;
 }
+

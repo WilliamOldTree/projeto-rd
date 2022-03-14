@@ -69,7 +69,7 @@ function Product() {
 
                             <h1 className='title-produto'>Terço Rústico de Nossa Senhora da Salette</h1>
                             <h6 className='cod-produto'>Código: 04.06182</h6>
-                            <hr className='line-1' />
+                            <hr className='line-processo-produto' />
 
                             <article className='d-flex align-items-center'>
                                 <input type='number' className='form-control' id='quantidade' />
@@ -112,7 +112,7 @@ function Product() {
                             <a className='infcep3' Link to='https://buscacepinter.correios.com.br/app/endereco/index.php?t'>Não sabe o CEP?</a>
                         </article>
 
-                        <hr className='line-2' />
+                        <hr className='line-processo-produto' />
 
                         <div className='col-6' id='pagamentos-produto'>
                             <h5 className='pagamentos-title'>Formas de pagamento</h5>

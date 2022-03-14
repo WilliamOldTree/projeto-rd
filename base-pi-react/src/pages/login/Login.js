@@ -1,5 +1,7 @@
-import './Login.css';
+import './Login.css'
+
 /* LINK PAGES */
+import { Link } from 'react-router-dom'
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 
@@ -50,7 +52,8 @@ function Login() {
                             </p>
                             <p className='list-cadastro'><img width='18' className='imgcheck' src={Check}/> Receba Ofertas e ganhe descontos
                             </p>
-                            <button className='btn formcadastro' type='submit'>CADASTRE-SE</button>
+
+                            <Link to="/cadastro_ClienteFisico" className='btn formcadastro' type='submit' role="button">CADASTRE-SE</Link>
                         </form>
                     </div>
                     {/* FIM CONTAINER DE CADASTRO */}

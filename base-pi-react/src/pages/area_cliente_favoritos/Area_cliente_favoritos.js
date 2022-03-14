@@ -24,26 +24,26 @@ function Favoritos() {
                 <div className='row favoritos'>
                     <div className='col-3 col-sm-3 col-xs-3 menu-list favoritos'>
                             <a className='menu-list2 ' href=''>Meus Dados
-                                <hr width='160' />
+                                <hr className='menu-lines' />
                             </a>
                             <a className='menu-list-itens' href=''>Meus Pedidos
-                                <hr width='160' />
+                                <hr className='menu-lines'/>
                             </a>
 
                             <a className='menu-list-itens' href=''>Meus Cartões
-                                <hr width='160' />
+                                <hr className='menu-lines' />
                             </a>
                             <a className='menu-list-itens' href=''>Meus Endereços
-                                <hr width='160' />
+                                <hr className='menu-lines'  />
                             </a>
 
                             <a className='menu-list-itens' href=''>Meus Favoritos
-                                <hr width='160' />
+                                <hr className='menu-lines'/>
                             </a>
                             <a className='menu-list-itens' href=''>Alterar Senha
-                                <hr width='160' />
+                                <hr className='menu-lines'/>
                             </a>
-                            <a className='menu-list-itens' href=''>Sair</a>
+                            <a className='menu-list-itens'href=''>Sair</a>
                     </div>
                     {/* END MENU LATERAL ÁREA DO CLENTE */}
                     

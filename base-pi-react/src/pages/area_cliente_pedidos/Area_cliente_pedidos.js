@@ -18,28 +18,28 @@ function Pedidos() {
 
                 {/* BEGGIN MENU LATERAL ÁREA DO CLENTE */}
                 <div className='row favoritos'>
-                    <div className='col-3 col-sm-3 col-xs-3 menu-list'>
-                        <a className='menu-list2' href=''>Meus Dados
-                            <hr width='160' />
+                    <div className='col-3 col-sm-3 col-xs-3 menu-list pedidos'>
+                        <a className='menu-list-itens' href=''>Meus Dados
+                            <hr className='menu-lines' />
                         </a>
-                        <a className='menu-list3' href=''>Meus Pedidos
-                            <hr width='160' />
-                        </a>
-
-                        <a className='menu-list4' href=''>Meus Cartões
-                            <hr width='160' />
-                        </a>
-                        <a className='menu-list5' href=''>Meus Endereços
-                            <hr width='160' />
+                        <a className='menu-list-itens' href=''>Meus Pedidos
+                            <hr className='menu-lines'  />
                         </a>
 
-                        <a className='menu-list6' href=''>Meus Favoritos
-                            <hr width='160' />
+                        <a className='menu-list-itens' href=''>Meus Cartões
+                            <hr className='menu-lines'  />
                         </a>
-                        <a className='menu-list7' href=''>Alterar Senha
-                            <hr width='160' />
+                        <a className='menu-list-itens' href=''>Meus Endereços
+                            <hr className='menu-lines'  />
                         </a>
-                        <a className='menu-list8' href=''>Sair</a>
+
+                        <a className='menu-list-itens' href=''>Meus Favoritos
+                            <hr className='menu-lines' />
+                        </a>
+                        <a className='menu-list-itens' href=''>Alterar Senha
+                            <hr className='menu-lines' />
+                        </a>
+                        <a className='menu-list-itens' href=''>Sair</a>
                     </div>
                     {/* END MENU LATERAL ÁREA DO CLENTE */}
 
@@ -56,7 +56,7 @@ function Pedidos() {
                                         </th>
                                         <th className='col-9 col-sm-9 col-xs-9 pedido-list'>                                                    
                                             <h5 className='titulo-pedido'> Pedido</h5>
-                                            <h5 className='titulo-pedido'>#39955</h5>
+                                            <h5 className='titulo-pedido'>#39978</h5>
                                             <p className='titulo-pedido status'>Status: Pedido em Andamento</p>
                                         </th>
                                         <th className='col-3 col-sm-3 col-xs-3 pedido-list'>
