@@ -15,6 +15,7 @@ import AreaEndereco from "./pages/area_cliente_enderecos/area_cliente_endereco";
 import AreaDados from "./pages/area_cliente_dados/area_cliente_dados";
 import AreaCartoes from "./pages/area_cliente_cartoes/area_cliente_cartoes";
 import AtendimentoCliente from "./pages/atendimento_ao_cliente/atendimento_ao_cliente";
+import { Empresa, ProcessoCompra } from "./pages/institucional";
 
 export const Routes = () => {
     return (
@@ -35,6 +36,8 @@ export const Routes = () => {
             <Route path="/area_cliente_cartoes" component={AreaCartoes} />
             <Route path="/area_cliente_endereco" component={AreaEndereco} />
             <Route path="/atendimento_ao_cliente" component={AtendimentoCliente} />
+            <Route path="/institucional/empresa" component={Empresa}/>
+            <Route path="/institucional/processocompra" component={ProcessoCompra}/>
         </Switch>
     );
 }

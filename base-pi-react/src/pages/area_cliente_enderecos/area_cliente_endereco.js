@@ -15,19 +15,20 @@ function AreaEndereco() {
 
             <ul className='listaAreaCliente'>
                 <li className='AreaClienteLista'><Link className='LinkArea'  to= 'area_cliente_dados' >Minha Conta</Link></li>
-                <hr></hr>
+                <hr className='MenuAreaCliente'></hr>
                 <li className='AreaClienteLista'><Link  className='LinkArea' to='area_cliente_pedidos'>Meus Pedidos</Link></li>
-                <hr></hr>
+                <hr className='MenuAreaCliente'></hr>
                 <li className='AreaClienteLista'><Link className='LinkArea' to='area_cliente_senha'>Alterar Senha</Link></li>
-                <hr></hr>
+                <hr className='MenuAreaCliente'></hr>
                 <li className='AreaClienteLista'><Link className='LinkArea' to='area_cliente_endereco'>Meus Endereços</Link></li>
-                <hr></hr>
+                <hr className='MenuAreaCliente'></hr>
                 <li className='AreaClienteLista'><Link className='LinkArea' to='area_cliente_cartoes'>Meus Cartões</Link></li>
-                <hr></hr>
+                <hr className='MenuAreaCliente'></hr>
                 <li className='AreaClienteLista'><Link className='LinkArea' to='area_cliente_favoritos'>Meus Favoritos</Link></li>
-                <hr></hr>
+                <hr className='MenuAreaCliente'></hr>
                 <li className='AreaClienteLista'><Link className='LinkArea' to={'/'}>Sair</Link></li>
             </ul>
+
 
                 <h2 className='tituloEndereco'><nobr>Meus Endereços</nobr></h2>
                 <img width="55" className='UserAreaClienteEndereco' src={User} />

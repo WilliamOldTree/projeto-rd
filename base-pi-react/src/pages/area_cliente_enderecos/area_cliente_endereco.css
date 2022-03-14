@@ -17,10 +17,9 @@
         color: #261C1A;
     }
 
-hr{
-    width: 15%;
-}
-
+    .MenuAreaCliente{
+        width: 15%;
+    }
 .tituloEndereco{
     color: #261C1A;
     margin-top: -27px;
