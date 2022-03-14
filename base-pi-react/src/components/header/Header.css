@@ -14,6 +14,16 @@ html, header, body, footer {
 /* HEADER */
 
 /* Header superior */
+
+.LinkArea{
+    text-decoration: none;
+    color: #261C1A;
+    font-weight: 700;
+}
+.MenuAreaCanvas{
+    width: 100%;
+}
+
 #header-up{
     height: 80px; 
     background-color:#AF9787 ;
