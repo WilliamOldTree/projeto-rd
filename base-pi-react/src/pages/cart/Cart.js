@@ -1,8 +1,9 @@
 import './Cart.css'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
+import Title from '../../components/title/Title'
 import CartIcon from '../../components/asserts/icons/cart.png'
-import TrashIcon from '../../components/asserts/icons/love.png'
+import TrashIcon from '../../components/asserts/icons/lixeira.png'
 import BudaMedit from '../../components/asserts/images/cart-images/buda-meditando.png'
 
 
@@ -12,20 +13,14 @@ function Cart() {
             <Header />
             {/* BEGINNER CONTEUDO */}
             <section >
-
+                <div className='container' id='cart_list'>
                 {/* BEGING CART-TITLE */}
-                <div className='container' id='cart_title'>
-                    <div className="title">
-                        <img src={CartIcon} className="iconCart" alt='Carrinho' />
-                        <h3>Carrinho</h3>
-                    </div>
-                </div>
-                <div className='container'><hr className='line-1'></hr></div>
+                <Title titleIcon={CartIcon} titleText="Carrinho"/>
                 {/* FINISH CART-TITLE */}
 
 
                 {/* BEGINNER CART-LIST  */}
-                <div className='container' id='cart_list'>
+
                     <table className="table table-borderless" >
 
                         <thead>

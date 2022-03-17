@@ -4,6 +4,7 @@ import './Cadastro_ClienteJuridico.css'
 import { Link } from 'react-router-dom'
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
+import Title from '../../components/title/Title'
 
 /* ICONS CADASTRO */
 import User from '../../components/asserts/icons/user.png';
@@ -11,16 +12,19 @@ import User from '../../components/asserts/icons/user.png';
 function ClienteJuridico() {
     return (
         <>
-            <Header/>
+            <Header />
 
             {/* BEGGIN FORMULÁRIO CADASTRO DE CLIENTE JURÍDICO*/}
             <div class="container">
-                <h2 class="title"><img width="55" class="imgUser" src={User}/> Nova Conta</h2>
-                <hr class="line-1" />
-                
-                <Link to="/cadastro_ClienteFisico" class="btn pessoaF juridico" role="button">PESSOA FÍSICA</Link>
-                <Link to="/cadastro_ClienteJuridico" class="btn pessoaJ juridico" role="button">PESSOA JURÍDICA</Link>
+            <Title titleIcon={User} titleText="Nova Conta"/>
 
+
+                <div className='buttons-juridico'>
+                    <Link to="/cadastro_ClienteFisico" class="btn pessoaF juridico" role="button">PESSOA FÍSICA</Link>
+                    <Link to="/cadastro_ClienteJuridico" class="btn pessoaJ juridico" role="button">PESSOA JURÍDICA</Link>
+                </div>
+
+                <div className='juridico-container'>
                 <div class="cadastroPessoaJ juridico">
                     <p class="campostopo">Campos marcados com * são de preenchimento obrigatório</p>
                     <div class="mb-3">
@@ -85,6 +89,7 @@ function ClienteJuridico() {
                     <p class="aviso-privacidade juridico">Ao criar uma conta você está de acordo com nossa <em>Política de Privacidade.</em></p>
 
                     <button class="btn formcadastroJ juridico" type="submit">CONCLUIR CADASTRO</button>
+                </div>
                 </div>
             </div>
             {/* END FORMULÁRIO CADASTRO DE CLIENTE JURÍDICO*/}

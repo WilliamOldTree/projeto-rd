@@ -4,6 +4,7 @@ import './Login.css'
 import { Link } from 'react-router-dom'
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
+import Title from '../../components/title/Title';
 
 /* ICONS LOGIN - CADASTRO */
 import User from '../../components/asserts/icons/user.png';
@@ -15,9 +16,7 @@ function Login() {
         <>
             <Header/>
             <div className='container'>
-                 
-                <h2 className='title'><img width='55' className='imgUser' src={User} /> Identificação e Login</h2>
-                <hr className='line-1'/>
+            <Title titleIcon={User} titleText="Identificação e Login"/>
 
                 <div className='container-login-cadastro'>
 

@@ -24,21 +24,26 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.buttons-juridico{
+    display: flex;
+    justify-content: center;
+}
+
 .btn.pessoaF.juridico {
     position     : relative;
     width        : 170px;
     height       : 45px;
-    left         : 142px;
-    margin-bottom: 37px;
-    margin-top   : 50px;
+    margin-bottom: 20px;
+    margin-top   : 20px;
     background   : #FFFFFF;
     border       : 2px solid #261C1A;
     box-sizing   : border-box;
     border-radius: 10px;
     color        : #261C1A;
     font-weight  : 700;
-}
+    margin-right: 5px;
 
+}
 
 .btn.pessoaF.juridico:hover {
     background: #34A853;
@@ -50,16 +55,15 @@ body {
     position     : relative;
     width        : 170px;
     height       : 45px;
-    left         : 142px;
-    margin-top   : 50px;
-    margin-bottom: 37px;
+    margin-top   : 20px;
+    margin-bottom: 20px;
     background   : #FFFFFF;
     border       : 2px solid #261C1A;
     box-sizing   : border-box;
     border-radius: 10px;
     color        : #261C1A;
     font-weight  : 700;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 .btn.pessoaJ.juridico:hover {
@@ -68,10 +72,13 @@ body {
     color     : #FFFFFF;
 }
 
+.juridico-container{
+    display: flex;
+    justify-content: center;
+}
 
 .cadastroPessoaJ.juridico {
     position     : relative;
-    left         : 142px;
     width        : 873px;
     height       : 836px;
     background   : #FFFFFF;
@@ -79,7 +86,7 @@ body {
     box-sizing   : border-box;
     box-shadow   : 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 
 .campostopo {
@@ -442,18 +449,9 @@ em:hover {
 
 @media (max-width: 1200px) {
 
-    .btn.pessoaF.juridico {
-        left: 25px;
-    }
-
-    .btn.pessoaJ.juridico {
-        left: 25px;
-    }
-
     .cadastroPessoaJ.juridico {
         width : 630px;
         height: 840px;
-        left  : 25px;
     }
 
     .campostopo {
@@ -633,7 +631,7 @@ em:hover {
         width : 20px;
         height: 18px;
         left  : 60px;
-        top   : 701px;
+        top   : 700px;
     }
 
     .form-check-label.juridico {
@@ -665,20 +663,17 @@ em:hover {
         width    : 140px;
         height   : 40px;
         font-size: 12px;
-        left     : 20px;
     }
 
     .btn.pessoaJ.juridico {
         width    : 140px;
         height   : 40px;
         font-size: 12px;
-        left     : 25px;
     }
 
     .cadastroPessoaJ.juridico {
         width : 334px;
-        height: 984px;
-        left  : 10px;
+        height: 1392px;
     }
 
     .campostopo {
@@ -693,196 +688,193 @@ em:hover {
     .form-label1.juridico {
         width : 115px;
         height: 21px;
-        left  : 28px;
-        top   : 59px;
+        left: 20px;
+        top: 71px;
     }
 
     #razaoSocial_ClienteJuridico {
-        width : 274px;
-        height: 36px;
-        left  : 28px;
-        top   : 80px;
+        width: 294px;
+        height: 50px;
+        left: 20px;
+        top: 94px;
     }
 
     .form-label2.juridico {
         width : 167px;
         height: 20px;
-        left  : 27px;
-        top   : 124px
+        left: 20px;
+        top: 169px;
     }
 
     #insEstadual_ClienteJuridico {
-        width : 139px;
-        height: 36px;
-        left  : 28px;
-        top   : 146px;
+        width: 294px;
+        height: 50px;
+        left: 20px;
+        top: 194px;        
     }
 
     .form-label3.juridico {
-        width : 45px;
+        width: 45px;
         height: 19px;
-        left  : 27px;
-        top   : 190px;
+        left: 20px;
+        top: 269px;
     }
 
     #cnpj_ClienteJuridico {
-        width : 149px;
-        height: 36px;
-        left  : 27px;
-        top   : 211px;
+        width: 294px;
+        height: 50px;
+        left: 20px;
+        top: 293px;
     }
 
     .form-label4.juridico {
         width : 120px;
         height: 21px;
-        left  : 27px;
-        top   : 251px;
+        left: 20px;
+        top: 368px;
     }
 
     #nome_ClienteJuridico {
-        width : 274px;
-        height: 36px;
-        left  : 27px;
-        top   : 272px;
+        width: 294px;
+        height: 50px;
+        left: 20px;
+        top: 398px;
     }
 
     .form-label5.juridico {
         width : 124px;
         height: 23px;
-        left  : 28px;
-        top   : 315px;
+        left: 20px;
+        top: 473px;
     }
 
     #data_ClienteJuridico {
-        width : 149px;
-        height: 36px;
-        left  : 28px;
-        top   : 343px;
+        width: 294px;
+        height: 50px;
+        left: 20px;
+        top: 497px;
     }
 
     .aviso-tel.juridico {
         width : 285px;
         height: 21px;
-        left  : 28px;
-        top   : 392px;
+        left: 20px;
+        top: 587px;
     }
 
     .form-label6.juridico {
         width : 185px;
         height: 21px;
-        left  : 28px;
-        top   : 418px;
+        left: 20px;
+        top: 623px;
     }
 
     #telefone_ClienteJuridico {
-        width : 194px;
-        height: 36px;
-        left  : 28px;
-        top   : 444px;
+        width: 294px;
+        height: 50px;
+        left: 20px;
+        top: 649px;
     }
 
     .form-label7.juridico {
         width : 115px;
         height: 21px;
-        left  : 27px;
-        top   : 485px;
+        left: 20px;
+        top: 724px;
     }
 
     #celular_ClienteJuridico {
-        width : 194px;
-        height: 36px;
-        left  : 27px;
-        top   : 511px;
+        width: 294px;
+        height: 50px;
+        left: 20px;
+        top: 750px;
     }
 
     .form-label8.juridico {
         width : 44px;
         height: 16px;
-        left  : 28px;
-        top   : 554px;
+        left: 20px;
+        top: 825px;
     }
 
     #email1_ClienteJuridico {
-        width : 274px;
-        height: 36px;
-        left  : 27px;
-        top   : 575px;
+        width: 294px;
+        height: 50px;
+        left: 20px;
+        top: 846px;
     }
 
     .form-label9.juridico {
         width : 135px;
         height: 20px;
-        left  : 27px;
-        top   : 616px;
+        left: 20px;
+        top: 921px;
     }
 
     #email2_ClienteJuridico {
-        width : 274px;
-        height: 36px;
-        left  : 27px;
-        top   : 641px;
+        width: 294px;
+        height: 50px;
+        left: 20px;
+        top: 946px;
     }
 
     .form-label10.juridico {
         width : 174px;
         height: 18px;
-        left  : 28px;
-        top   : 682px;
+        left: 20px;
+        top: 1021px;
     }
 
     #senha1_ClienteJuridico {
-        width : 194px;
-        height: 36px;
-        left  : 29px;
-        top   : 705px;
+        width: 294px;
+        height: 50px;
+        left: 20px;
+        top: 1044px;
     }
 
     .form-label11.juridico {
         width : 128px;
         height: 18px;
-        left  : 27px;
-        top   : 746px;
+        left: 19px;
+        top: 1119px;
     }
 
     #senha2_ClienteJuridico {
-        width : 194px;
-        height: 36px;
-        left  : 27px;
-        top   : 768px;
+        width: 294px;
+        height: 50px;
+        left: 20px;
+        top: 1142px;
     }
 
     #exampleCheck1_ClienteJuridico {
-        width : 20px;
-        height: 18px;
-        left  : 50px;
-        top   : 821px;
+        left: 43px;
+        top: 1226px;
     }
 
     .form-check-label.juridico {
-        width : 237px;
+        width: 237px;
         height: 16px;
-        left  : 61px;
-        top   : 825px;
+        left: 49px;
+        top: 1230px;
     }
 
     .aviso-privacidade.juridico {
         width : 274px;
         height: 33px;
-        left  : 29px;
-        top   : 856px;
+        left: 19px;
+        top: 1265px;
     }
 
     .btn.formcadastroJ.juridico {
         width    : 220px;
         height   : 45px;
-        left     : 48px;
-        top      : 917px;
+        left: 57px;
+        top: 1323px;
         font-size: 18px;
     }
 }
 
-
-@media (max-width: 360px) {
+@media (max-width: 375px) {
     .btn.pessoaF.juridico {
         left: 5px;
     }
@@ -892,11 +884,11 @@ em:hover {
     }
 
     .cadastroPessoaJ.juridico {
-        left: 5px;
+        left: 0px;
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 350px) {
 
     .cadastroPessoaJ.juridico {
         width: 302px;
@@ -904,100 +896,111 @@ em:hover {
     }
 
     .campostopo {
-        left: 15px;
+        left: 5px;
     }
 
     .form-label1.juridico {
-        left: 15px;
+        left: 5px;
     }
 
-    #razaoSocial_ClienteJuridico.juridico {
-        left: 15px;
+    #razaoSocial_ClienteJuridico {
+        left: 5px;
+        width: 282px;
     }
 
     .form-label2.juridico {
-        left: 15px;
+        left: 5px;
     }
 
     #insEstadual_ClienteJuridico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
     .form-label3.juridico {
-        left: 15px;
+        left: 5px;
     }
 
     #cnpj_ClienteJuridico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
     .form-label4.juridico {
-        left: 15px;
+        left: 5px;
     }
 
     #nome_ClienteJuridico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
     .form-label5.juridico {
-        left: 15px;
+        left: 5px;
     }
 
     #data_ClienteJuridico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
     .aviso-tel.juridico {
-        left     : 15px;
+        left     : 5px;
         font-size: 12px;
     }
 
     .form-label6.juridico {
-        left: 15px;
+        left: 5px;
     }
 
     #telefone_ClienteJuridico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
     .form-label7.juridico {
-        left: 15px;
+        left: 5px;
     }
 
     #celular_ClienteJuridico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
     .form-label8.juridico {
-        left: 15px;
+        left: 5px;
     }
 
     #email1_ClienteJuridico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
     .form-label9.juridico {
-        left: 15px;
+        left: 5px;
     }
 
     #email2_ClienteJuridico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
     .form-label10.juridico {
-        left: 15px;
+        left: 5px;
     }
 
     #senha1_ClienteJuridico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
     .form-label11.juridico {
-        left: 15px;
+        left: 5px;
     }
 
     #senha2_ClienteJuridico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
     #exampleCheck1_ClienteJuridico {
