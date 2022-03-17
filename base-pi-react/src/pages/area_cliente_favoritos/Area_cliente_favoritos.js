@@ -3,6 +3,7 @@ import './Area_cliente_favoritos.css'
 /* LINK PAGES */
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
+import Title from '../../components/title/Title'
 
 /* ICONS */
 import User from '../../components/asserts/icons/user.png';
@@ -17,8 +18,7 @@ function Favoritos() {
         <>
             <Header />
             <div className='container'>
-                <h2 className="title"><img width="55" class="imgUser" src={User} /> Meus Favoritos</h2>
-                <hr className="line-1"/>
+                <Title titleIcon={User} titleText="Meus Favoritos"/>
 
                 {/* BEGGIN MENU LATERAL ÁREA DO CLENTE */}
                 <div className='row favoritos'>

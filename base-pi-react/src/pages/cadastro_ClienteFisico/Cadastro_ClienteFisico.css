@@ -11,32 +11,24 @@ body {
 
 /* FORMULÁRIO CADASTRO */
 
-.title {
-    color      : #261C1A;
-    margin-top : 27px;
-    font-weight: bold;
-    font-size: 25px;
-}
 
-.line-1 {
-    width     : 100%;
-    border    : 1px solid;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+.buttons-fisico{
+    display: flex;
+    justify-content: center;
 }
-
 .btn.pessoaF.fisico {
     position     : relative;
     width        : 170px;
     height       : 45px;
-    left         : 142px;
-    margin-bottom: 37px;
-    margin-top   : 50px;
+    margin-bottom: 20px;
+    margin-top   : 20px;
     background   : #FFFFFF;
     border       : 2px solid #261C1A;
     box-sizing   : border-box;
     border-radius: 10px;
     color        : #261C1A;
     font-weight  : 700;
+    margin-right  : 5px;
 }
 
 .btn.pessoaF.fisico:hover {
@@ -49,16 +41,15 @@ body {
     position     : relative;
     width        : 170px;
     height       : 45px;
-    left         : 142px;
-    margin-top   : 50px;
-    margin-bottom: 37px;
+    margin-top   : 20px;
+    margin-bottom: 20px;
     background   : #FFFFFF;
     border       : 2px solid #261C1A;
     box-sizing   : border-box;
     border-radius: 10px;
     color        : #261C1A;
     font-weight  : 700;
-    margin-left  : 10px;
+    margin-left  : 5px;
 }
 
 .btn.pessoaJ.fisico:hover {
@@ -67,9 +58,12 @@ body {
     color     : #FFFFFF;
 }
 
+.fisico-container{
+    display: flex;
+    justify-content: center;
+}
 .cadastroPessoaF.fisico {
     position     : relative;
-    left         : 142px;
     width        : 873px;
     height       : 836px;
     background   : #FFFFFF;
@@ -77,7 +71,7 @@ body {
     box-sizing   : border-box;
     box-shadow   : 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 
 .campostopo {
@@ -93,7 +87,7 @@ body {
     color      : #3C4043;
 }
 
-.form-label1.pedidos {
+.form-label1.fisico {
     position   : absolute;
     width      : 144px;
     height     : 23px;
@@ -119,7 +113,7 @@ body {
     border-radius: 10px;
 }
 
-.form-label2.pedidos {
+.form-label2.fisico {
     position   : absolute;
     width      : 65px;
     height     : 29px;
@@ -146,7 +140,7 @@ body {
     border-radius: 10px;
 }
 
-.form-label3.pedidos {
+.form-label3.fisico {
     position   : absolute;
     width      : 159px;
     height     : 29px;
@@ -171,7 +165,7 @@ body {
     border-radius: 10px;
 }
 
-.form-label4.pedidos {
+.form-label4.fisico {
     position   : absolute;
     width      : 47px;
     height     : 29px;
@@ -196,7 +190,7 @@ select.form-select {
     border-radius: 10px;
 }
 
-.aviso-tel.pedidos {
+.aviso-tel.fisico {
     position   : absolute;
     width      : 358px;
     height     : 29px;
@@ -209,7 +203,7 @@ select.form-select {
     color      : #3C4043;
 }
 
-.form-label5.pedidos {
+.form-label5.fisico {
     position   : absolute;
     width      : 228px;
     height     : 21px;
@@ -231,7 +225,7 @@ select.form-select {
     border-radius: 10px;
 }
 
-.form-label6.pedidos {
+.form-label6.fisico {
     position   : absolute;
     width      : 140px;
     height     : 29px;
@@ -255,7 +249,7 @@ select.form-select {
     border-radius: 10px;
 }
 
-.form-label7.pedidos {
+.form-label7.fisico {
     position   : absolute;
     width      : 58px;
     height     : 18px;
@@ -279,7 +273,7 @@ select.form-select {
     border-radius: 10px;
 }
 
-.form-label8.pedidos {
+.form-label8.fisico {
     position   : absolute;
     width      : 164px;
     height     : 29px;
@@ -303,7 +297,7 @@ select.form-select {
     border-radius: 10px;
 }
 
-.form-label9.pedidos {
+.form-label9.fisico {
     position   : absolute;
     width      : 244px;
     height     : 29px;
@@ -327,7 +321,7 @@ select.form-select {
     border-radius: 10px;
 }
 
-.form-label10.pedidos {
+.form-label10.fisico {
     position   : absolute;
     width      : 202px;
     height     : 29px;
@@ -356,11 +350,11 @@ select.form-select {
     width        : 20px;
     height       : 18px;
     left         : 150px;
-    top          : 637px;
+    top          : 641px;
     border-radius: 5px;
 }
 
-.form-check-label.pedidos {
+.form-check-label.fisico {
     position   : absolute;
     width      : 318px;
     height     : 22px;
@@ -373,7 +367,7 @@ select.form-select {
     color      : #666666;
 }
 
-.aviso-privacidade.pedidos {
+.aviso-privacidade.fisico {
     position   : absolute;
     width      : 611px;
     height     : 33px;
@@ -399,7 +393,6 @@ em:hover {
     position     : absolute;
     width        : 255px;
     height       : 55px;
-    left         : 309px;
     top          : 746px;
     background   : #F27507;
     border       : 1px solid #F27507;
@@ -408,6 +401,8 @@ em:hover {
     font-size    : 20px;
     color        : #FFFFFF;
     font-weight  : bold;
+    left: 309px;
+
 }
 
 .btn.formcadastroF:hover {
@@ -421,18 +416,9 @@ em:hover {
 
 @media (max-width: 1200px) {
 
-    .btn.pessoaF.fisico {
-        left: 25px;
-    }
-
-    .btn.pessoaJ.fisico {
-        left: 25px;
-    }
-
     .cadastroPessoaF.fisico {
         width : 630px;
         height: 769px;
-        left  : 25px;
     }
 
     .campostopo {
@@ -442,7 +428,7 @@ em:hover {
         top   : 18px;
     }
 
-    .form-label1.pedidos {
+    .form-label1.fisico {
         width : 133px;
         height: 24px;
         left  : 37px;
@@ -456,7 +442,7 @@ em:hover {
         top   : 85px;
     }
 
-    .form-label2.pedidos {
+    .form-label2.fisico {
         width : 49px;
         height: 15px;
         left  : 37px;
@@ -471,7 +457,7 @@ em:hover {
         top   : 164px;
     }
 
-    .form-label3.pedidos {
+    .form-label3.fisico {
         width : 133px;
         height: 15px;
         left  : 271px;
@@ -489,7 +475,7 @@ em:hover {
         font-size: 12px;
     }
 
-    .form-label4.pedidos {
+    .form-label4.fisico {
         width : 42px;
         height: 19px;
         left  : 468px;
@@ -504,14 +490,14 @@ em:hover {
         font-size: 12px;
     }
 
-    .aviso-tel.pedidos {
+    .aviso-tel.fisico {
         width : 315px;
         height: 29px;
         left  : 37px;
         top   : 217px;
     }
 
-    .form-label5.pedidos {
+    .form-label5.fisico {
         width : 200px;
         height: 29px;
         left  : 36px;
@@ -525,7 +511,7 @@ em:hover {
         top   : 285px;
     }
 
-    .form-label6.pedidos {
+    .form-label6.fisico {
         width : 122px;
         height: 29px;
         left  : 300px;
@@ -540,7 +526,7 @@ em:hover {
         top     : 283px;
     }
 
-    .form-label7.pedidos {
+    .form-label7.fisico {
         width : 52px;
         height: 20px;
         left  : 34px;
@@ -554,7 +540,7 @@ em:hover {
         top   : 366px;
     }
 
-    .form-label8.pedidos {
+    .form-label8.fisico {
         width : 145px;
         height: 20px;
         left  : 37px;
@@ -568,7 +554,7 @@ em:hover {
         top   : 448px
     }
 
-    .form-label9.pedidos {
+    .form-label9.fisico {
         width : 244px;
         height: 29px;
         left  : 34px;
@@ -582,7 +568,7 @@ em:hover {
         top   : 532px;
     }
 
-    .form-label10.pedidos {
+    .form-label10.fisico {
         width : 202px;
         height: 29px;
         left  : 316px;
@@ -603,7 +589,7 @@ em:hover {
         top   : 591px;
     }
 
-    .form-check-label.pedidos {
+    .form-check-label.fisico {
         width : 267px;
         height: 22px;
         left  : 60px;
@@ -611,7 +597,7 @@ em:hover {
     }
 
 
-    .aviso-privacidade.pedidos {
+    .aviso-privacidade.fisico {
         width    : 545px;
         height   : 33px;
         left     : 34px;
@@ -622,9 +608,10 @@ em:hover {
     .btn.formcadastroF {
         width    : 255px;
         height   : 55px;
-        left     : 175px;
         top      : 688px;
         font-size: 20px;
+        left: 187px;
+
     }
 }
 
@@ -634,19 +621,17 @@ em:hover {
         width    : 140px;
         height   : 40px;
         font-size: 12px;
-        left     : 20px;
     }
 
     .btn.pessoaJ.fisico {
         width    : 140px;
         height   : 40px;
         font-size: 12px;
-        left     : 25px;
     }
 
     .cadastroPessoaF.fisico {
         width : 334px;
-        height: 984px;
+        height: 1306px;
         left  : 10px;
     }
 
@@ -659,187 +644,183 @@ em:hover {
         font-size : 14px;
     }
 
-    .form-label1.pedidos {
+    .form-label1.fisico {
         width    : 120px;
         height   : 21px;
-        left     : 28px;
-        top      : 59px;
+        left: 20px;
+        top: 71px;
         font-size: 14px;
     }
 
     #nome_ClienteFisico {
-        width : 274px;
-        height: 36px;
-        left  : 28px;
-        top   : 87p
+        width: 294px;
+        height: 50px;
+        left: 20px;
+        top: 97px;
     }
 
-    .form-label2.pedidos {
+    .form-label2.fisico {
         width    : 37px;
         height   : 19px;
-        left     : 28px;
-        top      : 131px;
+        left: 20px;
+        top: 172px;
         font-size: 14px;
     }
 
     #cpf_ClienteFisico {
-        width : 139px;
-        height: 36px;
-        left  : 28px;
-        top   : 161px;
+        width: 294px;
+        height: 49px;
+        left: 20px;
+        top: 193px;
     }
 
-    .form-label3.pedidos {
+    .form-label3.fisico {
         width    : 120px;
         height   : 20px;
-        left     : 28px;
-        top      : 205px;
+        left: 21px;
+        top: 267px;
         font-size: 14px;
     }
 
     #data_ClienteFisico {
-        width : 149px;
-        height: 36px;
-        left  : 28px;
-        top   : 236px
+        width: 294px;
+        height: 50px;
+        left: 20px;
+        top: 292px;
     }
 
-    .form-label4.pedidos {
+    .form-label4.fisico {
         width    : 42px;
         height   : 19px;
-        left     : 28px;
-        top      : 277px;
+        left: 21px;
+        top: 367px;
         font-size: 14px;
     }
 
     select.form-select {
-        width    : 100px;
-        height   : 36px;
-        left     : 28px;
-        top      : 304px;
+        width: 296px;
+        height: 50px;
+        left: 19px;
+        top: 387px;
         font-size: 12px;
     }
 
-    .aviso-tel.pedidos {
-        width    : 285px;
-        height   : 31px;
-        left     : 29px;
-        top      : 351px;
-        font-size: 14px;
+    .aviso-tel.fisico {
+        width: 300px;
+        height: 31px;
+        left: 21px;
+        top: 470px;
+        font-size: 16px;
     }
 
-    .form-label5.pedidos {
+    .form-label5.fisico {
         width    : 190px;
         height   : 21px;
-        left     : 29px;
-        top      : 394px;
+        left: 21px;
+        top: 522px;
         font-size: 14px;
     }
 
     #telefone_ClienteFisico {
-        width : 194px;
-        height: 36px;
-        left  : 28px;
-        top   : 424px;
-
+        width: 296px;
+        height: 50px;
+        left: 19px;
+        top: 548px;
     }
 
-    .form-label6.pedidos {
+    .form-label6.fisico {
         width    : 155px;
         height   : 29px;
-        left     : 29px;
-        top      : 469px;
+        left: 21px;
+        top: 622px;
         font-size: 14px;
     }
 
     #celular_ClienteFisico {
-        width : 194px;
-        height: 36px;
-        left  : 29px;
-        top   : 503px;
+        width: 296px;
+        height: 50px;
+        left: 19px;
+        top: 647px;
     }
 
-    .form-label7.pedidos {
+    .form-label7.fisico {
         width    : 44px;
-        height   : 16px;
-        left     : 29px;
-        top      : 550px;
+        left: 21px;
+        top: 722px;
         font-size: 14px;
     }
 
     #email1_ClienteFisico {
-        width : 274px;
-        height: 36px;
-        left  : 29px;
-        top   : 577px;
+        width: 296px;
+        height: 50px;
+        left: 19px;
+        top: 744px;
     }
 
-    .form-label8.pedidos {
+    .form-label8.fisico {
         width    : 140px;
         height   : 20px;
-        left     : 29px;
-        top      : 622px;
+        left: 21px;
+        top: 819px;
         font-size: 14px;
     }
 
     #email2_ClienteFisico {
-        width : 274px;
-        height: 36px;
-        left  : 29px;
-        top   : 648px;
+        width: 296px;
+        height: 50px;
+        left: 19px;
+        top: 841px;
     }
 
-    .form-label9.pedidos {
+    .form-label9.fisico {
         width    : 174px;
         height   : 18px;
-        left     : 29px;
-        top      : 693px;
+        left: 21px;
+        top: 916px;
         font-size: 14px;
     }
 
     #senha1_ClienteFisico {
-        width : 194px;
-        height: 36px;
-        left  : 29px;
-        top   : 718px
+        width: 295px;
+        height: 50px;
+        left: 19px;
+        top: 939px;
     }
 
-    .form-label10.pedidos {
+    .form-label10.fisico {
         width    : 128px;
         height   : 18px;
-        left     : 29px;
-        top      : 758px;
+        left: 21px;
+        top: 1014px;
         font-size: 14px;
     }
 
 
     #senha2_ClienteFisico {
-        width : 274px;
-        height: 36px;
-        left  : 29px;
-        top   : 782px;
+        width: 295px;
+        height: 50px;
+        left: 19px;
+        top: 1037px;
     }
 
     #exampleCheck1_ClienteFisico {
-        width : 20px;
-        height: 18px;
-        left  : 50px;
-        top   : 830px;
+        left: 43px;
+        top: 1112px;
     }
 
-    .form-check-label.pedidos {
+    .form-check-label.fisico {
         width : 237px;
         height: 16px;
-        left  : 61px;
-        top   : 836px;
+        left: 51px;
+        top: 1118px;
     }
 
 
-    .aviso-privacidade.pedidos {
-        width     : 274px;
-        height    : 33px;
-        left      : 18px;
-        top       : 867px;
+    .aviso-privacidade.fisico {
+        width: 237px;
+        height: 16px;
+        left: 22px;
+        top: 1175px;
         font-size : 12px;
         text-align: end;
     }
@@ -847,8 +828,8 @@ em:hover {
     .btn.formcadastroF {
         width    : 220px;
         height   : 45px;
-        left     : 48px;
-        top      : 921px;
+        left: 57px;
+        top: 1220px;
         font-size: 18px;
     }
 }
@@ -863,16 +844,13 @@ em:hover {
     }
 
     .cadastroPessoaF.fisico {
-        left: 5px;
-        margin-left: 0;
-        position: 0;
+        left: 0px;
     }
 }
 
-@media (max-width: 320px) {
-
+@media (max-width: 350px) {
     .cadastroPessoaF.fisico {
-        width: 302px;
+        width: 305px;
         left : 0px;
     }
 
@@ -880,105 +858,110 @@ em:hover {
         left: 35px;
     }
 
-    .form-label1.pedidos {
-        left: 15px;
+    .form-label1.fisico {
+        left: 5px;
     }
 
     #nome_ClienteFisico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
-    .form-label2.pedidos {
-        left: 15px;
+    .form-label2.fisico {
+        left: 5px;
     }
 
     #cpf_ClienteFisico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
-    .form-label3.pedidos {
-        left: 15px;
+    .form-label3.fisico {
+        left: 5px;
     }
 
     #data_ClienteFisico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
-    .form-label4.pedidos {
-        left: 15px;
+    .form-label4.fisico {
+        left: 5px;
     }
 
     select.form-select {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
-    .aviso-tel.pedidos {
-        left     : 15px;
+    .aviso-tel.fisico {
+        left     : 5px;
         font-size: 12px;
     }
 
-    .form-label5.pedidos {
-        left: 15px;
+    .form-label5.fisico {
+        left: 5px;
     }
 
     #telefone_ClienteFisico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
-    .form-label6.pedidos {
-        left: 15px;
+    .form-label6.fisico {
+        left: 5px;
     }
 
     #celular_ClienteFisico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
-    .form-label7.pedidos {
-        left: 15px;
+    .form-label7.fisico {
+        left: 5px;
     }
 
     #email1_ClienteFisico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
-    .form-label8.pedidos {
-        left: 15px;
+    .form-label8.fisico {
+        left: 5px;
     }
 
     #email2_ClienteFisico {
-        left: 15px;
+        left: 5px;
+        width: 282px;
     }
 
-    .form-label9.pedidos {
-        left: 18px;
+    .form-label9.fisico {
+        left: 8px;
     }
 
     #senha1_ClienteFisico {
-        left: 18px;
+        left: 8px;
+        width: 282px;
     }
 
-    .form-label10.pedidos {
-        left: 18px;
+    .form-label10.fisico {
+        left: 8px;
     }
-
 
     #senha2_ClienteFisico {
-        left: 18px;
+        left: 8px;
+        width: 282px;
     }
 
-    #exampleCheck1_ClienteFisico {
-        left: 45px;
-    }
-
-    .form-check-label.pedidos {
+    .form-check-label.fisico {
         left: 50px;
     }
 
-    .aviso-privacidade.pedidos {
+    .aviso-privacidade.fisico {
         left: 15px;
     }
 
-    .btn.formcadastroF.fisico {
+    .btn.formcadastroF {
         left: 42px;
     }
 }

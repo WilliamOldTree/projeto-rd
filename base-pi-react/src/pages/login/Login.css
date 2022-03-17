@@ -5,19 +5,6 @@
     padding-right: 12px;
 }
 
-.title {
-    color      : #261C1A;
-    margin-top : 27px;
-    font-weight: bold;
-    font-size: 25px;
-}
-
-.line-1 {
-    width     : 100%;
-    border    : 1px solid;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
 /* STYLE CONTANER CADASTRO E LOGIN*/
 
 .container-login-cadastro {
@@ -207,7 +194,7 @@ button.btn.formcadastro:hover {
     .login {
         margin-top   : 20px;
         width        : 300px;
-        height       : 311px;
+        height       : 342px;
         background   : #FFFFFF;
         border       : 2px solid #261C1A;
         box-sizing   : border-box;
@@ -217,7 +204,7 @@ button.btn.formcadastro:hover {
 
     #email.form-control {
         width        : 225px;
-        height       : 40px;
+        height       : 50px;
         margin-left  : 37px;
         margin-right : 38px;
         left         : 37px;
@@ -229,7 +216,7 @@ button.btn.formcadastro:hover {
 
     #senha.form-control {
         width        : 225px;
-        height       : 40px;
+        height       : 50px;
         margin-left  : 37px;
         margin-right : 38px;
         left         : 37px;
@@ -325,7 +312,7 @@ button.btn.formcadastro:hover {
     .btn.formcadastro {
         width        : 155px;
         height       : 40px;
-        left         : 72px;
+        left: 73px;
         top          : 253px;
         background   : #F27507;
         border-radius: 10px;

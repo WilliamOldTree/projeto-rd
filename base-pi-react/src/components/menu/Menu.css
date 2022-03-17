@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+.menu-list a {
+    text-decoration: none;
+    color          : #261C1A;
+    font-weight    : bold;
+    font-size      : 18px;
+}
+
+.menu-list a:hover {
+    text-decoration: underline;
+}
+
+.menu-lines{
+    width: 160px;
+}

@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
+import Menu from '../menu/Menu';
 import './Header.css'
 import Local from '../asserts/icons/local.png'
-import Menu from '../asserts/icons/menu.png'
+import MenuIcon from '../asserts/icons/menu.png'
 import Login from '../asserts/icons/login.png'
 import Logo from '../asserts/images/header-img/logo.png'
 import Lupa from '../asserts/icons/pesquisa-de-lupa (1).png'
@@ -41,7 +42,7 @@ function Header() {
                             <div className="col-3" id="canvas">
                                 <button id="btn-canvas" type="button " data-bs-toggle="offcanvas"
                                     data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img
-                                        src={ Menu } alt="" width="70%" /></button>
+                                        src={ MenuIcon } alt="" width="70%" /></button>
 
                                 <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
                                     aria-labelledby="offcanvasRightLabel">
@@ -56,37 +57,14 @@ function Header() {
                                             <div className="row row-canvas">
                                                 <div className="login-canvas">
                                                     <Link to="/"><img className="perfil" src={ Login } width="10%"
-                                                        alt="login" /> <h5>Olá Jose da Silva</h5></Link>
-                                                        
+                                                        alt="login" /> <h5>Olá Jose da Silva</h5>
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        
-
                                         <div  className='menu-list1'>
-                                            <Link to="area_cliente_dados" className='LinkArea'>Minha Conta
-                                            <hr className='MenuAreaCanvas'></hr>
-                                            </Link>
-                                            <Link to="area_cliente_pedidos" className='LinkArea'>Meus Pedidos
-                                            <hr className='MenuAreaCanvas'></hr>
-                                            </Link>
-
-                                            <Link to="area_cliente_cartoes" className='LinkArea'>Meus Cartões
-                                            <hr className='MenuAreaCanvas'></hr>
-                                            </Link>
-                                            <Link to="area_cliente_endereco" className='LinkArea'>Meus Endereço
-                                            <hr className='MenuAreaCanvas'></hr>
-                                            </Link>
-
-                                            <Link to="area_cliente_favoritos" className='LinkArea'>Meus Favoritos
-                                            <hr className='MenuAreaCanvas'></hr>
-                                            </Link>
-                                            <Link to="area_cliente_senha" className='LinkArea'>Alterar Senha
-                                            <hr className='MenuAreaCanvas'></hr>
-                                            </Link>
-                                            <Link to="/" className='LinkArea'>Sair
-                                            </Link>
+                                        <Menu/>
                                         </div>
                                     </div>
                                 </div>
@@ -94,10 +72,6 @@ function Header() {
                         </div>
                     </div>
                 </div>
-
-
-
-
 
 
                 {/* header inferior */}
