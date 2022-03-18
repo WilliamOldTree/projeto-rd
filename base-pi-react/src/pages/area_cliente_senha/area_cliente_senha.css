@@ -47,8 +47,8 @@ margin-left: 10%;
 width: 600px;
 height: 471px;
 align-items: center;
-margin-top: 20%;
-margin-left: 35%;
+margin-top: -19%;
+margin-left: 25%;
 background: #FFFFFF;
 border: 2px solid #261C1A;
 box-sizing: border-box;
@@ -146,9 +146,9 @@ top: -120px;
 
 #redefinirAltSenha{
     width: 105px;
-    height: 40px;
+    height: 50px;
     margin-left: 48%;
-    margin-top: 30%;
+    margin-top: 29%;
     position: relative;
     top: -60px;
     left: -40px;
@@ -200,17 +200,17 @@ top: -120px;
         
         .container-AltSenha{
             width: 570px;
-            height: 401px;
+            height: 531px;
             align-items: center;
-            margin-top: 40%;
-            margin-left: 35%;
+            margin-top: 20%;
+            margin-left: 32%;
             background: #FFFFFF;
             border: 2px solid #261C1A;
             box-sizing: border-box;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 30px;
             position: relative;
-            top: -50px;
+            top: -70px;
             left: -160px;
         }
 
@@ -227,7 +227,7 @@ top: -120px;
                 top: 3%;
                 text-align: start;
                 line-height: 50px;
-                margin-left: 15px;
+                margin-left: 25px;
                 }
         
                 #AltSenha1RecNova{
@@ -237,11 +237,11 @@ top: -120px;
                     display: flex;
                     align-items: center;
                     color: #3C4043;
-                     top: 30px;
+                     top: 80px;
                      position: relative;
                     text-align: start;
                     line-height: 50px;
-                    margin-left: 15px;
+                    margin-left: 25px;
                     }
 
                     #AltSenha2RecNova{
@@ -251,17 +251,17 @@ top: -120px;
                         display: flex;
                         align-items: center;
                         color: #3C4043;
-                         top: 40px;
+                         top: 140px;
                          position: relative;
                         text-align: start;
                         line-height: 50px;
-                        margin-left: 15px;
+                        margin-left: 25px;
                         }
         
                 
         #AltsenhaRecNova1{ 
             width: 90%;
-            height: 42px;
+            height: 45px;
             border: 2px solid #979797;
             box-sizing: border-box;
             border-radius: 10px;
@@ -273,11 +273,11 @@ top: -120px;
         
         #AltsenhaRecNova2{ 
             width: 90%;
-            height: 42px;
+            height: 45px;
             border: 2px solid #979797;
             box-sizing: border-box;
             border-radius: 10px;
-            top: 8%;
+            top: 15%;
             left: 5%;
             position: relative;
             align-items: center;
@@ -285,22 +285,22 @@ top: -120px;
 
         #AltsenhaRecNova3{ 
             width: 90%;
-            height: 42px;
+            height: 45px;
             border: 2px solid #979797;
             box-sizing: border-box;
             border-radius: 10px;
-            top: 10%;
+            top: 27%;
             left: 5%;
             position: relative;
             align-items: center;
         }
 
                 #redefinirAltSenha{
-                    width: 100px;
-                    height: 40px;
+                    width: 105px;
+                    height: 50px;
                     position: relative;
-                    top: -25%;
-                    left: -6%;
+                    top: 2%;
+                    left: -4%;
                     align-items: center;
                     background: #F27507;
                     border-radius: 10px;
@@ -346,7 +346,7 @@ top: -120px;
         
         .container-AltSenha{
             width: 300px;
-            height: 401px;
+            height: 600px;
             align-items: center;
             margin-top: 20%;
             margin-left: 35%;
@@ -370,7 +370,7 @@ top: -120px;
                 align-items: center;
                 color: #3C4043;
                 position: relative;
-                top: 3%;
+                top: 12%;
                 text-align: start;
                 line-height: 50px;
                 margin-left: 15px;
@@ -383,7 +383,7 @@ top: -120px;
                     display: flex;
                     align-items: center;
                     color: #3C4043;
-                     top: 30px;
+                     top: 145px;
                      position: relative;
                     text-align: start;
                     line-height: 50px;
@@ -397,7 +397,7 @@ top: -120px;
                         display: flex;
                         align-items: center;
                         color: #3C4043;
-                         top: 40px;
+                         top: 210px;
                          position: relative;
                         text-align: start;
                         line-height: 50px;
@@ -407,23 +407,23 @@ top: -120px;
                 
         #AltsenhaRecNova1{ 
             width: 90%;
-            height: 42px;
+            height: 45px;
             border: 2px solid #979797;
             box-sizing: border-box;
             border-radius: 10px;
             position: relative;
-            top: 3%;
+            top: 12%;
             left: 5%;
             align-items: center;
         }
         
         #AltsenhaRecNova2{ 
             width: 90%;
-            height: 42px;
+            height: 45px;
             border: 2px solid #979797;
             box-sizing: border-box;
             border-radius: 10px;
-            top: 8%;
+            top: 25%;
             left: 5%;
             position: relative;
             align-items: center;
@@ -431,21 +431,21 @@ top: -120px;
 
         #AltsenhaRecNova3{ 
             width: 90%;
-            height: 42px;
+            height: 45px;
             border: 2px solid #979797;
             box-sizing: border-box;
             border-radius: 10px;
-            top: 10%;
+            top: 35%;
             left: 5%;
             position: relative;
             align-items: center;
         }
 
                 #redefinirAltSenha{
-                    width: 100px;
-                    height: 40px;
+                    width: 105px;
+                    height: 50px;
                     position: relative;
-                    top: -5%;
+                    top: 27%;
                     left: -12%;
                     align-items: center;
                     background: #F27507;

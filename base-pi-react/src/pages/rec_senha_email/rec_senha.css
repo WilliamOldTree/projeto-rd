@@ -34,7 +34,7 @@
     
     width: 464px;
     height: 281px;
-    margin-left:40% ;
+    margin-left:35% ;
     align-items: center;
     margin-top: 15%;
     position: relative;
@@ -100,7 +100,7 @@ color: #261C1A;
 
 .BUT{
     position: absolute;
-    width: 125px;
+    width: 105px;
     height: 50px;
     left: 40%;
     align-items: center;
@@ -117,12 +117,7 @@ color: #261C1A;
 
     @media (max-width:1024px){
 
-        .container-RecEmail{
-            margin: 0;
-            padding: 0;
-            width: 100%;
-        }
-        
+
        
         .User_rec_email{
             position: relative;
@@ -167,10 +162,10 @@ color: #261C1A;
            
             
             width: 464px;
-            height: 281px;
+            height: 351px;
             margin-left:22% ;
             align-items: center;
-            margin-top: 150px;
+            margin-top: 200px;
             position: relative;
             top: -100px;
             background: #FFFFFF;
@@ -208,7 +203,7 @@ color: #261C1A;
                 width: 241px;
                 height: 21px;
                 left: 30px;
-                top: 50px;
+                top: 85px;
                 justify-content: flex-start;
                 font-family: 'Roboto';
                 font-style: normal;
@@ -222,9 +217,9 @@ color: #261C1A;
                 
         #EmailSenha{ 
             width: 413px;
-            height: 42px;
+            height: 45px;
             left: 30px;
-            top: 70px;
+            top: 95px;
             position: relative; 
             border: 2px solid #979797;
             box-sizing: border-box;
@@ -234,11 +229,11 @@ color: #261C1A;
         
         .BUT{
             position: absolute;
-            width: 150px;
+            width: 105px;
             height: 50px;
-            left: 35%;
+            left: 42%;
             align-items: center;
-            top: 204px;
+            top: 264px;
             color: #FFFFFF;
             font-weight: bold;
             border: none;
@@ -279,7 +274,7 @@ color: #261C1A;
            
             
             width: 274px;
-            height: 281px;
+            height: 351px;
             left:-10% ;
             align-items: center;
             margin-top: 50%;
@@ -320,7 +315,7 @@ color: #261C1A;
                 width: 241px;
                 height: 21px;
                 left: 30px;
-                top: 50px;
+                top: 90px;
                 justify-content: flex-start;
                 font-family: 'Roboto';
                 font-style: normal;
@@ -334,9 +329,9 @@ color: #261C1A;
                 
         #EmailSenha{ 
             width: 213px;
-            height: 42px;
+            height: 45px;
             left: 30px;
-            top: 70px;
+            top: 100px;
             position: relative; 
             border: 2px solid #979797;
             box-sizing: border-box;
@@ -346,11 +341,11 @@ color: #261C1A;
         
         .BUT{
             position: absolute;
-            width: 100px;
+            width: 105px;
             height: 50px;
-            left: 35%;
+            left: 32%;
             align-items: center;
-            top: 204px;
+            top: 264px;
             color: #FFFFFF;
             font-weight: bold;
             border: none;

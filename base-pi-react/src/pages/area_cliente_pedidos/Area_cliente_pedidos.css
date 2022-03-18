@@ -88,9 +88,9 @@ body {
 /*responsive*/
 @media(max-width: 1000px) {
     .btn-pedidos {
-        font-size: 14px;
+        font-size    : 14px;
     }
-
+    
     .menu-list {
         display: none;
     }
@@ -102,9 +102,7 @@ body {
 }
 
 @media(max-width: 500px) {
-    .area-pedido {
-        width: 90%;
-    }
+
 
     .table,
     .table thead,

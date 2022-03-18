@@ -1,9 +1,11 @@
 import './area_cliente_endereco.css'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
-import User from '../../components/asserts/icons/user.png';
+import Menu from '../../components/menu/Menu'
+import Title from '../../components/title/Title'
+import User from '../../components/asserts/icons/user.png'
 import Lixeira from '../../components/asserts/icons/lixeira.png'
-import { Link } from 'react-router-dom'
+
 
 function AreaEndereco() {
     return (
@@ -13,27 +15,10 @@ function AreaEndereco() {
 
             <div className='container'>
 
-            <ul className='listaAreaCliente'>
-                <li className='AreaClienteLista'><Link className='LinkArea'  to= 'area_cliente_dados' >Minha Conta</Link></li>
-                <hr className='MenuAreaCliente'></hr>
-                <li className='AreaClienteLista'><Link  className='LinkArea' to='area_cliente_pedidos'>Meus Pedidos</Link></li>
-                <hr className='MenuAreaCliente'></hr>
-                <li className='AreaClienteLista'><Link className='LinkArea' to='area_cliente_senha'>Alterar Senha</Link></li>
-                <hr className='MenuAreaCliente'></hr>
-                <li className='AreaClienteLista'><Link className='LinkArea' to='area_cliente_endereco'>Meus Endereços</Link></li>
-                <hr className='MenuAreaCliente'></hr>
-                <li className='AreaClienteLista'><Link className='LinkArea' to='area_cliente_cartoes'>Meus Cartões</Link></li>
-                <hr className='MenuAreaCliente'></hr>
-                <li className='AreaClienteLista'><Link className='LinkArea' to='area_cliente_favoritos'>Meus Favoritos</Link></li>
-                <hr className='MenuAreaCliente'></hr>
-                <li className='AreaClienteLista'><Link className='LinkArea' to={'/'}>Sair</Link></li>
-            </ul>
+            <Title titleIcon={User} titleText="Meus Endereços" />
+            <Menu/>
 
 
-                <h2 className='tituloEndereco'><nobr>Meus Endereços</nobr></h2>
-                <img width="55" className='UserAreaClienteEndereco' src={User} />
-
-                <hr id='line_Area_Enderecos'></hr>
 
 
                 <div id='container-Enderecos'>
@@ -68,7 +53,7 @@ function AreaEndereco() {
 
 
                     <button className='editarEnderecos' type='submit'>
-                        EDITAR
+                        ALTERAR
                     </button>
                     <button className='addEnderecos' type='submit'>
                         ADICIONAR

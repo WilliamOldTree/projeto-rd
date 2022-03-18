@@ -2,6 +2,7 @@ import './rec_senha.css'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import User from '../../components/asserts/icons/user.png';
+import Title from '../../components/title/Title'
 
 function RecSenha() {
     return (
@@ -12,10 +13,8 @@ function RecSenha() {
             <div className='container'>
 
 
-                <h2 id='TituloRecEmail'><nobr>Recuperação de Senha</nobr></h2>
-                <img width="55" className='User_rec_email' src={User} />
-                <hr className='line_rec_email'></hr>
-
+              
+            <Title titleIcon={User} titleText="Recuperação de Senha" />
 
                 <div className='container-senha'>
 

@@ -3,8 +3,7 @@ import './Area_cliente_favoritos.css'
 /* LINK PAGES */
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
-import Title from '../../components/title/Title';
-import Menu from '../../components/menu/Menu';
+import Title from '../../components/title/Title'
 
 /* ICONS */
 import User from '../../components/asserts/icons/user.png';
@@ -17,14 +16,34 @@ import Biblia from '../../components/asserts/images/images-home/b_blia-sagrada-c
 function Favoritos() {
     return (
         <>
-            <Header/>
+            <Header />
             <div className='container'>
                 <Title titleIcon={User} titleText="Meus Favoritos"/>
 
                 {/* BEGGIN MENU LATERAL ÁREA DO CLENTE */}
                 <div className='row favoritos'>
                     <div className='col-3 col-sm-3 col-xs-3 menu-list favoritos'>
-                    <Menu/>
+                            <a className='menu-list2 ' href=''>Meus Dados
+                                <hr className='menu-lines' />
+                            </a>
+                            <a className='menu-list-itens' href=''>Meus Pedidos
+                                <hr className='menu-lines'/>
+                            </a>
+
+                            <a className='menu-list-itens' href=''>Meus Cartões
+                                <hr className='menu-lines' />
+                            </a>
+                            <a className='menu-list-itens' href=''>Meus Endereços
+                                <hr className='menu-lines'  />
+                            </a>
+
+                            <a className='menu-list-itens' href=''>Meus Favoritos
+                                <hr className='menu-lines'/>
+                            </a>
+                            <a className='menu-list-itens' href=''>Alterar Senha
+                                <hr className='menu-lines'/>
+                            </a>
+                            <a className='menu-list-itens'href=''>Sair</a>
                     </div>
                     {/* END MENU LATERAL ÁREA DO CLENTE */}
                     
