@@ -38,17 +38,17 @@ import BannerEnd from '../../components/asserts/images/images-home/banner-end.pn
 function Home() {
     return (
         <>
-            <Header/>
+            <Header />
             <div className='container'>
 
                 {/* CARROSSEL HOME */}
                 <div id='carouselExampleControls' className='carousel slide' data-bs-ride='carousel'>
                     <div className='carousel-inner'>
                         <div className='carousel-item active'>
-                            <img src={Banner1} className='d-block w-100' alt='...'/>
+                            <img src={Banner1} className='d-block w-100' alt='...' />
                         </div>
                         <div className='carousel-item'>
-                            <img src={Banner2} className='d-block w-100' alt='...'/>
+                            <img src={Banner2} className='d-block w-100' alt='...' />
                         </div>
                     </div>
                     <button className='carousel-control-prev' type='button' data-bs-target='#carouselExampleControls'
@@ -68,7 +68,7 @@ function Home() {
                     <div id='cards-principal' className='row'>
                         <div className='col-12 col-md-6 col-lg-3 cards-principal'>
                             <div className='col-2 icon-frete'>
-                                <img width='40' src={Frete}/>
+                                <img width='40' src={Frete} />
                             </div>
                             <div className='col-10'>
                                 <h6 className='title-cards-principal'>Frete</h6>
@@ -78,7 +78,7 @@ function Home() {
 
                         <div className='col-12 col-md-6 col-lg-3 cards-principal'>
                             <div className='col-2 '>
-                                <img width='30' src={Cartao}/>
+                                <img width='30' src={Cartao} />
                             </div>
                             <div className='col-10'>
                                 <h6 className='title-cards-principal'>Parcelamento</h6>
@@ -88,7 +88,7 @@ function Home() {
 
                         <div className='col-12 col-md-6 col-lg-3 cards-principal'>
                             <div className='col-2'>
-                                <img width='30' src={Chat}/>
+                                <img width='30' src={Chat} />
                             </div>
                             <div className='col-10'>
                                 <div className='col-2 cards-title'>
@@ -103,7 +103,7 @@ function Home() {
 
                         <div className='col-12 col-md-6 col-lg-3 cards-principal'>
                             <div className='col-2'>
-                                <img width='30' src={Seguro}/>
+                                <img width='30' src={Seguro} />
                             </div>
 
                             <div className='col-10'>
@@ -123,20 +123,20 @@ function Home() {
                 <div className='cards-topo2'>
                     <div className='row'>
                         <div className='col-12 col-md-6 col-lg-3 cards-categoria'>
-                            <img className='img-topo2' width='100%' src={Categoria1}/>
+                            <img className='img-topo2' width='100%' src={Categoria1} />
                         </div>
 
                         <div className='col-12 col-md-6 col-lg-3 cards-categoria'>
-                            <img className='img-topo2' width='100%' src={Categoria2}/>
+                            <img className='img-topo2' width='100%' src={Categoria2} />
                         </div>
 
                         <div className='col-12 col-md-6 col-lg-3 cards-categoria'>
-                            <img className='img-topo2' width='100%' src={Categoria3}/>
+                            <img className='img-topo2' width='100%' src={Categoria3} />
 
                         </div>
 
                         <div className='col-12 col-md-6 col-lg-3 cards-categoria'>
-                            <img className='img-topo2' width='100%' src={Categoria4}/>
+                            <img className='img-topo2' width='100%' src={Categoria4} />
                         </div>
                     </div>
                 </div>
@@ -144,25 +144,47 @@ function Home() {
 
                 {/* CARDS DE PRODUTOS EM DESTAQUES */}
                 <h3 id='title-destaque'>Nossos Destaques</h3>
-                <hr id='line-1'/>
+                <hr id='line-1' />
 
                 <div className='col-12 imagensCaixa1'>
                     <div className='row g-1'>
-                        <Card nomeProduto="Crucifixo de parede c/ Cristo" preco="30,00" parcela="3x" valorParcela="10,00" img={Crucifixo}/>
-                        <Card nomeProduto="Talit de lã c/ listras pretas" preco="129,30" parcela="3x" valorParcela=" 43,10"  img={Talit} />
-                        <Card nomeProduto="Jogo de Iemanjá Branco" preco="220,00" parcela="3x" valorParcela="73,33" img={JogoIemanja}/>
-                        <Card nomeProduto="Adja com 3 Bocas Aço Cabo de Madeira" preco="49,90" parcela="3x" valorParcela="16,63" img={Adja}/>
-                        <Card nomeProduto="Ganesh colorido em resina 8X6cm" preco="22,76" parcela="3x" valorParcela="7,58" img={Ganesh}/>
-                        <Card nomeProduto="Incensário de Madeira"  preco="8,00" parcela="2x" valorParcela="4,00" img={Incensario}/>
-                        <Card nomeProduto="Imagem Sagrada Família Resina 30cm" preco="30,00" parcela="3x" valorParcela="26,33" img={SagradaFamilia}/>
-                        <Card nomeProduto="Bíblia Sagrada Tradução Oficial" preco="40,00" parcela="2x" valorParcela="20,00 " img={Biblia}/>
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto="Crucifixo de parede c/ Cristo" preco="30,00" parcela="3x" valorParcela="10,00" img={Crucifixo} />
+                        </div>
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto="Talit de lã c/ listras pretas" preco="129,30" parcela="3x" valorParcela=" 43,10" img={Talit} />
+                        </div>
+
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto="Jogo de Iemanjá Branco" preco="220,00" parcela="3x" valorParcela="73,33" img={JogoIemanja} />
+                        </div>
+
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto="Adja com 3 Bocas Aço Cabo de Madeira" preco="49,90" parcela="3x" valorParcela="16,63" img={Adja} />
+                        </div>
+
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto="Ganesh colorido em resina 8X6cm" preco="22,76" parcela="3x" valorParcela="7,58" img={Ganesh} />
+                        </div>
+
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto="Incensário de Madeira" preco="8,00" parcela="2x" valorParcela="4,00" img={Incensario} />
+                        </div>
+
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto="Imagem Sagrada Família Resina 30cm" preco="30,00" parcela="3x" valorParcela="26,33" img={SagradaFamilia} />
+                        </div>
+
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto="Bíblia Sagrada Tradução Oficial" preco="40,00" parcela="2x" valorParcela="20,00 " img={Biblia} />
+                        </div>
                     </div>
                 </div>
 
                 {/* BANNER FINAL HOME */}
-                <img className='img-end' src={BannerEnd}/>
+                <img className='img-end' src={BannerEnd} />
             </div>
-            <Footer/>
+            <Footer />
         </>
     );
 }

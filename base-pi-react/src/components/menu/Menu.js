@@ -4,7 +4,7 @@ import './Menu.css';
 function Menu() {
     return (
         <>
-            <div className='menu-list'>
+            <div className='menu-component'>
                 <Link className='menu-list-itens' to='area_cliente_dados'>Meus Dados
                     <hr className='menu-lines'/>
                 </Link>

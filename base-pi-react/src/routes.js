@@ -16,6 +16,9 @@ import AreaEndereco from "./pages/area_cliente_enderecos/area_cliente_endereco";
 import AreaDados from "./pages/area_cliente_dados/area_cliente_dados";
 import AreaCartoes from "./pages/area_cliente_cartoes/area_cliente_cartoes";
 import AtendimentoCliente from "./pages/atendimento_ao_cliente/atendimento_ao_cliente";
+import Categoria from "./pages/category/Category";
+
+
 export const Routes = () => {
     return (
         <Switch>
@@ -41,6 +44,7 @@ export const Routes = () => {
             <Route path="/institucional/processogarantia" component={ProcessoGarantia}/>
             <Route path="/institucional/processopagamento" component={ProcessoPagamento}/>
             <Route path="/institucional/seguranca" component = {Seguranca}/>
+            <Route path="/category" component = {Categoria}/>
         </Switch>
     );
 }

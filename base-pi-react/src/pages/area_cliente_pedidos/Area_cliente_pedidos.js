@@ -4,7 +4,7 @@ import './Area_cliente_pedidos.css'
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import Menu from '../../components/menu/Menu';
-import Title from '../../components/title/Title'
+import Title from '../../components/title/Title';
 
 
 /* ICONS */
@@ -19,7 +19,7 @@ function Pedidos() {
 
                 <div className='row favoritos'>
                     {/* BEGGIN MENU LATERAL ÁREA DO CLENTE */}
-                    <div className='col-3 col-sm-3 col-xs-3'>
+                    <div className='col-3 col-sm-3 col-xs-3 menu-list pedidos'>
                         <Menu />
                     </div>
                     {/* END MENU LATERAL ÁREA DO CLENTE */}

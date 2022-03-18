@@ -1,0 +1,65 @@
+.form-select.selectCat{
+    display: none;
+}
+.listaCat ul li {
+    list-style: none;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.listaCat a{
+    text-decoration: none;
+    color: #261C1A;
+}
+.listaCat ul li a:hover{
+    color: #AF9787;
+    text-decoration: underline;
+}
+
+.cardCat{
+    padding: 0px;
+}
+
+
+
+@media (max-width: 700px) {
+    .listaCat{
+        display: none;
+    }
+
+    .form-select.selectCat{
+        display: block;
+        width: 70%;
+        background-color: #AF9787;
+        color:#FFFFFF;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .form-select.selectCat{
+        display: block;
+        width: 70%;
+        background-color: #AF9787;
+        color:#FFFFFF;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .form-select.selectCat.selected{
+        font-size: 20px;
+    }
+
+    .selectCat-container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .row.category{
+        display: flex;
+        justify-content: center;
+    }
+}

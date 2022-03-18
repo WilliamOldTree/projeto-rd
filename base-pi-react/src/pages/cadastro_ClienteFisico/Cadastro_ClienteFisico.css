@@ -29,6 +29,9 @@ body {
     color        : #261C1A;
     font-weight  : 700;
     margin-right  : 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn.pessoaF.fisico:hover {
@@ -50,6 +53,9 @@ body {
     color        : #261C1A;
     font-weight  : 700;
     margin-left  : 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn.pessoaJ.fisico:hover {
@@ -178,7 +184,7 @@ body {
     color      : #3C4043;
 }
 
-select.form-select {
+select.form-select.fisico {
     position     : absolute;
     font-size    : 12px;
     width        : 100px;
@@ -482,7 +488,7 @@ em:hover {
         top   : 137px;
     }
 
-    select.form-select {
+    select.form-select.fisico {
         width    : 100px;
         height   : 40px;
         left     : 468px;
@@ -697,7 +703,7 @@ em:hover {
         font-size: 14px;
     }
 
-    select.form-select {
+    select.form-select.fisico {
         width: 296px;
         height: 50px;
         left: 19px;
@@ -889,7 +895,7 @@ em:hover {
         left: 5px;
     }
 
-    select.form-select {
+    select.form-select.fisico {
         left: 5px;
         width: 282px;
     }
