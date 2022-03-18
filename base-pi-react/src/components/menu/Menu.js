@@ -23,7 +23,7 @@ function Menu() {
                 <Link className='menu-list-itens' to='area_cliente_senha' >Alterar Senha
                     <hr className='menu-lines'/>
                 </Link>
-                <Link className='menu-list-itens' href=''>Sair
+                <Link className='menu-list-itens' to='/'>Sair
                 </Link>
             </div>
         </>

@@ -16,7 +16,7 @@ function AreaEndereco() {
             <div className='container'>
 
             <Title titleIcon={User} titleText="Meus Endereços" />
-            <Menu/>
+            <Menu />
 
 
 

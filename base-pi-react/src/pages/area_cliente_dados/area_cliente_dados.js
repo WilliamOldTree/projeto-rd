@@ -15,7 +15,7 @@ function AreaDados() {
             <div className='container'>
 
             <Title titleIcon={User} titleText="Meus Dados" />
-         <Menu/>
+         <Menu />
 
 
                 <div id='container-Dados'>

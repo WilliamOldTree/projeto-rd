@@ -14,7 +14,7 @@ function AreaSenha() {
             <div className='container'>
 
             <Title titleIcon={User} titleText="Alterar Senha" />
-            <Menu/>
+            <Menu />
 
                 <div className='container-AltSenha'>
 

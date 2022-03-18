@@ -15,7 +15,7 @@ function AreaCartoes() {
             <div className='container'>
 
                 <Title titleIcon={User} titleText="Meus Cartões" />
-                <Menu/>
+                <Menu />
 
                
 

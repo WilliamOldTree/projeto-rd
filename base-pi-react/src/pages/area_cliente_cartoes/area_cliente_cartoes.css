@@ -160,7 +160,7 @@ top: -160px;
 
 
         
-        .listaAreaCliente{
+        .menu-component{
          display: none;
             }
         
@@ -346,7 +346,7 @@ top: -160px;
             left: -20%;
         }
 
-        .listaAreaCliente{
+        .menu-component{
         display: none;        
     }
     #line_Area_Cartoes{
