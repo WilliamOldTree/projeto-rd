@@ -1,5 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.title-category{
+    color      : #261C1A;
+    margin-top : 27px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.line-category{
+    width     : 100%;
+    border    : 1px solid;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.line-category-itens{
+    width: 120px;
+    margin-top: 0px;
+}
 .form-select.selectCat{
     display: none;
+
 }
 .listaCat ul li {
     list-style: none;
@@ -11,6 +31,7 @@
     text-decoration: none;
     color: #261C1A;
 }
+
 .listaCat ul li a:hover{
     color: #AF9787;
     text-decoration: underline;
@@ -20,7 +41,10 @@
     padding: 0px;
 }
 
-
+.row.category{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 @media (max-width: 700px) {
     .listaCat{
@@ -29,24 +53,14 @@
 
     .form-select.selectCat{
         display: block;
-        width: 70%;
+        width: 60%;
         background-color: #AF9787;
         color:#FFFFFF;
         margin-bottom: 20px;
         margin-top: 20px;
         text-align: center;
         font-weight: 700;
-    }
-
-    .form-select.selectCat{
-        display: block;
-        width: 70%;
-        background-color: #AF9787;
-        color:#FFFFFF;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        text-align: center;
-        font-weight: 700;
+        height: 50px;
     }
 
     .form-select.selectCat.selected{

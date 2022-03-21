@@ -15,6 +15,7 @@ import AreaSenha from "./pages/area_cliente_senha/area_cliente_senha";
 import AreaEndereco from "./pages/area_cliente_enderecos/area_cliente_endereco";
 import AreaDados from "./pages/area_cliente_dados/area_cliente_dados";
 import AreaCartoes from "./pages/area_cliente_cartoes/area_cliente_cartoes";
+import AreaDetalhesPedido from "./pages/area_cliente_detalhesPedido/Area_cliente_detalhesPedido";
 import AtendimentoCliente from "./pages/atendimento_ao_cliente/atendimento_ao_cliente";
 import Categoria from "./pages/category/Category";
 
@@ -24,6 +25,7 @@ export const Routes = () => {
         <Switch>
             <Route path="/" component={Home} exact/>
             <Route path="/product" component={Product} />
+            <Route path="/category" component = {Categoria}/>
             <Route path="/cart" component={Cart} />
             <Route path="/login" component={Login} />
             <Route path="/cadastro_ClienteFisico" component={ClienteFisico} />
@@ -37,6 +39,7 @@ export const Routes = () => {
             <Route path="/area_cliente_dados" component={AreaDados} />
             <Route path="/area_cliente_cartoes" component={AreaCartoes} />
             <Route path="/area_cliente_endereco" component={AreaEndereco} />
+            <Route path="/area_cliente_detalhesPedido" component={AreaDetalhesPedido} />
             <Route path="/atendimento_ao_cliente" component={AtendimentoCliente} />
             <Route path="/institucional/empresa" component={Empresa}/>
             <Route path="/institucional/processocompra" component={ProcessoCompra}/>
@@ -44,7 +47,6 @@ export const Routes = () => {
             <Route path="/institucional/processogarantia" component={ProcessoGarantia}/>
             <Route path="/institucional/processopagamento" component={ProcessoPagamento}/>
             <Route path="/institucional/seguranca" component = {Seguranca}/>
-            <Route path="/category" component = {Categoria}/>
         </Switch>
     );
 }
