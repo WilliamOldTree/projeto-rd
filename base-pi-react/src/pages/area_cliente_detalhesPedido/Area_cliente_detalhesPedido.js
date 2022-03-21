@@ -1,6 +1,5 @@
 import './Area_cliente_detalhesPedido.css'
 /* LINK PAGES */
-import { Link } from 'react-router-dom'
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 
@@ -22,12 +21,12 @@ function detalhesPedido() {
                                     <th className='detalhesPedido-list'>
                                         <div className="status-pedidoDetalhes"></div>
                                     </th>
-                                    <th className='col-6 col-sm-6 col-xs-6 detalhesPedido-list'>
+                                    <th className='col-8 col-sm-8 col-xs-8 detalhesPedido-list'>
                                         <h5 className='titulo-pedido-detalhes'> Pedido</h5>
                                         <h5 className='titulo-pedido-detalhes'>#39978</h5>
                                         <p className='titulo-pedido-detalhes status'>Status: Pedido em Andamento</p>
                                     </th>
-                                    <th className='col-6 col-sm-6 col-xs-6 detalhesPedido-list'>
+                                    <th className='col-4 col-sm-4 col-xs-4 detalhesPedido-list'>
                                         <p className='p-duvidasDetalhes'>Dúvidas sobre esse pedido? Clique aqui</p>
                                     </th>
                                 </tr>
