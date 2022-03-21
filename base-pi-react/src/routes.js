@@ -18,6 +18,10 @@ import AreaCartoes from "./pages/area_cliente_cartoes/area_cliente_cartoes";
 import AreaDetalhesPedido from "./pages/area_cliente_detalhesPedido/Area_cliente_detalhesPedido";
 import AtendimentoCliente from "./pages/atendimento_ao_cliente/atendimento_ao_cliente";
 import Categoria from "./pages/category/Category";
+import Cart_address from "./pages/cart_address/Cart_address"
+import Pagamento from "./pages/pagamento/Pagamento"
+import Checkout_carrinho from "./pages/checkout_carrinho/Checkout_carrinho";
+
 
 
 export const Routes = () => {
@@ -47,6 +51,9 @@ export const Routes = () => {
             <Route path="/institucional/processogarantia" component={ProcessoGarantia}/>
             <Route path="/institucional/processopagamento" component={ProcessoPagamento}/>
             <Route path="/institucional/seguranca" component = {Seguranca}/>
+            <Route path="/cart_address" component={Cart_address}/>
+            <Route path="/pagamento" component={Pagamento} />
+            <Route path="/checkout_carrinho" component={Checkout_carrinho} />
         </Switch>
     );
 }
