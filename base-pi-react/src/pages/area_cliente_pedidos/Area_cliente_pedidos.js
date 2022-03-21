@@ -21,7 +21,10 @@ function Pedidos() {
                 <div className='row favoritos'>
                     {/* BEGGIN MENU LATERAL ÁREA DO CLENTE */}
                     <div className='col-3 col-sm-3 col-xs-3 menu-list pedidos'>
-                        <Menu />
+
+            <div className='MenuAreaResponsivo'>
+            <Menu />
+            </div>
                     </div>
                     {/* END MENU LATERAL ÁREA DO CLENTE */}
 

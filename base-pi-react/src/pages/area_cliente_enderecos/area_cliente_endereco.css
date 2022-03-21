@@ -156,7 +156,10 @@ top: -120px;
             width: 100%;
         }
         
-       
+        .MenuAreaResponsivo{
+            display: none;
+        }
+         
 
         .UserAreaClienteEndereco{
             position: relative;
@@ -166,9 +169,7 @@ top: -120px;
         }
         
 
-        .menu-component{
-        display: none;        
-    }
+   
     #line_Area_Enderecos{
         width: 100%;
         margin-top: -2%;
@@ -300,6 +301,10 @@ top: -120px;
             width: 100%;
         }
         
+        .MenuAreaResponsivo{
+            display: none;
+        }
+         
        
 
         .UserAreaClienteEndereco{
@@ -316,9 +321,7 @@ top: -120px;
             left: -40%;
         }
 
-        .menu-component{
-        display: none;        
-    }
+
     #line_Area_Enderecos{
         width: 100%;
         margin-top: -10%;
