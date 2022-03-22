@@ -119,7 +119,6 @@
 								<c:out value="${produto.id}"/>
 								<input type="hidden" name="id" value="${produto.id}"/>
 							</td>
-<<<<<<< HEAD
 							<td><c:out value="${produto.descricao}"/></td>
 							<td><c:out value="${produto.volume}"/></td>
 							<td><c:out value="${produto.peso}"/></td>
@@ -151,7 +150,6 @@
     </div>
   </div>
 </div>
-=======
 							<td data-label="ID"><c:out value="${produto.descricao}"/></td>
 							<td data-label="Descrição"><c:out value="${produto.volume}"/></td>
 							<td data-label="Volume"><c:out value="${produto.peso}"/></td>
@@ -182,7 +180,6 @@
 										</form>
 									</div>
 									<!-- FIM DO MODAL DE DELETAR -->
->>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 							</td>
 						</form>
 					</tr>
