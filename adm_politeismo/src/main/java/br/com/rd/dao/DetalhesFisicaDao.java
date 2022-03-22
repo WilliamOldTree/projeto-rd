@@ -61,3 +61,4 @@ public class DetalhesFisicaDao {
 				listaFisica.add(dtFis);
 
 }//end classDao
+		

@@ -98,13 +98,6 @@ html, header, body, footer {
 }
 
 .login-canvas a {
-<<<<<<< HEAD:adm_politeismo/src/main/webapp/css/default.css
-    margin-top: 15px;
-    text-decoration: none;
-    height: 80px;
-    display: flex;
-    color:#516673;       
-=======
 	text-decoration: none;
 	color:  #516673;
     font-size: 18px;
@@ -116,7 +109,6 @@ html, header, body, footer {
 
 .login-canvas a:hover{
 	color: #6c757d;
->>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750:adm_politeismo/src/main/webapp/css/base.css
 }
 
 .login-canvas a h5 {

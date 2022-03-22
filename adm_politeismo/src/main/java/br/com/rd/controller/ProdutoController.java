@@ -80,13 +80,6 @@ public class ProdutoController extends HttpServlet {
 		String descontoBack = request.getParameter("desconto");
 		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (situacaoBack != null) && (precoBack != null) && (quantidadeBack != null)  && (descontoBack != null) ){
 			if (!descricaoBack.equals("")){
-<<<<<<< HEAD
-				Locale.setDefault(Locale.US);
-				Double volumeBack1 = Double.valueOf(volumeBack);
-				Double pesoBack1 = Double.valueOf(pesoBack);
-				Double precoBack1 = Double.valueOf(precoBack);
-				Produto prod1 = new Produto(descricaoBack,volumeBack1,pesoBack1,situacaoBack,precoBack1);
-=======
 				
 				//Double volumeBack1 = Double.valueOf(volumeBack);
 				//Double pesoBack1 = Double.valueOf(pesoBack);
@@ -96,7 +89,6 @@ public class ProdutoController extends HttpServlet {
 				Integer descontoBack1 = Integer.parseInt(descontoBack);
 				
 				Produto prod1 = new Produto(descricaoBack, volumeBack, pesoBack, situacaoBack, precoBack, quantidadeBack1,descontoBack1);
->>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 				this.prod.insert(prod1);
 			}
 		}
