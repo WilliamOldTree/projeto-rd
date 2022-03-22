@@ -1,8 +1,9 @@
 import './atendimento_ao_cliente.css'
-import { Link } from 'react-router-dom'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import SAC from '../../components/asserts/icons/sac.png'
+import Title from '../../components/title/Title'
+
 
 function AtendimentoCliente() {
     return (
@@ -12,9 +13,7 @@ function AtendimentoCliente() {
 
             <div className='container'>
 
-                <h2 className='tituloAtendimento'><nobr>Atendimento ao Cliente</nobr></h2>
-                <img width='55' classNameName='SacAtendimentoCliente' src={SAC} />
-                <hr id='line_Area_AtendimentoCliente'></hr>
+            <Title titleIcon={SAC} titleText="Atendimento ao Cliente" />
 
                 <h2 className='EnvieMensagem'><nobr>Envie uma Mensagem</nobr></h2>
  

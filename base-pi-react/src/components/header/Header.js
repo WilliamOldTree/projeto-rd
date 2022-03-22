@@ -17,7 +17,7 @@ function Header() {
             <header>
                 {/* header superior */}
                 <div className="container-fluid" id="header-up">
-                    <div className="container" id="cont1">
+                    <div className="container" id="cont1-header">
                         <div className="row row-up">
                             <div className="col-2" id="cep">
                                 <div>
@@ -63,7 +63,7 @@ function Header() {
                                             </div>
                                         </div>
 
-                                        <div  className='menu-list1'>
+                                        <div className='menu-list1'>
                                         <Menu/>
                                         </div>
                                     </div>
@@ -91,17 +91,16 @@ function Header() {
                                 <div className="col-3">
                                      {/* Button trigger modal Login  */}
                                     <div className="btnlogin">
-                                        <button type="button" className="btn"><img src={ Login } alt="Login"
-                                            width="80%" />
-                                        </button>
+                                        <Link to="/login" button type="button" className="btn">
+                                            <img src={ Login } alt="Login" width="80%"/>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="col-3">
-                                     {/* Button trigger modal Favoritos  */}
+                                    {/* Button trigger modal Favoritos */}
                                     <div className="btnfavorito">
                                         <button type="button" className="btn " data-bs-toggle="modal"
-                                            data-bs-target="#staticBackdrop"><img src={ Love } alt="Favoritos"
-                                                width="80%" />
+                                            data-bs-target="#staticBackdrop"><img src={ Love } alt="Favoritos" width="80%"/>
                                         </button>
 
                                         {/* Modal Favoritos */}
@@ -206,8 +205,7 @@ function Header() {
 
                                 <div className="col-3">
                                     <div className="btnsac">
-                                        <Link to="/" button type="button" className="btn "><img src={ Sac } alt="Sac"
-                                            width="80%" />
+                                        <Link to="/atendimento_ao_cliente" button type="button" className="btn "><img src={ Sac } alt="Sac" width="80%"/>
                                         </Link>
                                     </div>
                                 </div>
@@ -215,13 +213,9 @@ function Header() {
                                 {/* Button trigger modal Carrinho */}
                                 <div className="col-3">
                                     <div className="btncarrinho">
-                                        <Link to="/" type="button" className="btn " data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal"><img src={ Cart } alt="Carrinho"
-                                                width="80%" />
-
+                                        <Link to="/cart" type="button" className="btn" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal"><img src={ Cart } alt="Carrinho" width="80%"/>
                                         </Link>
-
-
                                     </div>
                                    {/* Modal Carrinho */}
                                     <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"

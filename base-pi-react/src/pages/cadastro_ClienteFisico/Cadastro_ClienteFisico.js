@@ -39,7 +39,7 @@ function ClienteFisico() {
                         </div>
 
                         <label for='sexo_ClienteFisico' className='form-label4 fisico'>Sexo:</label>
-                        <select className='form-select' aria-label='Default select example' id='sexo_ClienteFisico'>
+                        <select className='form-select fisico' aria-label='Default select example' id='sexo_ClienteFisico'>
                             <option selected>Selecione..</option>
                             <option value='1'>Feminino</option>
                             <option value='2'>Masculino</option>

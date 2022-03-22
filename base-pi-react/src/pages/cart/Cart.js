@@ -5,7 +5,7 @@ import Title from '../../components/title/Title'
 import CartIcon from '../../components/asserts/icons/cart.png'
 import TrashIcon from '../../components/asserts/icons/lixeira.png'
 import BudaMedit from '../../components/asserts/images/cart-images/buda-meditando.png'
-
+import { Link } from "react-router-dom";
 
 function Cart() {
     return (
@@ -84,9 +84,9 @@ function Cart() {
                        
                         <h3>Total = R$ 90,00</h3>
                         <h6>Parcelas 3 x R$ 30,00</h6>
-                        <button className="btn btn-default btnComprar" type="button">COMPRAR</button>
+                        <Link to="/cart_address" className="btn btn-default btnComprar" type="button">COMPRAR</Link>
                         <p></p>
-                        <button className="btn btn-default btnContCompra" type="button">CONTINUAR COMPRANDO</button>
+                        <Link to="/" className="btn btn-default btnContCompra" type="button">CONTINUAR COMPRANDO</Link>
                         
                     </div>
                     <p></p>

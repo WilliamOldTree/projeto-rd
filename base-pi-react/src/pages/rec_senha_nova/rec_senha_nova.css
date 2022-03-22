@@ -31,14 +31,14 @@ width: 600px;
 height: 471px;
 align-items: center;
 margin-top: 20%;
-margin-left: 35%;
+margin-left: 28%;
 background: #FFFFFF;
 border: 2px solid #261C1A;
 box-sizing: border-box;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 30px;
 position: relative;
-top: -120px;
+top: -160px;
 }
 
 
@@ -113,9 +113,9 @@ top: -120px;
         
 .BUTTON{
     width: 105px;
-    height: 40px;
+    height: 50px;
     margin-left: 45%;
-    margin-top: 30%;
+    margin-top: 26%;
     align-items: center;
     background: #F27507;
     border-radius: 10px;
@@ -161,7 +161,7 @@ top: -120px;
         height: 471px;
         align-items: center;
         margin-top: 20%;
-        margin-left: 35%;
+        margin-left: 30%;
         background: #FFFFFF;
         border: 2px solid #261C1A;
         box-sizing: border-box;
@@ -245,9 +245,9 @@ top: -120px;
         
         .BUTTON{
             width: 105px;
-            height: 40px;
+            height: 50px;
             margin-left: 45%;
-            margin-top: 30%;
+            margin-top: 27%;
             align-items: center;
             background: #F27507;
             border-radius: 10px;
@@ -283,7 +283,7 @@ top: -120px;
         
         .containerRecNova-caixaSenha{
             width: 300px;
-            height: 401px;
+            height: 481px;
             align-items: center;
             margin-top: 40%;
             margin-left: 35%;
@@ -320,7 +320,7 @@ top: -120px;
                 align-items: center;
                 color: #3C4043;
                 position: relative;
-                top: 10%;
+                top: 15%;
                 text-align: start;
                 line-height: 50px;
                 margin-left: 15px;
@@ -333,7 +333,7 @@ top: -120px;
                     display: flex;
                     align-items: center;
                     color: #3C4043;
-                     top: 80px;
+                     top: 130px;
                      position: relative;
                     text-align: start;
                     line-height: 50px;
@@ -343,33 +343,33 @@ top: -120px;
                 
         #senhaRecNova{ 
             width: 90%;
-            height: 42px;
+            height: 45px;
             border: 2px solid #979797;
             box-sizing: border-box;
             border-radius: 10px;
             position: relative;
-            top: 10%;
+            top: 15%;
             left: 5%;
             align-items: center;
         }
         
         #senhaRecNova2{ 
             width: 90%;
-            height: 42px;
+            height: 45px;
             border: 2px solid #979797;
             box-sizing: border-box;
             border-radius: 10px;
-            top: 20%;
+            top: 27%;
             left: 5%;
             position: relative;
             align-items: center;
         }
 
                 .BUTTON{
-                    width: 100px;
-                    height: 40px;
-                    margin-left: 35%;
-                    margin-top: 35%;
+                    width: 105px;
+                    height: 45px;
+                    margin-left: 36%;
+                    margin-top: 58%;
                     align-items: center;
                     background: darkorange;
                     border-radius: 10px;

@@ -34,32 +34,32 @@ import RELACIONADO4 from '../../components/asserts/images/images-produto/04.0649
 function Product() {
     return (
         <>
-            <Header/>
+            <Header />
 
             <div className='container'>
 
                 {/* LINK CAMINHO DAS PÁGINAS */}
                 <nav id='caminho-links' aria-label='breadcrumb'>
                     <ol className='breadcrumb'>
-                        <li className='breadcrumb-item'><a className='caminho-links' Link to= "">Home</a></li>
-                        <li className='breadcrumb-item'><a className='caminho-links' Link to= "">Católica</a></li>
-                        <li className='breadcrumb-item'><a className='caminho-links' Link to= "">Terços</a></li>
+                        <li className='breadcrumb-item'><a className='caminho-links' Link to="">Home</a></li>
+                        <li className='breadcrumb-item'><a className='caminho-links' Link to="">Católica</a></li>
+                        <li className='breadcrumb-item'><a className='caminho-links' Link to="">Terços</a></li>
                         <li className='breadcrumb-item active' aria-current='page'>Terço Rústico de Nossa Senhora da Salette</li>
                     </ol>
                 </nav>
 
-               
+
 
                 <article className='row produtos-compra'>
 
                     {/* IMAGENS DO PRODUTO */}
                     <figure className='col-md-6 mb-3 '>
 
-                            <img width='90%' className='imgproduto1 img-fluid' src={Produto1}/>
+                        <img width='90%' className='imgproduto1 img-fluid' src={Produto1} />
 
-                        <img width='' className='imgproduto3' src={Produto1}/>
+                        <img width='' className='imgproduto3' src={Produto1} />
 
-                        <img width='' className='imgproduto4' src={Produto2}/>
+                        <img width='' className='imgproduto4' src={Produto2} />
 
                     </figure>
 
@@ -182,22 +182,34 @@ function Product() {
                     <li type='none'>Cor: madeira natural. </li>
                 </p>
 
-                {/* CARDS PRODUTOS RELACIONADOS*/}           
+                {/* CARDS PRODUTOS RELACIONADOS*/}
                 <h3 id='title-pag-produto'>Produtos Relacionados</h3>
                 <hr id='line-pag-produto' />
 
                 <div className='col-12 imagensCaixa1'>
                     <div className='row g-1'>
-                        <Card nomeProduto='Terço Pérola Negra' preco='22,76' parcela='3x' valorParcela='7,58' img={RELACIONADO1} />
-                        <Card nomeProduto='Terço Santa Maria Branco' preco='8,00' parcela='2x' valorParcela='4,00' img={RELACIONADO2} />
-                        <Card nomeProduto='Terço em Pérola e Ouro' preco='30,00' parcela='3x' valorParcela='26,33' img={RELACIONADO3} />
-                        <Card nomeProduto='Terço em Madeira' preco='40,00' parcela='2x' valorParcela='20,00 ' img={RELACIONADO4} />
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto='Terço Pérola Negra' preco='22,76' parcela='3x' valorParcela='7,58' img={RELACIONADO1} />
+                        </div>
+
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto='Terço Santa Maria Branco' preco='8,00' parcela='2x' valorParcela='4,00' img={RELACIONADO2} />
+                        </div>
+
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto='Terço em Pérola e Ouro' preco='30,00' parcela='3x' valorParcela='26,33' img={RELACIONADO3} />
+                        </div>
+
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto='Terço em Madeira' preco='40,00' parcela='2x' valorParcela='20,00 ' img={RELACIONADO4} />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <Footer />
-        </>
-    );
+                </div>
+
+                <Footer />
+            </>
+            );
 }
 
-export default Product;
+            export default Product;

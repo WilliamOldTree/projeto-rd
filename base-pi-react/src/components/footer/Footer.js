@@ -5,7 +5,7 @@ import Instagram from '../asserts/icons/instagram.png'
 import Twitter from '../asserts/icons/twitter.png'
 import Whatsapp from '../asserts/icons/whatsapp.png'
 import Email from '../asserts/icons/email.png'
-import Telefone from '../asserts/icons/sac.png'
+import Telefone from '../asserts/icons/placa-de-telefone .png'
 import Amazon from '../asserts/icons/amazon-pay.png'
 import GooglePay from '../asserts/icons/google-pay.png'
 import ApllePay from '../asserts/icons/apple-pay.png'
@@ -25,7 +25,7 @@ function Footer() {
                     <div className="container" id="cont1">
                         <div className="row" id="footer-itens">
 
-                            <div className="col-3" id="empresa">
+                            <div className="col-12 col-md-6 col-lg-3" id="empresa">
                                 <ul>
                                     <h5>Institucional</h5>
                                     <Link to="/institucional/empresa">
@@ -49,65 +49,64 @@ function Footer() {
                                 </ul>
                             </div>
 
-                            <div className="col-3" id="sociais">
+                            <div className="col-12 col-md-6 col-lg-3" id="sociais">
                                 <ul>
                                     <h5>Redes Sociais</h5>
                                     <li><Link to="/"><img src={Facebook} className="imgFace" alt="Facebook"
-                                        width="10%" />Facebook</Link></li>
+                                        width="9%" />Facebook</Link></li>
                                     <li><Link to="/"><img src={Instagram} className="imgInsta" alt="Instagram"
-                                        width="10%" />Instagram</Link></li>
+                                        width="9%" />Instagram</Link></li>
                                     <li><Link to="/"><img src={Twitter} className="imgTwitter" alt="Twitter"
-                                        width="10%" />Twitter</Link>
+                                        width="9%" />Twitter</Link>
                                     </li>
                                 </ul>
                             </div>
 
-                            <div className="col-3" id="sac">
+                            <div className="col-12 col-md-6 col-lg-3" id="sac">
                                 <ul>
                                     <h5>Atendimento</h5>
                                     <li><Link to="/"><img src={Whatsapp} alt="WhatsApp"
-                                        width="10%" />WhatsApp</Link></li>
+                                        width="9%" />WhatsApp</Link></li>
                                     <li><Link to="/"><img src={Email} className="imgEmail" alt="Email"
-                                        width="10%" />Email</Link></li>
+                                        width="9%" />Email</Link></li>
                                     <li><Link to="/"><img src={Telefone} className="imgFone"
-                                        alt="Telefones" width="10%" />Telefone</Link></li>
+                                        alt="Telefones" width="9%" />Telefone</Link></li>
                                 </ul>
                             </div>
 
-                            <div className="col-3" id="pagamentos">
+                            <div className="col-12 col-md-6 col-lg-3" id="pagamentos">
                                 <h5>Formas de pagamento</h5>
                                 <div className="row" id="pay1">
                                     <div className="col-4" id="amazon-pay">
-                                        <img src={Amazon} alt="Amazon" width="65%" height="90%" />
+                                        <img src={Amazon} alt="Amazon" width="50px" height="50px" />
                                     </div>
                                     <div className="col-4" id="google-pay">
-                                        <img src={GooglePay} alt="Google Pay" width="65%" height="90%" />
+                                        <img src={GooglePay} alt="Google Pay" width="45px" height="45px" />
                                     </div>
                                     <div className="col-4" id="aplle-pay">
-                                        <img src={ApllePay} alt="Apple Pay" width="65%" height="90%" />
+                                        <img src={ApllePay} alt="Apple Pay" width="45px" height="45px" />
                                     </div >
                                 </div>
                                 <div className="row" id="pay2">
                                     <div className="col-4" id="master">
-                                        <img src={Master} alt="Master Card" width="40%" height="75%" />
+                                        <img src={Master} alt="Master Card" width="35px" height="35px"/>
                                     </div>
                                     <div className="col-4" id="visa">
-                                        <img src={Visa} alt="visa" width="50%" height="80%" />
+                                        <img src={Visa} alt="visa"  width="45px" height="45px" />
                                     </div>
                                     <div className="col-4" id="maestro">
-                                        <img src={Maestro} alt="Maestro" width="40%" height="70%" />
+                                        <img src={Maestro} alt="Maestro"  width="40px" height="40px" />
                                     </div>
                                 </div>
                                 <div className="row" id="pay3">
                                     <div className="col-4" id="paypal">
-                                        <img src={PayPal} alt="PayPal" width="35%" height="75%" />
+                                        <img src={PayPal} alt="PayPal" width="30px" height="30px" />
                                     </div>
                                     <div className="col-4" id="pix">
-                                        <img src={Pix} alt="Pix" width="35%" height="75%" />
+                                        <img src={Pix} alt="Pix" width="30px" height="30px" />
                                     </div>
                                     <div className="col-4" id="boleto">
-                                        <img src={Boleto} alt="Boleto" width="30%"
-                                            height="60%" />
+                                        <img src={Boleto} alt="Boleto" width="30px" height="30px"/>
                                     </div>
                                 </div>
 

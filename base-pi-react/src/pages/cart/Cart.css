@@ -88,6 +88,7 @@
     color: white;
     font-size: 14px;
     font-weight: 900;
+    padding-top: 15px;
 }
 .btnContCompra:hover{
     background-color: #34d175;

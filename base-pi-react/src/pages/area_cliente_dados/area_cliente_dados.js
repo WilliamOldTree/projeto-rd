@@ -1,8 +1,10 @@
 import './area_cliente_dados.css'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
-import User from '../../components/asserts/icons/user.png';
-import { Link } from 'react-router-dom'
+import Menu from '../../components/menu/Menu'
+import Title from '../../components/title/Title'
+import User from '../../components/asserts/icons/user.png'
+
 
 function AreaDados() {
     return (
@@ -12,25 +14,10 @@ function AreaDados() {
 
             <div className='container'>
 
-            <ul className='listaAreaCliente'>
-                <li className='AreaClienteLista'><Link className='LinkArea'  to= 'area_cliente_dados' >Minha Conta</Link></li>
-                <hr className='MenuAreaCliente'></hr>
-                <li className='AreaClienteLista'><Link  className='LinkArea' to='area_cliente_pedidos'>Meus Pedidos</Link></li>
-                <hr className='MenuAreaCliente'></hr>
-                <li className='AreaClienteLista'><Link className='LinkArea' to='area_cliente_senha'>Alterar Senha</Link></li>
-                <hr className='MenuAreaCliente'></hr>
-                <li className='AreaClienteLista'><Link className='LinkArea' to='area_cliente_endereco'>Meus Endereços</Link></li>
-                <hr className='MenuAreaCliente'></hr>
-                <li className='AreaClienteLista'><Link className='LinkArea' to='area_cliente_cartoes'>Meus Cartões</Link></li>
-                <hr className='MenuAreaCliente'></hr>
-                <li className='AreaClienteLista'><Link className='LinkArea' to='area_cliente_favoritos'>Meus Favoritos</Link></li>
-                <hr className='MenuAreaCliente'></hr>
-                <li className='AreaClienteLista'><Link className='LinkArea' to={'/'}>Sair</Link></li>
-            </ul>
-
-                <h2 className='tituloDados'><nobr>Minha Conta</nobr></h2>
-                <img width="55" className='UserAreaClienteDados' src={User} />
-                <hr id='line_Area_Dado'></hr>
+            <Title titleIcon={User} titleText="Meus Dados" />
+            <div className='MenuAreaResponsivo'>
+            <Menu />
+            </div>
 
 
                 <div id='container-Dados'>
@@ -61,7 +48,7 @@ function AreaDados() {
 
 
                     <button className='editarDados' type='submit'>
-                        EDITAR
+                        ALTERAR
                     </button>
 
                 </div>

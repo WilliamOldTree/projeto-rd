@@ -1,10 +1,11 @@
 import './Area_cliente_pedidos.css'
 
 /* LINK PAGES */
+import { Link } from 'react-router-dom'
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import Menu from '../../components/menu/Menu';
-import Title from '../../components/title/Title'
+import Title from '../../components/title/Title';
 
 
 /* ICONS */
@@ -19,8 +20,11 @@ function Pedidos() {
 
                 <div className='row favoritos'>
                     {/* BEGGIN MENU LATERAL ÁREA DO CLENTE */}
-                    <div className='col-3 col-sm-3 col-xs-3'>
-                        <Menu />
+                    <div className='col-3 col-sm-3 col-xs-3 menu-list pedidos'>
+
+            <div className='MenuAreaResponsivo'>
+            <Menu />
+            </div>
                     </div>
                     {/* END MENU LATERAL ÁREA DO CLENTE */}
 
@@ -41,7 +45,7 @@ function Pedidos() {
                                             <p className='titulo-pedido status'>Status: Pedido em Andamento</p>
                                         </th>
                                         <th className='col-3 col-sm-3 col-xs-3 pedido-list'>
-                                            <a className='btn btn-pedidos' href='#' role='button'>VER DETALHES</a>
+                                        <Link to='/area_cliente_detalhesPedido' className='btn btn-pedidos' href='#' role='button'>VER DETALHES</Link>
                                             <img className="btn-lixeira" src="" />
                                         </th>
                                     </tr>
@@ -58,7 +62,7 @@ function Pedidos() {
                                             <p className='titulo-pedido status'>Status: Pedido Entregue</p>
                                         </th>
                                         <th className='col-3 col-sm-3 col-xs-3 pedido-list'>
-                                            <a className='btn btn-pedidos' href='#' role='button'>VER DETALHES</a>
+                                            <Link to='/area_cliente_detalhesPedido' className='btn btn-pedidos' role='button'>VER DETALHES</Link>
                                             <img className="btn-lixeira" src="" />
                                         </th>
                                     </tr>

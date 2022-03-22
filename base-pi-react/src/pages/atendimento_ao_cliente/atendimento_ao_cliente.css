@@ -64,7 +64,7 @@ margin-left: 30%;
 
 .ButtonAtendimento{
     width: 105px;
-    height: 40px;
+    height: 50px;
     margin-left: 48%;
     margin-top: -10%;
     position: relative;
@@ -118,7 +118,7 @@ margin-left: 30%;
     box-sizing: border-box;
     border-radius: 10px;
     align-items: center;
-    margin-left: 5%;
+    margin-left: -112%;
     position: relative;
     top: 80px;
 
@@ -150,7 +150,7 @@ margin-left: 30%;
         margin-top : 27px;
         margin-left: 250px;
         position   : relative;
-        top        : 150px;
+        top        : 25px;
         font-weight: bold;
         font-size  : 22px;
     }
@@ -181,7 +181,7 @@ margin-left: 30%;
     box-sizing: border-box;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    margin-top: 40%;
+    margin-top: 25%;
     position: relative;
     top: -100px;
     margin-left: 10%;
@@ -189,7 +189,7 @@ margin-left: 30%;
     
     .ButtonAtendimento{
         width: 105px;
-        height: 40px;
+        height: 50px;
         margin-left: 48%;
         margin-top: -10%;
         position: relative;
@@ -243,7 +243,7 @@ margin-left: 30%;
         box-sizing: border-box;
         border-radius: 10px;
         align-items: center;
-        margin-left: 5%;
+        margin-left: -79%;
         position: relative;
         top: 80px;
     
@@ -317,8 +317,8 @@ margin-left: 30%;
     
     .ButtonAtendimento{
         width: 105px;
-        height: 40px;
-        margin-left: 48%;
+        height: 50px;
+        margin-left: 46%;
         margin-top: -10%;
         position: relative;
         top: 120px;
@@ -371,7 +371,7 @@ margin-left: 30%;
         box-sizing: border-box;
         border-radius: 10px;
         align-items: center;
-        margin-left: 5%;
+        margin-left: -1%;
         position: relative;
         top: 80px;
     
