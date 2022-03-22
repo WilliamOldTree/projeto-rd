@@ -5,64 +5,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
+
 import br.com.rd.model.Pedidos;
 
 public class PedidosDao {
 
-	public ArrayList<Pedidos> selectSimple() {
-		Conexao c = Conexao.getInstance();
-		Connection con = c.getConnection();
-		ArrayList<Pedidos> listSimple = new ArrayList<Pedidos>();
-
-		try {
-			
-		PreparedStatement p = con.prepareStatement("SELECT\n" + "P.ID_PEDIDO AS CODIGO,\n"
-					+ "DATE_FORMAT(P.DATA_PEDIDO, '%d-%m-%Y')  AS 'DATA', \n" + "J.RAZAO_SOCIAL AS NOME,\n"
-					+ "CONCAT(SUBSTR(J.ID_CNPJ, 1,8),'/', SUBSTR(J.ID_CNPJ, 9,12), '-', SUBSTRING(J.ID_CNPJ, 13,14))  AS 'CPF/CNPJ',\n"
-					+ "C.EMAIL AS EMAIL,\n"
-					+ "CONCAT(T.DDD, ' ', SUBSTR(T.FIXO, 1,4),'-', SUBSTR(T.FIXO, 5,8)) AS CONTATO\n" + "FROM\n"
-					+ "PEDIDO P\n" + "INNER JOIN \n" + "CLIENTE C\n" + "ON\n" + "P.CLIENTE_ID_CLIENTE = C.ID_CLIENTE\n"
-					+ "INNER JOIN\n" + "JURIDICA J\n" + "ON\n" + "C.ID_CLIENTE = J.CLIENTE_ID_CLIENTE \n"
-					+ "INNER JOIN\n" + "TELEFONE T\n" + "ON\n" + "C.ID_CLIENTE = T.CLIENTE_ID_CLIENTE\n" + "UNION\n"
-					+ "SELECT\n" + "P.ID_PEDIDO AS CODIGO,\n" + "DATE_FORMAT(P.DATA_PEDIDO, '%d-%m-%Y')  AS 'DATA',\n"
-					+ "C.NOME AS NOME,\n"
-					+ "CONCAT(SUBSTR(F.ID_CPF, 1,9), '-', SUBSTR(F.ID_CPF, 10,11)) AS 'CPF/CNPJ',\n"
-					+ "C.EMAIL AS EMAIL ,\n"
-					+ "CONCAT(T.DDD, ' ', SUBSTR(T.CELULAR, 1,5),'-', SUBSTR(T.CELULAR, 6,9)) AS CONTATO\n" + "FROM\n"
-					+ "PEDIDO P\n" + "INNER JOIN \n" + "CLIENTE C\n" + "ON\n"
-					+ "P.CLIENTE_ID_CLIENTE  =  C.ID_CLIENTE\n" + "INNER JOIN\n" + "FISICA F\n" + "ON\n"
-					+ "C.ID_CLIENTE = F.CLIENTE_ID_CLIENTE \n" + "INNER JOIN\n" + "TELEFONE T\n" + "ON\n"
-					+ "C.ID_CLIENTE = T.CLIENTE_ID_CLIENTE;");
-			ResultSet rs = p.executeQuery();
-
-			while (rs.next()) {
-				Integer codigo = rs.getInt("CODIGO");
-				String dataPedido = rs.getString("DATA");
-				String nome = rs.getString("NOME");
-				String cpfCnpj = rs.getString("CPF/CNPJ");
-				String email = rs.getString("EMAIL");
-				String contato = rs.getString("CONTATO");
-
-				Pedidos pr = new Pedidos(codigo, dataPedido, nome, cpfCnpj, email, contato);
-				pr.setCodigo(codigo);
-				listSimple.add(pr);
-
-			}
-			
-			rs.close();
-			p.close();
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return listSimple;
-
-	}// end selectSimple
 	
-	public ArrayList<Pedidos> selectAll(){
-		
+	public ArrayList<Pedidos> selectAll(){	
 		Conexao c = Conexao.getInstance();
 		Connection con = c.getConnection();
 		ArrayList<Pedidos> listAll = new ArrayList<Pedidos>();
@@ -246,9 +196,11 @@ public class PedidosDao {
 					+ "INNER JOIN\n"
 					+ "TIPO_STATUS_ENTREGA TSE\n"
 					+ "ON\n"
-					+ "TSE.STATUS_ENTREGA_ID_STATUS_ENTREGA = SE.ID_STATUS_ENTREGA"
+					+ "TSE.STATUS_ENTREGA_ID_STATUS_ENTREGA = SE.ID_STATUS_ENTREGA;");
+				+ "TSE.STATUS_ENTREGA_ID_STATUS_ENTREGA = SE.ID_STATUS_ENTREGA"
 					+ " ORDER BY CODIGO DESC;\r\n"
 					+ "");
+
 			
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
@@ -259,6 +211,9 @@ public class PedidosDao {
 				String email = rs.getString("EMAIL");
 				String contato = rs.getString("CONTATO");
 				String produto = rs.getString("PRODUTO");
+				String volume =rs.getString("VOLUME");
+				String peso = rs.getString("PESO");
+				String preco = rs.getString("PRECO");
 				String volume =rs.getString("VOLUME");
 				String peso = rs.getString("PESO");
 				String preco = rs.getString("PRECO");
@@ -278,7 +233,6 @@ public class PedidosDao {
 				Double valorFrete = rs.getDouble("FRETE");
 				String statusEntrega = rs.getString("STATUS_ENTREGA");
 				String dataEntrega = rs.getString("DATA");
-				
 				Pedidos pDet = new Pedidos(codigo, dataPedido, nome, cpfCnpj, email, contato, produto, volume, peso, preco, quantidade, total, entrega, endereco, cep, municipo, statusPedido, statusPagamento, instituicao, valorPago, dataPgamento, entregador, prazoEntrega, valorFrete, statusEntrega, dataEntrega);
 				pDet.setCodigo(codigo);
 				listAll.add(pDet);
@@ -298,12 +252,7 @@ public class PedidosDao {
 
 }// end class
 
-
-
-
-
-
-
+	
 
 
 
