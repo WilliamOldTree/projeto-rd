@@ -196,10 +196,7 @@ public class PedidosDao {
 					+ "INNER JOIN\n"
 					+ "TIPO_STATUS_ENTREGA TSE\n"
 					+ "ON\n"
-					+ "TSE.STATUS_ENTREGA_ID_STATUS_ENTREGA = SE.ID_STATUS_ENTREGA;");
-				+ "TSE.STATUS_ENTREGA_ID_STATUS_ENTREGA = SE.ID_STATUS_ENTREGA"
-					+ " ORDER BY CODIGO DESC;\r\n"
-					+ "");
+				    + "TSE.STATUS_ENTREGA_ID_STATUS_ENTREGA = SE.ID_STATUS_ENTREGA  ORDER BY CODIGO DESC;\r\n");
 
 			
 			ResultSet rs = ps.executeQuery();
