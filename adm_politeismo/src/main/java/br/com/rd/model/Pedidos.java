@@ -25,13 +25,13 @@ public class Pedidos {
 	private String statusPagamento;
 	private String instituicao;
 	private Double valorPago;
-	private Date dataPagamento;
 	private String dataPagamento;
 	private String entregador;
 	private String prazoEntrega;
 	private Double valorFrete;
 	private String statusEntrega;
 	private String dataEntrega;
+	private String entrega;
 
 
 
@@ -70,7 +70,7 @@ public class Pedidos {
 		this.valorFrete = valorFrete;
 		this.statusEntrega = statusEntrega;
 
-		this.dataentrega = dataentrega;
+		this.dataEntrega = dataEntrega;
 	}
 
 
@@ -222,7 +222,7 @@ public class Pedidos {
 	}
 	public void setValorPago(Double valorPago) {
 		this.valorPago = valorPago;
-
+	}
 	public String getDataPagamento() {
 
 		return dataPagamento;
