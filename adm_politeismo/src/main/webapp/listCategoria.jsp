@@ -107,7 +107,7 @@
 								<c:out value="${categoria.id}"/>
 								<input type="hidden" name="id" value="modal-${categoria.id}"/>
 							</td>
-<<<<<<< HEAD
+
 							<td><c:out value="${categoria.nome}"/></td>
 							<td>
 	
@@ -134,8 +134,7 @@
       </div>
     </div>
   </div>
-</div>
-=======
+
 							
 							<td data-label="Categoria"><c:out value="${categoria.nome}"/></td>
 							
@@ -165,7 +164,6 @@
 										</form>
 									</div>
 								<!-- FIM DO MODAL DE DELETAR -->	
->>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 							</td>
 						</form>
 					</tr>

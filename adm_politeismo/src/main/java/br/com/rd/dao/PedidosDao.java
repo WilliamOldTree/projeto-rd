@@ -196,7 +196,8 @@ public class PedidosDao {
 					+ "INNER JOIN\n"
 					+ "TIPO_STATUS_ENTREGA TSE\n"
 					+ "ON\n"
-				    + "TSE.STATUS_ENTREGA_ID_STATUS_ENTREGA = SE.ID_STATUS_ENTREGA  ORDER BY CODIGO DESC;\r\n");
+				    + "TSE.STATUS_ENTREGA_ID_STATUS_ENTREGA = SE.ID_STATUS_ENTREGA "
+				    + "ORDER BY CODIGO DESC;\r\n");
 
 			
 			ResultSet rs = ps.executeQuery();
@@ -208,9 +209,6 @@ public class PedidosDao {
 				String email = rs.getString("EMAIL");
 				String contato = rs.getString("CONTATO");
 				String produto = rs.getString("PRODUTO");
-				String volume =rs.getString("VOLUME");
-				String peso = rs.getString("PESO");
-				String preco = rs.getString("PRECO");
 				String volume =rs.getString("VOLUME");
 				String peso = rs.getString("PESO");
 				String preco = rs.getString("PRECO");
