@@ -6,37 +6,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Lista de Departamentos</title>
-<<<<<<< HEAD
-<link rel="stylesheet" href="./css/default.css">
-<link rel="stylesheet" href="./css/list.css">
-<link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
-</head>
-<body>
-<header>
-    <!-- header superior -->
-    
-    <div class="container-fluid" id="header-up">
-        <div class="container" id="cont1">
-            <div class="row row-up">
-                <div class="col-2" id="canvas">
-                    <button id="btn-canvas" type="button " data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft"><img
-                            src="./images/menu.png" alt="" width="70%"></button>
-
-                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft"
-                        aria-labelledby="offcanvasLeftLabel">
-                        <div class="offcanvas-header">
-                            <h5 id="offcanvasLeftLabel">POLITEÍSMO SHOP</h5>
-                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="container">
-                            <div class="container" id="menu-canvas">
-                                <div class="row row-canvas">
-                                    <div class="login-canvas">
-                                        <a href="#"><h5>Usuário</h5></a>    
-                                    </div>                                  
-=======
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./css/base.css">
 <link rel="stylesheet" href="./css/tabela.css">
@@ -104,46 +73,7 @@
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="./index.jsp">Sair
                                 </a>
->>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
                                 </div>
-                            </div>
-                            <div class=menu-list1>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Perfil
-                                    <hr width="160">
-                                </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Menu
-                                    <hr width="160">
-                                </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="formDepartamento.jsp">Cadastro de Departamentos
-                                    <hr width="160">
-                                </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="formCategoria.jsp">Cadastro de Categorias
-                                    <hr width="160">
-                                </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="formProduto.jsp">Cadastro de Produtos
-                                    <hr width="160">
-                                </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="FormFornecedores.jsp">Cadastro de Fornecedores
-                                    <hr width="160">
-                                </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="DepartamentoController">Lista de Departamentos
-                                    <hr width="160">
-                                </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="CategoriaController">Lista de Categorias
-                                    <hr width="160">
-                                </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ProdutoController">Lista de Produtos
-                                    <hr width="160">
-                                </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="FornecedorController">Lista de Fornecedores
-                                    <hr width="160">
-                                </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Lista de Clientes
-                                    <hr width="160">
-                                </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="#">Lista Pedidos
-                                    <hr width="160">
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -158,20 +88,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-8" id="nav-itens">
-                    <nav>
-                     <h4><b>PAINEL DE CONTROLE</b></h4>
-                    </nav>
-                </div>
-                <div class="col-2" id="cep">
-                    <div>
-                        <img src="./images/logo2.png" alt="" width="70%">
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
     
 <div class="container">
     <h1 class="title">Lista de Departamentos</h1>
@@ -196,35 +115,13 @@
 								<c:out value="${departamento.id}"/>
 								<input type="hidden" name="id" value="${departamento.id}"/>
 							</td>
-<<<<<<< HEAD
+
 							<td><c:out value="${departamento.nome}"/></td>
 							<td>
 	
                                       <button class="btn formCrud1" type="button"  data-bs-toggle="modal" data-bs-target=".modal"  style="margin-right: 10px;">Deletar                   
                                       </button>	 	
 							    <button class="btn formCrud2" type="submit" name="option" value="updateForm">Atualizar</button>
-					    
-<div class="modal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">ATENÇÃO!!!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>tem certeza que deseja excluir esse cadastro?</p>
-      </div>
-      <div class="modal-footer">  
-        <button class="btn formCrud1" type="submit"  value="delete">Deletar</button>
-        <button type="button" class="btn btn-danger" data-dismiss=".modal">Cancelar</button>
-    
-      </div>
-    </div>
-  </div>
-</div>
-=======
 							<td data-label="Departamento" ><c:out value="${departamento.nome}"/></td>
 							<td data-label="Ações">
 	
@@ -253,7 +150,6 @@
 										</form>
 									</div>
 									<!-- FIM DO MODAL DE DELETAR -->	
->>>>>>> 7102b74fe3215cc10b4c399b23bd593e0e7a7750
 							</td>
 						</form>
 					</tr>

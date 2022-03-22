@@ -28,42 +28,17 @@ public class PedidosController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		doPost(request, response);
+		doPost1(request, response);
 
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost1(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//request.setAttribute("listaPedidos", this.pedidoDao.selectSimple());
 		request.setAttribute("listaDetalhes", this.pedidoDao.selectAll());
 		request.getRequestDispatcher("listPedidos.jsp").forward(request, response);
 	}
 	
-		showPedidos(request, response);
-		showDetalhesPedidos(request, response);
-		
-	}
-
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		doGet(request, response);
-	}
-	
-	private void showPedidos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("listaPedidos", this.pedidoDao.selectSimple());
-		request.getRequestDispatcher("listPedidos.jsp").forward(request, response);
-	}
-	
-	private void showDetalhesPedidos (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("listaDetalhes", this.pedidoDao.selectAll());
-		request.getRequestDispatcher("listaDetalhes.jsp").forward(request, response);
-		
-	}
-
-
-		doPost(request, response);
-
-	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//request.setAttribute("listaPedidos", this.pedidoDao.selectSimple());
