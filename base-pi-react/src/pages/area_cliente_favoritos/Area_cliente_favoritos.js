@@ -24,7 +24,10 @@ function Favoritos() {
                 {/* BEGGIN MENU LATERAL ÁREA DO CLENTE */}
                 <div className='row favoritos'>
                     <div className='col-3 col-sm-3 col-xs-3 menu-list favoritos'>
-                    <Menu />
+
+          <div className='MenuAreaResponsivo'>
+            <Menu />
+            </div>
                     </div>
                     {/* END MENU LATERAL ÁREA DO CLENTE */}
                     

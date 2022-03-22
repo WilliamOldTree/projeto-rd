@@ -141,7 +141,10 @@ top: -120px;
             width: 100%;
         }
         
-       
+        .MenuAreaResponsivo{
+            display: none;
+        }
+         
 
         .UserAreaClienteDados{
             position: relative;
@@ -151,9 +154,7 @@ top: -120px;
         }
         
 
-        .menu-component{
-        display: none;        
-    }
+    
     #line_Area_Dado{
         width: 100%;
         margin-top: -3%;
@@ -245,7 +246,10 @@ top: -120px;
             width: 100%;
         }
         
-       
+        .MenuAreaResponsivo{
+            display: none;
+        }
+         
 
         .UserAreaClienteDados{
            margin-top: 10px;
@@ -253,9 +257,7 @@ top: -120px;
         }
         
 
-        .menu-component{
-        display: none;        
-    }
+  
     #line_Area_Dado{
    margin-top: -6%;
    width: 100%;

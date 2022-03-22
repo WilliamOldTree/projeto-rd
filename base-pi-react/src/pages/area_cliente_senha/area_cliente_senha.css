@@ -176,10 +176,11 @@ top: -120px;
             width: 50px;
         }
         
-
-        .menu-component{
-        display: none;        
-    }
+        .MenuAreaResponsivo{
+            display: none;
+        }
+         
+     
     #line_Area_Senha{
        margin-top: -3%;
     }
@@ -323,12 +324,15 @@ top: -120px;
         }
         
 
-        .menu-component{
-        display: none;        
-    }
+   
     #line_Area_Senha{
       margin-top: -10%;
     }
+
+    .MenuAreaResponsivo{
+        display: none;
+    }
+     
         
         .tituloaltSenha{
             color: #261C1A;
