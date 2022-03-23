@@ -17,6 +17,7 @@
     width: 120px;
     margin-top: 0px;
 }
+
 .form-select.selectCat{
     display: none;
 
@@ -37,16 +38,26 @@
     text-decoration: underline;
 }
 
+.ulListaCat{
+    padding: 0px;
+}
+
 .cardCat{
     padding: 0px;
 }
 
 .row.category{
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 20px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 995px) {
+    .line-category-itens{
+        width: 90px;
+    }
+}
+
+@media (max-width: 770px) {
     .listaCat{
         display: none;
     }
