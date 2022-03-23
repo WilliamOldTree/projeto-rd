@@ -5,7 +5,9 @@ import Title from '../../components/title/Title'
 import CartIcon from '../../components/asserts/icons/cart.png'
 import TrashIcon from '../../components/asserts/icons/lixeira.png'
 import BudaMedit from '../../components/asserts/images/cart-images/buda-meditando.png'
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
+import List_compra from '../../components/list_compra/List_compra'
+import Resumo_compras from '../../components/resumo_compra/Resumo_compra'
 
 function Cart() {
     return (
@@ -14,15 +16,33 @@ function Cart() {
             {/* BEGINNER CONTEUDO */}
             <section >
                 <div className='container' id='cart_list'>
-                {/* BEGING CART-TITLE */}
-                <Title titleIcon={CartIcon} titleText="Carrinho"/>
-                {/* FINISH CART-TITLE */}
+                    {/* BEGING CART-TITLE */}
+                    <Title titleIcon={CartIcon} titleText="Carrinho" />
+                    {/* FINISH CART-TITLE */}
 
 
-                {/* BEGINNER CART-LIST  */}
+                    {/* BEGINNER CART-LIST  */}
 
-                    <table className="table table-borderless" >
+                    {/* <table className="table table-borderless" > */}
 
+
+
+                    <div className='container list_resumo_compra'>
+                        <List_compra />
+                        <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                        <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                        <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                        <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                    </div>
+
+
+
+
+
+
+
+                    {/* <List_compra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} /> */}
+                    {/* 
                         <thead>
                             <tr className='cart-title-table'>
                                 <th itemScope='col'>Produto</th>
@@ -76,18 +96,21 @@ function Cart() {
                                 <td ><img src={TrashIcon} alt='Excluir' width={20} /></td>
                             </tr>
                             <hr></hr>
-                        </tbody>
+                        </tbody> */}
 
-                    </table>
+                    {/* </table> */}
+
+                    
+
 
                     <div className='container' id='cart_total'>
-                       
+
                         <h3>Total = R$ 90,00</h3>
                         <h6>Parcelas 3 x R$ 30,00</h6>
                         <Link to="/cart_address" className="btn btn-default btnComprar" type="button">COMPRAR</Link>
                         <p></p>
                         <Link to="/" className="btn btn-default btnContCompra" type="button">CONTINUAR COMPRANDO</Link>
-                        
+
                     </div>
                     <p></p>
                     <p></p>

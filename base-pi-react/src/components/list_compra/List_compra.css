@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
+
+.list_resumo_compra{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.list_resumo_compra th{
+    padding-right: 20px;
+}
