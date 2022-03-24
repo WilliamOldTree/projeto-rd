@@ -3,6 +3,12 @@
     padding: 0;
     width: 100%;
 }
+.MenuAreaAlinhamento1{
+    margin-top: -5%;
+    position: relative;
+    top: 110px;
+    
+}
 
 
 .listaAreaCliente{
@@ -69,8 +75,8 @@ top: -120px;
     margin-left: 48%;
     margin-top: -10%;
     position: relative;
-    top: -235px;
-    left: 200px;
+    top: -232px;
+    left: 250px;
     justify-content: center;
     background: #F27507;
     border-radius: 10px;
@@ -88,8 +94,8 @@ top: -120px;
         margin-left: 48%;
         margin-top: -10%;
         position: relative;
-        top: -915px;
-        left: 195px;
+        top: -270px;
+        left: 118px;
         justify-content: center;
         background: #34A853;
         border-radius: 10px;
@@ -214,8 +220,8 @@ top: -120px;
             margin-left: 25%;
             margin-top: -10%;
             position: relative;
-            top: -295px;
-            left: -450px;
+            top: 345px;
+            left: -530px;
             justify-content: center;
             background: #34A853;
             border-radius: 10px;
@@ -284,8 +290,8 @@ top: -120px;
             margin-left: -27%;
             margin-top: -150%;
             position: relative;
-            top: -295px;
-            left: -55px;
+            top: 749px;
+            left: -155px;
             justify-content: center;
             background: #34A853;
             border-radius: 10px;

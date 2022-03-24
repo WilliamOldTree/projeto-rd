@@ -4,6 +4,13 @@
     width: 100%;
 }
 
+.MenuAreaAlinhamento5{
+    margin-top: -5%;
+    position: relative;
+    top: 110px;
+    
+}
+
 
 .listaAreaCliente{
     position: relative;
@@ -43,43 +50,39 @@
 }
 .LixeiraAreaCartoes{
     position: relative;
-    top: 30px;
-    left: 20%;
+    top: -30px;
+    left: 15%;
 }
 
 .VisaAreaCartoes{
     position: relative;
     top: -35px;
-    left: -36%;
+    left: -55%;
 }
 
 .CartaoVisaAreaCartoes{
     position: relative;
     top: -39px;
-    left: -40%;
+    left: -60%;
 }
 
 #AreaCredito{
-    margin-left: 5%;
+
     position: relative;
     top: 48px;
     text-align: left;
-    left: 350px;
+    left: 250px;
 }
-#container-Cartoes{
-   
-width: 700px;
-height: 301px;
-align-items: center;
-margin-top: -10%;
-margin-left: 20%;
-background: #FFFFFF;
-border: 2px solid #261C1A;
-box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 30px;
-position: relative;
-top: -160px;
+.Area-Cartoes {
+    border       : 2px solid #261C1A;
+    box-sizing   : border-box;
+    border-radius: 5px;
+    width        : 55%;
+    margin-bottom: 20px;
+    position: relative;
+    top: -260px;
+    left: 150px;
+    
 }
 
 
@@ -102,17 +105,19 @@ top: -160px;
    .listaCartoes{
        display: flex;
        justify-content: space-around;
-       margin-top:5%;
-       margin-left: 6%;
+       position: relative;
        color: #261C1A;
        list-style: none;
        font-weight: 700;
+       top: 20px;
+       left: -107px;
    }
    .Cartoes1{
     display: flex;
     justify-content: space-around;
-    margin-left: 5%;
-   
+   position: relative;
+   top: 20px;
+   left: -110px;
 }
 
 .editarCartoes{
@@ -121,7 +126,7 @@ top: -160px;
     margin-left: 48%;
     margin-top: -10%;
     position: relative;
-    top: 180px;
+    top: 130px;
     left: 250px;
     justify-content: center;
     background: #F27507;
@@ -141,8 +146,8 @@ top: -160px;
         margin-left: 48%;
         margin-top: -10%;
         position: relative;
-        top: -245px;
-        left: 245px;
+        top: 80px;
+        left: 125px;
         justify-content: center;
         background: #34A853;
         border-radius: 10px;
@@ -164,107 +169,84 @@ top: -160px;
          display: none;
             }
         
-        hr{
-            width: 15%;
-        }
+      
         
-        .tituloCartao{
-            color: #261C1A;
-            margin-top: -27px;
-            margin-left: 20%;
-            position: relative;
-            top: 150px;
-            font-weight: bold;
-            font-size: 20px;
-        }
-        #line_Area_Cartoes{
-            width: 100%;
-            border: 1px solid;
-            margin-top: 15%;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
-        .UserAreaClienteCartao{
-            position: relative;
-            top:100px;
-            left: 10%;
-        }
+ 
+    
         .LixeiraAreaCartoes{
             position: relative;
-            top: 30px;
-            left: 5%;
+            top: 10px;
+            left: 10%;
         }
         
         .VisaAreaCartoes{
             position: relative;
-            top: -35px;
-            left: -40%;
+            top: -55px;
+            left: 100px;
         }
         
         .CartaoVisaAreaCartoes{
             position: relative;
-            top: -35px;
-            left: -50%;
+            top: -10px;
+            left: -310px;
         }
         
         #AreaCredito{
-            margin-left: 10%;
+        
             position: relative;
-            top: 48px;
+            top: 78px;
             text-align: left;
-            left: 250px;
+            left: 200px;
         }
-        #container-Cartoes{
-           
-        width: 60vw;
-        height: 301px;
-        margin-top: 35%;
-        background: #FFFFFF;
-        border: 2px solid #261C1A;
-        box-sizing: border-box;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 30px;
-    
-        top: -120px;
-        margin-left: 2%;
+        .Area-Cartoes {
+            border       : 2px solid #261C1A;
+            box-sizing   : border-box;
+            border-radius: 5px;
+            width        : 60%;
+            margin-top: 20%;
+            position: relative;
+            top: -80px;
+            left: -20px;
+            
         }
         
         
         
-        .AreaClienteLista{
-            color: #261C1A;
-            font-size: 18px;
-            font-weight: 700;
-            list-style: none;
-           }
-        
+  
         
            .DadosCartoes{
             font-size: 15px;
             color: #979797;
             font-weight: 500;
+            list-style: none;
         }
         
            .listaCartoes{
                display: flex;
                justify-content: space-around;
-               margin-top:5%;
-               margin-left: 6%;
+               position: relative;
+               color: #261C1A;
+               list-style: none;
+               font-weight: 700;
+               top: 20px;
+               left: -60px;
            }
            .Cartoes1{
             display: flex;
             justify-content: space-around;
-            margin-left: 5%;
-           
+           position: relative;
+           top: 20px;
+           left: -65px;
         }
         
         .editarCartoes{
             width: 105px;
             height: 50px;
-            margin-left: 40%;
+            margin-left: 48%;
             margin-top: -10%;
             position: relative;
-            top: 210px;
-            left: 150px;
+            top: 172px;
+            left: 100px;
             justify-content: center;
             background: #F27507;
             border-radius: 10px;
@@ -283,8 +265,8 @@ top: -160px;
                 margin-left: 48%;
                 margin-top: -10%;
                 position: relative;
-                top: -235px;
-                left: 115px;
+                top: 120px;
+                left: -35px;
                 justify-content: center;
                 background: #34A853;
                 border-radius: 10px;
@@ -295,22 +277,20 @@ top: -160px;
                 .addCartoes:hover{
                     background-color: #34d175;
                 }
-        
-           
  
    
     @media (max-width:667px){
 
         .VisaAreaCartoes{
             position: relative;
-            top: 45px;
-            left: -80%;
+            top: 50px;
+            left: -405px;
         }
         
         .CartaoVisaAreaCartoes{
             position: relative;
             top: 45px;
-            left: -95%;
+            left: -445px;
         }
  
         .addCartoes{
@@ -319,8 +299,8 @@ top: -160px;
             margin-left: -70%;
             margin-top: -150%;
             position: relative;
-            top: -110px;
-            left: -10px;
+            top: 530px;
+            left: -310px;
             justify-content: center;
             background: #34A853;
             border-radius: 10px;
@@ -343,7 +323,7 @@ top: -160px;
         .LixeiraAreaCartoes{
             position: relative;
             top:220px;
-            left: -20%;
+            left: -100%;
         }
 
         .menu-component{
@@ -368,7 +348,7 @@ top: -160px;
      
         
         
-        #container-Cartoes{
+        .Area-Cartoes{
             width: 300px;
             height: 571px;
             background: #FFFFFF;
@@ -376,8 +356,8 @@ top: -160px;
             box-sizing: border-box;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 30px;
-            margin-top: 80%;
-            margin-left: 10%;
+            margin-top: 90%;
+            margin-left: -35%;
             display: flex;
             align-items: center;
          
@@ -388,7 +368,7 @@ top: -160px;
                     height: 50px;
                     position: relative;
                     top: 60%;
-                    left: -45%;
+                    left: -115%;
                     align-items: center;
                     background: #F27507;
                     border-radius: 10px;
@@ -404,13 +384,14 @@ top: -160px;
                     line-height: 120px;
                     margin-left: 6%;
                     position: relative;
-                    left: -16px;
+                    left: 22px;
                 }
                 .Cartoes1{
                  display: inline-block;
                  justify-content: space-around;
-                 margin-left: -60%;
-                 margin-top: -90%;
+               position: relative;
+               left: -155px;
+               top: -95px;
                  line-height: 60px;
                 
              }
@@ -418,9 +399,9 @@ top: -160px;
              #AreaCredito{
                 margin-left: 5%;
                 position: relative;
-                top: 120px;
+                top: 130px;
                 text-align: left;
-                left: -115px;
+                left: -270px;
             }
   
 

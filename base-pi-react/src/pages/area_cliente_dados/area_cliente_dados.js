@@ -15,7 +15,9 @@ function AreaDados() {
             <div className='container'>
 
             <Title titleIcon={User} titleText="Meus Dados" />
+            <div className='MenuAreaAlinhamento'>
          <Menu />
+         </div>
 
 
                 <div id='container-Dados'>
