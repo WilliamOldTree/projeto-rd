@@ -14,10 +14,12 @@ function AreaSenha() {
             <div className='container'>
 
             <Title titleIcon={User} titleText="Alterar Senha" />
-            <div className='MenuAreaResponsivo'>
-            <Menu />
-            </div>
-            
+
+            <div className='MenuAreaAlinhamento2'>
+         <Menu />
+         </div>
+
+
                 <div className='container-AltSenha'>
 
                     <label id='AltSenhaRecNova'>*Digite a senha atual:</label>

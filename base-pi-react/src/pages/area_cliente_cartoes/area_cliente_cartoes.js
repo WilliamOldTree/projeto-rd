@@ -15,14 +15,14 @@ function AreaCartoes() {
             <div className='container'>
 
                 <Title titleIcon={User} titleText="Meus Cartões" />
-                
-                <div className='MenuAreaResponsivo'>
-            <Menu />
-            </div>
 
-               
+        
+                <div className='MenuAreaAlinhamento5'>
+         <Menu />
+         </div>
 
-                <div id='container-Cartoes'>
+
+                <div className='container Area-Cartoes'>
 
                     <ul className='listaCartoes'>
                         <li><nobr>Número do Cartão</nobr></li>
