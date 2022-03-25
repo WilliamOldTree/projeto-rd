@@ -163,7 +163,7 @@
 
     @media (max-width:1024px){
 
-     .MenuAreaResponsivo{
+        .MenuAreaAlinhamento5{
          display: none;
      }
         
@@ -280,7 +280,7 @@
  
    
     @media (max-width:667px){
-        .MenuAreaResponsivo{
+        .MenuAreaAlinhamento5{
             display: none;
         }
            
