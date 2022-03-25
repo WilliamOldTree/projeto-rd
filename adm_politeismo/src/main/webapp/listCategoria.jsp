@@ -108,6 +108,7 @@
 								<input type="hidden" name="id" value="modal-${categoria.id}"/>
 							</td>
 
+<<<<<<< HEAD
 							<td><c:out value="${categoria.nome}"/></td>
 							<td>
 	
@@ -122,6 +123,11 @@
 							
 							<td data-label="Categoria"><c:out value="${categoria.nome}"/></td>
 							
+=======
+						<td><c:out value="${categoria.nome}"/></td>
+							<td>	
+	
+>>>>>>> 08e76fd2fb3ae99f7222fc4bac035f3400b74450
 							<td data-label="Ações">
                              <button class="btn formCrud1" type="button"  data-bs-toggle="modal"style="margin: 5px;" data-bs-target="#modal-delete-${categoria.id}" >Deletar                   
                               </button>	 		 	
