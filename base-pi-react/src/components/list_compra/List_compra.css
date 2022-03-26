@@ -4,9 +4,5 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
 }
 
-.list_resumo_compra th{
-    padding-right: 20px;
-}

@@ -6,6 +6,8 @@ import Frete from "../../components/asserts/icons/caminhao-frete-home.png"
 import { Link } from "react-router-dom"
 import TrashIcon from '../../components/asserts/icons/lixeira.png'
 import BudaMedit from '../../components/asserts/images/cart-images/buda-meditando.png'
+import List_compra from "../../components/list_compra/List_compra";
+import Resumo_compras from "../../components/resumo_compra/Resumo_compra";
 
 function Cart_address() {
     return (
@@ -50,74 +52,21 @@ function Cart_address() {
                             Resumo da compra
                         </h2>
                         <div>
-                            <table className="table table-borderless" >
+                            <List_compra>
+                            <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                            <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                            <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                            <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                            </List_compra>
 
-                                <thead>
-                                    <tr className='cart-title-table'>
-                                        <th itemScope='col'>Produto</th>
-                                        <th itemScope='col'>Descrição</th>
-                                        <th itemScope='col'>Valor</th>
-                                        <th itemScope='col'>Quantidade</th>
-                                        <th itemScope='col'>Excluir</th>
-                                    </tr>
-                                    <hr></hr>
-                                </thead>
+      
+                            <div className='container mt-3 p-3  ' id='cart_address_total'>
 
-                                <tbody>
-                                    <tr className='cart-title-content-table'>
-                                        <td><img src={BudaMedit} alt='item1' width={70} /></td>
-                                        <td>Imagem Buda</td>
-                                        <td>R$ 30,00</td>
-                                        <td>1</td>
-                                        <td ><img src={TrashIcon} alt='Excluir' width={20} /></td>
-                                    </tr>
-                                    <hr></hr>
-                                </tbody>
-
-                                <tbody>
-                                    <tr className='cart-title-content-table'>
-                                        <td><img src={BudaMedit} alt='item1' width={70} /></td>
-                                        <td>Imagem Buda</td>
-                                        <td>R$ 30,00</td>
-                                        <td>1</td>
-                                        <td ><img src={TrashIcon} alt='Excluir' width={20} /></td>
-                                    </tr>
-                                    <hr></hr>
-                                </tbody>
-
-                                <tbody>
-                                    <tr className='cart-title-content-table'>
-                                        <td><img src={BudaMedit} alt='item1' width={70} /></td>
-                                        <td>Imagem Buda</td>
-                                        <td>R$ 30,00</td>
-                                        <td>1</td>
-                                        <td ><img src={TrashIcon} alt='Excluir' width={20} /></td>
-                                    </tr>
-                                    <hr></hr>
-                                </tbody>
-
-                                <tbody>
-                                    <tr className='cart-title-content-table'>
-                                        <td><img src={BudaMedit} alt='item1' width={70} /></td>
-                                        <td>Imagem Buda</td>
-                                        <td>R$ 30,00</td>
-                                        <td>1</td>
-                                        <td ><img src={TrashIcon} alt='Excluir' width={20} /></td>
-                                    </tr>
-                                    <hr></hr>
-                                </tbody>
-
-                            </table>
-                            <div className='container' id='cart_address_total'>
-
-                                <h4>Produtos = R$ 120,00</h4>
-                                <h4>Frete = R$ 15,00</h4>
+                                <h5>Produtos = R$ 120,00</h5>
+                                <h5>Frete = R$ 15,00</h5>
                                 <h2>Total = 135,00</h2>
-                                
-                                <p></p>
-                                <p></p>
-                                <p></p>
-                                <Link className="other_send_company" to="./entregas"><h6>Conheca outras forma de envio</h6></Link>
+            
+                                <Link className="other_send_company pt-3" to="./entregas"><h6>Conheca outras forma de envio</h6></Link>
 
                             </div>
 

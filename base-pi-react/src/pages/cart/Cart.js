@@ -10,6 +10,14 @@ import List_compra from '../../components/list_compra/List_compra'
 import Resumo_compras from '../../components/resumo_compra/Resumo_compra'
 
 function Cart() {
+
+    // let data = [ 
+    //     { product: BudaMedit, descricao: 'Imagem Buda', valor: 'R$ 30,00', quantidade: '5', trash: TrashIcon },
+    //     { product: BudaMedit, descricao: 'Imagem Buda', valor: 'R$ 30,00', quantidade: '5', trash: TrashIcon },
+    //     { product: BudaMedit, descricao: 'Imagem Buda', valor: 'R$ 30,00', quantidade: '5', trash: TrashIcon },
+    //     { product: BudaMedit, descricao: 'Imagem Buda', valor: 'R$ 30,00', quantidade: '5', trash: TrashIcon },
+    // ]
+
     return (
         <>
             <Header />
@@ -28,11 +36,15 @@ function Cart() {
 
 
                     <div className='container list_resumo_compra'>
-                        <List_compra />
-                        <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                        <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                        <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                        <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                        <List_compra >
+                            {/* {data.map((product) => (<Resumo_compras product_img={product.product} descricao={product.descricao} valor={product.valor} quantidade={product.quantidade} trash_img={product.trash} />))} */}
+
+                            <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                            <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                            <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                            <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                        </List_compra>
+
                     </div>
 
 
@@ -100,10 +112,10 @@ function Cart() {
 
                     {/* </table> */}
 
-                    
 
+                            
 
-                    <div className='container' id='cart_total'>
+                    <div className='container mt-5' id='cart_total'>
 
                         <h3>Total = R$ 90,00</h3>
                         <h6>Parcelas 3 x R$ 30,00</h6>

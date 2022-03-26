@@ -2,38 +2,23 @@ import React from "react";
 import './List_compra.css'
 import Resumo_compras from "../resumo_compra/Resumo_compra";
 
-const List_compra = () => {
-
+const List_compra = (props) => {
+ 
     return <div className="container list_resumo_compra">
-        <table>
+        <table className="table">
             <thead>
                 <tr>
-                    <th>Produto</th>
-                    <th>Descrição</th>
-                    <th>Valor</th>
-                    <th>Quantidade</th>
-                    <th>Excluir</th>
+                    <th className="text-center pb-3">Produto</th>
+                    <th className="text-center pb-3">Descrição</th>
+                    <th className="text-center pb-3">Valor</th>
+                    <th className="text-center pb-3">Quantidade</th>
+                    <th className="text-center pb-3">Excluir</th>
                 </tr>
             </thead>
-            {/* <tbody>
-                <Resumo_compras />
-                <Resumo_compras />
-                </tbody> */}
+            <tbody>
+            {props.children}    
+            </tbody>
         
-
-
-
-
-
-            {/* <tbody>
-                <tr>
-                    <td><img alt="produto" width={70} src={props.product_img}/></td>
-                    <td>{props.descricao}</td>
-                    <td>{props.valor}</td>
-                    <td>{props.quantidade}</td>
-                    <td><img alt="excluir" width={20} src={props.trash_img}/></td>
-                </tr>             
-            </tbody> */}
         </table>
     </div>
 
