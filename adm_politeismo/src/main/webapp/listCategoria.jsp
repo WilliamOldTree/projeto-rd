@@ -108,10 +108,13 @@
 								<input type="hidden" name="id" value="modal-${categoria.id}"/>
 							</td>
 
-						<td><c:out value="${categoria.nome}"/></td>
-							<td>	
+							<td><c:out value="${categoria.nome}"/></td>
+							<td>
 	
-							<td data-label="Ações">
+                            
+
+							
+							
                              <button class="btn formCrud1" type="button"  data-bs-toggle="modal"style="margin: 5px;" data-bs-target="#modal-delete-${categoria.id}" >Deletar                   
                               </button>	 		 	
 							    <button class="btn formCrud2" type="submit" name="option" style="margin: 5px;" value="updateForm">Atualizar</button>

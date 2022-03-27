@@ -1,0 +1,150 @@
+#ErroAlterarSenhaAtual{
+    color: white;
+    background: darkred;
+    border-color: crimson ;
+    position: absolute;
+    left: 230px;
+    top: 30px;
+    width: 190px;
+    font-weight: bold;
+    font-size: 17px;
+    
+}
+
+#ErroAlterarSenhaNova{
+    color: white;
+    background: darkred;
+    border-color: crimson ;
+    position: absolute;
+    left: 230px;
+    top: 147px;
+    font-weight: bold;
+    font-size: 17px;
+    width: 190px;
+    
+    
+}
+#ErroAlterarSenhaConfirmar{
+    color: white;
+    background: darkred;
+    border-color: crimson ;
+    position: absolute;
+    left: 230px;
+    top: 265px;
+    font-weight: bold;
+    font-size: 17px;
+    width: 200px;
+    
+}
+
+#AlterarSenhaDiferente{
+    color: white;
+    background: darkred;
+    border-color: crimson ;
+    position: absolute;
+    left: 150px;
+    top: 120px;
+    font-weight: bold;
+    font-size: 17px;
+}
+@media(max-width:1024px){
+#ErroAlterarSenhaAtual{
+    color: white;
+    background: darkred;
+    border-color: crimson ;
+    position: absolute;
+    left: 230px;
+    top: 30px;
+    font-weight: bold;
+    font-size: 17px;
+    width: 190px;
+    
+}
+#ErroAlterarSenhaNova{
+    color: white;
+    background: darkred;
+    border-color: crimson ;
+    position: absolute;
+    left: 230px;
+    top: 187px;
+    font-weight: bold;
+    font-size: 17px;
+    width: 190px;
+    
+}
+#ErroAlterarSenhaConfirmar{
+    color: white;
+    background: darkred;
+    border-color: crimson ;
+    position: absolute;
+    left: 230px;
+    top: 345px;
+    font-weight: bold;
+    font-size: 17px;
+    width: 200px;
+    
+}
+
+#AlterarSenhaDiferente{
+    color: white;
+    background: darkred;
+    border-color: crimson ;
+    position: absolute;
+    left: 170px;
+    top: 120px;
+    font-weight: bold;
+    font-size: 17px;
+}
+@media(max-width:667px){
+    #ErroAlterarSenhaAtual{
+        color: white;
+        background: darkred;
+        border-color: crimson ;
+        position: absolute;
+        left: 50px;
+        top: 30px;
+        width: 200px;
+        font-weight: bold;
+        font-size: 15px;
+        
+    }
+    #ErroAlterarSenhaNova{
+        color: white;
+        background: darkred;
+        border-color: crimson ;
+        position: absolute;
+        left: 50px;
+        top: 210px;
+        width: 200px;
+        font-weight: bold;
+        font-size: 15px;
+        
+        
+    }
+    #ErroAlterarSenhaConfirmar{
+        color: white;
+        background: darkred;
+        border-color: crimson ;
+        position: absolute;
+        left: 50px;
+        top: 380px;
+        width: 200px;
+        font-weight: bold;
+        font-size: 15px;
+        
+        
+    }
+    
+    #AlterarSenhaDiferente{
+        color: white;
+        background: darkred;
+        border-color: crimson ;
+        position: absolute;
+        left: 50px;
+        top: 200px;
+        width: 200px;
+        font-weight: bold;
+        font-size: 15px;
+    }
+}
+}

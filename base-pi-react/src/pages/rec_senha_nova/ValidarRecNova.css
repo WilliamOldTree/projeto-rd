@@ -1,0 +1,115 @@
+
+#ErroRecSenhaNova{
+    color: white;
+    background: darkred;
+    border-color: crimson ;
+    position: absolute;
+    left: 230px;
+    top: 120px;
+    font-weight: bold;
+    font-size: 17px;
+    
+    
+}
+#ErroRecConfirmarSenhaNova{
+    color: white;
+    background: darkred;
+    border-color: crimson ;
+    position: absolute;
+    left: 230px;
+    top: 265px;
+    font-weight: bold;
+    font-size: 17px;
+    
+    
+}
+
+#RecSenhaDiferente{
+    color: white;
+    background: darkred;
+    border-color: crimson ;
+    position: absolute;
+    left: 150px;
+    top: 120px;
+    font-weight: bold;
+    font-size: 17px;
+}
+@media(max-width:1024px){
+
+#ErroRecSenhaNova{
+    color: white;
+    background: darkred;
+    border-color: crimson ;
+    position: absolute;
+    left: 230px;
+    top: 125px;
+    font-weight: bold;
+    font-size: 17px;
+    
+    
+}
+#ErroRecConfirmarSenhaNova{
+    color: white;
+    background: darkred;
+    border-color: crimson ;
+    position: absolute;
+    left: 230px;
+    top: 265px;
+    font-weight: bold;
+    font-size: 17px;
+    
+    
+}
+
+#RecSenhaDiferente{
+    color: white;
+    background: darkred;
+    border-color: crimson ;
+    position: absolute;
+    left: 170px;
+    top: 120px;
+    font-weight: bold;
+    font-size: 17px;
+}
+@media(max-width:667px){
+
+    #ErroRecSenhaNova{
+        color: white;
+        background: darkred;
+        border-color: crimson ;
+        position: absolute;
+        left: 20px;
+        top: 100px;
+        width: 200px;
+        font-weight: bold;
+        font-size: 15px;
+        
+        
+    }
+    #ErroRecConfirmarSenhaNova{
+        color: white;
+        background: darkred;
+        border-color: crimson ;
+        position: absolute;
+        left: 20px;
+        top: 250px;
+        width: 200px;
+        font-weight: bold;
+        font-size: 15px;
+        
+        
+    }
+    
+  #RecSenhaDiferente{
+        color: white;
+        background: darkred;
+        border-color: crimson ;
+        position: absolute;
+        left: 50px;
+        top: 200px;
+        width: 200px;
+        font-weight: bold;
+        font-size: 15px;
+    }
+}
+}

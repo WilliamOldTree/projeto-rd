@@ -1,0 +1,50 @@
+
+#ErroLoginSenhaNova{
+    color: white;
+    background: darkred;
+    border-color: crimson ;
+    position: absolute;
+    left: 360px;
+    top: 530px;
+    font-weight: bold;
+    font-size: 15px;
+    width: 140px;
+    
+    
+}
+
+@media(max-width:1024px){
+
+#ErroLoginSenhaNova{
+    color: white;
+    background: darkred;
+    border-color: crimson ;
+    position: absolute;
+    left: 250px;
+    top: 550px;
+    font-weight: bold;
+    font-size: 15px;
+    
+    width: 140px;
+
+    
+}
+
+@media(max-width:667px){
+
+    #ErroLoginSenhaNova{
+        color: white;
+        background: darkred;
+        border-color: crimson ;
+        position: absolute;
+        left: 140px;
+        top: 530px;
+        width: 120px;
+        font-weight: bold;
+        font-size: 13px;
+        
+        
+    }
+
+}
+}
