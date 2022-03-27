@@ -6,8 +6,8 @@ import Frete from "../../components/asserts/icons/caminhao-frete-home.png"
 import { Link } from "react-router-dom"
 import TrashIcon from '../../components/asserts/icons/lixeira.png'
 import BudaMedit from '../../components/asserts/images/cart-images/buda-meditando.png'
-import List_compra from "../../components/list_compra/List_compra";
-import Resumo_compras from "../../components/resumo_compra/Resumo_compra";
+import ListCompra from "../../components/list_compra/ListCompra";
+import ResumoCompra from "../../components/resumo_compra/ResumoCompra";
 
 function Cart_address() {
     return (
@@ -52,12 +52,12 @@ function Cart_address() {
                             Resumo da compra
                         </h2>
                         <div>
-                            <List_compra>
-                            <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                            <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                            <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                            <Resumo_compras product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                            </List_compra>
+                            <ListCompra>
+                            <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                            <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                            <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                            <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                            </ListCompra>
 
       
                             <div className='container mt-3 p-3  ' id='cart_address_total'>

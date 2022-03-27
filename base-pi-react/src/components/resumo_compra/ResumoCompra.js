@@ -1,7 +1,7 @@
 import React from "react";
-import './Resumo_compra.css'
+import './ResumoCompra.css'
 
-const Resumo_compras = (props) => {
+const ResumoCompra = (props) => {
     return <>
         
                 <tr>
@@ -14,4 +14,4 @@ const Resumo_compras = (props) => {
          
     </>
 }
-export default Resumo_compras;
+export default ResumoCompra;
