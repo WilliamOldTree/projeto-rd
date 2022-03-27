@@ -38,7 +38,7 @@ import BannerEnd from '../../components/asserts/images/images-home/banner-end.pn
 function Home() {
     return (
         <>
-            <Header />
+         <Header /> 
             <div className='container'>
 
                 {/* CARROSSEL HOME */}
