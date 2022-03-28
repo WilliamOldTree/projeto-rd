@@ -5,28 +5,23 @@ import Menu from '../../components/menu/Menu'
 import Title from '../../components/title/Title'
 import User from '../../components/asserts/icons/user.png'
 import Lixeira from '../../components/asserts/icons/lixeira.png'
+import MeusEnderecos from '../../components/modal_meus_enderecos/Modal_Meus_Enderecos'
 
 
 function AreaEndereco() {
     return (
         <>
-
             <Header />
 
             <div className='container'>
 
-            <Title titleIcon={User} titleText="Meus Endereços" />
+                <Title titleIcon={User} titleText="Meus Endereços" />
 
-            <div className='MenuAreaAlinhamento1'>
-         <Menu />
-         </div>
-
-
-
-
+                <div className='MenuAreaAlinhamento1'>
+                    <Menu />
+                </div>
 
                 <div id='container-Enderecos'>
-
 
                     <ul className='listaEnderecos1'>
                         <li className='AreaClienteLista'><nobr>CEP</nobr></li>
@@ -41,7 +36,6 @@ function AreaEndereco() {
                         <li className='AreaClienteLista'><nobr>Cidade</nobr></li>
                     </ul>
 
-
                     <ul className='Enderecos1'>
                         <li className='DadosEnderecos'><nobr>06851-270</nobr></li>
                         <li className='DadosEnderecos'><nobr>Rua Benedito Gonçalves</nobr></li>
@@ -55,19 +49,12 @@ function AreaEndereco() {
                         <li className='DadosEnderecos'><nobr>São Paulo</nobr></li>
                     </ul>
 
-
-                    <button className='editarEnderecos' type='submit'>
-                        ALTERAR
-                    </button>
-                    <button className='addEnderecos' type='submit'>
-                        ADICIONAR
-                    </button>
+                    <MeusEnderecos classEnderecos={"editarEnderecos"} textButtonEnderecos="ALTERAR" />
+                    <MeusEnderecos classEnderecos={"addEnderecos"} textButtonEnderecos="ADICIONAR" />
                     <img width="25" className='LixeiraAreaEndereco' src={Lixeira} />
-
                 </div>
 
             </div>
-
 
             <Footer />
         </>
