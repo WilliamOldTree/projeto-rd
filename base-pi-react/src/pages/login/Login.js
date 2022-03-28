@@ -50,10 +50,10 @@ function Login() {
                                 <input type='email' className='form-control' id='email' required/>
                                 <div className ='mb-3'>
                                 <label for='senha' className ='form-label senha-login'  >Senha</label>
-                                <input type ='password' className ='form-control' id='senha' required/>
+                                <input type ='password' className ='form-control' id='senha' required onMouseOver={validar}/>
                                 <span id='ErroLoginSenhaNova' className='AlterarSenhaVermelho'></span>
                                 </div>
-                                <button className ='btn formlogin' type ='submit' onClick={validar}>ENTRAR</button>
+                                <button className ='btn formlogin' type ='submit'>ENTRAR</button>
                                 <p className ='link-senha'>Esqueceu a sua senha?</p>
                             </div>
                         </form>

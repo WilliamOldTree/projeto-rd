@@ -53,18 +53,18 @@ function RecSenhaNova() {
                     </h2>
 
                     <label id='NovaSenhaRecNova'>*Digite uma nova senha:</label>
-                    <input className='form-control' id='senhaRecNova' type={'password'} required></input>
+                    <input className='form-control' id='senhaRecNova' type={'password'} required onMouseOver={validar}></input>
                     <span id='ErroRecSenhaNova' className='AlterarSenhaVermelho'></span>
 
                     <label id='NovaSenha1RecNova'>*Confirme a nova senha:</label>
-                    <input className='form-control 1' id='senhaRecNova2' type={'password'} required></input>
+                    <input className='form-control 1' id='senhaRecNova2' type={'password'} required onMouseOver={validar}></input>
                     <span id='ErroRecConfirmarSenhaNova' className='AlterarSenhaVermelho'></span>
 
                     <div className='alert alert-danger ' hidden  id='RecSenhaDiferente'>
                         Você precisa digitar as senhas iguais!
                     </div>
 
-                    <button className='BUTTON' type='submit' onClick={validar}>
+                    <button className='BUTTON' type='submit' >
                         REDEFINIR
                     </button>
 

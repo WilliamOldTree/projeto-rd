@@ -75,9 +75,6 @@ function AreaSenha() {
           <span id='ErroAlterarSenhaNova' className='AlterarSenhaVermelho'></span>
 
 
-                    <button id='redefinirAltSenha' className='btn btn-success'>
-                        REDEFINIR
-                    </button>
 
           <label id='AltSenha2RecNova'>*Confirme sua senha:</label>
           <input className='form-control 1' id='AltsenhaRecNova3' type={'password'} onMouseOver={validar} required ></input>
