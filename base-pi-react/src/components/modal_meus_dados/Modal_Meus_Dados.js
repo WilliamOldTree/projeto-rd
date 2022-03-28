@@ -9,7 +9,7 @@ function MeusDados(props) {
 
     return (
         <>
-            <Button className="btn-modal-dados" onClick={handleShow}>
+            <Button className="btn-modal-dados editarDados" onClick={handleShow}>
                 {props.textButton}
             </Button>
 

@@ -48,10 +48,10 @@ function AreaDados() {
                         <li className='DadosConta'><nobr>15/02/1991</nobr></li>
                         <li className='DadosConta'><nobr>(11) 97895-2074</nobr></li>
                     </ul>
-
-
-                    <MeusDados textButton="ALTERAR"/>
-
+                    
+                    <div>
+                    <MeusDados textButton="ALTERAR" className='editarDados'/>
+                    </div>
                 </div>
 
             </div>

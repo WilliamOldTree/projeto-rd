@@ -80,6 +80,41 @@
     background-color: #34d175;
 }
 
+@media (max-width:1024px){
+    .editarEnderecos{
+        width: 100px;
+        height: 50px;
+        position: relative;
+        top: 61%;
+        left: -48%;
+        align-items: center;
+        background: #F27507;
+        border-radius: 10px;
+        border: none;
+        font-weight: bold;
+        
+      
+
+    }
+
+    .addEnderecos{
+        width: 105px;
+        height: 50px;
+        margin-left: 25%;
+        margin-top: -10%;
+        position: relative;
+        top: 345px;
+        left: -580px;
+        justify-content: center;
+        background: #34A853;
+        border-radius: 10px;
+        border: none;
+        font-weight: bold;
+        color: #FFFFFF;
+        }
+    
+}
+
 @media (max-width: 600px) {
     .modal-form-enderecos {
         padding: 0px;
@@ -92,5 +127,36 @@
     .input-form-enderecos {
         height: 50px;
     }
+    .addEnderecos{
+        width: 105px;
+        height: 50px;
+        margin-left: -27%;
+        margin-top: -150%;
+        position: relative;
+        top: 749px;
+        left: -185px;
+        justify-content: center;
+        background: #34A853;
+        border-radius: 10px;
+        border: none;
+        font-weight: bold;
+        color: #FFFFFF;
+        }
+
+        .editarEnderecos{
+            width: 105px;
+            height: 50px;
+            position: relative;
+            top: 56%;
+            left: -18%;
+            align-items: center;
+            background: #F27507;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+          
+
+        }
 
 }
+
