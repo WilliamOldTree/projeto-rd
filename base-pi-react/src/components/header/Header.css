@@ -126,3 +126,43 @@ html, header, body, footer {
     display: flex;
     justify-content: start;
 }
+
+/*Modal Favorito*/
+
+.lixeira{
+    width : 22px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.sFamilia{
+    text-align: center;
+    color: black;
+    margin-top: 35px;
+}
+
+
+.btnFinal{
+    background-color:#F27507;
+    color: white;
+    margin-left: 320px;
+    font-size:"Roboto";
+    border-radius: 10px;
+    border:none;
+    width: 150px;
+    height: 35px;
+
+}
+
+.BibliaS{
+    text-align: center;
+    color: black;
+    margin-top: 45px;
+}
+
+.lixeira2{
+    width : 22px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+

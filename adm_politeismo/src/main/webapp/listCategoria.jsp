@@ -24,7 +24,7 @@
                         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft"
                             aria-labelledby="offcanvasLeftLabel">
                             <div class="offcanvas-header">
-                                <h5 id="offcanvasLeftLabel">POLITE√çSMO SHOP</h5>
+                                <h5 id="offcanvasLeftLabel">POLITEÕSMO SHOP</h5>
                                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                                     aria-label="Close"></button>
                             </div>
@@ -52,7 +52,7 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="FornecedorController">Fornecedores
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteFisicaController">Clientes Fis√≠cos
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteFisicaController">Clientes FisÌcos
                                     <hr width="160">
                                  </a>
                                  <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteJuridicaController">Clientes Juridicos
@@ -95,7 +95,7 @@
 				<tr>
 					<th>ID</th>
 					<th>Categoria</th>
-					<th>A√ß√µes</th>
+					<th>AÁıes</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -119,7 +119,7 @@
                               </button>	 		 	
 							    <button class="btn formCrud2" type="submit" name="option" style="margin: 5px;" value="updateForm">Atualizar</button>
 					    
-                               <!-- IN√çCIO DO MODAL DE DELETAR -->
+                               <!-- INÕCIO DO MODAL DE DELETAR -->
 									<div class="modal fade" id="modal-delete-${categoria.id}" tabindex="-1" aria-labelledby="inicioModal" aria-hidden="true">
 									<form action="CategoriaController" method="post">
 									
