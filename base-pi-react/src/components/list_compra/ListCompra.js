@@ -1,6 +1,6 @@
 import React from "react";
 import './ListCompra.css'
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Table } from "react-bootstrap";
 
 const ListCompra = (props) => {
 
@@ -8,7 +8,7 @@ const ListCompra = (props) => {
         <Container>
             <Row>
                 <Col className="list_resumo_compra">
-                    <table className="table">
+                    <Table>
                         <thead>
                             <tr>
                                 <th className="text-center pb-3">Produto</th>
@@ -21,7 +21,7 @@ const ListCompra = (props) => {
                         <tbody>
                             {props.children}
                         </tbody>
-                    </table>
+                    </Table>
                 </Col>
             </Row>
         </Container>

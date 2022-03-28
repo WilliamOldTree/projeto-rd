@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
 
-.list_resumo_compra{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
 
+@media (max-width: 375px) {
+    .list_resumo_compra {
+        
+        overflow: auto;
+        margin  : auto;
+    }
+}
