@@ -5,103 +5,59 @@ import Title from '../../components/title/Title'
 import CartIcon from '../../components/asserts/icons/cart.png'
 import TrashIcon from '../../components/asserts/icons/lixeira.png'
 import BudaMedit from '../../components/asserts/images/cart-images/buda-meditando.png'
-import { Link } from "react-router-dom";
-
+import { Link } from "react-router-dom"
+import ListCompra from '../../components/list_compra/ListCompra'
+import ResumoCompra from '../../components/resumo_compra/ResumoCompra'
+import { Col, Container, Row } from 'react-bootstrap'
 function Cart() {
+
     return (
         <>
+
+
             <Header />
+
             {/* BEGINNER CONTEUDO */}
-            <section >
-                <div className='container' id='cart_list'>
+            <Container>
+
                 {/* BEGING CART-TITLE */}
-                <Title titleIcon={CartIcon} titleText="Carrinho"/>
+                <Row className='mb-5'>
+                    <Col>
+                        <Title titleIcon={CartIcon} titleText="Carrinho" />
+                    </Col>
+                </Row>
                 {/* FINISH CART-TITLE */}
 
 
                 {/* BEGINNER CART-LIST  */}
+                <Row>
+                    <Col>
+                        <ListCompra >
+                            <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                            <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                            <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                            <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                        </ListCompra>
+                    </Col>
+                </Row>
 
-                    <table className="table table-borderless" >
-
-                        <thead>
-                            <tr className='cart-title-table'>
-                                <th itemScope='col'>Produto</th>
-                                <th itemScope='col'>Descrição</th>
-                                <th itemScope='col'>Valor</th>
-                                <th itemScope='col'>Quantidade</th>
-                                <th itemScope='col'>Excluir</th>
-                            </tr>
-                            <hr></hr>
-                        </thead>
-
-                        <tbody>
-                            <tr className='cart-title-content-table'>
-                                <td><img src={BudaMedit} alt='item1' width={70} /></td>
-                                <td>Imagem Buda</td>
-                                <td>R$ 30,00</td>
-                                <td>1</td>
-                                <td ><img src={TrashIcon} alt='Excluir' width={20} /></td>
-                            </tr>
-                            <hr></hr>
-                        </tbody>
-
-                        <tbody>
-                            <tr className='cart-title-content-table'>
-                                <td><img src={BudaMedit} alt='item1' width={70} /></td>
-                                <td>Imagem Buda</td>
-                                <td>R$ 30,00</td>
-                                <td>1</td>
-                                <td ><img src={TrashIcon} alt='Excluir' width={20} /></td>
-                            </tr>
-                            <hr></hr>
-                        </tbody>
-
-                        <tbody>
-                            <tr className='cart-title-content-table'>
-                                <td><img src={BudaMedit} alt='item1' width={70} /></td>
-                                <td>Imagem Buda</td>
-                                <td>R$ 30,00</td>
-                                <td>1</td>
-                                <td ><img src={TrashIcon} alt='Excluir' width={20} /></td>
-                            </tr>
-                            <hr></hr>
-                        </tbody>
-
-                        <tbody>
-                            <tr className='cart-title-content-table'>
-                                <td><img src={BudaMedit} alt='item1' width={70} /></td>
-                                <td>Imagem Buda</td>
-                                <td>R$ 30,00</td>
-                                <td>1</td>
-                                <td ><img src={TrashIcon} alt='Excluir' width={20} /></td>
-                            </tr>
-                            <hr></hr>
-                        </tbody>
-
-                    </table>
-
-                    <div className='container' id='cart_total'>
-                       
+                <Row>
+                    <Col className='mt-5' id='cart_total'>
                         <h3>Total = R$ 90,00</h3>
                         <h6>Parcelas 3 x R$ 30,00</h6>
-                        <Link to="/cart_address" className="btn btn-default btnComprar" type="button">COMPRAR</Link>
-                        <p></p>
-                        <Link to="/" className="btn btn-default btnContCompra" type="button">CONTINUAR COMPRANDO</Link>
-                        
-                    </div>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-
-
-                </div>
+                        <Link to="/cart_address" className="btn btn-default btnComprar mb-2" type="button">COMPRAR</Link>
+                        <Link to="/" className="btn btn-default btnContCompra mb-5" type="button">CONTINUAR COMPRANDO</Link>
+                    </Col>
+                </Row>
                 {/* FINISH CART-LIST */}
 
-
-            </section>
+            </Container>
             {/* END-CART */}
+
             <Footer />
         </>
+
+
     )
 }
 
