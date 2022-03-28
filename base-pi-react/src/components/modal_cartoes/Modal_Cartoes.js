@@ -61,10 +61,7 @@ return (
                         </form>
                         </Modal.Body>
                         <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            CANCELAR
-                        </Button>
-                        <Button variant="primary">CADASTRAR</Button>
+                        <Button variant="primary"    className='ModalCartãoButton1'>SALVAR</Button>
                         </Modal.Footer>
                     </Modal>           
                 </div>             
