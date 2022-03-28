@@ -6,8 +6,13 @@ import Logo from '../asserts/images/header-img/logo.png'
 import Lupa from '../asserts/icons/pesquisa-de-lupa (1).png'
 import Love from '../asserts/icons/love.png'
 import Sac from '../asserts/icons/sac.png'
+import Cart from '../asserts/icons/cart.png'
 import OffCanvas from '../offCanvas/OffCanvas'
+import Biblia from '../asserts/images/images-home/b_blia-sagrada-cnbb.jpg'
+import Sagrada from '../asserts/images/images-home/imagem-resina-sagrada-familia.jpg'
 import ModalCarrinho from '../modal_cart/Modal_Cart'
+
+import Lixeira from '../asserts/icons/lixeira-de-reciclagem.png'
 
 function Header() {
     return (
@@ -70,7 +75,7 @@ function Header() {
                                 <div className="col-3">
                                     {/* Button trigger modal Favoritos */}
                                     <div className="btnfavorito">
-                                        <button type="button" className="btn " data-bs-toggle="modal"
+                                        <button type="button" className="btn" data-bs-toggle="modal"
                                             data-bs-target="#staticBackdrop"><img src={Love} alt="Favoritos" width="80%" />
                                         </button>
 
@@ -81,93 +86,66 @@ function Header() {
                                             <div className="modal-dialog">
                                                 <div className="modal-content">
                                                     <div className="modal-header">
-                                                        {/* <h3 style="text-align:center" className="col-10">Meus Favoritos</h3> */}
+                                                        <h3 claassName="favorito" style={{ textAlign: "center" }} className="col-10">Meus Favoritos</h3>
                                                         <button type="button" className="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                     </div>
-                                                    {/* <div className="modal-body">    
+
+                                                    <p></p>
+                                                    
+                                                    <div className="modal-body">
                                                         <div className="carrinho">
                                                             <div className="row">
-                                                                <div className="col-3 ">
-                                                                    <img src="./images/icons/vela_aromatica.jpg" width="80%" />
-                                                                </div>
-
-                                                                <div className="boda col-4">
-                                                                    <p>Vela Aromática Presépio de Natal</p>
-                                                                    <strong> R$ 29,60</strong>
-                                                                </div>
-                                                                <div className=" lixeira col-3">
-                                                                    <button><img src="./images/icons/lixeira-de-reciclagem.png"
-                                                                        alt="" /></button>
-                                                                </div>
-                                                                <hr width="50px" />
-
+                                                             
                                                                 <div className="row">
                                                                     <div className="col-3">
-                                                                        <img src="./images/icons/capelinha_em_madeira.jpg" 
-                                                                            width="80%" />
+                                                                        <img src={Sagrada} width="100%" />
                                                                     </div>
-
-
-                                                                    <div className="sFamilia col-4">
-                                                                        <p>Capelinha em Madeira Presépio</p>
-                                                                        <strong>R$ 29,60</strong>
+                                                                   
+                                                                    <div className="sFamilia col-7">
+                                                                        <p>Imagem Sagrada Família Resina</p>
+                                                                        <strong>R$ 30,00</strong>
                                                                     </div>
-
-                                                                    <div className=" lixeira col-3">
-                                                                         <button><img
-                                                                            src="./images/icons/lixeira-de-reciclagem.png"
+                                                                
+                                                                    <div className=" lixeira col-1">
+                                                                        <button className="btn"><img className="lixeira"
+                                                                            src={Lixeira}
                                                                             alt="" /></button>
+                                                                            
                                                                     </div>
                                                                 </div>
-                                                                <hr width="50px" />
+                                                                <p></p>
+                                                                <p></p>
+
+                                                 <hr/>
+                                                                
 
                                                                 <div className="row">
                                                                     <div className="col-3">
-                                                                        <img src="./images/icons/presepio_em_resina.jpg"
-                                                                            width="80%" />
+                                                                        <img src={Biblia}
+                                                                            width="100%" />
                                                                     </div>
-
-
-                                                                    <div className="sFamilia col-4">
-                                                                        <p>Presépio em resina 14 peças</p>
-                                                                        <strong>R$ 171,00</strong>
-                                                                    </div>
-
-                                                                    <div className=" lixeira col-3">
-                                                                        <button><img
-                                                                            src="./images/icons/lixeira-de-reciclagem.png"
-                                                                            alt="" /></button>
-                                                                    </div>
-                                                                </div>
-                                                                <hr width="10px" />
-                                                                <div className="row">
-                                                                    <div className="col-3">
-                                                                        <img src="./images/icons/biblia_sagrada.jpg"
-                                                                            width="80%" />
-                                                                    </div>
-
-
-                                                                    <div className="sFamilia col-4">
+                                                                    
+                                                                    <div className="BibliaS col-7">
                                                                         <p>Bíblia Sagrada de Bolso Ave Maria</p>
-                                                                        <strong>R$ 45,00</strong>
+                                                                        <strong>R$ 40,00</strong>
                                                                     </div>
 
-                                                                    <div className=" lixeira col-3">
-                                                                        <button><img
-                                                                            src="./images/icons/lixeira-de-reciclagem.png"
+                                                                    <div className=" lixeira col-1">
+                                                                        <button className="btn"><img className="lixeira2"
+                                                                            src={Lixeira}
                                                                             alt="" /></button>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div> 
                                                             <hr />
-                                                            <div className="btnFinal col-12">
-                                                                <div><a href="./area_do_cliente_favoritos.html">
-                                                                    <button><strong>Ver Favoritos</strong></button></a>
+                                                            <div className="col-12">
+                                                                <div><a href="area_cliente_favoritos">
+                                                                    <button className="btnFinalFavoritos"><strong>Ver Favoritos</strong></button></a>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div> */}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -182,8 +160,94 @@ function Header() {
                                 </div>
 
                                 {/* Button trigger modal Carrinho */}
+                             
+                                {/* Button trigger modal Carrinho */}
                                 <div className="col-3">
                                     <ModalCarrinho />
+                              
+
+                                    {/* Modal Carrinho */}
+                                    <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                        aria-hidden="true">
+                                        <div className="modal-dialog">
+                                            <div className="modal-content">
+                                                <div className="modal-header">
+                                                    {/* <h3 style="text-align:center" className="col-10">Meu Carrinho</h3> */}
+                                                    <button type="button" className="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                {/*<div className="modal-body">
+                                                    <div className="carrinho">
+                                                        <div className="row">
+                                                            <div className="col-3">
+                                                                <img src="./images/icons/boda.jpeg" width="80%" />
+                                                            </div>
+                                                             <div className="boda col-5">
+                                                                <p>Imagem Sagrada Boda</p>
+                                                                <strong>R$ 30,00</strong>
+                                                            </div>
+                                                            <div className="btnMenos col-1">
+                                                                <button><strong>-</strong></button>
+                                                            </div>
+                                                            <div className="col-1">
+                                                                <div className="quantidade"><strong> 1</strong>
+                                                                </div>
+                                                                <div className="btnMais col-1">
+                                                                    <button><strong>+</strong></button>
+                                                                </div>
+                                                                <div className=" lixeira col-5">
+                                                                    <button><img src="./Imagens/lixeira-de-reciclagem.png"
+                                                                        alt="" /></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="carrinho">
+                                                            <div className="row">
+                                                                <div className="row">
+                                                                    <div className="col-3">
+                                                                        <img src="./images/icons/sagradaFamilia.jpeg"
+                                                                            width="80%" />
+                                                                    </div>
+                                                                    <div className="sFamilia col-5">
+                                                                        <p>Imagem Sagrada Fami</p>
+                                                                        <strong>R$ 30,00</strong>
+                                                                    </div>
+                                                                    <div className="btnMenos col-1">
+                                                                        <button><strong>-</strong></button>
+                                                                    </div>
+                                                                    <div className="col-1">
+                                                                        <div className="quantidade"><strong> 1</strong>
+                                                                        </div>
+                                                                        <div className="btnMais col-1">
+                                                                            <button><strong>+</strong></button>
+                                                                        </div>
+                                                                        <div className=" lixeira col-5">
+                                                                            <button><img
+                                                                                src="./Imagens/lixeira-de-reciclagem.png"
+                                                                                alt="" /></button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <br />
+                                                    </div>
+                                                </div>*/}
+
+                                                {/* <div className="modal-footer">
+                                                    <div className="row">
+                                                        <div className="total col-6">
+                                                            <h4>Subtotal:<strong> R$60,00</strong></h4>
+                                                        </div>
+                                                        <br />
+                                                        <div className="btnFinal col-12">
+                                                            <button><strong>Ver Carrinho</strong></button>
+                                                        </div>
+                                                    </div>
+                                                </div> */}
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
