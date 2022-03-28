@@ -68,22 +68,22 @@ function AreaSenha() {
                 <div className='container-AltSenha'>
 
                     <label id='AltSenhaRecNova'>*Digite a senha atual:</label>
-                    <input className='form-control' id='AltsenhaRecNova1' type={'password'} ></input>
-                    <span id='ErroAlterarSenhaAtual' className='AlterarSenhaVermelho'></span>
+                    <input className='form-control' id='AltsenhaRecNova1' type={'password'} required onMouseOver={validar}></input>
+                    <span id='ErroAlterarSenhaAtual' ></span>
 
                     <label id='AltSenha1RecNova'>*Digite uma nova senha:</label>
-                    <input className='form-control 1' id='AltsenhaRecNova2' type={'password'} ></input>
-                    <span id='ErroAlterarSenhaNova' className='AlterarSenhaVermelho'></span>
+                    <input className='form-control 1' id='AltsenhaRecNova2' type={'password'} required onMouseOver={validar}></input>
+                    <span id='ErroAlterarSenhaNova' ></span>
 
                     <label id='AltSenha2RecNova'>*Confirme sua senha:</label>
-                    <input className='form-control 1' id='AltsenhaRecNova3' type={'password'} required ></input>
-                    <span id='ErroAlterarSenhaConfirmar' className='AlterarSenhaVermelho'></span>
+                    <input className='form-control 1' id='AltsenhaRecNova3' type={'password'} required onMouseOver={validar} ></input>
+                    <span id='ErroAlterarSenhaConfirmar' ></span>
 
                     <div className='alert alert-danger ' hidden  id='AlterarSenhaDiferente'>
                         Você precisa digitar as senhas iguais!
                     </div>
 
-                    <button id='redefinirAltSenha' className='btn btn-success'  onClick={validar} type="submit">
+                    <button id='redefinirAltSenha' className='btn btn-success'>
                         REDEFINIR
                     </button>
 
