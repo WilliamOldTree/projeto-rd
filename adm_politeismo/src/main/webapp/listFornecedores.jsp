@@ -125,6 +125,16 @@
 
 							
 	
+<<<<<<< HEAD
+                                      <button class="btn formCrud1" type="button"  data-bs-toggle="modal" data-bs-target=".modal"  style="margin-right: 10px;">Deletar                   
+                                      </button>	 	
+							    <button class="btn formCrud2" type="submit" name="option" value="updateForm">Atualizar</button>
+					<td data-label="Razão Social"><c:out value="${fornecedor.razao}"/></td>
+							<td data-label="CNPJ"><c:out value="${fornecedor.cnpj}"/></td>
+							<td data-label="Email"><c:out value="${fornecedor.email}"/></td>
+							<td data-label="Ações">
+=======
+>>>>>>> c59244dcfa0f4ddc3271fbec40abcf4442d7dac0
                             <button class="btn formCrud1" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete-${fornecedor.id}" style="margin: 5px;">Deletar</button>	 	
 							<button class="btn formCrud2" type="submit" name="option" style="margin: 5px;" value="updateForm">Atualizar</button>
                              <!-- INÍCIO DO MODAL DE DELETAR -->

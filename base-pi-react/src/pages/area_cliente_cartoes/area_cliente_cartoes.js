@@ -7,6 +7,7 @@ import User from '../../components/asserts/icons/user.png'
 import Visa from '../../components/asserts/icons/visa.png'
 import Cartao from '../../components/asserts/icons/cartao-do-banco-home.png'
 import Lixeira from '../../components/asserts/icons/lixeira.png'
+import Modal_Cartoes from '../../components/modal_cartoes/Modal_Cartoes'
 
 function AreaCartoes() {
     return (
@@ -15,14 +16,14 @@ function AreaCartoes() {
             <div className='container'>
 
                 <Title titleIcon={User} titleText="Meus Cartões" />
+                
+                <div className='MenuAreaResponsivo'>
+            <Menu />
+            </div>
 
-        
-                <div className='MenuAreaAlinhamento5'>
-         <Menu />
-         </div>
+               
 
-
-                <div className='container Area-Cartoes'>
+                <div id='container-Cartoes'>
 
                     <ul className='listaCartoes'>
                         <li><nobr>Número do Cartão</nobr></li>
@@ -36,12 +37,14 @@ function AreaCartoes() {
 
                     <h2 className='DadosCartoes' id='AreaCredito'>CRÉDITO</h2>
 
-                    <button className='editarCartoes' type='submit'>
+                    {/* <button className='editarCartoes' type='submit'>
                         ALTERAR
-                    </button>
-                    <button className='addCartoes' type='submit'>
+                    </button> */}
+                    {/* <button className='addCartoes' type='submit'>
                         ADICIONAR
-                    </button>
+                    </button> */}
+                    <Modal_Cartoes textoBotao='ALTERAR' className='editarCartoes'/>
+                    <Modal_Cartoes textoBotao='ADICIONAR' className='addCartoes'/>
 
                     <img width="25" className='LixeiraAreaCartoes' src={Lixeira} />
                     <img width="55" className='CartaoVisaAreaCartoes' src={Cartao} />
