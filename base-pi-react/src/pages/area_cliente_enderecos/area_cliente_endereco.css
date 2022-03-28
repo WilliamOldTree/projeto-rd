@@ -3,6 +3,12 @@
     padding: 0;
     width: 100%;
 }
+.MenuAreaAlinhamento1{
+    margin-top: -5%;
+    position: relative;
+    top: 110px;
+    
+}
 
 
 .listaAreaCliente{
@@ -63,43 +69,6 @@ position: relative;
 top: -120px;
 }
 
-.editarEnderecos{
-    width: 105px;
-    height: 50px;
-    margin-left: 48%;
-    margin-top: -10%;
-    position: relative;
-    top: -235px;
-    left: 200px;
-    justify-content: center;
-    background: #F27507;
-    border-radius: 10px;
-    border: none;
-    font-weight: bold;
-    color: #FFFFFF;
-    }
-
-    .editarEnderecos:hover{
-      background-color: darkorange;
-        }
-    .addEnderecos{
-        width: 105px;
-        height: 50px;
-        margin-left: 48%;
-        margin-top: -10%;
-        position: relative;
-        top: -915px;
-        left: 195px;
-        justify-content: center;
-        background: #34A853;
-        border-radius: 10px;
-        border: none;
-        font-weight: bold;
-        color: #FFFFFF;
-        }
-        .addEnderecos:hover{
-            background-color: #34d175;
-        }
 
     .listaEnderecos1{
    list-style: none;
@@ -156,7 +125,7 @@ top: -120px;
             width: 100%;
         }
         
-        .MenuAreaResponsivo{
+        .MenuAreaAlinhamento1{
             display: none;
         }
          
@@ -215,8 +184,8 @@ top: -120px;
             margin-left: 25%;
             margin-top: -10%;
             position: relative;
-            top: -295px;
-            left: -450px;
+            top: 345px;
+            left: -530px;
             justify-content: center;
             background: #34A853;
             border-radius: 10px;
@@ -285,8 +254,8 @@ top: -120px;
             margin-left: -27%;
             margin-top: -150%;
             position: relative;
-            top: -295px;
-            left: -55px;
+            top: 749px;
+            left: -155px;
             justify-content: center;
             background: #34A853;
             border-radius: 10px;
@@ -301,7 +270,7 @@ top: -120px;
             width: 100%;
         }
         
-        .MenuAreaResponsivo{
+        .MenuAreaAlinhamento1{
             display: none;
         }
          

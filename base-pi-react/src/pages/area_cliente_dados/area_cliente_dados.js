@@ -4,6 +4,7 @@ import Footer from '../../components/footer/Footer'
 import Menu from '../../components/menu/Menu'
 import Title from '../../components/title/Title'
 import User from '../../components/asserts/icons/user.png'
+import MeusDados from '../../components/modal_meus_dados/Modal_Meus_Dados'
 
 
 function AreaDados() {
@@ -15,9 +16,11 @@ function AreaDados() {
             <div className='container'>
 
             <Title titleIcon={User} titleText="Meus Dados" />
-            <div className='MenuAreaResponsivo'>
-            <Menu />
-            </div>
+
+            <div className='MenuAreaAlinhamento'>
+         <Menu />
+         </div>
+
 
 
                 <div id='container-Dados'>
@@ -47,9 +50,7 @@ function AreaDados() {
                     </ul>
 
 
-                    <button className='editarDados' type='submit'>
-                        ALTERAR
-                    </button>
+                    <MeusDados textButton="ALTERAR"/>
 
                 </div>
 

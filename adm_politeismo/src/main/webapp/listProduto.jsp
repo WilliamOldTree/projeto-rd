@@ -124,8 +124,10 @@
 							<td><c:out value="${produto.peso}"/></td>
 							<td><c:out value="${produto.situacao}"/></td>
 							<td><c:out value="${produto.preco}"/></td>
+							<td><c:out value="${produto.quantidade}"/></td>
 <td>
 	
+<<<<<<< HEAD
                                       <button class="btn formCrud1" type="button"  data-bs-toggle="modal" data-bs-target=".modal"  style="margin-right: 10px;">Deletar                   
                                       </button>	 	
 							    <button class="btn formCrud2" type="submit" name="option" value="updateForm">Atualizar</button>
@@ -157,6 +159,9 @@
 							<td data-label="Situação"><c:out value="${produto.preco}"/></td>
 							<td data-label="Quantidade"><c:out value="${produto.quantidade}"/></td>
                             <td data-label="Ações">
+=======
+	
+>>>>>>> c59244dcfa0f4ddc3271fbec40abcf4442d7dac0
 	
                             <button class="btn formCrud1" type="button" style="margin: 5px;" data-bs-toggle="modal" data-bs-target="#modal-delete-${produto.id}" >Deletar</button>		 	
 							<button class="btn formCrud2" type="submit" style="margin: 5px;" name="option" value="updateForm">Atualizar</button>

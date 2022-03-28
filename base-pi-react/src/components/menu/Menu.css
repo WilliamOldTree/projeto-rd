@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 
-.menu-component a {
+.menu-component-itens {
     text-decoration: none;
     color          : #261C1A;
     font-weight    : bold;
     font-size      : 18px;
 }
 
-.menu-component a:hover {
+.menu-component-itens:hover {
     text-decoration: underline;
+    color: #AF9787;
 }
 
 .menu-component-lines{

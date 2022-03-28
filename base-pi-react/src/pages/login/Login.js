@@ -1,4 +1,6 @@
 import './Login.css'
+import './ValidarLogin.css'
+
 
 /* LINK PAGES */
 import { Link } from 'react-router-dom'
@@ -12,6 +14,25 @@ import Check from '../../components/asserts/icons/check.png';
 
 
 function Login() {
+    function validar(){
+        var novaSenha=document.getElementById('senha').value;
+     
+  
+       
+        
+        if (novaSenha == ""){
+          document.getElementById('ErroLoginSenhaNova').innerHTML = "Informe uma senha!";
+          document.getElementById('senha').focus();
+          
+          return false;
+      }else{
+        document.getElementById('ErroLoginSenhaNova').innerHTML = "";
+      }
+  
+    }
+     
+
+
     return (
         <>
             <Header/>
@@ -26,12 +47,13 @@ function Login() {
                             <h4 className='title-login'>Já é cliente Politeísmo Shop?</h4>
                             <div className='mb-3'>
                                 <label for='email' className='form-label email-login'>E-mail</label>
-                                <input type='email' className='form-control' id='email'/>
+                                <input type='email' className='form-control' id='email' required/>
                                 <div className ='mb-3'>
-                                <label for='senha' className ='form-label senha-login'>Senha</label>
-                                <input type ='password' className ='form-control' id='senha'/>
+                                <label for='senha' className ='form-label senha-login'  >Senha</label>
+                                <input type ='password' className ='form-control' id='senha' required/>
+                                <span id='ErroLoginSenhaNova' className='AlterarSenhaVermelho'></span>
                                 </div>
-                                <button className ='btn formlogin' type ='submit'>ENTRAR</button>
+                                <button className ='btn formlogin' type ='submit' onClick={validar}>ENTRAR</button>
                                 <p className ='link-senha'>Esqueceu a sua senha?</p>
                             </div>
                         </form>
