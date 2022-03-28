@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom'
-import Menu from '../menu/Menu';
 import './Header.css'
 import Local from '../asserts/icons/local.png'
-import MenuIcon from '../asserts/icons/menu.png'
 import Login from '../asserts/icons/login.png'
 import Logo from '../asserts/images/header-img/logo.png'
 import Lupa from '../asserts/icons/pesquisa-de-lupa (1).png'
 import Love from '../asserts/icons/love.png'
 import Sac from '../asserts/icons/sac.png'
 import Cart from '../asserts/icons/cart.png'
+import OffCanvas  from '../offCanvas/OffCanvas'
 
 function Header() {
     return (
@@ -27,7 +26,6 @@ function Header() {
                                     <input id="input-cep" type="text" className="form-control" placeholder="Digite seu cep"
                                         aria-label="Username" aria-describedby="basic-addon1" />
                                 </div>
-
                             </div>
                             <div className="col-7" id="nav-itens">
                                 <nav>
@@ -40,34 +38,7 @@ function Header() {
                                 </nav>
                             </div>
                             <div className="col-3" id="canvas">
-                                <button id="btn-canvas" type="button " data-bs-toggle="offcanvas"
-                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img
-                                        src={ MenuIcon } alt="" width="70%" /></button>
-
-                                <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-                                    aria-labelledby="offcanvasRightLabel">
-                                    <div className="offcanvas-header">
-                                        <h5 id="offcanvasRightLabel">ÁREA DO CLIENTE</h5>
-                                        <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                            aria-label="Close"></button>
-                                    </div>
-
-                                    <div className="container">
-                                        <div className="container" id="menu-canvas">
-                                            <div className="row row-canvas">
-                                                <div className="login-canvas">
-                                                    <Link to="/"><img className="perfil" src={ Login } width="10%"
-                                                        alt="login" /> <h5>Olá Jose da Silva</h5>
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className='menu-list1'>
-                                        <Menu/>
-                                        </div>
-                                    </div>
-                                </div>
+                                <OffCanvas/>
                             </div>
                         </div>
                     </div>

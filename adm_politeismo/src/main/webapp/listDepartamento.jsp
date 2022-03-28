@@ -119,11 +119,7 @@
 							<td><c:out value="${departamento.nome}"/></td>
 							<td>
 	
-                                      <button class="btn formCrud1" type="button"  data-bs-toggle="modal" data-bs-target=".modal"  style="margin-right: 10px;">Deletar                   
-                                      </button>	 	
-							    <button class="btn formCrud2" type="submit" name="option" value="updateForm">Atualizar</button>
-							<td data-label="Departamento" ><c:out value="${departamento.nome}"/></td>
-							<td data-label="Ações">
+                        
 	
                                       <button class="btn formCrud1" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete-${departamento.id}"  style="margin: 5px;">Deletar                   
                                       </button>	 		
