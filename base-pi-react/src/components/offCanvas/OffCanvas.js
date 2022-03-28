@@ -5,12 +5,10 @@ import Menu from '../menu/Menu';
 import MenuIcon from '../asserts/icons/menu.png'
 import Button from '@restart/ui/esm/Button';
 import Login from '../asserts/icons/login.png'
-
 import './OffCanvas.css'
 
 function OffCanvas() {
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 

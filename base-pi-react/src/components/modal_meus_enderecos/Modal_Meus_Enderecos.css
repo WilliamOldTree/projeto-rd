@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.div-form-enderecos {
+    margin-top: 20px;
+}
+
+.title-form-enderecos {
+    font-size  : 25px;
+    color      : #261C1A;
+    font-weight: bold;
+}
+
+.label-form-enderecos {
+    font-size  : 16px;
+    color      : #3C4043;
+    font-weight: 700;
+}
+
+
+.input-form-enderecos {
+    border: 1px solid #979797;
+}
+
+.btn-form-enderecos {
+    background   : #F27507;
+    border-radius: 10px;
+    border       : none;
+    font-weight  : bold;
+    color        : #FFFFFF;
+    width        : 105px;
+    height       : 40px;
+}
+
+.btn-form-enderecos:hover,
+.btn-form-enderecos:focus {
+    background-color: darkorange;
+    color           : #FFFFFF;
+}
+
+
+.editarEnderecos {
+    width          : 105px;
+    height         : 50px;
+    margin-left    : 48%;
+    margin-top     : -10%;
+    position       : relative;
+    top            : -186px;
+    left           : 240px;
+    justify-content: center;
+    background     : #F27507;
+    border-radius  : 10px;
+    border         : none;
+    font-weight    : bold;
+    color          : #FFFFFF;
+}
+
+.editarEnderecos:hover,
+.editarEnderecos:focus {
+    background-color: darkorange;
+}
+
+.addEnderecos {
+    width          : 105px;
+    height         : 50px;
+    margin-left    : 48%;
+    margin-top     : -10%;
+    position       : relative;
+    top            : -210px;
+    left           : 110px;
+    justify-content: center;
+    background     : #34A853;
+    border-radius  : 10px;
+    border         : none;
+    font-weight    : bold;
+    color          : #FFFFFF;
+}
+
+.addEnderecos:hover,
+.addEnderecos:focus {
+    background-color: #34d175;
+}
+
+@media (max-width: 600px) {
+    .modal-form-enderecos {
+        padding: 0px;
+    }
+
+    .div-form-enderecos {
+        margin-top: 30px;
+    }
+
+    .input-form-enderecos {
+        height: 50px;
+    }
+
+}
