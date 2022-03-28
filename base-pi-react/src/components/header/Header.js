@@ -11,8 +11,7 @@ import OffCanvas from '../offCanvas/OffCanvas'
 import Biblia from '../asserts/images/images-home/b_blia-sagrada-cnbb.jpg'
 import Sagrada from '../asserts/images/images-home/imagem-resina-sagrada-familia.jpg'
 import ModalCarrinho from '../modal_cart/Modal_Cart'
-
-import Lixeira from '../asserts/icons/lixeira-de-reciclagem.png'
+import Lixeira from '../../components/asserts/icons/lixeira.png';
 
 function Header() {
     return (
@@ -92,40 +91,40 @@ function Header() {
                                                     </div>
 
                                                     <p></p>
-                                                    
+
                                                     <div className="modal-body">
                                                         <div className="carrinho">
                                                             <div className="row">
-                                                             
+
                                                                 <div className="row">
                                                                     <div className="col-3">
                                                                         <img src={Sagrada} width="100%" />
                                                                     </div>
-                                                                   
+
                                                                     <div className="sFamilia col-7">
                                                                         <p>Imagem Sagrada Família Resina</p>
                                                                         <strong>R$ 30,00</strong>
                                                                     </div>
-                                                                
+
                                                                     <div className=" lixeira col-1">
                                                                         <button className="btn"><img className="lixeira"
                                                                             src={Lixeira}
                                                                             alt="" /></button>
-                                                                            
+
                                                                     </div>
                                                                 </div>
                                                                 <p></p>
                                                                 <p></p>
 
-                                                 <hr/>
-                                                                
+                                                                <hr />
+
 
                                                                 <div className="row">
                                                                     <div className="col-3">
                                                                         <img src={Biblia}
                                                                             width="100%" />
                                                                     </div>
-                                                                    
+
                                                                     <div className="BibliaS col-7">
                                                                         <p>Bíblia Sagrada de Bolso Ave Maria</p>
                                                                         <strong>R$ 40,00</strong>
@@ -137,7 +136,7 @@ function Header() {
                                                                             alt="" /></button>
                                                                     </div>
                                                                 </div>
-                                                            </div> 
+                                                            </div>
                                                             <hr />
                                                             <div className="col-12">
                                                                 <div><a href="area_cliente_favoritos">
@@ -160,11 +159,11 @@ function Header() {
                                 </div>
 
                                 {/* Button trigger modal Carrinho */}
-                             
+
                                 {/* Button trigger modal Carrinho */}
                                 <div className="col-3">
                                     <ModalCarrinho />
-                              
+
 
                                     {/* Modal Carrinho */}
                                     <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"

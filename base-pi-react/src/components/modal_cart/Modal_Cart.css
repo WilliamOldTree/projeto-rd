@@ -37,14 +37,13 @@
 
 .btnFinal,
 .btnFinal:focus {
-    width           : 200px;
-    height          : 43px;
-    background-color: rgb(240, 126, 33);
-    border          : none;
-    color           : white;
-    border-radius   : 10px;
-    font-size       : 18px;
-    margin          : 10px 0px;
+    background-color: #F27507;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 150px;
+    height: 35px;
+    font-weight: bolder;
 }
 
 .btnFinal:hover {
