@@ -95,7 +95,7 @@ public class HomeController extends HttpServlet {
 				this.user.insert(user1);
 			}
 		}
-		response.sendRedirect("HomeController");
+		response.sendRedirect("index.jsp");
 	}
 	
 	

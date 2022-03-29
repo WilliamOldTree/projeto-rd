@@ -14,13 +14,13 @@ import br.com.rd.model.UserADM;
  * Servlet implementation class LoginController
  */
 @WebServlet("/LoginController")
-public class loginController extends HttpServlet {
+public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     LoginDao dao = new LoginDao();
     UserADM u = new UserADM();
     int r;
     
-    public loginController() {
+    public LoginController() {
         super();
 //       this.dao = new LoginDao();
 //       this.u = new UserADM();
