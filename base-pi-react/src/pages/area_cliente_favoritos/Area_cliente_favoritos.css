@@ -103,14 +103,14 @@ body {
 @media(max-width: 500px) {
 
     .table,
-    .table thead,
+    .table thead.thead-favoritos,
     .table tr,
     .table th.area-favoritos {
         display: block;
         width  : 100%;
     }
 
-    .table tr {
+    .table tr.tr-favoritos {
         margin-bottom: 15px;
     }
 

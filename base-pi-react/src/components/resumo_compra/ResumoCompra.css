@@ -3,5 +3,15 @@
 .list_resumo_compra{
     display: flex;
     flex-direction: column;
-    
+}
+
+@media(max-width: 500px){
+	.tr_listCompra{
+		display: block;
+		width: 100%;
+	}
+
+	.tr_listCompra{
+		margin-bottom:50px;
+	}
 }

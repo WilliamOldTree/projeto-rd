@@ -60,8 +60,7 @@ function Pagamento() {
                     <Col className='container mt-3 p-3' id='pay_total'>
                         <h5>Produtos = R$ 120,00</h5>
                         <h5>Frete = R$ 15,00</h5>
-                        <h2>Total = 135,00</h2>  overflow: auto;
-        margin  : auto;
+                        <h2>Total = 135,00</h2> 
                         <h5>Parcelas 3 x R$ 45,00</h5><img src={Visa} alt="" />
                         <Link className="change_card" to="./entregas"><h6>Conheça outras formas de pagamento</h6></Link>
                     </Col>

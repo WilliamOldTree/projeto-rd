@@ -16,7 +16,7 @@ function detalhesPedido() {
                 <div className='detalhesPedidoCliente'>
                     <div className='NumeroPedido'>
                         <table className='table'>
-                            <thead>
+                            <thead className="thead-detalhesPedidos">
                                 <tr className='tr-detalhespedido'>
                                     <th className='detalhesPedido-list'>
                                         <div className="status-pedidoDetalhes"></div>
