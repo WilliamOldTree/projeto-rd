@@ -147,14 +147,14 @@ body {
 @media(max-width: 500px) {
 
     .table,
-    .table thead,
-    .table tr,
+    .table thead.thead-detalhesPedidos,
+    .table tr.tr-detalhespedido,
     .table th.detalhesPedido-list {
         display: block;
         width  : 100%;
     }
 
-    .table tr {
+    .table tr.tr-detalhespedido {
         margin-bottom: 15px;
     }
 

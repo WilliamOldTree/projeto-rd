@@ -8,17 +8,17 @@ const ListCompra = (props) => {
         <Container>
             <Row>
                 <Col className="list_resumo_compra">
-                    <Table>
-                        <thead>
-                            <tr>
+                    <Table striped bordered hover className="table_listCompra">
+                        <thead className="thead-listCompra">
+                            <tr className="tr_listCompra">
                                 <th className="text-center pb-3">Produto</th>
                                 <th className="text-center pb-3">Descrição</th>
                                 <th className="text-center pb-3">Valor</th>
                                 <th className="text-center pb-3">Quantidade</th>
-                                <th className="text-center pb-3">Excluir</th>
+                                <th className="text-center pb-3"></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="tbody-listCompra">
                             {props.children}
                         </tbody>
                     </Table>

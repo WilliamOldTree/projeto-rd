@@ -33,7 +33,7 @@ function Pedidos() {
                     {/* BEGGIN LISTAGEM DE PEDIDOS */}
                     <div className='col-9 col-sm-9 col-xs-9 PedidosCliente'>
                         <table className='table'>
-                            <thead>
+                            <thead className="thead-pedidos">
                                 <div className="container area-pedido">
                                     <tr className='tr-pedidos'>
                                         <th className='pedido-list'>
