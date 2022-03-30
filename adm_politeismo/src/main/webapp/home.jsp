@@ -44,6 +44,13 @@
                                 <div class=menu-list1>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
                                     <hr width="160">
+                                                     <%
+    
+ String usuario = (String) session.getAttribute("email");
+    
+   if(usuario == null){
+	   response.sendRedirect("index.jsp");
+   }       %>
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="DepartamentoController">Departamentos
                                     <hr width="160">
@@ -66,8 +73,15 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController">Pedidos
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="./index.jsp">Sair
-                                </a>
+                                  <form action="HomeController" method="post">    
+                                   <button name="option" value="sair" type="submit" style="background: white;
+                                   border: none;
+                                   margin-left: 9px;
+                                   color:  #516673;
+                                   ">
+                                 Sair
+                                          </button> 
+                             </form> 
                                 </div>
                             </div>
                         </div>

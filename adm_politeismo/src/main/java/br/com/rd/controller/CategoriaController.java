@@ -15,7 +15,6 @@ import br.com.rd.model.Categoria;
 @WebServlet("/CategoriaController")
 public class CategoriaController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
 	private CategoriaDao cat;
 
        
@@ -55,9 +54,16 @@ public class CategoriaController extends HttpServlet {
 			case ("insert"):
 				insertCategoria(request, response);
 			break;
+			case ("sair"):
+			     Sair(request, response);
+			break;
 			default:
 				selectAllCategorias(request, response);
 		}
+	}
+	
+	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		   response.sendRedirect("deslogar.jsp");
 	}
 	
 

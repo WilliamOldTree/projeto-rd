@@ -53,9 +53,16 @@ public class ProdutoController extends HttpServlet {
 			case ("insert"):
 				insertProduto(request, response);
 			break;
+			case ("sair"):
+				Sair(request, response);
+			break;
 			default:
 				selectAllProdutos(request, response);
 		}
+	}
+	
+	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		   response.sendRedirect("deslogar.jsp");
 	}
 	
 

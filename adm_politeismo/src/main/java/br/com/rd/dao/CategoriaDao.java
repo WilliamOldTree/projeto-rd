@@ -1,4 +1,4 @@
-																																																										package br.com.rd.dao;
+package br.com.rd.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

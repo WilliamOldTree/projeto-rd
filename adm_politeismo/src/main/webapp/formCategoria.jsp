@@ -41,7 +41,7 @@
                                     </div>
                                 </div>
                                 <div class=menu-list1>
-                               <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
                                     <hr width="160">
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="DepartamentoController">Departamentos
@@ -49,6 +49,14 @@
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="CategoriaController">Categorias
                                     <hr width="160">
+                                    
+                                                                                 <%
+    
+ String usuario = (String) session.getAttribute("email");
+    
+   if(usuario == null){
+	   response.sendRedirect("index.jsp");
+   }       %>
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="ProdutoController">Produtos
                                     <hr width="160">
@@ -65,16 +73,21 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController">Pedidos
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="./index.jsp">Sair
-                                </a>
+                              <form action="CategoriaController" method="post">    
+                                   <button name="option" value="sair" type="submit" style="background: white;
+                                   border: none;
+                                   margin-left: 9px;
+                                   color:  #516673;
+                                   ">
+                                 Sair
+                                          </button> 
+                             </form> 
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-8" id="nav-itens">
                         <nav>
-                            <h4 id="principal"><b>PAINEL DE CONTROLE</b></h4>
-                        </nav>
                     </div>
                     <div class="col-2" id="cep">
                         <div>

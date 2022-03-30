@@ -25,8 +25,8 @@ public class Departamento {
 		this.nome = nome;
 	}
 	
-	@Override
+	
 	public String toString() {
-		return "Categoria [id=" + id + ", nome=" + nome + "]";
+		return "Departamento [id=" + id + ", nome=" + nome + "]";
 	}
 }

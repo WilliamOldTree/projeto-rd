@@ -64,12 +64,29 @@
                                  <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteJuridicaController">Clientes Juridicos
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController">Pedidos
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController"
+                             
+              >Pedidos
+                 <%
+    
+ String usuario = (String) session.getAttribute("email");
+    
+   if(usuario == null){
+	   response.sendRedirect("index.jsp");
+   }       %>
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="./index.jsp">Sair
-                                </a>
-                                </div>
+                                 <form action="PedidosController" method="post">    
+                                   <button name="option" value="sair" type="submit" style="background: white;
+                                   border: none;
+                                   margin-left: 9px;
+                                   color:  #516673;
+                                   ">
+                                 Sair
+                                          </button> 
+                             </form> 
+                              </div>
+                       
                             </div>
                         </div>
                     </div>

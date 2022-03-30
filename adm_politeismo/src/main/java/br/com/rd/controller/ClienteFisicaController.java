@@ -33,12 +33,19 @@ public class ClienteFisicaController extends HttpServlet {
 			option = "Entrou";
 		}
 		switch(option) {
+
+			case ("sair"):
+			     Sair(request, response);
+			break;
 			default:
 				selectAllClienteFisica(request, response);
 		}
 	}
 	
-
+	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		   response.sendRedirect("deslogar.jsp");
+	}
+	
 	private void selectAllClienteFisica(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.setAttribute("listaClienteFisica", this.fisicaDao.selectAll());
 		request.getRequestDispatcher("listClienteFisico.jsp").forward(request, response);
