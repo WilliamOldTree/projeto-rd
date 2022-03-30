@@ -37,10 +37,10 @@
 	 
 				<label class="form-label">Email:</label><input style="" class="form-control" type="email" name="email" required/>
 				<label class="form-label" style="padding-top:10px; ">Senha:</label><input style="padding-top:10px; " class="form-control" type="password" name="senha" required/>
+		        <p style="color:red; ">${requestScope.message}</p>
 		
 			     <br>
 				<button class="btn formbtn" type="submit"  role="button">Entrar</button>
-    
 	          </form>
 	          <form action="HomeController" method="post">
 	      
