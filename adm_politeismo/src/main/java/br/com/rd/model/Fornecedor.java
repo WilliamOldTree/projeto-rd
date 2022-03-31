@@ -6,6 +6,7 @@ public class Fornecedor {
 	private String razao;
 	private String cnpj;
 	private String email;
+	private Boolean status_fornecedor;
 
 
 	public Fornecedor(String razao, String cnpj, String email) {
@@ -59,6 +60,16 @@ public class Fornecedor {
 	
 	public String toString() {
 		return "Fornecedor [id=" + id + ", razao=" + razao + ", cnpj=" + cnpj + ", email=" + email + "]";
+	}
+
+
+	public Boolean getStatus_fornecedor() {
+		return status_fornecedor;
+	}
+
+
+	public void setStatus_fornecedor(Boolean status_fornecedor) {
+		this.status_fornecedor = status_fornecedor;
 	}
 	
 	

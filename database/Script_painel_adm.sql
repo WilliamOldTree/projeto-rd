@@ -2,7 +2,7 @@
 DROP DATABASE bd_politeismo;
 create database bd_politeismo;
 use bd_politeismo;
-
+select * from departamento where status_departamento != 0 order by id_departamento ;
 --                                                         TABLES
 
 CREATE TABLE USER_ADM
@@ -29,17 +29,16 @@ DESCONTO								DOUBLE												NOT NULL,
 PRIMARY KEY								(ID_PRODUTO_DESTAQUE)
 );
 
-
 CREATE TABLE PRODUTO					
 (
 ID_PRODUTO								INT										NOT NULL 				AUTO_INCREMENT,
 DESCRICAO								VARCHAR(255) 							NOT NULL,
-VOLUME									VARCHAR(255) 									NULL,
-PESO								    	VARCHAR(255) 										NULL,
-SITUACAO								VARCHAR(15)								NOT NULL,
-PRECO									VARCHAR(255) 									NOT NULL,
-ESTOQUE_PRODUTO							INT										NULL,
-PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE	INT										NULL,
+VOLUME									DOUBLE									NULL,
+PESO									DOUBLE									NULL,
+PRECO									DOUBLE									NOT NULL,
+ESTOQUE_PRODUTO							INT										NOT NULL,
+PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE	INT										NOT NULL,
+STATUS_PRODUTO                          BOOLEAN                                 NOT NULL,
 PRIMARY KEY 							(ID_PRODUTO),
 FOREIGN KEY								(ESTOQUE_PRODUTO)			 			REFERENCES				ESTOQUE				(ID_ESTOQUE),  
 FOREIGN KEY								(PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE)  REFERENCES 				PRODUTO_DESTAQUE	(ID_PRODUTO_DESTAQUE) 
@@ -49,8 +48,9 @@ CREATE TABLE FORNECEDOR
 (
 ID_FORNECEDOR							INT										NOT NULL				AUTO_INCREMENT,
 RAZAO_SOCIAL							VARCHAR(100)							NOT NULL,
-CNPJ									VARCHAR(19)								NOT NULL				UNIQUE key,
+CNPJ									VARCHAR(19)								NOT NULL				UNIQUE KEY,
 EMAIL									VARCHAR(100)							NOT NULL,
+STATUS_FORNECEDOR                       BOOLEAN                                 NOT NULL,
 PRIMARY KEY								(ID_FORNECEDOR)
 );
 
@@ -67,6 +67,7 @@ CREATE TABLE DEPARTAMENTO
 (
 ID_DEPARTAMENTO							INT										NOT NULL				AUTO_INCREMENT,
 NOME									VARCHAR(50)								NOT NULL,
+STATUS_DEPARTAMENTO                     BOOLEAN                                 NOT NULL,
 PRIMARY KEY								(ID_DEPARTAMENTO)
 );
 
@@ -74,6 +75,7 @@ CREATE TABLE CATEGORIA
 (
 ID_CATEGORIA							INT										NOT NULL				AUTO_INCREMENT,
 NOME									VARCHAR(50)								NOT NULL,
+STATUS_CATEGORIA                        BOOLEAN                                 NOT NULL,
 PRIMARY KEY								(ID_CATEGORIA)
 );
 
@@ -375,31 +377,31 @@ FOREIGN KEY								(FAVORITOS_ID_FAVORITOS)				REFERENCES 		FAVORITOS		(ID_FAVOR
 
 --                                                         INSERTS
 
-insert into DEPARTAMENTO (ID_DEPARTAMENTO, NOME) values (1, 'Catolica');
-insert into DEPARTAMENTO (ID_DEPARTAMENTO, NOME) values (2, 'Evangelica');
-insert into DEPARTAMENTO (ID_DEPARTAMENTO, NOME) values (3, 'Espirita');
-insert into DEPARTAMENTO (ID_DEPARTAMENTO, NOME) values (4, 'Africana');
-insert into DEPARTAMENTO (ID_DEPARTAMENTO, NOME) values (5, 'Budista');
-insert into DEPARTAMENTO (ID_DEPARTAMENTO, NOME) values (6, 'Judaica');
+insert into DEPARTAMENTO (ID_DEPARTAMENTO, NOME, STATUS_DEPARTAMENTO) values (1, 'Catolica', true);
+insert into DEPARTAMENTO (ID_DEPARTAMENTO, NOME, STATUS_DEPARTAMENTO) values (2, 'Evangelica', true);
+insert into DEPARTAMENTO (ID_DEPARTAMENTO, NOME, STATUS_DEPARTAMENTO) values (3, 'Espirita', true);
+insert into DEPARTAMENTO (ID_DEPARTAMENTO, NOME, STATUS_DEPARTAMENTO) values (4, 'Africana', true);
+insert into DEPARTAMENTO (ID_DEPARTAMENTO, NOME, STATUS_DEPARTAMENTO) values (5, 'Budista', true);
+insert into DEPARTAMENTO (ID_DEPARTAMENTO, NOME, STATUS_DEPARTAMENTO) values (6, 'Judaica', true);
 
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (1, 'Artigos');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (2, 'Adesivos');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (3, 'Adornos');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (4, 'Aneis');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (5, 'Biblias');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (6, 'Benta');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (7, 'Calices');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (8, 'Chaveiros');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (9, 'Colares');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (10, 'Crucifixos');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (11, 'Diversos');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (12, 'Escapularios');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (13, 'Imagens');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (14, 'Livros');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (15, 'Mantas');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (16, 'Sacolas e Mochilas');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (17, 'Tercos');
-insert into CATEGORIA (ID_CATEGORIA, NOME) values (18, 'Vestuario');
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (1, 'Artigos', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (2, 'Adesivos', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (3, 'Adornos', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (4, 'Aneis', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (5, 'Biblias', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (6, 'Benta', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (7, 'Calices', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (8, 'Chaveiros', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (9, 'Colares', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (10, 'Crucifixos', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (11, 'Diversos', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (12, 'Escapularios', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (13, 'Imagens', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (14, 'Livros', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (15, 'Mantas', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (16, 'Sacolas e Mochilas', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (17, 'Tercos', true);
+insert into CATEGORIA (ID_CATEGORIA, NOME, STATUS_CATEGORIA) values (18, 'Vestuario', true);
 
 
 insert into ESTOQUE (ID_ESTOQUE, QUANTIDADE) values (1, 50);
@@ -417,12 +419,13 @@ insert into PRODUTO_DESTAQUE (ID_PRODUTO_DESTAQUE, DESCONTO) values (5, 10);
 insert into PRODUTO_DESTAQUE (ID_PRODUTO_DESTAQUE, DESCONTO) values (6, 10);
 insert into PRODUTO_DESTAQUE (ID_PRODUTO_DESTAQUE, DESCONTO) values (7, 10);
 
-insert into PRODUTO (ID_PRODUTO, DESCRICAO, VOLUME, PESO, SITUACAO, PRECO, ESTOQUE_PRODUTO, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE) values (1, 'Terço de Nossa Senhora da Salette', '3,0', '0.2', 'ATIVO', '60,00', 1, 1);
-insert into PRODUTO (ID_PRODUTO, DESCRICAO, VOLUME, PESO, SITUACAO, PRECO, ESTOQUE_PRODUTO, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE) values (2, 'Capelinha Nossa Senhora da Salette', '2,0', 1.2,'ATIVO', '70,00', 2, 2);
-insert into PRODUTO (ID_PRODUTO, DESCRICAO, VOLUME, PESO, SITUACAO, PRECO, ESTOQUE_PRODUTO, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE) values (3, 'Rolo de Torá pequeno', '3,0', '0,2', 'ATIVO', '60,00', 3, 3);
-insert into PRODUTO (ID_PRODUTO, DESCRICAO, VOLUME, PESO, SITUACAO, PRECO, ESTOQUE_PRODUTO, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE) values (4, 'Pavios para Shabat', '3,0', '0,2','ATIVO', '60,00', 4, 4);
-insert into PRODUTO (ID_PRODUTO, DESCRICAO, VOLUME, PESO, SITUACAO, PRECO, ESTOQUE_PRODUTO, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE) values (5, 'Cordão Africano Amarelo', '3,0', '0,2', 'ATIVO', '60,00', 5, 5);
-insert into PRODUTO (ID_PRODUTO, DESCRICAO, VOLUME, PESO, SITUACAO, PRECO, ESTOQUE_PRODUTO, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE) values (6, 'Buda Tailandês da Sorte', '3,0', '0,2','ATIVO', '60,00', 6, 6);
+insert into PRODUTO ( DESCRICAO, VOLUME, PESO, PRECO, ESTOQUE_PRODUTO, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE, STATUS_PRODUTO) values ( 'TEXTO DESCRICAO prod1', 3.0, 0.2, 60.00, 1, 1, true);
+insert into PRODUTO ( DESCRICAO, VOLUME, PESO, PRECO, ESTOQUE_PRODUTO, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE, STATUS_PRODUTO) values ( 'TEXTO DESCRICAO prod2', 2.0, 1.2, 70.00, 2, 2, true);
+insert into PRODUTO ( DESCRICAO, VOLUME, PESO, PRECO, ESTOQUE_PRODUTO, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE, STATUS_PRODUTO) values ( 'TEXTO DESCRICAO prod3', 3.0, 0.2, 60.00, 3, 3, true);
+insert into PRODUTO (DESCRICAO, VOLUME, PESO, PRECO, ESTOQUE_PRODUTO, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE, STATUS_PRODUTO) values ( 'TEXTO DESCRICAO prod4', 3.0, 0.2, 60.00, 4, 4, true);
+insert into PRODUTO ( DESCRICAO, VOLUME, PESO, PRECO, ESTOQUE_PRODUTO, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE, STATUS_PRODUTO) values ( 'TEXTO DESCRICAO prod5', 3.0, 0.2, 60.00, 5, 5, true);
+insert into PRODUTO ( DESCRICAO, VOLUME, PESO, PRECO, ESTOQUE_PRODUTO, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE, STATUS_PRODUTO) values ( 'TEXTO DESCRICAO prod6', 3.0, 0.2, 60.00, 6, 6, true);
+
 insert into DEPARTAMENTO_CATEGORIA (DEPARTAMENTO_ID_DEPARTAMENTO, CATEGORIA_ID_CATEGORIA, PRODUTO_ID_PRODUTO) values (1, 1, 1);
 insert into DEPARTAMENTO_CATEGORIA (DEPARTAMENTO_ID_DEPARTAMENTO, CATEGORIA_ID_CATEGORIA, PRODUTO_ID_PRODUTO) values (1, 2, 1);
 insert into DEPARTAMENTO_CATEGORIA (DEPARTAMENTO_ID_DEPARTAMENTO, CATEGORIA_ID_CATEGORIA, PRODUTO_ID_PRODUTO) values (1, 3, 1);
@@ -432,12 +435,12 @@ insert into DEPARTAMENTO_CATEGORIA (DEPARTAMENTO_ID_DEPARTAMENTO, CATEGORIA_ID_C
 insert into DEPARTAMENTO_CATEGORIA (DEPARTAMENTO_ID_DEPARTAMENTO, CATEGORIA_ID_CATEGORIA, PRODUTO_ID_PRODUTO) values (1, 7, 1);
 insert into DEPARTAMENTO_CATEGORIA (DEPARTAMENTO_ID_DEPARTAMENTO, CATEGORIA_ID_CATEGORIA, PRODUTO_ID_PRODUTO) values (1, 8, 1);
 
-insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL) values ('Francisco e Clara LTDA', 15012705000104, 'franciscoeclara@hotmail.com');
-insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL) values ('Gospel Atacado Evangelico', 31451211000174, 'gospelatacado@gmail.com');
-insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL) values ('Casa do cigano artigos religiosos', 15336171000325, 'sac@casadocigano.com.br');
-insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL) values ('Espirita Andre Luiz - Mundo Maior', 65080616000165, 'sacmundomaior@feal.com.br');
-insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL) values ('Conto de Fadas Distribuidora', 08892821000191, 'contodefadas@distribuidora.com.br');
-insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL) values ('Produtos cristaos e judaico messianico', 33977029000187, 'camiyla-seeber@hotmail.com');
+insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Francisco e Clara LTDA', 15012705000104, 'franciscoeclara@hotmail.com', true);
+insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Gospel Atacado Evangelico', 31451211000174, 'gospelatacado@gmail.com', true);
+insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Casa do cigano artigos religiosos', 15336171000325, 'sac@casadocigano.com.br', true);
+insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Espirita Andre Luiz - Mundo Maior', 65080616000165, 'sacmundomaior@feal.com.br', true);
+insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Conto de Fadas Distribuidora', 08892821000191, 'contodefadas@distribuidora.com.br', true);
+insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Produtos cristaos e judaico messianico', 33977029000187, 'camiyla-seeber@hotmail.com', true);
 
 insert into PRODUTO_FORNECEDOR (PRODUTO_ID_PRODUTO, FORNECEDOR_ID_FORNECEDOR) values (1, 1);
 insert into PRODUTO_FORNECEDOR (PRODUTO_ID_PRODUTO, FORNECEDOR_ID_FORNECEDOR) values (2, 1);

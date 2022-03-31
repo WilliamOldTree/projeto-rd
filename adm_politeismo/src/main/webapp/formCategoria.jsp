@@ -10,6 +10,13 @@
 <link rel="stylesheet" href="./css/formCategoria.css">
 <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+            <%
+    
+
+    
+   if( session.getAttribute("email")== null){
+	   response.sendRedirect("index.jsp");
+   }       %>
 </head>
 <body>
     <header>
@@ -47,18 +54,11 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="DepartamentoController">Departamentos
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="CategoriaController">Categorias
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="FormCategoriaController">Categorias
                                     <hr width="160">
-                                    
-                                                                                 <%
-    
- String usuario = (String) session.getAttribute("email");
-    
-   if(usuario == null){
-	   response.sendRedirect("index.jsp");
-   }       %>
-                                </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ProdutoController">Produtos
+                                    									                                                                      
+               
+         <a class="nav-link active" id="navbar-brand" aria-current="page" href="ProdutoController">Produtos
                                     <hr width="160">
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="FornecedorController">Fornecedores
@@ -73,7 +73,7 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController">Pedidos
                                     <hr width="160">
                                 </a>
-                              <form action="CategoriaController" method="post">    
+                               <form action="LogoutController" method="post">    
                                    <button name="option" value="sair" type="submit" style="background: white;
                                    border: none;
                                    margin-left: 9px;
@@ -104,19 +104,23 @@
             
             
     <div class="form">
-	<form action="CategoriaController" method="post">
+	<form action="FormCategoriaController" method="post">
 		<c:choose>
 			<c:when test="${categoria == null }">
+			
+			
 				<label class="form-label">Categoria:</label><input style="" class="form-control" type="text" name="nome" required/>
 			     <br>
-			     
+
+                   </a>
 			     
 <button class="btn formbtn" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete-${categoria.id}"  style="margin-right: 10px;">Salvar                   
                                       </button>	 	
                                       	<div class="modal fade" id="modal-delete-${categoria.id }" tabindex="-1" aria-labelledby="inicioModal" aria-hidden="true">
-									<form action="CategoriaController" method="post">
+									<form action="FormCategoriaController" method="post">
 									
-									
+
+                       
 									<input id="categoria" name="categoria" type="hidden" value="" />
 									
 										<div class="modal-dialog ">
@@ -176,6 +180,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"></script>
+    
 </body>
 
 </html>

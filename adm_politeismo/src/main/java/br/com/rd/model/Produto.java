@@ -5,36 +5,37 @@ public class Produto {
 	private String descricao;
 	private String volume;
 	private String peso;
-	private String situacao;
 	private String preco;
 	private Integer quantidade;
 	private Integer desconto;
+	private Boolean status_produto;
 
-	public Produto(String descricao, String volume, String peso, String situacao, String preco, Integer quantidade, Integer desconto) {
+	public Produto(String descricao, String volume, String peso, String preco, Integer quantidade) {
 		super();
 		this.descricao = descricao;
 		this.volume = volume;
 		this.peso = peso;
-		this.situacao = situacao;
 		this.preco = preco;
 		this.quantidade = quantidade;
-		this.desconto = desconto;
 	}
+
+
+
+	public Produto(String descricaoBack1, String volumeBack1, String pesoBack1, String precoBack1, Integer quantidadeBack1,
+			Integer descontoBack1) {
+		this.descricao = descricaoBack1;
+		this.volume = volumeBack1;
+		this.peso = pesoBack1;
+		this.preco = precoBack1;
+		this.quantidade = quantidadeBack1;	
+		this.desconto = descontoBack1;	
+
+		}
 
 	@Override
 	public String toString() {
 		return "Produto [id=" + id + ", descricao=" + descricao + ", volume=" + volume + ", peso=" + peso
-				+ ", situacao=" + situacao + ", preco=" + preco + ", quantidade=" + quantidade + "]";
-	}
-
-	public Produto(String descricao2, String volume2, String peso2, String situacao2, String preco2,
-			Integer quantidade2) {
-		this.descricao = descricao2;
-		this.volume = volume2;
-		this.peso = peso2;
-		this.situacao = situacao2;
-		this.preco = preco2;
-		this.quantidade = quantidade2;
+				+ ", situacao=" + ", preco=" + preco + ", quantidade=" + quantidade + "]";
 	}
 
 	public Integer getDesconto() {
@@ -77,14 +78,6 @@ public class Produto {
 		this.peso = peso;
 	}
 	
-	public String getSituacao() {
-		return situacao;
-	}
-	
-	public void setSituacao(String situacao) {
-		this.situacao = situacao;
-	}
-	
 	public String getPreco() {
 		return preco;
 	}
@@ -99,5 +92,13 @@ public class Produto {
 
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
+	}
+
+	public Boolean getStatus_produto() {
+		return status_produto;
+	}
+
+	public void setStatus_produto(Boolean status_produto) {
+		this.status_produto = status_produto;
 	}
 }
