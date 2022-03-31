@@ -69,7 +69,7 @@ public class FornecedorController extends HttpServlet {
 	}
 	
 	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		   response.sendRedirect("deslogar.jsp");
+		request.getRequestDispatcher("deslogar.jsp").forward(request, response);
 	}
 
 	private void showInsertFornecedor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
