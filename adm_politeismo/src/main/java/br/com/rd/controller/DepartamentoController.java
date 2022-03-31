@@ -96,7 +96,7 @@ public class DepartamentoController extends HttpServlet {
 		String idBack = request.getParameter("id");
 		if (idBack != null) {
 			Integer id = Integer.parseInt(idBack);
-			this.dep.exclusionDepartamento(id);
+			this.dep.removeDepartamento(id);
 		}
 		response.sendRedirect("DepartamentoController");
 	}

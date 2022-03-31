@@ -105,7 +105,7 @@ public class FornecedorController extends HttpServlet {
 		String idBack = request.getParameter("id");
 		if (idBack != null) {
 			Integer id = Integer.parseInt(idBack);
-			this.fc.exclusionFornecedor(id);
+			this.fc.removeFornecedor(id);;
 		}
 		response.sendRedirect("FornecedorController");
 	}

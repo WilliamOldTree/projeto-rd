@@ -29,8 +29,8 @@
 	
    #texto {
 	position: relative;
-    top: -26px;
-    left: 200px
+	top: -25px;
+	left: 205px;
 }
 
 @media (max-width:1024px){

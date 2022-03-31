@@ -50,9 +50,7 @@ public class LoginController extends HttpServlet {
 				session.setAttribute("email", username);
 			}
 		}else {
-			String message="Email ou Senha inválidos";
-			request.setAttribute("message", message);
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			response.sendRedirect("index.jsp");
 		}
 	}
 }	

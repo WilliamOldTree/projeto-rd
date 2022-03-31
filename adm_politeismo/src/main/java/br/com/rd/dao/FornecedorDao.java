@@ -17,7 +17,7 @@ public void insert(Fornecedor fornecedor) {
 	Connection con = c.getConnection();
 	
 	try {
-		PreparedStatement p = con.prepareStatement("insert into FORNECEDOR (RAZAO_SOCIAL,CNPJ,EMAIL, STATUS_FORNECEDOR) values (?,?,?,true)");
+		PreparedStatement p = con.prepareStatement("insert into FORNECEDOR (RAZAO_SOCIAL,CNPJ,EMAIL) values (?,?,?)");
 		p.setString(1, fornecedor.getRazao());
 		p.setString(2, fornecedor.getCnpj());
 		p.setString(3, fornecedor.getEmail());
@@ -37,7 +37,7 @@ public ArrayList<Fornecedor> selectAll(){
 	Connection con = c.getConnection();
 	ArrayList<Fornecedor> lista = new ArrayList<Fornecedor>();
 	try {
-		PreparedStatement p = con.prepareStatement("select * from fornecedor where status_fornecedor != 0 order by id_fornecedor;");
+		PreparedStatement p = con.prepareStatement("select * from fornecedor order by id_fornecedor ;");
 		ResultSet r = p.executeQuery();			
 		
 		while (r.next()) {
@@ -120,23 +120,6 @@ public Fornecedor selectById(Integer id) {
 		e.printStackTrace();
 	}
 	return fc;
-}
-
-public void exclusionFornecedor(Integer id) {
-	Conexao c = Conexao.getInstance();
-	Connection con = c.getConnection();
-	
-	try {
-		PreparedStatement p = con.prepareStatement("update fornecedor set status_fornecedor = 0 where id_fornecedor = ?");
-		p.setInt(1, id);
-		System.out.println(p);
-		p.executeUpdate();
-		System.out.println("Comando executado");
-		p.close();
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
 }
 } //endFornecedorDao
 
