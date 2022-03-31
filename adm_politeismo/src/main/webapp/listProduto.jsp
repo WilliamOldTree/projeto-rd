@@ -121,7 +121,6 @@
 					<th>Descrição</th>
 					<th>Volume</th>
 					<th>Peso</th>
-					<th>Situação</th>
 					<th>Preço</th>
 					<th>Quantidade</th>
 					<th>Ações</th>
@@ -138,7 +137,6 @@
 							<td><c:out value="${produto.descricao}"/></td>
 							<td><c:out value="${produto.volume}"/></td>
 							<td><c:out value="${produto.peso}"/></td>
-							<td><c:out value="${produto.situacao}"/></td>
 							<td><c:out value="${produto.preco}"/></td>
 							<td><c:out value="${produto.quantidade}"/></td>
 <td>
