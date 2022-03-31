@@ -162,11 +162,6 @@
 				<label class="form-label">Nome:</label><input style="" class="form-control" type="text" name="descricao" value="${produto.descricao}" required/>
 				<label class="form-label">Volume:</label><input style="" class="form-control" type="text" name="volume" value="${produto.volume}" id="money2" required />
 				<label class="form-label">Peso:</label><input style="" class="form-control" type="text" name="peso" value="${produto.peso}" id="money3" required/>
-                <label class="form-label">Situação:</label>
-                <select class="form-select" name="situacao" value="${produto.situacao}" required>
-                 <option>ATIVO</option>
-                 <option>INATIVO</option>
-                </select>
 				<label class="form-label">Preço:</label><input style="" class="form-control" type="text" name="preco" value="${produto.preco}" id="money4" required />
 				<label class="form-label">Quantidade:</label><input style="" class="form-control" type="text" name="quantidade" value="${produto.quantidade}" required/>
 			    <br>
