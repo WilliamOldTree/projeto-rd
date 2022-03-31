@@ -85,9 +85,9 @@ public class ProdutoDao {
 			p.setString(1, updateProduto.getDescricao());
 			p.setString(2, updateProduto.getVolume());
 			p.setString(3, updateProduto.getPeso());
-			p.setString(5, updateProduto.getPreco());
-			p.setInt(6, updateProduto.getQuantidade());
-			p.setInt(7, updateProduto.getId());
+			p.setString(4, updateProduto.getPreco());
+			p.setInt(5, updateProduto.getQuantidade());
+			p.setInt(6, updateProduto.getId());
 			
 			System.out.println(p);
 			p.executeUpdate();
