@@ -110,7 +110,7 @@
  <div class="container">
     <h1 class="title">Lista de Categorias</h1>
 
-	<form action="FormCategoriaController" method="post">
+	<form action="CategoriaController" method="post">
 		<button class="btn formCrud" type="submit" name="option" value="insertForm">CADASTRAR</button>
 	</form>
 		<table class="table table-hover">
