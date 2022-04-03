@@ -3,6 +3,7 @@ package br.com.rd.model;
 public class Categoria {
 	private Integer id;
 	private String nome;
+	private Boolean status_categoria;
 	
 	public Categoria(String nome) {
 		super();
@@ -24,6 +25,14 @@ public class Categoria {
 	@Override
 	public String toString() {
 		return "Categoria [id=" + id + ", nome=" + nome + "]";
+	}
+
+	public Boolean getStatus_categoria() {
+		return status_categoria;
+	}
+
+	public void setStatus_categoria(Boolean status_categoria) {
+		this.status_categoria = status_categoria;
 	}
 		
 }//end Categoria

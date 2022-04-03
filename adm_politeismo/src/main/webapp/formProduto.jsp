@@ -178,7 +178,7 @@
 											<div class="modal-content ">
 												<div class="modal-body">
 												<div class="text-center px-3 py-3">
-													<p class=" text-success"> Dados do produto atualizados com sucesso!.</p>
+													<p class=" text-success"> Dados do produto  atualizados com sucesso!.</p>
 												</div>
 												<div class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
   													<button class="btn formbtn ok" type="submit" name="option" value="update">OK!</button>

@@ -73,7 +73,7 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController">Pedidos
                                     <hr width="160">
                                 </a>
-                               <form action="LogoutController" method="post">    
+                               <form action="CategoriaController" method="post">    
                                    <button name="option" value="sair" type="submit" style="background: white;
                                    border: none;
                                    margin-left: 9px;
@@ -104,7 +104,7 @@
             
             
     <div class="form">
-	<form action="FormCategoriaController" method="post">
+	<form action="CategoriaController" method="post">
 		<c:choose>
 			<c:when test="${categoria == null }">
 			
@@ -117,7 +117,7 @@
 <button class="btn formbtn" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete-${categoria.id}"  style="margin-right: 10px;">Salvar                   
                                       </button>	 	
                                       	<div class="modal fade" id="modal-delete-${categoria.id }" tabindex="-1" aria-labelledby="inicioModal" aria-hidden="true">
-									<form action="FormCategoriaController" method="post">
+									<form action="CategoriaController" method="post">
 									
 
                        
@@ -127,7 +127,7 @@
 											<div class="modal-content ">
 												<div class="modal-body">
 												<div class="text-center px-3 py-3">
-													<p class=" text-success"> A categoria  foi inserida  com sucesso</p>
+													<p class=" text-success"> A categoria foi inserida  com sucesso </p>
 												</div>
 												<div class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
   													<button class="btn formbtn ok" type="submit" name="option" value="insert">OK!</button>
