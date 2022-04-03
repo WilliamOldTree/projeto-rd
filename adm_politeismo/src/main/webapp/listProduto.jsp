@@ -156,7 +156,7 @@
 										<div class="modal-dialog ">
 											<div class="modal-content ">
 												<div class="text-center px-3 py-3">
-													<p class=" text-danger">TEM CERTEZA QUE QUER EXCUIR ESSE REGISTRO?</p>
+													<p class=" text-danger">DESEJA EXCLUIR O REGISTRO (<c:out value="${produto.descricao}"/>)?</p>
 												</div>
 												<div class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
 													<button  class="btn formCrud1" name="option" value="Entrou">Cancelar</button>

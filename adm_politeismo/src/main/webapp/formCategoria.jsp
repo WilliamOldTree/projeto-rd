@@ -10,7 +10,13 @@
 <link rel="stylesheet" href="./css/formCategoria.css">
 <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
  <meta name="viewport" content="width=device-width, initial-scale=1"> 
-       
+            <%
+    
+
+    
+   if( session.getAttribute("email")== null){
+	   response.sendRedirect("index.jsp");
+   }       %>
 </head>
 <body>
     <header>
@@ -67,7 +73,7 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController">Pedidos
                                     <hr width="160">
                                 </a>
-                               <form action="CategoriaController" method="post">    
+                               <form action="LogoutController" method="post">    
                                    <button name="option" value="sair" type="submit" style="background: white;
                                    border: none;
                                    margin-left: 9px;
@@ -98,7 +104,7 @@
             
             
     <div class="form">
-	<form action="CategoriaController" method="post">
+	<form action="FormCategoriaController" method="post">
 		<c:choose>
 			<c:when test="${categoria == null }">
 			

@@ -110,7 +110,7 @@
  <div class="container">
     <h1 class="title">Lista de Categorias</h1>
 
-	<form action="CategoriaController" method="post">
+	<form action="FormCategoriaController" method="post">
 		<button class="btn formCrud" type="submit" name="option" value="insertForm">CADASTRAR</button>
 	</form>
 		<table class="table table-hover">
@@ -148,7 +148,7 @@
 										<div class="modal-dialog ">
 											<div class="modal-content ">
 												<div class="text-center px-3 py-3">
-													<p class=" text-danger">TEM CERTEZA QUE QUER EXCUIR ESSE REGISTRO?</p>
+													<p class=" text-danger">DESEJA EXCLUIR O REGISTRO (<c:out value="${categoria.nome}"/>)?</p>
 												</div>
 												<div class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
 													<button  class="btn formCrud1" name="option" value="Entrou">Cancelar</button>
