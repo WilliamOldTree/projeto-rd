@@ -19,33 +19,46 @@ public class ClienteJuridicaDao {
 		ArrayList<ClienteJuridica> listaJuridica = new ArrayList<ClienteJuridica>();
 		PreparedStatement p;
 		try {
-			p = con.prepareStatement("SELECT C.ID_CLIENTE, C.NOME, C.EMAIL, J.ID_CNPJ, J.ABERTURA, J.INSCRICAO_ESTADUAL, J.RAZAO_SOCIAL,T.DDD,T.CELULAR,E.TIPO_LOGRADOURO,E.NOME_LOGRADOURO,E.NUMERO,E.CEP,E.CIDADE,ES.SIGLA \r\n"
-					+ "					 FROM\r\n"
-					+ "					CLIENTE C\r\n"
-					+ "					INNER JOIN\r\n"
-					+ "					 JURIDICA J\r\n"
-					+ "					 ON\r\n"
-					+ "					 J.CLIENTE_ID_CLIENTE = C.ID_CLIENTE\r\n"
-					+ "                     INNER JOIN \r\n"
-					+ "					 TELEFONE T\r\n"
-					+ "					 ON \r\n"
-					+ "					 T.ID_TELEFONE = J.CLIENTE_ID_CLIENTE\r\n"
-					+ "                     INNER JOIN \r\n"
-					+ "					 ENDERECO E\r\n"
-					+ "					 ON \r\n"
-					+ "					 E.ID_ENDERECO = J.CLIENTE_ID_CLIENTE"
-					+ "                     INNER JOIN \r\n"
-					+ "					 ESTADO ES\r\n"
-					+ "					 ON \r\n"
-					+ "					 ES.ID_ESTADO = J.CLIENTE_ID_CLIENTE;"
-					);
+			p = con.prepareStatement("SELECT\r\n"
+					+ "C.ID_CLIENTE,\r\n"
+					+ "C.NOME,\r\n"
+					+ "C.EMAIL,\r\n"
+					+ "CONCAT(SUBSTR(J.ID_CNPJ, 1,9),'/', SUBSTR(J.ID_CNPJ, 10,14))  AS 'CNPJ',\r\n"
+					+ "DATE_FORMAT(J.ABERTURA, '%d-%m-%Y') AS 'DATA',\r\n"
+					+ "J.INSCRICAO_ESTADUAL,\r\n"
+					+ "J.RAZAO_SOCIAL,\r\n"
+					+ "T.DDD,T.CELULAR,\r\n"
+					+ "E.TIPO_LOGRADOURO,\r\n"
+					+ "E.NOME_LOGRADOURO,\r\n"
+					+ "E.NUMERO,\r\n"
+					+ "E.CEP,\r\n"
+					+ "E.CIDADE,\r\n"
+					+ "ES.SIGLA\r\n"
+					+ "FROM\r\n"
+					+ "CLIENTE C\r\n"
+					+ "INNER JOIN\r\n"
+					+ "JURIDICA J\r\n"
+					+ "ON\r\n"
+					+ "J.CLIENTE_ID_CLIENTE = C.ID_CLIENTE\r\n"
+					+ "INNER JOIN\r\n"
+					+ "TELEFONE T\r\n"
+					+ "ON\r\n"
+					+ "T.ID_TELEFONE = J.CLIENTE_ID_CLIENTE\r\n"
+					+ "INNER JOIN\r\n"
+					+ "ENDERECO E\r\n"
+					+ "ON\r\n"
+					+ "E.ID_ENDERECO = J.CLIENTE_ID_CLIENTE\r\n"
+					+ "INNER JOIN\r\n"
+					+ "ESTADO ES\r\n"
+					+ "ON\r\n"
+					+ "ES.ID_ESTADO = J.CLIENTE_ID_CLIENTE;");
 			ResultSet r = p.executeQuery();
 			
 			while (r.next()) {
 				Integer id = r.getInt("ID_CLIENTE");
 				String nome = r.getString("NOME");
 				String email =r.getString("EMAIL");
-				String cnpj = r.getString("ID_CNPJ");
+				String cnpj = r.getString("CNPJ");
 				Date abertura =  r.getDate("ABERTURA");
 				String inscricao_estadual = r.getString("INSCRICAO_ESTADUAL");
 				String razao_social = r.getString("RAZAO_SOCIAL");

@@ -18,39 +18,50 @@ public class ClienteFisicaDao {
 		ArrayList<ClienteFisica> listaFisica = new ArrayList<ClienteFisica>();
 		
 		try {
-			PreparedStatement p = con.prepareStatement("SELECT C.ID_CLIENTE, C.NOME, C.EMAIL,  F.ID_CPF, F.NASCIMENTO, S.DESCRICAO,T.DDD,T.CELULAR,E.TIPO_LOGRADOURO,E.NOME_LOGRADOURO,E.NUMERO,E.CEP,E.CIDADE,ES.SIGLA"
-					+ "					 FROM \r\n"
-					+ "					CLIENTE C\r\n"
-					+ "					 JOIN\r\n"
-					+ "					 FISICA F\r\n"
-					+ "					 ON\r\n"
-					+ "					 C.ID_CLIENTE  = F.CLIENTE_ID_CLIENTE\r\n"
-					+ "					 JOIN \r\n"
-					+ "					 SEXO S\r\n"
-					+ "					 ON \r\n"
-					+ "					 S.ID_SEXO = F.SEXO_ID_SEXO\r\n"
-					+ "					 JOIN \r\n"
-					+ "					 TELEFONE T\r\n"
-					+ "					 ON \r\n"
-					+ "					 T.ID_TELEFONE = F.CLIENTE_ID_CLIENTE\r\n"
-					+ "                  JOIN \r\n"
-					+ "					 ENDERECO E\r\n"
-					+ "					 ON \r\n"
-					+ "					 E.ID_ENDERECO = F.CLIENTE_ID_CLIENTE"
-					+ "                  JOIN\r\n"
-					+ "					 ESTADO ES\r\n"
-					+ "					 ON \r\n"
-					+ "					 ES.ID_ESTADO = F.CLIENTE_ID_CLIENTE;"
-					
-			
-                    );
+			PreparedStatement p = con.prepareStatement("SELECT\r\n"
+					+ "C.ID_CLIENTE,\r\n"
+					+ "C.NOME,\r\n"
+					+ "C.EMAIL,\r\n"
+					+ "CONCAT(SUBSTR(F.ID_CPF, 1,9), '-', SUBSTR(F.ID_CPF, 10,11)) AS 'CPF',\r\n"
+					+ "DATE_FORMAT(F.NASCIMENTO, '%d-%m-%Y') AS 'NASCIMENTO',\r\n"
+					+ "S.DESCRICAO,\r\n"
+					+ "T.DDD,\r\n"
+					+ "T.CELULAR,\r\n"
+					+ "E.TIPO_LOGRADOURO,\r\n"
+					+ "E.NOME_LOGRADOURO,\r\n"
+					+ "E.NUMERO,\r\n"
+					+ "E.CEP,\r\n"
+					+ "E.CIDADE,\r\n"
+					+ "ES.SIGLA\r\n"
+					+ "FROM\r\n"
+					+ "CLIENTE C\r\n"
+					+ "JOIN\r\n"
+					+ "FISICA F\r\n"
+					+ "ON\r\n"
+					+ "C.ID_CLIENTE  = F.CLIENTE_ID_CLIENTE\r\n"
+					+ "JOIN \r\n"
+					+ "SEXO S\r\n"
+					+ "ON \r\n"
+					+ "S.ID_SEXO = F.SEXO_ID_SEXO\r\n"
+					+ "JOIN \r\n"
+					+ "TELEFONE T\r\n"
+					+ "ON \r\n"
+					+ "T.ID_TELEFONE = F.CLIENTE_ID_CLIENTE\r\n"
+					+ "JOIN \r\n"
+					+ "ENDERECO E\r\n"
+					+ "ON \r\n"
+					+ "E.ID_ENDERECO = F.CLIENTE_ID_CLIENTE\r\n"
+					+ "JOIN\r\n"
+					+ "ESTADO ES\r\n"
+					+ "ON \r\n"
+					+ "ES.ID_ESTADO = F.CLIENTE_ID_CLIENTE; ");
 			ResultSet r = p.executeQuery();			
 			
 			while (r.next()) {
 				Integer id = r.getInt("ID_CLIENTE");
 				String nome = r.getString("NOME");
 				String email =r.getString("EMAIL");
-				String cpf = r.getString("ID_CPF");
+				String cpf = r.getString("CPF");
 				Date nascimento =r.getDate("NASCIMENTO");
 				String sexo = r.getString("DESCRICAO");
 				int ddd = r.getInt("DDD");
