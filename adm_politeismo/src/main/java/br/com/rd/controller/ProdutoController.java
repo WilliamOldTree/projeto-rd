@@ -122,11 +122,10 @@ public class ProdutoController extends HttpServlet {
 		String pesoBack = request.getParameter("peso");
 		String precoBack = request.getParameter("preco");
 		String quantidadeBack = request.getParameter("quantidade");
-		String destaqueBack = request.getParameter("destaque");
 		String descontoBack = request.getParameter("desconto");
 
 		String idBack = request.getParameter("id");
-		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (quantidadeBack != null) && (precoBack != null) && (destaqueBack != null)) {
+		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (quantidadeBack != null) && (precoBack != null) && (descontoBack != null)) {
 			if (!descricaoBack.equals("")){
 	
 				Integer quantidadeBack1 = Integer.parseInt(quantidadeBack);
