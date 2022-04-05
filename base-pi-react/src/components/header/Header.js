@@ -32,7 +32,7 @@ function Header() {
                                     <strong>R$ 30,00</strong>
                                 </div>
                                 <div className=" lixeira col-1">
-                                    <button className="btn"><img className="lixeira"
+                                    <button className="btn-lixeira"><img className="lixeira"
                                         src={Lixeira}
                                         alt="" /></button>
                                 </div>
@@ -49,7 +49,7 @@ function Header() {
                                     <strong>R$ 40,00</strong>
                                 </div>
                                 <div className=" lixeira col-1">
-                                    <button className="btn"><img className="lixeira2"
+                                    <button className="btn-lixeira"><img className="lixeira2"
                                         src={Lixeira}
                                         alt="" /></button>
                                 </div>
@@ -142,46 +142,35 @@ function Header() {
                                                         <button type="button" className="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                     </div>
-
                                                     <p></p>
-
                                                     <div className="modal-body">
                                                         <div className="carrinho">
                                                             <div className="row">
-
                                                                 <div className="row">
                                                                     <div className="col-3">
                                                                         <img src={Sagrada} width="100%" />
                                                                     </div>
-
                                                                     <div className="sFamilia col-7">
                                                                         <p>Imagem Sagrada Família Resina</p>
                                                                         <strong>R$ 30,00</strong>
                                                                     </div>
-
                                                                     <div className=" lixeira col-1">
                                                                         <button className="btn"><img className="lixeira"
                                                                             src={Lixeira}
                                                                             alt="" /></button>
-
                                                                     </div>
                                                                 </div>
                                                                 <p></p>
-
                                                                 <hr />
-
-
                                                                 <div className="row">
                                                                     <div className="col-3">
                                                                         <img src={Biblia}
                                                                             width="100%" />
                                                                     </div>
-
                                                                     <div className="BibliaS col-7">
                                                                         <p>Bíblia Sagrada de Bolso Ave Maria</p>
                                                                         <strong>R$ 40,00</strong>
                                                                     </div>
-
                                                                     <div className=" lixeira col-1">
                                                                         <button className="btn"><img className="lixeira2"
                                                                             src={Lixeira}

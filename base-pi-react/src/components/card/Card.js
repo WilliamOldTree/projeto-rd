@@ -12,7 +12,7 @@ function Card(props) {
                     <div className='title-card'>{props.nomeProduto}</div>
                     <div className='sub-title'>R$ {props.preco}</div>
                     <div className='sub-title2'>ou {props.parcela} de R$ {props.valorParcela} Sem juros</div>
-                    <div className='btn'>
+                    <div className='btn-card'>
                         <button>ADICIONAR AO CARRINHO</button>
                     </div>
                 </div>

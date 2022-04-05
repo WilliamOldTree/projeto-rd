@@ -17,12 +17,6 @@ function AreaSenha() {
     var novaSenha = document.getElementById('AltsenhaRecNova2').value;
     var confirmarSenha = document.getElementById('AltsenhaRecNova3').value;
 
-    if (senhaAtual.length <8) {
-      document.getElementById('ErroAlterarSenhaAtual').innerHTML = "Informe 8 caracteres";
-      document.getElementById('AltsenhaRecNova1').focus();
-      return false;
-    }
-
     if (senhaAtual == "") {
       document.getElementById('ErroAlterarSenhaAtual').innerHTML = "Informe sua Senha Atual!";
       document.getElementById('AltsenhaRecNova1').focus();
@@ -30,14 +24,6 @@ function AreaSenha() {
     } else {
       document.getElementById('ErroAlterarSenhaAtual').innerHTML = "";
     }
-  
-    if (novaSenha.length <8) {
-      document.getElementById('ErroAlterarSenhaNova').innerHTML = "Informe 8 caracteres";
-      document.getElementById('AltsenhaRecNova2').focus();
-      return false;
-    }
-
-
 
     if (novaSenha == "") {
       document.getElementById('ErroAlterarSenhaNova').innerHTML = "Informe uma senha nova!";
@@ -47,13 +33,6 @@ function AreaSenha() {
     } else {
       document.getElementById('ErroAlterarSenhaNova').innerHTML = "";
     }
-
-    if (confirmarSenha.length <8) {
-      document.getElementById('ErroAlterarSenhaConfirmar').innerHTML = "Informe 8 caracteres";
-      document.getElementById('AltsenhaRecNova3').focus();
-      return false;
-    }
-
 
 
     if (confirmarSenha == "") {

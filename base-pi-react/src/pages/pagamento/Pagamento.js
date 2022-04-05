@@ -41,7 +41,7 @@ function Pagamento() {
                         <div className="container-cartao">
                             <div className="row-cartao">
                                 <div className="col-8">
-                                    <div className="card">
+                                    <div className="card-pagamento">
                                         <div className="card-body">
                                             < div style={{ height: 120 }} >
 
@@ -68,7 +68,7 @@ function Pagamento() {
                                                                     </ul>
                                                                 </div>
                                                                 <div className="modal-footer">
-                                                                    <button type="button" className="btn">Finalizar Compra</button>
+                                                                    <button type="button" className="btn">CONFIRMAR</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -85,7 +85,7 @@ function Pagamento() {
                                     <br />
 
                                     {/* Button trigger modal Cartão De Crédito */}
-                                    <div className="card">
+                                    <div className="card-pagamento">
                                         <div className="card-body">
                                             <button type="button" className="btn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                                 <input type="radio" /><img className src={CartaoCredito} width="50px" mundipagg_billet name="payment" data-qa="billet" checked />
@@ -136,8 +136,7 @@ function Pagamento() {
                                                             {/* Final Pagina Pagamento Cartão De Crédito */}
                                                         </div>
                                                         <div className="modal-footer">
-                                                            <button type="button" className="btn ">Finalizar
-                                                                Compra</button>
+                                                            <button type="button" className="btn ">CONFIRMAR</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -151,7 +150,6 @@ function Pagamento() {
                                             <button type="button" className="btn " data-bs-toggle="modal" data-bs-target>
                                                 <input type="radio" /><img className src={PayPal} width="40px" mundipagg_billet name="payment" data-qa="billet" checked />
                                                 <b>PayPal</b></button>
-
                                         </div>
                                     </div>*/}
                                  

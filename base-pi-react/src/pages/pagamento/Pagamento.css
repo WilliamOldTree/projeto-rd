@@ -1,136 +1,143 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
 
-
-
-
-.cart_list_itens{
-    padding: 0px;
-    margin: 0px;
+.cart_list_itens {
+    padding   : 0px;
+    margin    : 0px;
     list-style: none;
 }
 
+.card-pagamento {
+    margin          : 10px 0px 10px 0px;
+    padding         : 10px;
+    width           : 90%;
+    height          : 95%;
+    background-color: white;
+    border          : 1px solid rgb(177, 174, 174);
+    left            : 15px;
+}
 
-.pay{ 
-    width: 380px;
-    height: 260px;
-    border: 1px;
-    border-style: solid;
-    border-color: lightgrey;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    margin-top: 20px;
+.pay {
+    width           : 380px;
+    height          : 260px;
+    border          : 1px;
+    border-style    : solid;
+    border-color    : lightgrey;
+    box-shadow      : 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius   : 10px;
+    margin-top      : 20px;
     background-color: whitesmoke;
 }
 
-.change_card{
+.change_card {
     text-decoration: none;
 }
 
 
 
-#pay_actualPay h2{
+#pay_actualPay h2 {
     margin-top: 10px;
 }
 
 .card_profile {
     font-size: larger;
 
-    
-}
-.pay_alterarPay h6{
-    color: brown;
-    text-decoration: none;
-    list-style: none;
-    text-align: end;   
+
 }
 
-.pay_resumo{   
-    padding-top: 20px;
-    margin-left: auto;
+.pay_alterarPay h6 {
+    color          : brown;
+    text-decoration: none;
+    list-style     : none;
+    text-align     : end;
+}
+
+.pay_resumo {
+    padding-top  : 20px;
+    margin-left  : auto;
     padding-right: 0px;
 
-   
+
 }
 
 
 
-#pay_total{
-    display: flex;
+#pay_total {
+    display       : flex;
     flex-direction: column;
-    align-items: flex-end;
-    padding: 0px
-
+    align-items   : flex-end;
+    padding       : 0px
 }
-#pay_total h6{
+
+#pay_total h6 {
     text-decoration: none;
-    color: brown;
+    color          : brown;
 }
 
-#pay_buttons{
-    text-align: end;
+#pay_buttons {
+    text-align   : end;
     margin-bottom: 20px;
-   
+
 }
 
 @media (min-width:320px) {
-    .pagamento{
-        color:rgba(38.0000015348196, 28.000000230968, 26.000000350177288, 1);
-        width:450px;
-        height:83px;
-        font-family:"Roboto";
-        text-align:left;
-        font-size:30px;
-        letter-spacing:0;
-        margin-left: 110px;
-        margin-top: 20px;
-        position: absolute;
-        font-weight: bold;
+    .pagamento {
+        color         : rgba(38.0000015348196, 28.000000230968, 26.000000350177288, 1);
+        width         : 450px;
+        height        : 83px;
+        font-family   : "Roboto";
+        text-align    : left;
+        font-size     : 30px;
+        letter-spacing: 0;
+        margin-left   : 110px;
+        margin-top    : 20px;
+        position      : absolute;
+        font-weight   : bold;
     }
+}
+
+@media (min-width:320px) {
+    .card-pagamento {
+        margin-left: 15px;
+        display    : flex;
+        width      : 440px;
+        height     : 95px;
+        margin-top : -7px;
     }
-    
-    @media (min-width:320px) {
-    .card{
-       margin-left: 15px;
-       display: flex;
-       width: 440px;
-       height: 95px;
-       margin-top: -7px;
+
+    .btn-lixeira {
+        margin-top: -6px;
+        background: none;
+        border    : none;
     }
-   
-    .btn{
-        margin-top:-6px;
-           
-    }
-  
-    .finalização{
+
+    .finalização {
         margin-top: -180px;
     }
 
-    .titlepag{
+    .titlepag {
         margin-left: 100px;
     }
 
-    .titleresumo{
+    .titleresumo {
         margin-left: 100px;
     }
-    
-    .modal-footer button{
-        background-color:rgb(240, 126, 33);
-        border: none;
-        color:white;
+
+    .modal-footer button {
+        background-color: rgb(240, 126, 33);
+        border          : none;
+        color           : white;
     }
-    
-   
-    .linhap{
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 84.34%;
-    bottom: 15.66%;
-    border: 1px solid #261C1A;
-    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
-    width: 1200px;
+
+
+    .linhap {
+        position  : absolute;
+        left      : 0%;
+        right     : 0%;
+        top       : 84.34%;
+        bottom    : 15.66%;
+        border    : 1px solid #261C1A;
+        box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+        width     : 1200px;
+    }
+
 }
-
-} 
-    
