@@ -141,7 +141,7 @@ html, header, body, footer {
 
   @media (min-width:768px) and (max-width:992px){
     #nav-itens{
-        justify-content: end;
+        justify-content: center;
     }
     #nav-itens a{
         font-size: 13px;
