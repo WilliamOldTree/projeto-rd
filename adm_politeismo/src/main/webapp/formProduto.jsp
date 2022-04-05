@@ -132,8 +132,24 @@
                  <option>INATIVO</option>
                 </select>
 				<label class="form-label">Preço:</label><input style="" class="form-control" type="text" name="preco" id="money4" required/>
-				<label class="form-label">Quantidade:</label><input style="" class="form-control" type="text" name="quantidade" required />
-				<label class="form-label">Desconto:</label><input style="" class="form-control" type="text" name="desconto" required />
+				<label class="form-label" required>Quantidade:</label>
+				<select class="form-select" name="quantidade" required>
+				 <option selected>Selecione...</option>
+                 <option value="2">50 Unidades</option>
+                 <option value="2">150 Unidades</option>
+                 <option value="3">250 Unidades</option>
+                 <option value="4">350 Unidades</option>
+                 <option value="5">450 Unidades</option>
+                 <option value="6">550 Unidades</option>                 
+                </select>
+                
+				<label class="form-label" required>Desconto:</label>
+				<select class="form-select" name="desconto" required>
+				 <option selected>Selecione...</option>
+                 <option value="1">0,5</option>
+                 <option value="2">0,10</option>
+                 <option value="3">0,15</option>
+                </select>
 			     <br>	
 			     			
 <button class="btn formbtn" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete-${produto.id}"  style="margin-right: 10px;">Salvar                   

@@ -123,6 +123,8 @@
 					<th>Peso</th>
 					<th>Preço</th>
 					<th>Quantidade</th>
+		            <th>Desconto</th>
+					
 					<th>Ações</th>
 				</tr>
 			</thead>
@@ -139,6 +141,8 @@
 							<td><c:out value="${produto.peso}"/></td>
 							<td><c:out value="${produto.preco}"/></td>
 							<td><c:out value="${produto.quantidade}"/></td>
+						    <td><c:out value="${produto.desconto}"/></td>
+							
 <td>
 	
 	

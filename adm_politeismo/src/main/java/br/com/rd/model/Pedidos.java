@@ -1,9 +1,5 @@
 package br.com.rd.model;
 
-
-import java.util.Date;
-
-
 public class Pedidos {
 	
 	private Integer codigo;
@@ -67,7 +63,6 @@ public class Pedidos {
 		this.dataPagamento = dataPagamento;
 		this.entregador = entregador;
 		this.prazoEntrega = prazoEntrega;
-		this.valorFrete = valorFrete;
 		this.statusEntrega = statusEntrega;
 
 		this.dataEntrega = dataEntrega;
