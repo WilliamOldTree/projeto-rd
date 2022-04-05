@@ -7,7 +7,7 @@ public class Produto {
 	private String peso;
 	private String preco;
 	private Integer quantidade;
-	private Integer desconto;
+	private Double desconto;
 	private Boolean status_produto;
 
 	public Produto(String descricao, String volume, String peso, String preco, Integer quantidade) {
@@ -22,7 +22,7 @@ public class Produto {
 
 
 	public Produto(String descricaoBack1, String volumeBack1, String pesoBack1, String precoBack1, Integer quantidadeBack1,
-			Integer descontoBack1) {
+			Double descontoBack1) {
 		this.descricao = descricaoBack1;
 		this.volume = volumeBack1;
 		this.peso = pesoBack1;
@@ -38,11 +38,11 @@ public class Produto {
 				+ ", situacao=" + ", preco=" + preco + ", quantidade=" + quantidade + "]";
 	}
 
-	public Integer getDesconto() {
+	public Double getDesconto() {
 		return desconto;
 	}
 
-	public void setDesconto(Integer desconto) {
+	public void setDesconto(Double desconto) {
 		this.desconto = desconto;
 	}
 

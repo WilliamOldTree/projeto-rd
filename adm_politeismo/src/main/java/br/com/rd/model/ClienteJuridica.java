@@ -1,12 +1,9 @@
-
 package br.com.rd.model;
-
-import java.util.Date;
 
 public class ClienteJuridica extends Cliente {
 	
 	private String cnpj;
-	private Date abertura;
+	private String abertura;
 	private String inscricao_estadual;
 	private String razao_social;
 	private int ddd;
@@ -18,7 +15,7 @@ public class ClienteJuridica extends Cliente {
 	private String cidade;
 	private String estado;
 	
-	public ClienteJuridica(Integer id, String nome, String email, String cnpj, Date abertura, String inscricao_estadual,
+	public ClienteJuridica(Integer id, String nome, String email, String cnpj, String abertura, String inscricao_estadual,
 			String razao_social,String celular,int ddd,String logradouro,String tipo_logradouro,String numeracao,String cep,String cidade,String estado) {
 		super(id, nome, email);
 		this.cnpj = cnpj;
@@ -88,10 +85,10 @@ public class ClienteJuridica extends Cliente {
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
-	public Date getAbertura() {
+	public String getAbertura() {
 		return abertura;
 	}
-	public void setAbertura(Date abertura) {
+	public void setAbertura(String abertura) {
 		this.abertura = abertura;
 	}
 	public String getInscricao_estadual() {

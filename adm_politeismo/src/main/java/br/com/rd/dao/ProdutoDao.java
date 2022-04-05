@@ -19,7 +19,7 @@ public class ProdutoDao {
 			p.setString(3, produto.getPeso());
 			p.setString(4, produto.getPreco());
 			p.setInt(5, produto.getQuantidade());
-			p.setInt(6, produto.getDesconto());
+			p.setDouble(6, produto.getDesconto());
 			System.out.println(p);
 			p.executeUpdate();
 			System.out.println("Comando executado");
@@ -35,8 +35,9 @@ public class ProdutoDao {
 		Connection con = c.getConnection();
 		ArrayList<Produto> lista = new ArrayList<Produto>();
 		try {
-			PreparedStatement p = con.prepareStatement("SELECT P.ID_PRODUTO, P.DESCRICAO, P.VOLUME, P.PESO, P.PRECO, E.QUANTIDADE FROM PRODUTO P join ESTOQUE E on P.ESTOQUE_PRODUTO = E.ID_ESTOQUE WHERE P.STATUS_PRODUTO != 0\r\n  "
+			PreparedStatement p = con.prepareStatement("SELECT P.ID_PRODUTO, P.DESCRICAO, P.VOLUME, P.PESO, P.PRECO, E.QUANTIDADE, PD.DESCONTO FROM PRODUTO P join ESTOQUE E on P.ESTOQUE_PRODUTO = E.ID_ESTOQUE join PRODUTO_DESTAQUE PD on P.PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE = PD.ID_PRODUTO_DESTAQUE WHERE P.STATUS_PRODUTO != 0\r\n"
 					 +"order by p.id_produto;");
+			
 			ResultSet r = p.executeQuery();			
 			
 			while (r.next()) {
@@ -46,7 +47,9 @@ public class ProdutoDao {
 				String peso = r.getString("PESO");
 				String preco = r.getString("PRECO");
 				Integer quantidade = r.getInt("QUANTIDADE");
-				Produto pod = new Produto(descricao, volume, peso, preco, quantidade);
+				Double destaque = r.getDouble("DESCONTO");
+
+				Produto pod = new Produto(descricao, volume, peso, preco, quantidade, destaque);
 				pod.setId(id);
 				lista.add(pod);
 			}
@@ -81,13 +84,14 @@ public class ProdutoDao {
 		Connection con = c.getConnection();
 		
 		try {
-			PreparedStatement p = con.prepareStatement("update PRODUTO set DESCRICAO = ?, VOLUME = ?, PESO = ?, PRECO = ?, ESTOQUE_PRODUTO = ? where ID_PRODUTO = ? ");
+			PreparedStatement p = con.prepareStatement("update PRODUTO set DESCRICAO = ?, VOLUME = ?, PESO = ?, PRECO = ?, ESTOQUE_PRODUTO = ?, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE = ? where ID_PRODUTO = ? ");
 			p.setString(1, updateProduto.getDescricao());
 			p.setString(2, updateProduto.getVolume());
 			p.setString(3, updateProduto.getPeso());
 			p.setString(4, updateProduto.getPreco());
 			p.setInt(5, updateProduto.getQuantidade());
-			p.setInt(6, updateProduto.getId());
+			p.setDouble(6, updateProduto.getDesconto());
+			p.setInt(7, updateProduto.getId());
 			
 			System.out.println(p);
 			p.executeUpdate();
@@ -114,8 +118,9 @@ public class ProdutoDao {
 				String peso = r.getString("PESO");
 				String preco = r.getString("PRECO");
 				Integer quantidade = r.getInt("ESTOQUE_PRODUTO");
-				
-				pod = new Produto(descricao, volume, peso, preco, quantidade);
+				Double destaque = r.getDouble("PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE");
+
+				pod = new Produto(descricao, volume, peso, preco, quantidade, destaque);
 				pod.setId(id);
 			}
 			r.close();
