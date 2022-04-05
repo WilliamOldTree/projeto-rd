@@ -72,3 +72,65 @@
    
 }
 
+@media (min-width:320px) {
+    .pagamento{
+        color:rgba(38.0000015348196, 28.000000230968, 26.000000350177288, 1);
+        width:450px;
+        height:83px;
+        font-family:"Roboto";
+        text-align:left;
+        font-size:30px;
+        letter-spacing:0;
+        margin-left: 110px;
+        margin-top: 20px;
+        position: absolute;
+        font-weight: bold;
+    }
+    }
+    
+    @media (min-width:320px) {
+    .card{
+       margin-left: 15px;
+       display: flex;
+       width: 440px;
+       height: 95px;
+       margin-top: -7px;
+    }
+   
+    .btn{
+        margin-top:-6px;
+           
+    }
+  
+    .finalização{
+        margin-top: -180px;
+    }
+
+    .titlepag{
+        margin-left: 100px;
+    }
+
+    .titleresumo{
+        margin-left: 100px;
+    }
+    
+    .modal-footer button{
+        background-color:rgb(240, 126, 33);
+        border: none;
+        color:white;
+    }
+    
+   
+    .linhap{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 84.34%;
+    bottom: 15.66%;
+    border: 1px solid #261C1A;
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+    width: 1200px;
+}
+
+} 
+    
