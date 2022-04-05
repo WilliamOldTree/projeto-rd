@@ -1,0 +1,48 @@
+/* LINKS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+    .title{
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .form{
+        width: 40%;
+        margin-top: 20px;
+    }
+
+    .btn.formCrud2, .btn.formCrud2:hover{
+         background-color: #B8DC85;
+         color: #FFFFFF;
+         font-weight: 500;
+         width:90px;
+         
+    }
+    
+    .btn.formCrud1, .btn.formCrud1:hover{
+         background-color: #ED7066;
+         color: #FFFFFF;
+         font-weight: 500;
+         width:90px;
+    }
+    
+    .btn.formCrud, .btn.formCrud:hover{
+         background-color: #B5D28B;
+         color: #FFFFFF;
+         font-weight: 500;
+         font-size: 18px;
+         margin-top: 20px;
+         margin-bottom: 20px;
+    }
+    
+    .container-form{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .title{
+      margin-top: 20px;
+    }
+
+

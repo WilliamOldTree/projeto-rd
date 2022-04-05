@@ -129,8 +129,8 @@
 								<input type="hidden" name="id" value="${departamento.id}"/>
 							</td>
 
-							<td><c:out value="${departamento.nome}"/></td>
-							<td>
+							<td data-label="Departamento"><c:out value="${departamento.nome}"/></td>
+							<td data-label="Ações">
 	
                         
 	

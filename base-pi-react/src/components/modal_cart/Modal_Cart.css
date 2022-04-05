@@ -78,11 +78,7 @@
     width       : 22px;
     cursor      : pointer;
     margin-top  : 10px;
-    margin-right: 12px;
-    margin-left: -10px;
-
 }
-
 
 
 .btnMenos {
@@ -99,7 +95,6 @@
     justify-content : center;
     padding         : 0px;
     margin          : 0px;
-    margin-left: -10px;
 }
 
 .btnMenos:hover {
@@ -111,7 +106,8 @@
     height    : 28px;
     padding   : 0px;
     text-align: center;
-    margin-left: -10px;
+    margin: 0px;
+
 }
 
 .btnMais {
@@ -125,7 +121,8 @@
     display         : flex;
     align-items     : center;
     justify-content : center;
-    margin-left: -10px;
+    margin: 0px;
+    padding   : 0px;
 }
 
 .btnMais:hover {

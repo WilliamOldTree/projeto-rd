@@ -11,7 +11,7 @@ function ModalCarrinho() {
     return (
         <>
             {['bottom'].map((placement) => (
-                <OverlayTrigger 
+                <OverlayTrigger
                     trigger="click"
                     key={placement}
                     placement={placement}
@@ -22,7 +22,7 @@ function ModalCarrinho() {
                                 <Container>
                                     <Row className="div-modal-cart">
                                         <Col xs={3} md={3}>
-                                            <img src={BudaMedit} width="100px" />
+                                            <img src={BudaMedit} width="90px" />
                                         </Col>
                                         <Col xs={6} md={6} class="boda">
                                             <p>Imagem Sagrada Buda</p>
@@ -75,39 +75,11 @@ function ModalCarrinho() {
                                         </Col>
                                         <hr />
                                     </Row>
-
-                                    {/*  <Row className="div-modal-cart">
-                                        <Col xs={3} md={3}>
-                                            <img src={BudaMedit} width="100px" />
-                                        </Col>
-                                        <Col xs={6} md={6} class="boda">
-                                            <p>Imagem Sagrada Buda</p>
-                                            <strong>R$ 30,00</strong>
-                                        </Col>
-
-                                        <Col xs={3} md={3} className="div-input-cart">
-                                            <Row className="row-modal-cart">
-                                                <Col xs={4} md={4} className="btnMenos">
-                                                    <button className="btnMenos"><strong>-</strong></button>
-                                                </Col>
-
-                                                <Col xs={4} md={4} className="div-quantidade-cart">
-                                                    <Form.Control className="input-modal-qtd" type="text" placeholder="1" />
-                                                </Col>
-
-                                                <Col xs={4} md={4} className="divMais">
-                                                    <button className="btnMais"><strong>+</strong></button>
-                                                </Col>
-                                            </Row>
-                                            <img className="modal-cart-lixeira" src={Lixeira} />
-                    </Col>
-                                    </Row>*/}
                                 </Container>
                                 <Container>
-
                                     <Row>
                                         <Col md={12} lg={12} className="div-footer-cart" >
-                                            <h5><strong>SUBTOTAL: R$ 60,00</strong></h5>
+                                            <h6><strong>SUBTOTAL: R$ 60,00</strong></h6>
                                         </Col>
                                     </Row>
                                     <br></br>
@@ -119,9 +91,8 @@ function ModalCarrinho() {
                                 </Container>
                             </Popover.Body>
                         </Popover>
-                    }
-                >
-                    <Button variant="secondary"><img  src={Cart} alt="Carrinho" width="80%" /></Button>
+                    }>
+                    <Button className="btncarrinho"><img src={Cart} alt="Carrinho" width="80%" /></Button>
                 </OverlayTrigger>
             ))}
         </>
@@ -133,7 +104,13 @@ export default ModalCarrinho;
 
 
 
-{/*<Modal className="modal-cart"
+{/* Modal Carrinho
+    
+    <Button className="btncarrinho" onClick={handleShow}>
+                <img src={Cart} alt="Carrinho" width="80%" />
+            </Button>
+
+            <Modal className="modal-cart"
                 show={show}
                 onHide={handleClose}
                 backdrop="static"
@@ -240,6 +217,8 @@ export default ModalCarrinho;
                     </Container>
 
                 </Modal.Footer>
-    </Modal>*/}
-
+    </Modal>
+        </>
+    );
+}*/}
 

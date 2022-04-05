@@ -3,7 +3,6 @@ DROP DATABASE bd_politeismo;
 create database bd_politeismo;
 use bd_politeismo;
 
-select * from juridica j ;
 --                                                         TABLES
 SELECT
 C.ID_CLIENTE,
@@ -867,4 +866,45 @@ TSE.STATUS_ENTREGA_ID_STATUS_ENTREGA = SE.ID_STATUS_ENTREGA;
 -- insert into TELEFONE (DDD, CELULAR, FIXO, CLIENTE_ID_CLIENTE, FORNECEDOR_ID_FORNECEDOR) values (11,'999427936','49665775',  5, 4);
 -- insert into TELEFONE (DDD, CELULAR, FIXO, CLIENTE_ID_CLIENTE, FORNECEDOR_ID_FORNECEDOR) values (54,' ','30291561',  6, 5);
 -- insert into TELEFONE (DDD, CELULAR, FIXO, CLIENTE_ID_CLIENTE, FORNECEDOR_ID_FORNECEDOR) values (11,'997790431','',  7,6);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
