@@ -3,7 +3,6 @@ DROP DATABASE bd_politeismo;
 create database bd_politeismo;
 use bd_politeismo;
 
-select * from juridica j ;
 --                                                         TABLES
 SELECT
 C.ID_CLIENTE,

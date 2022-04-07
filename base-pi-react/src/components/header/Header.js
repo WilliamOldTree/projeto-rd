@@ -12,8 +12,61 @@ import Biblia from '../asserts/images/images-home/b_blia-sagrada-cnbb.jpg'
 import Sagrada from '../asserts/images/images-home/imagem-resina-sagrada-familia.jpg'
 import ModalCarrinho from '../modal_cart/Modal_Cart'
 import Lixeira from '../../components/asserts/icons/lixeira.png';
+import { Popover, OverlayTrigger } from "react-bootstrap"
 
 function Header() {
+
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Header as="h3" style={{ textAlign: "center" }}>Meus Favoritos</Popover.Header>
+            <Popover.Body>
+                <div className="modal-body">
+                    <div className="carrinho">
+                        <div className="row">
+                            <div className="row">
+                                <div className="imgSagrada col-3">
+                                    <img src={Sagrada} width="100px" />
+                                </div>
+                                <div className="sFamilia col-7">
+                                    <p>Imagem Sagrada Família Resina</p>
+                                    <strong>R$ 30,00</strong>
+                                </div>
+                                <div className=" lixeira col-1">
+                                    <button className="btn-lixeira"><img className="lixeira"
+                                        src={Lixeira}
+                                        alt="" /></button>
+                                </div>
+                            </div>
+                            <p></p>
+                            <hr />
+                            <div className="row">
+                                <div className="imgBiblia col-3">
+                                    <img src={Biblia}
+                                        width="90px" />
+                                </div>
+                                <div className="BibliaS col-7">
+                                    <p>Bíblia Sagrada de Bolso Ave Maria</p>
+                                    <strong>R$ 40,00</strong>
+                                </div>
+                                <div className=" lixeira col-1">
+                                    <button className="btn-lixeira"><img className="lixeira2"
+                                        src={Lixeira}
+                                        alt="" /></button>
+                                </div>
+                                <hr />
+                            </div>
+                        </div>
+                        <div className="col-12">
+                            <div><a href="area_cliente_favoritos">
+                                <button className="btnFinalFavoritos">VER FAVORITOS</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
     return (
         <>
             {/* BEGINNER HEADER */}
@@ -74,11 +127,11 @@ function Header() {
                                 <div className="col-3">
                                     {/* Button trigger modal Favoritos */}
                                     <div className="btnfavorito">
-                                        <button type="button" className="btn" data-bs-toggle="modal"
-                                            data-bs-target="#staticBackdrop"><img src={Love} alt="Favoritos" width="80%" />
-                                        </button>
-
-                                        {/* Modal Favoritos */}
+                                        <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                            <button type="button" className="btn"><img src={Love} alt="Favoritos" width="80%" />
+                                            </button>
+                                        </OverlayTrigger>
+                                        {/* Modal Favoritos 
                                         <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static"
                                             data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
                                             aria-hidden="true">
@@ -89,47 +142,35 @@ function Header() {
                                                         <button type="button" className="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                     </div>
-
                                                     <p></p>
-
                                                     <div className="modal-body">
                                                         <div className="carrinho">
                                                             <div className="row">
-
                                                                 <div className="row">
                                                                     <div className="col-3">
                                                                         <img src={Sagrada} width="100%" />
                                                                     </div>
-
                                                                     <div className="sFamilia col-7">
                                                                         <p>Imagem Sagrada Família Resina</p>
                                                                         <strong>R$ 30,00</strong>
                                                                     </div>
-
                                                                     <div className=" lixeira col-1">
                                                                         <button className="btn"><img className="lixeira"
                                                                             src={Lixeira}
                                                                             alt="" /></button>
-
                                                                     </div>
                                                                 </div>
                                                                 <p></p>
-                                                                <p></p>
-
                                                                 <hr />
-
-
                                                                 <div className="row">
                                                                     <div className="col-3">
                                                                         <img src={Biblia}
                                                                             width="100%" />
                                                                     </div>
-
                                                                     <div className="BibliaS col-7">
                                                                         <p>Bíblia Sagrada de Bolso Ave Maria</p>
                                                                         <strong>R$ 40,00</strong>
                                                                     </div>
-
                                                                     <div className=" lixeira col-1">
                                                                         <button className="btn"><img className="lixeira2"
                                                                             src={Lixeira}
@@ -147,7 +188,7 @@ function Header() {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>*/}
                                     </div>
                                 </div>
 

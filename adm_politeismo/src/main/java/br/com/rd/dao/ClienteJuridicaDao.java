@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 
 import br.com.rd.model.ClienteJuridica;
 
@@ -55,11 +54,16 @@ public class ClienteJuridicaDao {
 			ResultSet r = p.executeQuery();
 			
 			while (r.next()) {
+				
 				Integer id = r.getInt("ID_CLIENTE");
 				String nome = r.getString("NOME");
 				String email =r.getString("EMAIL");
 				String cnpj = r.getString("CNPJ");
+<<<<<<< HEAD
 				Date abertura =  r.getDate("ABERTURA");
+=======
+				String abertura =  r.getString("DATA");
+>>>>>>> 4694942d288ad0af633c27d2aa105895a81d9d75
 				String inscricao_estadual = r.getString("INSCRICAO_ESTADUAL");
 				String razao_social = r.getString("RAZAO_SOCIAL");
 				int ddd =r.getInt("DDD");
@@ -89,4 +93,3 @@ public class ClienteJuridicaDao {
 	}
 		
 }//end class
-

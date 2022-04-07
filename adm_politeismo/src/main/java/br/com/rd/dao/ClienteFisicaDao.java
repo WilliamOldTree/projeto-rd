@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import br.com.rd.model.ClienteFisica;
 
 public class ClienteFisicaDao {
@@ -62,7 +61,11 @@ public class ClienteFisicaDao {
 				String nome = r.getString("NOME");
 				String email =r.getString("EMAIL");
 				String cpf = r.getString("CPF");
+<<<<<<< HEAD
 				Date nascimento =r.getDate("NASCIMENTO");
+=======
+				String nascimento =r.getString("NASCIMENTO");
+>>>>>>> 4694942d288ad0af633c27d2aa105895a81d9d75
 				String sexo = r.getString("DESCRICAO");
 				int ddd = r.getInt("DDD");
 				String celular = r.getString("CELULAR");

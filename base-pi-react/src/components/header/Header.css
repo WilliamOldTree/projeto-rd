@@ -257,39 +257,49 @@ html, header, body, footer {
 /*Modal Favorito*/
 
 .lixeira{
-    width : 22px;
+    width : 20px;
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 .sFamilia{
     text-align: center;
     color: black;
-    margin-top: 35px;
+    margin-top: 5px;
+    margin-left:30px;
 }
 
+.imgSagrada{
+    margin-left:-32px;
+}
+
+.imgBiblia{
+    margin-left:-32px;
+}
 
 .btnFinalFavoritos{
-    background-color:#F27507;
-    color: white;
-    margin-left: 320px;
-    position: relative;
-    font-size:"Roboto";
+    background-color: #F27507;
+    color : #FFFFFF;
     border-radius: 10px;
-    border:none;
+    border: none;
     width: 150px;
     height: 35px;
+    font-weight: bolder;
+    font-size: 14px;
+    margin-left: 80px;
+    font-weight: bolder;
 
 }
 
 .BibliaS{
     text-align: center;
     color: black;
-    margin-top: 45px;
+    margin-top: 10px;
+    margin-left: 32px;
 }
 
 .lixeira2{
-    width : 22px;
-    margin-top: 30px;
-    margin-left: 10px;
+    width : 20px;
+    margin-top: 40px;
+    margin-left: 5px;
 }

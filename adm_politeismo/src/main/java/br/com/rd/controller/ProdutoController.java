@@ -92,7 +92,7 @@ public class ProdutoController extends HttpServlet {
 				//Double precoBack1 = Double.valueOf(precoBack);
 			
 				Integer quantidadeBack1 = Integer.parseInt(quantidadeBack);
-				Integer descontoBack1 = Integer.parseInt(descontoBack);
+				Double descontoBack1 = Double.parseDouble(descontoBack);
 				
 				Produto prod1 = new Produto(descricaoBack, volumeBack, pesoBack, precoBack, quantidadeBack1, descontoBack1);
 				this.prod.insert(prod1);
@@ -122,13 +122,17 @@ public class ProdutoController extends HttpServlet {
 		String pesoBack = request.getParameter("peso");
 		String precoBack = request.getParameter("preco");
 		String quantidadeBack = request.getParameter("quantidade");
+		String descontoBack = request.getParameter("desconto");
+
 		String idBack = request.getParameter("id");
-		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (quantidadeBack != null) && (precoBack != null)) {
+		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (quantidadeBack != null) && (precoBack != null) && (descontoBack != null)) {
 			if (!descricaoBack.equals("")){
 	
 				Integer quantidadeBack1 = Integer.parseInt(quantidadeBack);
+				Double descontoBack1 = Double.parseDouble(descontoBack);
+
 				Integer id = Integer.parseInt(idBack);
-				Produto prod1 = new Produto(descricaoBack, volumeBack, pesoBack, precoBack, quantidadeBack1);
+				Produto prod1 = new Produto(descricaoBack, volumeBack, pesoBack, precoBack, quantidadeBack1, descontoBack1);
 				prod1.setId(id);
 				this.prod.updateProduto(prod1);
 			}
