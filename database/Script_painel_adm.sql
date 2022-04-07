@@ -66,9 +66,9 @@ CREATE TABLE PRODUTO
 (
 ID_PRODUTO								INT										NOT NULL 				AUTO_INCREMENT,
 DESCRICAO								VARCHAR(255) 							NOT NULL,
-VOLUME									VARCHAR(255) 										NULL,
-PESO									VARCHAR(255) 										NULL,
-PRECO									VARCHAR(255) 										NOT NULL,
+VOLUME									DECIMAL(7,2) 										NULL,
+PESO									DECIMAL(7,2)										NULL,
+PRECO									DECIMAL(7,2) 										NOT NULL,
 ESTOQUE_PRODUTO							INT										NOT NULL,
 PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE	INT										NOT NULL,
 STATUS_PRODUTO                          BOOLEAN                                 NOT NULL,
