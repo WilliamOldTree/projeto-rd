@@ -66,9 +66,9 @@ CREATE TABLE PRODUTO
 (
 ID_PRODUTO								INT										NOT NULL 				AUTO_INCREMENT,
 DESCRICAO								VARCHAR(255) 							NOT NULL,
-VOLUME									VARCHAR(255) 										NULL,
-PESO									VARCHAR(255) 										NULL,
-PRECO									VARCHAR(255) 										NOT NULL,
+VOLUME									DECIMAL(7,2) 										NULL,
+PESO									DECIMAL(7,2)										NULL,
+PRECO									DECIMAL(7,2) 										NOT NULL,
 ESTOQUE_PRODUTO							INT										NOT NULL,
 PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE	INT										NOT NULL,
 STATUS_PRODUTO                          BOOLEAN                                 NOT NULL,
@@ -867,45 +867,4 @@ TSE.STATUS_ENTREGA_ID_STATUS_ENTREGA = SE.ID_STATUS_ENTREGA;
 -- insert into TELEFONE (DDD, CELULAR, FIXO, CLIENTE_ID_CLIENTE, FORNECEDOR_ID_FORNECEDOR) values (11,'999427936','49665775',  5, 4);
 -- insert into TELEFONE (DDD, CELULAR, FIXO, CLIENTE_ID_CLIENTE, FORNECEDOR_ID_FORNECEDOR) values (54,' ','30291561',  6, 5);
 -- insert into TELEFONE (DDD, CELULAR, FIXO, CLIENTE_ID_CLIENTE, FORNECEDOR_ID_FORNECEDOR) values (11,'997790431','',  7,6);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

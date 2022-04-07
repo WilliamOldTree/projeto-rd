@@ -15,9 +15,9 @@ public class ProdutoDao {
 		try {
 			PreparedStatement p = con.prepareStatement("insert into PRODUTO (DESCRICAO, VOLUME, PESO, PRECO, ESTOQUE_PRODUTO, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE, STATUS_PRODUTO) values (?, ?, ?, ?, ?, ?, true)");
 			p.setString(1, produto.getDescricao());
-			p.setString(2, produto.getVolume());
-			p.setString(3, produto.getPeso());
-			p.setString(4, produto.getPreco());
+			p.setDouble(2, produto.getVolume());
+			p.setDouble(3, produto.getPeso());
+			p.setDouble(4, produto.getPreco());
 			p.setInt(5, produto.getQuantidade());
 			p.setDouble(6, produto.getDesconto());
 			System.out.println(p);
@@ -43,9 +43,9 @@ public class ProdutoDao {
 			while (r.next()) {
 				Integer id = r.getInt("ID_PRODUTO");
 				String descricao = r.getString("DESCRICAO");
-				String volume = r.getString("VOLUME");
-				String peso = r.getString("PESO");
-				String preco = r.getString("PRECO");
+				Double volume = r.getDouble("VOLUME");
+				Double peso = r.getDouble("PESO");
+				Double preco = r.getDouble("PRECO");
 				Integer quantidade = r.getInt("QUANTIDADE");
 				Double destaque = r.getDouble("DESCONTO");
 
@@ -86,9 +86,9 @@ public class ProdutoDao {
 		try {
 			PreparedStatement p = con.prepareStatement("update PRODUTO set DESCRICAO = ?, VOLUME = ?, PESO = ?, PRECO = ?, ESTOQUE_PRODUTO = ?, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE = ? where ID_PRODUTO = ? ");
 			p.setString(1, updateProduto.getDescricao());
-			p.setString(2, updateProduto.getVolume());
-			p.setString(3, updateProduto.getPeso());
-			p.setString(4, updateProduto.getPreco());
+			p.setDouble(2, updateProduto.getVolume());
+			p.setDouble(3, updateProduto.getPeso());
+			p.setDouble(4, updateProduto.getPreco());
 			p.setInt(5, updateProduto.getQuantidade());
 			p.setDouble(6, updateProduto.getDesconto());
 			p.setInt(7, updateProduto.getId());
@@ -114,9 +114,9 @@ public class ProdutoDao {
 			
 			while (r.next()) {
 				String descricao = r.getString("DESCRICAO");
-				String volume = r.getString("VOLUME");
-				String peso = r.getString("PESO");
-				String preco = r.getString("PRECO");
+				Double volume = r.getDouble("VOLUME");
+				Double peso = r.getDouble("PESO");
+				Double preco = r.getDouble("PRECO");
 				Integer quantidade = r.getInt("ESTOQUE_PRODUTO");
 				Double destaque = r.getDouble("PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE");
 

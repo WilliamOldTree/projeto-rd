@@ -12,9 +12,9 @@
      <script type="text/javascript">
     
         window.onload = function() {
-        	  $('#money2').mask("#.##0,00", {reverse: true});
-        	  $('#money3').mask("#.##0,00", {reverse: true});
-        	  $('#money4').mask("#.##0,00", {reverse: true});
+        	  $('.money2').mask("00,00", {reverse: true});
+        	  $('.money3').mask("00,00", {reverse: true});
+        	  $('.money4').mask("00,00", {reverse: true});
 
           
       }
@@ -124,9 +124,14 @@
 		<c:choose>
 			<c:when test="${produto == null }">
 				<label class="form-label">Nome:</label><input style="" class="form-control" type="text" name="descricao"   required/>
-				<label class="form-label">Volume:</label><input style="" class=" form-control" type="text" name="volume" id="money2" required />
-				<label class="form-label">Peso:</label><input style="" class="form-control" type="text" name="peso" id="money3" required />
-				<label class="form-label">Preço:</label><input style="" class="form-control" type="text" name="preco" id="money4" required/>
+				<label class="form-label">Volume:</label><input style="" class=" form-control money3" type="text" name="volume"  required />
+				<label class="form-label">Peso:</label><input style="" class="form-control money4" type="text" name="peso"  required />
+				<label class="form-label" required>Situação:</label>
+				<select class="form-select" name="situacao" required>
+                 <option>ATIVO</option>
+                 <option>INATIVO</option>
+                </select>
+				<label class="form-label">Preço:</label><input style="" class="form-control  money2" type="text" name="preco" id="money4" required/>
 				<label class="form-label">Quantidade:</label>
 				<select class="form-select" name="quantidade" required>
 				 <option selected>Selecione...</option>
@@ -172,9 +177,9 @@
 				<input type="hidden" name="id" value="${produto.id}"/>
 				
 				<label class="form-label">Nome:</label><input style="" class="form-control" type="text" name="descricao"   value="${produto.descricao}"required/>
-				<label class="form-label">Volume:</label><input style="" class=" form-control" type="text" name="volume" value="${produto.volume}"id="money2" required />
-				<label class="form-label">Peso:</label><input style="" class="form-control" type="text" name="peso" value="${produto.peso}" id="money3" required />
-				<label class="form-label">Preço:</label><input style="" class="form-control" type="text" name="preco"  value="${produto.preco}" id="money4" required/>
+				<label class="form-label">Volume:</label><input style="" class=" form-control money2" type="text" name="volume" value="${produto.volume}" required />
+				<label class="form-label">Peso:</label><input style="" class="form-control money3" type="text" name="peso" value="${produto.peso}"  required />
+				<label class="form-label">Preço:</label><input style="" class="form-control money4" type="text" name="preco"  value="${produto.preco}" required/>
 				<label class="form-label" >Quantidade:</label>
 				<select class="form-select" name="quantidade" value="${produto.quantidade}" required>
 				 <option selected>Selecione...</option>
@@ -207,7 +212,7 @@
 											<div class="modal-content ">
 												<div class="modal-body">
 												<div class="text-center px-3 py-3">
-													<p class=" text-success"> Dados do produto atualizados com sucesso!.</p>
+													<p class=" text-success"> Dados do produto  atualizados com sucesso!.</p>
 												</div>
 												<div class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
   													<button class="btn formbtn ok" type="submit" name="option" value="update">OK!</button>

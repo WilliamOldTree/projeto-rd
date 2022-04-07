@@ -1,0 +1,1526 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
+
+*{
+  margin: 0;
+  padding: auto;
+  font-size: 100%;
+  border: none;
+  outline: none;
+  font-family: Roboto;
+  box-sizing: border-box;
+}
+
+#myModal{
+  background-color: #979797;
+}
+
+.Titulo{
+  font-size: Roboto;
+  font-weight: bold;
+  font-size: 40px;
+  margin-left: 250px;
+
+color: #261C1A;
+
+}
+
+
+.menu-list1 { 
+	width:313px;
+	height:534px;
+	position:absolute;
+}
+
+.menu-list2 { 
+	color:black;
+	width:147px;
+	height:27px;
+	position:absolute;
+	left:79px;
+	top:42px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:20px;font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+	
+}
+
+.menu-list3 { 
+	color:black;
+	width:147px;
+	height:27px;
+	position:absolute;
+	left:79px;
+	top:100px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.menu-list4 { 
+	color:black;
+	width:131px;
+	height:29px;
+	position:absolute;
+	left:79px;
+	top:156px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+.menu-list5 { 
+	color:black;
+	width:145px;
+	height:28px;
+	position:absolute;
+	left:78px;
+	top:208px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.menu-list6 { 
+	color:black;
+	width:146px;
+	height:33px;
+	position:absolute;
+	left:77px;
+	top:264px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.menu-list7 { 
+	color:black;
+	width:136px;
+	height:28px;
+	position:absolute;
+	left:78px;
+	top:320px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0; 
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.menu-list8 { 
+	color:black;
+	width:131px;
+	height:29px;
+	position:absolute;
+	left:79px;
+	top:378px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:18px;
+	letter-spacing:0;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+
+.perfil{
+    position: relative;
+   margin-left: 0px;
+   top: 38px;
+ }
+ .te{
+  position: relative;
+  bottom: 70px;
+  font-weight: bold;
+  color: black;
+  left: 65px;
+  
+ }
+ 
+.Titulo{
+    position: relative;
+    width: 230px;
+    height: 51px;
+    left: 480px;
+    bottom: 30px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    
+    color: #261C1A;
+    
+    }
+
+    #caixaDados{
+        position: relative;
+        width: 723px;
+        height: 256px;
+        left: 450px;
+        bottom: 10px;
+        background: #FFFFFF;
+        border: 2px solid #261C1A;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+    }
+    .lixeira{
+        position: relative;
+        bottom: 95px;
+        left: 610px;
+  
+     
+    }
+
+    .btn.formRedefinirSenha{
+        position: absolute;
+        width: 180px;
+        height: 50px;
+        left: 530px;
+        top: 300px;
+        background: #F27507;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 22px;
+        color: #FFFFFF;
+      }
+    
+      .btn formRedefinirSenha{
+        position: absolute;
+        width: 116px;
+        height: 26px;
+        left: 20px;
+        bottom: 129px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+      }
+    
+      .btn.formRedefinirSenha:hover{
+      background-color: darkorange;
+      color: #FFFFFF;
+      }
+
+      #tituloNumero{
+        position: relative;
+        width: 72px;
+        height: 22px;
+        left: 280px;
+        top: 75px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        color: #261C1A;
+        
+      }
+
+    
+
+      #Numero{
+        position: relative;
+        width: 122px;
+        height: 12px;
+        left: 280px;
+        top: 98px;
+        
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        
+        color: #979797;
+        
+      }
+
+      #tituloValidade{
+        position: relative;
+        width: 72px;
+        height: 22px;
+        left: 450px;
+        top: 20px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        color: #261C1A;
+        
+      }
+
+    
+
+      #Validade{
+        position: relative;
+        width: 122px;
+        height: 12px;
+        left: 450px;
+        top: 40px;
+        
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        
+        color: #979797;
+        
+      }
+
+
+    #Cartao{
+
+    position: relative;
+    left: 135px;  
+    bottom: 55px;
+    }
+
+    #Visa{
+    position: relative;
+    left: 50px;
+    bottom: 75px;
+    }
+
+
+
+
+      #Credito{
+        position: relative;
+        width: 122px;
+        height: 12px;
+        left: 140px;
+        bottom: 90px;
+        
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        
+        color: #979797;
+        
+      }
+
+      .modal-header{
+        position: absolute;
+        width: 628px;
+        height: 575px;
+        top: 2px;
+        left: 20px;
+        align-items: center;
+        background: #FFFFFF;
+        border: 2px solid #000000;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        
+    }
+
+ 
+
+     .botao{
+      position: absolute;
+      width: 150px;
+      height: 50px;
+      left: 450px;
+      align-items: center;
+      top: 500px;
+      background: #F27507;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 22px;
+      color: #FFFFFF;
+     }
+     .botao tex{
+      position: absolute;
+      width: 116px;
+      height: 26px;
+      left: 20px;
+      top: 9px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
+      display: flex;
+      align-items: center;
+      color: #FFFFFF;
+     }
+     .botao.tex:hover{
+      background-color: darkorange;
+      }
+
+
+      .botao1{
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        left: 250px;
+        align-items: center;
+        top: 500px;
+        background: #34A853;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 22px;
+        color: #FFFFFF;
+       }
+       .botao1 tex{
+        position: absolute;
+        width: 116px;
+        height: 26px;
+        left: 20px;
+        top: 9px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+       }
+       .botao1.tex1:hover{
+        background-color: #34d175;
+        }
+
+
+     #titu{
+        position: absolute;
+        left: 15.00%;
+        right: 0%;
+        top: 0%;
+        bottom: 85%;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 29px;
+        display: flex;
+        align-items: center;
+        
+        color: #261C1A;
+        
+     }
+      
+      #linha{
+        position: absolute;
+        left: 2%;
+        right: 2%;
+        top: 8.34%;
+        bottom: 15.66%;
+        border: 1px solid #261C1A;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+      }
+
+  
+
+
+  #form-label2{
+    font-weight: 700;
+    margin-left: 42px;
+    color: #3C4043;
+    font-size: 18px;
+    left: 25px;
+    position: relative;
+    bottom: 40px;
+}
+
+#form-control2{
+margin-top: 9px;
+width: 423px;
+height: 40px;
+right: 110px;
+top:2px;
+border: 2px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+position: relative;
+}  
+
+
+
+
+#form-label4{
+font-weight: 700;
+margin-left: 42px;
+color: #3C4043;
+font-size: 18px;
+left: 25px;
+position: relative;
+bottom: 5px;
+}
+
+#form-control4{
+margin-top: 9px;
+width: 423px;
+height: 40px;
+right: 130px;
+top:45px;
+border: 2px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+position: relative;
+}  
+
+
+
+#form-label6{
+font-weight: 700;
+margin-left: 42px;
+color: #3C4043;
+font-size: 18px;
+left: 23px;
+position: relative;
+top: 50px;
+}
+
+#form-control6{
+margin-top: 9px;
+width: 111px;
+height: 40px;
+right: 120px;
+top:100px;
+border: 2px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+position: relative;
+}  
+
+
+
+#form-label7{
+font-weight: 700;
+margin-left: 42px;
+color: #3C4043;
+font-size: 18px;
+left: 370px;
+position: relative;
+bottom: 10px;
+}
+
+#form-control7{
+margin-top: 9px;
+width: 111px;
+height: 40px;
+left: 325px;
+top:40px;
+border: 2px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+position: relative;
+}  
+#visaPopUp{
+    position: relative;
+    left: 400px;
+    bottom: 200px;
+}
+
+ 
+@media  (max-width:1024px){
+  .menu-list1 { 
+    width:313px;
+    height:534px;
+    position:absolute;
+  }
+  
+  .menu-list2 { 
+    color:black;
+    width:147px;
+    height:27px;
+    position:absolute;
+    left:79px;
+    top:42px;
+    font-family:"Roboto";
+    text-align:left;
+    font-size:20px;font-size:18px;
+    letter-spacing:0;
+    text-decoration: none;
+    font-weight:bold;
+    
+  }
+  
+  .menu-list3 { 
+    color:black;
+    width:147px;
+    height:27px;
+    position:absolute;
+    left:79px;
+    top:100px;
+    font-family:"Roboto";
+    text-align:left;
+    font-size:18px;
+    letter-spacing:0;
+    text-decoration: none;
+    font-weight:bold;
+  }
+  
+  .menu-list4 { 
+    color:black;
+    width:131px;
+    height:29px;
+    position:absolute;
+    left:79px;
+    top:156px;
+    font-family:"Roboto";
+    text-align:left;
+    font-size:18px;
+    letter-spacing:0;
+    text-decoration: none;
+    font-weight:bold;
+  }
+  .menu-list5 { 
+    color:black;
+    width:145px;
+    height:28px;
+    position:absolute;
+    left:78px;
+    top:208px;
+    font-family:"Roboto";
+    text-align:left;
+    font-size:18px;
+    letter-spacing:0;
+    text-decoration: none;
+    font-weight:bold;
+  }
+  
+  .menu-list6 { 
+    color:black;
+    width:146px;
+    height:33px;
+    position:absolute;
+    left:77px;
+    top:264px;
+    font-family:"Roboto";
+    text-align:left;
+    font-size:18px;
+    letter-spacing:0;
+    text-decoration: none;
+    font-weight:bold;
+  }
+  
+  .menu-list7 { 
+    color:black;
+    width:136px;
+    height:28px;
+    position:absolute;
+    left:78px;
+    top:320px;
+    font-family:"Roboto";
+    text-align:left;
+    font-size:18px;
+    letter-spacing:0; 
+    text-decoration: none;
+    font-weight:bold;
+  }
+  
+  .menu-list8 { 
+    color:black;
+    width:131px;
+    height:29px;
+    position:absolute;
+    left:79px;
+    top:378px;
+    font-family:"Roboto";
+    text-align:left;
+    font-size:18px;
+    letter-spacing:0;
+    text-decoration: none;
+    font-weight:bold;
+  }
+  
+  
+  .perfil{
+    position: relative;
+    margin-left: 0px;
+    top: 58px;
+   }
+   .te{
+    position: relative;
+    top: 20px;
+    font-weight: bold;
+    color: black;
+    left: 1px;
+    
+   }
+   
+   .Titulo{
+    position: relative;
+    width: 230px;
+    height: 51px;
+    left: 250px;
+    bottom: 80px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    
+    color: #261C1A;
+    
+    }
+  
+    #caixaDados{
+        position: relative;
+        width: 343px;
+        height: 556px;
+        left: 390px;
+        bottom: 80px;
+        background: #FFFFFF;
+        border: 2px solid #261C1A;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+    }
+    .lixeira{
+        position: relative;
+        bottom: -225px;
+        left: 50px;
+  
+     
+    }
+  
+    .btn.formRedefinirSenha{
+        position: absolute;
+        width: 120px;
+        height: 50px;
+        left: 130px;
+        top: 460px;
+        background: #F27507;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 22px;
+        color: #FFFFFF;
+      }
+    
+      .btn formRedefinirSenha{
+        position: absolute;
+        width: 116px;
+        height: 26px;
+        left: 20px;
+        bottom: 129px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+      }
+    
+      .btn.formRedefinirSenha:hover{
+      background-color: darkorange;
+      color: #FFFFFF;
+      }
+  
+      #tituloNumero{
+        position: relative;
+        width: 72px;
+        height: 22px;
+        left: 50px;
+        top: 170px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        color: #261C1A;
+        
+      }
+  
+    
+  
+      #Numero{
+        position: relative;
+        width: 122px;
+        height: 12px;
+        left: 50px;
+        top: 198px;
+        
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        
+        color: #979797;
+        
+      }
+  
+      #tituloValidade{
+        position: relative;
+        width: 72px;
+        height: 22px;
+        left: 50px;
+        top: 220px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        color: #261C1A;
+        
+      }
+  
+    
+  
+      #Validade{
+        position: relative;
+        width: 122px;
+        height: 12px;
+        left: 50px;
+        top: 260px;
+        
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        
+        color: #979797;
+        
+      }
+  
+  
+    #Cartao{
+  
+    position: relative;
+    left: 48px;  
+    bottom: 65px;
+    }
+  
+    #Visa{
+    position: relative;
+    left: 50px;
+    bottom: 75px;
+    }
+  
+  
+  
+  
+      #Credito{
+        position: relative;
+        width: 122px;
+        height: 12px;
+        left: 140px;
+        bottom: 110px;
+        
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        
+        color: #979797;
+        
+      }
+  
+      .modal-header{
+        position: absolute;
+        width: 458px;
+        height: 575px;
+        top: 112px;
+        left: 40px;
+        align-items: center;
+        background: #FFFFFF;
+        border: 2px solid #000000;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        
+    }
+  
+  
+  
+     .botao{
+      position: absolute;
+      width: 100px;
+      height: 50px;
+      left: 100px;
+      align-items: center;
+      top: 470px;
+      background: #F27507;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 22px;
+      color: #FFFFFF;
+     }
+     .botao tex{
+      position: absolute;
+      width: 116px;
+      height: 26px;
+      left: 20px;
+      top: 9px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
+      display: flex;
+      align-items: center;
+      color: #FFFFFF;
+     }
+     .botao.tex:hover{
+      background-color: darkorange;
+      }
+  
+  
+      .botao1{
+        position: absolute;
+        width: 125px;
+        height: 50px;
+        left: 250px;
+        align-items: center;
+        top: 470px;
+        background: #34A853;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 22px;
+        color: #FFFFFF;
+       }
+       .botao1 tex{
+        position: absolute;
+        width: 116px;
+        height: 26px;
+        left: 20px;
+        top: 9px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+       }
+       .botao1.tex1:hover{
+        background-color: #34d175;
+        }
+  
+  
+     #titu{
+        position: absolute;
+        left: 30.00%;
+        right: 0%;
+        top: 0%;
+        bottom: 85%;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 29px;
+        display: flex;
+        align-items: center;
+        
+        color: #261C1A;
+        
+     }
+      
+      #linha{
+        position: absolute;
+        left: 8%;
+        right: 2%;
+        top: 8.34%;
+        bottom: 15.66%;
+        width: 90%;
+        border: 1px solid #261C1A;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+      }
+  
+  
+  
+  
+  #form-label2{
+    font-weight: 700;
+    margin-left: 42px;
+    color: #3C4043;
+    font-size: 15px;
+    left: -30px;
+    position: relative;
+    bottom: 40px;
+  }
+  
+  #form-control2{
+  margin-top: 9px;
+  width: 385px;
+  height: 40px;
+  right: 150px;
+  top:8px;
+  border: 2px solid #979797;
+  box-sizing: border-box;
+  border-radius: 10px;
+  position: relative;
+  }  
+  
+  
+  
+  
+  #form-label4{
+  font-weight: 700;
+  margin-left: 42px;
+  color: #3C4043;
+  font-size: 15px;
+  left: -30px;
+  position: relative;
+  bottom: 5px;
+  }
+  
+  #form-control4{
+  margin-top: 9px;
+  width: 385px;
+  height: 40px;
+  right: 165px;
+  top:45px;
+  border: 2px solid #979797;
+  box-sizing: border-box;
+  border-radius: 10px;
+  position: relative;
+  }  
+  
+  
+  
+  #form-label6{
+  font-weight: 700;
+  margin-left: 42px;
+  color: #3C4043;
+  font-size: 15px;
+  left: -30px;
+  position: relative;
+  top: 50px;
+  }
+  
+  #form-control6{
+  margin-top: 9px;
+  width: 120px;
+  height: 40px;
+  right: 150px;
+  top:100px;
+  border: 2px solid #979797;
+  box-sizing: border-box;
+  border-radius: 10px;
+  position: relative;
+  }  
+  
+  
+  
+  #form-label7{
+  font-weight: 700;
+  margin-left: 42px;
+  color: #3C4043;
+  font-size: 15px;
+  left: 215px;
+  position: relative;
+  bottom: 14px;
+  }
+  
+  #form-control7{
+  margin-top: 9px;
+  width: 120px;
+  height: 40px;
+  left: 180px;
+  top:35px;
+  border: 2px solid #979797;
+  box-sizing: border-box;
+  border-radius: 10px;
+  position: relative;
+  }  
+  #visaPopUp{
+    position: relative;
+    left: 150px;
+    bottom: 195px;
+  }
+   
+
+}
+
+
+@media  (max-width:568px){
+  hr{
+    width: 65%;
+  }
+   
+.menu-list1 { 
+ visibility: hidden;
+}
+
+.menu-list2 { 
+visibility: hidden;
+ 
+}
+
+.menu-list3 { 
+visibility: hidden;
+}
+
+.menu-list4 { 
+visibility: hidden;
+}
+.menu-list5 { 
+visibility: hidden;
+}
+
+.menu-list6 { 
+visibility: hidden;
+}
+
+.menu-list7 { 
+visibility: hidden;
+}
+
+.menu-list8 { 
+visibility: hidden;
+}
+.perfil{
+visibility: hidden;
+}
+.te{
+visibility: hidden;
+}
+
+.Titulo{
+  position: relative;
+  width: 230px;
+  height: 51px;
+  left: -150px;
+  bottom: 80px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 35px;
+  display: flex;
+  align-items: center;
+  
+  color: #261C1A;
+  
+  }
+
+  #caixaDados{
+      position: relative;
+      width: 253px;
+      height: 556px;
+      left: 30px;
+      bottom: 80px;
+      background: #FFFFFF;
+      border: 2px solid #261C1A;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 30px;
+  }
+  .lixeira{
+      position: relative;
+      bottom: -225px;
+      left: 30px;
+
+   
+  }
+
+  .btn.formRedefinirSenha{
+      position: absolute;
+      width: 120px;
+      height: 50px;
+      left: 100px;
+      top: 460px;
+      background: #F27507;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 22px;
+      color: #FFFFFF;
+    }
+  
+    .btn formRedefinirSenha{
+      position: absolute;
+      width: 116px;
+      height: 26px;
+      left: 20px;
+      bottom: 129px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
+      display: flex;
+      align-items: center;
+      color: #FFFFFF;
+    }
+  
+    .btn.formRedefinirSenha:hover{
+    background-color: darkorange;
+    color: #FFFFFF;
+    }
+
+    #tituloNumero{
+      position: relative;
+      width: 72px;
+      height: 22px;
+      left: 50px;
+      top: 170px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+      display: flex;
+      align-items: center;
+      color: #261C1A;
+      
+    }
+
+  
+
+    #Numero{
+      position: relative;
+      width: 122px;
+      height: 12px;
+      left: 50px;
+      top: 198px;
+      
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 18px;
+      display: flex;
+      align-items: center;
+      
+      color: #979797;
+      
+    }
+
+    #tituloValidade{
+      position: relative;
+      width: 72px;
+      height: 22px;
+      left: 50px;
+      top: 220px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+      display: flex;
+      align-items: center;
+      color: #261C1A;
+      
+    }
+
+  
+
+    #Validade{
+      position: relative;
+      width: 122px;
+      height: 12px;
+      left: 50px;
+      top: 260px;
+      
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 18px;
+      display: flex;
+      align-items: center;
+      
+      color: #979797;
+      
+    }
+
+
+  #Cartao{
+
+  position: relative;
+  left: 48px;  
+  bottom: 65px;
+  }
+
+  #Visa{
+  position: relative;
+  left: 50px;
+  bottom: 75px;
+  }
+
+
+
+
+    #Credito{
+      position: relative;
+      width: 122px;
+      height: 12px;
+      left: 140px;
+      bottom: 110px;
+      
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 18px;
+      display: flex;
+      align-items: center;
+      
+      color: #979797;
+      
+    }
+
+    .modal-header{
+      position: absolute;
+      width: 328px;
+      height: 575px;
+      top: 2px;
+      left: -30px;
+      align-items: center;
+      background: #FFFFFF;
+      border: 2px solid #000000;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      
+  }
+
+
+
+   .botao{
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    left: 50px;
+    align-items: center;
+    top: 500px;
+    background: #F27507;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 22px;
+    color: #FFFFFF;
+   }
+   .botao tex{
+    position: absolute;
+    width: 116px;
+    height: 26px;
+    left: 20px;
+    top: 9px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+   }
+   .botao.tex:hover{
+    background-color: darkorange;
+    }
+
+
+    .botao1{
+      position: absolute;
+      width: 125px;
+      height: 50px;
+      left: 180px;
+      align-items: center;
+      top: 500px;
+      background: #34A853;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 22px;
+      color: #FFFFFF;
+     }
+     .botao1 tex{
+      position: absolute;
+      width: 116px;
+      height: 26px;
+      left: 20px;
+      top: 9px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
+      display: flex;
+      align-items: center;
+      color: #FFFFFF;
+     }
+     .botao1.tex1:hover{
+      background-color: #34d175;
+      }
+
+
+   #titu{
+      position: absolute;
+      left: 30.00%;
+      right: 0%;
+      top: 0%;
+      bottom: 85%;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 29px;
+      display: flex;
+      align-items: center;
+      
+      color: #261C1A;
+      
+   }
+    
+    #linha{
+      position: absolute;
+      left: 8%;
+      right: 2%;
+      top: 8.34%;
+      bottom: 15.66%;
+      width: 90%;
+      border: 1px solid #261C1A;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+    }
+
+
+
+
+#form-label2{
+  font-weight: 700;
+  margin-left: 42px;
+  color: #3C4043;
+  font-size: 15px;
+  left: -30px;
+  position: relative;
+  bottom: 40px;
+}
+
+#form-control2{
+margin-top: 9px;
+width: 235px;
+height: 40px;
+right: 150px;
+top:8px;
+border: 2px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+position: relative;
+}  
+
+
+
+
+#form-label4{
+font-weight: 700;
+margin-left: 42px;
+color: #3C4043;
+font-size: 15px;
+left: -30px;
+position: relative;
+bottom: 5px;
+}
+
+#form-control4{
+margin-top: 9px;
+width: 235px;
+height: 40px;
+right: 165px;
+top:45px;
+border: 2px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+position: relative;
+}  
+
+
+
+#form-label6{
+font-weight: 700;
+margin-left: 42px;
+color: #3C4043;
+font-size: 15px;
+left: -30px;
+position: relative;
+top: 50px;
+}
+
+#form-control6{
+margin-top: 9px;
+width: 100px;
+height: 40px;
+right: 150px;
+top:100px;
+border: 2px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+position: relative;
+}  
+
+
+
+#form-label7{
+font-weight: 700;
+margin-left: 42px;
+color: #3C4043;
+font-size: 15px;
+left: 120px;
+position: relative;
+bottom: 14px;
+}
+
+#form-control7{
+margin-top: 9px;
+width: 100px;
+height: 40px;
+left: 80px;
+top:35px;
+border: 2px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+position: relative;
+}  
+#visaPopUp{
+  position: relative;
+  left: 150px;
+  bottom: 195px;
+}
+
+}
+ 
