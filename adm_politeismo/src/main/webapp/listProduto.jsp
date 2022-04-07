@@ -10,6 +10,35 @@
 <link rel="stylesheet" href="./css/base.css">
 <link rel="stylesheet" href="./css/tabela.css">
 <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
+ <script type="text/javascript">
+ $(document).ready(function(){
+		$(".telefone, .celular").mask("0000-0000");
+		$(".cpf").mask("000.000.000-00"); 
+		$(".preco").mask("R$ 0.000,00", {reverse: false}); 
+		$(".preco2").mask(" 000,00");
+		$(".money2").mask("R$ 00,00");
+		$(".preco4").mask("R$ 000,00");
+		$(".cep").mask("00000-000"); 
+		$(".dimensao").mask("00x00 cm"); 
+		$(".pesoForm").mask("0.000 kg"); 
+		$(".peso2").mask("0.000");  
+		$(".cnpj").mask("00.000.000/0000-00", {reverse: true});  
+		$(".cartao").mask("**** **** **** 0000");
+		$(".data").mask("00/00/0000");
+		$(".dataCart").mask("00/00");
+
+		 var $target = $("#mensagem");  	
+		$target.keydown(function(event){
+			console.log(event);
+			console.log($target);
+		if (event.target.value == " "   && event.keyCode == 32){
+			$target.val("");
+			
+		}
+
+        
+        
+    </script>
 </head>
 <body>
     <header>
@@ -136,10 +165,10 @@
 								<c:out value="${produto.id}"/>
 								<input type="hidden" name="id" value="${produto.id}"/>
 							</td>
-							<td data-label="Descrição"><c:out value="${produto.descricao}"/></td>
-							<td data-label="Volume"><c:out value="${produto.volume}"/></td>
-							<td data-label="Peso"><c:out value="${produto.peso}"/></td>
-							<td data-label="Preço"><c:out value="${produto.preco}"/></td>
+							<td data-label="Descrição" ><c:out value="${produto.descricao}"/></td>
+							<td data-label="Volume"> <span class="money2"><c:out  value="${produto.volume}"/></span></td>
+							<td data-label="Peso"><span class="money2"><c:out value="${produto.peso}"/></span></td>
+							<td data-label="Preço"><span class="money2"><c:out value="${produto.preco}"/></span></td>
 							<td data-label="Quantidade"><c:out value="${produto.quantidade}"/></td>
 						    <td data-label="Desconto"><c:out value="${produto.desconto}"/></td>
 							

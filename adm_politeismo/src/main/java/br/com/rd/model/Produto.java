@@ -3,14 +3,14 @@ package br.com.rd.model;
 public class Produto {
 	private Integer id;
 	private String descricao;
-	private String volume;
-	private String peso;
-	private String preco;
+	private Double volume;
+	private Double peso;
+	private Double preco;
 	private Integer quantidade;
 	private Double desconto;
 	private Boolean status_produto;
 
-	public Produto(String descricao, String volume, String peso, String preco, Integer quantidade) {
+	public Produto(String descricao, Double volume, Double peso, Double preco, Integer quantidade) {
 		super();
 		this.descricao = descricao;
 		this.volume = volume;
@@ -21,7 +21,7 @@ public class Produto {
 
 
 
-	public Produto(String descricaoBack1, String volumeBack1, String pesoBack1, String precoBack1, Integer quantidadeBack1,
+	public Produto(String descricaoBack1, Double volumeBack1, Double pesoBack1, Double precoBack1, Integer quantidadeBack1,
 			Double descontoBack1) {
 		this.descricao = descricaoBack1;
 		this.volume = volumeBack1;
@@ -62,26 +62,26 @@ public class Produto {
 		this.descricao = descricao;
 	}
 	
-	public String getVolume() {
+	public Double getVolume() {
 		return volume;
 	}
 	
-	public void setVolume(String volume) {
+	public void setVolume(Double volume) {
 		this.volume = volume;
 	}
 	
-	public String getPeso() {
+	public Double getPeso() {
 		return peso;
 	}
 	
-	public void setPeso(String peso) {
+	public void setPeso(Double peso) {
 		this.peso = peso;
 	}
 	
-	public String getPreco() {
+	public Double getPreco() {
 		return preco;
 	}
-	public void setPreco(String preco) {
+	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
 	
