@@ -1,0 +1,741 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
+
+
+
+
+
+
+*
+{
+    padding: 0;
+    margin: 0;
+    color: black;
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-size: 100%;
+    border: none;
+    outline: none;
+}
+.title{
+    font-size: 20px;
+    position: relative;
+    left: -385px;
+    top: 60px;
+    font-weight: bold;
+    text-align: center;
+}
+.titulo{
+    font-size: 25px;
+    position: relative;
+    left: 70px;
+    top: 20px;
+    font-weight: bold;
+}
+
+hr{
+    position: relative;
+    top: 20px;
+}
+
+.container-comunicar{
+position: relative;
+width: 306px;
+height: 134px;
+background: #FFFFFF;
+border: 2px solid #261C1A;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+top: 70px;
+}
+.w{
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    left: -10px;
+    top: 18px;
+    text-align: center;
+}
+
+.texton{
+    position: relative;
+    color: #261C1A;
+    font-size: 15px;
+    left: -10px;
+    text-align: center;
+    top: 15px;
+}
+.e{
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    left: -10px;
+    top: 12px; 
+    text-align: center;
+}
+.texe{
+    position: relative;
+    color: #261C1A;
+    font-size: 15px;
+    left: -10px;
+    text-align: center;
+    top: 4px;  
+}
+.titMensagem{
+    font-size: 1px;
+    position: relative;
+    left: 560px;
+    bottom: 121px;
+    font-weight: bold;
+    font-family: Roboto;
+}
+.container-formulario{
+position: relative;
+width: 589px;
+height: 690px;
+left: 450px;
+bottom: 110px;
+background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+border: 2px solid #261C1A;
+
+}
+.obs{
+    position: relative;
+left: 15px;
+top: 10px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 900;
+font-size: 18px;
+line-height: 21px;
+text-align: center;
+
+color: #261C1A;
+}
+.nome{
+    position: relative;
+width: 535px;
+height: 34px;
+left: 18px;
+top: 25px;
+background: #FFFFFF;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+placeholder{
+    color: #979797;
+}
+
+.email{
+ position: relative;
+width: 535px;
+height: 34px;
+left: 18px;
+top: 75px;
+background: #FFFFFF;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+.assunto{
+position: relative;
+width: 535px;
+height: 34px;
+left: 18px;
+top: 125px;
+background: #FFFFFF;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+.telefone{
+ position: relative;
+width: 535px;
+height: 34px;
+left: 18px;
+top: 175px;
+background: #FFFFFF;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+.mensagem{
+position: relative;
+width: 495px;
+height: 248px;
+left: 18px;
+top: 227px;
+background: #FFFFFF;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.enviar{
+position: relative;
+width: 131px;
+height: 41px;
+left: 890px;
+bottom:  62px;
+background: #34A853;
+border-radius: 10px;
+color: #FFFFFF;
+border: none;
+}
+.enviar:hover{
+    background-color: #34d175
+}
+
+#janelaModal{
+  background-color: #979797;
+ }
+
+
+.modal-header{
+  
+  position: absolute;
+  width: 523px;
+  height: 253px;
+  margin-top: 150px;
+  margin-left: 20px;
+  align-items: center;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  
+}
+
+h5{
+bottom: 20px;
+position: relative;
+left: 30px;
+}
+
+.btn-close{
+  position: relative;
+  bottom: 85px;
+}
+
+
+
+
+
+.botao1{
+  position: absolute;
+  width: 70px;
+  height: 50px;
+  margin-left: 220px;
+  align-items: center;
+  margin-top: 140px;
+  background: #34A853;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 22px;
+  color: #FFFFFF;
+ }
+ .botao1 tex{
+  position: absolute;
+  width: 116px;
+  height: 26px;
+  left: 20px;
+  top: 9px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+ }
+ .botao1.tex1:hover{
+  background-color: #34d175;
+  }
+  @media  (max-width:568px){
+    .title{
+      font-size: 19px;
+      position: relative;
+      left: -1px;
+      top: 100px;
+      font-weight: bold;
+      text-align: center;
+  }
+  .titulo{
+      font-size: 25px;
+      position: relative;
+      left: 5px;
+      top: 80px;
+      font-weight: bold;
+  }
+  hr{
+      position: relative;
+      top: 80px;
+  }
+  
+  .container-comunicar{
+  position: relative;
+  width: 266px;
+  height: 134px;
+  background: #FFFFFF;
+  border: 2px solid #261C1A;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  top: 100px;
+  }
+  .w{
+      position: relative;
+      font-size: 18px;
+      font-weight: bold;
+      left: -10px;
+      top: 18px;
+      text-align: center;
+  }
+  p{
+      position: relative;
+      color: #261C1A;
+      font-size: 15px;
+      left: 11px;
+      text-align: center;
+      top: 15px;
+  }
+  .e{
+      position: relative;
+      font-size: 18px;
+      font-weight: bold;
+      left: -10px;
+      top: 12px; 
+      text-align: center;
+  }
+  .texe{
+      position: relative;
+      color: #261C1A;
+      font-size: 15px;
+      right: 5px;
+      text-align: center;
+      top: 4px;  
+  }
+  h1{
+      font-size: 10px;
+      position: relative;
+      left: -555px;
+      top: 281px;
+      font-weight: bold;
+      font-family: Roboto;
+      text-align: center;
+  }
+  .container-formulario{
+  position: relative;
+  width: 259px;
+  height: 690px;
+  left: 10px;
+  top: 170px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 2px solid #261C1A;
+
+  }
+  .obs{
+  position: relative;
+  left: 5px;
+  top: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 11px;
+  line-height: 21px;
+  text-align: center;
+  
+  color: #261C1A;
+  }
+  .nome{
+  position: relative;
+  width: 225px;
+  height: 34px;
+  left: 18px;
+  top: 25px;
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  box-sizing: border-box;
+  border-radius: 10px;
+  }
+  placeholder{
+      color: #979797;
+  }
+  
+  .email{
+   position: relative;
+  width: 225px;
+  height: 34px;
+  left: 18px;
+  top: 75px;
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  box-sizing: border-box;
+  border-radius: 10px;
+  }
+  .assunto{
+  position: relative;
+  width: 225px;
+  height: 34px;
+  left: 18px;
+  top: 125px;
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  box-sizing: border-box;
+  border-radius: 10px;
+  }
+  .telefone{
+   position: relative;
+  width: 225px;
+  height: 34px;
+  left: 18px;
+  top: 175px;
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  box-sizing: border-box;
+  border-radius: 10px;
+  }
+  .mensagem{
+  position: relative;
+  width: 225px;
+  height: 248px;
+  left: 18px;
+  top: 227px;
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  box-sizing: border-box;
+  border-radius: 10px;
+  }
+  
+  .enviar{
+  position: relative;
+  width: 131px;
+  height: 41px;
+  left: 60px;
+  top:  212px;
+  background: #34A853;
+  border-radius: 10px;
+  color: #FFFFFF;
+  border: none
+  }
+
+  
+#janelaModal{
+  background-color: #979797;
+ }
+
+
+.modal-header{
+  
+  position: absolute;
+  width: 290px;
+  height: 223px;
+  margin-top: 150px;
+  margin-left: 10px;
+  align-items: center;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  
+}
+
+h5{
+bottom: 20px;
+position: relative;
+left: 30px;
+}
+
+.btn-close{
+  position: relative;
+  bottom: 85px;
+}
+
+
+
+
+
+.botao1{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 120px;
+  align-items: center;
+  margin-top: 110px;
+  background: #34A853;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 22px;
+  color: #FFFFFF;
+ }
+ .botao1 tex{
+  position: absolute;
+  width: 116px;
+  height: 26px;
+  left: 20px;
+  top: 9px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+ }
+
+ .botao1.tex1:hover{
+  background-color: #34d175;
+  } 
+
+  .tiltMensagem{
+      
+  }
+  
+}
+
+@media (min-width:768px)and (max-width:1024px){
+    .title{
+        font-size: 19px;
+        position: relative;
+        left: -205px;
+        top: 150px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .titulo{
+        font-size: 25px;
+        position: relative;
+        left: 70px;
+        top: 70px;
+        font-weight: bold;
+    }
+    hr{
+        position: relative;
+        top: 70px;
+    }
+
+    .container-comunicar{
+        position: relative;
+        width: 266px;
+        height: 134px;
+        background: #FFFFFF;
+        border: 2px solid #261C1A;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        top: 160px;
+        }
+        .w{
+            position: relative;
+            font-size: 18px;
+            font-weight: bold;
+            left: -10px;
+            top: 18px;
+            text-align: center;
+        }
+        p{
+            position: relative;
+            color: #261C1A;
+            font-size: 15px;
+            left: 11px;
+            text-align: center;
+            top: 15px;
+        }
+        .e{
+            position: relative;
+            font-size: 18px;
+            font-weight: bold;
+            left: -10px;
+            top: 12px; 
+            text-align: center;
+        }
+        .texe{
+            position: relative;
+            color: #261C1A;
+            font-size: 15px;
+            right: 5px;
+            text-align: center;
+            top: 4px;  
+        }
+        h1{
+            font-size: 10px;
+            position: relative;
+            right: 194px;
+            top: 121px;
+            font-weight: bold;
+            font-family: Roboto;
+        }
+        .container-formulario{
+        position: relative;
+        width: 309px;
+        height: 690px;
+        left: 350px;
+        top: 10px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        border: 2px solid #261C1A;
+
+        }
+        .obs{
+            position: relative;
+        left: 5px;
+        top: 10px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 11px;
+        line-height: 21px;
+        text-align: center;
+        
+        color: #261C1A;
+        }
+        .nome{
+        position: relative;
+        width: 275px;
+        height: 34px;
+        left: 18px;
+        top: 25px;
+        background: #FFFFFF;
+        border: 1px solid #979797;
+        box-sizing: border-box;
+        border-radius: 10px;
+        }
+        placeholder{
+            color: #979797;
+        }
+        
+        .email{
+         position: relative;
+        width: 225px;
+        height: 34px;
+        left: 18px;
+        top: 75px;
+        background: #FFFFFF;
+        border: 1px solid #979797;
+        box-sizing: border-box;
+        border-radius: 10px;
+        }
+        .assunto{
+        position: relative;
+        width: 225px;
+        height: 34px;
+        left: 18px;
+        top: 125px;
+        background: #FFFFFF;
+        border: 1px solid #979797;
+        box-sizing: border-box;
+        border-radius: 10px;
+        }
+        .telefone{
+         position: relative;
+        width: 225px;
+        height: 34px;
+        left: 18px;
+        top: 175px;
+        background: #FFFFFF;
+        border: 1px solid #979797;
+        box-sizing: border-box;
+        border-radius: 10px;
+        }
+        .mensagem{
+        position: relative;
+        width: 225px;
+        height: 248px;
+        left: 18px;
+        top: 227px;
+        background: #FFFFFF;
+        border: 1px solid #979797;
+        box-sizing: border-box;
+        border-radius: 10px;
+        }
+        
+        .enviar{
+        position: relative;
+        width: 100px;
+        height: 41px;
+        left: 550px;
+        top:  32px;
+        background: #34A853;
+        border-radius: 10px;
+        color: #FFFFFF;
+        border: none
+        }
+      
+        
+      #janelaModal{
+        background-color: #979797;
+       }
+      
+      
+      .modal-header{
+        
+        position: absolute;
+        width: 390px;
+        height: 223px;
+        margin-top: 340px;
+        margin-left: 70px;
+        align-items: center;
+        background: #FFFFFF;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        
+      }
+      
+      h5{
+      bottom: 30px;
+      position: relative;
+      left: 30px;
+      }
+      
+      .btn-close{
+        position: relative;
+        bottom: 85px;
+      }
+      
+      
+      
+      
+      
+      .botao1{
+        position: absolute;
+        width: 80px;
+        height: 50px;
+        margin-left: 150px;
+        align-items: center;
+        margin-top: 90px;
+        background: #34A853;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 22px;
+        color: #FFFFFF;
+       }
+       .botao1 tex{
+        position: absolute;
+        width: 116px;
+        height: 26px;
+        left: 20px;
+        top: 9px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+       }
+       .botao1.tex1:hover{
+        background-color: #34d175;
+        } 
+        
+
+}

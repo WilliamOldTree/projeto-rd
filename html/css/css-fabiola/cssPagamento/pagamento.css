@@ -1,0 +1,33 @@
+@media (min-width:320px) {
+.pagamento{
+	color:rgba(38.0000015348196, 28.000000230968, 26.000000350177288, 1);
+	width:450px;
+	height:83px;
+	font-family:"Roboto";
+	text-align:left;
+	font-size:30px;
+	letter-spacing:0;
+    margin-left: 110px;
+    margin-top: 20px;
+    position: absolute;
+    font-weight: bold;
+}
+
+.card{
+   margin-left: 300px;
+   display: flex;
+}
+
+
+.modal-footer button{
+    background-color:rgb(240, 126, 33);
+    border: none;
+    color:white;
+}
+
+
+
+
+}
+
+
