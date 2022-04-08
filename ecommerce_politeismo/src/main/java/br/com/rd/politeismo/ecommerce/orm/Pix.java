@@ -22,6 +22,8 @@ public class Pix {
 
 	private Long id_forma;
 	private Long id_cliente;
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -45,6 +47,10 @@ public class Pix {
 	}
 	public void setId_cliente(Long id_cliente) {
 		this.id_cliente = id_cliente;
+	}
+	@Override
+	public String toString() {
+		return "Pix [id=" + id + ", chave=" + chave + ", id_forma=" + id_forma + ", id_cliente=" + id_cliente + "]";
 	}
 	
 	
