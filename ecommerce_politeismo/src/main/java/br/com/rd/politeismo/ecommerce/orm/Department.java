@@ -10,53 +10,43 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "categories")
-public class Category {
-	
+@Table(name = "departments")
+public class Department {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    private Long id;
 	
 	@Column(nullable = false)
-	private String description;
-	
+    private String description;
+
 	@Column(name = "fl_inactive")
 	private boolean flInactive = true; // flag inactive
 	
-	private List<Department> departament;
+	private List<Category> category;
 	private List<Product> product;
 	
 	
 	
-	
-	
+
 	public Long getId() {
 		return id;
 	}
-	
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public String getDescription() {
 		return description;
 	}
-	
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	public List<Department> getDepartament() {
-		return departament;
-	}
 
-	public List<Product> getProduct() {
-		return product;
-	}
-	
 	@Override
 	public String toString() {
-		return "Category [ID: " + id + ", Description: " + description + "]";
+		return "Department [ID: " + id + ", description: " + description + "]";
 	}
-
+	
 }
