@@ -19,10 +19,10 @@ function ModalCarrinho() {
                         <Popover id={`popover-positioned-${placement}`}>
                             <Popover.Header style={{ textAlign: "center" }} as="h3">{`${"Meu Carrinho"}`}</Popover.Header>
                             <Popover.Body>
-                                <Container>
+                            <Container>
                                     <Row className="div-modal-cart">
                                         <Col xs={3} md={3}>
-                                            <img src={BudaMedit} width="90px" />
+                                            <img src={BudaMedit} width="70px" />
                                         </Col>
                                         <Col xs={6} md={6} class="boda">
                                             <p>Imagem Sagrada Buda</p>
@@ -50,7 +50,7 @@ function ModalCarrinho() {
 
                                     <Row className="div-modal-cart">
                                         <Col xs={3} md={3}>
-                                            <img src={BudaMedit} width="100px" />
+                                            <img src={BudaMedit} width="70px" />
                                         </Col>
                                         <Col xs={6} md={6} class="boda">
                                             <p>Imagem Sagrada Buda</p>
@@ -77,17 +77,13 @@ function ModalCarrinho() {
                                     </Row>
                                 </Container>
                                 <Container>
-                                    <Row>
                                         <Col md={12} lg={12} className="div-footer-cart" >
                                             <h6><strong>SUBTOTAL: R$ 60,00</strong></h6>
                                         </Col>
-                                    </Row>
                                     <br></br>
-                                    <Row>
                                         <Col md={6} lg={6} className="div-btn-cart">
                                             <Link to="/cart"><Button className="btnFinal">VER CARRINHO</Button></Link>
                                         </Col>
-                                    </Row>
                                 </Container>
                             </Popover.Body>
                         </Popover>
