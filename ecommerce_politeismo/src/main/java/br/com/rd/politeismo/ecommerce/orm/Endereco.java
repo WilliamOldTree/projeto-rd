@@ -7,12 +7,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "ENDERECO")
 public class Endereco {
 
+	public Endereco() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID_ENDERECO")
 	private Long id_endereco;
 
 	@Column(nullable = false, name = "APELIDO")
