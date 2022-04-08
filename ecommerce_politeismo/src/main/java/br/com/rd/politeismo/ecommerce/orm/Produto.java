@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -34,10 +35,11 @@ public class Produto {
 	@Column(name= "fl_inativo")
 	private boolean flInativo = true; // flag inativo
 	
-	@Column(name ="estoque_produto",nullable = false)
+	//Para relacionamentos
+	@JoinColumn(name ="estoque_produto", nullable = false, referencedColumnName = "id_estoque")
 	private Estoque estoqueProduto;
 	
-	@Column(name ="produto_destaque_id_produto_destaque", nullable = false)
+	@JoinColumn(name ="produto_destaque_id_produto_destaque", nullable = false, referencedColumnName = "id_produto_destaque")
 	private ProdutoDestaque produtoDestaque;
 	
 	
