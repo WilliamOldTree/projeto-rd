@@ -12,8 +12,17 @@ import javax.persistence.Table;
 public class Endereco {
 
 	@Id
+	@Column(name= "id_endereco")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_endereco;
+	private Long id;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	@Column(nullable = false, name = "APELIDO")
 	private String apelido;
@@ -37,14 +46,7 @@ public class Endereco {
 
 	private Estado estado;
 
-	public Long getId_endereco() {
-		return id_endereco;
-	}
-
-	public void setId_endereco(Long id_endereco) {
-		this.id_endereco = id_endereco;
-	}
-
+	
 	public String getApelido() {
 		return apelido;
 	}

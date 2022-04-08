@@ -23,6 +23,8 @@ public class Sexo {
 	@Column(nullable = false)
 	private String descricao;
 
+
+	
 	
 	public Long getId() {
 		return id;
