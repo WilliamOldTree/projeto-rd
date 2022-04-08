@@ -7,22 +7,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "ENDERECO")
 public class Endereco {
 
+	public Endereco() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Id
-	@Column(name= "id_endereco")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
+	@Column(name="ID_ENDERECO")
+	private Long id_endereco;
 
 	@Column(nullable = false, name = "APELIDO")
 	private String apelido;
@@ -46,7 +43,14 @@ public class Endereco {
 
 	private Estado estado;
 
-	
+	public Long getId_endereco() {
+		return id_endereco;
+	}
+
+	public void setId_endereco(Long id_endereco) {
+		this.id_endereco = id_endereco;
+	}
+
 	public String getApelido() {
 		return apelido;
 	}

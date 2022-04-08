@@ -1,7 +1,7 @@
 package br.com.rd.politeismo.ecommerce.orm;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,25 +9,25 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Entity;
 
 @Entity
 @Table(name = "PAGAMENTO")
 public class Pagamento {
-	
+
+
 	@Id
 	@Column(name= "id_pagamento")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
-	@Column(nullable = false)
 	private Long id;
 	
+	@Column(nullable = false)
 	private LocalDate data_pagamento;
 	private String status_pagamento;
-	private  BigDecimal valor_pagamento;
-	private  Pedido pedido;
-	private  Forma forma;
-	
-	
+	private BigDecimal valor_pagamento;
+	private Pedido pedido;
+	private Forma forma;
+
 	public Long getId() {
 		return id;
 	}
@@ -64,9 +64,12 @@ public class Pagamento {
 	public void setForma(Forma forma) {
 		this.forma = forma;
 	}
+
+	
 	@Override
 	public String toString() {
 		return "Pagamento [id=" + id + ", data_pagamento=" + data_pagamento + ", status_pagamento=" + status_pagamento
 				+ ", valor_pagamento=" + valor_pagamento + "]";
 	}
+	
 }
