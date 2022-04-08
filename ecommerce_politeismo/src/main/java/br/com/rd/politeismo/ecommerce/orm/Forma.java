@@ -11,21 +11,18 @@ import javax.persistence.Entity;
 
 
 @Entity
-@Table(name = "SEXO")
-public class Sexo {
+@Table(name = "FORMA")
+public class Forma {
 	
 
 	@Id
-	@Column(name= "id_sexo")
+	@Column(name= "id_forma")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(nullable = false)
-	private String descricao;
+	private String instituicao;
 
-
-	
-	
 	public Long getId() {
 		return id;
 	}
@@ -34,25 +31,21 @@ public class Sexo {
 		this.id = id;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getInstituicao() {
+		return instituicao;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setInstituicao(String instituicao) {
+		this.instituicao = instituicao;
 	}
-	
-	private List<Fisica> fisica;
-
 
 	@Override
 	public String toString() {
-		return "Sexo [id=" + id + ", descricao=" + descricao + "]";
-	}
-	
-	public List<Fisica> getFisica() {
-		return fisica;
+		return "Forma [id=" + id + ", instituicao=" + instituicao + "]";
 	}
 
+
+	 
+	
 	
 }
