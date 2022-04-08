@@ -121,7 +121,7 @@ function ModalCarrinho() {
                         </Popover>
                     }
                 >
-                    <Button variant="secondary"><img  src={Cart} alt="Carrinho" width="80%" /></Button>
+                    <Button className="btn-principal-cart"><img  src={Cart} alt="Carrinho" width="80%" /></Button>
                 </OverlayTrigger>
             ))}
         </>
