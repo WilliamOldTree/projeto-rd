@@ -13,7 +13,6 @@
     align-items    : center;
     text-align     : center;
     margin-top     : 10px;
-    margin-left: -40px;
 }
 
 .row-modal-cart {
@@ -63,8 +62,8 @@
 }
 
 .div-footer-cart {
-    display    : flex;
-    margin-left: 40px;
+    text-align: end;
+    display: contents;
 }
 
 .div-quantidade-cart {
