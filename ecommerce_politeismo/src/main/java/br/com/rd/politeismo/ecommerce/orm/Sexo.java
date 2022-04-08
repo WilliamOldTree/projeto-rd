@@ -1,5 +1,4 @@
 package br.com.rd.politeismo.ecommerce.orm;
-
 import java.util.List;
 
 import javax.persistence.Column;
@@ -8,26 +7,25 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Entity;
+
 
 @Entity
-@Table(name = "departments")
-public class Department {
+@Table(name = "SEXO")
+public class Sexo {
+	
+
 	@Id
+	@Column(name= "id_sexo")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	private Long id;
 	
 	@Column(nullable = false)
-    private String description;
+	private String descricao;
 
-	@Column(name = "fl_inactive")
-	private boolean flInactive = true; // flag inactive
-	
-	private List<Category> category;
-	private List<Product> product;
-	
-	
-	
 
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -36,17 +34,25 @@ public class Department {
 		this.id = id;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
+	
+	private List<Fisica> fisica;
+
 
 	@Override
 	public String toString() {
-		return "Department [ID: " + id + ", description: " + description + "]";
+		return "Sexo [id=" + id + ", descricao=" + descricao + "]";
 	}
+	
+	public List<Fisica> getFisica() {
+		return fisica;
+	}
+
 	
 }
