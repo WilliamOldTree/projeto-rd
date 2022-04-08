@@ -61,10 +61,8 @@ return (
                         </form>
                         </Modal.Body>
                         <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            FECHAR
-                        </Button>
-                        <Button variant="primary">FINALIZAR COMPRA</Button>
+
+                        <Button variant="primary"    className='ModalCartãoButton1'>SALVAR</Button>
                         </Modal.Footer>
                     </Modal>           
                 </div>             

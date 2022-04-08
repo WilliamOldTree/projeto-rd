@@ -10,6 +10,35 @@
 <link rel="stylesheet" href="./css/base.css">
 <link rel="stylesheet" href="./css/tabela.css">
 <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
+ <script type="text/javascript">
+ $(document).ready(function(){
+		$(".telefone, .celular").mask("0000-0000");
+		$(".cpf").mask("000.000.000-00"); 
+		$(".preco").mask("R$ 0.000,00", {reverse: false}); 
+		$(".preco2").mask(" 000,00");
+		$(".money2").mask("R$ 00,00");
+		$(".preco4").mask("R$ 000,00");
+		$(".cep").mask("00000-000"); 
+		$(".dimensao").mask("00x00 cm"); 
+		$(".pesoForm").mask("0.000 kg"); 
+		$(".peso2").mask("0.000");  
+		$(".cnpj").mask("00.000.000/0000-00", {reverse: true});  
+		$(".cartao").mask("**** **** **** 0000");
+		$(".data").mask("00/00/0000");
+		$(".dataCart").mask("00/00");
+
+		 var $target = $("#mensagem");  	
+		$target.keydown(function(event){
+			console.log(event);
+			console.log($target);
+		if (event.target.value == " "   && event.keyCode == 32){
+			$target.val("");
+			
+		}
+
+        
+        
+    </script>
 </head>
 <body>
     <header>
@@ -55,7 +84,16 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="CategoriaController">Categorias
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ProdutoController">Produtos
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ProdutoController
+                                "
+                                                                    <%
+    
+ String usuario = (String) session.getAttribute("email");
+    
+   if(usuario == null){
+	   response.sendRedirect("index.jsp");
+   }       %>
+                                >Produtos
                                     <hr width="160">
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="FornecedorController">Fornecedores
@@ -70,8 +108,15 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController">Pedidos
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="./index.jsp">Sair
-                                </a>
+                              <form action="ProdutoController" method="post">    
+                                   <button name="option" value="sair" type="submit" style="background: white;
+                                   border: none;
+                                   margin-left: 9px;
+                                   color:  #516673;
+                                   ">
+                                 Sair
+                                          </button> 
+                             </form> 
                                 </div>
                             </div>
                         </div>
@@ -105,9 +150,10 @@
 					<th>Descrição</th>
 					<th>Volume</th>
 					<th>Peso</th>
-					<th>Situação</th>
 					<th>Preço</th>
 					<th>Quantidade</th>
+		            <th>Desconto</th>
+					
 					<th>Ações</th>
 				</tr>
 			</thead>
@@ -115,48 +161,20 @@
 				<c:forEach var="produto" items="${listaProduto}">
 					<tr>
 						<form action="ProdutoController" method="post">
-							<td>
+							<td data-label="ID">
 								<c:out value="${produto.id}"/>
 								<input type="hidden" name="id" value="${produto.id}"/>
 							</td>
-							<td><c:out value="${produto.descricao}"/></td>
-							<td><c:out value="${produto.volume}"/></td>
-							<td><c:out value="${produto.peso}"/></td>
-							<td><c:out value="${produto.situacao}"/></td>
-							<td><c:out value="${produto.preco}"/></td>
-<td>
-	
-                                      <button class="btn formCrud1" type="button"  data-bs-toggle="modal" data-bs-target=".modal"  style="margin-right: 10px;">Deletar                   
-                                      </button>	 	
-							    <button class="btn formCrud2" type="submit" name="option" value="updateForm">Atualizar</button>
-					    
-<div class="modal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">ATENÇÃO!!!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>tem certeza que deseja excluir esse cadastro?</p>
-      </div>
-      <div class="modal-footer">  
-        <button class="btn formCrud1" type="submit"  value="delete">Deletar</button>
-        <button type="button" class="btn btn-danger" data-dismiss=".modal">Cancelar</button>
-    
-      </div>
-    </div>
-  </div>
-</div>
-							<td data-label="ID"><c:out value="${produto.descricao}"/></td>
-							<td data-label="Descrição"><c:out value="${produto.volume}"/></td>
-							<td data-label="Volume"><c:out value="${produto.peso}"/></td>
-							<td data-label="Peso"><c:out value="${produto.situacao}"/></td>
-							<td data-label="Situação"><c:out value="${produto.preco}"/></td>
+							<td data-label="Descrição" ><c:out value="${produto.descricao}"/></td>
+							<td data-label="Volume"> <span class="money2"><c:out  value="${produto.volume}"/></span></td>
+							<td data-label="Peso"><span class="money2"><c:out value="${produto.peso}"/></span></td>
+							<td data-label="Preço"><span class="money2"><c:out value="${produto.preco}"/></span></td>
 							<td data-label="Quantidade"><c:out value="${produto.quantidade}"/></td>
+						    <td data-label="Desconto"><c:out value="${produto.desconto}"/></td>
+							
                             <td data-label="Ações">
+	
+	
 	
                             <button class="btn formCrud1" type="button" style="margin: 5px;" data-bs-toggle="modal" data-bs-target="#modal-delete-${produto.id}" >Deletar</button>		 	
 							<button class="btn formCrud2" type="submit" style="margin: 5px;" name="option" value="updateForm">Atualizar</button>
@@ -169,7 +187,7 @@
 										<div class="modal-dialog ">
 											<div class="modal-content ">
 												<div class="text-center px-3 py-3">
-													<p class=" text-danger">TEM CERTEZA QUE QUER EXCUIR ESSE REGISTRO?</p>
+													<p class=" text-danger">DESEJA EXCLUIR O REGISTRO (<c:out value="${produto.descricao}"/>)?</p>
 												</div>
 												<div class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
 													<button  class="btn formCrud1" name="option" value="Entrou">Cancelar</button>

@@ -12,9 +12,9 @@
      <script type="text/javascript">
     
         window.onload = function() {
-        	  $('#money2').mask("#.##0,00", {reverse: true});
-        	  $('#money3').mask("#.##0,00", {reverse: true});
-        	  $('#money4').mask("#.##0,00", {reverse: true});
+        	  $('.money2').mask("00,00", {reverse: true});
+        	  $('.money3').mask("00,00", {reverse: true});
+        	  $('.money4').mask("00,00", {reverse: true});
 
           
       }
@@ -52,8 +52,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class=menu-list1>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
+                                   <div class=menu-list1>
+                               <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
                                     <hr width="160">
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="DepartamentoController">Departamentos
@@ -62,7 +62,16 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="CategoriaController">Categorias
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ProdutoController">Produtos
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ProdutoController
+                                "
+                                                                    <%
+    
+ String usuario = (String) session.getAttribute("email");
+    
+   if(usuario == null){
+	   response.sendRedirect("index.jsp");
+   }       %>
+                                >Produtos
                                     <hr width="160">
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="FornecedorController">Fornecedores
@@ -77,15 +86,22 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController">Pedidos
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="./index.jsp">Sair
-                                </a>
+                              <form action="ProdutoController" method="post">    
+                                   <button name="option" value="sair" type="submit" style="background: white;
+                                   border: none;
+                                   margin-left: 9px;
+                                   color:  #516673;
+                                   ">
+                                 Sair
+                                          </button> 
+                             </form> 
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-8" id="nav-itens">
                         <nav>
-                            <h4 id="principal"><b>PAINEL DE CONTROLE</b></h4>
+                            <h4><b>PAINEL DE CONTROLE</b></h4>
                         </nav>
                     </div>
                     <div class="col-2" id="cep">
@@ -108,16 +124,32 @@
 		<c:choose>
 			<c:when test="${produto == null }">
 				<label class="form-label">Nome:</label><input style="" class="form-control" type="text" name="descricao"   required/>
-				<label class="form-label">Volume:</label><input style="" class=" form-control" type="text" name="volume" id="money2" required />
-				<label class="form-label">Peso:</label><input style="" class="form-control" type="text" name="peso" id="money3" required />
+				<label class="form-label">Volume:</label><input style="" class=" form-control money3" type="text" name="volume"  required />
+				<label class="form-label">Peso:</label><input style="" class="form-control money4" type="text" name="peso"  required />
 				<label class="form-label" required>Situação:</label>
 				<select class="form-select" name="situacao" required>
                  <option>ATIVO</option>
                  <option>INATIVO</option>
                 </select>
-				<label class="form-label">Preço:</label><input style="" class="form-control" type="text" name="preco" id="money4" required/>
-				<label class="form-label">Quantidade:</label><input style="" class="form-control" type="text" name="quantidade" required />
-				<label class="form-label">Desconto:</label><input style="" class="form-control" type="text" name="desconto" required />
+				<label class="form-label">Preço:</label><input style="" class="form-control  money2" type="text" name="preco" id="money4" required/>
+				<label class="form-label">Quantidade:</label>
+				<select class="form-select" name="quantidade" required>
+				 <option selected>Selecione...</option>
+                 <option value="1">50 Unidades</option>
+                 <option value="2">150 Unidades</option>
+                 <option value="3">250 Unidades</option>
+                 <option value="4">350 Unidades</option>
+                 <option value="5">450 Unidades</option>
+                 <option value="6">550 Unidades</option>                 
+                </select>
+                
+				<label class="form-label">Desconto:</label>
+				<select class="form-select" name="desconto" required>
+				 <option selected>Selecione...</option>
+                 <option value="1">0,5</option>
+                 <option value="2">0,10</option>
+                 <option value="3">0,15</option>
+                </select>
 			     <br>	
 			     			
 <button class="btn formbtn" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete-${produto.id}"  style="margin-right: 10px;">Salvar                   
@@ -143,16 +175,29 @@
 													</c:when>
 			<c:otherwise>
 				<input type="hidden" name="id" value="${produto.id}"/>
-				<label class="form-label">Nome:</label><input style="" class="form-control" type="text" name="descricao" value="${produto.descricao}" required/>
-				<label class="form-label">Volume:</label><input style="" class="form-control" type="text" name="volume" value="${produto.volume}" id="money2" required />
-				<label class="form-label">Peso:</label><input style="" class="form-control" type="text" name="peso" value="${produto.peso}" id="money3" required/>
-                <label class="form-label">Situação:</label>
-                <select class="form-select" name="situacao" value="${produto.situacao}" required>
-                 <option>ATIVO</option>
-                 <option>INATIVO</option>
+				
+				<label class="form-label">Nome:</label><input style="" class="form-control" type="text" name="descricao"   value="${produto.descricao}"required/>
+				<label class="form-label">Volume:</label><input style="" class=" form-control money2" type="text" name="volume" value="${produto.volume}" required />
+				<label class="form-label">Peso:</label><input style="" class="form-control money3" type="text" name="peso" value="${produto.peso}"  required />
+				<label class="form-label">Preço:</label><input style="" class="form-control money4" type="text" name="preco"  value="${produto.preco}" required/>
+				<label class="form-label" >Quantidade:</label>
+				<select class="form-select" name="quantidade" value="${produto.quantidade}" required>
+				 <option selected>Selecione...</option>
+                 <option value="1">50 Unidades</option>
+                 <option value="2">150 Unidades</option>
+                 <option value="3">250 Unidades</option>
+                 <option value="4">350 Unidades</option>
+                 <option value="5">450 Unidades</option>
+                 <option value="6">550 Unidades</option>                 
                 </select>
-				<label class="form-label">Preço:</label><input style="" class="form-control" type="text" name="preco" value="${produto.preco}" id="money4" required />
-				<label class="form-label">Quantidade:</label><input style="" class="form-control" type="text" name="quantidade" value="${produto.quantidade}" required/>
+                
+				<label class="form-label">Desconto:</label>
+                <select class="form-select" name="desconto" value="${produto.desconto}" required>
+                 <option selected>Selecione...</option>
+                 <option value="1">0,5</option>
+                 <option value="2">0,10</option>
+                 <option value="3">0,15</option>
+                </select>
 			    <br>
 			    
 <button class="btn formbtn" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete-${produto.id}"  style="margin-right: 10px;">Salvar                   
@@ -167,7 +212,7 @@
 											<div class="modal-content ">
 												<div class="modal-body">
 												<div class="text-center px-3 py-3">
-													<p class=" text-success"> Dados do produto atualizados com sucesso!.</p>
+													<p class=" text-success"> Dados do produto  atualizados com sucesso!.</p>
 												</div>
 												<div class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
   													<button class="btn formbtn ok" type="submit" name="option" value="update">OK!</button>

@@ -105,14 +105,14 @@ body {
 
 
     .table,
-    .table thead,
-    .table tr,
+    .table thead.thead-pedidos,
+    .table tr.tr-pedidos,
     .table th.pedido-list {
         display: block;
         width  : 100%;
     }
 
-    .table tr {
+    .table tr.tr-pedidos {
         margin-bottom: 15px;
     }
 

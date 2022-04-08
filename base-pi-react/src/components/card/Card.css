@@ -15,7 +15,7 @@
 .card {
     margin          : 10px 0px 10px 0px;
     padding         : 10px;
-    width           : 95%;
+    width           : 90%;
     height          : 95%;
     background-color: white;
     border          : 1px solid rgb(177, 174, 174);
@@ -86,13 +86,13 @@
     margin    : 10px 0;
 }
 
-.card .content .btn {
+.card .content .btn-card {
     display   : block;
     text-align: center;
     margin    : 10px 0px 0px -20px;
 }
 
-.card .content .btn button {
+.card .content .btn-card button {
     background-color: #F27507;
     color           : #fff;
     border          : none;
@@ -108,7 +108,7 @@
     margin-top      : -10px;
 }
 
-.card .content .btn button:hover {
+.card .content .btn-card button:hover {
     transform : scale(1.2);
     box-shadow: 0 5px 5px #AF9787;
 }
@@ -121,7 +121,7 @@
     .card .img img {
         height: 100%;
     }
-    .card .content .btn button {
+    .card .content .btn-card button {
         width           : 80%;
     }
 }

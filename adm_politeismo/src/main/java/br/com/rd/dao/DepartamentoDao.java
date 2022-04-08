@@ -16,7 +16,7 @@ public class DepartamentoDao {
 		Connection con = c.getConnection();
 		
 		try {
-			PreparedStatement p = con.prepareStatement("insert into departamento (nome) values (?)");
+			PreparedStatement p = con.prepareStatement("insert into departamento (nome, status_departamento) values (?, true)");
 			p.setString(1, departamento.getNome());
 					
 			System.out.println(p);
@@ -35,7 +35,7 @@ public class DepartamentoDao {
 		Connection con = c.getConnection();
 		ArrayList<Departamento> lista = new ArrayList<Departamento>();
 		try {
-			PreparedStatement p = con.prepareStatement("select * from departamento");
+			PreparedStatement p = con.prepareStatement("select * from departamento where status_departamento != 0 order by id_departamento;");
 			ResultSet r = p.executeQuery();			
 			
 			while (r.next()) {
@@ -113,6 +113,23 @@ public class DepartamentoDao {
 		}
 		return dep;
 	}
+	
+	public void exclusionDepartamento(Integer id) {
+		Conexao c = Conexao.getInstance();
+		Connection con = c.getConnection();
+		
+		try {
+			PreparedStatement p = con.prepareStatement("update departamento set status_departamento = 0 where id_departamento = ?");
+			p.setInt(1, id);
+			System.out.println(p);
+			p.executeUpdate();
+			System.out.println("Comando executado");
+			p.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
 } //endCategoriaDao
-
-

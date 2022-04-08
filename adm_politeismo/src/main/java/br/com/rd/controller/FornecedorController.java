@@ -60,21 +60,27 @@ public class FornecedorController extends HttpServlet {
 			case ("insert"):
 				insertFornecedor(request, response);
 			break;
+			case ("sair"):
+			     Sair(request, response);
+			break;
 			default:
 				selectAllFornecedor(request, response);
 		}
 	}
 	
+	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.getRequestDispatcher("deslogar.jsp").forward(request, response);
+	}
 
 	private void showInsertFornecedor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		request.getRequestDispatcher("formFornecedores.jsp").forward(request, response);
+		request.getRequestDispatcher("FormFornecedores.jsp").forward(request, response);
 	}
 	
 	private void showUpdateFornecedor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Integer id = Integer.parseInt(request.getParameter("id"));
 		Fornecedor fornecdor = this.fc.selectById(id);
 		request.setAttribute("fornecedor", fornecdor);
-		request.getRequestDispatcher("formFornecedores.jsp").forward(request, response);
+		request.getRequestDispatcher("FormFornecedores.jsp").forward(request, response);
 	}
 	
 	private void insertFornecedor(HttpServletRequest tomate, HttpServletResponse alface) throws ServletException, IOException{
@@ -99,7 +105,7 @@ public class FornecedorController extends HttpServlet {
 		String idBack = request.getParameter("id");
 		if (idBack != null) {
 			Integer id = Integer.parseInt(idBack);
-			this.fc.removeFornecedor(id);;
+			this.fc.exclusionFornecedor(id);
 		}
 		response.sendRedirect("FornecedorController");
 	}

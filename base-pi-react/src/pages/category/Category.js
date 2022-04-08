@@ -46,8 +46,8 @@ function Category() {
                 </div>
 
                 <div className='row category'>
-                    <div className='col-3 col-sm-3 col-xs-3 listaCat'>
-                        <ul>
+                    <div className='col-2 col-sm-2 col-xs-2 listaCat'>
+                        <ul className='ulListaCat'>
                             <h5><b>Categorias</b></h5>
                             <li>
                                 <a href="#">Artigos</a>
@@ -124,7 +124,7 @@ function Category() {
                         </ul>
                     </div>
 
-                    <div className='col-9 col-sm-9 col-xs-9 cardCat-container'>
+                    <div className='col-10 col-sm-10 col-xs-10 cardCat-container'>
                         <div className='row'>
 
                             <div className='col-md-6 col-lg-3 cardCat'>

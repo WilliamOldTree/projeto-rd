@@ -33,7 +33,22 @@ public class ClienteJuridicaController extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		doGet(request, response);
+		String option = request.getParameter("option");
+		if (option == null) {
+			option = "Entrou";
+		}
+		switch(option) {
+
+			case ("sair"):
+			     Sair(request, response);
+			break;
+			default:
+				selectAllClienteJuridica(request, response);
+		}
+	}
+	
+	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		   response.sendRedirect("deslogar.jsp");
 	}
 	
 	private void selectAllClienteJuridica(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{

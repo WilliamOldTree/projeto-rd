@@ -17,7 +17,7 @@ function AreaCartoes() {
 
                 <Title titleIcon={User} titleText="Meus Cartões" />
                 
-                <div className='MenuAreaResponsivo'>
+                <div className='MenuAreaAlinhamento5'>
             <Menu />
             </div>
 
@@ -31,26 +31,21 @@ function AreaCartoes() {
                     </ul>
 
                     <ul className='Cartoes1'>
-                        <li className='DadosCartoes'>****-****_****_9526</li>
+                        <li className='DadosCartoes'>****-****_**_9526</li>
                         <li className='DadosCartoes'>09/28</li>
                     </ul>
 
                     <h2 className='DadosCartoes' id='AreaCredito'>CRÉDITO</h2>
 
-                    {/* <button className='editarCartoes' type='submit'>
-                        ALTERAR
-                    </button> */}
-                    {/* <button className='addCartoes' type='submit'>
-                        ADICIONAR
-                    </button> */}
-                    <Modal_Cartoes textoBotao='ALTERAR' className='editarCartoes'/>
-                    <Modal_Cartoes textoBotao='ADICIONAR' className='addCartoes'/>
+                 
 
                     <img width="25" className='LixeiraAreaCartoes' src={Lixeira} />
                     <img width="55" className='CartaoVisaAreaCartoes' src={Cartao} />
                     <img width="45" className='VisaAreaCartoes' src={Visa} />
 
                 </div>
+                <Modal_Cartoes textoBotao='ALTERAR' className='editarCartoes'/>
+                    <Modal_Cartoes textoBotao='ADICIONAR' className='addCartoes'/>
             </div>
 
             <Footer />

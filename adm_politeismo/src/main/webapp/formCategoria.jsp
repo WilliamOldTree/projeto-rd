@@ -10,6 +10,13 @@
 <link rel="stylesheet" href="./css/formCategoria.css">
 <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+            <%
+    
+
+    
+   if( session.getAttribute("email")== null){
+	   response.sendRedirect("index.jsp");
+   }       %>
 </head>
 <body>
     <header>
@@ -41,16 +48,17 @@
                                     </div>
                                 </div>
                                 <div class=menu-list1>
-                               <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
                                     <hr width="160">
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="DepartamentoController">Departamentos
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="CategoriaController">Categorias
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="FormCategoriaController">Categorias
                                     <hr width="160">
-                                </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ProdutoController">Produtos
+                                    									                                                                      
+               
+         <a class="nav-link active" id="navbar-brand" aria-current="page" href="ProdutoController">Produtos
                                     <hr width="160">
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="FornecedorController">Fornecedores
@@ -65,16 +73,21 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController">Pedidos
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="./index.jsp">Sair
-                                </a>
+                               <form action="CategoriaController" method="post">    
+                                   <button name="option" value="sair" type="submit" style="background: white;
+                                   border: none;
+                                   margin-left: 9px;
+                                   color:  #516673;
+                                   ">
+                                 Sair
+                                          </button> 
+                             </form> 
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-8" id="nav-itens">
                         <nav>
-                            <h4 id="principal"><b>PAINEL DE CONTROLE</b></h4>
-                        </nav>
                     </div>
                     <div class="col-2" id="cep">
                         <div>
@@ -94,23 +107,27 @@
 	<form action="CategoriaController" method="post">
 		<c:choose>
 			<c:when test="${categoria == null }">
+			
+			
 				<label class="form-label">Categoria:</label><input style="" class="form-control" type="text" name="nome" required/>
 			     <br>
-			     
+
+                   </a>
 			     
 <button class="btn formbtn" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete-${categoria.id}"  style="margin-right: 10px;">Salvar                   
                                       </button>	 	
                                       	<div class="modal fade" id="modal-delete-${categoria.id }" tabindex="-1" aria-labelledby="inicioModal" aria-hidden="true">
 									<form action="CategoriaController" method="post">
 									
-									
+
+                       
 									<input id="categoria" name="categoria" type="hidden" value="" />
 									
 										<div class="modal-dialog ">
 											<div class="modal-content ">
 												<div class="modal-body">
 												<div class="text-center px-3 py-3">
-													<p class=" text-success"> A categoria  foi inserida  com sucesso</p>
+													<p class=" text-success"> A categoria foi inserida  com sucesso </p>
 												</div>
 												<div class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
   													<button class="btn formbtn ok" type="submit" name="option" value="insert">OK!</button>
@@ -163,6 +180,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"></script>
+    
 </body>
 
 </html>

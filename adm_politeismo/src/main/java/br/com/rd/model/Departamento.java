@@ -3,6 +3,7 @@ package br.com.rd.model;
 public class Departamento {
 	private Integer id;
 	private String nome;
+	private Boolean status_departamento;
 
 	public Departamento(String nome) {
 		super();
@@ -25,8 +26,16 @@ public class Departamento {
 		this.nome = nome;
 	}
 	
-	@Override
+	
 	public String toString() {
-		return "Categoria [id=" + id + ", nome=" + nome + "]";
+		return "Departamento [id=" + id + ", nome=" + nome + "]";
+	}
+
+	public Boolean getStatus_departamento() {
+		return status_departamento;
+	}
+
+	public void setStatus_departamento(Boolean status_departamento) {
+		this.status_departamento = status_departamento;
 	}
 }

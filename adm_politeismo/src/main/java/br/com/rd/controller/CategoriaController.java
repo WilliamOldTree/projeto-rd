@@ -15,10 +15,8 @@ import br.com.rd.model.Categoria;
 @WebServlet("/CategoriaController")
 public class CategoriaController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
 	private CategoriaDao cat;
 
-       
     public CategoriaController() {
     	super();
  
@@ -55,11 +53,17 @@ public class CategoriaController extends HttpServlet {
 			case ("insert"):
 				insertCategoria(request, response);
 			break;
+			case ("sair"):
+			     Sair(request, response);                        
+			break;
 			default:
 				selectAllCategorias(request, response);
 		}
 	}
 	
+	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.getRequestDispatcher("deslogar.jsp").forward(request, response);
+	}
 
 	private void showInsertCategoria(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.getRequestDispatcher("formCategoria.jsp").forward(request, response);
@@ -92,9 +96,9 @@ public class CategoriaController extends HttpServlet {
 		String idBack = request.getParameter("id");
 		if (idBack != null) {
 			Integer id = Integer.parseInt(idBack);
-			this.cat.removeCategoria(id);;
+			this.cat.exclusionCategoria(id);
 		}
-		response.sendRedirect("CategoriaController");
+	        response.sendRedirect("CategoriaController");
 	}
 	
 	private void updateUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

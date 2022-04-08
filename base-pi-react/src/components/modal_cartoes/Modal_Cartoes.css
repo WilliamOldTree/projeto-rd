@@ -1,3 +1,19 @@
+.ModalCartãoButton1{
+    background   : #F27507;
+    border-radius: 10px;
+    border       : none;
+    font-weight  : bold;
+    color        : #FFFFFF;
+    width        : 105px;
+    height       : 40px;
+   }
+
+   .ModalCartãoButton1:hover,
+   .ModalCartãoButton1:focus {
+    background-color: darkorange;
+    color           : #FFFFFF;
+}
+
 @media (max-width:320px) {
     
     .DivModal{
@@ -25,16 +41,7 @@
     }
     
     
-    .modal-footer button{
-        background-color:rgb(240, 126, 33);
-        border: none;
-        color:white;
-    }
-    
-    .modal-footer button:hover{
-        background-color:rgb(240, 126, 33);
-        cursor: pointer;
-    }
+
 
     
-    }    
+    }

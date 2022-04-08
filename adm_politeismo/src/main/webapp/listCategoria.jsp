@@ -1,10 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Lista de Pedidos</title>
+<title>Lista de Categorias</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./css/base.css">
 <link rel="stylesheet" href="./css/tabela.css">
@@ -13,11 +14,12 @@
 <body>
     <header>
         <!-- header superior -->
+
         <div class="container-fluid" id="header-up">
             <div class="container" id="cont1">
                 <div class="row row-up">
                     <div class="col-2" id="canvas">
-                        <button id="btn-canvas" type="button" data-bs-toggle="offcanvas"
+                        <button id="btn-canvas" type="button " data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft"><img src="./images/menu.png"
                                 alt="" width="70%"></button>
 
@@ -32,12 +34,19 @@
                                 <div class="container" id="menu-canvas">
                                     <div class="row row-canvas">
                                         <div class="login-canvas ">
-                                         <a class="user_adm"><%= session.getAttribute("email")%></a> 
-                                        </div>
+                                         		<c:choose>
+			                                        <c:when test=" ${sessionScope.email == null}">
+                                                        <a class="user_adm" href="./index.jsp">Faça seu Login</a> 
+			                                         </c:when>
+			                                        <c:otherwise>
+                                                        <a class="user_adm">Olá, ${sessionScope.email}</a> 
+			                                         </c:otherwise>
+		                                        </c:choose>                                        
+		                                        </div>
                                     </div>
                                 </div>
                                 <div class=menu-list1>
-                               <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
                                     <hr width="160">
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="DepartamentoController">Departamentos
@@ -45,6 +54,14 @@
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="CategoriaController">Categorias
                                     <hr width="160">
+                                    
+                                                                                 <%
+    
+ String usuario = (String) session.getAttribute("email");
+    
+   if(usuario == null){
+	   response.sendRedirect("index.jsp");
+   }       %>
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="ProdutoController">Produtos
                                     <hr width="160">
@@ -61,8 +78,15 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController">Pedidos
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="./index.jsp">Sair
-                                </a>
+                              <form action="CategoriaController" method="post">    
+                                   <button name="option" value="sair" type="submit" style="background: white;
+                                   border: none;
+                                   margin-left: 9px;
+                                   color:  #516673;
+                                   ">
+                                 Sair
+                                          </button> 
+                             </form> 
                                 </div>
                             </div>
                         </div>
@@ -85,11 +109,10 @@
     
  <div class="container">
     <h1 class="title">Lista de Categorias</h1>
-    
+
 	<form action="CategoriaController" method="post">
 		<button class="btn formCrud" type="submit" name="option" value="insertForm">CADASTRAR</button>
 	</form>
-	
 		<table class="table table-hover">
 			<thead>
 				<tr>
@@ -105,20 +128,8 @@
 	               
 							<td data-label="ID">
 								<c:out value="${categoria.id}"/>
-								<input type="hidden" name="id" value="modal-${categoria.id}"/>
+								<input type="hidden" name="id" value="${categoria.id}"/>
 							</td>
-
-							<td><c:out value="${categoria.nome}"/></td>
-							<td>
-	
-                                      <button class="btn formCrud1" type="button"  data-bs-toggle="modal"   data-bs-target=".modal"  style="margin-right: 10px; ">Deletar                   
-                                      </button>	 	
-							    <button class="btn formCrud2" type="submit" name="option" value="updateForm">Atualizar</button>
-					    
-<div class="
-    </div>
-  </div>
-
 							
 							<td data-label="Categoria"><c:out value="${categoria.nome}"/></td>
 							
@@ -137,11 +148,11 @@
 										<div class="modal-dialog ">
 											<div class="modal-content ">
 												<div class="text-center px-3 py-3">
-													<p class=" text-danger">TEM CERTEZA QUE QUER EXCUIR ESSE REGISTRO?</p>
+													<p class=" text-danger">DESEJA EXCLUIR O REGISTRO (<c:out value="${categoria.nome}"/>)?</p>
 												</div>
 												<div class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
-													<button  class="btn formCrud1" name="option" value="Entrou" id="c">Cancelar</button>
-  													<button class="btn formCrud1" type="submit"  name="option" value="delete" id="d">Deletar</button>
+													<button  class="btn formCrud1" name="option" value="Entrou">Cancelar</button>
+  													<button class="btn formCrud1" type="submit"  name="option" value="delete">Deletar</button>
 												</div>
 											</div>
 										</div>

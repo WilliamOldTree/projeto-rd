@@ -102,9 +102,9 @@ button.btn.formlogin:hover {
 .link-senha {
     font-weight: 500;
     margin-top : 2px;
-    font-size  : 18px;
+    font-size  : 16px;
     margin-left: 166px;
-    color      : #979797;
+    color      : #3C4043;
     cursor     : pointer;
 }
 
@@ -151,6 +151,7 @@ button.btn.formlogin:hover {
     font-size  : 18px;
 }
 
+
 .btn.formcadastro {
     width        : 198px;
     height       : 55px;
@@ -170,7 +171,7 @@ a.btn.formcadastro {
 display: flex;
 align-items: center;
 justify-content: center;
-margin-top: 50px;
+margin-top: 40px;
 }
 
 button.btn.formcadastro:hover {

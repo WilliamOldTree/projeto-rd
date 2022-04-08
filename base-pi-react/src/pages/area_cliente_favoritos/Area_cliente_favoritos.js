@@ -36,7 +36,7 @@ function Favoritos() {
                     {/* BEGGIN LISTAGEM DE PRODUTOS FAVORITOS */}
                     <div className='col-9 col-sm-9 col-xs-9 produtosFavoritos'>
                         <table className='table'>
-                            <thead>
+                            <thead className='thead-favoritos'>
                                 <tr className='tr-favoritos' >
                                     <th className='col-2 col-sm-2 col-xs-2 area-favoritos'> 
                                     <img width='90%' src={SagradaFamilia} />

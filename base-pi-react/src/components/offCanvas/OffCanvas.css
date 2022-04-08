@@ -1,0 +1,82 @@
+
+#btn-canvas{
+    width: 65px;
+    height: 50px;
+    background-color: #AF9787; 
+    border: none;
+}
+
+.perfil{
+    display: flex;       
+}
+
+.menu-list-canvas{
+    margin-top: 20px;
+}
+
+.offcanvas-header{
+    background-color: #AF9787;
+    color: #261C1A;
+}
+
+.offcanvas-header h5{
+    margin: 0px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+#canvas{
+    display: flex;
+    justify-content: center;
+}
+
+/*
+#menu-canvas{
+    padding: 0px 0px;
+}
+
+
+.row-canvas{
+    height: 80px;
+    
+}
+
+.offcanvas-body{
+    background-color: #E5E5E5;
+}
+
+.login-canvas {
+    height: 80px;
+    display: flex;
+    
+}
+
+.login-canvas a {
+    margin-top: 15px;
+    text-decoration: none;       
+}
+
+.login-canvas a h5 {
+    margin-top: 5px;
+    font-size: 18px;
+    color: #261C1A;
+    font-weight: 900;       
+}
+
+.menu-list1{
+    margin-top: 50px;
+}
+
+.menu-list1 a{
+    text-decoration: none;
+    color: #261C1A;
+}
+
+.menu-list1 a:hover{
+    cursor: pointer;
+    text-decoration:underline;
+    color: #261C1A;  
+}*/
+

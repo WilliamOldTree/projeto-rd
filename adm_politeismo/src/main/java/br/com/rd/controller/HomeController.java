@@ -67,10 +67,17 @@ public class HomeController extends HttpServlet {
 			case ("insertForm"):
 				showInsertUser(request, response);
 			break;
+			case ("sair"):
+			     Sair(request, response);
+			break;
 			default:
 				selectAllUser(request, response);
 
 		}
+	}
+	
+	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		   response.sendRedirect("deslogar.jsp");
 	}
 	
 	private void showUpdateUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -95,7 +102,7 @@ public class HomeController extends HttpServlet {
 				this.user.insert(user1);
 			}
 		}
-		response.sendRedirect("HomeController");
+		response.sendRedirect("index.jsp");
 	}
 	
 	

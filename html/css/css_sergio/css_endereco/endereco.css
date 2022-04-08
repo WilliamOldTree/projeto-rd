@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
+
+.tituloEnd
+{
+    width: 100%;
+    height: 65px;
+    border-bottom: 1px solid #261C1A;
+    font-family: 'Roboto', sans-serif;
+    font-style: large bold;
+    padding: 0;
+    margin-bottom: 10px;
+    margin-top: 60px;
+}
+
+.endereco::before
+{
+    position: absolute;
+    content: url(../../../images/icons/entrega.png);
+    margin-left: 80px;
+    margin-top: -20px; 
+}
+
+.txtEnd
+{
+    margin-left: 160px;
+    font-size: 25px;
+    text-decoration-style: both dashed;
+    color: #261C1A;
+}
+
+.formEnd
+{   
+    width: 600px;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    margin-left: 300px;
+    padding: 10px;
+    border: 1px solid #261C1A;
+    border-radius: 3px; 
+    display: flex;
+    justify-content:center;
+    align-items:center; 
+}
+
+.iptEndereco
+{
+    width: 350px;
+    margin-bottom: 10px;
+    border: 1px solid #261C1A;
+}
+
+.iptNumero
+{
+    width: 110px;
+    border: 1px solid #261C1A;
+    margin-left: 120px;
+}
+.lblNumero
+{
+    margin-left: 120px;
+}
+
+.iptComplemento
+{
+    width: 300px;
+    margin-bottom: 10px;
+    border: 1px solid #261C1A;
+}
+
+#inputCep
+{
+   
+    border: 1px solid #261C1A;
+    width: 160px;
+    margin-left: 70px;
+}
+.lblCep
+{
+    margin-left: 70px;
+}
+
+.iptBairro
+{
+    width: 300px;
+    margin-bottom: 10px;
+    border: 1px solid #261C1A;
+}
+
+.slctEstado
+{
+    width:150px;
+    border: 1px solid #261C1A;
+}
+
+.lblCidade
+{
+    margin-left: -78px;
+}
+.iptCidade
+{
+    margin-left: -78px;
+    border: 1px solid #261C1A;
+    width: 327px;
+}
+
+.iptCheck
+{
+    margin-bottom: 10px;
+    border: 1px solid #261C1A;
+    margin-left: 0px;
+    margin-top: 15px;
+}
+.lblCheck
+{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* .btnProximo
+{
+    width: 200px;
+    background-color: #34A853;
+    color: white;
+    border: 1px solid green;
+    margin-top: 10px;
+    margin-left: 890px;
+} */
+
+.btnProximo
+{
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 170px;
+    margin-bottom: 10px;
+    background-color: #00A846;
+    color: white;
+}
+.btnProximo:hover{
+    background-color: #34d175;
+    color: white;
+    border: 1px solid #00A846;
+
+
+
+/* @media screen and (min-width: 320px) {
+    
+    body {
+        display: block;
+        align-items: center;
+        padding: 0px;
+    }
+    .tituloEnd{
+        width: 439px;
+        display:flex;
+        margin-left: 5px;
+        justify-content:center;
+    }
+    .endereco{
+        width:100%;
+    }
+    .endereco::before{
+        margin-left: -80px;
+    }
+    .endereco .txtEnd{
+        margin-left: 0px;
+        margin-bottom: -30px;
+    }
+    .formEnd{
+        width: 420px;
+        height: auto;
+        margin-left: 15px;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        box-shadow: 2px 2px 4px 4px rgba(0, 0, 0.25, 0.25);
+    }
+    .lblEnd{
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+    .iptEndereco{
+        margin-left: 10px;
+        width: 398px;
+    }
+    .lblNumero{
+        margin-left: 10px;
+        
+    }
+    .iptNumero{
+        margin-left: 10px;
+        
+    }
+
+    .lblComplemento{
+        margin-left: 10px;  
+    }
+    .iptComplemento{
+        margin-left: 10px;
+        width:250px;
+    }
+    .lblCep{
+        margin-left: 60px;  
+    }
+    #inputCep{
+        margin-left: 60px;
+        width:132px;
+    }
+    .lblEstado{
+        margin-left: 10px;  
+    }
+    .slctEstado{
+        margin-left: 10px;
+        width:250px;
+    }
+    .lblCidade{
+        margin-left: 10px;  
+    }
+    .iptCidade{
+        margin-left: 10px;
+        width:250px;
+    }
+    .lblBairro{
+        margin-left: 10px;  
+    }
+    .iptBairro{
+        margin-left: 10px;
+        width:250px;
+    }
+    .lblCheck{
+        margin-left: 35px;  
+    }
+    .iptCheck{
+        margin-left: 10px;
+        
+    }
+    .btnProximo{
+        margin-left: 30px;
+        width: 87%;
+    }
+  } */
+
+  /* fim tamanho menor celular */
+
+  /* @media screen and (min-width: 768px){
+    body {
+        align-items: center;
+        padding: 0px;
+    }
+
+    .tituloEnd{
+        width: 100%;
+        margin-left: 5px;
+        
+    }
+    .endereco{
+        width:100%;
+    }
+    .endereco::before{
+        margin-left: -80px;
+    }
+    .endereco .txtEnd{
+        margin-left: 0px;
+        margin-bottom: -30px;
+    }
+    .formEnd{
+        width: 590px;
+        height: auto;
+        margin-left: 80px;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        box-shadow: 2px 2px 4px 4px rgba(0, 0, 0.25, 0.25);
+    }
+    .lblNumero{
+        margin-left: 140px;
+        margin-top: 5px;
+        
+    }
+    .iptNumero{
+        margin-left: 140px;   
+    }
+    .iptComplemento{
+        width: 400px;
+    }
+    .lblCep{
+        margin-left: 140px;  
+    }
+    #inputCep{
+        margin-left: 140px;
+        width:130px;
+    }
+
+    .slctEstado{
+        margin-left: 10px;
+        width:280px;
+    }
+
+    .lblCidade{
+        margin-left: 40px;  
+    }
+    .iptCidade{
+        margin-left: 20px;
+        width:250px;
+    }
+
+  } */
+
+}

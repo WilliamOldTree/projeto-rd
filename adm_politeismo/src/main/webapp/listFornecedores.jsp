@@ -58,7 +58,13 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="ProdutoController">Produtos
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="FornecedorController">Fornecedores
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="FornecedorController"
+                                                                    <%
+ String usuario = (String) session.getAttribute("email");
+   if(usuario == null){
+	   response.sendRedirect("index.jsp");
+   }       %>
+                                >Fornecedores
                                     <hr width="160">
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteFisicaController">Clientes Fisícos
@@ -70,8 +76,15 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController">Pedidos
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="./index.jsp">Sair
-                                </a>
+                                 <form action="FornecedorController" method="post">    
+                                   <button name="option" value="sair" type="submit" style="background: white;
+                                   border: none;
+                                   margin-left: 9px;
+                                   color:  #516673;
+                                   ">
+                                 Sair
+                                          </button> 
+                             </form> 
                                 </div>
                             </div>
                         </div>
@@ -117,23 +130,14 @@
 							</td>
 
 							
-							<td><c:out value="${fornecedor.razao}"/></td>
-							<td><c:out value="${fornecedor.cnpj}"/></td>
-							<td><c:out value="${fornecedor.email}"/></td>
+							<td data-label="Razão Social"><c:out value="${fornecedor.razao}"/></td>
+							<td data-label="CNPJ"><c:out value="${fornecedor.cnpj}"/></td>
+							<td data-label="Email"><c:out value="${fornecedor.email}"/></td>
 							<td>
 							
 
-							</td>
 							
-							<td>
 	
-                                      <button class="btn formCrud1" type="button"  data-bs-toggle="modal" data-bs-target=".modal"  style="margin-right: 10px;">Deletar                   
-                                      </button>	 	
-							    <button class="btn formCrud2" type="submit" name="option" value="updateForm">Atualizar</button>
-					<td data-label="Razão Social"><c:out value="${fornecedor.razao}"/></td>
-							<td data-label="CNPJ"><c:out value="${fornecedor.cnpj}"/></td>
-							<td data-label="Email"><c:out value="${fornecedor.email}"/></td>
-							<td data-label="Ações">
                             <button class="btn formCrud1" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete-${fornecedor.id}" style="margin: 5px;">Deletar</button>	 	
 							<button class="btn formCrud2" type="submit" name="option" style="margin: 5px;" value="updateForm">Atualizar</button>
                              <!-- INÍCIO DO MODAL DE DELETAR -->
@@ -146,7 +150,7 @@
 										<div class="modal-dialog ">
 											<div class="modal-content ">
 												<div class="text-center px-3 py-3">
-													<p class=" text-danger">TEM CERTEZA QUE QUER EXCUIR ESSE REGISTRO?</p>
+													<p class=" text-danger">DESEJA EXCLUIR O REGISTRO (<c:out value="${fornecedor.razao}"/>)?</p>
 												</div>
 												<div class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
 													<button  class="btn formCrud1" name="option" value="Entrou">Cancelar</button>

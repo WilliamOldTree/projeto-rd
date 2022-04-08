@@ -51,11 +51,19 @@ public class DepartamentoController extends HttpServlet {
 			case ("insert"):
 				insertDepartamento(request, response);
 			break;
+			case ("sair"):
+				Sair(request, response);
+			break;
 			default:
 				selectAllDepartamento(request, response);
 		}
 	}
+    
 	
+
+	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		   response.sendRedirect("deslogar.jsp");
+	}
 
 	private void showInsertDepartamento(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.getRequestDispatcher("formDepartamento.jsp").forward(request, response);
@@ -88,7 +96,7 @@ public class DepartamentoController extends HttpServlet {
 		String idBack = request.getParameter("id");
 		if (idBack != null) {
 			Integer id = Integer.parseInt(idBack);
-			this.dep.removeDepartamento(id);
+			this.dep.exclusionDepartamento(id);
 		}
 		response.sendRedirect("DepartamentoController");
 	}

@@ -1,12 +1,11 @@
 
 package br.com.rd.model;
 
-import java.util.Date;
 
 public class ClienteFisica extends Cliente {
 	
 	private String cpf;
-	private Date nascimento;
+	private String nascimento;
 	private String sexo;
 	private int ddd;
 	private String celular;
@@ -16,7 +15,7 @@ public class ClienteFisica extends Cliente {
 	private String cep;
 	private String cidade;
 	private String estado;
-	public ClienteFisica(Integer id, String nome, String email, String cpf, Date nascimento, String sexo,String celular,int ddd,String logradouro,String tipo_logradouro,String numeracao,String cep,String cidade,String estado ) {
+	public ClienteFisica(Integer id, String nome, String email, String cpf, String nascimento, String sexo,String celular,int ddd,String logradouro,String tipo_logradouro,String numeracao,String cep,String cidade,String estado ) {
 		super(id, nome, email);
 		this.cpf = cpf;
 		this.nascimento = nascimento;
@@ -84,10 +83,10 @@ public class ClienteFisica extends Cliente {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public Date getNascimento() {
+	public String getNascimento() {
 		return nascimento;
 	}
-	public void setNascimento(Date nascimento) {
+	public void setNascimento(String nascimento) {
 		this.nascimento = nascimento;
 	}
 	public String getSexo() {

@@ -1,0 +1,360 @@
+.container-RecEmail{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#TituloRecEmail{
+    color: #261C1A;
+    margin-top: 27px;
+    margin-left: 100px;
+    position: relative;
+    top: 60px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+
+.line_rec_email{
+    width: 100%;
+    border: 1px solid;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.User_rec_email{
+    position: relative;
+    top: 10%;
+    left: 2%;
+}
+
+
+
+.container-senha{
+   
+    
+    width: 464px;
+    height: 281px;
+    margin-left:35% ;
+    align-items: center;
+    margin-top: 15%;
+    position: relative;
+    top: -100px;
+    background: #FFFFFF;
+    border: 2px solid #261C1A;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+
+.subtitulo_rec_email{
+    position: relative;
+width: 247px;
+height: 33px;
+left: 120px;
+top: 25px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 29px;
+display: flex;
+align-items: center;
+
+color: #261C1A;
+
+    }
+
+
+
+    #labelEmail{
+        
+        position: relative;
+        width: 241px;
+        height: 21px;
+        left: 30px;
+        top: 50px;
+        justify-content: flex-start;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        color: #3C4043;
+        }
+
+        
+#EmailSenha{ 
+    width: 413px;
+    height: 42px;
+    left: 30px;
+    top: 70px;
+    position: relative; 
+    border: 2px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+        
+
+.BUT{
+    position: absolute;
+    width: 105px;
+    height: 50px;
+    left: 40%;
+    align-items: center;
+    top: 204px;
+    color: #FFFFFF;
+    font-weight: bold;
+    border: none;
+    background: #34A853;
+    border-radius: 10px;
+    }
+    .BUT:hover{
+        background-color: #34d175;
+    }
+
+    @media (max-width:1024px){
+
+
+       
+        .User_rec_email{
+            position: relative;
+            top: 5px;
+            left: 20px;
+        }
+
+        .containerRecEmail{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        
+    .titulo_rec_email{
+            position: relative;
+            width: 450px;
+            height: 83px;
+            left: 2%;
+            top:  80px;
+            
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 30px;
+            line-height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            color: #261C1A;
+        }
+        
+        
+        .line_rec_email{
+            width: 100%;
+            border: 1px solid;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        
+        
+        
+        .container-senha{
+           
+            
+            width: 464px;
+            height: 351px;
+            margin-left:22% ;
+            align-items: center;
+            margin-top: 200px;
+            position: relative;
+            top: -100px;
+            background: #FFFFFF;
+            border: 2px solid #261C1A;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 30px;
+        }
+        
+        
+        .subtitulo_rec_email{
+            position: relative;
+        width: 247px;
+        height: 33px;
+        left: 109px;
+        top: 25px;
+        
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 29px;
+        display: flex;
+        align-items: center;
+        
+        color: #261C1A;
+        
+            }
+        
+        
+        
+            #labelEmail{
+                
+                position: relative;
+                width: 241px;
+                height: 21px;
+                left: 30px;
+                top: 85px;
+                justify-content: flex-start;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 21px;
+                display: flex;
+                color: #3C4043;
+                }
+        
+                
+        #EmailSenha{ 
+            width: 413px;
+            height: 45px;
+            left: 30px;
+            top: 95px;
+            position: relative; 
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+                
+        
+        .BUT{
+            position: absolute;
+            width: 105px;
+            height: 50px;
+            left: 42%;
+            align-items: center;
+            top: 264px;
+            color: #FFFFFF;
+            font-weight: bold;
+            border: none;
+            background: #34A853;
+            border-radius: 10px;
+            }
+   
+    @media (max-width:667px){
+      
+        
+        .container-RecEmail{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        
+        #TituloRecEmail{
+           position: relative;
+           left: -10px;
+           
+        }
+
+        .User_rec_email{
+         width: 15%;
+           
+        }
+        
+        
+        .line_rec_email{
+            width: 100%;
+            border: 1px solid;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        
+        
+        
+        .container-senha{
+           
+            
+            width: 274px;
+            height: 351px;
+            left:-10% ;
+            align-items: center;
+            margin-top: 50%;
+            position: relative;
+            top: -100px;
+            background: #FFFFFF;
+            border: 2px solid #261C1A;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 30px;
+        }
+        
+        
+        .subtitulo_rec_email{
+            position: relative;
+        width: 247px;
+        height: 33px;
+        left: 20px;
+        top: 25px;
+        
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 29px;
+        display: flex;
+        align-items: center;
+        
+        color: #261C1A;
+        
+            }
+        
+        
+        
+            #labelEmail{
+                
+                position: relative;
+                width: 241px;
+                height: 21px;
+                left: 30px;
+                top: 90px;
+                justify-content: flex-start;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 21px;
+                display: flex;
+                color: #3C4043;
+                }
+        
+                
+        #EmailSenha{ 
+            width: 213px;
+            height: 45px;
+            left: 30px;
+            top: 100px;
+            position: relative; 
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+                
+        
+        .BUT{
+            position: absolute;
+            width: 105px;
+            height: 50px;
+            left: 32%;
+            align-items: center;
+            top: 264px;
+            color: #FFFFFF;
+            font-weight: bold;
+            border: none;
+            background: #34A853;
+            border-radius: 10px;
+            }
+   
+    }
+
+
+ 
+    }
