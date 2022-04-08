@@ -3,6 +3,7 @@ DROP DATABASE bd_politeismo;
 create database bd_politeismo;
 use bd_politeismo;
 
+select * from juridica j ;
 --                                                         TABLES
 SELECT
 C.ID_CLIENTE,
@@ -65,9 +66,9 @@ CREATE TABLE PRODUTO
 (
 ID_PRODUTO								INT										NOT NULL 				AUTO_INCREMENT,
 DESCRICAO								VARCHAR(255) 							NOT NULL,
-VOLUME									VARCHAR(255) 										NULL,
-PESO									VARCHAR(255) 										NULL,
-PRECO									VARCHAR(255) 										NOT NULL,
+VOLUME									DECIMAL(7,2) 										NULL,
+PESO									DECIMAL(7,2)										NULL,
+PRECO									DECIMAL(7,2) 										NOT NULL,
 ESTOQUE_PRODUTO							INT										NOT NULL,
 PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE	INT										NOT NULL,
 STATUS_PRODUTO                          BOOLEAN                                 NOT NULL,
@@ -463,12 +464,12 @@ insert into DEPARTAMENTO_CATEGORIA (DEPARTAMENTO_ID_DEPARTAMENTO, CATEGORIA_ID_C
 insert into DEPARTAMENTO_CATEGORIA (DEPARTAMENTO_ID_DEPARTAMENTO, CATEGORIA_ID_CATEGORIA, PRODUTO_ID_PRODUTO) values (1, 7, 1);
 insert into DEPARTAMENTO_CATEGORIA (DEPARTAMENTO_ID_DEPARTAMENTO, CATEGORIA_ID_CATEGORIA, PRODUTO_ID_PRODUTO) values (1, 8, 1);
 
-insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Francisco e Clara LTDA', 15012705000104, 'franciscoeclara@hotmail.com', true);
-insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Gospel Atacado Evangelico', 31451211000174, 'gospelatacado@gmail.com', true);
-insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Casa do cigano artigos religiosos', 15336171000325, 'sac@casadocigano.com.br', true);
-insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Espirita Andre Luiz - Mundo Maior', 65080616000165, 'sacmundomaior@feal.com.br', true);
-insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Conto de Fadas Distribuidora', 08892821000191, 'contodefadas@distribuidora.com.br', true);
-insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Produtos cristaos e judaico messianico', 33977029000187, 'camiyla-seeber@hotmail.com', true);
+insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Francisco e Clara LTDA', '15.012.705/0001-04', 'franciscoeclara@hotmail.com', true);
+insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Gospel Atacado Evangelico', '31.451.211/0001-74', 'gospelatacado@gmail.com', true);
+insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Casa do cigano artigos religiosos', '15.336.171/0003-25', 'sac@casadocigano.com.br', true);
+insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Andre Luiz - Mundo Maior', '65.080.616/0001-65', 'sacmundomaior@feal.com.br', true);
+insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values ('Conto de Fadas Distribuidora', '08.892.821/0001-91', 'contodefadas@distribuidora.com.br', true);
+insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, STATUS_FORNECEDOR) values (' cristaos e judaico messianico', '33.977.029/0001-87', 'camiyla-seeber@hotmail.com', true);
 
 insert into PRODUTO_FORNECEDOR (PRODUTO_ID_PRODUTO, FORNECEDOR_ID_FORNECEDOR) values (1, 1);
 insert into PRODUTO_FORNECEDOR (PRODUTO_ID_PRODUTO, FORNECEDOR_ID_FORNECEDOR) values (2, 1);
@@ -505,11 +506,11 @@ insert into FISICA (ID_CPF, NASCIMENTO, SEXO_ID_SEXO, CLIENTE_ID_CLIENTE) values
 insert into FISICA (ID_CPF, NASCIMENTO, SEXO_ID_SEXO, CLIENTE_ID_CLIENTE) values ('323.448.609-30', '1982/12/12', 3,3);
 insert into FISICA (ID_CPF, NASCIMENTO, SEXO_ID_SEXO, CLIENTE_ID_CLIENTE) values ('323.448.609-40', '1983/12/09', 1,4);
 
-insert into JURIDICA (ID_CNPJ, ABERTURA, INSCRICAO_ESTADUAL, RAZAO_SOCIAL, CLIENTE_ID_CLIENTE) values ('34.486.091/0001-10', '1999/10/10', '1020304050607080', 'Empresa Cliente 1 Pessoa Juridica', 5);
-insert into JURIDICA (ID_CNPJ, ABERTURA, INSCRICAO_ESTADUAL, RAZAO_SOCIAL, CLIENTE_ID_CLIENTE) values ('34.486.092/0001-20', '1998/02/11', '1030304050607070', 'Empresa Cliente 2 Pessoa Juridica', 6);
-insert into JURIDICA (ID_CNPJ, ABERTURA, INSCRICAO_ESTADUAL, RAZAO_SOCIAL, CLIENTE_ID_CLIENTE) values ('34.486.093/0001-30', '1997/03/12', '1040304050607060', 'Empresa Cliente 3 Pessoa Juridica', 7);
-insert into JURIDICA (ID_CNPJ, ABERTURA, INSCRICAO_ESTADUAL, RAZAO_SOCIAL, CLIENTE_ID_CLIENTE) values ('34.486.094/0001-40', '1996/12/10', '1050304050607050', 'Empresa Cliente 4 Pessoa Juridica', 8);
-insert into JURIDICA (ID_CNPJ, ABERTURA, INSCRICAO_ESTADUAL, RAZAO_SOCIAL, CLIENTE_ID_CLIENTE) values ('34.486.095/0001-50', '1995/12/13', '1060304050607040', 'Empresa Cliente 5 Pessoa Juridica', 9);
+insert into JURIDICA (ID_CNPJ, ABERTURA, INSCRICAO_ESTADUAL, RAZAO_SOCIAL, CLIENTE_ID_CLIENTE) values ('34.486.091/0001-10', '1999/10/10', '1020304050607080', 'Empresa 1 Pessoa Juridica', 5);
+insert into JURIDICA (ID_CNPJ, ABERTURA, INSCRICAO_ESTADUAL, RAZAO_SOCIAL, CLIENTE_ID_CLIENTE) values ('34.486.092/0001-20', '1998/02/11', '1030304050607070', 'Empresa 2 Pessoa Juridica', 6);
+insert into JURIDICA (ID_CNPJ, ABERTURA, INSCRICAO_ESTADUAL, RAZAO_SOCIAL, CLIENTE_ID_CLIENTE) values ('34.486.093/0001-30', '1997/03/12', '1040304050607060', 'Empresa 3 Pessoa Juridica', 7);
+insert into JURIDICA (ID_CNPJ, ABERTURA, INSCRICAO_ESTADUAL, RAZAO_SOCIAL, CLIENTE_ID_CLIENTE) values ('34.486.094/0001-40', '1996/12/10', '1050304050607050', 'Empresa 4 Pessoa Juridica', 8);
+insert into JURIDICA (ID_CNPJ, ABERTURA, INSCRICAO_ESTADUAL, RAZAO_SOCIAL, CLIENTE_ID_CLIENTE) values ('34.486.095/0001-50', '1995/12/13', '1060304050607040', 'Empresa 5 Pessoa Juridica', 9);
 
 
 insert into FORMA_ENTREGA (ID_FORMA_ENTREGA, EMPRESA) values (1, 'CORREIOS');
@@ -543,12 +544,10 @@ INSERT INTO STATUS_PEDIDO  (DESCRICAO , PEDIDO_ID_PEDIDO) VALUES ('AGUARDANDO PA
 INSERT INTO STATUS_PEDIDO  (DESCRICAO , PEDIDO_ID_PEDIDO) VALUES ('SAIU PARA ENTREGA', 3);
 INSERT INTO STATUS_PEDIDO  (DESCRICAO , PEDIDO_ID_PEDIDO) VALUES ('SAIU PARA ENTREGA', 4);
 
-
 insert into ITEM_PEDIDO (PRODUTO_ID_PRODUTO, PEDIDO_ID_PEDIDO, QUANTIDADE) values (1, 1, 4);
 insert into ITEM_PEDIDO (PRODUTO_ID_PRODUTO, PEDIDO_ID_PEDIDO, QUANTIDADE) values (4, 2, 6);
 insert into ITEM_PEDIDO (PRODUTO_ID_PRODUTO, PEDIDO_ID_PEDIDO, QUANTIDADE) values (5, 3, 7);
 insert into ITEM_PEDIDO (PRODUTO_ID_PRODUTO, PEDIDO_ID_PEDIDO, QUANTIDADE) values (1, 4, 15);
-
 
 insert into FORMA (ID_FORMA, INSTITUICAO) values (1, 'CARTAO');
 insert into FORMA (ID_FORMA, INSTITUICAO) values (2, 'PIX');
@@ -583,22 +582,22 @@ insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (5, 'Bahia', 'BA');
 insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (6, 'Ceara', 'CE');
 insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (7, 'Espirito Santo', 'ES');
 insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (8, 'Goias', 'GO');
-insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (9, 'MaranhÃƒÂ£o', 'MA');
+insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (9, 'Maranhão', 'MA');
 insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (10, 'Mato Grosso', 'MT');
 insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (11, 'Mato Grosso do Sul', 'MS');
 insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (12, 'Minas Gerais', 'MG');
-insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (13, 'ParÃƒÂ¡', 'PA');
+insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (13, 'Pará', 'PA');
 insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (14, 'Paraiba', 'PB');
-insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (15, 'ParanÃƒÂ¡', 'PR');
+insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (15, 'Paraná', 'PR');
 insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (16, 'Pernambuco', 'PE');
-insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (17, 'PiauÃƒÂ­', 'PI');
+insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (17, 'Piauí', 'PI');
 insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (18, 'Rio de Janeiro', 'RJ');
 insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (19, 'Rio Grande do Norte', 'RN');
 insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (20, 'Rio Grande do Sul', 'RS');
-insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (21, 'RondÃƒÂ´nia', 'RO');
+insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (21, 'Rondônia', 'RO');
 insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (22, 'Roraima', 'RR');
 insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (23, 'Santa Catarina', 'SC');
-insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (24, 'SÃƒÂ£o Paulo', 'SP');
+insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (24, 'São Paulo', 'SP');
 insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (25, 'Sergipe', 'SE');
 insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (26, 'Tocantins', 'TO');
 insert into ESTADO (ID_ESTADO, NOME, SIGLA) values (27, 'Distrito Federal', 'DF');
@@ -613,23 +612,23 @@ insert into OPERACAO (DESTINATARIO_ID_DESTINATARIO, REMENTENTE_ID_REMETENTE) val
 insert into OPERACAO (DESTINATARIO_ID_DESTINATARIO, REMENTENTE_ID_REMETENTE) values (2, 1);
 
 -- ENDEREÃ‡O Cliente fisica
-insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, ESTADO_ID_ESTADO) values ('ResidÃªncia','Rua','Das Neves','16','87030100','MARINGA', 17);
+insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, ESTADO_ID_ESTADO) values ('Residência','Rua','Das Neves','16','87030100','MARINGA', 17);
 insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, ESTADO_ID_ESTADO) values ('Casa', 'Rua','Jardim das Margaridas','536','01034040','Sao Paulo', 25);
-insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, ESTADO_ID_ESTADO) values ('ResidÃªncia','Avenida ','Engenheiro Velho de Brotas','653','04345000','Sao Paulo',25);
+insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, ESTADO_ID_ESTADO) values ('Residência','Avenida ','Engenheiro Velho de Brotas','653','04345000','Sao Paulo',25);
 insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, ESTADO_ID_ESTADO) values ('Casa','Rua','Sao Gabriel - Vila Renata','231','07056090','Guarulhos',25);
 
 -- ENDEREÃ‡O Cliente Juridico
-insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, ESTADO_ID_ESTADO) values ('ResidÃªncia','Avenida','AntÃ´nio Carlos MagalhÃ£es','65','95046800','Caxias do Sul',21);
+insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, ESTADO_ID_ESTADO) values ('Residência','Avenida','Antônio Carlos Magalhães','65','95046800','Caxias do Sul',21);
 insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, ESTADO_ID_ESTADO) values ('Apartamento','Rua','Pedrinhas','160','01512000','Sao Paulo',25);
-insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, ESTADO_ID_ESTADO) values ('Casa MÃ£e','Rua','Das Neves','16','87030100','MARINGA', 17);
-insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, ESTADO_ID_ESTADO) values ('ResidÃªncia', 'Rua','Vale do Campo','536','01034040','Sao Paulo', 25);
-insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, ESTADO_ID_ESTADO) values ('Casa','Avenida ','Vilas do AtlÃ¢ntico','653','04345000','Sao Paulo',25);
+insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, ESTADO_ID_ESTADO) values ('Casa Mãe','Rua','Das Neves','16','87030100','MARINGA', 17);
+insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, ESTADO_ID_ESTADO) values ('Residência', 'Rua','Vale do Campo','536','01034040','Sao Paulo', 25);
+insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, ESTADO_ID_ESTADO) values ('Casa','Avenida ','Vilas do Atlântico','653','04345000','Sao Paulo',25);
 
 -- ENDEREÃ‡O Fornecedor
 insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, FORNECEDOR_ID_FORNECEDOR, ESTADO_ID_ESTADO) values ('Empresa','Rua','Dep. Ardinal Ribas Sala 2','120','87030100','MARINGA',1,17);
 insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, FORNECEDOR_ID_FORNECEDOR, ESTADO_ID_ESTADO) values ('Empresa', 'Rua','Do Seminario','00','01034040','Sao Paulo', 2, 25);
-insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, FORNECEDOR_ID_FORNECEDOR, ESTADO_ID_ESTADO) values ('Empresa','Avenida ','Engenheiro George Corbisier - Jabaquara','653','04345000','Sao Paulo',3,25);
-insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, FORNECEDOR_ID_FORNECEDOR, ESTADO_ID_ESTADO) values ('Empresa','Rua','SÃƒÂ£o Gabriel - Vila Renata','231','07056090','Guarulhos',4,25);
+insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, FORNECEDOR_ID_FORNECEDOR, ESTADO_ID_ESTADO) values ('Empresa','Avenida ','Engenheiro George Corbisier - Jabaquara','653','04345000','São Paulo',3,25);
+insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, FORNECEDOR_ID_FORNECEDOR, ESTADO_ID_ESTADO) values ('Empresa','Rua','São Gabriel - Vila Renata','231','07056090','Guarulhos',4,25);
 insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, FORNECEDOR_ID_FORNECEDOR, ESTADO_ID_ESTADO) values ('Empresa','Estrada','Mun. Adolfo Randazzo','1450','95046800','Caxias do Sul',5,21);
 insert into ENDERECO (APELIDO, TIPO_LOGRADOURO, NOME_LOGRADOURO, NUMERO, CEP, CIDADE, FORNECEDOR_ID_FORNECEDOR, ESTADO_ID_ESTADO) values ('Empresa','Rua','Conde de Sarzedas, Se','160','01512000','Sao Paulo',6 ,25);
 
@@ -868,45 +867,4 @@ TSE.STATUS_ENTREGA_ID_STATUS_ENTREGA = SE.ID_STATUS_ENTREGA;
 -- insert into TELEFONE (DDD, CELULAR, FIXO, CLIENTE_ID_CLIENTE, FORNECEDOR_ID_FORNECEDOR) values (11,'999427936','49665775',  5, 4);
 -- insert into TELEFONE (DDD, CELULAR, FIXO, CLIENTE_ID_CLIENTE, FORNECEDOR_ID_FORNECEDOR) values (54,' ','30291561',  6, 5);
 -- insert into TELEFONE (DDD, CELULAR, FIXO, CLIENTE_ID_CLIENTE, FORNECEDOR_ID_FORNECEDOR) values (11,'997790431','',  7,6);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

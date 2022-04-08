@@ -130,9 +130,9 @@
 							</td>
 
 							
-							<td><c:out value="${fornecedor.razao}"/></td>
-							<td><c:out value="${fornecedor.cnpj}"/></td>
-							<td><c:out value="${fornecedor.email}"/></td>
+							<td data-label="Razão Social"><c:out value="${fornecedor.razao}"/></td>
+							<td data-label="CNPJ"><c:out value="${fornecedor.cnpj}"/></td>
+							<td data-label="Email"><c:out value="${fornecedor.email}"/></td>
 							<td>
 							
 

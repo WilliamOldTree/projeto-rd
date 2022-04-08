@@ -139,5 +139,3 @@ public void exclusionFornecedor(Integer id) {
 	}
 }
 } //endFornecedorDao
-
-

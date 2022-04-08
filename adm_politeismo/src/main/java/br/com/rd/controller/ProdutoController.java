@@ -87,14 +87,14 @@ public class ProdutoController extends HttpServlet {
 		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (precoBack != null) && (quantidadeBack != null)  && (descontoBack != null) ){
 			if (!descricaoBack.equals("")){
 				
-				//Double volumeBack1 = Double.valueOf(volumeBack);
-				//Double pesoBack1 = Double.valueOf(pesoBack);
-				//Double precoBack1 = Double.valueOf(precoBack);
-			
+			     Double volume2 = Double.parseDouble(volumeBack.replace(",", "."));
+			     Double preco2 = Double.parseDouble(precoBack.replace(",", "."));
+			     Double peso2 = Double.parseDouble(pesoBack.replace(",", "."));
+
 				Integer quantidadeBack1 = Integer.parseInt(quantidadeBack);
 				Double descontoBack1 = Double.parseDouble(descontoBack);
 				
-				Produto prod1 = new Produto(descricaoBack, volumeBack, pesoBack, precoBack, quantidadeBack1, descontoBack1);
+				Produto prod1 = new Produto(descricaoBack, volume2, peso2, preco2, quantidadeBack1, descontoBack1);
 				this.prod.insert(prod1);
 			}
 		}
@@ -122,18 +122,23 @@ public class ProdutoController extends HttpServlet {
 		String pesoBack = request.getParameter("peso");
 		String precoBack = request.getParameter("preco");
 		String quantidadeBack = request.getParameter("quantidade");
-		String destaqueBack = request.getParameter("destaque");
 		String descontoBack = request.getParameter("desconto");
 
 		String idBack = request.getParameter("id");
-		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (quantidadeBack != null) && (precoBack != null) && (destaqueBack != null)) {
+		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (quantidadeBack != null) && (precoBack != null) && (descontoBack != null)) {
 			if (!descricaoBack.equals("")){
-	
+	             
+				
+				Double volume2 = Double.parseDouble(volumeBack.replace(",", "."));
+			     Double preco2 = Double.parseDouble(precoBack.replace(",", "."));
+			     Double peso2 = Double.parseDouble(pesoBack.replace(",", "."));
+			     
+				
 				Integer quantidadeBack1 = Integer.parseInt(quantidadeBack);
 				Double descontoBack1 = Double.parseDouble(descontoBack);
 
 				Integer id = Integer.parseInt(idBack);
-				Produto prod1 = new Produto(descricaoBack, volumeBack, pesoBack, precoBack, quantidadeBack1, descontoBack1);
+				Produto prod1 = new Produto(descricaoBack, volume2, peso2, preco2, quantidadeBack1, descontoBack1);
 				prod1.setId(id);
 				this.prod.updateProduto(prod1);
 			}
