@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.div-form-dados {
+    margin-top: 20px;
+}
+
+.title-form-dados {
+    font-size  : 25px;
+    color      : #261C1A;
+    font-weight: bold;
+}
+
+.label-form-dados {
+    font-size  : 16px;
+    color      : #3C4043;
+    font-weight: 700;
+}
+
+.input-form-dados {
+    border: 1px solid #979797;
+}
+
+.btn-modal-dados {
+    width          : 105px;
+    height         : 50px;
+    margin-left    : 48%;
+    margin-top     : -10%;
+    position       : relative;
+    top            : -175px;
+    left           : 220px;
+    justify-content: center;
+    background     : #F27507;
+    border-radius  : 10px;
+    border         : none;
+    font-weight    : bold;
+    color          : #FFFFFF;
+}
+
+.btn-modal-dados:hover, .btn-modal-dados:focus{
+    background-color: darkorange;
+    color: #FFFFFF;
+}
+
+.btn-form-dados {
+    width          : 105px;
+    height         : 40px;
+    background     : #F27507;
+    border-radius  : 10px;
+    border         : none;
+    font-weight    : bold;
+    color          : #FFFFFF;
+}
+
+.btn-form-dados:hover, .btn-form-dados:focus{
+    background-color: darkorange;
+    color: #FFFFFF;
+}
+
+
+@media (max-width: 1024px) {
+ 
+     .editarDados {
+        width        : 105px;
+        height       : 50px;
+        position     : relative;
+        top          : 245px;
+        left         : -115%;
+        align-items  : center;
+        background   : #F27507;
+        border-radius: 10px;
+        border       : none;
+        font-weight  : bold;
+
+
+    }
+}
+
+@media (max-width: 600px) {
+    .modal-form-dados {
+        padding: 0px;
+    }
+
+    .div-form-dados {
+        margin-top: 30px;
+    }
+
+    .input-form-dados {
+        height: 50px;
+    }
+    .editarDados {
+        width        : 105px;
+        height       : 50px;
+        position     : relative;
+        top          : 365px;
+        left         : -28%;
+        align-items  : center;
+        background   : #F27507;
+        border-radius: 10px;
+        border       : none;
+        font-weight  : bold;
+
+
+    }
+}

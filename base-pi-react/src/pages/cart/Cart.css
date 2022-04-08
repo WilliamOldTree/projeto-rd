@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
+
+/* BEGINNER CART-TITLE */
+
+#cart_title {
+    display    : flex;
+    align-items: center;
+}
+
+
+.title-cart {
+    color      : #261C1A;
+    font-weight: bold;
+
+    display   : flex;
+    margin-top: 16px;
+}
+
+.title h3 {
+    margin      : 0px;
+    display     : flex;
+    align-items : center;
+    padding-left: 20px;
+    font-size   : 35px;
+}
+
+.line-1 {
+    width     : 100%;
+    border    : 1px solid;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.iconCart {
+    width : 8%;
+    height: 4%;
+
+}
+
+
+
+/* FINISH CART-TITLE */
+
+/* BEGINNER LIST-CART */
+
+.cart-title-table{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.cart-title-content-table{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.cart-title-content-table td{
+    border-bottom: none;
+}
+
+#cart_total{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0px;
+
+}
+
+.btnComprar 
+{
+    width: 200px;
+    height: 50px;
+    background-color: #F27507;
+    border-bottom-style: solid #261C1A;
+    color: white;
+    font-weight: 800;
+    font-size: 22px;
+    
+} 
+.btnComprar:hover{
+    background-color: darkorange;
+    color: white;
+    border: 1px solid #F27507;
+}
+.btnContCompra
+{
+    width: 200px;
+    height: 50px;
+    background-color: #00A846;
+    color: white;
+    font-size: 14px;
+    font-weight: 900;
+    padding-top: 15px;
+}
+.btnContCompra:hover{
+    background-color: #34d175;
+    color: white;
+    border: 1px solid #00A846;
+}
+
+@media(max-width: 500px){
+	#cart_total{
+		margin-right: 20px;
+	}
+}
+
+
+

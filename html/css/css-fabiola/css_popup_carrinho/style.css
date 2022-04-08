@@ -1,0 +1,135 @@
+
+.btncarrinho button, .btnfavorito button, .btnlogin button, .btnsac button{
+    background-color: transparent; 
+    color: white;
+    border: none; 
+}
+
+.btn-close{
+    margin-left: 450px;
+    
+}
+
+.btnModal button:hover{
+    background-color: rgba(229, 229, 229, 0.59);; 
+    border: none; 
+}
+
+.mod{
+    border: 1px solid  #000000;
+    border-radius: 7px;
+}
+
+
+.carrinho{
+    height: 100%;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
+.carrinho hr{
+    width: 90%;
+    margin: 10px 11px ;
+}
+
+.boda{
+    font-size: 16px;
+    text-align: left;
+    padding: 30px 0px 0px 0px;
+    margin-left: 50px;
+}
+
+.carrinho img{
+    padding-top: 20px;
+    margin-left: 30px;
+}
+
+.btnMenos button {
+    background-color: #AF9787;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    margin-top: 70px;
+    height: 20px;
+    width: 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding-bottom: 5px;
+    margin-left: 10px;
+}
+
+.quantidade {
+    height: 20px;
+    width: 36px;
+    margin: 70px 0px -20px -20px;
+    border: 1px solid #AF9787;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+ 
+.btnMais button {
+    background-color: #AF9787;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    height: 20px;
+    width: 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding-bottom: 5px;
+    margin-left: 10px;
+}
+
+.sFamilia{
+    font-size: 16px;
+    text-align: left;
+    padding: 30px 0px 0px 0px;
+    margin-left: 50px;
+    margin-right: 15px;
+}
+
+.lixeira button {
+    background-color: transparent;
+    border: none;
+    padding-left: 70px;
+    
+}
+
+.lixeira{
+    display: flex;
+    justify-content: end;
+    margin-left: 6px;
+    margin-top: 10px;
+    
+}
+.total {
+    display: flex;
+    justify-content: center;
+}
+
+.btnFinal {
+    
+    display: flex;
+    justify-content: end;
+}
+
+.btnFinal button {
+    width: 200px;
+    height: 43px;
+    background-color: rgb(240, 126, 33);
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 18px;
+    margin: 20px 0px;
+}
