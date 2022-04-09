@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 import br.com.rd.politeismo.ecommerce.orm.Estoque;
 
 @Repository
-public interface EstoqueRepository  extends JpaRepository<Estoque, Long>, CrudRepository<Estoque, Long>{
-	
+public interface EstoqueRepository extends JpaRepository<Estoque, Long>, CrudRepository<Estoque, Long> {
+
 	public List<Estoque> findAll();
 
 }

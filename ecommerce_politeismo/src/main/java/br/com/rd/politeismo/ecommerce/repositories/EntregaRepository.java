@@ -6,11 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.rd.politeismo.ecommerce.orm.Endereco;
+import br.com.rd.politeismo.ecommerce.orm.Entrega;
 
 @Repository
-public interface EnderecoRepository extends JpaRepository<Endereco, Long>, CrudRepository<Endereco, Long> {
+public interface EntregaRepository extends JpaRepository<Entrega, Long>, CrudRepository<Entrega, Long>{
 
-	public List<Endereco> findAll();
-
+	public List<Entrega> findAll();
 }

@@ -12,45 +12,41 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "CATEGORIA")
 public class Categoria {
-	
+
 	@Id
-	@Column(name= "id_categoria")
+	@Column(name = "id_categoria")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column(nullable = false)
 	private String nome;
-	
-	@Column(name= "fl_inativo")
+
+	@Column(name = "fl_inativo")
 	private boolean flInativo = true; // flag inativo
-	
+
 	private List<Departamento> departamento;
 	private List<Produto> produto;
-	
-	
-	
-	
-	
+
 	public Categoria() {
-		
+
 	}
 
 	public Long getId_categoria() {
 		return id;
 	}
-	
+
 	public void setId_categoria(Long id_categoria) {
 		this.id = id_categoria;
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
-	
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
 	public List<Departamento> getDepartamento() {
 		return departamento;
 	}

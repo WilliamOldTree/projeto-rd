@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import br.com.rd.politeismo.ecommerce.orm.Categoria;
 
 @Repository
-public interface CategoriaRepository  extends JpaRepository<Categoria, Long>, CrudRepository<Categoria, Long>{
-	
+public interface CategoriaRepository extends JpaRepository<Categoria, Long>, CrudRepository<Categoria, Long> {
+
 	public List<Categoria> findAll();
 
 }

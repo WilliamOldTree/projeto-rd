@@ -17,12 +17,12 @@ public class Estado {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID_ESTADO")
+	@Column(name = "ID_ESTADO")
 	private Long id;
-	
+
 	@Column(nullable = true, name = "NOME")
 	private String nome;
-	
+
 	@Column(nullable = true, name = "SIGLA")
 	private String sigla;
 
@@ -54,6 +54,5 @@ public class Estado {
 	public String toString() {
 		return "Estado [id=" + id + ", nome=" + nome + ", sigla=" + sigla + "]";
 	}
-	
-	
+
 }

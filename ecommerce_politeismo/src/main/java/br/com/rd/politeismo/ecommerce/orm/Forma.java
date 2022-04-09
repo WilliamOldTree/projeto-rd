@@ -1,4 +1,5 @@
 package br.com.rd.politeismo.ecommerce.orm;
+
 import java.util.List;
 
 import javax.persistence.Column;
@@ -9,17 +10,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Entity;
 
-
 @Entity
 @Table(name = "FORMA")
 public class Forma {
-	
 
 	@Id
-	@Column(name= "id_forma")
+	@Column(name = "id_forma")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column(nullable = false)
 	private String instituicao;
 
@@ -44,8 +43,4 @@ public class Forma {
 		return "Forma [id=" + id + ", instituicao=" + instituicao + "]";
 	}
 
-
-	 
-	
-	
 }

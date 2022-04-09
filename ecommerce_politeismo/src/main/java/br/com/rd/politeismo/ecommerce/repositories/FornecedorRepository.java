@@ -8,7 +8,7 @@ import br.com.rd.politeismo.ecommerce.orm.Fornecedor;
 
 @Repository
 public interface FornecedorRepository extends JpaRepository<Fornecedor, Long>, CrudRepository<Fornecedor, Long> {
-	
+
 	public List<Fornecedor> findAll();
 
 }

@@ -8,7 +8,7 @@ import br.com.rd.politeismo.ecommerce.orm.Produto;
 
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Long>, CrudRepository<Produto, Long> {
-	
+
 	public List<Produto> findAll();
 
 }

@@ -22,37 +22,42 @@ public class Pix {
 
 	private Long id_forma;
 	private Long id_cliente;
-	
-	
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getChave() {
 		return chave;
 	}
+
 	public void setChave(String chave) {
 		this.chave = chave;
 	}
+
 	public Long getId_forma() {
 		return id_forma;
 	}
+
 	public void setId_forma(Long id_forma) {
 		this.id_forma = id_forma;
 	}
+
 	public Long getId_cliente() {
 		return id_cliente;
 	}
+
 	public void setId_cliente(Long id_cliente) {
 		this.id_cliente = id_cliente;
 	}
+
 	@Override
 	public String toString() {
 		return "Pix [id=" + id + ", chave=" + chave + ", id_forma=" + id_forma + ", id_cliente=" + id_cliente + "]";
 	}
-	
-	
 
 }// end class

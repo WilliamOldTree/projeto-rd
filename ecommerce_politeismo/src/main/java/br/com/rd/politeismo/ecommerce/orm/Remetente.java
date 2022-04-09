@@ -10,37 +10,34 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "REMETENNTE")
 public class Remetente {
-	
 
-		
-		@Id
-		@Column(name= "id_remetente")
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private Long id;
-		
-		@Column(nullable = false)
-		private String tipo;
+	@Id
+	@Column(name = "id_remetente")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-		public Long getId() {
-			return id;
-		}
+	@Column(nullable = false)
+	private String tipo;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
+	public Long getId() {
+		return id;
+	}
 
-		public String getTipo() {
-			return tipo;
-		}
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-		public void setTipo(String tipo) {
-			this.tipo = tipo;
-		}
+	public String getTipo() {
+		return tipo;
+	}
 
-		@Override
-		public String toString() {
-			return "Remetente [id=" + id + ", tipo=" + tipo + "]";
-		}
-		
-		
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	@Override
+	public String toString() {
+		return "Remetente [id=" + id + ", tipo=" + tipo + "]";
+	}
+
 }

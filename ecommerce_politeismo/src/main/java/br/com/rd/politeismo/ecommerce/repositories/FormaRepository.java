@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import br.com.rd.politeismo.ecommerce.orm.Forma;
 
 @Repository
-public interface FormaRepository  extends JpaRepository<Forma, Long>, CrudRepository<Forma, Long>{
-	
+public interface FormaRepository extends JpaRepository<Forma, Long>, CrudRepository<Forma, Long> {
+
 	public List<Forma> findAll();
 
 }

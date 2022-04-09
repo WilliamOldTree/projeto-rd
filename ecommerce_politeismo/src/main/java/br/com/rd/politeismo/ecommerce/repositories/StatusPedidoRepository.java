@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 import br.com.rd.politeismo.ecommerce.orm.StatusPedido;
 
 @Repository
-public interface StatusPedidoRepository  extends JpaRepository<StatusPedido, Long>, CrudRepository<StatusPedido, Long>{
-	
+public interface StatusPedidoRepository extends JpaRepository<StatusPedido, Long>, CrudRepository<StatusPedido, Long> {
+
 	public List<StatusPedido> findAll();
 
 }

@@ -8,9 +8,8 @@ import org.springframework.stereotype.Repository;
 import br.com.rd.politeismo.ecommerce.orm.Pix;
 
 @Repository
-public interface PixRepository extends JpaRepository<Pix, Long>, CrudRepository<Pix, Long>{
-		
-		public List<Pix> findAll();
+public interface PixRepository extends JpaRepository<Pix, Long>, CrudRepository<Pix, Long> {
 
+	public List<Pix> findAll();
 
 }

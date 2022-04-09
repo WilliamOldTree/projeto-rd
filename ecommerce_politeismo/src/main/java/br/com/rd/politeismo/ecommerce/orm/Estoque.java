@@ -17,9 +17,9 @@ public class Estoque {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID_ESTOQUE")
+	@Column(name = "ID_ESTOQUE")
 	private Long idEstoque;
-	
+
 	@Column(nullable = true, name = "QUANTIDADE")
 	private Long quantidade;
 
@@ -43,5 +43,5 @@ public class Estoque {
 	public String toString() {
 		return "Estoque [idEstoque=" + idEstoque + ", quantidade=" + quantidade + "]";
 	}
-	
+
 }

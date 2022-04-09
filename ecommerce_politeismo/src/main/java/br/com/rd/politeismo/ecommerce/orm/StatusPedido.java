@@ -11,15 +11,14 @@ public class StatusPedido {
 		// TODO Auto-generated constructor stub
 	}
 
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_STATUS")
 	private Long idStatus;
-	
+
 	@Column(nullable = false, name = "DESCRICAO")
 	private String descricao;
-	
+
 	private Pedido pedido;
 
 	public Long getIdStatus() {
@@ -50,7 +49,5 @@ public class StatusPedido {
 	public String toString() {
 		return "StatusPedido [idStatus=" + idStatus + ", descricao=" + descricao + "]";
 	}
-	
-	
-	
+
 }

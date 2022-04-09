@@ -8,7 +8,7 @@ import br.com.rd.politeismo.ecommerce.orm.Remetente;
 
 @Repository
 public interface RemetenteRepository extends JpaRepository<Remetente, Long>, CrudRepository<Remetente, Long> {
-	
+
 	public List<Remetente> findAll();
 
 }

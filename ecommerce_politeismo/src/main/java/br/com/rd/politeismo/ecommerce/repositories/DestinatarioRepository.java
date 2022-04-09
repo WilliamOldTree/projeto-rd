@@ -8,7 +8,7 @@ import br.com.rd.politeismo.ecommerce.orm.Destinatario;
 
 @Repository
 public interface DestinatarioRepository extends JpaRepository<Destinatario, Long>, CrudRepository<Destinatario, Long> {
-	
+
 	public List<Destinatario> findAll();
 
 }
