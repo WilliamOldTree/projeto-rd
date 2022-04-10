@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import br.com.rd.politeismo.ecommerce.orm.Departamento;
 
 @Repository
-public interface DepartamentoRepository  extends JpaRepository<Departamento, Long>, CrudRepository<Departamento, Long>{
-	
+public interface DepartamentoRepository extends JpaRepository<Departamento, Long>, CrudRepository<Departamento, Long> {
+
 	public List<Departamento> findAll();
 
 }

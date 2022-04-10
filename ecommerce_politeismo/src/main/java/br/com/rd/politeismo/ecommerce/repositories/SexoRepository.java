@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import br.com.rd.politeismo.ecommerce.orm.Sexo;
 
 @Repository
-public interface SexoRepository  extends JpaRepository<Sexo, Long>, CrudRepository<Sexo, Long>{
-	
+public interface SexoRepository extends JpaRepository<Sexo, Long>, CrudRepository<Sexo, Long> {
+
 	public List<Sexo> findAll();
 
 }

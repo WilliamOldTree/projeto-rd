@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 import br.com.rd.politeismo.ecommerce.orm.Estado;
 
 @Repository
-public interface EstadoRepository  extends JpaRepository<Estado, Long>, CrudRepository<Estado, Long>{
-	
+public interface EstadoRepository extends JpaRepository<Estado, Long>, CrudRepository<Estado, Long> {
+
 	public List<Estado> findAll();
 
 }

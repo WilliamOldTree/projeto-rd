@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import br.com.rd.politeismo.ecommerce.orm.Pagamento;
 
 @Repository
-public interface PagamentoRepository  extends JpaRepository<Pagamento, Long>, CrudRepository<Pagamento, Long>{
-	
+public interface PagamentoRepository extends JpaRepository<Pagamento, Long>, CrudRepository<Pagamento, Long> {
+
 	public List<Pagamento> findAll();
 
 }

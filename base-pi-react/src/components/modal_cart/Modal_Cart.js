@@ -87,8 +87,14 @@ function ModalCarrinho() {
                                 </Container>
                             </Popover.Body>
                         </Popover>
+<<<<<<< HEAD
+                    }
+                >
+                    <Button className="btn-principal-cart"><img  src={Cart} alt="Carrinho" width="80%" /></Button>
+=======
                     }>
                     <Button className="btncarrinho"><img src={Cart} alt="Carrinho" width="80%" /></Button>
+>>>>>>> d7c93f245a2b9a6a0d3e118ef26796eb91b4bc32
                 </OverlayTrigger>
             ))}
         </>
