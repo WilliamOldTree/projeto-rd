@@ -26,13 +26,7 @@ public class Categoria {
 
 	private List<Departamento> departamento;
 	private List<Produto> produto;
-<<<<<<< HEAD
-	
-	
-	
-=======
 
->>>>>>> 094c558f820dc37e2ba909d827924c17fc0b8068
 	public Categoria() {
 
 	}
