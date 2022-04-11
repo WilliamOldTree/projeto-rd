@@ -19,6 +19,8 @@ public class TipoStatusEntrega {
 	@Column(nullable = false)
 	private String descrição_tipo_status_entrega;
 	private Long status_entrega;
+	
+	
 	public Long getId_tipo_status_entrega() {
 		return id_tipo_status_entrega;
 	}
