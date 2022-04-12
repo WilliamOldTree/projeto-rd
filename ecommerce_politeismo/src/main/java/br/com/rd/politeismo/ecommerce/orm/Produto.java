@@ -14,56 +14,53 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "produto")
 public class Produto {
-
+	
 	@Id
-	@Column(name = "id_produto")
+	@Column(name= "id_produto")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
+	
 	@Column(nullable = false)
 	private String descricao;
-
+	
 	@Column(nullable = false)
 	private Double volume;
-
+	
 	@Column(nullable = false)
 	private Double peso;
 
 	@Column(nullable = false)
 	private BigDecimal preco;
-
-	@Column(name = "fl_inativo")
+	
+	@Column(name= "fl_inativo")
 	private boolean flInativo = true; // flag inativo
-
-
-	@Column(name = "estoque_produto", nullable = false)
-	private Estoque estoqueProduto;
-
-	@Column(name = "produto_destaque_id_produto_destaque", nullable = false)
-
 	
 	//Para relacionamentos
 	@JoinColumn(name ="estoque_produto", nullable = false, referencedColumnName = "id_estoque")
 	private Estoque estoqueProduto;
 	
 	@JoinColumn(name ="produto_destaque_id_produto_destaque", nullable = false, referencedColumnName = "id_produto_destaque")
-
-	private ProdutoDestaque produtoDestaque;
-
-	// Para associativa c/ departamento_categoria_produto
+	private ProdutosDestaque produtoDestaque;
+	
+	
+	
+	//Para associativa c/ departamento_categoria_produto
 	private List<Categoria> categoria;
 	private List<Departamento> departamento;
-
-	// Para associativa c/ fornecedor
+	
+	//Para associativa c/ fornecedor
 	private List<Fornecedor> fornecedor;
-
-	// Para associativa c/ favoritos
+	
+	//Para associativa c/ favoritos
 	private List<Favoritos> favoritos;
 
+
+
 	public Produto() {
-
+		
 	}
-
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -112,7 +109,7 @@ public class Produto {
 		this.estoqueProduto = estoqueProduto;
 	}
 
-	public ProdutoDestaque getProdutoDestaque() {
+	public ProdutosDestaque getProdutoDestaque() {
 		return produtoDestaque;
 	}
 
@@ -127,15 +124,16 @@ public class Produto {
 	public List<Fornecedor> getFornecedor() {
 		return fornecedor;
 	}
-
+	
 	public List<Favoritos> getFavoritos() {
 		return favoritos;
 	}
 
 	@Override
 	public String toString() {
-		return "Produto [ID: " + id + ", Descricao: " + descricao + ", Volume: " + volume + ", Peso: " + peso
-				+ ", Preco: " + preco + ", Categoria: " + categoria + ", Departamento: " + departamento + "]";
+		return "Produto [ID: " + id + ", Descricao: " + descricao + ", Volume: " + volume + ", Peso: " + peso + ", Preco: "
+				+ preco + ", Categoria: " + categoria + ", Departamento: " + departamento + "]";
 	}
 
+	
 }
