@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,14 +18,18 @@ public class Estado {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID_ESTADO")
+	@Column(name="ID_ESTADO")
 	private Long id;
-
+	
 	@Column(nullable = true, name = "NOME")
 	private String nome;
-
+	
 	@Column(nullable = true, name = "SIGLA")
 	private String sigla;
+	
+	@OneToMany
+	private Endereco idEndereco;
+	
 
 	public Long getId() {
 		return id;
@@ -54,5 +59,6 @@ public class Estado {
 	public String toString() {
 		return "Estado [id=" + id + ", nome=" + nome + ", sigla=" + sigla + "]";
 	}
-
+	
+	
 }
