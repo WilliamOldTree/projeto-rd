@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 public class StatusPedido {
 
@@ -11,14 +12,16 @@ public class StatusPedido {
 		// TODO Auto-generated constructor stub
 	}
 
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_STATUS")
 	private Long idStatus;
-
+	
 	@Column(nullable = false, name = "DESCRICAO")
 	private String descricao;
-
+	
+	@ManyToOne
 	private Pedido pedido;
 
 	public Long getIdStatus() {
@@ -49,5 +52,7 @@ public class StatusPedido {
 	public String toString() {
 		return "StatusPedido [idStatus=" + idStatus + ", descricao=" + descricao + "]";
 	}
-
+	
+	
+	
 }
