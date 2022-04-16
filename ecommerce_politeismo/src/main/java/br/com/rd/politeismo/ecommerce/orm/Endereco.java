@@ -5,7 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "ENDERECO")
@@ -14,10 +18,10 @@ public class Endereco {
 	public Endereco() {
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID_ENDERECO")
+	@Column(name="ID_ENDERECO")
 	private Long id_endereco;
 
 	@Column(nullable = false, name = "APELIDO")
@@ -38,8 +42,10 @@ public class Endereco {
 	@Column(nullable = true, name = "CIDADE")
 	private String cidade;
 
+	@OneToOne
 	private Fornecedor fornecedor;
-
+	
+	@ManyToOne
 	private Estado estado;
 
 	public Long getId_endereco() {
