@@ -1,12 +1,14 @@
 package br.com.rd.queroserdev.loja.mvc.model;
 
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -23,17 +25,28 @@ public class Categoria {
 	@Column(nullable = false)
 	private String nome;
 	
+	
+
 	@Column(name= "fl_inativo")
 	private boolean flInativo = true; // flag inativo
 	
 	
+	@OneToMany
+	private  List<Produto> produto;
+    
 	
+	
+	
+	
+	
+	public List<Produto> getProduto() {
+		return produto;
+	}
 
-	
-	
-	
-	
-	
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
+	}
+
 	public Categoria() {
 		
 	}
@@ -55,5 +68,20 @@ public class Categoria {
 	}
 	
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public boolean isFlInativo() {
+		return flInativo;
+	}
+
+	public void setFlInativo(boolean flInativo) {
+		this.flInativo = flInativo;
+	}
 
 }

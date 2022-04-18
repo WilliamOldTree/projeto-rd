@@ -6,7 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -35,16 +36,34 @@ public class Produto {
 	
 	//Para relacionamentos
 
-	
-	
-	
-	//Para associativa c/ departamento_categoria_produto
-
+@ManyToOne
+@JoinColumn(name = "id_categoria")
+private Categoria categoria;
 	
 	//Para associativa c/ fornecedor
 	
 	//Para associativa c/ favoritos
 
+
+
+	public boolean isFlInativo() {
+	return flInativo;
+}
+
+
+public void setFlInativo(boolean flInativo) {
+	this.flInativo = flInativo;
+}
+
+
+public Categoria getCategoria() {
+	return categoria;
+}
+
+
+public void setCategoria(Categoria categoria) {
+	this.categoria = categoria;
+}
 
 
 	public Produto() {
