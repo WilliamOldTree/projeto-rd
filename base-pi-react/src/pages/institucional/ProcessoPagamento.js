@@ -6,6 +6,7 @@ function ProcessoPagamento() {
     return (
         <>
             <Header />
+            
             <div class="container">
                 <h2 class="title">Processo de Compra</h2>
                 <hr class="line-1" />
