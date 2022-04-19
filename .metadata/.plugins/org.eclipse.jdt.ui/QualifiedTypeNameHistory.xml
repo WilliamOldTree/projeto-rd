@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="antlr.collections.List"/>
+    <fullyQualifiedTypeName name="br.com.rd.queroserdev.loja.mvc.model.Endereco"/>
+    <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+    <fullyQualifiedTypeName name="br.com.rd.queroserdev.loja.mvc.model.Estado"/>
+    <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
+    <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+    <fullyQualifiedTypeName name="br.com.rd.queroserdev.loja.mvc.model.Fornecedor"/>
+    <fullyQualifiedTypeName name="br.com.rd.queroserdev.loja.mvc.model.Produto"/>
+    <fullyQualifiedTypeName name="br.com.rd.queroserdev.loja.mvc.model.Estoque"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="br.com.rd.queroserdev.loja.mvc.model.Pix"/>
+    <fullyQualifiedTypeName name="br.com.rd.queroserdev.loja.mvc.model.Forma"/>
+    <fullyQualifiedTypeName name="br.com.rd.queroserdev.loja.mvc.model.Cliente"/>
+</qualifiedTypeNameHistroy>
