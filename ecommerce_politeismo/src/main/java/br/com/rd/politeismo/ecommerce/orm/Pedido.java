@@ -37,21 +37,9 @@ public class Pedido {
 	@JoinColumn(name="cliente_id_cliente", nullable = false)
 	private Cliente cliente;
 	
-<<<<<<< HEAD:EcoormecePoliteismo/src/main/java/br/com/rd/queroserdev/loja/mvc/model/Pedido.java
-	
-	
-
-
-	
-	public List<Pagamento> getPagamento() {
-		return pagamento;
-	}
-
-=======
 	@ManyToOne
 	@JoinColumn(name="entrega_id_entrega", nullable = false)
 	private Entrega entrega;
->>>>>>> 685120c7c958a7085c519326addb11eebc7bc229:ecommerce_politeismo/src/main/java/br/com/rd/politeismo/ecommerce/orm/Pedido.java
 	
 	@OneToMany(mappedBy="pedido")
 	List<Pagamento> pagamento;
