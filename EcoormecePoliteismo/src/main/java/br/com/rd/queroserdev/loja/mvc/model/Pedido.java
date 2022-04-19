@@ -31,6 +31,11 @@ public class Pedido {
 	List<Pagamento>pagamento;
 	
 	
+	
+	
+
+
+	
 	public List<Pagamento> getPagamento() {
 		return pagamento;
 	}
