@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -25,38 +27,33 @@ public class Telefone {
 	@Column(nullable = true)
 	private String fixo;
 	
-	
-	
+	@ManyToOne
+	@JoinColumn(name="cliente_id_cliente", nullable=false)
+	private Cliente cliente;
 	
 	public Long getId() {
 		return id;
 	}
 
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 
 	public int getDdd() {
 		return ddd;
 	}
 
-
 	public void setDdd(int ddd) {
 		this.ddd = ddd;
 	}
-
 
 	public String getCelular() {
 		return celular;
 	}
 
-
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
-
 
 	public String getFixo() {
 		return fixo;
@@ -66,12 +63,5 @@ public class Telefone {
 	public void setFixo(String fixo) {
 		this.fixo = fixo;
 	}
-
-
-	
-
-
-
-
 
 }

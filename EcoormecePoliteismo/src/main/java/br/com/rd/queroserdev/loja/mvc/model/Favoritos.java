@@ -22,7 +22,6 @@ public class Favoritos {
 		
 	}
 	public Favoritos(Long id, String lista, Long clienteIdCliente) {
-		super();
 		Id = id;
 		Lista = lista;
 		this.clienteIdCliente = clienteIdCliente;
