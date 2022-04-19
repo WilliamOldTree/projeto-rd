@@ -1,11 +1,14 @@
 package br.com.rd.queroserdev.loja.mvc.model;
 
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +23,12 @@ public class Cliente {
 	private String nome;
 	@Column(nullable=false)
 	private String email;
+	
+	@OneToMany(mappedBy="cliente")
+	List <Telefone> telefone;
+	
+	@OneToMany(mappedBy="cliente")
+	List<Cartao>cartao;
 	
 	public Cliente() {
 		

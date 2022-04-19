@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -13,7 +15,7 @@ import javax.persistence.Table;
 public class Endereco {
 
 	public Endereco() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	@Id
@@ -38,9 +40,11 @@ public class Endereco {
 
 	@Column(nullable = true, name = "CIDADE")
 	private String cidade;
-
-
 	
+	@ManyToOne
+	@JoinColumn(name="estado_id_estado", nullable = false)
+	private Estado estado;
+
 
 	public Long getId_endereco() {
 		return id_endereco;

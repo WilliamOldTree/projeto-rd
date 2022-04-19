@@ -1,10 +1,14 @@
 package br.com.rd.queroserdev.loja.mvc.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -12,22 +16,31 @@ import javax.persistence.Table;
 public class Estado {
 
 	public Estado() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID_ESTADO")
+	@Column(name = "ID_ESTADO")
+
 	private Long id;
-	
+
 	@Column(nullable = true, name = "NOME")
 	private String nome;
-	
+
 	@Column(nullable = true, name = "SIGLA")
 	private String sigla;
-	
 
-	
+	@OneToMany(mappedBy = "estado")
+	private List<Endereco> endereco;
+
+	public List<Endereco> getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(List<Endereco> endereco) {
+		this.endereco = endereco;
+	}
 
 	public Long getId() {
 		return id;
@@ -53,7 +66,4 @@ public class Estado {
 		this.sigla = sigla;
 	}
 
-	
-	
-	
 }
