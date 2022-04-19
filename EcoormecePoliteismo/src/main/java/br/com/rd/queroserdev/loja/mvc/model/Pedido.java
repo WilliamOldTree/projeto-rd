@@ -27,7 +27,14 @@ public class Pedido {
 	@Column(name="valor_total", nullable = false)
 	private BigDecimal valorTotal;
 	
-	//Para relacionamentos
+	@OneToMany(mappedBy="pedido")
+	List<Pagamento>pagamento;
+	
+	
+	public List<Pagamento> getPagamento() {
+		return pagamento;
+	}
+
 	
 	
 	@OneToMany(mappedBy="pedido")

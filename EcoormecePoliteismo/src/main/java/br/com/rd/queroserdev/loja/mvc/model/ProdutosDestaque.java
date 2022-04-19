@@ -41,6 +41,7 @@ public class ProdutosDestaque {
 	public void setDesconto(Double desconto) {
 		this.desconto = desconto;
 	}
+<<<<<<< HEAD
 
 	@Override
 	public String toString() {
@@ -50,3 +51,7 @@ public class ProdutosDestaque {
 	
 }
 
+=======
+}
+	
+>>>>>>> b021456381f5b7a75b450be99b2033625ca84e5a

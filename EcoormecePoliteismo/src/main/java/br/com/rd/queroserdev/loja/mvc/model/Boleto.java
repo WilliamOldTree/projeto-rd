@@ -7,7 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -37,8 +38,19 @@ public class Boleto {
 	@Column(name ="valor_cobrado", nullable = false)
 	private BigDecimal valorCobrado;
 	
-	//Para relacionamentos
+	public Cliente getCliente() {
+		return cliente;
+	}
 
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+
+
+	@ManyToOne
+	@JoinColumn(name = "cliente_id_cliente", nullable = false)
+	private Cliente cliente;
 
 	
 	

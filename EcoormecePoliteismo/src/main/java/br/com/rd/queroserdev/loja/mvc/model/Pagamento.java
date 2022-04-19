@@ -29,7 +29,20 @@ public class Pagamento {
 	@ManyToOne
 	@JoinColumn(name = "pedido_id_pedido", nullable = false)
 	private Pedido pedido;
+<<<<<<< HEAD
 	
+=======
+
+	
+	
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
+>>>>>>> b021456381f5b7a75b450be99b2033625ca84e5a
 
 	public Long getId() {
 		return id;

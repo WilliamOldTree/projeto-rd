@@ -31,7 +31,7 @@ public class Categoria {
 	private boolean flInativo = true; // flag inativo
 	
 	
-	@OneToMany
+	@OneToMany(mappedBy = "categoria")
 	private  List<Produto> produto;
     
 	
