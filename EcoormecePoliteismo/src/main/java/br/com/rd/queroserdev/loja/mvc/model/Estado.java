@@ -1,10 +1,13 @@
 package br.com.rd.queroserdev.loja.mvc.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -27,7 +30,13 @@ public class Estado {
 	private String sigla;
 	
 
+	@OneToMany(mappedBy ="estado")
+    private List<Endereco> endereco;
 	
+	public List<Endereco> getEndereco() {
+		return endereco;
+	}
+
 
 	public Long getId() {
 		return id;

@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -39,8 +42,30 @@ public class Endereco {
 	@Column(nullable = true, name = "CIDADE")
 	private String cidade;
 
+    @ManyToOne
+    @JoinColumn(name = "ESTADO_ID_ESTADO")
+	private Estado estado;
 
-	
+    @ManyToOne
+    @JoinColumn(name = "FORNECEDOR_ID_FORNECEDOR")
+	private Fornecedor fornecedor;
+    
+    
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
+	}
+
+	public Estado getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
 
 	public Long getId_endereco() {
 		return id_endereco;

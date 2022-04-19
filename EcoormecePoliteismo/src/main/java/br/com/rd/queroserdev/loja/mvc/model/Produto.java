@@ -37,13 +37,23 @@ public class Produto {
 	//Para relacionamentos
 
 @ManyToOne
-@JoinColumn(name = "id_categoria")
+@JoinColumn(name = "CATEGORIA_ID_CATEGORIA")
 private Categoria categoria;
 	
-	//Para associativa c/ fornecedor
-	
-	//Para associativa c/ favoritos
+@ManyToOne
+@JoinColumn(name = "ESTOQUE_ID_ESTOQUE")
+private Estoque estoque;
 
+
+
+	public Estoque getEstoque() {
+	return estoque;
+}
+
+
+public void setEstoque(Estoque estoque) {
+	this.estoque = estoque;
+}
 
 
 	public boolean isFlInativo() {

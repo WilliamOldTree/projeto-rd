@@ -1,9 +1,14 @@
 package br.com.rd.queroserdev.loja.mvc.model;
 
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,7 +31,25 @@ public class Fornecedor {
 	@Column(name = "fl_inativo")
 	private boolean flInativo = true; // flag inativo
 
-	// Para associativa c/ produto
+
+
+	@OneToMany(mappedBy ="fornecedor")
+    private List<Endereco> endereco;
+	
+
+
+	public boolean isFlInativo() {
+		return flInativo;
+	}
+
+	public void setFlInativo(boolean flInativo) {
+		this.flInativo = flInativo;
+	}
+
+	public List<Endereco> getEndereco() {
+		return endereco;
+	}
+
 
 	public Fornecedor() {
 
