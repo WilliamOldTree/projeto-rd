@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +25,10 @@ public class Pagamento {
 	private LocalDate data_pagamento;
 	private String status_pagamento;
 	private BigDecimal valor_pagamento;
+	
+	@ManyToOne
+	@JoinColumn(name = "pedido_id_pedido", nullable = false)
+	private Pedido pedido;
 	
 
 	public Long getId() {

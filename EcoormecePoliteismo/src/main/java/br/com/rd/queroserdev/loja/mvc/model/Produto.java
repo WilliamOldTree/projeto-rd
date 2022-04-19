@@ -1,6 +1,8 @@
 package br.com.rd.queroserdev.loja.mvc.model;
 
 import java.math.BigDecimal;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -35,6 +38,13 @@ public class Produto {
 	private boolean flInativo = true; // flag inativo
 	
 	//Para relacionamentos
+
+	@OneToMany(mappedBy="produto")
+	List<ProdutosDestaque>produtosdestaque;
+	
+public List<ProdutosDestaque> getProdutosdestaque() {
+		return produtosdestaque;
+	}
 
 @ManyToOne
 @JoinColumn(name = "id_categoria")
