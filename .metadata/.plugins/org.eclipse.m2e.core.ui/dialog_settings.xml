@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\Muryllo\Documents\spring-data"/>
+			<item value="C:\Users\Muryllo\Desktop\projeto-rd\ecommerce_politeismo"/>
 			<item value="C:\Users\Muryllo\Desktop\projeto-rd\EcoormecePoliteismo"/>
 		</list>
 		<list key="projectNameTemplate">
