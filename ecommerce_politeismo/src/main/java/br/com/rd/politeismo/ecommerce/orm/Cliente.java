@@ -24,50 +24,30 @@ public class Cliente {
 	@Column(nullable=false)
 	private String email;
 	
-	@OneToMany(mappedBy="cliente")
-	List <Telefone> telefone;
-	
-	@OneToMany(mappedBy="cliente")
-	List<Cartao>cartao;
-	
-	@OneToMany(mappedBy="cliente")
-	List<Pix> pix;
-	
-	
-	
-
-
-	@OneToMany(mappedBy="cliente")
-	List<Boleto> boleto;
-	
-	
-	@OneToMany(mappedBy="cliente")
-	List<Forma> forma;
-	
-	public List<Boleto> getBoleto() {
-		return boleto;
-	}
-
-	
-	public List<Forma> getForma() {
-		return forma;
-	}
-
-
-	public List<Telefone> getTelefone() {
-		return telefone;
-	}
-
-
-	public List<Cartao> getCartao() {
-		return cartao;
-	}
-
-
-	public List<Pix> getPix() {
-		return pix;
-	}
-
+	/*
+	 * @OneToMany(mappedBy="cliente") List <Telefone> telefone;
+	 * 
+	 * @OneToMany(mappedBy="cliente") List<Cartao>cartao;
+	 * 
+	 * @OneToMany(mappedBy="cliente") List<Pix> pix;
+	 * 
+	 * @OneToMany(mappedBy="cliente") List<Boleto> boleto;
+	 * 
+	 * 
+	 * @OneToMany(mappedBy="cliente") List<Forma> forma;
+	 * 
+	 * public List<Boleto> getBoleto() { return boleto; } public List<Forma>
+	 * getForma() { return forma; }
+	 * 
+	 * 
+	 * public List<Telefone> getTelefone() { return telefone; }
+	 * 
+	 * 
+	 * public List<Cartao> getCartao() { return cartao; }
+	 * 
+	 * 
+	 * public List<Pix> getPix() { return pix; }
+	 */
 
 
 
