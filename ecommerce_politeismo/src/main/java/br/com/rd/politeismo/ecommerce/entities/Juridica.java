@@ -1,9 +1,11 @@
 package br.com.rd.politeismo.ecommerce.entities;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 
 
@@ -21,6 +23,9 @@ public class Juridica extends Cliente {
 	
 	@Column(name="razao_social", nullable=false)
 	private String razaoSocial;
+	
+	@OneToMany(mappedBy = "juridica")
+	private List<Telefone> telefone;
 	
 	public Juridica() {
 		

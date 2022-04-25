@@ -81,6 +81,18 @@ public class Fornecedor {
 	public List<Endereco> getEnderecos() {
 		return enderecos;
 	}
+	
+	
+	@OneToMany(mappedBy = "fornecedor")
+	private List<Telefone> telefone;
+
+	public List<Telefone> getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(List<Telefone> telefone) {
+		this.telefone = telefone;
+	}
 
 	@Override
 	public String toString() {

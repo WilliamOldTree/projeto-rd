@@ -11,6 +11,7 @@ import br.com.rd.politeismo.ecommerce.service.ClienteFisicoService;
 import br.com.rd.politeismo.ecommerce.service.ClienteJuridicoService;
 import br.com.rd.politeismo.ecommerce.service.EnderecoService;
 import br.com.rd.politeismo.ecommerce.service.ProdutoService;
+import br.com.rd.politeismo.ecommerce.service.TelefoneService;
 
 @EnableJpaRepositories
 @SpringBootApplication
@@ -22,16 +23,18 @@ public class EcommercePoliteismoApplication implements CommandLineRunner{
 	private final ProdutoService produtoService;
 	private final ClienteJuridicoService clienteJuridicoService;
 	private final ClienteFisicoService clienteFisicoService;
-	
-    public EcommercePoliteismoApplication(EnderecoService enderecoService, ProdutoService produtoService, 
-    		                              ClienteJuridicoService clienteJuridicoService,
-    		                              ClienteFisicoService clienteFisicoService){
-    	
-        this.enderecoService = enderecoService;
-        this.produtoService = produtoService;
-        this.clienteJuridicoService = clienteJuridicoService;
-        this.clienteFisicoService = clienteFisicoService;
-    }
+	private final TelefoneService telefoneService;
+
+	public EcommercePoliteismoApplication(EnderecoService enderecoService, ProdutoService produtoService,
+			ClienteJuridicoService clienteJuridicoService, ClienteFisicoService clienteFisicoService,
+			TelefoneService telefoneService) {
+		super();
+		this.enderecoService = enderecoService;
+		this.produtoService = produtoService;
+		this.clienteJuridicoService = clienteJuridicoService;
+		this.clienteFisicoService = clienteFisicoService;
+		this.telefoneService = telefoneService;
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(EcommercePoliteismoApplication.class, args);
@@ -49,6 +52,7 @@ public class EcommercePoliteismoApplication implements CommandLineRunner{
 			System.out.println("2 - Produto ");
 			System.out.println("3 - Cliente Jurídico ");
 			System.out.println("4 - Cliente Físico ");
+			System.out.println("5 - Cadastro de Contato");
 
 			acao = Integer.parseInt(sc.nextLine());
 
@@ -60,7 +64,10 @@ public class EcommercePoliteismoApplication implements CommandLineRunner{
 				clienteJuridicoService.iniciar(sc);
 			}else if(acao == 4) {
 				clienteFisicoService.iniciar(sc);
-			}else {
+			}
+		    else if(acao == 5) {
+			telefoneService.iniciar(sc);
+		}else {
 				sistema = false;
 			}
 		}
