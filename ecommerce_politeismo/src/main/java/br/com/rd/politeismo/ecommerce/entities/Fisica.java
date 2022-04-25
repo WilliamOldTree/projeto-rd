@@ -3,12 +3,14 @@ package br.com.rd.politeismo.ecommerce.entities;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Fisica extends Cliente{
@@ -29,6 +31,15 @@ public class Fisica extends Cliente{
 	public Fisica() {
 
 	}
+	
+	  @OneToMany(mappedBy = "fisica" ,cascade = CascadeType.ALL)
+	  private List<Telefone> telefones ;
+
+
+		public List<Telefone> getTelefones() {
+			return telefones;
+		}
+
 
 	public Fisica(String cpf, LocalDate nascimento, Sexo idSexo) {
 		this.cpf = cpf;

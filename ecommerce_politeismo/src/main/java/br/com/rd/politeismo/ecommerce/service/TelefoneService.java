@@ -19,11 +19,11 @@ import br.com.rd.politeismo.ecommerce.repository.TelefoneRepository;
 @Service
 public class TelefoneService {
 	private Boolean sistema = true;
+	
 	private final TelefoneRepository telefoneRepository;
 	private final FornecedorRepository fornecedorRepository;
 	private final FisicaRepository fisicaRepository;
 	private final JuridicaRepository juridicaRepository;
-	
 
 
 
@@ -71,102 +71,172 @@ public class TelefoneService {
 	}
 
 	private void salvar(Scanner sc) {
+	    Boolean opcao = true;
 
+        int escolha;
+        
+		while(opcao){
+			System.out.println("A qual cliente esse contato pertence?");
+			System.out.println("0- Voltar");
+			System.out.println("5- Cliente Físico");
+			System.out.println("7- Fornecedor");
+			
+			escolha = Integer.parseInt(sc.nextLine());
+			
+			switch (escolha) {
+			case 5:
+				System.out.println("Digite o DDD");
+				Integer ddd = Integer.parseInt(sc.nextLine());
+
+				System.out.println("Digite o seu numero de Celular");
+				String celular = sc.nextLine();
+
+				System.out.println("tem um numero fixo? (Caso não pressione ENTER)");
+				String fixo = sc.nextLine();
+
+				System.out.println("ID do Cliente Físico");
+				Long clienteFId = (long) Integer.parseInt(sc.nextLine());
+				
+				Telefone telefone = new Telefone();
+				telefone.setDdd(ddd);
+				telefone.setCelular(celular);
+				telefone.setFixo(fixo);
+
+				Optional<Fisica> fisica = fisicaRepository.findById(clienteFId);
+				telefone.setFisica(fisica.get());
+				
+				telefoneRepository.save(telefone);
+
+				System.out.println("Contato Salvo com Sucesso");
+				
+				break;
 		
-		
-		System.out.println("Digite o DDD");
-		Integer ddd = Integer.parseInt(sc.nextLine());
+			case 7:
+				System.out.println("Digite o DDD");
+				Integer dddF = Integer.parseInt(sc.nextLine());
 
-		System.out.println("Digite o seu numero de Celular");
-		String celular = sc.nextLine();
+				System.out.println("Digite o seu numero de Celular");
+				String celularF = sc.nextLine();
 
-		System.out.println("tem um numero fixo? (Caso não pressione ENTER)");
-		String fixo = sc.nextLine();
+				System.out.println("tem um numero fixo? (Caso não pressione ENTER)");
+				String fixoF = sc.nextLine();
 
-		System.out.println("Digite o ID do Cliente Físico (Caso não pressione ENTER)");
-		Long clienteFId = (long) Integer.parseInt(sc.nextLine());
-		
-		System.out.println("Digite o ID do Cliente Juridico (Caso não pressione ENTER)");
-		Long clienteJId = (long) Integer.parseInt(sc.nextLine());
-		
-		System.out.println("Esse cliente algum id de fornecedor? (Caso não pressione ENTER) ");
-		Long fornecedorId = (long) Integer.parseInt(sc.nextLine());
+				
+				
+				System.out.println(" id de fornecedor");
+				Long fornecedorId = (long) Integer.parseInt(sc.nextLine());
+				
+				
+				Telefone telefoneF = new Telefone();
+				telefoneF.setDdd(dddF);
+				telefoneF.setCelular(celularF);
+				telefoneF.setFixo(fixoF);
 
 
-
-		Telefone telefone = new Telefone();
-		telefone.setDdd(ddd);
-		telefone.setCelular(celular);
-		telefone.setFixo(fixo);
-
-		
-		
-          
-		Optional<Fornecedor> fornecedor = fornecedorRepository.findById(fornecedorId);
-		telefone.setFornecedor(fornecedor.get());
-
-		
-		Optional<Fisica> fisica = fisicaRepository.findById(clienteFId);
-		telefone.setFisica(fisica.get());
-		
-		
-		Optional<Juridica> juridica = juridicaRepository.findById(clienteJId);
-		telefone.setJuridica(juridica.get());
-
-		telefoneRepository.save(telefone);
-
-		System.out.println("Contato Salvo com Sucesso");
+				Optional<Fornecedor> fornecedor = fornecedorRepository.findById(fornecedorId);
+				telefoneF.setFornecedor(fornecedor.get());
+				
+				telefoneRepository.save(telefoneF);
+				System.out.println("Contato Salvo com Sucesso");	
+				break;
+				
+			default:
+				opcao = false;
+				break;
+			
+		}
+	}
+			
 
 	}
 
 	private void atualizar(Scanner sc) {
-		
-		System.out.println("Digite o ID do Contato");
-		Long id = (long) Integer.parseInt(sc.nextLine());
-		
-		
-		System.out.println("Digite o DDD");
-		Integer ddd = Integer.parseInt(sc.nextLine());
-
-		System.out.println("Digite o seu numero de Celular");
-		String celular = sc.nextLine();
-
-		System.out.println("tem um numero fixo?");
-		String fixo = sc.nextLine();
-
-		System.out.println("Digite o ID do Cliente Físico (Caso não pressione ENTER)");
-		Long clienteFId = (long) Integer.parseInt(sc.nextLine());
-		
-		System.out.println("Digite o ID do Cliente Juridico (Caso não pressione ENTER)");
-		Long clienteJId = (long) Integer.parseInt(sc.nextLine());
-
-		System.out.println("Esse cliente tem  algum id de fornecedor? (Caso não pressione ENTER) ");
-		Long fornecedorId = (long) Integer.parseInt(sc.nextLine());
+	    Boolean opcao = true;
 
 		
-
-		Telefone telefone = new Telefone();
-		telefone.setId(id);
-		telefone.setDdd(ddd);
-		telefone.setCelular(celular);
-		telefone.setFixo(fixo);
-         
-
-	
-		Optional<Fornecedor> fornecedor = fornecedorRepository.findById(fornecedorId);
-		telefone.setFornecedor(fornecedor.get());
-
 		
-		Optional<Fisica> fisica = fisicaRepository.findById(clienteFId);
-		telefone.setFisica(fisica.get());
-		
-		
-		Optional<Juridica> juridica = juridicaRepository.findById(clienteJId);
-		telefone.setJuridica(juridica.get());
+		  int escolha;
+	        
+			while(opcao){
+				System.out.println("A qual cliente esse contato pertence?");
+				System.out.println("0- Voltar");
+				System.out.println("5- Cliente Físico");
+				System.out.println("7- Fornecedor");
+				
+				escolha = Integer.parseInt(sc.nextLine());
+				
+				switch (escolha) {
+				case 5:
+					
+					System.out.println("ID do Contato");
+					Long idF = (long) Integer.parseInt(sc.nextLine());
+					
+					System.out.println("Digite o DDD");
+					Integer ddd = Integer.parseInt(sc.nextLine());
 
-		telefoneRepository.save(telefone);
+					System.out.println("Digite o seu numero de Celular");
+					String celular = sc.nextLine();
 
-		System.out.println("Contato Atualizado com Sucesso");
+					System.out.println("tem um numero fixo? (Caso não pressione ENTER)");
+					String fixo = sc.nextLine();
+
+					System.out.println("ID do Cliente Físico");
+					Long clienteFId = (long) Integer.parseInt(sc.nextLine());
+					
+					Telefone telefone = new Telefone();
+					telefone.setId(idF);
+					telefone.setDdd(ddd);
+					telefone.setCelular(celular);
+					telefone.setFixo(fixo);
+
+					Optional<Fisica> fisica = fisicaRepository.findById(clienteFId);
+					telefone.setFisica(fisica.get());
+					
+					telefoneRepository.save(telefone);
+
+					System.out.println("Contato Atualizado com Sucesso");
+					
+					break;
+				case 7:
+					System.out.println("ID do Contato");
+					Long idFor = (long) Integer.parseInt(sc.nextLine());
+					
+					
+					System.out.println("Digite o DDD");
+					Integer dddF = Integer.parseInt(sc.nextLine());
+
+					System.out.println("Digite o seu numero de Celular");
+					String celularF = sc.nextLine();
+
+					System.out.println("tem um numero fixo? (Caso não pressione ENTER)");
+					String fixoF = sc.nextLine();
+
+					
+					
+					System.out.println(" id de fornecedor");
+					Long fornecedorId = (long) Integer.parseInt(sc.nextLine());
+					
+					
+					Telefone telefoneF = new Telefone();
+					telefoneF.setId(idFor);
+					telefoneF.setDdd(dddF);
+					telefoneF.setCelular(celularF);
+					telefoneF.setFixo(fixoF);
+
+
+					Optional<Fornecedor> fornecedor = fornecedorRepository.findById(fornecedorId);
+					telefoneF.setFornecedor(fornecedor.get());
+					
+					telefoneRepository.save(telefoneF);
+					System.out.println("Contato Atualizado com Sucesso");	
+					break;
+					
+				default:
+					opcao = false;
+					break;
+				
+			}
+		}
 	}
 
 	private void visualizar() {

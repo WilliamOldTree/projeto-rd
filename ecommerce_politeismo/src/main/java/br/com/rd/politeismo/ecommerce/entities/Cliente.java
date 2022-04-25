@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+
 @MappedSuperclass
 public class Cliente {
 
@@ -55,6 +56,9 @@ public class Cliente {
 	public void setSenha(String password) {
 		this.senha = password;
 	}
+	
+	
+	
 	
 	@Override
 	public String toString() {

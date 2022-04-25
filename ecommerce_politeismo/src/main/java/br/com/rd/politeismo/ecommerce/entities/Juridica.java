@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 
 
@@ -27,6 +28,8 @@ public class Juridica extends Cliente {
 	
 	@ManyToMany(mappedBy="clientesJuridica",fetch = FetchType.EAGER)
 	private List<Endereco> enderecos;
+	
+
 	
 	public Juridica() {
 		
@@ -71,6 +74,7 @@ public class Juridica extends Cliente {
 	public void setRazaoSocial(String razaoSocial) {
 		this.razaoSocial = razaoSocial;
 	}
+	
 
 	@Override
 	public String toString() {

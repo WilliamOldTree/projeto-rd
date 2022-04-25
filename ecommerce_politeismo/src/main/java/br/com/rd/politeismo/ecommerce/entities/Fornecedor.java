@@ -33,6 +33,14 @@ public class Fornecedor {
 
     @OneToMany(mappedBy = "fornecedor")
     private List<Endereco> enderecos;
+    
+    @OneToMany(mappedBy = "fornecedor")
+    private List<Telefone> telefones ;
+
+
+	public List<Telefone> getTelefones() {
+		return telefones;
+	}
 
 	public Fornecedor() {
 
@@ -80,18 +88,6 @@ public class Fornecedor {
 
 	public List<Endereco> getEnderecos() {
 		return enderecos;
-	}
-	
-	
-	@OneToMany(mappedBy = "fornecedor")
-	private List<Telefone> telefone;
-
-	public List<Telefone> getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(List<Telefone> telefone) {
-		this.telefone = telefone;
 	}
 
 	@Override
