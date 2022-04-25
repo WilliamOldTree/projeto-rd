@@ -13,4 +13,12 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
     <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+    <fullyQualifiedTypeName name="br.com.rd.politeismo.ecommerce.entities.Telefone"/>
+    <fullyQualifiedTypeName name="br.com.rd.politeismo.ecommerce.entities.Fornecedor"/>
+    <fullyQualifiedTypeName name="br.com.rd.politeismo.ecommerce.entities.Fisica"/>
+    <fullyQualifiedTypeName name="br.com.rd.politeismo.ecommerce.entities.Juridica"/>
+    <fullyQualifiedTypeName name="br.com.rd.politeismo.ecommerce.service.TelefoneService"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.lang.Long"/>
 </qualifiedTypeNameHistroy>

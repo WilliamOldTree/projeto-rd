@@ -101,7 +101,7 @@ public class EnderecoService {
 		Long estadoId = Long.parseLong(sc.nextLine());
 		
 		System.out.println("Caso seja Endereço de Forncedor digite seu ID / Caso não seja aperte (ENTER): ");
-		Long fornecedorId = Long.parseLong(sc.nextLine());
+		Long fornecedorId = (long) Integer.parseInt(sc.nextLine());
 		
 		Endereco endereco = new Endereco();
 		

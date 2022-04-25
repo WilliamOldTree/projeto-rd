@@ -1,11 +1,13 @@
 package br.com.rd.politeismo.ecommerce.entities;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Fisica extends Cliente{
@@ -29,6 +31,11 @@ public class Fisica extends Cliente{
 		this.nascimento = nascimento;
 		this.sexo = idSexo;
 	}
+	
+	
+	@OneToMany(mappedBy = "fisica")
+	private List<Telefone> telefone;
+
 
 	public String getCpf() {
 		return cpf;
