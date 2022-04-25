@@ -1,13 +1,21 @@
 package br.com.rd.politeismo.ecommerce.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Table(name = "ENDERECO")
@@ -43,6 +51,18 @@ public class Endereco {
 	@ManyToOne
 	@JoinColumn(name = "fk_id_fornecedor", nullable = true)
 	private Fornecedor fornecedor;
+	
+	@Fetch(FetchMode.SELECT)
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "clienteFisica_endereco", joinColumns = {
+    @JoinColumn(name = "clienteFisica_id_endereco") }, inverseJoinColumns = { @JoinColumn(name = "endereco_id_clienteFisica") })
+	private List<Fisica> clientesFisica;
+	
+	@Fetch(FetchMode.SELECT)
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "clienteJuridica_endereco", joinColumns = {
+    @JoinColumn(name = "clienteJuridica_id_endereco") }, inverseJoinColumns = { @JoinColumn(name = "endereco_id_clienteJuridica") })
+	private List<Juridica> clientesJuridica;
 
 
 	public Endereco() {
@@ -121,6 +141,22 @@ public class Endereco {
 		this.fornecedor = fornecedor;
 	}
 
+
+	public List<Fisica> getClientesFisica() {
+		return clientesFisica;
+	}
+
+	public void setClientesFisica(List<Fisica> clientesFisica) {
+		this.clientesFisica = clientesFisica;
+	}
+
+	public List<Juridica> getClienteJuridica() {
+		return clientesJuridica;
+	}
+
+	public void setClienteJuridica(List<Juridica> clienteJuridica) {
+		this.clientesJuridica = clienteJuridica;
+	}
 
 	@Override
 	public String toString() {

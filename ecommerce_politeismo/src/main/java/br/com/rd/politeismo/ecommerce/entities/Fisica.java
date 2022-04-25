@@ -5,9 +5,10 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Fisica extends Cliente{
@@ -21,6 +22,9 @@ public class Fisica extends Cliente{
 	@ManyToOne
 	@JoinColumn(name="fk_id_sexo", nullable = false)
 	private Sexo sexo;
+	
+	@ManyToMany(mappedBy="clientesFisica",fetch = FetchType.EAGER)
+	private List<Endereco> enderecos;
 
 	public Fisica() {
 
@@ -31,11 +35,6 @@ public class Fisica extends Cliente{
 		this.nascimento = nascimento;
 		this.sexo = idSexo;
 	}
-	
-	
-	@OneToMany(mappedBy = "fisica")
-	private List<Telefone> telefone;
-
 
 	public String getCpf() {
 		return cpf;

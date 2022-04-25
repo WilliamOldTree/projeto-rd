@@ -5,7 +5,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
 
 
 
@@ -24,8 +25,8 @@ public class Juridica extends Cliente {
 	@Column(name="razao_social", nullable=false)
 	private String razaoSocial;
 	
-	@OneToMany(mappedBy = "juridica")
-	private List<Telefone> telefone;
+	@ManyToMany(mappedBy="clientesJuridica",fetch = FetchType.EAGER)
+	private List<Endereco> enderecos;
 	
 	public Juridica() {
 		
