@@ -149,7 +149,7 @@ public class ProdutoService {
 			System.out.println("Digite a Quantidade: ");
 			
 			Integer quantidade =  Integer.parseInt(sc.nextLine());
-			System.out.println("Digite o Status: ");
+			System.out.println("Digite o Status: ( 0 - INATIVO | 1 - ATIVO )");
 			Boolean status =  Boolean.parseBoolean(sc.nextLine());
 			
 			System.out.println("Digite o Departamento: ");
