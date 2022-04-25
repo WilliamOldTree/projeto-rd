@@ -140,7 +140,7 @@ public class EnderecoService {
 	
 	private void salvarEnderecoClienteFisico(Scanner sc) {
 		
-		System.out.println("________Cadastro de Endereço________");
+		System.out.println("________ Cadastro de Endereço (Cliente Físico) ________");
 
 		System.out.println("Favoritar como (Casa, Trabalho..): ");
 		String apelido = sc.nextLine();
@@ -207,7 +207,7 @@ public class EnderecoService {
 	
        private void salvarEnderecoClienteJuridico(Scanner sc) {
 		
-		System.out.println("________Cadastro de Endereço________");
+		System.out.println("________ Cadastro de Endereço (Cliente Jurídico) ________");
 
 		System.out.println("Favoritar como (Casa, Trabalho..): ");
 		String apelido = sc.nextLine();
@@ -274,7 +274,7 @@ public class EnderecoService {
 
 	private void salvarEnderecoFornecedor(Scanner sc) {
 		
-		System.out.println("________Cadastro de Endereço________");
+		System.out.println("________ Cadastro de Endereço (Fornecedor) ________");
 
 		System.out.println("Favoritar como (Casa, Trabalho..): ");
 		String apelido = sc.nextLine();
