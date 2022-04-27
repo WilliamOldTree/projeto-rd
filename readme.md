@@ -26,6 +26,11 @@
 - [:heavy_check_mark:] Front-end - HTML, Bootstrap, CSS e Java Script
 - [:heavy_check_mark:] Banco de Dados MySql, Modelagem Visual Paradigma e Dbevear
 - [:heavy_check_mark:] Java Web com Servlets JSTL e JSP
+- [:heavy_check_mark:] JPA repository
+- [:heavy_check_mark:] ORM Hiberbate
+- [:heavy_check_mark:] Spring Boot
+- [:heavy_check_mark:] Spring Data
+- [:heavy_check_mark:] Spring MVC
 
 
 
