@@ -131,9 +131,9 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return "Produto [id=" + id + ", descricao=" + descricao + ", volume=" + volume + ", peso=" + peso + ", preco="
-				+ preco + ", quantidade=" + quantidade + ", flInativo=" + flInativo + ", departamento=" + departamento
-				+ ", categoria=" + categoria + ", destaque=" + destaque + "]";
+		return "Produto [ID= " + id + ", Nome= " + descricao + ", Volume= " + volume + ", Peso= " + peso + ", Preço= "
+				+ preco + ", Quantidade= " + quantidade + ", Status= " + flInativo + ", Departamento= " + departamento.getNome()
+				+ ", Categoria= " + categoria.getNome() + ", Desconto= " + destaque.getDesconto() + "]";
 	}
 
 }

@@ -5,8 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
 import javax.persistence.Table;
 
 
@@ -27,42 +26,6 @@ public class Telefone {
 	@Column(nullable = true)
 	private String fixo;
 	
-	@ManyToOne
-	@JoinColumn(name="id_clienteF", nullable=true)
-	private Fisica fisica;
-		
-	@ManyToOne
-	@JoinColumn(name="id_clienteJ", nullable=true)
-	private  Juridica juridica;
-	
-	@ManyToOne
-	@JoinColumn(name="fornecedor_id_fornecedor", nullable=true)
-	private  Fornecedor fornecedor;
-	
-	public Fornecedor getFornecedor() {
-		return fornecedor;
-	}
-
-	public void setFornecedor(Fornecedor fornecedor) {
-		this.fornecedor = fornecedor;
-	}
-
-	public Fisica getFisica() {
-		return fisica;
-	}
-
-	public void setFisica(Fisica fisica) {
-		this.fisica = fisica;
-	}
-
-	public Juridica getJuridica() {
-		return juridica;
-	}
-
-	public void setJuridica(Juridica juridica) {
-		this.juridica = juridica;
-	}
-
 	public Long getId() {
 		return id;
 	}

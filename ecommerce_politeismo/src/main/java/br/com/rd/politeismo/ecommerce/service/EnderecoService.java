@@ -48,9 +48,9 @@ public class EnderecoService {
 			System.out.println("1 - Salvar Endereço de Cliente Físico");
 			System.out.println("2 - Salvar Endereço de Cliente Jurídico");
 			System.out.println("3 - Salvar Endereço de Fornecedor");
-			System.out.println("4 - Atualizar");
-			System.out.println("5 - Visualizar");
-			System.out.println("6 - Deletar");
+			System.out.println("4 - Atualizar Endereço");
+			System.out.println("5 - Visualizar Endereço");
+			System.out.println("6 - Deletar Endereço");
 
 			acao = Integer.parseInt(sc.nextLine());
 
