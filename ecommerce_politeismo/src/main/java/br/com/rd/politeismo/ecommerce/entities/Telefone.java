@@ -34,7 +34,7 @@ public class Telefone {
 	
 	
 	@ManyToOne
-	@JoinColumn(name="id_cliente", nullable = false)
+	@JoinColumn(name="id_cliente", nullable = true)
 	private Fisica fisica;
 
 	
@@ -94,8 +94,10 @@ public class Telefone {
 	@Override
 	public String toString() {
 		return "Telefone [id=" + id + ", ddd=" + ddd + ", celular=" + celular + ", fixo=" + fixo + ", fornecedor="
-				+ fornecedor + "]";
+				+ fornecedor + ", fisica=" + fisica + "]";
 	}
+
+
 
 
 	
