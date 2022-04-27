@@ -98,13 +98,13 @@ public class ProdutoService {
 			System.out.println("Digite a Quantidade: ");
 			Integer quantidade =  Integer.parseInt(sc.nextLine());
 
-			System.out.println("Digite o Departamento: ");
+			System.out.println("Digite ID do Departamento: ");
 			Long departamentoId = Long.parseLong(sc.nextLine());
 			
-			System.out.println("Digite a Categoria: ");
+			System.out.println("Digite ID da Categoria: ");
 			Long categoriaId = Long.parseLong(sc.nextLine());
 
-			System.out.println("Digite o Desconto: ");
+			System.out.println("Digite ID do Desconto: ");
 			Long descontoId = Long.parseLong(sc.nextLine());
 			
 			Produto produto = new Produto();

@@ -28,6 +28,7 @@ public class Telefone {
 	private String fixo;
 
 	
+
 	@ManyToOne
 	@JoinColumn(name="fk_id_fornecedor", nullable = true)
 	private Fornecedor fornecedor;
@@ -58,6 +59,7 @@ public class Telefone {
 	public void setFornecedor(Fornecedor fornecedor) {
 		this.fornecedor = fornecedor;
 	}
+
 
 	public Long getId() {
 		return id;
@@ -91,6 +93,7 @@ public class Telefone {
 		this.fixo = fixo;
 	}
 
+
 	@Override
 	public String toString() {
 		return "Telefone [id=" + id + ", ddd=" + ddd + ", celular=" + celular + ", fixo=" + fixo + ", fornecedor="
@@ -102,3 +105,6 @@ public class Telefone {
 
 	
 }
+
+
+

@@ -160,9 +160,9 @@ public class Endereco {
 
 	@Override
 	public String toString() {
-		return "Endereco [id_endereco=" + id_endereco + ", apelido=" + apelido + ", nomeLougradouro=" + nomeLougradouro
-				+ ", tipoLougradouro=" + tipoLougradouro + ", numero=" + numero + ", cep=" + cep + ", cidade=" + cidade
-				+ ", estado=" + estado + "]";
+		return "Endereço [ID= " + id_endereco + ", Apelido= " + apelido + ", Lougradouro= " + nomeLougradouro
+				+ ", Tipo Logradouro= " + tipoLougradouro + ", Número= " + numero + ", CEP= " + cep + ", Cidade= " + cidade
+				+ ", Estado= " + estado.getNome() + "]";
 	}
 
 }
