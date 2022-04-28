@@ -1,4 +1,4 @@
-package dto;
+package controllers.dto;
 
 public class ClienteDTO {
 }
