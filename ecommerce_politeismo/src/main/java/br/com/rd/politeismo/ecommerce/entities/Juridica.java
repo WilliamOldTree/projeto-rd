@@ -5,9 +5,9 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-
-
 
 @Entity
 public class Juridica extends Cliente {
@@ -24,8 +24,10 @@ public class Juridica extends Cliente {
 	@Column(name="razao_social", nullable=false)
 	private String razaoSocial;
 	
-	@OneToMany(mappedBy = "juridica")
-	private List<Telefone> telefone;
+	@ManyToMany(mappedBy="clientesJuridica",fetch = FetchType.EAGER)
+	private List<Endereco> enderecos;
+	
+
 	
 	public Juridica() {
 		
@@ -70,12 +72,12 @@ public class Juridica extends Cliente {
 	public void setRazaoSocial(String razaoSocial) {
 		this.razaoSocial = razaoSocial;
 	}
+	
 
 	@Override
 	public String toString() {
-		Cliente cliente = new Cliente ();
 		
-		return "[Cliente Juridico: ID=" + cliente.getId() + "Nome= " + cliente.getNome() + "Email= " + cliente.getEmail() + "CNPJ= " + cnpj + ", Data de Abertura= " + abertura + ", Inscrição Estadual= " + inscricaoEstadual
+		return "[Cliente Juridico: ID= " + getId() + "Nome= " + getNome() + "Email= " + getEmail() + "CNPJ= " + cnpj + ", Data de Abertura= " + abertura + ", Inscrição Estadual= " + inscricaoEstadual
 				+ ", Razão Social= " + razaoSocial + "]";
 	}
 	

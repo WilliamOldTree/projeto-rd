@@ -26,26 +26,23 @@ public class Telefone {
 	
 	@Column(nullable = true)
 	private String fixo;
-	
-	@ManyToOne
-	@JoinColumn(name="id_clienteF", nullable=true)
-	private Fisica fisica;
-		
-	@ManyToOne
-	@JoinColumn(name="id_clienteJ", nullable=true)
-	private  Juridica juridica;
-	
-	@ManyToOne
-	@JoinColumn(name="fornecedor_id_fornecedor", nullable=true)
-	private  Fornecedor fornecedor;
-	
-	public Fornecedor getFornecedor() {
-		return fornecedor;
-	}
 
-	public void setFornecedor(Fornecedor fornecedor) {
-		this.fornecedor = fornecedor;
-	}
+	
+
+	@ManyToOne
+	@JoinColumn(name="fk_id_fornecedor", nullable = true)
+	private Fornecedor fornecedor;
+	
+	
+	@ManyToOne
+	@JoinColumn(name="id_cliente", nullable = true)
+	private Fisica fisica;
+
+	
+	
+	
+
+
 
 	public Fisica getFisica() {
 		return fisica;
@@ -55,13 +52,14 @@ public class Telefone {
 		this.fisica = fisica;
 	}
 
-	public Juridica getJuridica() {
-		return juridica;
+	public Fornecedor getFornecedor() {
+		return fornecedor;
 	}
 
-	public void setJuridica(Juridica juridica) {
-		this.juridica = juridica;
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
 	}
+
 
 	public Long getId() {
 		return id;
@@ -91,9 +89,22 @@ public class Telefone {
 		return fixo;
 	}
 
-
 	public void setFixo(String fixo) {
 		this.fixo = fixo;
 	}
 
+
+	@Override
+	public String toString() {
+		return "Telefone [id=" + id + ", ddd=" + ddd + ", celular=" + celular + ", fixo=" + fixo + ", fornecedor="
+				+ fornecedor + ", fisica=" + fisica + "]";
+	}
+
+
+
+
+	
 }
+
+
+
