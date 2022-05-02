@@ -67,5 +67,10 @@ public class EnderecoService {
 		entity.setCidade(dto.getCidade());
 		entity.setBairro(dto.getBairro());
 	}	
+	
+	public void deletar(Long id) {
+		repository.deleteById(id);
+	}
+	
 
 }
