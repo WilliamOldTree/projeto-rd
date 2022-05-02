@@ -1,4 +1,4 @@
-package br.com.rd.qsd.politeismo.ecommerce.enums;
+package br.com.qsd.politeismo.ecommerce.enums;
 
 public enum Genero {
     MASCULINO,

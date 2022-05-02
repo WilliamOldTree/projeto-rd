@@ -1,29 +1,25 @@
-package br.com.rd.qsd.politeismo.ecommerce.controllers.dto;
+package br.com.qsd.politeismo.ecommerce.controller.form;
 
-import br.com.rd.qsd.politeismo.ecommerce.entities.Cliente;
-import br.com.rd.qsd.politeismo.ecommerce.entities.Endereco;
+import br.com.qsd.politeismo.ecommerce.entities.Endereco;
 
-public class EnderecoDTO {
-
-	private Long id_endereco;
+public class FormEnderecoDTO {
 	private String apelido;
-	private String nomeLougradouro; 
+	private String nomeLougradouro;
 	private String tipoLougradouro;
 	private String numero;
 	private String cep;
 	private String cidade;
 	private String bairro;
-	private Cliente cliente;
 	
-	public EnderecoDTO() {
-		
+	
+	public FormEnderecoDTO() {
+
 	}
-
-
-	public EnderecoDTO(Long id_endereco, String apelido, String nomeLougradouro, String tipoLougradouro, String numero,
-			String cep, String cidade, String bairro, Cliente cliente) {
+	
+	
+	public FormEnderecoDTO(String apelido, String nomeLougradouro, String tipoLougradouro, String numero, String cep,
+			String cidade, String bairro) {
 		super();
-		this.id_endereco = id_endereco;
 		this.apelido = apelido;
 		this.nomeLougradouro = nomeLougradouro;
 		this.tipoLougradouro = tipoLougradouro;
@@ -31,13 +27,10 @@ public class EnderecoDTO {
 		this.cep = cep;
 		this.cidade = cidade;
 		this.bairro = bairro;
-		this.cliente = cliente;
 	}
-
-
-
-	public EnderecoDTO(Endereco entity) {
-		id_endereco = entity.getId_endereco();
+	
+	
+	public FormEnderecoDTO(Endereco entity) {
 		apelido= entity.getApelido();
 		nomeLougradouro= entity.getNomeLougradouro();
 		tipoLougradouro= entity.getTipoLougradouro();
@@ -47,13 +40,6 @@ public class EnderecoDTO {
 		bairro = entity.getBairro();
 	}
 
-
-	public Long getId_endereco() {
-		return id_endereco;
-	}
-	public void setId_endereco(Long id_endereco) {
-		this.id_endereco = id_endereco;
-	}
 	public String getApelido() {
 		return apelido;
 	}
@@ -96,11 +82,5 @@ public class EnderecoDTO {
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-	public Cliente getCliente() {
-		return cliente;
-	}
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-}
 
+}

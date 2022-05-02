@@ -1,4 +1,4 @@
-package br.com.rd.qsd.politeismo.ecommerce.entities;
+package br.com.qsd.politeismo.ecommerce.entities;
 
 import java.time.LocalDate;
 
@@ -10,8 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import br.com.rd.qsd.politeismo.ecommerce.enums.Genero;
-
+import br.com.qsd.politeismo.ecommerce.enums.Genero;
 
 @Entity
 @Table(name = "CLIENTE")
