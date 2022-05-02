@@ -1,0 +1,5 @@
+package com.springrobinson.crudjpahibernatemysql.model;
+
+public class Cliente {
+
+}

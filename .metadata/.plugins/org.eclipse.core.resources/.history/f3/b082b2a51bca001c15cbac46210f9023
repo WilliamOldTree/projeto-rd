@@ -1,0 +1,49 @@
+package com.javatechie.crud.example.entity;
+
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Table(name = "FORMA")
+@Getter
+@Setter
+public class Forma {
+
+	@Id
+	@Column(name = "id_forma")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	
+	@Column(nullable = false)
+    private String instituicao;
+	
+	@ManyToOne
+	@JoinColumn(name="cliente_id_cliente", nullable = false)
+	private Cliente cliente;
+
+	@OneToMany(mappedBy="formaPagamento")
+	List<Cartao> cartao;
+	
+	
+
+	@Override
+	public String toString() {
+		return "Forma [id=" + id + ", instituicao=" + instituicao + ", cliente=" + cliente + ", cartao=" + cartao + "]";
+	}
+	
+	
+	
+}

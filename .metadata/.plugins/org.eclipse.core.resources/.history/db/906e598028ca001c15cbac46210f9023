@@ -1,0 +1,40 @@
+package com.springrobinson.crudjpahibernatemysql.service;
+
+import com.springrobinson.crudjpahibernatemysql.model.Cliente;
+import com.springrobinson.crudjpahibernatemysql.repository.ClienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class ClienteService implements IClienteService{
+
+    @Autowired
+    private ClienteRepository clienteRepository;
+
+    
+    public List<Cliente> getClientes() {
+        return clienteRepository.findAll();
+    }
+
+    
+    public void saveCliente(Cliente cliente) {
+        clienteRepository.save(cliente);
+    }
+
+    
+    public void deleteCliente(Long id) {
+        clienteRepository.deleteById(id);
+    }
+
+   
+    public Cliente findCliente(Long id) {
+        return clienteRepository.findById(id).orElse(null);
+    }
+    
+    
+    public void updateCliente(Long id, Cliente cliente) {
+        clienteRepository.save(cliente);
+    }
+}

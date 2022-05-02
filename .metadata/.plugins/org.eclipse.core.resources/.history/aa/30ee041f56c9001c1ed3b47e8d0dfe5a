@@ -1,0 +1,5 @@
+INSERT INTO cliente (cpf, nome, email, password, nascimento, genero) 
+VALUES('111-111111-11', 'Léia Borges', 'leia@hotmail' , '123','2022-04-25','FEMININO');
+insert into FORMA (ID_FORMA, INSTITUICAO) values (1, 'CARTAO');
+insert into FORMA (ID_FORMA, INSTITUICAO) values (2, 'PIX');
+insert into FORMA (ID_FORMA, INSTITUICAO) values (3, 'BOLETO');

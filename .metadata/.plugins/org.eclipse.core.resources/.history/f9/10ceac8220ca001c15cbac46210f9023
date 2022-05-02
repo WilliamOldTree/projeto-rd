@@ -1,0 +1,51 @@
+package com.springrobinson.crudjpahibernatemysql.model;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Table(name = "cartao")
+@Getter
+@Setter
+public class Cartao {
+
+
+	@Id
+	@Column(name = "id_cartao_numero")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	
+	@Column(nullable = false)
+	private String titular_cartao;
+	private String cvv_cartao;
+	private String validade_cartao;
+	
+
+	@ManyToOne
+	@JoinColumn(name = "cliente_id_cliente", nullable = true)
+	private Cliente cliente;
+	
+	@ManyToOne
+	@JoinColumn(name="forma_id_forma", nullable = true)
+	private Forma formaPagamento;
+
+	
+	@Override
+	public String toString() {
+		return "Cartao [id=" + id + ", titular_cartao=" + titular_cartao + ", cvv_cartao=" + cvv_cartao
+				+ ", validade_cartao=" + validade_cartao + ", cliente=" + cliente + ", formaPagamento=" + formaPagamento
+				+ "]";
+	}
+	
+	
+	
+}

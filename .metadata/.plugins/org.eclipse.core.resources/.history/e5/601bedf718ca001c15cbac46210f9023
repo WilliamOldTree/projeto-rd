@@ -1,0 +1,5 @@
+package com.springrobinson.crudjpahibernatemysql.repository;
+
+public interface FormaRepository {
+
+}

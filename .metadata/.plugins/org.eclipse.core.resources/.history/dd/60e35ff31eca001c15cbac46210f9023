@@ -1,0 +1,65 @@
+package com.springrobinson.crudjpahibernatemysql.controller;
+
+import com.springrobinson.crudjpahibernatemysql.model.Cliente;
+import com.springrobinson.crudjpahibernatemysql.service.ClienteService;
+import com.springrobinson.crudjpahibernatemysql.service.IClienteService;
+
+import br.com.qsd.politeismo.ecommerce.enums.Genero;
+import br.com.rd.politeismo.ecommerce.entities.Fornecedor;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+public class ClienteController {
+
+    @Autowired
+    private IClienteService interCliente;
+
+    @GetMapping("/clientes")
+    public List<Cliente> getClientes(){
+        return interCliente.getClientes();
+    }
+
+    @PostMapping("/clientes")
+    public String crearCliente(@RequestBody Cliente cliente){
+
+        interCliente.saveCliente(cliente);
+        return "Cliente cadastrado ";
+    }
+
+    @DeleteMapping("/clientes/{id}")
+    public String borrarCliente(@PathVariable Long id) {
+        interCliente.deleteCliente(id);
+        return "Cliente deletado";
+    }
+
+    @PutMapping("/clientes/{id}")
+    public Cliente editarCliente(@PathVariable Long id,
+                                @RequestParam ("cpf") String cpf,
+                                @RequestParam ("nome") String nome,
+                                @RequestParam ("email") String email,
+                                @RequestParam ("password") String password,
+                                @RequestParam ("data") String dataNascimento,
+                                @RequestParam ("genero") String genero){
+        Cliente cliente = interCliente.findCliente(id);
+
+        cliente.setCpf(cpf);
+        cliente.setNome(nome);
+        cliente.setEmail(email);
+        cliente.setPassword(password);
+        cliente.setNascimento(dataNascimento);
+        cliente.setGenero(genero);
+
+
+        interCliente.saveCliente(cliente);
+
+        return cliente;
+
+    }
+
+
+}

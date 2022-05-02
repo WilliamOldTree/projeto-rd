@@ -1,0 +1,39 @@
+package com.springrobinson.crudjpahibernatemysql.controller;
+import com.springrobinson.crudjpahibernatemysql.model.Cliente;
+import com.springrobinson.crudjpahibernatemysql.service.IClienteService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
+@RestController
+public class ClienteController {
+
+    @Autowired
+    private IClienteService interCliente;
+
+    @GetMapping("/clientes")
+    public List<Cliente> getClientes(){
+        return interCliente.getClientes();
+    }
+
+    @PostMapping("/clientes")
+    public String crearCliente(@RequestBody Cliente cliente){
+        interCliente.saveCliente(cliente);
+        return "Cliente cadastrado ";
+    }
+
+    @DeleteMapping("/clientes/{id}")
+    public String borrarCliente(@PathVariable Long id) {
+        interCliente.deleteCliente(id);
+        return "Cliente deletado";
+    }
+
+    @PutMapping("/clientes/{id}")
+    public Cliente editarCliente(@PathVariable Long id, @RequestBody Cliente cliente){
+        interCliente.saveCliente(cliente);
+        return  cliente;
+
+    }
+
+
+}

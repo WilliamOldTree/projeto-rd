@@ -1,0 +1,22 @@
+package expertostech.tutorial.rest.api.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import expertostech.tutorial.rest.api.model.Cartao;
+import expertostech.tutorial.rest.api.repository.CartaoRepository;
+
+@RestController
+public class CartaoController {
+
+	 @Autowired
+	 private CartaoRepository repo;
+	 
+	 
+	 @PostMapping(path = "/salvar")
+	    public Cartao salvar(@RequestBody Cartao cartao) {
+	        return repo.save(cartao);
+	    }
+	
+}

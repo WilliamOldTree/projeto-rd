@@ -1,0 +1,5 @@
+package expertostech.tutorial.rest.api.repository;
+
+public interface CartaoRepository {
+
+}
