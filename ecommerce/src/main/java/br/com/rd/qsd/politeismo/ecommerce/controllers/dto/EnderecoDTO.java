@@ -7,7 +7,7 @@ public class EnderecoDTO {
 
 	private Long id_endereco;
 	private String apelido;
-	private String nomeLougradouro;
+	private String nomeLougradouro; 
 	private String tipoLougradouro;
 	private String numero;
 	private String cep;
