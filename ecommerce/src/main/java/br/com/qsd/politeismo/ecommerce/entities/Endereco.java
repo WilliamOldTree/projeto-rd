@@ -1,4 +1,4 @@
-package br.com.rd.qsd.politeismo.ecommerce.entities;
+package br.com.qsd.politeismo.ecommerce.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,8 +13,6 @@ import javax.persistence.Table;
 @Table(name = "ENDERECO")
 public class Endereco {
 	
-
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID_ENDERECO")
@@ -56,20 +54,6 @@ public class Endereco {
 	
 	public Endereco() {
 		
-	}
-	
-	public Endereco(Long id_endereco, String apelido, String nomeLougradouro, String tipoLougradouro, String numero,
-			String cep, String cidade, String bairro, Cliente cliente) {
-		super();
-		this.id_endereco = id_endereco;
-		this.apelido = apelido;
-		this.nomeLougradouro = nomeLougradouro;
-		this.tipoLougradouro = tipoLougradouro;
-		this.numero = numero;
-		this.cep = cep;
-		this.cidade = cidade;
-		this.bairro = bairro;
-		this.cliente = cliente;
 	}
 	
 	public Long getId_endereco() {

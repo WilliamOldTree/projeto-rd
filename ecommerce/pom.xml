@@ -8,11 +8,11 @@
 		<version>2.6.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-    <groupId>br.com.rd.qsd.politeismo</groupId>
-    <artifactId>ecommerce</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>ecommerce</name>
-    <description>ecommerce</description>
+	<groupId>br.com.qsd.politeismo</groupId>
+	<artifactId>ecommerce</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>ecommerce</name>
+	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -47,6 +47,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        
+		<dependency>
+    		<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
     </dependencies>
 
 	<build>
