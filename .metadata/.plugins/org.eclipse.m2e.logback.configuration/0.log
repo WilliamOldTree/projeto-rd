@@ -6697,3 +6697,5 @@ org.eclipse.core.runtime.CoreException: Launch configuration EcommercePoliteismo
 2022-05-02 22:14:22,309 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-05-02 22:14:22,311 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2022-05-02 22:14:22,314 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-05-02 22:14:22,317 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-02 22:14:22,317 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Muryllo\Desktop\projeto-rd\ecommerce\src\test\resources
