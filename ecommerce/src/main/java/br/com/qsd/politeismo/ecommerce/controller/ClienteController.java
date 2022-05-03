@@ -1,6 +1,5 @@
 package br.com.qsd.politeismo.ecommerce.controller;
 
-
 import java.net.URI;
 import java.util.List;
 
@@ -18,45 +17,46 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import br.com.qsd.politeismo.ecommerce.controller.dto.EnderecoDTO;
-import br.com.qsd.politeismo.ecommerce.controller.form.FormEnderecoDTO;
-import br.com.qsd.politeismo.ecommerce.service.EnderecoService;
+
+import br.com.qsd.politeismo.ecommerce.controller.dto.ClienteDTO;
+import br.com.qsd.politeismo.ecommerce.controller.form.FormClienteDTO;
+import br.com.qsd.politeismo.ecommerce.service.ClienteService;
 
 @RestController
-@RequestMapping(value = "/enderecos")
-public class EnderecoController {
-
+@RequestMapping(value = "/clientes")
+public class ClienteController {
+	
 	@Autowired
-	private EnderecoService service;
-
+	private ClienteService service;
+	
+	
 	@GetMapping
-    public ResponseEntity<List<EnderecoDTO>> findAll(){
-    	List<EnderecoDTO> list = service.findAll();
+    public ResponseEntity<List<ClienteDTO>> findAll(){
+    	List<ClienteDTO> list = service.findAll();
     	return ResponseEntity.ok(list);
     }
 	
 	@GetMapping(value = "/{id}")
-	public EnderecoDTO findById(@PathVariable Long id) {
+	public ClienteDTO findById(@PathVariable Long id) {
 		return service.findById(id);
     }
 	
 	@PostMapping
-	public ResponseEntity <EnderecoDTO> insert (@RequestBody FormEnderecoDTO dto){
+	public ResponseEntity <ClienteDTO> insert (@RequestBody FormClienteDTO dto){
 	    try { 
-	        EnderecoDTO obj = service.insert(dto);
-	        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId_endereco()).toUri();
-	        return ResponseEntity.created(uri).body(obj);
+	       ClienteDTO entity = service.insert(dto);
+	        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(entity.getId_cliente()).toUri();
+	        return ResponseEntity.created(uri).body(entity);
 	     } catch (ServiceException e) {
 	           return ResponseEntity.unprocessableEntity().build();
 	     }
 	}
 	
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<EnderecoDTO> update(@Valid @PathVariable Long id, @RequestBody FormEnderecoDTO dto){
-        EnderecoDTO obj = service.update(id, dto);
-		return ResponseEntity.ok().body(obj);
+	public ResponseEntity<ClienteDTO> update(@Valid @PathVariable Long id, @RequestBody FormClienteDTO dto){
+        ClienteDTO entity = service.update(id, dto);
+		return ResponseEntity.ok().body(entity);
 	}
-	
 	
 	@DeleteMapping(value= "/{id}")
 	public ResponseEntity<Void> deletar(@PathVariable Long id){
@@ -64,4 +64,4 @@ public class EnderecoController {
 		return ResponseEntity.noContent().build();
 	}
 	
-}
+}//end class
