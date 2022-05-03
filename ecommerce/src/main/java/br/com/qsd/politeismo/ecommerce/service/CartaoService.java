@@ -38,7 +38,8 @@ public class CartaoService {
 	public CartaoDTO insert(FormCartaoDTO dto) {
 		Cartao obj = new Cartao();
 		obj.setTitular_cartao(dto.getTitular_cartao());
-		obj.setValidade_cartao(dto.getCvv_cartao());
+		obj.setCvv_cartao(dto.getCvv_cartao());
+		obj.setValidade_cartao(dto.getValidade_cartao());
 		obj.setCliente(dto.getCliente());
 		obj.setFormaPagamento(obj.getFormaPagamento());
 		obj= repository.save(obj);
