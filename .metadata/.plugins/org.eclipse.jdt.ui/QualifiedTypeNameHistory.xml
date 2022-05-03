@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="br.com.qsd.politeismo.repository.CartaoRepository"/>
-    <fullyQualifiedTypeName name="br.com.qsd.politeismo.ecommerce.entities.Forma"/>
-    <fullyQualifiedTypeName name="br.com.qsd.politeismo.repository.FormaRepository"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
-    <fullyQualifiedTypeName name="org.springframework.boot.web.servlet.ServletComponentScan"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
-    <fullyQualifiedTypeName name="org.springframework.context.annotation.ComponentScans"/>
-    <fullyQualifiedTypeName name="br.com.qsd.politeismo.service.CartaoService"/>
-    <fullyQualifiedTypeName name="br.com.qsd.politeismo.ecommerce.entities.Cartao"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
@@ -48,7 +39,6 @@
     <fullyQualifiedTypeName name="br.com.rd.qsd.politeismo.ecommerce.entities.Cliente"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="br.com.rd.qsd.politeismo.ecommerce.repositories.FormaRepository"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
     <fullyQualifiedTypeName name="java.lang.Void"/>
     <fullyQualifiedTypeName name="br.com.qsd.politeismo.ecommerce.controller.form.FormEnderecoDTO"/>
@@ -56,8 +46,18 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
     <fullyQualifiedTypeName name="org.apache.tomcat.jni.User"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
-    <fullyQualifiedTypeName name="java.lang.Long"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
     <fullyQualifiedTypeName name="br.com.qsd.politeismo.ecommerce.entities.Endereco"/>
     <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+    <fullyQualifiedTypeName name="br.com.qsd.politeismo.ecommerce.repository.CartaoRepository"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="br.com.qsd.politeismo.ecommerce.entities.Cartao"/>
+    <fullyQualifiedTypeName name="br.com.qsd.politeismo.ecommerce.service.CartaoService"/>
+    <fullyQualifiedTypeName name="br.com.qsd.politeismo.ecommerce.controller.dto.CartaoDTO"/>
+    <fullyQualifiedTypeName name="br.com.qsd.politeismo.ecommerce.controller.form.FormCartaoDTO"/>
+    <fullyQualifiedTypeName name="br.com.qsd.politeismo.ecommerce.entities.Cliente"/>
+    <fullyQualifiedTypeName name="br.com.qsd.politeismo.ecommerce.repository.ClienteRepository"/>
+    <fullyQualifiedTypeName name="br.com.qsd.politeismo.ecommerce.entities.Forma"/>
+    <fullyQualifiedTypeName name="br.com.qsd.politeismo.ecommerce.repository.FormaRepository"/>
+    <fullyQualifiedTypeName name="java.lang.Long"/>
 </qualifiedTypeNameHistroy>
