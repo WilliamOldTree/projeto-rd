@@ -2,6 +2,7 @@ package br.com.qsd.politeismo.ecommerce.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -17,6 +18,7 @@ import br.com.qsd.politeismo.ecommerce.enums.Genero;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name ="id_cliente")
     private Long id;
     private String cpf;
     private String nome;
