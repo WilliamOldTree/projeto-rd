@@ -1,0 +1,5 @@
+package br.com.rd.politeismo.ecommerce.repository;
+
+public interface TelefoneRepository {
+
+}

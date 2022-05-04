@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+    font-family: 'Roboto';
+}
+
+.p-duvidasDetalhes:hover {
+    color          : brown;
+    text-decoration: underline;
+    cursor         : pointer;
+}
+
+.table {
+    width          : 100%;
+    border-collapse: collapse;
+}
+
+.table th.detalhesPedido-list {
+    text-align    : center;
+    font-size     : 16px;
+    vertical-align: middle;
+}
+
+.caixaDetalhesPedido {
+    border       : 2px solid #261C1A;
+    box-sizing   : border-box;
+    border-radius: 5px;
+    padding      : 12px;
+    width        : 100%;
+    margin-bottom: 20px;
+}
+
+.tr-detalhespedido {
+    border         : transparent;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.status-pedidoDetalhes {
+    width           : 11px;
+    height          : 86px;
+    padding         : 0%;
+    background-color: #FBBC04;
+    margin-left     : 30px;
+    
+}
+
+.titulo-pedido-detalhes {
+    text-align : start;
+    color      : #261C1A;
+    font-weight: 900;
+    font-size  : 18px;
+    margin     : 0px;
+    margin-left: 5px;
+}
+
+.titulo-pedido-detalhes.status {
+    font-size: 16px;
+    color    : #979797;
+}
+
+.btn-detalhes {
+    background   : #F27507;
+    border-radius: 10px;
+    color        : #FFFFFF;
+    border-radius: 10px;
+    font-weight  : 700;
+    font-size    : 16px;
+    margin-right : 10px;
+    width        : 60%;
+}
+
+.btn-detalhes:hover {
+    background: darkorange;
+    color     : #FFFFFF;
+}
+
+.resumoTotal {
+    display        : flex;
+    justify-content: center;
+}
+
+.detalhesEntrega {
+    border       : 2px solid #261C1A;
+    box-sizing   : border-box;
+    border-radius: 5px;
+    padding      : 12px;
+    width        : 90%;
+    margin-bottom: 20px;
+    padding      : 20px;
+    height       : 350px;
+
+}
+
+.detalhesResumo {
+    border       : 2px solid #261C1A;
+    box-sizing   : border-box;
+    border-radius: 5px;
+    padding      : 12px;
+    width        : 90%;
+    margin-bottom: 20px;
+    padding      : 20px;
+    height       : 350px;
+}
+
+.detalhesCliente {
+    margin-bottom: 50px;
+}
+
+.detalhesCompra {
+    margin-top   : 20px;
+    margin-bottom: 20px;
+
+}
+
+.titleResumo {
+    font-size  : 18px;
+    color      : #261C1A;
+    font-weight: bold;
+}
+
+.paragrafo-detalhesEntrega {
+    font-size    : 14px;
+    color        : #979797;
+    margin-bottom: 10px;
+}
+
+.paragrafo-resumo {
+    font-size    : 14px;
+    margin-bottom: 0px;
+    text-align   : center;
+}
+
+.line-detalhesCompra {
+    width: 100%;
+}
+
+/*responsive*/
+@media(max-width: 770px) {
+    .btn-detalhes {
+        font-size: 12px;
+    }
+}
+
+
+@media(max-width: 500px) {
+
+    .table,
+    .table thead.thead-detalhesPedidos,
+    .table tr.tr-detalhespedido,
+    .table th.detalhesPedido-list {
+        display: block;
+        width  : 100%;
+    }
+
+    .table tr.tr-detalhespedido {
+        margin-bottom: 15px;
+    }
+
+    .table th.detalhesPedido-list {
+        text-align    : right;
+        /*padding-left: 50%;*/
+        text-align    : center;
+        position      : relative;
+    }
+
+    .table th.detalhesPedido-list::before {
+        content     : attr(data-label);
+        position    : absolute;
+        left        : 0;
+        width       : 50%;
+        padding-left: 15px;
+        font-size   : 15px;
+        font-weight : bold;
+        text-align  : left;
+    }
+
+    .btn-detalhes {
+        margin-top: 10px;
+        font-size : 16px;
+    }
+
+    .status-pedidoDetalhes {
+        width        : 86px;
+        height       : 11px;
+        margin-bottom: 10px;
+        margin-left  : 5px;
+    }
+
+    .detalhesEntrega {
+        width: 100%;
+    }
+
+    .detalhesResumo {
+        width: 100%;
+    }
+}

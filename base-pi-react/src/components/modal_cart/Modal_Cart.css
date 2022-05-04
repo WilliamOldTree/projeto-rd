@@ -1,0 +1,144 @@
+.modal-cart {
+    color: #261C1A;
+}
+
+.btn-principal-cart, .btn-principal-cart:hover, .btn-principal-cart:focus {
+    background-color: #E5E5E5;
+    border:none;
+}
+
+
+.btn-principal-cart:hover {
+    background-color: #E5E5E5;
+    border:none;
+}
+
+.title-modal-cart {
+    margin-left: 155px;
+    font-weight: bold;
+}
+
+.div-modal-cart {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    text-align     : center;
+    margin-top     : 10px;
+}
+
+.row-modal-cart {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    text-align     : center;
+}
+
+.div-input-cart {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+}
+
+.btncarrinho,
+.btncarrinho:focus,
+.btncarrinho:hover {
+    background: #E5E5E5;
+    border    : none;
+}
+
+.btnFinal,
+.btnFinal:focus {
+    background-color: #F27507;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 150px;
+    height: 35px;
+    font-weight: bolder;
+    font-size: 14px;
+    margin-right: -130px;
+}
+
+
+
+.btnFinal:hover {
+    background-color: darkorange;
+    color           : #FFFFFF;
+}
+
+.div-btn-cart {
+    display        : flex;
+    justify-content: end;
+    align-items    : center;
+}
+
+.div-footer-cart {
+    text-align: end;
+    display: contents;
+}
+
+.div-quantidade-cart {
+    border : 1px solid #AF9787;
+    padding: 0px;
+    height : 30px;
+}
+
+.modal-cart-lixeira,
+.modal-cart-lixeira {
+    width       : 22px;
+    cursor      : pointer;
+    margin-top  : 10px;
+}
+
+
+.btnMenos {
+    background-color: #AF9787;
+    border          : none;
+    border-radius   : 10px 0px 0px 10px;
+    color           : white;
+    margin-top      : 70px;
+    height          : 30px;
+    width           : 20px;
+    font-size       : 16px;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    padding         : 0px;
+    margin          : 0px;
+}
+
+.btnMenos:hover {
+    background-color: #78625E;
+}
+
+.input-modal-qtd {
+    border    : 0px;
+    height    : 28px;
+    padding   : 0px;
+    text-align: center;
+    margin: 0px;
+
+}
+
+.btnMais {
+    background-color: #AF9787;
+    border          : none;
+    border-radius   : 0px 10px 10px 0px;
+    color           : white;
+    height          : 30px;
+    width           : 20px;
+    font-size       : 16px;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    margin: 0px;
+    padding   : 0px;
+}
+
+.btnMais:hover {
+    background-color: #78625E;
+}
+
+.divMais {
+    padding-left: 0px;
+}

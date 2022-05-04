@@ -1,0 +1,1014 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
+
+body{
+    width: 100%;
+}
+
+/* FORMULÁRIO CADASTRO */
+
+.title{
+    color: #261C1A;
+    margin-top: 27px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+ 
+.line-1{
+    width: 100%;
+border: 1px solid;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn.pessoaF{
+    position: relative;
+width: 170px;
+height: 45px;
+left: 142px;
+margin-bottom: 37px;
+margin-top: 50px;
+background: #FFFFFF;
+border: 2px solid #261C1A;
+box-sizing: border-box;
+border-radius: 10px;
+color: #261C1A;
+font-weight: 700;
+}
+
+
+.btn.pessoaF:hover{
+    background: #34A853;
+    border: 2px solid rgba(52, 168, 83, 0.5);
+    color: #FFFFFF;
+}
+
+.btn.pessoaJ{
+    position: relative;
+    width: 170px;
+    height: 45px;
+    left: 142px;
+    margin-top: 50px;
+    margin-bottom: 37px;
+    background: #FFFFFF;
+    border: 2px solid #261C1A;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #261C1A;
+    font-weight: 700;
+}
+
+.btn.pessoaJ:hover{
+    background: #34A853;
+    border: 2px solid rgba(52, 168, 83, 0.5);
+    color: #FFFFFF;
+}
+
+
+.cadastroPessoaJ {
+    position: relative;
+    left: 142px;
+    width: 873px;
+    height: 836px;
+    background: #FFFFFF;
+    border: 2px solid #261C1A;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin-bottom: 80px;
+}
+
+.campostopo{
+    position: absolute;
+    width: 491px;
+    height: 28px;
+    left: 191px;
+    top: 15px;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #3C4043;
+}
+
+.form-label1 {
+    position: absolute;
+    width: 126px;
+    height: 29px;
+    left: 123px;
+    top: 52px;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #3C4043;
+}
+
+#razaoSocial{
+    position: absolute;
+    width: 627px;
+    height: 40px;
+    left: 121px;
+    top: 81px;
+    border: 1px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.form-label2 {
+    position: absolute;
+    width: 167px;
+    height: 29px;
+    left: 121px;
+    top: 129px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    color: #3C4043;
+}
+
+#insEstadual{
+    position: absolute;
+    width: 228px;
+    height: 40px;
+    left: 123px;
+    top: 174px;
+    border: 1px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.form-label3 {
+    position: absolute;
+    width: 62px;
+    height: 22px;
+    left: 418px;
+    top: 132px;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #3C4043;
+}
+
+#cnpj{
+    position: absolute;
+    width: 256px;
+    height: 40px;
+    left: 426px;
+    top: 167px;
+    border: 1px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.form-label4 {
+    position: absolute;
+    width: 153px;
+    height: 29px;
+    left: 121px;
+    top: 215px;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #3C4043;
+}
+
+#nome{
+    position: absolute;
+    width: 627px;
+    height: 40px;
+    left: 123px;
+    top: 244px;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.form-label5{
+    position: absolute;
+width: 153px;
+height: 29px;
+left: 121px;
+top: 285px;
+font-weight: 700;
+font-size: 14px;
+display: flex;
+align-items: center;
+color: #3C4043;
+}
+
+
+#data{
+    position: absolute;
+width: 212px;
+height: 40px;
+left: 121px;
+top: 320px;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.aviso-tel{
+    position: absolute;
+    width: 393px;
+    height: 29px;
+    left: 123px;
+    top: 360px;;
+font-weight: 700;
+font-size: 14px;
+display: flex;
+align-items: center;
+color: #3C4043;
+}
+
+.form-label6{
+    position: absolute;
+    width: 233px;
+    height: 29px;
+    left: 121px;
+    top: 388px;   
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #3C4043;
+}
+
+#telefone{
+    position: absolute;
+    width: 228px;
+    height: 40px;
+    left: 121px;
+    top: 415px;
+    border: 1px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.form-label7{
+position: absolute;
+width: 155px;
+height: 29px;
+left: 440px;
+top: 388px;;
+font-weight: 700;
+font-size: 14px;
+display: flex;
+align-items: center;
+}
+
+#celular{
+position: absolute;
+width: 228px;
+height: 40px;
+left: 440px;
+top: 415px;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.form-label8{
+position: absolute;
+width: 77px;
+height: 29px;
+left: 121px;
+top: 456px;
+font-weight: 700;
+font-size: 14px;
+display: flex;
+align-items: center;
+color: #3C4043;
+}
+
+#email{
+position: absolute;
+width: 627px;
+height: 40px;
+left: 121px;
+top: 485px;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.form-label9{
+position: absolute;
+width: 202px;
+height: 29px;
+left: 123px;
+top: 527px;
+font-weight: 700;
+font-size: 14px;
+display: flex;
+align-items: center;
+color: #3C4043;
+}
+
+#email2{
+position: absolute;
+width: 627px;
+height: 40px;
+left: 121px;
+top: 556px;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.form-label10{
+position: absolute;
+width: 244px;
+height: 29px;
+left: 124px;
+top: 598px;;
+font-weight: 700;
+font-size: 14px;
+display: flex;
+align-items: center;
+color: #3C4043;
+}
+
+#senha{
+position: absolute;
+width: 279px;
+height: 40px;
+left: 123px;
+top: 627px;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.form-label11{
+position: absolute;
+width: 202px;
+height: 29px;
+left: 472px;
+top: 598px;
+font-weight: 700;
+font-size: 14px;
+display: flex;
+align-items: center;
+color: #3C4043;
+}
+
+#senha2{
+position: absolute;
+width: 279px;
+height: 40px;
+left: 472px;
+top: 627px;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+#exampleCheck1{
+    position: absolute;
+    width: 20px;
+    height: 18px;
+    left: 150px;
+    top: 680px; 
+border-radius: 5px;
+}
+
+.form-check-label{
+    position: absolute;
+    width: 318px;
+    height: 22px;
+    left: 152px;
+    top: 682px; 
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #666666;
+}
+
+.aviso-privacidade{
+    position: absolute;
+    width: 611px;
+    height: 33px;
+    left: 125px;
+    top: 710px;
+font-weight: 700;
+font-size: 16px;
+display: flex;
+align-items: center;
+color: #000000;
+}
+
+em{
+    color: #3362AB;
+}
+
+em:hover{
+    color: #3362AB;
+    text-decoration: underline;
+}
+
+.btn.formcadastroJ{
+    position: absolute;
+    width: 255px;
+    height: 55px;
+    left: 309px;
+    top: 761px;
+background: #F27507;
+border: 1px solid #F27507;
+box-sizing: border-box;
+border-radius: 10px;
+font-size: 20px;
+color: #FFFFFF;
+font-weight: bold;
+}
+
+.btn.formcadastroJ:hover{
+    background: darkorange;
+    color: #FFFFFF;
+}
+
+
+@media (max-width: 1200px){
+
+    .btn.pessoaF{
+        left: 25px;
+    }
+
+    .btn.pessoaJ{
+        left: 25px;
+    }
+    .cadastroPessoaF {
+        width: 630px;
+        height: 769px;
+
+    }
+
+    .cadastroPessoaJ {
+        width: 630px;
+        height: 840px;
+        left: 25px;
+    }
+
+    .campostopo{
+        width: 500px;
+        height: 28px;
+        left: 97px;
+        top: 16px;
+        font-size: 16px;
+    }
+    
+    .form-label1 {
+        width: 151px;
+        height: 29px;
+        left: 40px;
+        top: 52px;
+    }
+    
+    #razaoSocial{
+        width: 550px;
+        height: 40px;
+        left: 40px;
+        top: 85px;
+    }
+
+    .form-label2 {
+        width: 186px;
+        height: 29px;
+        left: 40px;
+        top: 132px;
+    }
+    
+    #insEstadual{
+        width: 256px;
+        height: 40px;
+        left: 40px;
+        top: 168px;
+    }
+    
+    .form-label3 {
+        width: 71px;
+        height: 28px;
+        left: 334px;
+        top: 133px;
+    }
+    
+    #cnpj{
+        width: 256px;
+        height: 40px;
+        left: 334px;
+        top: 168px;
+    }
+
+    .form-label4 {
+        width: 136px;
+        height: 28px;
+        left: 40px;
+        top: 216px;
+    }
+    
+    #nome{
+        width: 550px;
+        height: 40px;
+        left: 40px;
+        top: 248px;
+    }
+    
+    .form-label5{
+        width: 132px;
+        height: 29px;
+        left: 40px;
+        top: 292px;
+    }
+    
+    #data{
+        width: 149px;
+        height: 40px;
+        left: 40px;
+        top: 325px;
+    }
+
+    #data.form-control{
+        font-size: 12px;
+    }
+
+    .aviso-tel{
+        width: 314px;
+        height: 29px;
+        left: 40px;
+        top: 372px;
+    }
+    
+    .form-label6{
+        width: 206px;
+        height: 24px;
+        left: 40px;
+        top: 406px;
+    }
+    
+    #telefone{
+        width: 194px;
+        height: 40px;
+        left: 40px;
+        top: 432px;
+    }
+    
+    .form-label7{
+        width: 123px;
+        height: 23px;
+        left: 296px;
+        top: 406px;
+    }
+    
+    #celular{
+        width: 194px;
+        height: 40px;
+        left: 296px;
+        top: 432px;
+    }
+
+    .form-label8{
+        width: 51px;
+        height: 21px;
+        left: 40px;
+        top: 476px;
+        }
+        
+        #email{
+            width: 550px;
+            height: 40px;
+            left: 40px;
+            top: 501px;            
+        }
+        
+        .form-label9{
+            width: 149px;
+            height: 23px;
+            left: 40px;
+            top: 545px;
+        }
+        
+        #email2{
+            width: 550px;
+            height: 40px;
+            left: 40px;
+            top: 576px;
+        }
+        
+        .form-label10{
+            width: 198px;
+            height: 23px;
+            left: 40px;
+            top: 620px;
+        }
+        
+        #senha{
+            width: 260px;
+            height: 40px;
+            left: 40px;
+            top: 647px;
+        }
+        
+        .form-label11{
+            width: 146px;
+            height: 21px;
+            left: 330px;
+            top: 621px;
+        }
+        
+        #senha2{
+            width: 260px;
+            height: 40px;
+            left: 330px;
+            top: 647px;
+        }
+
+        #exampleCheck1{
+            width: 20px;
+            height: 18px;
+            left: 60px;
+            top: 701px;
+        }
+        
+        .form-check-label{
+            width: 265px;
+            height: 22px;
+            left: 65px;
+            top: 701px;
+        }
+        
+        .aviso-privacidade{
+            width: 550px;
+            height: 23px;
+            left: 40px;
+            top: 728px;
+            font-size: 14px;
+        }
+        
+        .btn.formcadastroJ{
+            width: 255px;
+            height: 55px;
+            left: 187px;
+            top: 765px;
+        }
+}
+
+
+@media (max-width: 760px) {
+    .btn.pessoaF{
+        width: 140px;
+        height: 40px;
+        font-size: 12px;
+        left: 20px;
+    }
+    
+    .btn.pessoaJ{
+        width: 140px;
+        height: 40px;
+        font-size: 12px;
+        left: 25px;
+    }
+
+    .cadastroPessoaJ {
+        width: 334px;
+        height: 984px;
+        left: 10px;
+    }
+
+    .campostopo{
+        width: 250px;
+        height: 28px;
+        left: 52px;
+        top: 17px;
+        text-align: center;
+        font-size: 14px;
+    }
+    
+    .form-label1 {
+        width: 115px;
+        height: 21px;
+        left: 28px;
+        top: 59px;
+    }
+    
+    #razaoSocial{
+        width: 274px;
+        height: 36px;
+        left: 28px;
+        top: 80px;
+    }
+
+    .form-label2 {
+        width: 167px;
+        height: 20px;
+        left: 27px;
+        top: 124px
+    }
+    
+    #insEstadual{
+        width: 139px;
+        height: 36px;
+        left: 28px;
+        top: 146px;
+    }
+    
+    .form-label3 {
+        width: 45px;
+        height: 19px;
+        left: 27px;
+        top: 190px;
+    }
+    
+    #cnpj{
+        width: 149px;
+        height: 36px;
+        left: 27px;
+        top: 211px;        
+    }
+
+    .form-label4 {
+        width: 120px;
+        height: 21px;
+        left: 27px;
+        top: 251px;
+    }
+    
+    #nome{
+        width: 274px;
+        height: 36px;
+        left: 27px;
+        top: 272px;
+    }
+    
+    .form-label5{
+        width: 124px;
+        height: 23px;
+        left: 28px;
+        top: 315px;
+    }
+    
+    #data{
+        width: 149px;
+        height: 36px;
+        left: 28px;
+        top: 343px;
+    }
+
+    .aviso-tel{
+        width: 285px;
+        height: 21px;
+        left: 28px;
+        top: 392px;
+    }
+    
+    .form-label6{
+        width: 185px;
+        height: 21px;
+        left: 28px;
+        top: 418px;
+    }
+    
+    #telefone{
+        width: 194px;
+        height: 36px;
+        left: 28px;
+        top: 444px;
+    }
+    
+    .form-label7{
+        width: 115px;
+        height: 21px;
+        left: 27px;
+        top: 485px;
+    }
+    
+    #celular{
+        width: 194px;
+        height: 36px;
+        left: 27px;
+        top: 511px;
+    }
+
+    .form-label8{
+        width: 44px;
+        height: 16px;
+        left: 28px;
+        top: 554px;
+        }
+        
+        #email{
+            width: 274px;
+            height: 36px;
+            left: 27px;
+            top: 575px;        
+        }
+        
+        .form-label9{
+            width: 135px;
+            height: 20px;
+            left: 27px;
+            top: 616px;
+        }
+        
+        #email2{
+            width: 274px;
+            height: 36px;
+            left: 27px;
+            top: 641px;
+        }
+        
+        .form-label10{
+            width: 174px;
+            height: 18px;
+            left: 28px;
+            top: 682px;
+        }
+        
+        #senha{
+            width: 194px;
+            height: 36px;
+            left: 29px;
+            top: 705px;
+        }
+        
+        .form-label11{
+            width: 128px;
+            height: 18px;
+            left: 27px;
+            top: 746px;
+        }
+        
+        #senha2{
+            width: 194px;
+            height: 36px;
+            left: 27px;
+            top: 768px;
+        }
+
+        #exampleCheck1{
+            width: 20px;
+            height: 18px;
+            left: 50px;
+            top: 821px;
+        }
+        
+        .form-check-label{
+            width: 237px;
+            height: 16px;
+            left: 61px;
+            top: 825px;
+        }
+        
+        .aviso-privacidade{
+            width: 274px;
+            height: 33px;
+            left: 29px;
+            top: 856px;
+        }
+        
+        .btn.formcadastroJ{
+            width: 220px;
+            height: 45px;
+            left: 48px;
+            top: 917px;
+            font-size: 18px;
+        }
+}
+
+
+@media (max-width: 360px){
+    .btn.pessoaF{
+        left: 5px;
+    }
+
+    .btn.pessoaJ{
+        left: 5px;
+    }
+
+    .cadastroPessoaJ {
+        left: 5px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .cadastroPessoaJ {
+        width: 302px;
+        left: 0px;
+    }
+
+    .campostopo{
+        left: 15px;
+    }
+    
+    .form-label1 {
+        left: 15px;
+    }
+    
+    #razaoSocial{
+        left: 15px;
+    }
+
+    .form-label2 {
+        left: 15px;
+    }
+    
+    #insEstadual{
+        left: 15px;
+    }
+    
+    .form-label3 {
+        left: 15px;
+    }
+    
+    #cnpj{
+        left: 15px;       
+    }
+
+    .form-label4 {
+        left: 15px;
+    }
+    
+    #nome{
+        left: 15px;
+    }
+    
+    .form-label5{
+        left: 15px;
+    }
+    
+    #data{
+        left: 15px;
+    }
+
+    .aviso-tel{
+        left: 15px;
+        font-size: 12px;
+    }
+    
+    .form-label6{
+        left: 15px;
+    }
+    
+    #telefone{
+        left: 15px;
+    }
+    
+    .form-label7{
+        left: 15px;
+    }
+    
+    #celular{
+        left: 15px;
+    }
+
+    .form-label8{
+        left: 15px;
+        }
+        
+        #email{
+            left: 15px;     
+        }
+        
+        .form-label9{
+            left: 15px;
+        }
+        
+        #email2{
+            left: 15px;
+        }
+        
+        .form-label10{
+            left: 15px;
+        }
+        
+        #senha{
+            left: 15px;
+        }
+        
+        .form-label11{
+            left: 15px;
+        }
+        
+        #senha2{
+            left: 15px;
+        }
+
+        #exampleCheck1{
+            left: 45px;
+        }
+        
+        .form-check-label{
+            left: 50px;
+        }
+        
+        .aviso-privacidade{
+            left: 15px;
+        }
+        
+        .btn.formcadastroJ{
+            left: 42px;
+        }
+}

@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* .container {
+    padding-left : 12px;
+    padding-right: 12px;
+} */
+
+.container-sucesso {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+}
+
+.title-sucesso {
+    text-align     : center;
+    margin-top     : 20px;
+    margin-bottom  : 50px;
+    color          : #00A846;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    font-weight    : 700;
+}
+
+.img-sucesso {
+    margin-left  : 20px;
+    margin-bottom: 0px;
+}
+
+.sucesso {
+    border       : 2px solid #261C1A;
+    box-sizing   : border-box;
+    box-shadow   : 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin-bottom: 50px;
+    width        : 80%;
+}
+
+h3.pedido {
+    text-align : center;
+    margin-top : 20px;
+    font-weight: 700;
+}
+
+.link-pedido {
+    text-align     : center;
+    text-decoration: none;
+    color          : #00A846;
+    font-size      : 18px;
+    font-weight    : 700;
+    margin-bottom  : 20px;
+}
+
+.link-pedido:hover {
+    text-decoration: underline;
+    color          : #00A846;
+}
+
+.container-pedido {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+#title-entrega {
+    text-align   : center;
+    margin-top   : 30px;
+    margin-bottom: 20px;
+    font-weight  : 700;
+}
+
+.entrega-endereco {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.valor-compra {
+    font-size: 18px;
+}
+
+.produto-compra {
+    font-size: 18px;
+}
+
+.line-cart-success{
+width: 100%;
+}
+
+@media (max-width: 800px) {
+    .img-sucesso {
+        margin-left: 5px;
+    }
+
+    p.paragrafo-entrega {
+        margin-left: 10px;
+    }
+
+    .img-entrega {
+        display: none;
+    }
+}

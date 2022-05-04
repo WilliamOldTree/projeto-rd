@@ -1,0 +1,58 @@
+package br.com.qsd.politeismo.ecommerce;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.qsd.politeismo.ecommerce.entities.Cartao;
+import br.com.qsd.politeismo.service.CartaoService;
+
+@RestController
+public class CartaoController {
+
+	@Autowired
+	CartaoService service;
+	
+	@PostMapping("/addCartao")
+	public Cartao addCartao(@RequestBody Cartao cartao) {
+		return service.salvarCartao(cartao);
+	}
+	
+
+	@PostMapping("/addCartoes")
+	public List<Cartao> addCartoes(@RequestBody List<Cartao> cartoes) {
+		return service.salvarCartoes(cartoes);
+	}
+	
+	@GetMapping("/cartoes")
+	public List<Cartao> listaCartoes(){
+		return service.listaCartoes();
+	}
+	
+	@GetMapping("/cartoes/{id}")
+	public Cartao listaCartaoId(@PathVariable Long id){
+		return service.listaCartoesId(id);
+	}
+	
+
+	@GetMapping("/cartoes/{titular}")
+	public Cartao listaCartaoTitular(@PathVariable String titular ){
+		return service.listaCartoesTitular(titular);
+	}
+	
+	@DeleteMapping("/deletar/{id}")
+	public String deletarCartao(@PathVariable Long id ){
+		return service.deletarCartao(id);
+	}
+	@PutMapping("/atualizar")
+	public Cartao atualizarCartao(@RequestBody Cartao cartao) {
+		return service.atualizarCartao(cartao);
+	}
+}

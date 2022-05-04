@@ -1,0 +1,973 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto:wght@300&display=swap');
+
+body{
+    width: 100%;
+}
+
+
+/* FORMULÁRIO CADASTRO */
+
+.title{
+    color: #261C1A;
+    margin-top: 27px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+ 
+.line-1{
+    width: 100%;
+border: 1px solid;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn.pessoaF{
+    position: relative;
+width: 170px;
+height: 45px;
+left: 142px;
+margin-bottom: 37px;
+margin-top: 50px;
+background: #FFFFFF;
+border: 2px solid #261C1A;
+box-sizing: border-box;
+border-radius: 10px;
+color: #261C1A;
+font-weight: 700;
+}
+
+.btn.pessoaF:hover{
+    background: #34A853;
+    border: 2px solid rgba(52, 168, 83, 0.5);
+    color: #FFFFFF;
+}
+
+.btn.pessoaJ{
+    position: relative;
+    width: 170px;
+    height: 45px;
+    left: 142px;
+    margin-top: 50px;
+    margin-bottom: 37px;
+    background: #FFFFFF;
+    border: 2px solid #261C1A;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #261C1A;
+    font-weight: 700;
+}
+
+.btn.pessoaJ:hover{
+    background: #34A853;
+    border: 2px solid rgba(52, 168, 83, 0.5);
+    color: #FFFFFF;
+}
+
+.cadastroPessoaF {
+    position: relative;
+    left: 142px;
+    width: 873px;
+    height: 836px;
+    background: #FFFFFF;
+    border: 2px solid #261C1A;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin-bottom: 80px;
+}
+
+.campostopo{
+    position: absolute;
+    width: 491px;
+    height: 28px;
+    left: 191px;
+    top: 15px;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #3C4043;
+}
+
+.form-label1 {
+    position: absolute;
+width: 151px;
+height: 29px;
+left: 123px;
+top: 52px;
+font-weight: 700;
+font-size: 14px;
+display: flex;
+align-items: center;
+color: #3C4043;
+}
+
+#nome{
+    position: absolute;
+    width: 627px;
+    height: 40px;
+    left: 123px;
+    top: 89px;
+    border: 1px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.form-label2 {
+    position: absolute;
+width: 65px;
+height: 29px;
+left: 123px;
+top: 139px;
+font-weight: 700;
+font-size: 14px;
+line-height: 21px;
+display: flex;
+align-items: center;
+color: #3C4043;
+}
+
+#cpf{
+    position: absolute;
+    width: 228px;
+    height: 40px;
+    left: 123px;
+    top: 174px;
+    border: 1px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.form-label3 {
+    position: absolute;
+width: 159px;
+height: 29px;
+left: 384px;
+top: 141px;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #3C4043;
+}
+
+#data{
+    font-size: 14px;
+    position: absolute;
+    width: 228px;
+height: 40px;
+left: 384px;
+top: 174px;
+    border: 1px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.form-label4 {
+    position: absolute;
+    width: 47px;
+    height: 29px;
+    left: 650px;
+    top: 141px;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #3C4043;
+}
+
+select.form-select{
+    position: absolute;
+    font-size: 12px;
+width: 100px;
+height: 40px;
+left: 650px;
+top: 174px;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.aviso-tel{
+    position: absolute;
+width: 358px;
+height: 29px;
+left: 123px;
+top: 228px;
+font-weight: 700;
+font-size: 14px;
+display: flex;
+align-items: center;
+color: #3C4043;
+}
+
+.form-label5{
+    position: absolute;
+    width: 228px;
+    height: 21px;
+    left: 121px;
+    top: 275px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #3C4043;
+}
+
+#telefone{
+    position: absolute;
+    width: 228px;
+    height: 40px;
+    left: 121px;
+    top: 308px;
+    border: 1px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.form-label6{
+position: absolute;
+width: 140px;
+height: 29px;
+left: 436px;
+top: 267px;
+font-weight: 700;
+font-size: 14px;
+line-height: 21px;
+display: flex;
+align-items: center;
+}
+
+#celular{
+position: absolute;
+width: 228px;
+height: 40px;
+left: 439px;
+top: 308px;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.form-label7{
+position: absolute;
+width: 58px;
+height: 18px;
+left: 123px;
+top: 366px;
+font-weight: 700;
+font-size: 14px;
+display: flex;
+align-items: center;
+color: #3C4043;
+}
+
+#email{
+position: absolute;
+width: 627px;
+height: 40px;
+left: 123px;
+top: 394px;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.form-label8{
+position: absolute;
+width: 164px;
+height: 29px;
+left: 123px;
+top: 454px;
+font-weight: 700;
+font-size: 14px;
+display: flex;
+align-items: center;
+color: #3C4043;
+}
+
+#email2{
+position: absolute;
+width: 627px;
+height: 40px;
+left: 123px;
+top: 493px;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.form-label9{
+position: absolute;
+width: 244px;
+height: 29px;
+left: 123px;
+top: 542px;
+font-weight: 700;
+font-size: 14px;
+display: flex;
+align-items: center;
+color: #3C4043;
+}
+
+#senha{
+position: absolute;
+width: 279px;
+height: 40px;
+left: 121px;
+top: 586px;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.form-label10{
+position: absolute;
+width: 202px;
+height: 29px;
+left: 472px;
+top: 542px;
+font-weight: 700;
+font-size: 14px;
+display: flex;
+align-items: center;
+color: #3C4043;
+}
+
+#senha2{
+position: absolute;
+width: 279px;
+height: 40px;
+left: 472px;
+top: 586px;
+border: 1px solid #979797;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+#exampleCheck1{
+    position: absolute;
+width: 20px;
+height: 18px;
+left: 150px;
+top: 637px;
+border-radius: 5px;
+}
+
+.form-check-label{
+    position: absolute;
+    width: 318px;
+    height: 22px;
+    left: 156px;
+    top: 642px;
+    font-weight: normal;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #666666;
+}
+
+.aviso-privacidade{
+    position: absolute;
+width: 611px;
+height: 33px;
+left: 131px;
+top: 682px;
+font-weight: 700;
+font-size: 16px;
+display: flex;
+align-items: center;
+color: #000000;
+}
+
+em{
+    color: #3362AB;
+}
+
+em:hover{
+    color: #3362AB;
+    text-decoration: underline;
+}
+
+.btn.formcadastroF{
+    position: absolute;
+width: 255px;
+height: 55px;
+left: 309px;
+top: 746px;
+background: #F27507;
+border: 1px solid #F27507;
+box-sizing: border-box;
+border-radius: 10px;
+font-size: 20px;
+color: #FFFFFF;
+font-weight: bold;
+}
+
+.btn.formcadastroF:hover{
+    background: darkorange;
+    color: #FFFFFF;
+}
+
+
+
+/* MENU RESPONSIVO */
+
+@media (max-width: 1200px){
+
+    .btn.pessoaF{
+        left: 25px;
+    }
+
+    .btn.pessoaJ{
+        left: 25px;
+    }
+    .cadastroPessoaF {
+        width: 630px;
+        height: 769px;
+        left: 25px;
+    }
+
+    .campostopo{
+        width: 500px;
+        height: 28px;
+        left: 84px;
+        top: 18px;
+    }
+
+    .form-label1 {
+        width: 133px;
+        height: 24px;
+        left: 37px;
+        top: 54px;
+    }
+    
+    #nome{
+        width: 550px;
+        height: 40px;
+        left: 37px;
+        top: 85px;
+    }
+
+    .form-label2 {
+        width: 49px;
+        height: 15px;
+        left: 37px;
+        top: 139px;
+
+    }
+    
+    #cpf{
+        width: 200px;
+        height: 40px;
+        left: 34px;
+        top: 164px;
+    }
+
+    .form-label3 {
+        width: 133px;
+        height: 15px;
+        left: 271px;
+        top: 137px;
+    }
+    
+    #data{
+        width: 149px;
+        height: 40px;
+        left: 271px;
+        top: 164px;
+    }
+
+    #data.form-control{
+        font-size: 12px;
+    }
+
+    .form-label4 {
+        width: 42px;
+        height: 19px;
+        left: 468px;
+        top: 137px;
+    }
+    
+    select.form-select{
+        width: 100px;
+        height: 40px;
+        left: 468px;
+        top: 164px;
+        font-size: 12px;
+    }
+    
+    .aviso-tel{
+        width: 315px;
+        height: 29px;
+        left: 37px;
+        top: 217px;
+    }
+
+    .form-label5{
+        width: 200px;
+        height: 29px;
+        left: 36px;
+        top: 248px;
+    }
+    
+    #telefone{
+        width: 194px;
+        height: 40px;
+        left: 37px;
+        top: 285px;
+    }
+    
+    .form-label6{
+        width: 122px;
+        height: 29px;
+        left: 300px;
+        top: 248px;
+    }
+    
+    #celular{
+        position: absolute;
+        width: 194px;
+        height: 40px;
+        left: 300px;
+        top: 283px;
+    }
+
+    .form-label7{
+        width: 52px;
+        height: 20px;
+        left: 34px;
+        top: 334px;;
+    }
+
+    #email{
+        width: 553px;
+        height: 40px;
+        left: 37px;
+        top: 366px;
+    }
+    
+    .form-label8{
+        width: 145px;
+        height: 20px;
+        left: 37px;
+        top: 419px;
+    }
+    
+    #email2{
+        width: 550px;
+        height: 40px;
+        left: 37px;
+        top: 448px
+    }
+
+    .form-label9{
+        width: 244px;
+        height: 29px;
+        left: 34px;
+        top: 499px;
+        }
+        
+        #senha{
+            width: 235px;
+            height: 40px;
+            left: 37px;
+            top: 532px;
+        }
+        
+        .form-label10{
+            width: 202px;
+            height: 29px;
+            left: 316px;
+            top: 499px;
+        }
+        
+        #senha2{
+            width: 235px;
+            height: 40px;
+            left: 316px;
+            top: 532px;
+        }
+        
+        #exampleCheck1{
+            width: 20px;
+            height: 18px;
+            left: 55px;
+            top: 591px;
+        }
+        
+        .form-check-label{
+            width: 267px;
+            height: 22px;
+            left: 60px;
+            top: 594px;
+        }
+
+
+        .aviso-privacidade{
+            width: 545px;
+            height: 33px;
+            left: 34px;
+            top: 632px;
+            font-size: 14px;
+        }
+    
+        .btn.formcadastroF{
+            width: 255px;
+            height: 55px;
+            left: 175px;
+            top: 688px;
+            font-size: 20px;
+        }
+}
+
+
+@media (max-width: 760px) {
+
+    .btn.pessoaF{
+        width: 140px;
+        height: 40px;
+        font-size: 12px;
+        left: 20px;
+    }
+    
+    .btn.pessoaJ{
+        width: 140px;
+        height: 40px;
+        font-size: 12px;
+        left: 25px;
+    }
+
+    .cadastroPessoaF {
+        width: 334px;
+        height: 984px;
+        left: 10px;
+    }
+
+    .campostopo{
+        width: 250px;
+        height: 28px;
+        left: 52px;
+        top: 17px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .form-label1 {
+        width: 120px;
+        height: 21px;
+        left: 28px;
+        top: 59px;
+        font-size: 14px;
+    }
+    
+    #nome{
+        width: 274px;
+        height: 36px;
+        left: 28px;
+        top: 87p
+    }
+
+    .form-label2 {
+        width: 37px;
+        height: 19px;
+        left: 28px;
+        top: 131px;
+        font-size: 14px;
+    }
+    
+    #cpf{
+        width: 139px;
+        height: 36px;
+        left: 28px;
+        top: 161px;
+    }
+
+    .form-label3 {
+        width: 120px;
+        height: 20px;
+        left: 28px;
+        top: 205px;
+        font-size: 14px;
+    }
+    
+    #data{
+        width: 149px;
+        height: 36px;
+        left: 28px;
+        top: 236px
+    }
+
+    .form-label4 {
+        width: 42px;
+        height: 19px;
+        left: 28px;
+        top: 277px;
+        font-size: 14px;
+    }
+    
+    select.form-select{
+        width: 100px;
+        height: 36px;
+        left: 28px;
+        top: 304px;
+        font-size: 12px;
+    }
+
+    .aviso-tel{
+        width: 285px;
+        height: 31px;
+        left: 29px;
+        top: 351px;
+        font-size: 14px;
+    }
+
+    .form-label5{
+        width: 190px;
+        height: 21px;
+        left: 29px;
+        top: 394px;
+        font-size: 14px;
+    }
+    
+    #telefone{
+        width: 194px;
+        height: 36px;
+        left: 28px;
+        top: 424px;
+
+    }
+    
+    .form-label6{
+        width: 155px;
+        height: 29px;
+        left: 29px;
+        top: 469px;
+        font-size: 14px;
+    }
+    
+    #celular{
+        width: 194px;
+        height: 36px;
+        left: 29px;
+        top: 503px;
+    }
+
+    .form-label7{
+        width: 44px;
+        height: 16px;
+        left: 29px;
+        top: 550px;
+        font-size: 14px;
+    }
+
+    #email{
+        width: 274px;
+        height: 36px;
+        left: 29px;
+        top: 577px;
+    }
+    
+    .form-label8{
+        width: 140px;
+        height: 20px;
+        left: 29px;
+        top: 622px;
+        font-size: 14px;
+    }
+    
+    #email2{
+        width: 274px;
+        height: 36px;
+        left: 29px;
+        top: 648px;
+    }
+
+    .form-label9{
+        width: 174px;
+        height: 18px;
+        left: 29px;
+        top: 693px;
+        font-size: 14px;
+        }
+        
+        #senha{
+            width: 194px;
+            height: 36px;
+            left: 29px;
+            top: 718px
+        }
+    
+        .form-label10{
+            width: 128px;
+            height: 18px;
+            left: 29px;
+            top: 758px;
+            font-size: 14px;
+        }
+        
+        
+        #senha2{
+            width: 274px;
+            height: 36px;
+            left: 29px;
+            top: 782px;
+        }
+        
+        #exampleCheck1{
+            width: 20px;
+            height: 18px;
+            left: 50px;
+            top: 830px;
+        }
+        
+        .form-check-label{
+            width: 237px;
+            height: 16px;
+            left: 61px;
+            top: 836px;
+        }
+
+
+        .aviso-privacidade{
+            width: 274px;
+            height: 33px;
+            left: 18px;
+            top: 867px;
+            font-size: 12px;
+            text-align: end;
+        }
+    
+        .btn.formcadastroF{
+            width: 220px;
+            height: 45px;
+            left: 48px;
+            top: 921px;
+            font-size: 18px;
+        }
+}
+
+@media (max-width: 360px){
+    .btn.pessoaF{
+        left: 5px;
+    }
+
+    .btn.pessoaJ{
+        left: 5px;
+    }
+
+    .cadastroPessoaF {
+        left: 5px;
+    }
+}
+
+@media (max-width: 320px){
+
+    .cadastroPessoaF {
+        width: 302px;
+        left: 0px;
+    }
+
+    .campostopo{
+        left: 35px;
+    }
+
+    .form-label1 {
+        left: 15px;
+    }
+    
+    #nome{
+        left: 15px;
+    }
+
+    .form-label2 {
+        left: 15px;
+    }
+    
+    #cpf{
+        left: 15px;
+    }
+
+    .form-label3 {
+        left: 15px;
+    }
+    
+    #data{
+        left: 15px;
+    }
+
+    .form-label4 {
+        left: 15px;
+    }
+    
+    select.form-select{
+        left: 15px;
+    }
+
+    .aviso-tel{
+        left: 15px;
+        font-size: 12px;
+    }
+
+    .form-label5{
+        left: 15px;
+    }
+    
+    #telefone{
+        left: 15px;
+    }
+    
+    .form-label6{
+        left: 15px;
+    }
+    
+    #celular{
+        left: 15px;
+    }
+
+    .form-label7{
+        left: 15px;
+    }
+
+    #email{
+        left: 15px;
+    }
+    
+    .form-label8{
+        left: 15px;
+    }
+    
+    #email2{
+        left: 15px;
+    }
+
+    .form-label9{
+        left: 18px;
+        }
+        
+        #senha{
+            left: 18px;
+        }
+    
+        .form-label10{
+            left: 18px;
+        }
+        
+        
+        #senha2{
+            left: 18px;
+        }
+        
+        #exampleCheck1{
+            left: 45px;
+        }
+        
+        .form-check-label{
+            left: 50px;
+        }
+
+        .aviso-privacidade{
+            left: 15px;
+        }
+    
+        .btn.formcadastroF{
+            left: 42px;
+        }
+}

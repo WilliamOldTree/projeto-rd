@@ -1,0 +1,973 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+    width: 100%;
+}
+
+.container {
+    padding-left : 12px;
+    padding-right: 12px;
+}
+
+/* FORMULÁRIO CADASTRO */
+
+
+.buttons-fisico{
+    display: flex;
+    justify-content: center;
+}
+.btn.pessoaF.fisico {
+    position     : relative;
+    width        : 170px;
+    height       : 45px;
+    margin-bottom: 20px;
+    margin-top   : 20px;
+    background   : #FFFFFF;
+    border       : 2px solid #261C1A;
+    box-sizing   : border-box;
+    border-radius: 10px;
+    color        : #261C1A;
+    font-weight  : 700;
+    margin-right  : 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.pessoaF.fisico:hover {
+    background: #34A853;
+    border    : 2px solid rgba(52, 168, 83, 0.5);
+    color     : #FFFFFF;
+}
+
+.btn.pessoaJ.fisico {
+    position     : relative;
+    width        : 170px;
+    height       : 45px;
+    margin-top   : 20px;
+    margin-bottom: 20px;
+    background   : #FFFFFF;
+    border       : 2px solid #261C1A;
+    box-sizing   : border-box;
+    border-radius: 10px;
+    color        : #261C1A;
+    font-weight  : 700;
+    margin-left  : 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.pessoaJ.fisico:hover {
+    background: #34A853;
+    border    : 2px solid rgba(52, 168, 83, 0.5);
+    color     : #FFFFFF;
+}
+
+.fisico-container{
+    display: flex;
+    justify-content: center;
+}
+.cadastroPessoaF.fisico {
+    position     : relative;
+    width        : 873px;
+    height       : 836px;
+    background   : #FFFFFF;
+    border       : 2px solid #261C1A;
+    box-sizing   : border-box;
+    box-shadow   : 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.campostopo {
+    position   : absolute;
+    width      : 491px;
+    height     : 28px;
+    left       : 191px;
+    top        : 15px;
+    font-weight: 700;
+    font-size  : 16px;
+    display    : flex;
+    align-items: center;
+    color      : #3C4043;
+}
+
+.form-label1.fisico {
+    position   : absolute;
+    width      : 144px;
+    height     : 23px;
+    left       : 123px;
+    top        : 52px;
+    font-weight: 700;
+    font-size  : 14px;
+    display    : flex;
+    align-items: center;
+    color      : #3C4043;
+    padding    : 0;
+    margin     : 0;
+}
+
+#nome_ClienteFisico {
+    position     : absolute;
+    width        : 627px;
+    height       : 40px;
+    left         : 123px;
+    top          : 89px;
+    border       : 1px solid #979797;
+    box-sizing   : border-box;
+    border-radius: 10px;
+}
+
+.form-label2.fisico {
+    position   : absolute;
+    width      : 65px;
+    height     : 29px;
+    left       : 123px;
+    top        : 139px;
+    font-weight: 700;
+    font-size  : 14px;
+    line-height: 21px;
+    display    : flex;
+    align-items: center;
+    color      : #3C4043;
+    padding    : 0;
+    margin     : 0;
+}
+
+#cpf_ClienteFisico {
+    position     : absolute;
+    width        : 228px;
+    height       : 40px;
+    left         : 123px;
+    top          : 174px;
+    border       : 1px solid #979797;
+    box-sizing   : border-box;
+    border-radius: 10px;
+}
+
+.form-label3.fisico {
+    position   : absolute;
+    width      : 159px;
+    height     : 29px;
+    left       : 384px;
+    top        : 141px;
+    font-weight: 700;
+    font-size  : 14px;
+    display    : flex;
+    align-items: center;
+    color      : #3C4043;
+}
+
+#data_ClienteFisico {
+    font-size    : 14px;
+    position     : absolute;
+    width        : 228px;
+    height       : 40px;
+    left         : 384px;
+    top          : 174px;
+    border       : 1px solid #979797;
+    box-sizing   : border-box;
+    border-radius: 10px;
+}
+
+.form-label4.fisico {
+    position   : absolute;
+    width      : 47px;
+    height     : 29px;
+    left       : 650px;
+    top        : 141px;
+    font-weight: 700;
+    font-size  : 14px;
+    display    : flex;
+    align-items: center;
+    color      : #3C4043;
+}
+
+select.form-select.fisico {
+    position     : absolute;
+    font-size    : 12px;
+    width        : 100px;
+    height       : 40px;
+    left         : 650px;
+    top          : 174px;
+    border       : 1px solid #979797;
+    box-sizing   : border-box;
+    border-radius: 10px;
+}
+
+.aviso-tel.fisico {
+    position   : absolute;
+    width      : 358px;
+    height     : 29px;
+    left       : 123px;
+    top        : 228px;
+    font-weight: 700;
+    font-size  : 14px;
+    display    : flex;
+    align-items: center;
+    color      : #3C4043;
+}
+
+.form-label5.fisico {
+    position   : absolute;
+    width      : 228px;
+    height     : 21px;
+    left       : 121px;
+    top        : 275px;
+    font-weight: 700;
+    font-size  : 14px;
+    color      : #3C4043;
+}
+
+#telefone_ClienteFisico {
+    position     : absolute;
+    width        : 228px;
+    height       : 40px;
+    left         : 121px;
+    top          : 308px;
+    border       : 1px solid #979797;
+    box-sizing   : border-box;
+    border-radius: 10px;
+}
+
+.form-label6.fisico {
+    position   : absolute;
+    width      : 140px;
+    height     : 29px;
+    left       : 436px;
+    top        : 267px;
+    font-weight: 700;
+    font-size  : 14px;
+    line-height: 21px;
+    display    : flex;
+    align-items: center;
+}
+
+#celular_ClienteFisico {
+    position     : absolute;
+    width        : 228px;
+    height       : 40px;
+    left         : 439px;
+    top          : 308px;
+    border       : 1px solid #979797;
+    box-sizing   : border-box;
+    border-radius: 10px;
+}
+
+.form-label7.fisico {
+    position   : absolute;
+    width      : 58px;
+    height     : 18px;
+    left       : 123px;
+    top        : 366px;
+    font-weight: 700;
+    font-size  : 14px;
+    display    : flex;
+    align-items: center;
+    color      : #3C4043;
+}
+
+#email1_ClienteFisico {
+    position     : absolute;
+    width        : 627px;
+    height       : 40px;
+    left         : 123px;
+    top          : 394px;
+    border       : 1px solid #979797;
+    box-sizing   : border-box;
+    border-radius: 10px;
+}
+
+.form-label8.fisico {
+    position   : absolute;
+    width      : 164px;
+    height     : 29px;
+    left       : 123px;
+    top        : 454px;
+    font-weight: 700;
+    font-size  : 14px;
+    display    : flex;
+    align-items: center;
+    color      : #3C4043;
+}
+
+#email2_ClienteFisico {
+    position     : absolute;
+    width        : 627px;
+    height       : 40px;
+    left         : 123px;
+    top          : 493px;
+    border       : 1px solid #979797;
+    box-sizing   : border-box;
+    border-radius: 10px;
+}
+
+.form-label9.fisico {
+    position   : absolute;
+    width      : 244px;
+    height     : 29px;
+    left       : 123px;
+    top        : 542px;
+    font-weight: 700;
+    font-size  : 14px;
+    display    : flex;
+    align-items: center;
+    color      : #3C4043;
+}
+
+#senha1_ClienteFisico {
+    position     : absolute;
+    width        : 279px;
+    height       : 40px;
+    left         : 121px;
+    top          : 586px;
+    border       : 1px solid #979797;
+    box-sizing   : border-box;
+    border-radius: 10px;
+}
+
+.form-label10.fisico {
+    position   : absolute;
+    width      : 202px;
+    height     : 29px;
+    left       : 472px;
+    top        : 542px;
+    font-weight: 700;
+    font-size  : 14px;
+    display    : flex;
+    align-items: center;
+    color      : #3C4043;
+}
+
+#senha2_ClienteFisico {
+    position     : absolute;
+    width        : 279px;
+    height       : 40px;
+    left         : 472px;
+    top          : 586px;
+    border       : 1px solid #979797;
+    box-sizing   : border-box;
+    border-radius: 10px;
+}
+
+#exampleCheck1_ClienteFisico {
+    position     : absolute;
+    width        : 20px;
+    height       : 18px;
+    left         : 150px;
+    top          : 641px;
+    border-radius: 5px;
+}
+
+.form-check-label.fisico {
+    position   : absolute;
+    width      : 318px;
+    height     : 22px;
+    left       : 156px;
+    top        : 642px;
+    font-weight: normal;
+    font-size  : 14px;
+    display    : flex;
+    align-items: center;
+    color      : #666666;
+}
+
+.aviso-privacidade.fisico {
+    position   : absolute;
+    width      : 611px;
+    height     : 33px;
+    left       : 131px;
+    top        : 682px;
+    font-weight: 700;
+    font-size  : 16px;
+    display    : flex;
+    align-items: center;
+    color      : #000000;
+}
+
+em {
+    color: #3362AB;
+}
+
+em:hover {
+    color          : #3362AB;
+    text-decoration: underline;
+}
+
+.btn.formcadastroF {
+    position     : absolute;
+    width        : 255px;
+    height       : 55px;
+    top          : 746px;
+    background   : #F27507;
+    border       : 1px solid #F27507;
+    box-sizing   : border-box;
+    border-radius: 10px;
+    font-size    : 20px;
+    color        : #FFFFFF;
+    font-weight  : bold;
+    left: 309px;
+
+}
+
+.btn.formcadastroF:hover {
+    background: darkorange;
+    color     : #FFFFFF;
+}
+
+
+
+/* MENU RESPONSIVO */
+
+@media (max-width: 1200px) {
+
+    .cadastroPessoaF.fisico {
+        width : 630px;
+        height: 769px;
+    }
+
+    .campostopo {
+        width : 500px;
+        height: 28px;
+        left  : 84px;
+        top   : 18px;
+    }
+
+    .form-label1.fisico {
+        width : 133px;
+        height: 24px;
+        left  : 37px;
+        top   : 54px;
+    }
+
+    #nome_ClienteFisico {
+        width : 550px;
+        height: 40px;
+        left  : 37px;
+        top   : 85px;
+    }
+
+    .form-label2.fisico {
+        width : 49px;
+        height: 15px;
+        left  : 37px;
+        top   : 139px;
+
+    }
+
+    #cpf_ClienteFisico {
+        width : 200px;
+        height: 40px;
+        left  : 34px;
+        top   : 164px;
+    }
+
+    .form-label3.fisico {
+        width : 133px;
+        height: 15px;
+        left  : 271px;
+        top   : 137px;
+    }
+
+    #data_ClienteFisico {
+        width : 149px;
+        height: 40px;
+        left  : 271px;
+        top   : 164px;
+    }
+
+    #data_ClienteFisico.form-control {
+        font-size: 12px;
+    }
+
+    .form-label4.fisico {
+        width : 42px;
+        height: 19px;
+        left  : 468px;
+        top   : 137px;
+    }
+
+    select.form-select.fisico {
+        width    : 100px;
+        height   : 40px;
+        left     : 468px;
+        top      : 164px;
+        font-size: 12px;
+    }
+
+    .aviso-tel.fisico {
+        width : 315px;
+        height: 29px;
+        left  : 37px;
+        top   : 217px;
+    }
+
+    .form-label5.fisico {
+        width : 200px;
+        height: 29px;
+        left  : 36px;
+        top   : 248px;
+    }
+
+    #telefone_ClienteFisico {
+        width : 194px;
+        height: 40px;
+        left  : 37px;
+        top   : 285px;
+    }
+
+    .form-label6.fisico {
+        width : 122px;
+        height: 29px;
+        left  : 300px;
+        top   : 248px;
+    }
+
+    #celular_ClienteFisico {
+        position: absolute;
+        width   : 194px;
+        height  : 40px;
+        left    : 300px;
+        top     : 283px;
+    }
+
+    .form-label7.fisico {
+        width : 52px;
+        height: 20px;
+        left  : 34px;
+        top   : 334px;
+    }
+
+    #email1_ClienteFisico {
+        width : 553px;
+        height: 40px;
+        left  : 37px;
+        top   : 366px;
+    }
+
+    .form-label8.fisico {
+        width : 145px;
+        height: 20px;
+        left  : 37px;
+        top   : 419px;
+    }
+
+    #email2_ClienteFisico {
+        width : 550px;
+        height: 40px;
+        left  : 37px;
+        top   : 448px
+    }
+
+    .form-label9.fisico {
+        width : 244px;
+        height: 29px;
+        left  : 34px;
+        top   : 499px;
+    }
+
+    #senha1_ClienteFisico {
+        width : 235px;
+        height: 40px;
+        left  : 37px;
+        top   : 532px;
+    }
+
+    .form-label10.fisico {
+        width : 202px;
+        height: 29px;
+        left  : 316px;
+        top   : 499px;
+    }
+
+    #senha2_ClienteFisico {
+        width : 235px;
+        height: 40px;
+        left  : 316px;
+        top   : 532px;
+    }
+
+    #exampleCheck1_ClienteFisico {
+        width : 20px;
+        height: 18px;
+        left  : 55px;
+        top   : 591px;
+    }
+
+    .form-check-label.fisico {
+        width : 267px;
+        height: 22px;
+        left  : 60px;
+        top   : 594px;
+    }
+
+
+    .aviso-privacidade.fisico {
+        width    : 545px;
+        height   : 33px;
+        left     : 34px;
+        top      : 632px;
+        font-size: 14px;
+    }
+
+    .btn.formcadastroF {
+        width    : 255px;
+        height   : 55px;
+        top      : 688px;
+        font-size: 20px;
+        left: 187px;
+
+    }
+}
+
+
+@media (max-width: 760px) {
+    .btn.pessoaF.fisico {
+        width    : 140px;
+        height   : 40px;
+        font-size: 12px;
+    }
+
+    .btn.pessoaJ.fisico {
+        width    : 140px;
+        height   : 40px;
+        font-size: 12px;
+    }
+
+    .cadastroPessoaF.fisico {
+        width : 334px;
+        height: 1306px;
+        left  : 10px;
+    }
+
+    .campostopo {
+        width     : 250px;
+        height    : 28px;
+        left      : 52px;
+        top       : 17px;
+        text-align: center;
+        font-size : 14px;
+    }
+
+    .form-label1.fisico {
+        width    : 120px;
+        height   : 21px;
+        left: 20px;
+        top: 71px;
+        font-size: 14px;
+    }
+
+    #nome_ClienteFisico {
+        width: 294px;
+        height: 50px;
+        left: 20px;
+        top: 97px;
+    }
+
+    .form-label2.fisico {
+        width    : 37px;
+        height   : 19px;
+        left: 20px;
+        top: 172px;
+        font-size: 14px;
+    }
+
+    #cpf_ClienteFisico {
+        width: 294px;
+        height: 49px;
+        left: 20px;
+        top: 193px;
+    }
+
+    .form-label3.fisico {
+        width    : 120px;
+        height   : 20px;
+        left: 21px;
+        top: 267px;
+        font-size: 14px;
+    }
+
+    #data_ClienteFisico {
+        width: 294px;
+        height: 50px;
+        left: 20px;
+        top: 292px;
+    }
+
+    .form-label4.fisico {
+        width    : 42px;
+        height   : 19px;
+        left: 21px;
+        top: 367px;
+        font-size: 14px;
+    }
+
+    select.form-select.fisico {
+        width: 296px;
+        height: 50px;
+        left: 19px;
+        top: 387px;
+        font-size: 12px;
+    }
+
+    .aviso-tel.fisico {
+        width: 300px;
+        height: 31px;
+        left: 21px;
+        top: 470px;
+        font-size: 16px;
+    }
+
+    .form-label5.fisico {
+        width    : 190px;
+        height   : 21px;
+        left: 21px;
+        top: 522px;
+        font-size: 14px;
+    }
+
+    #telefone_ClienteFisico {
+        width: 296px;
+        height: 50px;
+        left: 19px;
+        top: 548px;
+    }
+
+    .form-label6.fisico {
+        width    : 155px;
+        height   : 29px;
+        left: 21px;
+        top: 622px;
+        font-size: 14px;
+    }
+
+    #celular_ClienteFisico {
+        width: 296px;
+        height: 50px;
+        left: 19px;
+        top: 647px;
+    }
+
+    .form-label7.fisico {
+        width    : 44px;
+        left: 21px;
+        top: 722px;
+        font-size: 14px;
+    }
+
+    #email1_ClienteFisico {
+        width: 296px;
+        height: 50px;
+        left: 19px;
+        top: 744px;
+    }
+
+    .form-label8.fisico {
+        width    : 140px;
+        height   : 20px;
+        left: 21px;
+        top: 819px;
+        font-size: 14px;
+    }
+
+    #email2_ClienteFisico {
+        width: 296px;
+        height: 50px;
+        left: 19px;
+        top: 841px;
+    }
+
+    .form-label9.fisico {
+        width    : 174px;
+        height   : 18px;
+        left: 21px;
+        top: 916px;
+        font-size: 14px;
+    }
+
+    #senha1_ClienteFisico {
+        width: 295px;
+        height: 50px;
+        left: 19px;
+        top: 939px;
+    }
+
+    .form-label10.fisico {
+        width    : 128px;
+        height   : 18px;
+        left: 21px;
+        top: 1014px;
+        font-size: 14px;
+    }
+
+
+    #senha2_ClienteFisico {
+        width: 295px;
+        height: 50px;
+        left: 19px;
+        top: 1037px;
+    }
+
+    #exampleCheck1_ClienteFisico {
+        left: 43px;
+        top: 1112px;
+    }
+
+    .form-check-label.fisico {
+        width : 237px;
+        height: 16px;
+        left: 51px;
+        top: 1118px;
+    }
+
+
+    .aviso-privacidade.fisico {
+        width: 237px;
+        height: 16px;
+        left: 22px;
+        top: 1175px;
+        font-size : 12px;
+        text-align: end;
+    }
+
+    .btn.formcadastroF {
+        width    : 220px;
+        height   : 45px;
+        left: 57px;
+        top: 1220px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 375px) {
+    .btn.pessoaF.fisico {
+        left: 5px;
+    }
+
+    .btn.pessoaJ.fisico {
+        left: 5px;
+    }
+
+    .cadastroPessoaF.fisico {
+        left: 0px;
+    }
+}
+
+@media (max-width: 350px) {
+    .cadastroPessoaF.fisico {
+        width: 305px;
+        left : 0px;
+    }
+
+    .campostopo {
+        left: 35px;
+    }
+
+    .form-label1.fisico {
+        left: 5px;
+    }
+
+    #nome_ClienteFisico {
+        left: 5px;
+        width: 282px;
+    }
+
+    .form-label2.fisico {
+        left: 5px;
+    }
+
+    #cpf_ClienteFisico {
+        left: 5px;
+        width: 282px;
+    }
+
+    .form-label3.fisico {
+        left: 5px;
+    }
+
+    #data_ClienteFisico {
+        left: 5px;
+        width: 282px;
+    }
+
+    .form-label4.fisico {
+        left: 5px;
+    }
+
+    select.form-select.fisico {
+        left: 5px;
+        width: 282px;
+    }
+
+    .aviso-tel.fisico {
+        left     : 5px;
+        font-size: 12px;
+    }
+
+    .form-label5.fisico {
+        left: 5px;
+    }
+
+    #telefone_ClienteFisico {
+        left: 5px;
+        width: 282px;
+    }
+
+    .form-label6.fisico {
+        left: 5px;
+    }
+
+    #celular_ClienteFisico {
+        left: 5px;
+        width: 282px;
+    }
+
+    .form-label7.fisico {
+        left: 5px;
+    }
+
+    #email1_ClienteFisico {
+        left: 5px;
+        width: 282px;
+    }
+
+    .form-label8.fisico {
+        left: 5px;
+    }
+
+    #email2_ClienteFisico {
+        left: 5px;
+        width: 282px;
+    }
+
+    .form-label9.fisico {
+        left: 8px;
+    }
+
+    #senha1_ClienteFisico {
+        left: 8px;
+        width: 282px;
+    }
+
+    .form-label10.fisico {
+        left: 8px;
+    }
+
+    #senha2_ClienteFisico {
+        left: 8px;
+        width: 282px;
+    }
+
+    .form-check-label.fisico {
+        left: 50px;
+    }
+
+    .aviso-privacidade.fisico {
+        left: 15px;
+    }
+
+    .btn.formcadastroF {
+        left: 42px;
+    }
+}
