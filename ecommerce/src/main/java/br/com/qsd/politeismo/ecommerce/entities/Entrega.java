@@ -2,12 +2,14 @@ package br.com.qsd.politeismo.ecommerce.entities;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import br.com.qsd.politeismo.ecommerce.enums.FormaEntrega;
@@ -21,10 +23,17 @@ public class Entrega {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id_entrega")
 	private Long id;
+	@Column(nullable = false)
 	private LocalDate data;
+	@Column(nullable = false)
 	private BigDecimal valor;
+	@Column(nullable = false)
 	private StatusEntrega statusEntrega;
+	@Column(nullable = false)
 	private FormaEntrega formaEntrega;
+	
+	@OneToMany(mappedBy = "entrega")
+	private List<Pedido>pedidos;
 	
 	public Entrega() {
 		
@@ -77,17 +86,13 @@ public class Entrega {
 	public void setFormaEntrega(FormaEntrega formaEntrega) {
 		this.formaEntrega = formaEntrega;
 	}
-	
-	
-	
-	
-	
-	
 
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
 
-	
-	
-	
-		
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
+	}
 
 }//end class
