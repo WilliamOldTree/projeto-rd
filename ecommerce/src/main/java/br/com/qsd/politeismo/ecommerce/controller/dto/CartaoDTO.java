@@ -10,7 +10,8 @@ private Long id_cartao;
 private String titular_cartao;
 private String validade_cartao;
 private String numero_cartao;
-
+private String cliente;
+private String forma;
 
 public CartaoDTO() {
 
@@ -22,13 +23,24 @@ public CartaoDTO() {
 
 
 
-public CartaoDTO(Long id_cartao, String titular_cartao, String validade_cartao, String numero_cartao) {
+
+
+
+
+public CartaoDTO(Long id_cartao, String titular_cartao, String validade_cartao, String numero_cartao, String cliente,
+		String forma) {
 	super();
 	this.id_cartao = id_cartao;
 	this.titular_cartao = titular_cartao;
 	this.validade_cartao = validade_cartao;
 	this.numero_cartao = numero_cartao;
+	this.cliente =cliente;
+	this.forma = forma;
 }
+
+
+
+
 
 
 
@@ -42,7 +54,8 @@ public CartaoDTO(Cartao cartao) {
 	titular_cartao = cartao.getTitular_cartao();
 	numero_cartao = cartao.getNumero_cartao();
 	validade_cartao = cartao.getValidade_cartao();
-	
+	cliente = cartao.getCliente().getNome();
+	forma = cartao.getFormaPagamento().getInstituicao();
 }
 
 
@@ -126,9 +139,81 @@ public void setNumero_cartao(String numero_cartao) {
 }
 
 
-public static List<CartaoDTO> converter(List<Cartao> cartoes) {
-	return cartoes.stream().map(CartaoDTO::new).collect(Collectors.toList());
+
+
+
+
+
+
+
+
+
+public String getCliente() {
+	return cliente;
 }
+
+
+
+
+
+
+
+
+
+
+
+public void setCliente(String cliente) {
+	this.cliente = cliente;
+}
+
+
+
+
+
+
+
+
+
+
+
+public String getForma() {
+	return forma;
+}
+
+
+
+
+
+
+
+
+
+
+
+public void setForma(String forma) {
+	this.forma = forma;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
