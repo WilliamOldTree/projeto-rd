@@ -12,7 +12,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import br.com.qsd.politeismo.ecommerce.enums.Genero;
 
@@ -34,6 +37,14 @@ public class Cliente {
 	
 	@ManyToMany(mappedBy="clientes",fetch = FetchType.EAGER)
 	private List<Endereco> enderecos;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="cliente")
+	List<Cartao> cartao;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="cliente")
+	List<Forma> forma;
 	
 	
 	public Cliente() {
@@ -90,6 +101,20 @@ public class Cliente {
 
 	public void setGenero(Genero genero) {
 		this.genero = genero;
+	}
+
+	public List<Endereco> getEnderecos() {
+		return enderecos;
+	}
+
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
+	}
+
+
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 }

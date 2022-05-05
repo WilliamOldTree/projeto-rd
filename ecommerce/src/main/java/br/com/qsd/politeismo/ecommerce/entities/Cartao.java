@@ -1,6 +1,7 @@
 package br.com.qsd.politeismo.ecommerce.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,6 +15,7 @@ import javax.persistence.Table;
 
 public class Cartao {
 
+
 	@Id
 	@Column(name = "id_cartao_numero")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,18 +24,30 @@ public class Cartao {
 	
 	@Column(nullable = false)
 	private String titular_cartao;
+	private String numero_cartao;
 	private String cvv_cartao;
 	private String validade_cartao;
-	private String numero_cartao;
+	
 
-
-	@ManyToOne
+	@ManyToOne(fetch =FetchType.LAZY)
 	@JoinColumn(name = "cliente_id_cliente", nullable = true)
 	private Cliente cliente;
 	
-	@ManyToOne
+	@ManyToOne(fetch =FetchType.LAZY)
 	@JoinColumn(name="forma_id_forma", nullable = true)
 	private Forma formaPagamento;
+	
+	
+    
+
+
+	public Cartao( String titular_cartao, String numero_cartao, String cvv_cartao, String validade_cartao) {
+		super();
+		this.titular_cartao = titular_cartao;
+		this.numero_cartao = numero_cartao;
+		this.cvv_cartao = cvv_cartao;
+		this.validade_cartao = validade_cartao;
+	}
 
 	public Long getId() {
 		return id;
@@ -82,7 +96,6 @@ public class Cartao {
 	public void setFormaPagamento(Forma formaPagamento) {
 		this.formaPagamento = formaPagamento;
 	}
-	
 
 	public String getNumero_cartao() {
 		return numero_cartao;
@@ -92,13 +105,30 @@ public class Cartao {
 		this.numero_cartao = numero_cartao;
 	}
 
+	
 	@Override
-	public String toString() {
-		return "Cartao [id=" + id + ", titular_cartao=" + titular_cartao + ", cvv_cartao=" + cvv_cartao
-				+ ", validade_cartao=" + validade_cartao + ", cliente=" + cliente + ", formaPagamento=" + formaPagamento
-				+ "]";
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
 	}
-	
-	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cartao other = (Cartao) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}	
 	
 }
