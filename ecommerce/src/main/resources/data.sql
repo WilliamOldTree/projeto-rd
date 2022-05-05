@@ -5,4 +5,6 @@ INSERT INTO endereco (ID_ENDERECO, apelido, NOME_LOGRADOURO, TIPO_LOGRADO, numer
 VALUES(1, 'Casa', 'independencia', 'Rua' , '123','43700-000', 'BA','Salvador', 'CIA 2');
 
 insert into Forma (Instituicao, cliente_id_cliente)
-VALUES ('Outros','1')
+VALUES ('Crédito','1')
+
+
