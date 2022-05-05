@@ -1,0 +1,23 @@
+  .form{
+        width: 30%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: #261C1A;
+    }
+    
+    .btn.formbtn, .btn.formbtn:hover{
+         background-color: #7BC28E;
+         color: #FFFFFF;
+         font-weight: 500;
+         width:40%;
+    }
+
+    .container-form{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .title{
+      margin-top: 20px;
+      text-align: center;
+    }

@@ -1,0 +1,386 @@
+.containerRecNova{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.titulo{
+    color: #261C1A;
+    margin-top: 27px;
+    margin-left: 100px;
+    position: relative;
+    top: 60px;
+    font-weight: bold;
+    font-size: 25px;
+}
+.line_rec_email{
+    width: 100%;
+    border: 1px solid;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.User_rec_email{
+    position: relative;
+    top: 10%;
+    left: 2%;
+}
+
+
+.containerRecNova-caixaSenha{
+   
+width: 600px;
+height: 471px;
+align-items: center;
+margin-top: 20%;
+margin-left: 28%;
+background: #FFFFFF;
+border: 2px solid #261C1A;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+position: relative;
+top: -160px;
+}
+
+
+.subtitulo{
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    margin-left: 165px;
+    color: #261C1A;
+    top: 5%;  
+    position: relative;  
+    }
+
+
+    #NovaSenhaRecNova{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        color: #3C4043;
+        position: relative;
+        top: 15%;
+        text-align: start;
+        line-height: 50px;
+        margin-left: 25px;
+        }
+
+        #NovaSenha1RecNova{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            color: #3C4043;
+             top: 120px;
+             position: relative;
+            text-align: start;
+            line-height: 50px;
+            margin-left: 25px;
+            }
+
+        
+#senhaRecNova{ 
+    width: 90%;
+    height: 42px;
+    border: 2px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+    position: relative;
+    top: 15%;
+    left: 5%;
+    align-items: center;
+}
+
+#senhaRecNova2{ 
+    width: 90%;
+    height: 42px;
+    border: 2px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+    top: 25%;
+    left: 5%;
+    position: relative;
+    align-items: center;
+}
+   
+        
+.BUTTON{
+    width: 105px;
+    height: 50px;
+    margin-left: 45%;
+    margin-top: 26%;
+    align-items: center;
+    background: #F27507;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    color: #FFFFFF;
+    }
+    .BUTTON:hover{
+        background-color: darkorange;
+    }
+
+    @media (max-width:1024px){
+        .containerRecNova{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        
+        .titulo{
+            color: #261C1A;
+            margin-top: 27px;
+            margin-left: 100px;
+            position: relative;
+            top: 60px;
+            font-weight: bold;
+            font-size: 25px;
+        }
+        .line_rec_email{
+            width: 100%;
+            border: 1px solid;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .User_rec_email{
+            position: relative;
+            top: 10%;
+            left: 2%;
+        }
+        
+        
+        .containerRecNova-caixaSenha{
+           
+        width: 600px;
+        height: 471px;
+        align-items: center;
+        margin-top: 20%;
+        margin-left: 30%;
+        background: #FFFFFF;
+        border: 2px solid #261C1A;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+        position: relative;
+        top: -80px;
+        left: -150px;
+        }
+        
+        
+        .subtitulo{
+            text-align: center;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 35px;
+            display: flex;
+            align-items: center;
+            margin-left: 165px;
+            color: #261C1A;
+            top: 5%;  
+            position: relative;  
+            }
+        
+        
+            #NovaSenhaRecNova{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+                color: #3C4043;
+                position: relative;
+                top: 15%;
+                text-align: start;
+                line-height: 50px;
+                margin-left: 25px;
+                }
+        
+                #NovaSenha1RecNova{
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                    display: flex;
+                    align-items: center;
+                    color: #3C4043;
+                     top: 120px;
+                     position: relative;
+                    text-align: start;
+                    line-height: 50px;
+                    margin-left: 25px;
+                    }
+        
+                
+        #senhaRecNova{ 
+            width: 90%;
+            height: 42px;
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+            position: relative;
+            top: 15%;
+            left: 5%;
+            align-items: center;
+        }
+        
+        #senhaRecNova2{ 
+            width: 90%;
+            height: 42px;
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+            top: 25%;
+            left: 5%;
+            position: relative;
+            align-items: center;
+        }
+           
+                
+        
+        .BUTTON{
+            width: 105px;
+            height: 50px;
+            margin-left: 45%;
+            margin-top: 27%;
+            align-items: center;
+            background: #F27507;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+            color: #FFFFFF;
+            }
+            .BUTTON:hover{
+                background-color: darkorange;
+            }
+   
+    @media (max-width:667px){
+        .containerRecNova{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        
+        .titulo{
+            color: #261C1A;
+            margin-top: 27px;
+            margin-left: 80px;
+            position: relative;
+            top: 60px;
+            font-weight: bold;
+            font-size: 25px;
+        }
+        hr{
+        width: 100%;
+        }
+        
+        
+        
+        .containerRecNova-caixaSenha{
+            width: 300px;
+            height: 481px;
+            align-items: center;
+            margin-top: 40%;
+            margin-left: 35%;
+            background: #FFFFFF;
+            border: 2px solid #261C1A;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 30px;
+            position: relative;
+            top: -80px;
+            left: -90px;
+        }
+
+        .subtitulo{
+            text-align: center;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 25px;
+            line-height: 35px;
+            display: flex;
+            align-items: center;
+            margin-left: 25px;
+            color: #261C1A;
+            top: 5%;  
+            position: relative; 
+            
+            }
+
+            #NovaSenhaRecNova{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+                color: #3C4043;
+                position: relative;
+                top: 15%;
+                text-align: start;
+                line-height: 50px;
+                margin-left: 15px;
+                }
+        
+                #NovaSenha1RecNova{
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                    display: flex;
+                    align-items: center;
+                    color: #3C4043;
+                     top: 130px;
+                     position: relative;
+                    text-align: start;
+                    line-height: 50px;
+                    margin-left: 15px;
+                    }
+        
+                
+        #senhaRecNova{ 
+            width: 90%;
+            height: 45px;
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+            position: relative;
+            top: 15%;
+            left: 5%;
+            align-items: center;
+        }
+        
+        #senhaRecNova2{ 
+            width: 90%;
+            height: 45px;
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+            top: 27%;
+            left: 5%;
+            position: relative;
+            align-items: center;
+        }
+
+                .BUTTON{
+                    width: 105px;
+                    height: 45px;
+                    margin-left: 36%;
+                    margin-top: 58%;
+                    align-items: center;
+                    background: darkorange;
+                    border-radius: 10px;
+                    border: none;
+                    font-weight: bold;
+                  
+     
+           }
+           
+    }
+
+
+   
+    }

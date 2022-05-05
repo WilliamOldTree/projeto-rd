@@ -1,0 +1,5 @@
+package br.com.qsd.politeismo.service;
+
+public class CartaoService {
+
+}

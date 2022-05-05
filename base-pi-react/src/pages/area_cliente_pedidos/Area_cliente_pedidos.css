@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+    font-family: 'Roboto';
+}
+
+.row.favoritos {
+    margin-top   : 50px;
+    margin-bottom: 50px;
+}
+
+.table {
+    width          : 100%;
+    border-collapse: collapse;
+}
+
+.table th.pedido-list {
+    text-align    : center;
+    font-size     : 16px;
+    vertical-align: middle;
+}
+
+.tr-pedidos {
+    border         : transparent;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.area-pedido {
+    border       : 2px solid #261C1A;
+    box-sizing   : border-box;
+    border-radius: 5px;
+    padding      : 12px;
+    width        : 100%;
+    margin-bottom: 20px;
+}
+
+.status-pedido {
+    width           : 11px;
+    height          : 86px;
+    padding         : 0%;
+    background-color: #34A853;
+    margin-left     : 20px;
+}
+
+.status-pedido2 {
+    width           : 11px;
+    height          : 86px;
+    padding         : 0%;
+    background-color: #FBBC04;
+    margin-left     : 30px;
+}
+
+.titulo-pedido {
+    text-align : start;
+    color      : #261C1A;
+    font-weight: 900;
+    font-size  : 18px;
+    margin     : 0px;
+    margin-left: 5px;
+}
+
+.titulo-pedido.status {
+    font-size: 16px;
+    color    : #979797;
+}
+
+
+.btn-pedidos {
+    background   : #F27507;
+    border-radius: 10px;
+    color        : #FFFFFF;
+    border-radius: 10px;
+    font-weight  : 700;
+    font-size    : 16px;
+    margin-right : 10px;
+    width        : 80%;
+}
+
+.btn-pedidos:hover {
+    background: darkorange;
+    color     : #FFFFFF;
+}
+
+
+
+/*responsive*/
+@media(max-width: 1000px) {
+    .btn-pedidos {
+        font-size    : 14px;
+    }
+    
+    .menu-list {
+        display: none;
+    }
+
+    .PedidosCliente {
+        display: contents;
+        padding: 12px;
+    }
+}
+
+@media(max-width: 500px) {
+
+
+    .table,
+    .table thead.thead-pedidos,
+    .table tr.tr-pedidos,
+    .table th.pedido-list {
+        display: block;
+        width  : 100%;
+    }
+
+    .table tr.tr-pedidos {
+        margin-bottom: 15px;
+    }
+
+    .table th.pedido-list {
+        text-align    : right;
+        /*padding-left: 50%;*/
+        text-align    : center;
+        position      : relative;
+    }
+
+    .table th.pedido-list::before {
+        content     : attr(data-label);
+        position    : absolute;
+        left        : 0;
+        width       : 50%;
+        padding-left: 15px;
+        font-size   : 15px;
+        font-weight : bold;
+        text-align  : left;
+    }
+
+    .btn-pedidos {
+        margin-top: 10px;
+    }
+
+    .status-pedido,
+    .status-pedido2 {
+        width        : 86px;
+        height       : 11px;
+        margin-bottom: 10px;
+        margin-left  : 5px;
+
+    }
+}

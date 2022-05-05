@@ -1,0 +1,480 @@
+.container-AltSenha{
+
+    margin: 12;
+    padding: 12;
+    width: 100%;
+}
+
+.listaAreaCliente{
+position: relative;
+top: 300px;
+list-style: none;
+font-weight: 700;
+margin-left: 10%;
+}
+.MenuAreaAlinhamento2{
+    margin-top: -5%;
+    position: relative;
+    top: 100px;
+    
+}
+
+
+.MenuAreaCliente{
+    width: 15%;
+}
+
+#tituloaltSenha{
+    color: #261C1A;
+    margin-top: -27px;
+    margin-left: 15%;
+    position: relative;
+    top: -300px;
+    font-weight: bold;
+    font-size: 20px;
+}
+#line_Area_Senha{
+    width: 100%;
+    border: 1px solid;
+    margin-top: -26%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#UserAreaCliente{
+    position: relative;
+    top: -350px;
+    left: 10%;
+}
+.LinkArea{
+    text-decoration: none;
+    color: #261C1A;
+}
+
+.container-AltSenha{
+   
+width: 600px;
+height: 471px;
+align-items: center;
+margin-top: -19%;
+margin-left: 25%;
+background: #FFFFFF;
+border: 2px solid #261C1A;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+position: relative;
+top: -50px;
+}
+
+
+
+
+
+    #AltSenhaRecNova{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        color: #3C4043;
+        position: absolute;
+        top: 4%;
+        text-align: start;
+        line-height: 50px;
+        margin-left: 25px;
+        }
+
+        #AltSenha1RecNova{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            color: #3C4043;
+             top: 135px;
+             position: absolute;
+            text-align: start;
+            line-height: 50px;
+            margin-left: 25px;
+            }
+
+            #AltSenha2RecNova{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+                color: #3C4043;
+                 top: 255px;
+                 position: absolute;
+                text-align: start;
+                line-height: 50px;
+                margin-left: 25px;
+                }
+
+        
+#AltsenhaRecNova1{ 
+    width: 90%;
+    height: 42px;
+    border: 2px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    align-items: center;
+}
+
+#AltsenhaRecNova2{ 
+    width: 90%;
+    height: 42px;
+    border: 2px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+    top: 40%;
+    left: 5%;
+    position: absolute;
+    align-items: center;
+}
+
+#AltsenhaRecNova3{ 
+    width: 90%;
+    height: 42px;
+    border: 2px solid #979797;
+    box-sizing: border-box;
+    border-radius: 10px;
+    top: 66%;
+    left: 5%;
+    position: absolute;
+    align-items: center;
+}
+   
+   
+        
+
+#redefinirAltSenha{
+    width: 105px;
+    height: 50px;
+    margin-left: 48%;
+    margin-top: 29%;
+    position: absolute;
+    top: 215px;
+    left: -40px;
+    align-items: center;
+    background: #F27507;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    color: #FFFFFF;
+    }
+
+    #redefinirAltSenha:hover{
+        background-color: darkorange;
+    }
+
+    
+
+    @media (max-width:1024px){
+       
+
+        #UserAreaCliente{
+            position: relative;
+            top: -40px;
+            left: 25%;
+            width: 50px;
+        }
+        
+        .MenuAreaAlinhamento2{
+            display: none;
+        }
+         
+     
+    #line_Area_Senha{
+       margin-top: -3%;
+    }
+        
+        #tituloaltSenha{
+            color: #261C1A;
+            margin-top: 27px;
+            margin-left: 80px;
+            position: relative;
+            top: 10px;
+            left:-12%;
+            text-align: center;
+            font-weight: bold;
+            font-size: 25px;
+        }
+     
+        
+        
+        .container-AltSenha{
+            width: 570px;
+            height: 531px;
+            align-items: center;
+            margin-top: 20%;
+            margin-left: 32%;
+            background: #FFFFFF;
+            border: 2px solid #261C1A;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 30px;
+            position: relative;
+            top: -70px;
+            left: -160px;
+        }
+
+
+
+            #AltSenhaRecNova{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+                color: #3C4043;
+                position: relative;
+                top: 3%;
+                text-align: start;
+                line-height: 50px;
+                margin-left: 25px;
+                }
+        
+                #AltSenha1RecNova{
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                    display: flex;
+                    align-items: center;
+                    color: #3C4043;
+                     top: 80px;
+                     position: relative;
+                    text-align: start;
+                    line-height: 50px;
+                    margin-left: 25px;
+                    }
+
+                    #AltSenha2RecNova{
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 18px;
+                        display: flex;
+                        align-items: center;
+                        color: #3C4043;
+                         top: 140px;
+                         position: relative;
+                        text-align: start;
+                        line-height: 50px;
+                        margin-left: 25px;
+                        }
+        
+                
+        #AltsenhaRecNova1{ 
+            width: 90%;
+            height: 45px;
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+            position: relative;
+            top: 3%;
+            left: 5%;
+            align-items: center;
+        }
+        
+        #AltsenhaRecNova2{ 
+            width: 90%;
+            height: 45px;
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+            top: 15%;
+            left: 5%;
+            position: relative;
+            align-items: center;
+        }
+
+        #AltsenhaRecNova3{ 
+            width: 90%;
+            height: 45px;
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+            top: 27%;
+            left: 5%;
+            position: relative;
+            align-items: center;
+        }
+
+                #redefinirAltSenha{
+                    width: 105px;
+                    height: 50px;
+                    position: relative;
+                    top: 2%;
+                    left: -4%;
+                    align-items: center;
+                    background: #F27507;
+                    border-radius: 10px;
+                    border: none;
+                    font-weight: bold;
+                  
+     
+                }
+           
+
+   
+    @media (max-width:667px){
+       
+
+        #UserAreaCliente{
+            position: relative;
+            top: -40px;
+            left: 12%;
+            width: 50px;
+        }
+        
+
+   
+    #line_Area_Senha{
+      margin-top: -10%;
+    }
+
+    .MenuAreaAlinhamento2{
+        display: none;
+    }
+     
+        
+        .tituloaltSenha{
+            color: #261C1A;
+            margin-top: 27px;
+            margin-left: 80px;
+            position: relative;
+            top: 15px;
+            left:-10%;
+            text-align: center;
+            font-weight: bold;
+            font-size: 25px;
+        }
+     
+        
+        
+        .container-AltSenha{
+            width: 300px;
+            height: 600px;
+            align-items: center;
+            margin-top: 20%;
+            margin-left: 35%;
+            background: #FFFFFF;
+            border: 2px solid #261C1A;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 30px;
+            position: relative;
+            top: -40px;
+            left: -110px;
+        }
+
+
+
+            #AltSenhaRecNova{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+                color: #3C4043;
+                position: relative;
+                top: 12%;
+                text-align: start;
+                line-height: 50px;
+                margin-left: 15px;
+                }
+        
+                #AltSenha1RecNova{
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                    display: flex;
+                    align-items: center;
+                    color: #3C4043;
+                     top: 145px;
+                     position: relative;
+                    text-align: start;
+                    line-height: 50px;
+                    margin-left: 15px;
+                    }
+
+                    #AltSenha2RecNova{
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 18px;
+                        display: flex;
+                        align-items: center;
+                        color: #3C4043;
+                         top: 210px;
+                         position: relative;
+                        text-align: start;
+                        line-height: 50px;
+                        margin-left: 15px;
+                        }
+        
+                
+        #AltsenhaRecNova1{ 
+            width: 90%;
+            height: 45px;
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+            position: relative;
+            top: 12%;
+            left: 5%;
+            align-items: center;
+        }
+        
+        #AltsenhaRecNova2{ 
+            width: 90%;
+            height: 45px;
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+            top: 25%;
+            left: 5%;
+            position: relative;
+            align-items: center;
+        }
+
+        #AltsenhaRecNova3{ 
+            width: 90%;
+            height: 45px;
+            border: 2px solid #979797;
+            box-sizing: border-box;
+            border-radius: 10px;
+            top: 35%;
+            left: 5%;
+            position: relative;
+            align-items: center;
+        }
+
+                #redefinirAltSenha{
+                    width: 105px;
+                    height: 50px;
+                    position: relative;
+                    top: 27%;
+                    left: -12%;
+                    align-items: center;
+                    background: #F27507;
+                    border-radius: 10px;
+                    border: none;
+                    font-weight: bold;
+                  
+     
+                }
+           
+    }
+
+    
+   
+    
+
+}
+
+
+   
+    

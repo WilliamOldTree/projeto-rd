@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+    margin     : 0;
+    font-family: 'Roboto';
+
+}
+
+.row.favoritos {
+    margin-top   : 50px;
+    margin-bottom: 50px;
+}
+
+.menu-list.favoritos a {
+    text-decoration: none;
+    color          : #261C1A;
+    font-weight    : bold;
+    font-size      : 18px;
+}
+
+.menu-list.favoritos a:hover {
+    text-decoration: underline;
+}
+
+.menu-lines{
+    width: 160px;
+}
+
+.table {
+    width          : 100%;
+    border-collapse: collapse;
+}
+
+.table th.area-favoritos {
+    text-align    : center;
+    font-size     : 16px;
+    vertical-align: middle;
+}
+
+.tr-favoritos {
+    border         : transparent;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.area-favoritos p {
+    font-size    : 14px;
+    margin-bottom: 5px;
+    color        : #979797;
+
+}
+
+.nomeProduto {
+    color      : #261C1A;
+    font-weight: bold;
+    font-size  : 18px;
+}
+
+.btn-detalhes {
+    background   : #F27507;
+    border-radius: 10px;
+    color        : #FFFFFF;
+    border-radius: 10px;
+    font-weight  : 700;
+    font-size    : 16px;
+    width        : 80%;
+    margin-right : 10px;
+}
+
+.btn-detalhes:hover {
+    background: darkorange;
+    color     : #FFFFFF;
+}
+
+.btn-lixeira,
+.btn-lixeira:hover {
+    width : 22px;
+    cursor: pointer;
+}
+
+.line-pedido{
+    width: 100%;
+}
+
+/*responsive*/
+@media(max-width: 1000px) {
+
+    .btn-favoritos {
+        font-size    : 14px;
+    }
+
+    .menu-list {
+        display: none;
+    }
+
+    .produtosFavoritos {
+        display: contents;
+        margin : 12px;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .table,
+    .table thead.thead-favoritos,
+    .table tr,
+    .table th.area-favoritos {
+        display: block;
+        width  : 100%;
+    }
+
+    .table tr.tr-favoritos {
+        margin-bottom: 15px;
+    }
+
+    .table th.area-favoritos {
+        text-align    : right;
+        /*padding-left: 50%;*/
+        text-align    : center;
+        position      : relative;
+    }
+
+    .table th.area-favoritos::before {
+        content     : attr(data-label);
+        position    : absolute;
+        left        : 0;
+        width       : 50%;
+        padding-left: 15px;
+        font-size   : 15px;
+        font-weight : bold;
+        text-align  : left;
+    }
+
+    .btn-lixeira {
+        width: 20px;
+    }
+
+}

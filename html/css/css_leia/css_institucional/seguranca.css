@@ -1,0 +1,23 @@
+.title{
+    color: #261C1A;
+    margin-top: 27px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+.line-1{
+    width: 100%;
+border: 1px solid;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#informacao-seguranca{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #261C1A;
+}
+
+@media (max-width: 375px) {
+    .title{
+        font-size: 20px;
+    }
+}

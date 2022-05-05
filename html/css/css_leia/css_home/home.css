@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.container{
+    padding: 0px;
+
+}
+
+#cards-principal{
+  margin: 0%;
+}
+
+.title-cards-principal{
+    width: 60px;
+}
+
+.cards-topo{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.cards-principal{
+     background-color: #E5E5E5;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 80px;
+     border: 1px solid rgb(177, 174, 174);  
+     font-size: 14px;
+     color: #261C1A;
+}
+
+.cards-principal:hover{
+     background-color: gray;
+     transform: scale(1.03);
+     cursor: pointer;
+}
+
+#title-destaque{
+    text-align: center;
+    color: #261C1A;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+#line-1{
+    width: 100%;
+    border: 1px solid rgb(177, 174, 174);
+    background-color: rgb(177, 174, 174);
+    box-shadow: 0px 4px 4px rgb(177, 174, 174);
+    margin-bottom: 40px;
+}
+
+.imagensCaixa1
+{
+    margin: 10px 0px 10px 0px;
+    width:100%; 
+    margin-bottom: 50px; 
+}
+
+.imagensCaixa2
+{
+    margin: 10px 0px 10px 0px;
+    width:100%; 
+    margin-bottom: 50px; 
+
+}
+
+.card 
+{
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+    width: 90%;
+    background-color: white;
+    border: 1px solid rgb(177, 174, 174);  
+    left:15px ;
+}
+
+.title-card{
+    height: 45px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.sub-title2{
+    font-size: 12px;
+}
+
+.card .img 
+{
+    height: 100%;
+    width: 100%;
+}
+.card .img img 
+{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 3px; 
+}
+.card .img img:hover{
+    
+    transform: scale(1.10);
+    transition: 0.2s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border:1px solid #261C1A;
+    cursor: pointer;
+    box-shadow: 0 5px 6px #AF9787;
+}
+
+
+.card .content 
+{
+    padding: 10px 20px;
+    
+}
+
+.card .content .title  
+{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card .content .sub-title  
+{
+    font-size: 14px;
+    font-weight: 700;
+    color: #261C1A;
+    line-height: -20px;
+}
+
+.title-card{
+    height: 45px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.sub-title2{
+    font-size: 12px;
+    margin: 0%;
+}
+
+.card .content p
+{
+    text-align: justify;
+    margin: 10px 0;
+}
+
+.card .content .btn
+{
+    display: block;
+    text-align: center;
+    margin: 10px 0px 0px -20px;
+}
+
+.card .content .btn button
+{
+    background-color: #F27507;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    padding: 5px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 100%;
+    margin-bottom: -10px;
+    margin-left: 10px;
+    margin-top: -10px;
+}
+
+.card .content .btn button:hover
+{
+    transform: scale(1.2);
+    box-shadow: 0 5px 5px #AF9787;
+}
+
+
+.img-topo2{
+    margin-top: 50px;
+}
+
+.img-topo2:hover{
+    box-shadow: 0 5px 5px #AF9787;
+    cursor: pointer;
+}
+
+.img-end{
+    box-shadow: 0 5px 5px #AF9787;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+@media (max-width: 767px) {
+    .img-end{
+        display: none;
+    }
+
+    #carouselExampleControls{
+        display: none;
+    }
+
+    .img-topo2{
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width: 990px) {
+    .cards-principal{
+        font-size: 14px;
+   }
+}
+
+@media (max-width: 1200px) {
+    .cards-principal{
+        font-size: 12px;
+   }
+}

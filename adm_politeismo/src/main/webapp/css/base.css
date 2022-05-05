@@ -1,0 +1,201 @@
+/* LINKS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+/* ZERANDO CONFIGURACOES */
+
+html, header, body, footer {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto'; 
+}
+
+/* HEADER */
+
+/* Header superior */
+#header-up{
+    height: 80px; 
+    background-color: #516673;
+    color: white;
+    padding: 0px ;
+    margin: 0px;
+}
+
+#cont1{
+    height: 80px;     
+}
+
+.row-up{
+    height: 80px;
+    align-items: center;
+}
+
+#cep{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    padding: 0px 0px;
+}
+
+#nav-itens{
+    display: flex;
+    justify-content: center;       
+}
+
+#nav-itens a{
+    text-decoration: none;
+    color: white;
+    font-size: 21px;
+    padding: 12px;
+    font-weight: 500;
+}
+
+#nav-itens a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: white;
+}
+
+#canvas{
+    display: flex;
+    justify-content: center;
+}
+
+#btn-canvas{
+    width: 65px;
+    height: 50px;
+    background-color: #516673; 
+    border: none;
+}
+
+.offcanvas-header{
+    background-color: #516673;
+    color: #FFFFFF;
+}
+
+.offcanvas-header h5{
+    margin: 0px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+#menu-canvas{
+    padding: 0px 0px;
+}
+
+
+.menu-list1{
+  overflow-y: scroll;
+  height:450px;
+}
+
+
+.row-canvas{
+    height: 80px;
+    
+}
+
+.login-canvas a {
+	text-decoration: none;
+	color:  #516673;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    margin-top: 15px;
+    margin-left: 10px; 
+}
+
+.login-canvas a:hover{
+	color: #6c757d;
+}
+
+.login-canvas a h5 {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 900;       
+}
+
+.menu-list1 a{
+    text-decoration: none;
+    color:#516673;
+}
+
+.menu-list1 a:hover{
+    cursor: pointer;
+    text-decoration: none;
+    color:#516673;
+}
+
+.perfil{
+    display: flex;       
+}
+
+/* Resposividade footer e header */
+@media(min-width:992px) and (max-width:1200px){
+    #nav-itens a{
+      font-size: 16px;
+    }
+}
+
+  @media (min-width:768px) and (max-width:992px){
+    #nav-itens{
+        justify-content: center;
+    }
+    #nav-itens a{
+        font-size: 13px;
+        padding: 7px;
+    }
+    
+    #input-cep{
+        width: 80px;
+        height: 25px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    #canvas{
+        display: flex;
+        justify-content:center;
+    }
+
+    #btn-canvas{
+        width: 45px;
+        height: 30px;
+        border: none;
+    }
+
+    #input-cep::placeholder{
+        font-size: 8px;
+        
+}
+
+  @media screen and (max-width: 767px){
+    #nav-itens{
+        display: none;
+    }
+
+    #cep{
+        display: none;
+    }
+    #icons{
+        display: none;
+    }
+    #canvas{
+        display: flex;
+        justify-content: end;
+    }
+
+    #logo{
+        height: auto;
+        width: 160px;
+        margin-right: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+        
+    } 
+    
+  }
+
