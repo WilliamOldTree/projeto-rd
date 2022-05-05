@@ -8,7 +8,7 @@ import javax.persistence.Enumerated;
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.enums.Genero;
 
-public class FormClienteDTO {
+public class FormCliente {
 
 	private String cpf;
     private String nome;
@@ -19,11 +19,11 @@ public class FormClienteDTO {
 	@Enumerated(EnumType.STRING)
     private Genero genero;
 	
-	public FormClienteDTO() {
+	public FormCliente() {
 		
 	}
 
-	public FormClienteDTO(String cpf, String nome, String email, String password, LocalDate nascimento, Genero genero) {
+	public FormCliente(String cpf, String nome, String email, String password, LocalDate nascimento, Genero genero) {
 		super();
 		this.cpf = cpf;
 		this.nome = nome;
@@ -33,7 +33,7 @@ public class FormClienteDTO {
 		this.genero = genero;
 	}
 	
-	public FormClienteDTO(Cliente entity) {
+	public FormCliente(Cliente entity) {
 		cpf = entity.getCpf();
 		nome = entity.getNome();
 		email = entity.getEmail();

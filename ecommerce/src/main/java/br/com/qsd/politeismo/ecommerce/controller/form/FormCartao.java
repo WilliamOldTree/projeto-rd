@@ -1,35 +1,30 @@
 package br.com.qsd.politeismo.ecommerce.controller.form;
 
 import br.com.qsd.politeismo.ecommerce.entities.Cartao;
-import br.com.qsd.politeismo.ecommerce.entities.Cliente;
-import br.com.qsd.politeismo.ecommerce.entities.Forma;
 
-public class FormCartaoDTO {
+public class FormCartao {
 	private String titular_cartao;
+	private String numero_cartao;
 	private String cvv_cartao;
 	private String validade_cartao;
-	private Cliente cliente;
-	private Forma forma;
 	
 	
-	public FormCartaoDTO(String titular_cartao, String cvv_cartao, String validade_cartao, Cliente cliente,
-			Forma forma) {
+	public FormCartao(String titular_cartao, String cvv_cartao, String validade_cartao, String numero_cartao) {
 		super();
 		this.titular_cartao = titular_cartao;
 		this.cvv_cartao = cvv_cartao;
 		this.validade_cartao = validade_cartao;
-		this.cliente = cliente;
-		this.forma = forma;
+		this.numero_cartao = numero_cartao;
 	}
 
 
-	public FormCartaoDTO(Cartao cartao) {
+	public FormCartao(Cartao cartao) {
 		super();
 		titular_cartao = cartao.getTitular_cartao();
+		numero_cartao = cartao.getNumero_cartao();
+		cvv_cartao = cartao.getCvv_cartao();
 		validade_cartao = cartao.getValidade_cartao();
-		cliente = cartao.getCliente();
-		forma = cartao.getFormaPagamento();	}
-
+	}
 
 	public String getTitular_cartao() {
 		return titular_cartao;
@@ -61,26 +56,14 @@ public class FormCartaoDTO {
 	}
 
 
-	public Cliente getCliente() {
-		return cliente;
+	public String getNumero_cartao() {
+		return numero_cartao;
 	}
 
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setNumero_cartao(String numero_cartao) {
+		this.numero_cartao = numero_cartao;
 	}
-
-
-	public Forma getForma() {
-		return forma;
-	}
-
-
-	public void setForma(Forma forma) {
-		this.forma = forma;
-	}	
-	
-	
 	
 }
 

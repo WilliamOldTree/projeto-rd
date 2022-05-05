@@ -2,19 +2,13 @@ package br.com.qsd.politeismo.ecommerce.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
 import javax.persistence.EntityNotFoundException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import br.com.qsd.politeismo.ecommerce.controller.dto.CartaoDTO;
-import br.com.qsd.politeismo.ecommerce.controller.dto.EnderecoDTO;
-import br.com.qsd.politeismo.ecommerce.controller.form.FormCartaoDTO;
-import br.com.qsd.politeismo.ecommerce.controller.form.FormEnderecoDTO;
+import br.com.qsd.politeismo.ecommerce.controller.form.FormCartao;
 import br.com.qsd.politeismo.ecommerce.entities.Cartao;
-import br.com.qsd.politeismo.ecommerce.entities.Endereco;
 import br.com.qsd.politeismo.ecommerce.repository.CartaoRepository;
 
 @Service
@@ -35,19 +29,19 @@ public class CartaoService {
 		return dto;
 	}
 	
-	public CartaoDTO insert(FormCartaoDTO dto) {
+	public CartaoDTO insert(FormCartao dto) {
 		Cartao obj = new Cartao();
 		obj.setTitular_cartao(dto.getTitular_cartao());
+		obj.setNumero_cartao(dto.getNumero_cartao());
 		obj.setCvv_cartao(dto.getCvv_cartao());
 		obj.setValidade_cartao(dto.getValidade_cartao());
-		obj.setCliente(dto.getCliente());
-		obj.setFormaPagamento(obj.getFormaPagamento());
+
 		obj= repository.save(obj);
 		return new CartaoDTO(obj);
 	}
 	
 	
-	public CartaoDTO update(Long id, FormCartaoDTO dto) {
+	public CartaoDTO update(Long id, FormCartao dto) {
 		try {
 			Cartao cartao = repository.getById(id);
 			copy(cartao, dto);
@@ -58,14 +52,13 @@ public class CartaoService {
 		}
 	}
 	
-	private void copy(Cartao cartao, FormCartaoDTO dto) {
+	private void copy(Cartao cartao, FormCartao dto) {
        cartao.setTitular_cartao(dto.getTitular_cartao());
        cartao.setValidade_cartao(dto.getValidade_cartao());
-       cartao.setFormaPagamento(dto.getForma());
 	}
 
 	public void deletar(Long id) {
 		repository.deleteById(id);
 	}
 	
-}//end class
+}
