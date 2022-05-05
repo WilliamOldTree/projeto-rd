@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.qsd.politeismo.ecommerce.controller.dto.ClienteDTO;
-import br.com.qsd.politeismo.ecommerce.controller.form.FormClienteDTO;
+import br.com.qsd.politeismo.ecommerce.controller.form.FormCliente;
 import br.com.qsd.politeismo.ecommerce.service.ClienteService;
 
 @RestController
@@ -42,7 +42,7 @@ public class ClienteController {
     }
 	
 	@PostMapping
-	public ResponseEntity <ClienteDTO> insert (@RequestBody FormClienteDTO dto){
+	public ResponseEntity <ClienteDTO> insert (@RequestBody FormCliente dto){
 	    try { 
 	       ClienteDTO entity = service.insert(dto);
 	        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(entity.getId_cliente()).toUri();
@@ -53,7 +53,7 @@ public class ClienteController {
 	}
 	
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<ClienteDTO> update(@Valid @PathVariable Long id, @RequestBody FormClienteDTO dto){
+	public ResponseEntity<ClienteDTO> update(@Valid @PathVariable Long id, @RequestBody FormCliente dto){
         ClienteDTO entity = service.update(id, dto);
 		return ResponseEntity.ok().body(entity);
 	}

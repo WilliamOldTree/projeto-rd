@@ -19,7 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import br.com.qsd.politeismo.ecommerce.controller.dto.EnderecoDTO;
-import br.com.qsd.politeismo.ecommerce.controller.form.FormEnderecoDTO;
+import br.com.qsd.politeismo.ecommerce.controller.form.FormEndereco;
+import br.com.qsd.politeismo.ecommerce.entities.Endereco;
 import br.com.qsd.politeismo.ecommerce.service.EnderecoService;
 
 @RestController
@@ -41,9 +42,9 @@ public class EnderecoController {
     }
 	
 	@PostMapping
-	public ResponseEntity <EnderecoDTO> insert (@RequestBody FormEnderecoDTO dto){
+	public ResponseEntity <Endereco> insert (@RequestBody FormEndereco dto){
 	    try { 
-	        EnderecoDTO obj = service.insert(dto);
+	    	Endereco obj = service.insert(dto);
 	        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId_endereco()).toUri();
 	        return ResponseEntity.created(uri).body(obj);
 	     } catch (ServiceException e) {
@@ -52,7 +53,7 @@ public class EnderecoController {
 	}
 	
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<EnderecoDTO> update(@Valid @PathVariable Long id, @RequestBody FormEnderecoDTO dto){
+	public ResponseEntity<EnderecoDTO> update(@Valid @PathVariable Long id, @RequestBody FormEndereco dto){
         EnderecoDTO obj = service.update(id, dto);
 		return ResponseEntity.ok().body(obj);
 	}
@@ -63,5 +64,4 @@ public class EnderecoController {
 		service.deletar(id);
 		return ResponseEntity.noContent().build();
 	}
-	
 }

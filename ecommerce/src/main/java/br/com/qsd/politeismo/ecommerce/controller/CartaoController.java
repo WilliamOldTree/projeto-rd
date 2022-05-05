@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import br.com.qsd.politeismo.ecommerce.controller.dto.CartaoDTO;
-import br.com.qsd.politeismo.ecommerce.controller.form.FormCartaoDTO;
+import br.com.qsd.politeismo.ecommerce.controller.form.FormCartao;
 import br.com.qsd.politeismo.ecommerce.service.CartaoService;
 
 @RestController
@@ -41,7 +41,7 @@ public class CartaoController {
     }
 	
 	@PostMapping
-	public ResponseEntity <CartaoDTO> insert (@RequestBody FormCartaoDTO dto){
+	public ResponseEntity <CartaoDTO> insert (@RequestBody FormCartao dto){
 	    try { 
 	    	CartaoDTO obj = service.insert(dto);
 	        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId_cartao()).toUri();
@@ -52,7 +52,7 @@ public class CartaoController {
 	}
 	
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<CartaoDTO> update(@Valid @PathVariable Long id, @RequestBody FormCartaoDTO dto){
+	public ResponseEntity<CartaoDTO> update(@Valid @PathVariable Long id, @RequestBody FormCartao dto){
 		CartaoDTO obj = service.update(id, dto);
 		return ResponseEntity.ok().body(obj);
 	}

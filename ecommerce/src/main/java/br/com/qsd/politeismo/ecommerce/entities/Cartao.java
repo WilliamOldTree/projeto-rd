@@ -14,7 +14,6 @@ import javax.persistence.Table;
 
 public class Cartao {
 
-
 	@Id
 	@Column(name = "id_cartao_numero")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +24,8 @@ public class Cartao {
 	private String titular_cartao;
 	private String cvv_cartao;
 	private String validade_cartao;
-	
+	private String numero_cartao;
+
 
 	@ManyToOne
 	@JoinColumn(name = "cliente_id_cliente", nullable = true)
@@ -83,6 +83,14 @@ public class Cartao {
 		this.formaPagamento = formaPagamento;
 	}
 	
+
+	public String getNumero_cartao() {
+		return numero_cartao;
+	}
+
+	public void setNumero_cartao(String numero_cartao) {
+		this.numero_cartao = numero_cartao;
+	}
 
 	@Override
 	public String toString() {
