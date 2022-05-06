@@ -10,11 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.qsd.politeismo.ecommerce.controller.dto.CartaoDTO;
-import br.com.qsd.politeismo.ecommerce.controller.dto.EnderecoDTO;
 import br.com.qsd.politeismo.ecommerce.controller.form.FormCartaoDTO;
-import br.com.qsd.politeismo.ecommerce.controller.form.FormEnderecoDTO;
 import br.com.qsd.politeismo.ecommerce.entities.Cartao;
-import br.com.qsd.politeismo.ecommerce.entities.Endereco;
 import br.com.qsd.politeismo.ecommerce.repository.CartaoRepository;
 
 @Service

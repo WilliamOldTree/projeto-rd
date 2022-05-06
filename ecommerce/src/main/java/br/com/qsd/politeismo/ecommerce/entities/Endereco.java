@@ -1,4 +1,4 @@
-package br.com.qsd.politeismo.ecommerce.entities;
+ package br.com.qsd.politeismo.ecommerce.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
