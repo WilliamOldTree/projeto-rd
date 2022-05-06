@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.qsd.politeismo.ecommerce.controller.dto.ClienteDTO;
-import br.com.qsd.politeismo.ecommerce.controller.form.FormClienteDTO;
+import br.com.qsd.politeismo.ecommerce.controller.form.FormCliente;
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
 
@@ -35,7 +35,7 @@ public class ClienteService {
 	}
 
 	// inclusao
-	public ClienteDTO insert(FormClienteDTO form) {
+	public ClienteDTO insert(FormCliente form) {
 		Cliente entity = new Cliente();
 		entity.setCpf(form.getCpf());
 		entity.setNome(form.getNome());
@@ -51,7 +51,7 @@ public class ClienteService {
 	}
 	
 	//buscar objeto pelo id para atualizar
-	public ClienteDTO update(Long id, FormClienteDTO dto) {
+	public ClienteDTO update(Long id, FormCliente dto) {
 		try {
 			Cliente entity = repository.getById(id);
 			copy(entity, dto);
@@ -63,7 +63,7 @@ public class ClienteService {
 	}
 	
 	// novos dados do objeto a ser atualizado
-	private void copy(Cliente entity, FormClienteDTO dto) {
+	private void copy(Cliente entity, FormCliente dto) {
 		entity.setCpf(dto.getCpf());
 		entity.setNome(dto.getNome());
 		entity.setEmail(dto.getEmail());

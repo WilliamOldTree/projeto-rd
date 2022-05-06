@@ -1,6 +1,7 @@
 package br.com.qsd.politeismo.ecommerce.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import javax.persistence.EntityNotFoundException;
@@ -10,59 +11,113 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.qsd.politeismo.ecommerce.controller.dto.CartaoDTO;
+<<<<<<< HEAD
 import br.com.qsd.politeismo.ecommerce.controller.form.FormCartaoDTO;
 import br.com.qsd.politeismo.ecommerce.entities.Cartao;
+=======
+import br.com.qsd.politeismo.ecommerce.controller.dto.ClienteDTO;
+import br.com.qsd.politeismo.ecommerce.controller.form.FormCartao;
+import br.com.qsd.politeismo.ecommerce.controller.form.FormCliente;
+import br.com.qsd.politeismo.ecommerce.entities.Cartao;
+import br.com.qsd.politeismo.ecommerce.entities.Cliente;
+import br.com.qsd.politeismo.ecommerce.entities.Forma;
+>>>>>>> 681983a7da4ca4957fbc9519600488a223a605e2
 import br.com.qsd.politeismo.ecommerce.repository.CartaoRepository;
+import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
+import br.com.qsd.politeismo.ecommerce.repository.FormaRepository;
 
 @Service
 public class CartaoService {
+
+
+	
 	@Autowired
 	private CartaoRepository repository;
 	
-	@Transactional(readOnly = true)
-	public List<CartaoDTO> findAll(){
-		List<Cartao> list = repository.findAll();
-		return list.stream().map(x-> new CartaoDTO(x)).collect(Collectors.toList());	
-	}
-	
-	@Transactional(readOnly = true)
-	public CartaoDTO findById(Long id) {
-		Cartao cartao = repository.findById(id).get();
-		CartaoDTO dto = new CartaoDTO(cartao);
-		return dto;
-	}
-	
-	public CartaoDTO insert(FormCartaoDTO dto) {
-		Cartao obj = new Cartao();
-		obj.setTitular_cartao(dto.getTitular_cartao());
-		obj.setCvv_cartao(dto.getCvv_cartao());
-		obj.setValidade_cartao(dto.getValidade_cartao());
-		obj.setCliente(dto.getCliente());
-		obj.setFormaPagamento(obj.getFormaPagamento());
-		obj= repository.save(obj);
-		return new CartaoDTO(obj);
-	}
+	@Autowired
+	private ClienteRepository crepository;
 	
 	
-	public CartaoDTO update(Long id, FormCartaoDTO dto) {
-		try {
-			Cartao cartao = repository.getById(id);
-			copy(cartao, dto);
-			cartao = repository.save(cartao);
-			return new CartaoDTO(cartao);
-		}catch(EntityNotFoundException e) {
-			throw new ResourceNotFoundException("ID não existe");
+	@Autowired
+	private FormaRepository frepository;
+	
+	
+	// listar
+		public List<CartaoDTO> findAll() {
+			List<Cartao> list = repository.findAll();
+			return list.stream().map(x -> new CartaoDTO(x)).collect(Collectors.toList());
 		}
-	}
-	
-	private void copy(Cartao cartao, FormCartaoDTO dto) {
-       cartao.setTitular_cartao(dto.getTitular_cartao());
-       cartao.setValidade_cartao(dto.getValidade_cartao());
-       cartao.setFormaPagamento(dto.getForma());
-	}
 
-	public void deletar(Long id) {
-		repository.deleteById(id);
-	}
+		// busca por ID
+		@Transactional(readOnly = true)
+		public CartaoDTO findById(Long id) {
+			Cartao entity = repository.findById(id).get();
+			CartaoDTO dto = new CartaoDTO(entity);
+			return dto;
+		}
+
+		// inclusao
+		public CartaoDTO insert(FormCartao form) {
+			Cartao entity = new Cartao();
+			entity.setTitular_cartao(form.getTitular_cartao());
+			entity.setNumero_cartao(form.getNumero_cartao());
+			entity.setCvv_cartao(form.getCvv_cartao());
+			entity.setValidade_cartao(form.getValidade_cartao());
+	        
+			Optional<Cliente> cliente= crepository.findById(form.getCliente());
+			entity.setCliente(cliente.get());
+			
+			
+			Optional<Forma> forma= frepository.findById(form.getCliente());
+			entity.setFormaPagamento(forma.get());		
+		
+
+		
+				
+			
+			
+			entity = repository.save(entity);
+			
+			
+
+			return new CartaoDTO(entity);
+
+		}
+		
+		//buscar objeto pelo id para atualizar
+		public CartaoDTO update(Long id, FormCartao dto) {
+			try {
+				Cartao entity = repository.getById(id);
+				copy(entity, dto);
+				entity = repository.save(entity);
+				return new CartaoDTO(entity);
+			}catch(EntityNotFoundException e) {
+				throw new ResourceNotFoundException("ID não existe");
+			}
+		}
+		
+		
+		
+		private void copy(Cartao entity, FormCartao form) {
+			entity.setTitular_cartao(form.getTitular_cartao());
+			entity.setNumero_cartao(form.getNumero_cartao());
+			entity.setCvv_cartao(form.getCvv_cartao());
+			entity.setValidade_cartao(form.getValidade_cartao());
+	        
+			Optional<Cliente> cliente= crepository.findById(form.getCliente());
+			entity.setCliente(cliente.get());
+			
+			Optional<Forma> forma= frepository.findById(form.getCliente());
+			entity.setFormaPagamento(forma.get());
+			
+		}
+
+		//deletar po id
+		public void deletar(Long id) {
+			repository.deleteById(id);
+		}
+		
 	
-}//end class
+	
+	
+}

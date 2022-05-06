@@ -1,5 +1,4 @@
 package br.com.qsd.politeismo.ecommerce.controller;
-
 import java.net.URI;
 import java.util.List;
 
@@ -17,50 +16,62 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
 import br.com.qsd.politeismo.ecommerce.controller.dto.CartaoDTO;
-import br.com.qsd.politeismo.ecommerce.controller.form.FormCartaoDTO;
+import br.com.qsd.politeismo.ecommerce.controller.dto.ClienteDTO;
+import br.com.qsd.politeismo.ecommerce.controller.dto.EnderecoDTO;
+import br.com.qsd.politeismo.ecommerce.controller.form.FormCartao;
+import br.com.qsd.politeismo.ecommerce.controller.form.FormCliente;
+import br.com.qsd.politeismo.ecommerce.controller.form.FormEndereco;
 import br.com.qsd.politeismo.ecommerce.service.CartaoService;
+
+
+
 
 @RestController
 @RequestMapping(value = "/cartoes")
 public class CartaoController {
 
-	@Autowired
-	private CartaoService service;
+	
+@Autowired
+private CartaoService fc;
 	
 	
 	@GetMapping
     public ResponseEntity<List<CartaoDTO>> findAll(){
-    	List<CartaoDTO> list = service.findAll();
+    	List<CartaoDTO> list = fc.findAll();
     	return ResponseEntity.ok(list);
     }
 	
 	@GetMapping(value = "/{id}")
 	public CartaoDTO findById(@PathVariable Long id) {
-		return service.findById(id);
+		return fc.findById(id);
     }
 	
 	@PostMapping
-	public ResponseEntity <CartaoDTO> insert (@RequestBody FormCartaoDTO dto){
+	public ResponseEntity<CartaoDTO> insert (@RequestBody FormCartao dto){
 	    try { 
-	    	CartaoDTO obj = service.insert(dto);
-	        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId_cartao()).toUri();
-	        return ResponseEntity.created(uri).body(obj);
+	    	CartaoDTO entity = fc.insert(dto);
+	        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(entity.getId_cartao()).toUri();
+	        return ResponseEntity.created(uri).body(entity);
 	     } catch (ServiceException e) {
 	           return ResponseEntity.unprocessableEntity().build();
 	     }
 	}
 	
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<CartaoDTO> update(@Valid @PathVariable Long id, @RequestBody FormCartaoDTO dto){
-		CartaoDTO obj = service.update(id, dto);
+	public ResponseEntity< CartaoDTO> update(@Valid @PathVariable Long id, @RequestBody FormCartao dto){
+        CartaoDTO obj = fc.update(id, dto);
 		return ResponseEntity.ok().body(obj);
 	}
 	
 	
+	
 	@DeleteMapping(value= "/{id}")
 	public ResponseEntity<Void> deletar(@PathVariable Long id){
-		service.deletar(id);
+		fc.deletar(id);
 		return ResponseEntity.noContent().build();
 	}
+	
+	
 }

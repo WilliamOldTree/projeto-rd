@@ -1,6 +1,7 @@
 package br.com.qsd.politeismo.ecommerce.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,17 +24,30 @@ public class Cartao {
 	
 	@Column(nullable = false)
 	private String titular_cartao;
+	private String numero_cartao;
 	private String cvv_cartao;
 	private String validade_cartao;
 	
 
-	@ManyToOne
+	@ManyToOne(fetch =FetchType.LAZY)
 	@JoinColumn(name = "cliente_id_cliente", nullable = true)
 	private Cliente cliente;
 	
-	@ManyToOne
+	@ManyToOne(fetch =FetchType.LAZY)
 	@JoinColumn(name="forma_id_forma", nullable = true)
 	private Forma formaPagamento;
+	
+	
+    
+
+
+	public Cartao() {
+		super();
+		this.titular_cartao = titular_cartao;
+		this.numero_cartao = numero_cartao;
+		this.cvv_cartao = cvv_cartao;
+		this.validade_cartao = validade_cartao;
+	}
 
 	public Long getId() {
 		return id;
@@ -82,15 +96,13 @@ public class Cartao {
 	public void setFormaPagamento(Forma formaPagamento) {
 		this.formaPagamento = formaPagamento;
 	}
-	
 
-	@Override
-	public String toString() {
-		return "Cartao [id=" + id + ", titular_cartao=" + titular_cartao + ", cvv_cartao=" + cvv_cartao
-				+ ", validade_cartao=" + validade_cartao + ", cliente=" + cliente + ", formaPagamento=" + formaPagamento
-				+ "]";
+	public String getNumero_cartao() {
+		return numero_cartao;
 	}
-	
-	
-	
+
+	public void setNumero_cartao(String numero_cartao) {
+		this.numero_cartao = numero_cartao;
+	}
 }
+	

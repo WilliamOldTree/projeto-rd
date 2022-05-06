@@ -1,7 +1,7 @@
 package br.com.qsd.politeismo.ecommerce.controller.dto;
 
-import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.entities.Endereco;
+import br.com.qsd.politeismo.ecommerce.enums.Estado;
 
 public class EnderecoDTO {
 	private Long id_endereco;
@@ -10,28 +10,15 @@ public class EnderecoDTO {
 	private String tipoLougradouro;
 	private String numero;
 	private String cep;
+    private Estado estado;
 	private String cidade;
 	private String bairro;
-	
+
 	public EnderecoDTO() {
 		
 	}
 
-	public EnderecoDTO(Long id_endereco, String apelido, String nomeLougradouro, String tipoLougradouro, String numero,
-			String cep, String cidade, String bairro, Cliente cliente) {
-		super();
-		this.id_endereco = id_endereco;
-		this.apelido = apelido;
-		this.nomeLougradouro = nomeLougradouro;
-		this.tipoLougradouro = tipoLougradouro;
-		this.numero = numero;
-		this.cep = cep;
-		this.cidade = cidade;
-		this.bairro = bairro;
-	}
-
-
-
+	
 	public EnderecoDTO(Endereco entity) {
 		id_endereco = entity.getId_endereco();
 		apelido= entity.getApelido();
@@ -39,8 +26,10 @@ public class EnderecoDTO {
 		tipoLougradouro= entity.getTipoLougradouro();
 		numero = entity.getNumero();
 	    cep = entity.getCep();
+	    estado = entity.getEstado();
 		cidade = entity.getCidade();
 		bairro = entity.getBairro();
+		
 	}
 
 
@@ -91,6 +80,14 @@ public class EnderecoDTO {
 	}
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
+	}
+
+	public Estado getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
 	}
 
 }

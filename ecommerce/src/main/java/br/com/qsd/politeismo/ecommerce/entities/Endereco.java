@@ -1,13 +1,20 @@
  package br.com.qsd.politeismo.ecommerce.entities;
 
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import br.com.qsd.politeismo.ecommerce.enums.Estado;
 
 @Entity
 @Table(name = "ENDERECO")
@@ -32,6 +39,10 @@ public class Endereco {
 
 	@Column(nullable = false, name = "CEP")
 	private String cep;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false, name = "ESTADO")
+    private Estado estado;
 
 	@Column(nullable = false, name = "CIDADE")
 	private String cidade;
@@ -39,18 +50,14 @@ public class Endereco {
 	@Column(nullable = false, name = "BAIRRO")
 	private String bairro;
 	
-//	@ManyToOne
-//	@JoinColumn(name="fk_id_estado", nullable = false)
-//	private Estado estado;
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "cliente_endereco", joinColumns = {
+    @JoinColumn(name = "fk_endereco") }, inverseJoinColumns = { @JoinColumn(name = "fk_cliente") })
+	private List<Cliente> clientes;	
 	
 	@ManyToOne
-	@JoinColumn(nullable = true, name = "fk_id_cliente")
-	private Cliente cliente;
-	
-//	
-//	@ManyToOne
-//	@JoinColumn(name = "fk_id_fornecedor", nullable = true)
-//	private Fornecedor fornecedor;
+	@JoinColumn(name = "fk_id_fornecedor", nullable = true)
+	private Fornecedor fornecedor;
 	
 	public Endereco() {
 		
@@ -104,6 +111,14 @@ public class Endereco {
 		this.cep = cep;
 	}
 
+	public Estado getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
+
 	public String getCidade() {
 		return cidade;
 	}
@@ -119,5 +134,13 @@ public class Endereco {
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-	
+
+	public List<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+
 }
