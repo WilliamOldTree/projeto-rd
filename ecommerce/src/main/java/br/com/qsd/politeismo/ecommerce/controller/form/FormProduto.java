@@ -1,7 +1,7 @@
 package br.com.qsd.politeismo.ecommerce.controller.form;
 import br.com.qsd.politeismo.ecommerce.entities.Produto;
 
- public class FormProdutoDTO {
+ public class FormProduto {
 	      
 	    private Long   id_produto;
 	    private String descricao;
@@ -16,7 +16,7 @@ import br.com.qsd.politeismo.ecommerce.entities.Produto;
       //private Fornecedor   fornecedor;
 	   
 	   
-  public FormProdutoDTO (String descricao, String volume, String peso, String status, String preco, String estoque) {
+  public FormProduto (String descricao, String volume, String peso, String status, String preco, String estoque) {
                       //Produto_Destaque produto_destaque, Departamento departamento, Categoria categoria, Fornecedor fornecedor) {
 	     
 	     super();
@@ -34,7 +34,7 @@ import br.com.qsd.politeismo.ecommerce.entities.Produto;
 		
 }
 
-  public FormProdutoDTO(Produto produto) {
+  public FormProduto(Produto produto) {
 		  
          super();
          

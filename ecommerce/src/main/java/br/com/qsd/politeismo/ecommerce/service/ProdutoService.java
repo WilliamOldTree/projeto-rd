@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.qsd.politeismo.ecommerce.controller.dto.ProdutoDTO;
-import br.com.qsd.politeismo.ecommerce.controller.form.FormProdutoDTO;
+import br.com.qsd.politeismo.ecommerce.controller.form.FormProduto;
 import br.com.qsd.politeismo.ecommerce.entities.Produto;
 import br.com.qsd.politeismo.ecommerce.repository.ProdutoRepository;
 
@@ -36,7 +36,7 @@ public class ProdutoService {
 	
 	
 	
-	public ProdutoDTO insert(FormProdutoDTO dto) {
+	public ProdutoDTO insert(FormProduto dto) {
 		Produto obj = new Produto();
 		obj.setDescricao(dto.getDescricao());
 		obj.setVolume(dto.getVolume());
@@ -47,7 +47,7 @@ public class ProdutoService {
 		return new ProdutoDTO(obj);
 	}
 	
-	public ProdutoDTO update(Long id_produto, FormProdutoDTO dto) {
+	public ProdutoDTO update(Long id_produto, FormProduto dto) {
 		try {
 			Produto produto = repository.getById(id_produto);
 			copy(produto, dto);
@@ -60,7 +60,7 @@ public class ProdutoService {
 
 	}
 	
-	private void copy(Produto produto, FormProdutoDTO dto) {
+	private void copy(Produto produto, FormProduto dto) {
        produto.setDescricao(dto.getDescricao());
        produto.setVolume(dto.getVolume());
        produto.setPeso(dto.getPeso());
