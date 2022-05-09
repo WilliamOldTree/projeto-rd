@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import br.com.qsd.politeismo.ecommerce.controller.dto.ProdutoDTO;
-import br.com.qsd.politeismo.ecommerce.controller.form.FormProdutoDTO;
+import br.com.qsd.politeismo.ecommerce.controller.form.FormProduto;
 import br.com.qsd.politeismo.ecommerce.service.ProdutoService;
 
 
@@ -42,7 +42,7 @@ public class ProdutoController {
 	}
 	
 	@PostMapping
-	public ResponseEntity <ProdutoDTO> insert (@RequestBody FormProdutoDTO dto){
+	public ResponseEntity <ProdutoDTO> insert (@RequestBody FormProduto dto){
 	       try { 
 	       ProdutoDTO obj = service.insert(dto);
 	       URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId_produto()).toUri();
@@ -54,7 +54,7 @@ public class ProdutoController {
 	}
 	
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<ProdutoDTO> update(@Valid @PathVariable Long id, @RequestBody FormProdutoDTO dto){
+	public ResponseEntity<ProdutoDTO> update(@Valid @PathVariable Long id, @RequestBody FormProduto dto){
 		   ProdutoDTO obj = service.update(id, dto);
 		   return ResponseEntity.ok().body(obj);
 		   

@@ -9,10 +9,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -43,6 +46,11 @@ public class Pedido {
 	
 	@Column(nullable = false )
 	private List<Cliente> clientes;
+	
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "item_pedido", joinColumns = {
+    @JoinColumn(name = "fk_item_pedido") }, inverseJoinColumns = { @JoinColumn(name = "fk_pedido") })
+	private List<Pedido> pedidos;
 	
 	public Pedido() {
 		

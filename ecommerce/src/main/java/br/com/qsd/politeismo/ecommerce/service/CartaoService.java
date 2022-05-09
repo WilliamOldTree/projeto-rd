@@ -3,21 +3,23 @@ package br.com.qsd.politeismo.ecommerce.service;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
 import javax.persistence.EntityNotFoundException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import br.com.qsd.politeismo.ecommerce.controller.dto.CartaoDTO;
+<<<<<<< HEAD
 import br.com.qsd.politeismo.ecommerce.entities.Cartao;
 import br.com.qsd.politeismo.ecommerce.controller.form.FormCartao;
+=======
+import br.com.qsd.politeismo.ecommerce.controller.form.FormCartao;
+import br.com.qsd.politeismo.ecommerce.entities.Cartao;
+>>>>>>> 638b156d83b3409dab86499de36ff5cf3937af3a
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.entities.Forma;
 import br.com.qsd.politeismo.ecommerce.repository.CartaoRepository;
 import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
-import br.com.qsd.politeismo.ecommerce.repository.FormaRepository;
+import br.com.qsd.politeismo.ecommerce.repository.FormaRepository; 
 
 @Service
 public class CartaoService {

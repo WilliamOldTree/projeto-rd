@@ -23,7 +23,7 @@ public class Endereco {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID_ENDERECO")
-	private Long id_endereco;
+	private Long idEndereco;
 
 	@Column(nullable = false, name = "APELIDO")
 	private String apelido;
@@ -64,11 +64,11 @@ public class Endereco {
 	}
 	
 	public Long getId_endereco() {
-		return id_endereco;
+		return idEndereco;
 	}
 
 	public void setId_endereco(Long id_endereco) {
-		this.id_endereco = id_endereco;
+		this.idEndereco = id_endereco;
 	}
 
 	public String getApelido() {
