@@ -15,7 +15,7 @@ public class Fornecedor {
 	@Column(name = "id_fornecedor")
 	private Long id;
 
-	@Column(nullable = false)
+	@Column(name="razao_social", nullable = false)
 	private String razaoSocial;
 
 	@Column(unique = true, nullable = false)
@@ -29,6 +29,10 @@ public class Fornecedor {
     
 	@OneToMany(mappedBy="fornecedor")
     private List<Endereco> enderecos;
+	
+	@OneToMany(mappedBy = "fornecedor")
+	private  List<Produto> produtos;
+	  
 	
 	public Fornecedor() {
 
@@ -65,5 +69,23 @@ public class Fornecedor {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public boolean isFlInativo() {
+		return flInativo;
+	}
+
+	public void setFlInativo(boolean flInativo) {
+		this.flInativo = flInativo;
+	}
+
+	public List<Endereco> getEnderecos() {
+		return enderecos;
+	}
+
+	public List<Produto> getProdutos() {
+		return produtos;
+	}
+	
+	
 	
 }

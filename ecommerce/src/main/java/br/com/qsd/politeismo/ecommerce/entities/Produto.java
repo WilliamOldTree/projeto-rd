@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,28 +16,51 @@ public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_PRODUTO")
-	private Long id_produto;
+	private Long idProduto;
 
 	@Column(nullable = false)
 	private String descricao;
+	
+	@Column(nullable = false)
 	private String volume;
+	
+	@Column(nullable = false)
 	private String peso;
-	private String status;
+	
+	@Column(name = "fl_inativo")
+	private boolean flInativo = true; // flag inativo
+	
+	@Column(nullable = false)
 	private String preco;
-	private String estoque;
-	// private Produto_Destaque produto_destaque;
-	// private Categoria categoria;
-	// private Departamento departamento;
-	// private Fornecedor fornecedor;
+	
+	@Column(nullable = false)
+	private Integer estoque;
+	
+	@ManyToOne
+	@JoinColumn(name = "fk_id_produto_destaque",nullable = false)
+	private ProdutoDestaque produtoDestaque;
+	
+	@ManyToOne
+	@JoinColumn(name = "fk_id_categoria", nullable = false)
+	private Categoria categoria;
+	
+	@ManyToOne
+	@JoinColumn(name = "fk_id_departamento", nullable = false)
+	private Departamento departamento;
+	
+	@ManyToOne
+	@JoinColumn(name = "fk_id_fornecedor", nullable = false)
+	private Fornecedor fornecedor;
 
+	
 	public Long getId_produto() {
 
-		return id_produto;
+		return idProduto;
 	}
 
 	public void setId_produto(Long id_produto) {
 
-		this.id_produto = id_produto;
+		this.idProduto = id_produto;
 	}
 
 	public String getDescricao() {
@@ -68,14 +93,12 @@ public class Produto {
 		this.peso = peso;
 	}
 
-	public String getStatus() {
-
-		return status;
+	public boolean isFlInativo() {
+		return flInativo;
 	}
 
-	public void setStatus(String status) {
-
-		this.status = status;
+	public void setFlInativo(boolean flInativo) {
+		this.flInativo = flInativo;
 	}
 
 	public String getPreco() {
@@ -87,14 +110,46 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public String getEstoque() {
+	public Integer getEstoque() {
 
 		return estoque;
 	}
 
-	public void setEstoque(String estoque) {
+	public void setEstoque(Integer estoque) {
 
 		this.estoque = estoque;
+	}
+
+	public ProdutoDestaque getProdutoDestaque() {
+		return produtoDestaque;
+	}
+
+	public void setProdutoDestaque(ProdutoDestaque produtoDestaque) {
+		this.produtoDestaque = produtoDestaque;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
+	}
+
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
 	}
 
 	
