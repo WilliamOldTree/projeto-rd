@@ -47,7 +47,7 @@ import br.com.qsd.politeismo.ecommerce.entities.Produto;
   //produto_destaque = produto.getProduto_destaque();
   //departamento     = produto.getDepartamento();
   //categoria        = produto.getCategoria();
-  //fornecedor       = produto.geFornecedor();
+  //fornecedor       = produto.getFornecedor();
 	
 	}
 	

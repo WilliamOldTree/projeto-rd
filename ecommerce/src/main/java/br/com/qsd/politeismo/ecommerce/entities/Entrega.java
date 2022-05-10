@@ -32,8 +32,8 @@ public class Entrega {
 	@Column(nullable = false)
 	private FormaEntrega formaEntrega;
 	
-	@OneToMany(mappedBy = "entrega")
-	private List<Pedido>pedidos;
+	//@OneToMany(mappedBy = "entrega")
+	//private List<Pedido>pedidos;
 	
 	public Entrega() {
 		
@@ -87,12 +87,12 @@ public class Entrega {
 		this.formaEntrega = formaEntrega;
 	}
 
-	public List<Pedido> getPedidos() {
-		return pedidos;
-	}
-
-	public void setPedidos(List<Pedido> pedidos) {
-		this.pedidos = pedidos;
-	}
+	//public List<Pedido> getPedidos() {
+//		return pedidos;
+//	}
+//
+//	public void setPedidos(List<Pedido> pedidos) {
+//		this.pedidos = pedidos;
+//	}
 
 }//end class

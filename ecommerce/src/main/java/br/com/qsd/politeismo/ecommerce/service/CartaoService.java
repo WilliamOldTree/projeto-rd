@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import br.com.qsd.politeismo.ecommerce.controller.dto.CartaoDTO;
+import br.com.qsd.politeismo.ecommerce.entities.Cartao;
+import br.com.qsd.politeismo.ecommerce.controller.form.FormCartao;
 import br.com.qsd.politeismo.ecommerce.controller.form.FormCartao;
 import br.com.qsd.politeismo.ecommerce.entities.Cartao;
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
