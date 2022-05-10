@@ -46,6 +46,9 @@ public class Cliente {
 	@OneToMany(mappedBy="cliente")
 	List<Forma> forma;
 	
+	@JsonIgnore
+	@OneToMany(mappedBy="cliente")
+	List<Favoritos> favorito;
 	
 	public Cliente() {
 		

@@ -24,19 +24,16 @@ public class Favoritos {
 	@Column(nullable = false, name = "LISTA")
 	private String lista_favoritos;
 	
-	@Column(name="ID_CLIENTE")
-	private Long id_cliente;
-
+	
 	@ManyToOne
-	@JoinColumn(nullable = true, name = "fk_id_cliente")
+	@JoinColumn(nullable = true, name = "id_cliente")
 	private Cliente cliente;
 	
-	
+		
 	public Favoritos(Long id_favoritos, String lista_favoritos, Long id_cliente, Cliente cliente) {
 		super();
 		this.id_favoritos = id_favoritos;
 		this.lista_favoritos = lista_favoritos;
-		this.id_cliente = id_cliente;
 		this.cliente = cliente;
 	}
 
@@ -57,19 +54,21 @@ public class Favoritos {
 		this.lista_favoritos = lista_favoritos;
 	}
 
-	public Long getId_cliente() {
-		return id_cliente;
-	}
 
-	public void setId_cliente(Long id_cliente) {
-		this.id_cliente = id_cliente;
-	}
 
 	@Override
 	public String toString() {
 		return "Favoritos [id_favoritos=" + id_favoritos + ", lista_favoritos=" + lista_favoritos + ", id_cliente="
-				+ id_cliente + ", cliente=" + cliente + "]";
+				+ ", cliente=" + cliente + "]";
 	}
+
+
+	public Cliente getCliente() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 	
 	
 	

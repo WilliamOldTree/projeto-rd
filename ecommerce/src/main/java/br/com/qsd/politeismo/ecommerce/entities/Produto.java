@@ -34,7 +34,7 @@ public class Produto {
 	private String preco;
 	
 	@Column(nullable = false)
-	private Integer estoque;
+	private String estoque;
 	
 	@ManyToOne
 	@JoinColumn(name = "fk_id_produto_destaque",nullable = false)
@@ -110,12 +110,12 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public Integer getEstoque() {
+	public String getEstoque() {
 
 		return estoque;
 	}
 
-	public void setEstoque(Integer estoque) {
+	public void setEstoque(String estoque) {
 
 		this.estoque = estoque;
 	}
@@ -150,6 +150,16 @@ public class Produto {
 
 	public void setFornecedor(Fornecedor fornecedor) {
 		this.fornecedor = fornecedor;
+	}
+
+	public void setStatus(String status) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public String getStatus() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
