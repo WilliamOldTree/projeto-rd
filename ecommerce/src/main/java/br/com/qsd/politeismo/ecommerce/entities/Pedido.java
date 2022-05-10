@@ -40,17 +40,17 @@ public class Pedido {
 	@Enumerated(EnumType.STRING)
 	private StatusPedido statusPedido;
 	
-	@ManyToOne
-	@JoinColumn(name="fk_entrega",nullable = false)
-	private Entrega entrega;
+	//@ManyToOne
+	//@JoinColumn(name="fk_entrega",nullable = false)
+	//private Entrega entrega;
 	
-	@Column(nullable = false )
-	private List<Cliente> clientes;
+	//@Column(nullable = false )
+	//private List<Cliente> clientes;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "item_pedido", joinColumns = {
-    @JoinColumn(name = "fk_item_pedido") }, inverseJoinColumns = { @JoinColumn(name = "fk_pedido") })
-	private List<Pedido> pedidos;
+	//@ManyToMany(fetch = FetchType.EAGER)
+	//@JoinTable(name = "item_pedido", joinColumns = {
+    //@JoinColumn(name = "fk_item_pedido") }, inverseJoinColumns = { @JoinColumn(name = "fk_pedido") })
+	//private List<Pedido> pedidos;
 	
 	public Pedido() {
 		
@@ -88,39 +88,39 @@ public class Pedido {
 		this.statusPedido = statusPedido;
 	}
 
-	public Entrega getEntrega() {
-		return entrega;
-	}
-
-	public void setEntrega(Entrega entrega) {
-		this.entrega = entrega;
-	}
-
-	public List<Cliente> getClientes() {
-		return clientes;
-	}
-
-	public void setClientes(List<Cliente> clientes) {
-		this.clientes = clientes;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(clientes, id);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Pedido other = (Pedido) obj;
-		return Objects.equals(clientes, other.clientes) && Objects.equals(id, other.id);
-	}
-	
-	
+//	public Entrega getEntrega() {
+//		return entrega;
+//	}
+//
+//	public void setEntrega(Entrega entrega) {
+//		this.entrega = entrega;
+//	}
+//
+//	public List<Cliente> getClientes() {
+//		return clientes;
+//	}
+//
+//	public void setClientes(List<Cliente> clientes) {
+//		this.clientes = clientes;
+//	}
+//
+//	@Override
+//	public int hashCode() {
+//		return Objects.hash(clientes, id);
+//	}
+//
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		Pedido other = (Pedido) obj;
+//		return Objects.equals(clientes, other.clientes) && Objects.equals(id, other.id);
+//	}
+//	
+//	
 	
 }//end class pedido
