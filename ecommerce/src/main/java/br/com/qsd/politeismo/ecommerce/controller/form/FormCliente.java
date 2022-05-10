@@ -13,6 +13,7 @@ public class FormCliente {
 	private String cpf;
     private String nome;
     private String email;
+    private String telefone;
     private String password;
     private LocalDate nascimento;
     
@@ -23,11 +24,12 @@ public class FormCliente {
 		
 	}
 
-	public FormCliente(String cpf, String nome, String email, String password, LocalDate nascimento, Genero genero) {
+	public FormCliente(String cpf, String nome, String email, String telefone,String password, LocalDate nascimento, Genero genero) {
 		super();
 		this.cpf = cpf;
 		this.nome = nome;
 		this.email = email;
+		this.telefone=telefone;
 		this.password = password;
 		this.nascimento = nascimento;
 		this.genero = genero;
@@ -37,9 +39,18 @@ public class FormCliente {
 		cpf = entity.getCpf();
 		nome = entity.getNome();
 		email = entity.getEmail();
+		telefone=entity.getTelefone();
 		password = entity.getPassword();
 		nascimento = entity.getNascimento();
 		genero = entity.getGenero();
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 
 	public String getCpf() {

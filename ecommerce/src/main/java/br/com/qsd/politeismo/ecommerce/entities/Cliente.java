@@ -30,6 +30,7 @@ public class Cliente {
     private String nome;
     private String email;
     private String password;
+    private String telefone;
     private LocalDate nascimento;
     
 	@Enumerated(EnumType.STRING)
@@ -50,6 +51,23 @@ public class Cliente {
 	public Cliente() {
 		
 	}
+
+	
+	
+	
+	public String getTelefone() {
+		return telefone;
+	}
+
+
+
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+
+
 
 	public Long getId() {
 		return id;

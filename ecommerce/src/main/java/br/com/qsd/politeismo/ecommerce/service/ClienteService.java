@@ -40,6 +40,7 @@ public class ClienteService {
 		entity.setCpf(form.getCpf());
 		entity.setNome(form.getNome());
 		entity.setEmail(form.getEmail());
+		entity.setTelefone(form.getTelefone());
 		entity.setPassword(form.getPassword());
 		entity.setNascimento(form.getNascimento());
 		entity.setGenero(form.getGenero());
@@ -67,6 +68,7 @@ public class ClienteService {
 		entity.setCpf(dto.getCpf());
 		entity.setNome(dto.getNome());
 		entity.setEmail(dto.getEmail());
+		entity.setTelefone(dto.getTelefone());
 		entity.setPassword(dto.getPassword());
 		entity.setNascimento(dto.getNascimento());
 		entity.setGenero(dto.getGenero());

@@ -10,18 +10,20 @@ public class ClienteDTO {
     private String cpf;
     private String nome;
     private String email;
+    private String telefone;
     private LocalDate nascimento;
     
     public ClienteDTO () {
     	
     }
 
-	public ClienteDTO(Long id_cliente, String cpf, String nome, String email, LocalDate nascimento) {
+	public ClienteDTO(Long id_cliente, String cpf, String nome, String email, String telefone, LocalDate nascimento) {
 		super();
 		this.id_cliente = id_cliente;
 		this.cpf = cpf;
 		this.nome = nome;
 		this.email = email;
+		this.telefone=telefone;
 		this.nascimento = nascimento;
 	}
 
@@ -30,7 +32,18 @@ public class ClienteDTO {
 		cpf=cliente.getCpf();
 		nome=cliente.getNome();
 		email=cliente.getEmail();
+		telefone=cliente.getTelefone();
 		nascimento=cliente.getNascimento();
+	}
+	
+	
+	
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 
 	public Long getId_cliente() {
