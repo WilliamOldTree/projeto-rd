@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 
 @Entity
@@ -22,7 +24,6 @@ import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 public class Pedido {
 	
 	@Id	
-	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_pedido")
 	private Long idPedido;
@@ -45,6 +46,7 @@ public class Pedido {
 	@JoinColumn(name="fk_id_entrega",nullable = false)
 	private Entrega entrega;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="idPedido")
 	private List<ItemPedido> itensPedido;
 	

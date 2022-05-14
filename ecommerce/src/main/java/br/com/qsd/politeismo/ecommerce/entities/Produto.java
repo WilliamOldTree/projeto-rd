@@ -67,6 +67,7 @@ public class Produto {
 	@JoinColumn(name = "fk_id_fornecedor", nullable = false)
 	private Fornecedor fornecedor;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="idProduto")
 	private List<ItemPedido> itensPedido;
 	

@@ -14,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import br.com.qsd.politeismo.ecommerce.enums.FormaEntrega;
 import br.com.qsd.politeismo.ecommerce.enums.StatusEntrega;
 
@@ -29,17 +31,18 @@ public class Entrega {
 	@Column(nullable = false)
 	private LocalDate data;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "valor_frete")
 	private BigDecimal valor;
 	
-	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
 	private StatusEntrega statusEntrega;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
 	private FormaEntrega formaEntrega;
 	
+	@JsonIgnore
 	@Enumerated(EnumType.STRING)
 	@OneToMany(mappedBy = "entrega")
 	private List<Pedido>pedidos;

@@ -1,7 +1,7 @@
 package br.com.qsd.politeismo.ecommerce.enums;
 
 public enum StatusEntrega {
-	ENTRGUE,
+	ENTREGUE,
 	OBJETO_POSTADO,
 	DEVOLVIDO,
 }
