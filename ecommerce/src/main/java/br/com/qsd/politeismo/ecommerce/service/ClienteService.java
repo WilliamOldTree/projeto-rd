@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,6 +21,13 @@ public class ClienteService {
 
 	@Autowired
 	private ClienteRepository repository;
+	private PasswordEncoder passwordEncoder;
+
+	public ClienteService(ClienteRepository repository) {
+	
+		this.repository = repository;
+		this.passwordEncoder = new BCryptPasswordEncoder();
+	}
 
 	// listar
 	public List<ClienteDTO> findAll() {
@@ -37,14 +46,14 @@ public class ClienteService {
 	// inclusao
 	public ClienteDTO insert(FormCliente form) {
 		Cliente entity = new Cliente();
+		entity.setPassword(this.passwordEncoder.encode(form.getPassword()));
 		entity.setCpf(form.getCpf());
 		entity.setNome(form.getNome());
 		entity.setEmail(form.getEmail());
-		entity.setPassword(form.getPassword());
 		entity.setNascimento(form.getNascimento());
 		entity.setGenero(form.getGenero());
 
-		entity = repository.save(entity);
+		entity = this.repository.save(entity);
 
 		return new ClienteDTO(entity);
 
