@@ -73,14 +73,14 @@ public class ProdutoController {
 	/* BUSCAR POR NOME */
 	
 	@GetMapping(value = "buscarpornome") /* Mapeia a URL */
-	public ResponseEntity<List<ProdutoCardDTO>> buscarpornome(@RequestParam(name = "name") String name) {
+	public ResponseEntity<List<ProdutoCardDTO>> buscarpornome(@RequestParam(name = "nome") String nome) {
 
-		List<ProdutoCardDTO> produto = produtoRepository.buscarPorNome(name.trim().toUpperCase());
+		List<ProdutoCardDTO> produto = produtoRepository.buscarPorNome(nome.trim().toUpperCase());
 		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "buscarpordescricao") /* Mapeia a URL */
-	public ResponseEntity<List<ProdutoCardDTO>> buscarpordescricao(@RequestParam(name = "descricao") String descricao) {
+	public ResponseEntity<List<ProdutoCardDTO>> findByDescricao(@RequestParam(name = "descricao") String descricao) {
 
 		List<ProdutoCardDTO> produto = produtoRepository.buscarPorDescricao(descricao.trim().toUpperCase());
 		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
@@ -89,7 +89,12 @@ public class ProdutoController {
 	
 	/* BUSCAR POR CATEGORIA */
 	
+	@GetMapping("/buscarpornomecategoria") /* Mapeia a URL */
+	public ResponseEntity<List<ProdutoCardDTO>> findByCategoriaNome (String nome) {
 
-	/* BUSCAR POR PRODUTO E CATEGORIA */
+		List<ProdutoCardDTO> produto = produtoRepository.findByCategoriaNome(nome.trim().toUpperCase());
+		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
+	}
+	
 	
 }

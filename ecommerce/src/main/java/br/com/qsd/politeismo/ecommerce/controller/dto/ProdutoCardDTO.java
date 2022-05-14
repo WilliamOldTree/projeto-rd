@@ -9,8 +9,6 @@ public class ProdutoCardDTO {
 
 	private String nome;
 	
-	private String descricao;
-
 	private String urlProduto;
 		
 	private String preco;
@@ -26,7 +24,6 @@ public class ProdutoCardDTO {
 		nome = produto.getNome();
 		urlProduto = produto.getUrlProduto();
 		preco = produto.getPreco();
-		descricao = produto.getDescricao();
 	}
 
 
@@ -36,14 +33,6 @@ public class ProdutoCardDTO {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
 	}
 
 	public String getUrlProduto() {
