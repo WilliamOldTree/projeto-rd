@@ -76,7 +76,7 @@ public class ClienteService {
 		entity.setCpf(dto.getCpf());
 		entity.setNome(dto.getNome());
 		entity.setEmail(dto.getEmail());
-		entity.setPassword(dto.getPassword());
+		entity.setPassword(this.passwordEncoder.encode(dto.getPassword()));
 		entity.setNascimento(dto.getNascimento());
 		entity.setGenero(dto.getGenero());
 		
