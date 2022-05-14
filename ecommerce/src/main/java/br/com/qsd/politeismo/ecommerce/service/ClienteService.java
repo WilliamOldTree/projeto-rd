@@ -52,6 +52,9 @@ public class ClienteService {
 		entity.setEmail(form.getEmail());
 		entity.setNascimento(form.getNascimento());
 		entity.setGenero(form.getGenero());
+		entity.setFixo(form.getFixo());
+		entity.setCelular(form.getCelular());
+
 
 		entity = this.repository.save(entity);
 
@@ -79,7 +82,8 @@ public class ClienteService {
 		entity.setPassword(this.passwordEncoder.encode(dto.getPassword()));
 		entity.setNascimento(dto.getNascimento());
 		entity.setGenero(dto.getGenero());
-		
+		entity.setFixo(dto.getFixo());
+		entity.setCelular(dto.getCelular());
 	}
 	
 	//deletar po id

@@ -14,6 +14,8 @@ public class FormCliente {
     private String nome;
     private String email;
     private String password;
+    private String Celular;
+    private String Fixo;
     private LocalDate nascimento;
     
 	@Enumerated(EnumType.STRING)
@@ -23,16 +25,27 @@ public class FormCliente {
 		
 	}
 
-	public FormCliente(String cpf, String nome, String email, String password, LocalDate nascimento, Genero genero) {
+	
+	
+
+	
+	public FormCliente(String cpf, String nome, String email, String password, String celular, String fixo,
+			LocalDate nascimento, Genero genero) {
 		super();
 		this.cpf = cpf;
 		this.nome = nome;
 		this.email = email;
 		this.password = password;
+		this.Fixo = fixo;
+		this.Celular = celular;
 		this.nascimento = nascimento;
 		this.genero = genero;
 	}
-	
+
+
+
+
+
 	public FormCliente(Cliente entity) {
 		cpf = entity.getCpf();
 		nome = entity.getNome();
@@ -40,6 +53,8 @@ public class FormCliente {
 		password = entity.getPassword();
 		nascimento = entity.getNascimento();
 		genero = entity.getGenero();
+		Celular = entity.getCelular();
+		Fixo = entity.getFixo();
 	}
 
 	public String getCpf() {
@@ -89,6 +104,31 @@ public class FormCliente {
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
+
+
+
+	public String getCelular() {
+		return Celular;
+	}
+
+
+
+	public void setCelular(String celular) {
+		Celular = celular;
+	}
+
+
+
+	public String getFixo() {
+		return Fixo;
+	}
+
+
+
+	public void setFixo(String fixo) {
+		Fixo = fixo;
+	}
+	
 	
 	
 }

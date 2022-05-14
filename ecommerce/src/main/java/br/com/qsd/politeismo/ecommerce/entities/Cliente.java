@@ -30,6 +30,9 @@ public class Cliente {
     private String nome;
     private String email;
     private String password;
+    private String Celular;
+    private String Fixo;
+    
     private LocalDate nascimento;
     
 	@Enumerated(EnumType.STRING)
@@ -133,6 +136,22 @@ public class Cliente {
 
 	public List<Pedido> getPedido() {
 		return pedido;
+	}
+
+	public String getCelular() {
+		return Celular;
+	}
+
+	public void setCelular(String celular) {
+		Celular = celular;
+	}
+
+	public String getFixo() {
+		return Fixo;
+	}
+
+	public void setFixo(String fixo) {
+		Fixo = fixo;
 	}
 
 
