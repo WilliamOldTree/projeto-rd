@@ -26,7 +26,7 @@ public class PedidoDTO {
 	}
 
 	public PedidoDTO(Pedido pedido) {
-		idPedido = pedido.getidPedido();
+		idPedido = pedido.getIdPedido();
 		data = pedido.getData();
 		valor = pedido.getValor();
 		statusPedido = pedido.getStatusPedido();

@@ -178,6 +178,12 @@ public class Produto {
 
 	public void setFornecedor(Fornecedor fornecedor) {
 		this.fornecedor = fornecedor;
+	}
+
+	public List<ItemPedido> getItensPedido() {
+		return itensPedido;
 	}	
+	
+	
 
 }// end

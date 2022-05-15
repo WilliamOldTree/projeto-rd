@@ -11,11 +11,12 @@ public class ClienteDTO {
     private String nome;
     private String email;
     private LocalDate nascimento;
-    private String Celular;
-    private String Fixo;
+    private String celular;
+    private String fixo;
     public ClienteDTO () {
     	
     }
+
 
 
 
@@ -27,9 +28,11 @@ public class ClienteDTO {
 		this.nome = nome;
 		this.email = email;
 		this.nascimento = nascimento;
-		this.Fixo = fixo;
-		this.Celular = celular;
+		this.celular = celular;
+		this.fixo = fixo;
 	}
+
+
 
 
 
@@ -39,8 +42,8 @@ public class ClienteDTO {
 		nome=cliente.getNome();
 		email=cliente.getEmail();
 		nascimento=cliente.getNascimento();
-		Celular = cliente.getCelular();
-		Fixo = cliente.getFixo();
+		celular = cliente.getCelular();
+		fixo = cliente.getFixo();
 	}
 
 	public Long getId_cliente() {
@@ -83,29 +86,24 @@ public class ClienteDTO {
 		this.nascimento = nascimento;
 	}
 
-
-
 	public String getCelular() {
-		return Celular;
+		return celular;
 	}
-
 
 
 	public void setCelular(String celular) {
-		Celular = celular;
+		this.celular = celular;
 	}
-
 
 
 	public String getFixo() {
-		return Fixo;
+		return fixo;
 	}
-
-
 
 	public void setFixo(String fixo) {
-		Fixo = fixo;
+		this.fixo = fixo;
 	}
+
     
 	
 }

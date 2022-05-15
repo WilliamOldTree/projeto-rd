@@ -21,7 +21,11 @@ public class ItemPedido {
     @JoinColumn(name = "id_produto", insertable = false, updatable = false)
 	private Produto idProduto;	
 	
-	private Long quantidade;
+	private Integer quantidade;
+
+
+	public ItemPedido() {
+	}
 
 	public PedidoProdutoID getPedidoProdutoID() {
 		return pedidoProdutoID;
@@ -47,14 +51,14 @@ public class ItemPedido {
 		this.idProduto = idProduto;
 	}
 
-	public Long getQuantidade() {
+	public Integer getQuantidade() {
 		return quantidade;
 	}
 
-	public void setQuantidade(Long quantidade) {
+	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
 	}
-	
-	
+
+
 
 }
