@@ -35,4 +35,11 @@ public class ProdutosDestaque {
 	public void setDesconto(Double desconto) {
 		this.desconto = desconto;
 	}
+
+
+	@Override
+	public String toString() {
+		return "ProdutosDestaque [id_produto_destaque=" + id_produto_destaque + ", desconto=" + desconto + "]";
+	}
 }
+	

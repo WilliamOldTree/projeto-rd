@@ -1,30 +1,74 @@
 package br.com.qsd.politeismo.ecommerce.controller.form;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.springframework.transaction.annotation.Transactional;
+
+import br.com.qsd.politeismo.ecommerce.controller.dto.CartaoDTO;
+import br.com.qsd.politeismo.ecommerce.controller.dto.ClienteDTO;
 import br.com.qsd.politeismo.ecommerce.entities.Cartao;
+import br.com.qsd.politeismo.ecommerce.entities.Cliente;
+import br.com.qsd.politeismo.ecommerce.entities.Forma;
+import br.com.qsd.politeismo.ecommerce.repository.CartaoRepository;
+import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
+import br.com.qsd.politeismo.ecommerce.repository.FormaRepository;
 
 public class FormCartao {
 	private String titular_cartao;
 	private String numero_cartao;
 	private String cvv_cartao;
 	private String validade_cartao;
+	private Long cliente;
+	private Long forma;
 	
-	
-	public FormCartao(String titular_cartao, String cvv_cartao, String validade_cartao, String numero_cartao) {
+    
+
+
+
+	public FormCartao(String titular_cartao, String numero_cartao, String cvv_cartao, String validade_cartao,
+			String cliente, String forma) {
 		super();
 		this.titular_cartao = titular_cartao;
+		this.numero_cartao = numero_cartao;
 		this.cvv_cartao = cvv_cartao;
 		this.validade_cartao = validade_cartao;
-		this.numero_cartao = numero_cartao;
+		this.cliente =Long.parseLong(cliente) ;
+		this.forma = Long.parseLong(forma);
 	}
 
 
-	public FormCartao(Cartao cartao) {
-		super();
-		titular_cartao = cartao.getTitular_cartao();
-		numero_cartao = cartao.getNumero_cartao();
-		cvv_cartao = cartao.getCvv_cartao();
-		validade_cartao = cartao.getValidade_cartao();
+
+	public FormCartao() {
+	
 	}
+
+
+
+	public Long getCliente() {
+		return cliente;
+	}
+
+
+
+	public void setCliente(Long cliente) {
+		this.cliente = cliente;
+	}
+
+
+
+	public Long getForma() {
+		return forma;
+	}
+
+
+
+	public void setForma(Long forma) {
+		this.forma = forma;
+	}
+
+
 
 	public String getTitular_cartao() {
 		return titular_cartao;
@@ -64,6 +108,11 @@ public class FormCartao {
 	public void setNumero_cartao(String numero_cartao) {
 		this.numero_cartao = numero_cartao;
 	}
+	
+
+
+	
+	
 	
 }
 

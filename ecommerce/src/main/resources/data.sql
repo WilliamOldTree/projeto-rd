@@ -13,5 +13,11 @@ INSERT INTO endereco (ID_ENDERECO, apelido, NOME_LOGRADOURO, TIPO_LOGRADO, numer
 VALUES(1, 'Casa', 'independencia', 'Rua' , '123','43700-000', 'BA','Salvador', 'CIA 2');
 
 insert into Forma (Instituicao, cliente_id_cliente)
+<<<<<<< HEAD
 VALUES ('Outros','1')
 >>>>>>> 2763fa00e93d6202bd67797d3f5f17caa6cc661c
+=======
+VALUES ('Crédito','1')
+
+
+>>>>>>> c71fbd087826393835a5c119980d4cf8069477df
