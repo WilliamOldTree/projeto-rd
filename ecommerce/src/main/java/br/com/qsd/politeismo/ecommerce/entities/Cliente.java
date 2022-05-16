@@ -30,8 +30,8 @@ public class Cliente {
     private String nome;
     private String email;
     private String password;
-    private String Celular;
-    private String Fixo;
+    private String celular;
+    private String fixo;
     
     private LocalDate nascimento;
     
@@ -117,6 +117,22 @@ public class Cliente {
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
+	
+	public String getCelular() {
+		return celular;
+	}
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+
+	public String getFixo() {
+		return fixo;
+	}
+
+	public void setFixo(String fixo) {
+		this.fixo = fixo;
+	}
 
 	public List<Endereco> getEnderecos() {
 		return enderecos;
@@ -137,23 +153,5 @@ public class Cliente {
 	public List<Pedido> getPedido() {
 		return pedido;
 	}
-
-	public String getCelular() {
-		return Celular;
-	}
-
-	public void setCelular(String celular) {
-		Celular = celular;
-	}
-
-	public String getFixo() {
-		return Fixo;
-	}
-
-	public void setFixo(String fixo) {
-		Fixo = fixo;
-	}
-
-
 	
-}
+}// end class
