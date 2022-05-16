@@ -58,18 +58,10 @@ public class CartaoService {
 			entity.setCliente(cliente.get());
 			
 			
+			
 			Optional<Forma> forma= frepository.findById(form.getCliente());
 			entity.setFormaPagamento(forma.get());		
-		
-
-		
-				
-			
-			
 			entity = repository.save(entity);
-			
-			
-
 			return new CartaoDTO(entity);
 
 		}
