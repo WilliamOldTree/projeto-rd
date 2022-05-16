@@ -24,8 +24,8 @@ import br.com.qsd.politeismo.ecommerce.repository.PedidoRepository;
 
 @Service
 public class PedidoService {
-	private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	
+	private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	
 	@Autowired
 	private PedidoRepository pedidoRepository;
@@ -52,7 +52,7 @@ public class PedidoService {
 	@Transactional
 	public PedidoDTO insert(FormPedido form) {
 		Pedido entity = new Pedido();
-		
+	
         entity.setData(LocalDate.parse(form.getData(), formatter));
         entity.setValor(new BigDecimal(form.getValor()));
         entity.setStatusPedido(form.getStatusPedido());

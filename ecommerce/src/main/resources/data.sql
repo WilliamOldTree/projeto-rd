@@ -52,7 +52,10 @@ insert into CATEGORIA (ID_CATEGORIA, NOME, FL_INATIVO) values (17, 'TERÇOS', 1)
 insert into CATEGORIA (ID_CATEGORIA, NOME, FL_INATIVO) values (18, 'VESTUÁRIO', 1);
 
 insert into PRODUTO (NOME,DESCRICAO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
-values ('Buda Dourado','Lorem Ipson', 295, '0.2', '23.50', '1.0', 13, 5, 3, 1, 1);
+values ('Buda Dourado','Buda Dourado: Peça Dourada, Peça Confeccionada em Resina de Alta Qualidade ', 295, '0.2', '23.50', '1.0', 13, 5, 3, 1, 1);
+
+insert into PRODUTO (NOME,DESCRICAO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Terço Nossa Senhora','Terço Nossa Senhora: Em Madeira, Detalhes em Branco e Cristais Azuis', 100, '0.1', '20.15', '0.5', 17, 1, 1, 1, 1);
 
 insert into ENTREGA (DATA, VALOR_FRETE, STATUS_ENTREGA, FORMA_ENTREGA)
 values ('2022-03-22', 15.3, 'OBJETO_POSTADO', 'CORREIOS');

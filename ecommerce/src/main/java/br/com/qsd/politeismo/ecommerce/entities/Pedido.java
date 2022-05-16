@@ -54,11 +54,13 @@ public class Pedido {
 		
 	}
 
-	public Long getidPedido() {
+
+	public Long getIdPedido() {
 		return idPedido;
 	}
 
-	public void setidPedido(Long idPedido) {
+
+	public void setIdPedido(Long idPedido) {
 		this.idPedido = idPedido;
 	}
 
@@ -100,6 +102,10 @@ public class Pedido {
 
 	public void setEntrega(Entrega entrega) {
 		this.entrega = entrega;
+	}
+
+	public List<ItemPedido> getItensPedido() {
+		return itensPedido;
 	}
 
     

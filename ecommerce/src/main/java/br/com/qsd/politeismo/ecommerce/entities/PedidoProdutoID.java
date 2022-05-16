@@ -1,7 +1,6 @@
 package br.com.qsd.politeismo.ecommerce.entities;
 
 import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -18,6 +17,11 @@ public class PedidoProdutoID implements Serializable{
 	
 	public PedidoProdutoID() {
 		
+	}
+
+	public PedidoProdutoID(Long idPedido, Long idProduto) {
+		this.idPedido = idPedido;
+		this.idProduto = idProduto;
 	}
 
 	public Long getIdPedido() {

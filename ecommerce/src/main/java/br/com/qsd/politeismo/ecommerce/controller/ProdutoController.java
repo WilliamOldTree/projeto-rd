@@ -10,11 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import br.com.qsd.politeismo.ecommerce.controller.dto.ProdutoCardDTO;
 import br.com.qsd.politeismo.ecommerce.controller.dto.ProdutoDTO;
 import br.com.qsd.politeismo.ecommerce.entities.Produto;
-import br.com.qsd.politeismo.ecommerce.repository.CategoriaRepository;
 import br.com.qsd.politeismo.ecommerce.repository.ProdutoRepository;
 
 @RestController
@@ -23,11 +21,7 @@ public class ProdutoController {
 	
 	@Autowired
 	private ProdutoRepository produtoRepository;
-	
-	@Autowired
-	private CategoriaRepository categoriaRepository;
   
-	
 	/* LISTAR TODOS */
 	
 	@GetMapping	
