@@ -72,6 +72,10 @@ public class Produto {
 	private List<ItemPedido> itensPedido;
 	
 	
+	@JsonIgnore 
+	@OneToMany(mappedBy="idNotaFiscal") 
+	private List<ItemNotaFiscal> itemNotaFiscal; 
+	
 	public Produto() {
 		
 	}
