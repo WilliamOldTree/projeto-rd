@@ -27,7 +27,8 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 	
 	List<ProdutoCardDTO> findByDescricao(String nome); 
     
-    
+	List<ProdutoCardDTO> findByProdutoDestaqueId(Long id); 
+
        
 }
 
