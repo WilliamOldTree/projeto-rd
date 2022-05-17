@@ -93,12 +93,6 @@ public class CartaoService {
 			entity.setNumero_cartao(form.getNumero_cartao());
 			entity.setCvv_cartao(form.getCvv_cartao());
 			entity.setValidade_cartao(form.getValidade_cartao());
-	        
-			Optional<Cliente> cliente= crepository.findById(form.getCliente());
-			entity.setCliente(cliente.get());
-			
-			Optional<Forma> forma= frepository.findById(form.getCliente());
-			entity.setFormaPagamento(forma.get());
 			
 		}
 

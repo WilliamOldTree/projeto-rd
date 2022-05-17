@@ -3,21 +3,19 @@ package br.com.qsd.politeismo.ecommerce.entities;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Objects;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 
@@ -25,43 +23,43 @@ import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 @Table(name="pedido")
 public class Pedido {
 	
-	@Id
+	@Id	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_pedido")
-	private Long id;
+	private Long idPedido;
 	
-	@Column(nullable = false )
+	@Column(nullable = false, name = "data_pedido" )
 	private LocalDate data;
 	
-	@Column(nullable = false )
+	@Column(nullable = false, name = "valor_total" )
 	private BigDecimal valor;
 	
-	@Column(nullable = false )
 	@Enumerated(EnumType.STRING)
+	@Column(nullable = false, name = "status_pedido" )
 	private StatusPedido statusPedido;
 	
 	@ManyToOne
-	@JoinColumn(name="fk_entrega",nullable = false)
+	@JoinColumn(name = "fk_id_cliente", nullable = true)
+	private Cliente cliente;
+	
+	@ManyToOne
+	@JoinColumn(name="fk_id_entrega",nullable = false)
 	private Entrega entrega;
 	
-	@Column(nullable = false )
-	private List<Cliente> clientes;
-	
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "item_pedido", joinColumns = {
-    @JoinColumn(name = "fk_item_pedido") }, inverseJoinColumns = { @JoinColumn(name = "fk_pedido") })
-	private List<Pedido> pedidos;
+	@JsonIgnore
+	@OneToMany(mappedBy="idPedido")
+	private List<ItemPedido> itensPedido;
 	
 	public Pedido() {
 		
 	}
 
-	public Long getId() {
-		return id;
+	public Long getidPedido() {
+		return idPedido;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setidPedido(Long idPedido) {
+		this.idPedido = idPedido;
 	}
 
 	public LocalDate getData() {
@@ -88,6 +86,14 @@ public class Pedido {
 		this.statusPedido = statusPedido;
 	}
 
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
 	public Entrega getEntrega() {
 		return entrega;
 	}
@@ -96,31 +102,6 @@ public class Pedido {
 		this.entrega = entrega;
 	}
 
-	public List<Cliente> getClientes() {
-		return clientes;
-	}
-
-	public void setClientes(List<Cliente> clientes) {
-		this.clientes = clientes;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(clientes, id);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Pedido other = (Pedido) obj;
-		return Objects.equals(clientes, other.clientes) && Objects.equals(id, other.id);
-	}
+    
 	
-	
-	
-}//end class pedido
+}//end class 

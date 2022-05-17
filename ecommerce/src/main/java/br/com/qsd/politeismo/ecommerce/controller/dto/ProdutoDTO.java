@@ -1,123 +1,118 @@
 package br.com.qsd.politeismo.ecommerce.controller.dto;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
 import br.com.qsd.politeismo.ecommerce.entities.Produto;
 
-    public class ProdutoDTO {
+public class ProdutoDTO {
 	
-	private Long   id_produto;
+	private Long idProduto;
+
+	private String nome;
+	
+	private String urlProduto;
+
 	private String descricao;
+	
 	private String volume;
+	
 	private String peso;
-	private String status;
+		
 	private String preco;
-	private String estoque;
-  //private Produto_Destaque produto_destaque;
-  //private Categoria categoria;
-  //private Departamento departamento;
-  //private Fornecedor   fornecedor;
 
-	public ProdutoDTO(Long id_produto, String descricao, String volume, String peso, String status, String preco, String estoque) {
-		             //Produto_Destaque produto_destaque, Departamento departamento, Categoria categoria, Fornecedor fornecedor) {
-		   super();
-		   
-	this.setId_produto(id_produto);
-	this.descricao           = descricao;
-	this.volume              = volume;
-	this.peso                = peso;
-	this.status              = status;
-	this.preco               = preco;
-	this.estoque             = estoque;
-	//this.produto_Destaque  = produto_Destaque;
-	//this.departamento      = departamento;
-	//this.categoria         = categoria;
-	//this.fornecedor        = fornecedor;
-
+	private Integer estoque;
+    
+	public ProdutoDTO(Long idProduto, String nome, String urlProduto, String descricao, String volume, String peso,
+			String preco, Integer estoque) {
+		
+		this.idProduto = idProduto;
+		this.nome = nome;
+		this.urlProduto = urlProduto;
+		this.descricao = descricao;
+		this.volume = volume;
+		this.peso = peso;
+		this.preco = preco;
+		this.estoque = estoque;
 	}
-	
+
 	public ProdutoDTO(Produto produto) {
-		
-	       super();
-	
-	setId_produto(produto.getId_produto());
-	descricao        = produto.getDescricao();
-	volume           = produto.getVolume();
-	peso             = produto.getPeso();
-	status           = produto.getStatus();
-	preco            = produto.getPreco();	
-	estoque          = produto.getEstoque();
-  //produto_destaque = produto.getProduto_destaque();
-  //departamento     = produto.getDepartamento();
-  //categoria        = produto.getCategoria();
-  //fornecedor       = produto.geFornecedor();
-	
+		idProduto = produto.getIdProduto();
+		nome = produto.getNome();
+		urlProduto = produto.getUrlProduto();
+		descricao = produto.getDescricao();
+		volume = produto.getVolume();
+		peso = produto.getPeso();
+		preco = produto.getPreco();
+		estoque = produto.getEstoque();
 	}
-	
+
+	public Long getIdProduto() {
+		return idProduto;
+	}
+
+	public void setIdProduto(Long idProduto) {
+		this.idProduto = idProduto;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getUrlProduto() {
+		return urlProduto;
+	}
+
+	public void setUrlProduto(String urlProduto) {
+		this.urlProduto = urlProduto;
+	}
+
 	public String getDescricao() {
-		
-		   return descricao;
+		return descricao;
 	}
+
 	public void setDescricao(String descricao) {
-		
-		   this.descricao = descricao;
+		this.descricao = descricao;
 	}
-	
 
 	public String getVolume() {
-		
-		   return volume;
+		return volume;
 	}
+
 	public void setVolume(String volume) {
-		
-		   this.volume = volume;
+		this.volume = volume;
 	}
 
-	
 	public String getPeso() {
-		
-		   return peso;
+		return peso;
 	}
-	public void setPeso(String peso) {
-		
-		   this.peso = peso;
-	}
-	
 
-	public String getStatus() {
-		
-		   return status;
+	public void setPeso(String peso) {
+		this.peso = peso;
 	}
-	public void setStatus(String status) {
-		
-		   this.status = status;
-	}
-	
 
 	public String getPreco() {
-		
-		   return preco;
+		return preco;
 	}
+
 	public void setPreco(String preco) {
-		
-		   this.preco = preco;
+		this.preco = preco;
+	}
+
+	public Integer getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(Integer estoque) {
+		this.estoque = estoque;
 	}
 	
-
-	public String getEstoque() {
-		
-		   return estoque;
-	}
-	public void setEstoque(String estoque) {
-		
-		   this.estoque = estoque;
+	public static List<ProdutoDTO> converter(List<Produto> produtos) {
+		return produtos.stream().map(ProdutoDTO::new).collect(Collectors.toList());
 	}
 	
-
-	public Long getId_produto() {
-		
-		   return id_produto;
-	}
-	public void setId_produto(Long id_produto) {
-		
-		   this.id_produto = id_produto;
-	}
-
-}//end
+}

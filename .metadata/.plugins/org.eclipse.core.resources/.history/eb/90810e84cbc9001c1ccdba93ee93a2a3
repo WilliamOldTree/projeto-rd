@@ -1,7 +1,0 @@
-package expertostech.tutorial.rest.api.repository;
-
-import expertostech.tutorial.rest.api.model.Cliente;
-import org.springframework.data.repository.CrudRepository;
-
-public interface ClienteRepository extends CrudRepository<Cliente, Integer> {
-}

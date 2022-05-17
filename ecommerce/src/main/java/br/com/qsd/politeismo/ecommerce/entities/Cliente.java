@@ -30,6 +30,9 @@ public class Cliente {
     private String nome;
     private String email;
     private String password;
+    private String Celular;
+    private String Fixo;
+    
     private LocalDate nascimento;
     
 	@Enumerated(EnumType.STRING)
@@ -46,6 +49,14 @@ public class Cliente {
 	@OneToMany(mappedBy="cliente")
 	List<Forma> forma;
 	
+	@JsonIgnore
+	@OneToMany(mappedBy="cliente")
+	List<Pedido> pedido;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="cliente")
+	List<Favoritos> favorito;
+	
 	
 	public Cliente() {
 		
@@ -53,6 +64,10 @@ public class Cliente {
 
 	public Long getId() {
 		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getCpf() {
@@ -111,10 +126,34 @@ public class Cliente {
 		this.enderecos = enderecos;
 	}
 
-
-
-	public void setId(Long id) {
-		this.id = id;
+	public List<Cartao> getCartao() {
+		return cartao;
 	}
+
+	public List<Forma> getForma() {
+		return forma;
+	}
+
+	public List<Pedido> getPedido() {
+		return pedido;
+	}
+
+	public String getCelular() {
+		return Celular;
+	}
+
+	public void setCelular(String celular) {
+		Celular = celular;
+	}
+
+	public String getFixo() {
+		return Fixo;
+	}
+
+	public void setFixo(String fixo) {
+		Fixo = fixo;
+	}
+
+
 	
 }

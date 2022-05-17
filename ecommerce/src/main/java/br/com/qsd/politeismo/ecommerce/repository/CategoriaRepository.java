@@ -2,10 +2,10 @@ package br.com.qsd.politeismo.ecommerce.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import br.com.qsd.politeismo.ecommerce.entities.Endereco;
+
+import br.com.qsd.politeismo.ecommerce.entities.Categoria;
 
 @Repository
-public interface EnderecoRepository extends JpaRepository<Endereco, Long>{
-
+public interface CategoriaRepository extends JpaRepository<Categoria, Long>{
 
 }
