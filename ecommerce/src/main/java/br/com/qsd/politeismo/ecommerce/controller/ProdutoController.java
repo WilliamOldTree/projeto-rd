@@ -90,5 +90,14 @@ public class ProdutoController {
 		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
 	}
 	
+	/* BUSCAR POR DESCONTO (PRODUTOS DESTAQUE) */
+
+	@GetMapping(value = "destaque") /* Mapeia a URL */
+	public ResponseEntity<List<ProdutoCardDTO>> findByProdutoDestaqueId(@RequestParam(name = "id") Long id) {
+
+		List<ProdutoCardDTO> produto = produtoRepository.findByProdutoDestaqueId(id);
+		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
+	}
+	
 	
 }
