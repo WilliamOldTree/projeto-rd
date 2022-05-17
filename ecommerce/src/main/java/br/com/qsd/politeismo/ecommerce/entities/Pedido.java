@@ -2,18 +2,14 @@ package br.com.qsd.politeismo.ecommerce.entities;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-<<<<<<< HEAD
-//import java.util.List;
+import java.util.List;
 //import java.util.Objects;
 
-=======
-import java.util.List;
->>>>>>> c41495240ff2f4b4a1529f2d0c98d6db88559d7e
+//import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-<<<<<<< HEAD
 //import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,14 +18,13 @@ import javax.persistence.Id;
 //import javax.persistence.JoinTable;
 //import javax.persistence.ManyToMany;
 //import javax.persistence.ManyToOne;
-=======
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
+//import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
->>>>>>> c41495240ff2f4b4a1529f2d0c98d6db88559d7e
+
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;

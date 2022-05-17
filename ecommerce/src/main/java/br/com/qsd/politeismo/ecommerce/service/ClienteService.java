@@ -53,7 +53,7 @@ public class ClienteService {
 		entity.setPassword(this.passwordEncoder.encode(form.getPassword()));
 		entity.setCpf(form.getCpf());
 		entity.setNome(form.getNome());
-		entity.setEmail(form.getEmail());
+		entity.setEmail(form.getEmail()); 
 		entity.setNascimento(LocalDate.parse(form.getNascimento(), formatter));
 		entity.setGenero(form.getGenero());
 		entity.setFixo(form.getFixo());
