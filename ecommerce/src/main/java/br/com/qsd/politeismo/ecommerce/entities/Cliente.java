@@ -22,6 +22,7 @@ import br.com.qsd.politeismo.ecommerce.enums.Genero;
 @Entity
 @Table(name = "CLIENTE")
 public class Cliente {
+	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id_cliente")
