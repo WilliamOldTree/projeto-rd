@@ -11,19 +11,30 @@ public class ClienteDTO {
     private String nome;
     private String email;
     private LocalDate nascimento;
-    
+    private String celular;
+    private String fixo;
     public ClienteDTO () {
     	
     }
 
-	public ClienteDTO(Long id_cliente, String cpf, String nome, String email, LocalDate nascimento) {
+
+
+
+	public ClienteDTO(Long id_cliente, String cpf, String nome, String email, LocalDate nascimento, String celular,
+			String fixo) {
 		super();
 		this.id_cliente = id_cliente;
 		this.cpf = cpf;
 		this.nome = nome;
 		this.email = email;
 		this.nascimento = nascimento;
+		this.celular = celular;
+		this.fixo = fixo;
 	}
+
+
+
+
 
 	public ClienteDTO(Cliente cliente) {
 		id_cliente=cliente.getId();
@@ -31,6 +42,8 @@ public class ClienteDTO {
 		nome=cliente.getNome();
 		email=cliente.getEmail();
 		nascimento=cliente.getNascimento();
+		celular = cliente.getCelular();
+		fixo = cliente.getFixo();
 	}
 
 	public Long getId_cliente() {
@@ -72,6 +85,25 @@ public class ClienteDTO {
 	public void setNascimento(LocalDate nascimento) {
 		this.nascimento = nascimento;
 	}
+
+	public String getCelular() {
+		return celular;
+	}
+
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+
+
+	public String getFixo() {
+		return fixo;
+	}
+
+	public void setFixo(String fixo) {
+		this.fixo = fixo;
+	}
+
     
 	
 }

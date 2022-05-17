@@ -1,70 +1,94 @@
 package br.com.qsd.politeismo.ecommerce.controller;
-import java.net.URI;
+
 import java.util.List;
-import javax.validation.Valid;
-import org.hibernate.service.spi.ServiceException;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import br.com.qsd.politeismo.ecommerce.controller.dto.ProdutoCardDTO;
 import br.com.qsd.politeismo.ecommerce.controller.dto.ProdutoDTO;
-import br.com.qsd.politeismo.ecommerce.controller.form.FormProduto;
-import br.com.qsd.politeismo.ecommerce.service.ProdutoService;
-
-
+import br.com.qsd.politeismo.ecommerce.entities.Produto;
+import br.com.qsd.politeismo.ecommerce.repository.ProdutoRepository;
 
 @RestController
 @RequestMapping(value = "/produtos")
 public class ProdutoController {
 	
-	
 	@Autowired
-	private ProdutoService service;
+	private ProdutoRepository produtoRepository;
+  
+	/* LISTAR TODOS */
 	
-	@GetMapping
-    public ResponseEntity<List<ProdutoDTO>> findAll(){
-    	   List<ProdutoDTO> list = service.findAll();
-    	   return ResponseEntity.ok(list);
-    	   
+	@GetMapping	
+	public List<ProdutoDTO> listaProdutos(){
+		
+			List<Produto> produtos = produtoRepository.findAll();
+			return ProdutoDTO.converter(produtos);
 	}
 	
-	@GetMapping(value = "/{id}")
-	public ProdutoDTO findById(@PathVariable Long id) {
-		   return service.findById(id);
-		   
+	@GetMapping("cards")
+	public List<ProdutoCardDTO> listaCards(){
+		
+			List<Produto> produtos = produtoRepository.findAll();
+			return ProdutoCardDTO.converter(produtos);
 	}
 	
-	@PostMapping
-	public ResponseEntity <ProdutoDTO> insert (@RequestBody FormProduto dto){
-	       try { 
-	       ProdutoDTO obj = service.insert(dto);
-	       URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId_produto()).toUri();
-	       return ResponseEntity.created(uri).body(obj);
-	     } catch (ServiceException e) {
-	       return ResponseEntity.unprocessableEntity().build();
-	       
-	     }
+	
+	/* BUSCAR POR ID */
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<ProdutoDTO> listarProdutoPorID(@PathVariable("id") Long id) {
+		Optional<Produto> produto = produtoRepository.findById(id);
+
+		if (produto.isPresent()) {
+			return ResponseEntity.ok(new ProdutoDTO(produto.get()));
+		}
+
+		return ResponseEntity.notFound().build();
 	}
 	
-	@PutMapping(value = "/{id}")
-	public ResponseEntity<ProdutoDTO> update(@Valid @PathVariable Long id, @RequestBody FormProduto dto){
-		   ProdutoDTO obj = service.update(id, dto);
-		   return ResponseEntity.ok().body(obj);
-		   
-	}
-	
-	@DeleteMapping(value= "/{id}")
-	public ResponseEntity<Void> deletar(@PathVariable Long id){
-		   service.deletar(id);
-		   return ResponseEntity.noContent().build();
-		   
+	@GetMapping("cards/{id}")
+	public ResponseEntity<ProdutoCardDTO> listarCardPorID(@PathVariable("id") Long id) {
+		Optional<Produto> produto = produtoRepository.findById(id);
+
+		if (produto.isPresent()) {
+			return ResponseEntity.ok(new ProdutoCardDTO(produto.get()));
+		}
+
+		return ResponseEntity.notFound().build();
 	}
 
-}//end
+	
+	/* BUSCAR POR NOME */
+	
+	@GetMapping(value = "buscarpornome") /* Mapeia a URL */
+	public ResponseEntity<List<ProdutoCardDTO>> buscarpornome(@RequestParam(name = "nome") String nome) {
+
+		List<ProdutoCardDTO> produto = produtoRepository.buscarPorNome(nome.trim().toUpperCase());
+		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
+	}
+	
+	@GetMapping(value = "buscarpordescricao") /* Mapeia a URL */
+	public ResponseEntity<List<ProdutoCardDTO>> findByDescricao(@RequestParam(name = "descricao") String descricao) {
+
+		List<ProdutoCardDTO> produto = produtoRepository.buscarPorDescricao(descricao.trim().toUpperCase());
+		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
+	}
+	
+	
+	/* BUSCAR POR CATEGORIA */
+	
+	@GetMapping("/buscarpornomecategoria") /* Mapeia a URL */
+	public ResponseEntity<List<ProdutoCardDTO>> findByCategoriaNome (String nome) {
+
+		List<ProdutoCardDTO> produto = produtoRepository.findByCategoriaNome(nome.trim().toUpperCase());
+		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
+	}
+	
+	
+}

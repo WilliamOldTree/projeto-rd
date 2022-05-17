@@ -22,6 +22,7 @@ import br.com.qsd.politeismo.ecommerce.enums.Genero;
 @Entity
 @Table(name = "CLIENTE")
 public class Cliente {
+	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id_cliente")
@@ -30,6 +31,9 @@ public class Cliente {
     private String nome;
     private String email;
     private String password;
+    private String celular;
+    private String fixo;
+    
     private LocalDate nascimento;
     
 	@Enumerated(EnumType.STRING)
@@ -48,7 +52,12 @@ public class Cliente {
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="cliente")
+	List<Pedido> pedido;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="cliente")
 	List<Favoritos> favorito;
+	
 	
 	public Cliente() {
 		
@@ -56,6 +65,10 @@ public class Cliente {
 
 	public Long getId() {
 		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getCpf() {
@@ -105,6 +118,22 @@ public class Cliente {
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
+	
+	public String getCelular() {
+		return celular;
+	}
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+
+	public String getFixo() {
+		return fixo;
+	}
+
+	public void setFixo(String fixo) {
+		this.fixo = fixo;
+	}
 
 	public List<Endereco> getEnderecos() {
 		return enderecos;
@@ -114,10 +143,16 @@ public class Cliente {
 		this.enderecos = enderecos;
 	}
 
+	public List<Cartao> getCartao() {
+		return cartao;
+	}
 
+	public List<Forma> getForma() {
+		return forma;
+	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public List<Pedido> getPedido() {
+		return pedido;
 	}
 	
-}
+}// end class

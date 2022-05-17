@@ -13,7 +13,7 @@ public class Fornecedor {
 
 	@Id
 	@Column(name = "id_fornecedor")
-	private Long id;
+	private Long idFornecedor;
 
 	@Column(name="razao_social", nullable = false)
 	private String razaoSocial;
@@ -38,13 +38,15 @@ public class Fornecedor {
 
 	}
 
-	public Long getId() {
-		return id;
+	public Long getIdFornecedor() {
+		return idFornecedor;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+
+	public void setIdFornecedor(Long idFornecedor) {
+		this.idFornecedor = idFornecedor;
 	}
+
 
 	public String getRazaoSocial() {
 		return razaoSocial;
@@ -86,6 +88,4 @@ public class Fornecedor {
 		return produtos;
 	}
 	
-	
-	
-}
+}// end

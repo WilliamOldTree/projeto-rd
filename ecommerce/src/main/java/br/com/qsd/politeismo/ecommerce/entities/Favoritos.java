@@ -67,9 +67,4 @@ public class Favoritos {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
-	
-	
-	
 }

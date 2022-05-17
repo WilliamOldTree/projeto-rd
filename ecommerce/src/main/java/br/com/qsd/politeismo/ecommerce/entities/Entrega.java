@@ -6,11 +6,15 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 //import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import br.com.qsd.politeismo.ecommerce.enums.FormaEntrega;
 import br.com.qsd.politeismo.ecommerce.enums.StatusEntrega;
@@ -23,28 +27,38 @@ public class Entrega {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id_entrega")
 	private Long id;
+	
 	@Column(nullable = false)
 	private LocalDate data;
-	@Column(nullable = false)
+	
+	@Column(nullable = false, name = "valor_frete")
 	private BigDecimal valor;
+	
+	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
 	private StatusEntrega statusEntrega;
+	
+	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
 	private FormaEntrega formaEntrega;
 	
-	//@OneToMany(mappedBy = "entrega")
-	//private List<Pedido>pedidos;
+	@JsonIgnore
+	@Enumerated(EnumType.STRING)
+	@OneToMany(mappedBy = "entrega")
+	private List<Pedido>pedidos;
 	
 	public Entrega() {
 		
 	}
 
-	public Entrega(Long id, LocalDate data, BigDecimal valor, StatusEntrega statusEntrega, FormaEntrega formaEntrega) {
+	public Entrega(Long id, LocalDate data, BigDecimal valor, StatusEntrega statusEntrega, FormaEntrega formaEntrega,
+			List<Pedido> pedidos) {
 		this.id = id;
 		this.data = data;
 		this.valor = valor;
 		this.statusEntrega = statusEntrega;
 		this.formaEntrega = formaEntrega;
+		this.pedidos = pedidos;
 	}
 
 	public Long getId() {
@@ -87,12 +101,9 @@ public class Entrega {
 		this.formaEntrega = formaEntrega;
 	}
 
-	//public List<Pedido> getPedidos() {
-//		return pedidos;
-//	}
-//
-//	public void setPedidos(List<Pedido> pedidos) {
-//		this.pedidos = pedidos;
-//	}
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+	
 
 }//end class

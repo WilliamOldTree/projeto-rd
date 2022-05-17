@@ -17,7 +17,7 @@ public class Departamento {
 	@Id
 	@Column(name= "id_departamento")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idDepartamento;
 	
 	@Column(nullable = false)
     private String nome;
@@ -33,30 +33,25 @@ public class Departamento {
 		
 	}
 
-	public Long getId() {
-		return id;
+	public Long getIdDepartamento() {
+		return idDepartamento;
 	}
 
-
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdDepartamento(Long idDepartamento) {
+		this.idDepartamento = idDepartamento;
 	}
-
 
 	public String getNome() {
 		return nome;
 	}
 
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-
 	public boolean isFlInativo() {
 		return flInativo;
 	}
-
 
 	public void setFlInativo(boolean flInativo) {
 		this.flInativo = flInativo;
@@ -66,4 +61,4 @@ public class Departamento {
 		return produtos;
 	}
 	
-}
+}// end

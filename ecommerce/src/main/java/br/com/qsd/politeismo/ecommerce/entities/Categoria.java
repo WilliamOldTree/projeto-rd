@@ -18,7 +18,7 @@ public class Categoria {
 	@Id
 	@Column(name= "id_categoria")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long idCategoria;
 	
 	@Column(nullable = false)
 	private String nome;
@@ -30,33 +30,34 @@ public class Categoria {
 	@OneToMany(mappedBy = "categoria")
 	private  List<Produto> produtos;
 	
+	
 	public Categoria() {
 		
 	}
 
-	public Long getId_categoria() {
-		return id;
-	}
 	
-	public void setId_categoria(Long id_categoria) {
-		this.id = id_categoria;
+	public Long getIdCategoria() {
+		return idCategoria;
 	}
-	
+
+	public void setIdCategoria(Long idCategoria) {
+		this.idCategoria = idCategoria;
+	}
+
+	public List<Produto> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
+	}
+
 	public String getNome() {
 		return nome;
 	}
-	
+
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public boolean isFlInativo() {
@@ -71,4 +72,4 @@ public class Categoria {
 		return produtos;
 	}
 
-}
+}// end

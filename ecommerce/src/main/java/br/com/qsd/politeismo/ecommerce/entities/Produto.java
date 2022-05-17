@@ -1,5 +1,7 @@
 package br.com.qsd.politeismo.ecommerce.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "PRODUTO")
@@ -15,12 +20,18 @@ public class Produto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID_PRODUTO")
+	@Column(name = "id_produto")
 	private Long idProduto;
 
 	@Column(nullable = false)
-	private String descricao;
+	private String nome;
 	
+	@Column(name= "url_produto", nullable = true)
+	private String urlProduto;
+	
+	@Column(nullable = false)
+	private String descricao;
+
 	@Column(nullable = false)
 	private String volume;
 	
@@ -34,62 +45,82 @@ public class Produto {
 	private String preco;
 	
 	@Column(nullable = false)
-	private String estoque;
+	private Integer estoque;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "fk_id_produto_destaque",nullable = false)
 	private ProdutoDestaque produtoDestaque;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "fk_id_categoria", nullable = false)
 	private Categoria categoria;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "fk_id_departamento", nullable = false)
 	private Departamento departamento;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "fk_id_fornecedor", nullable = false)
 	private Fornecedor fornecedor;
-
 	
-	public Long getId_produto() {
+	@JsonIgnore
+	@OneToMany(mappedBy="idProduto")
+	private List<ItemPedido> itensPedido;
+	
+	
+	public Produto() {
+		
+	}
 
+	public Long getIdProduto() {
 		return idProduto;
 	}
 
-	public void setId_produto(Long id_produto) {
+	public void setIdProduto(Long idProduto) {
+		this.idProduto = idProduto;
+	}
 
-		this.idProduto = id_produto;
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getUrlProduto() {
+		return urlProduto;
+	}
+
+	public void setUrlProduto(String urlProduto) {
+		this.urlProduto = urlProduto;
 	}
 
 	public String getDescricao() {
-
 		return descricao;
 	}
 
 	public void setDescricao(String descricao) {
-
 		this.descricao = descricao;
 	}
 
 	public String getVolume() {
-
 		return volume;
 	}
 
 	public void setVolume(String volume) {
-
 		this.volume = volume;
 	}
 
 	public String getPeso() {
-
 		return peso;
 	}
 
 	public void setPeso(String peso) {
-
 		this.peso = peso;
 	}
 
@@ -102,7 +133,6 @@ public class Produto {
 	}
 
 	public String getPreco() {
-
 		return preco;
 	}
 
@@ -110,13 +140,11 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public String getEstoque() {
-
+	public Integer getEstoque() {
 		return estoque;
 	}
 
-	public void setEstoque(String estoque) {
-
+	public void setEstoque(Integer estoque) {
 		this.estoque = estoque;
 	}
 
@@ -152,16 +180,10 @@ public class Produto {
 		this.fornecedor = fornecedor;
 	}
 
-	public void setStatus(String status) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public String getStatus() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	public List<ItemPedido> getItensPedido() {
+		return itensPedido;
+	}	
+	
 	
 
 }// end
