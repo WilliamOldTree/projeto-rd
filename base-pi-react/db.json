@@ -1,0 +1,16 @@
+{
+  "produtos": [
+      {
+          "id": 1,
+          "nome": "Buda Dourado",
+          "urlProduto": "https://m.media-amazon.com/images/I/71Elte1F7QL._AC_SL1280_.jpg",
+          "preco": "23.50"
+      },
+      {
+          "id": 2,
+          "nome": "Terço Nossa Senhora",
+          "urlProduto": "https://static.lvartigosreligiosos.com.br/public/liriodovale/imagens/produtos/terco-madeira-pau-brasil-com-entremeio-de-nossa-senhora-das-gracas-8mm-5172.jpg",
+          "preco": "20.15"
+      }
+  ]
+}

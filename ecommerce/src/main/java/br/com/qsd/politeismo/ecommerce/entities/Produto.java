@@ -78,6 +78,10 @@ public class Produto {
 	private List<Favoritos> favoritos;
 	
 	
+	@JsonIgnore 
+	@OneToMany(mappedBy="idNotaFiscal") 
+	private List<ItemNotaFiscal> itemNotaFiscal; 
+	
 	public Produto() {
 		
 	}
