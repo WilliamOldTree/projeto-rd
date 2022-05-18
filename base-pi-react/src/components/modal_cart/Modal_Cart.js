@@ -11,6 +11,8 @@ function ModalCarrinho(props) {
 
     const { cart, getCart } = useContext(CartContext)
    // const {quantidade , getQuantidade}  = useContext(CartContext)
+   const { deleteCart } = useContext(CartContext)
+   
     useEffect(() => {
         getCart()
     }, [])
@@ -55,8 +57,7 @@ function ModalCarrinho(props) {
                                                             <button className="btnMais"><strong>+</strong></button>
                                                         </Col>
                                                     </Row>
-                                                    <button className="btn-cart-lixeira"><img className="modal-cart-lixeira" src={Lixeira} /></button>
-                                                    
+                                                    <button  className="btn-cart-lixeira" onClick={() => deleteCart(item)}><img className="modal-cart-lixeira" src={Lixeira} /></button> 
                                                 </Col>
 
                                                 <hr />
