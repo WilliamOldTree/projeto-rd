@@ -61,7 +61,6 @@ return (
                         </form>
                         </Modal.Body>
                         <Modal.Footer>
-
                         <Button variant="primary"    className='ModalCartãoButton1'>SALVAR</Button>
                         </Modal.Footer>
                     </Modal>           
