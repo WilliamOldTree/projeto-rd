@@ -1,4 +1,5 @@
 import './Home.css'
+import { ListGroup } from 'react-bootstrap'
 
 /* LINK PAGES */
 import Header from '../../components/header/Header';
@@ -15,7 +16,7 @@ import Cartao from '../../components/asserts/icons/cartao-do-banco-home.png';
 import Chat from '../../components/asserts/icons/chat-home.png';
 import Seguro from '../../components/asserts/icons/seguro-home.png';
 
-/* IMAGES CARDS PRODUCT*/
+/* IMAGES CARDS PRODUCT
 import Adja from '../../components/asserts/images/images-home/Adja-chapa-aço-cabo-madeira-1.jpg';
 import Crucifixo from '../../components/asserts/images/images-home/crucifixo_de_parede_c_cristo_em_resina_33_cm_123_1_20200805181826.webp';
 import Talit from '../../components/asserts/images/images-home/talit.jpg';
@@ -23,7 +24,7 @@ import JogoIemanja from '../../components/asserts/images/images-home/Iemanja-Bra
 import Ganesh from '../../components/asserts/images/images-home/ganesh.jpg';
 import Incensario from '../../components/asserts/images/images-home/incensario.jpg';
 import SagradaFamilia from '../../components/asserts/images/images-home/imagem-resina-sagrada-familia.jpg';
-import Biblia from '../../components/asserts/images/images-home/b_blia-sagrada-cnbb.jpg';
+import Biblia from '../../components/asserts/images/images-home/b_blia-sagrada-cnbb.jpg';*/
 
 /* IMAGES CARDS DESTAQUE*/
 import Categoria1 from '../../components/asserts/images/images-home/categoria1.png';
@@ -33,12 +34,30 @@ import Categoria4 from '../../components/asserts/images/images-home/categoria4.p
 
 /* IMAGES BANNER END*/
 import BannerEnd from '../../components/asserts/images/images-home/banner-end.png';
-
+import React, { useState, useEffect } from 'react'
+import { baseUrl } from '../../environments'
+import axios from 'axios'
 
 function Home() {
+
+    const [produtos, setProdutos] = useState([])
+
+    useEffect(() => {
+        getProdutos()
+    }, [])
+
+    const getProdutos = () => {
+        axios.get(`${baseUrl}/produtos`)
+            .then((response) => {
+                setProdutos(response.data)
+            })
+    }
+
+
+
     return (
         <>
-         <Header /> 
+            <Header />
             <div className='container'>
 
                 {/* CARROSSEL HOME */}
@@ -147,39 +166,18 @@ function Home() {
                 <hr id='line-1' />
 
                 <div className='col-12 imagensCaixa1'>
-                    <div className='row g-1'>
-                        <div className='col-12 col-md-6 col-lg-3'>
-                            <Card nomeProduto="Crucifixo de parede c/ Cristo" preco="30,00" parcela="3x" valorParcela="10,00" img={Crucifixo} />
-                        </div>
-                        <div className='col-12 col-md-6 col-lg-3'>
-                            <Card nomeProduto="Talit de lã c/ listras pretas" preco="129,30" parcela="3x" valorParcela=" 43,10" img={Talit} />
-                        </div>
-
-                        <div className='col-12 col-md-6 col-lg-3'>
-                            <Card nomeProduto="Jogo de Iemanjá Branco" preco="220,00" parcela="3x" valorParcela="73,33" img={JogoIemanja} />
-                        </div>
-
-                        <div className='col-12 col-md-6 col-lg-3'>
-                            <Card nomeProduto="Adja com 3 Bocas Aço Cabo de Madeira" preco="49,90" parcela="3x" valorParcela="16,63" img={Adja} />
-                        </div>
-
-                        <div className='col-12 col-md-6 col-lg-3'>
-                            <Card nomeProduto="Ganesh colorido em resina 8X6cm" preco="22,76" parcela="3x" valorParcela="7,58" img={Ganesh} />
-                        </div>
-
-                        <div className='col-12 col-md-6 col-lg-3'>
-                            <Card nomeProduto="Incensário de Madeira" preco="8,00" parcela="2x" valorParcela="4,00" img={Incensario} />
-                        </div>
-
-                        <div className='col-12 col-md-6 col-lg-3'>
-                            <Card nomeProduto="Imagem Sagrada Família Resina 30cm" preco="30,00" parcela="3x" valorParcela="26,33" img={SagradaFamilia} />
-                        </div>
-
-                        <div className='col-12 col-md-6 col-lg-3'>
-                            <Card nomeProduto="Bíblia Sagrada Tradução Oficial" preco="40,00" parcela="2x" valorParcela="20,00 " img={Biblia} />
-                        </div>
-                    </div>
+                    <ul className='row g-1 ul-card'>
+                        {produtos.map((produto) => {
+                            return (
+                                <li className='col-12 col-md-6 col-lg-3' key={produto.id}>
+                                    <Card produto = {produto} nomeProduto={produto.nome} preco={produto.preco} parcela="3x" valorParcela="10,00" img={produto.urlProduto} />
+                                </li>
+                            )
+                        })}
+                    </ul>
                 </div>
+
+
 
                 {/* BANNER FINAL HOME */}
                 <img className='img-end' src={BannerEnd} />

@@ -56,7 +56,7 @@ public class Cliente {
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="cliente")
-	List<Favoritos> favorito;
+	List<Favoritos> favoritos;
 	
 	
 	public Cliente() {

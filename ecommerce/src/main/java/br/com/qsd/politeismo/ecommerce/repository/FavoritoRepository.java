@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import br.com.qsd.politeismo.ecommerce.entities.Favoritos;
 
 @Repository
-public interface FavoritoRepository extends JpaRepository<Favoritos, Long>, CrudRepository<Favoritos,Long> {
+public interface FavoritoRepository extends JpaRepository<Favoritos, Long>, CrudRepository<Favoritos, Long> {
 
 }

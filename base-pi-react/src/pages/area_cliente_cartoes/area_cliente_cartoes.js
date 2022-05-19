@@ -31,7 +31,7 @@ function AreaCartoes() {
                     </ul>
 
                     <ul className='Cartoes1'>
-                        <li className='DadosCartoes'>****-****_**_9526</li>
+                        <li className='DadosCartoes'>****-****_****_9526</li>
                         <li className='DadosCartoes'>09/28</li>
                     </ul>
 
