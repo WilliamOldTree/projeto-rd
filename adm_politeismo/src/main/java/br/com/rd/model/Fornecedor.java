@@ -3,32 +3,30 @@ package br.com.rd.model;
 public class Fornecedor {
 
 	private Integer id;
-	private String razao;
+	private String razaoSocial;
 	private String cnpj;
 	private String email;
 	private String telefone;
 	private Boolean flInativo;
 	
-	
-	public Fornecedor(String razao, String cnpj, String email, String telefone) {
-		super();
-		this.razao = razao;
+	public Fornecedor(String razaoSocial, String cnpj, String email, String telefone) {
+		this.razaoSocial = razaoSocial;
 		this.cnpj = cnpj;
 		this.email = email;
 		this.telefone = telefone;
+		
 	}
-	
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getRazao() {
-		return razao;
+	public String getRazaoSocial() {
+		return razaoSocial;
 	}
-	public void setRazao(String razao) {
-		this.razao = razao;
+	public void setRazaoSocial(String razaoSocial) {
+		this.razaoSocial = razaoSocial;
 	}
 	public String getCnpj() {
 		return cnpj;
@@ -55,5 +53,4 @@ public class Fornecedor {
 		this.flInativo = flInativo;
 	}
 
-	
 }
