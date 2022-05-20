@@ -42,8 +42,8 @@ function CartProvider(props) {
         setCartQty(cartList.length)
     }
 
-
-
+   
+ 
     return (
         <CartContext.Provider value={{cart, cartQty, quantidade, addToCart, getCartQty, getCart}}>
             {props.children}

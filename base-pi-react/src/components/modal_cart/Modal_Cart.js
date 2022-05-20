@@ -8,7 +8,7 @@ import Lixeira from '../../components/asserts/icons/lixeira.png';
 import CartContext from '../../context/cart.provider'
 
 function ModalCarrinho(props) {
-
+    const {removeItem, onClick} = props;
     const { cart, getCart } = useContext(CartContext)
    // const {quantidade , getQuantidade}  = useContext(CartContext)
     useEffect(() => {
@@ -55,7 +55,7 @@ function ModalCarrinho(props) {
                                                             <button className="btnMais"><strong>+</strong></button>
                                                         </Col>
                                                     </Row>
-                                                    <button className="btn-cart-lixeira"><img className="modal-cart-lixeira" src={Lixeira} /></button>
+                                                    <button onClick={ () => removeItem( index ) } className="btn-cart-lixeira"><img className="modal-cart-lixeira" src={Lixeira} /></button>
                                                     
                                                 </Col>
 
