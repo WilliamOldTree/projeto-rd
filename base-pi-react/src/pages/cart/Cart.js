@@ -11,9 +11,11 @@ import { Col, Container, Row } from 'react-bootstrap'
 import CartContext from '../../context/cart.provider'
 import React, { useEffect, useContext } from 'react';
 
+
 function Cart() {
 
-    const { cart, getCart } = useContext(CartContext)
+    const { cart, getCart, deleteCart } = useContext(CartContext)
+
 
     useEffect(() => {
         getCart()
@@ -43,7 +45,14 @@ function Cart() {
                         <ListCompra >
                             {cart.map((item) => {
                                 return (
-                                    <ResumoCompra key={item.id} product_img={item.urlProduto} descricao={item.nome} valor={item.preco} quantidade={item.qty} trash_img={TrashIcon} />
+                                    <ResumoCompra key={item.id} 
+                                        product_img={item.urlProduto} 
+                                        descricao={item.nome} 
+                                        valor={item.preco} 
+                                        quantidade={item.qty} 
+                                        trash_img={TrashIcon} 
+                                        deletar={deleteCart} 
+                                        item={item} />
                                 )
                             })}
                         </ListCompra>
