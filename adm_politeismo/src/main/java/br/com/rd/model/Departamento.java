@@ -3,7 +3,7 @@ package br.com.rd.model;
 public class Departamento {
 	private Integer id;
 	private String nome;
-	private Boolean flInativo;
+	private Boolean fl_inativo;
 
 	public Departamento(String nome) {
 		super();
@@ -32,10 +32,10 @@ public class Departamento {
 	}
 
 	public Boolean getStatus_departamento() {
-		return flInativo;
+		return fl_inativo;
 	}
 
 	public void setStatus_departamento(Boolean flInativo) {
-		this.flInativo =  flInativo;
+		this.fl_inativo =  flInativo;
 	}
 }

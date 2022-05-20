@@ -3,7 +3,7 @@ package br.com.rd.model;
 public class Categoria {
 	private Integer id;
 	private String nome;
-	private Boolean flInativo;
+	private Boolean fl_inativo;
 	
 	public Categoria(String nome) {
 		super();
@@ -25,6 +25,14 @@ public class Categoria {
 	@Override
 	public String toString() {
 		return "Categoria [id=" + id + ", nome=" + nome + "]";
+	}
+
+	public Boolean getFl_inativo() {
+		return fl_inativo;
+	}
+
+	public void setFl_inativo(Boolean fl_inativo) {
+		this.fl_inativo = fl_inativo;
 	}
 
 	
