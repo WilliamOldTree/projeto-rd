@@ -2,103 +2,106 @@ package br.com.rd.model;
 
 public class Produto {
 	private Integer id;
+	private String nome;
 	private String descricao;
+	private String urlProduto;
 	private Double volume;
 	private Double peso;
 	private Double preco;
-	private Integer quantidade;
-	private Double desconto;
-	private Boolean status_produto;
-
-	public Produto(String descricao, Double volume, Double peso, Double preco, Integer quantidade) {
-		super();
-		this.descricao = descricao;
-		this.volume = volume;
-		this.peso = peso;
+	private Integer estoque;
+	private Integer departamento;
+	private Integer categoria;
+	private Double produtoDestaque;
+	private Integer fornecedor;
+	private Boolean fl_inativo;
+	
+	
+	public Produto(String nome, Integer estoque, Double preco, Integer categoria, Integer departamento,
+			Integer fornecedor) {
+		this.nome = nome;
+		this.estoque = estoque;
 		this.preco = preco;
-		this.quantidade = quantidade;
+		this.categoria = categoria;
+		this.departamento = departamento;
+		this.fornecedor = fornecedor;
 	}
-
-
-
-	public Produto(String descricaoBack1, Double volumeBack1, Double pesoBack1, Double precoBack1, Integer quantidadeBack1,
-			Double descontoBack1) {
-		this.descricao = descricaoBack1;
-		this.volume = volumeBack1;
-		this.peso = pesoBack1;
-		this.preco = precoBack1;
-		this.quantidade = quantidadeBack1;	
-		this.desconto = descontoBack1;	
-
-		}
-
-	@Override
-	public String toString() {
-		return "Produto [id=" + id + ", descricao=" + descricao + ", volume=" + volume + ", peso=" + peso
-				+ ", situacao=" + ", preco=" + preco + ", quantidade=" + quantidade + "]";
-	}
-
-	public Double getDesconto() {
-		return desconto;
-	}
-
-	public void setDesconto(Double desconto) {
-		this.desconto = desconto;
-	}
-
+	
 	public Integer getId() {
 		return id;
 	}
-	
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 	public String getDescricao() {
 		return descricao;
 	}
-	
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
+	public String getUrlProduto() {
+		return urlProduto;
+	}
+	public void setUrlProduto(String urlProduto) {
+		this.urlProduto = urlProduto;
+	}
 	public Double getVolume() {
 		return volume;
 	}
-	
 	public void setVolume(Double volume) {
 		this.volume = volume;
 	}
-	
 	public Double getPeso() {
 		return peso;
 	}
-	
 	public void setPeso(Double peso) {
 		this.peso = peso;
 	}
-	
 	public Double getPreco() {
 		return preco;
 	}
 	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
-	
-
-	public Integer getQuantidade() {
-		return quantidade;
+	public Integer getEstoque() {
+		return estoque;
 	}
-
-	public void setQuantidade(Integer quantidade) {
-		this.quantidade = quantidade;
+	public void setEstoque(Integer estoque) {
+		this.estoque = estoque;
 	}
-
-	public Boolean getStatus_produto() {
-		return status_produto;
+	public Integer getDepartamento() {
+		return departamento;
 	}
-
-	public void setStatus_produto(Boolean status_produto) {
-		this.status_produto = status_produto;
+	public void setDepartamento(Integer departamento) {
+		this.departamento = departamento;
+	}
+	public Integer getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(Integer categoria) {
+		this.categoria = categoria;
+	}
+	public Double getProdutoDestaque() {
+		return produtoDestaque;
+	}
+	public void setProdutoDestaque(Double produtoDestaque) {
+		this.produtoDestaque = produtoDestaque;
+	}
+	public Integer getFornecedor() {
+		return fornecedor;
+	}
+	public void setFornecedor(Integer fornecedor) {
+		this.fornecedor = fornecedor;
+	}
+	public Boolean getFl_inativo() {
+		return fl_inativo;
+	}
+	public void setFl_inativo(Boolean fl_inativo) {
+		this.fl_inativo = fl_inativo;
 	}
 }

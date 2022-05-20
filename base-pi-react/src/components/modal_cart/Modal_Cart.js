@@ -8,7 +8,7 @@ import Lixeira from '../../components/asserts/icons/lixeira.png';
 import CartContext from '../../context/cart.provider'
 
 function ModalCarrinho(props) {
-
+    const {removeItem, onClick} = props;
     const { cart, getCart } = useContext(CartContext)
    // const {quantidade , getQuantidade}  = useContext(CartContext)
    const { deleteCart } = useContext(CartContext)
@@ -57,7 +57,12 @@ function ModalCarrinho(props) {
                                                             <button className="btnMais"><strong>+</strong></button>
                                                         </Col>
                                                     </Row>
+<<<<<<< HEAD
+                                                    <button onClick={ () => removeItem( index ) } className="btn-cart-lixeira"><img className="modal-cart-lixeira" src={Lixeira} /></button>
+                                                    
+=======
                                                     <button  className="btn-cart-lixeira" onClick={() => deleteCart(item)}><img className="modal-cart-lixeira" src={Lixeira} /></button> 
+>>>>>>> c93915ae3b8fd6d40583e1b182fa0792cc5d6fd9
                                                 </Col>
 
                                                 <hr />

@@ -1,5 +1,6 @@
 package br.com.qsd.politeismo.ecommerce.entities;
 
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -22,7 +23,11 @@ public class ItemNotaFiscal {
 	private NotaFiscal idNotaFiscal;
 	
 	private Long quantidade;
-	private Long percentuamIMC;
+	
+	@Column(name = "percentual_icms")
+	private Long percentulamIMC;
+	
+	@Column(name = "valor_imc")
 	private Long valorIMC;
 	
 	public ProdutoNotaFiscalID getProdutoNotaFiscalID() {
@@ -50,11 +55,12 @@ public class ItemNotaFiscal {
 	public void setQuantidade(Long quantidade) {
 		this.quantidade = quantidade;
 	}
-	public Long getPercentuamIMC() {
-		return percentuamIMC;
+
+	public Long getPercentulamIMC() {
+		return percentulamIMC;
 	}
-	public void setPercentuamIMC(Long percentuamIMC) {
-		this.percentuamIMC = percentuamIMC;
+	public void setPercentulamIMC(Long percentulamIMC) {
+		this.percentulamIMC = percentulamIMC;
 	}
 	public Long getValorIMC() {
 		return valorIMC;
