@@ -30,7 +30,7 @@ public class Cliente {
     private String cpf;
     private String nome;
     private String email;
-    private String password;
+    private String senha;
     private String celular;
     private String fixo;
     
@@ -96,11 +96,11 @@ public class Cliente {
 	}
 
 	public String getPassword() {
-		return password;
+		return senha;
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		this.senha = senha;
 	}
 
 	public LocalDate getNascimento() {

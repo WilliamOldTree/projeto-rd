@@ -30,8 +30,8 @@ public class Entrega {
     @Column(name ="id_entrega")
 	private Long id;
 	
-	@Column(nullable = false)
-	private LocalDate data;
+	@Column(nullable = false, name="prazo")
+	private LocalDate prazo;
 	
 	@Column(nullable = false, name = "valor_frete")
 	private BigDecimal valor;
@@ -53,10 +53,10 @@ public class Entrega {
 		
 	}
 
-	public Entrega(Long id, LocalDate data, BigDecimal valor, StatusEntrega statusEntrega, FormaEntrega formaEntrega,
+	public Entrega(Long id, LocalDate prazo, BigDecimal valor, StatusEntrega statusEntrega, FormaEntrega formaEntrega,
 			List<Pedido> pedidos) {
 		this.id = id;
-		this.data = data;
+		this.prazo = prazo;
 		this.valor = valor;
 		this.statusEntrega = statusEntrega;
 		this.formaEntrega = formaEntrega;
@@ -72,11 +72,11 @@ public class Entrega {
 	}
 
 	public LocalDate getData() {
-		return data;
+		return prazo;
 	}
 
-	public void setData(LocalDate data) {
-		this.data = data;
+	public void setData(LocalDate prazo) {
+		this.prazo = prazo;
 	}
 
 	public BigDecimal getValor() {

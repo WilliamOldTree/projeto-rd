@@ -25,28 +25,28 @@ public class Produto {
 	@Column(name = "id_produto")
 	private Long idProduto;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name= "nome")
 	private String nome;
 	
 	@Column(name= "url_produto", nullable = true)
 	private String urlProduto;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name="descricao")
 	private String descricao;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name="volume")
 	private String volume;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name="peso")
 	private String peso;
 	
 	@Column(name = "fl_inativo")
 	private boolean flInativo = true; // flag inativo
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name="preco")
 	private String preco;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name="estoque")
 	private Integer estoque;
 	
 	@JsonIgnore
@@ -79,7 +79,7 @@ public class Produto {
 	
 	
 	@JsonIgnore 
-	@OneToMany(mappedBy="idNotaFiscal") 
+	@OneToMany(mappedBy="id_nota_fiscal") 
 	private List<ItemNotaFiscal> itemNotaFiscal; 
 	
 	public Produto() {
