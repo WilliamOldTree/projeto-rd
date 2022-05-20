@@ -54,6 +54,12 @@ insert into CATEGORIA (ID_CATEGORIA, NOME, FL_INATIVO) values (18, 'VESTUÁRIO',
 insert into PRODUTO (NOME,DESCRICAO, URL_PRODUTO,ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
 values ('Buda Dourado','Buda Dourado: Peça Dourada, Peça Confeccionada em Resina de Alta Qualidade ', 'https://m.media-amazon.com/images/I/71Elte1F7QL._AC_SL1280_.jpg', 295, '0.2', '23.50', '1.0', 13, 5, 3, 1, 1);
 
+
+insert into PRODUTO (NOME,DESCRICAO, URL_PRODUTO,ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Bíblia Sagrada','Buda Dourado: Peça Dourada, Peça Confeccionada em Resina de Alta Qualidade ', 'https://cdn.dooca.store/1977/products/preta_620x620+fill_ffffff.jpg?v=1617116995&webp=0', 295, '0.2', '20.50', '1.0', 13, 5, 3, 1, 1);
+
+
+
 insert into PRODUTO (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
 values ('Terço Nossa Senhora','Terço Nossa Senhora: Em Madeira, Detalhes em Branco e Cristais Azuis', 'https://static.lvartigosreligiosos.com.br/public/liriodovale/imagens/produtos/terco-madeira-pau-brasil-com-entremeio-de-nossa-senhora-das-gracas-8mm-5172.jpg', 100, '0.1', '20.15', '0.5', 17, 1, 1, 1, 1);
 

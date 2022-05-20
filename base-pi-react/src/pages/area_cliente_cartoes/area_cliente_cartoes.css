@@ -49,20 +49,20 @@
 }
 .LixeiraAreaCartoes{
     position: relative;
-    top: -20px;
+    top:  20px;
     left: 90%;
 }
 
 .VisaAreaCartoes{
     position: relative;
-    top: -20px;
-    left: 30%;
+    top: 20px;
+    left: 26%;
 }
 
 .CartaoVisaAreaCartoes{
     position: relative;
-    top: -20px;
-    left: 22%;
+    top: 20px;
+    left: 12%;
 }
 
 #AreaCredito{
@@ -91,6 +91,7 @@
     font-size: 18px;
     font-weight: 700;
     list-style: none;
+    
    }
 
 
@@ -99,13 +100,26 @@
     color: #979797;
     font-weight: 500;
     list-style: none;
+    margin-left: 13%;
+    margin-top: -5%;
 }
+
+.DadosCartoes1{
+    font-size: 15px;
+    color: #979797;
+    font-weight: 500;
+    list-style: none;
+    margin-left: 66%;
+    position: relative;
+    top: -20px;
+}
+
 
    .listaCartoes{
        display: flex;
        justify-content: space-around;
        margin-top:5%;
-       margin-left: 6%;
+       margin-left: -60%;
        color: #261C1A;
        list-style: none;
        font-weight: 700;
@@ -113,8 +127,12 @@
    .Cartoes1{
     display: flex;
     justify-content: space-around;
-    margin-left: 5%;
-   
+    margin-left: 35%;
+    color: #261C1A;
+    list-style: none;
+    font-weight: 700;
+    position: relative;
+    top: -35px;
 }
 
 .editarCartoes{
@@ -123,8 +141,8 @@
     margin-left: 48%;
     margin-top: -10%;
     position: relative;
-    top: -180px;
-    left: 260px;
+    top: 110px;
+    left: 240px;
     justify-content: center;
     background: #F27507;
     border-radius: 10px;
@@ -146,8 +164,8 @@
         margin-left: 48%;
         margin-top: -10%;
         position: relative;
-        top: -205px;
-        left: 125px;
+        top: 85px;
+        left: 110px;
         justify-content: center;
         background: #34A853;
         border-radius: 10px;
@@ -247,20 +265,41 @@
             font-size: 15px;
             color: #979797;
             font-weight: 500;
+            list-style: none;
+            margin-left: 8%;
+            margin-top: -8%;
         }
         
-           .listaCartoes{
-               display: flex;
-               justify-content: space-around;
-               margin-top:5%;
-               margin-left: -12%;
-           }
-           .Cartoes1{
+        .DadosCartoes1{
+            font-size: 15px;
+            color: #979797;
+            font-weight: 500;
+            list-style: none;
+            margin-left: 66%;
+            position: relative;
+            top: -20px;
+        }
+        
+        .listaCartoes{
             display: flex;
             justify-content: space-around;
-            margin-left: -12%;
-           
+            margin-top:5%;
+            margin-left: -60%;
+            color: #261C1A;
+            list-style: none;
+            font-weight: 700;
         }
+        .Cartoes1{
+         display: flex;
+         justify-content: space-around;
+         margin-left: 35%;
+         color: #261C1A;
+         list-style: none;
+         font-weight: 700;
+         position: relative;
+         top: -35px;
+     }
+     
         
         .editarCartoes{
             width: 105px;
@@ -268,7 +307,7 @@
             margin-left: 40%;
             margin-top: -10%;
             position: relative;
-            top: -40px;
+            top: 100px;
             left: 120px;
             justify-content: center;
             background: #F27507;
@@ -288,8 +327,8 @@
                 margin-left: 48%;
                 margin-top: -10%;
                 position: relative;
-                top: -65px;
-                left: -65px;
+                top: 75px;
+                left: -50px;
                 justify-content: center;
                 background: #34A853;
                 border-radius: 10px;

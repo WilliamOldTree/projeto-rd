@@ -25,13 +25,14 @@ function CartProvider(props) {
       
             
          //Método para retirar a duplicidade , para futuras correções   
-        //  if(cartList.length >1  ){
-        //    return false;
-        //  }
+        
+        if( cartList.length > item.qty){
+            return false
+        }
 
-       item.qty = 1
-        setQuantidade(quantidade+1)
         cartList.push(item)
+        item.qty = 1
+        setQuantidade(quantidade)
         localStorage.setItem("cart", JSON.stringify(cartList))
         localStorage.setItem("qtyCart", JSON.stringify(cartList.length))
         setCart(cartList)

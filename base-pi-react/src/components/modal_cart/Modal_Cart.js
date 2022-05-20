@@ -33,7 +33,10 @@ function ModalCarrinho(props) {
                                 {cart.length == 0
                                     ? <h5>Carrinho Vazio</h5>
                                     : cart.map((item) => {
+
+
                                         return (
+                                            
                                             <Row className="div-modal-cart" key={item.id}>
                                                 <Col xs={3} md={3}>
                                                     <img src={item.urlProduto} width="70px" />
@@ -62,8 +65,16 @@ function ModalCarrinho(props) {
 
                                                 <hr />
                                             </Row>
+
+                                        
+
+
+
                                         )
                                     })}
+
+
+                                    
                                 </Container>
                                 <Container>
                                     <Col md={12} lg={12} className="div-footer-cart" >
