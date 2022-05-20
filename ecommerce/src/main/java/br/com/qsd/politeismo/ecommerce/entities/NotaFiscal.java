@@ -3,6 +3,7 @@ package br.com.qsd.politeismo.ecommerce.entities;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,8 +16,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import br.com.qsd.politeismo.ecommerce.enums.Operacao;
+
+import br.com.qsd.politeismo.ecommerce.enums.Operation;
 
 
 @Entity
@@ -37,12 +40,13 @@ public class NotaFiscal {
 	@Column(name = "numero_serie") 
 	private Long numeroSerie;
 	
+	@Column(name="valor")
 	private BigDecimal valor;
 	
 	@Enumerated(EnumType.STRING)
-	private Operacao operacao;
+	private Operation operation;
 
-	@JsonIgnore @OneToMany(mappedBy="idNotaFiscal") 
+	@JsonIgnore @OneToMany(mappedBy="id_nota_fiscal") 
 	private List<ItemNotaFiscal> itemNotaFiscal; 
 	
 	@OneToOne(cascade = { CascadeType.DETACH })
@@ -92,12 +96,12 @@ public class NotaFiscal {
 		this.valor = valor;
 	}
 
-	public Operacao getOperacao() {
-		return operacao;
+	public Operation getOperacao() {
+		return operation;
 	}
 
-	public void setOperacao(Operacao operacao) {
-		this.operacao = operacao;
+	public void setOperacao(Operation operation) {
+		this.operation =operation;
 	}
 
 	public List<ItemNotaFiscal> getItemNotaFiscal() {

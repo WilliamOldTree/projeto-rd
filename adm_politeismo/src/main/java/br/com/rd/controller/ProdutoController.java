@@ -9,6 +9,10 @@
 //import br.com.rd.dao.ProdutoDao;
 //import br.com.rd.model.Produto;
 //
+<<<<<<< HEAD
+//
+=======
+>>>>>>> 647b63eda594e92c6bc4d3079b1c4fb2f17e1d3b
 ///**
 // * Servlet implementation class ProdutoController
 // */
@@ -77,6 +81,25 @@
 //	}
 //	
 //	private void insertProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+<<<<<<< HEAD
+//		String descricaoBack = request.getParameter("descricao");
+//		String volumeBack = request.getParameter("volume");
+//		String pesoBack = request.getParameter("peso");
+//		String precoBack = request.getParameter("preco");
+//		String quantidadeBack = request.getParameter("quantidade");
+//		String descontoBack = request.getParameter("desconto");
+//		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (precoBack != null) && (quantidadeBack != null)  && (descontoBack != null) ){
+//			if (!descricaoBack.equals("")){
+//				
+//			     Double volume2 = Double.parseDouble(volumeBack.replace(",", "."));
+//			     Double preco2 = Double.parseDouble(precoBack.replace(",", "."));
+//			     Double peso2 = Double.parseDouble(pesoBack.replace(",", "."));
+//
+//				Integer quantidadeBack1 = Integer.parseInt(quantidadeBack);
+//				Double descontoBack1 = Double.parseDouble(descontoBack);
+//				
+//				Produto prod1 = new Produto(descricaoBack, volume2, peso2, preco2, quantidadeBack1, descontoBack1);
+=======
 //		String nomeBack = request.getParameter("nome");
 //		String estoqueBack = request.getParameter("estoque");
 //		String precoBack = request.getParameter("preco");
@@ -93,6 +116,7 @@
 //				Integer fornecedorBack1 = Integer.parseInt(fornecedorBack);
 //
 //				Produto prod1 = new Produto(nomeBack, estoqueBack1, precoBack1, categoriaBack1, departamentoBack1, fornecedorBack1);
+>>>>>>> 647b63eda594e92c6bc4d3079b1c4fb2f17e1d3b
 //				this.prod.insert(prod1);
 //			}
 //		}
@@ -115,6 +139,30 @@
 //	}
 //	
 //	private void updateProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<<<<<<< HEAD
+//		String descricaoBack = request.getParameter("descricao");
+//		String volumeBack = request.getParameter("volume");
+//		String pesoBack = request.getParameter("peso");
+//		String precoBack = request.getParameter("preco");
+//		String quantidadeBack = request.getParameter("quantidade");
+//		String descontoBack = request.getParameter("desconto");
+//
+//		String idBack = request.getParameter("id");
+//		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (quantidadeBack != null) && (precoBack != null) && (descontoBack != null)) {
+//			if (!descricaoBack.equals("")){
+//	             
+//				
+//				Double volume2 = Double.parseDouble(volumeBack.replace(",", "."));
+//			     Double preco2 = Double.parseDouble(precoBack.replace(",", "."));
+//			     Double peso2 = Double.parseDouble(pesoBack.replace(",", "."));
+//			     
+//				
+//				Integer quantidadeBack1 = Integer.parseInt(quantidadeBack);
+//				Double descontoBack1 = Double.parseDouble(descontoBack);
+//
+//				Integer id = Integer.parseInt(idBack);
+//				Produto prod1 = new Produto(descricaoBack, volume2, peso2, preco2, quantidadeBack1, descontoBack1);
+=======
 //		String nomeBack = request.getParameter("nome");
 //		String estoqueBack = request.getParameter("estoque");
 //		String precoBack = request.getParameter("preco");
@@ -134,6 +182,7 @@
 //
 //				Integer id = Integer.parseInt(idBack);
 //				Produto prod1 = new Produto(nomeBack, estoqueBack1, precoBack1, categoriaBack1, departamentoBack1, fornecedorBack1);
+>>>>>>> 647b63eda594e92c6bc4d3079b1c4fb2f17e1d3b
 //				prod1.setId(id);
 //				this.prod.updateProduto(prod1);
 //			}

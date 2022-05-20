@@ -22,12 +22,13 @@ public class ItemNotaFiscal {
 	@ManyToOne @JoinColumn(name = "id_nota_fiscal", insertable = false, updatable = false) 
 	private NotaFiscal idNotaFiscal;
 	
+	@Column(name="quantidade")
 	private Long quantidade;
 	
 	@Column(name = "percentual_icms")
 	private Long percentulamIMC;
 	
-	@Column(name = "valor_imc")
+	@Column(name = "valor_icms")
 	private Long valorIMC;
 	
 	public ProdutoNotaFiscalID getProdutoNotaFiscalID() {
