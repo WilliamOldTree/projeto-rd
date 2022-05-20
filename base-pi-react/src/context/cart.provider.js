@@ -49,6 +49,10 @@ function CartProvider(props) {
         setCartQty(cartList.length)
     }
 
+<<<<<<< HEAD
+   
+ 
+=======
 
     const deleteCart =(item,quantidade) => {
         let cartList = localStorage.getItem('cart')
@@ -66,6 +70,7 @@ function CartProvider(props) {
        
 
 
+>>>>>>> c93915ae3b8fd6d40583e1b182fa0792cc5d6fd9
     return (
         <CartContext.Provider value={{ cart, cartQty, quantidade, addToCart, getCartQty, getCart,deleteCart }}>
             {props.children}
