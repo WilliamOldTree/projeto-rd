@@ -19,7 +19,7 @@ public class Departamento {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idDepartamento;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name="nome")
     private String nome;
 
 	@Column(name = "fl_inativo")

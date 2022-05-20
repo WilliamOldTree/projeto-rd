@@ -10,8 +10,8 @@ import br.com.rd.model.UserADM;
 public class LoginDao {
 
 	private String dbUrl = "jdbc:mysql://localhost:3306/bd_politeismo?useSSL=false";
-	private String dbUname = "admin";
-	private String dbPassword = "admin";
+	private String dbUname = "root";
+	private String dbPassword = "root";
 	private String dbDriver = "com.mysql.cj.jdbc.Driver";
 	
 	public void loadDriver(String dbDriver)

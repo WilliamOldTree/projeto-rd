@@ -16,7 +16,7 @@ public class CategoriaDao{
 		Connection con = c.getConnection();
 		
 		try {
-			PreparedStatement p = con.prepareStatement("insert into categoria (nome, status_categoria) values (?,true)");
+			PreparedStatement p = con.prepareStatement("insert into categoria (nome, fl_inativo) values (?,true)");
 			p.setString(1, categoria.getNome());
 					
 			System.out.println(p);
@@ -35,7 +35,7 @@ public class CategoriaDao{
 		Connection con = c.getConnection();
 		ArrayList<Categoria> lista = new ArrayList<Categoria>();
 		try {
-			PreparedStatement p = con.prepareStatement("select * from categoria where status_categoria != 0 order by id_categoria ;\r\n");
+			PreparedStatement p = con.prepareStatement("select * from categoria where fl_inativo != 0 order by id_categoria ;\r\n");
 			ResultSet r = p.executeQuery();			
 			
 			while (r.next()) {
@@ -120,7 +120,7 @@ public class CategoriaDao{
 		Connection con = c.getConnection();
 		
 		try {
-			PreparedStatement p = con.prepareStatement("update categoria set status_categoria = 0 where id_categoria = ?");
+			PreparedStatement p = con.prepareStatement("update categoria set fl_inativo = 0 where id_categoria = ?");
 			p.setInt(1, id);
 			System.out.println(p);
 			p.executeUpdate();

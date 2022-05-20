@@ -4,9 +4,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexao {
-	private String url = "jdbc:mysql://localhost:3306/bd_politeismo?useSSL=true";
-	private String username = "admin";
-	private String password = "admin";
+	private String url = "jdbc:mysql://localhost:3306/bd_politeismo?useSSL=false";
+	private String username = "root";
+	private String password = "root";
 	private static Connection connection = null;
 	private static Conexao instance = null;
 	
@@ -16,7 +16,7 @@ public class Conexao {
 			System.out.println("Driver carregado");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
-			System.out.println("Driver n„o carregado: " + e.getMessage());
+			System.out.println("Driver n√£o carregado: " + e.getMessage());
 		}
 	}
 	
@@ -33,12 +33,12 @@ public class Conexao {
 		try {		
 			if ((connection == null) || (connection.isClosed())) {
 				connection = DriverManager.getConnection(this.url, this.username, this.password);
-				System.out.println("Conex„o estabelecida");
+				System.out.println("Conex√£o estabelecida");
 				return connection;
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("Conex„o n„o estabelecida: " + e.getMessage());
+			System.out.println("Conex√£o n√£o estabelecida: " + e.getMessage());
 		}
 	
 		return connection;

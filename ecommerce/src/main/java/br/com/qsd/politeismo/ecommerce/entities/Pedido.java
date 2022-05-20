@@ -40,14 +40,14 @@ public class Pedido {
 	@Column(name="id_pedido")
 	private Long idPedido;
 	
-	@Column(nullable = false, name = "data_pedido" )
+	@Column(nullable = false, name = "data_pedido")
 	private LocalDate data;
 	
-	@Column(nullable = false, name = "valor_total" )
+	@Column(nullable = false, name = "valor_total")
 	private BigDecimal valor;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(nullable = false, name = "status_pedido" )
+	@Column(nullable = false, name = "status_pedido")
 	private StatusPedido statusPedido;
 	
 	@ManyToOne

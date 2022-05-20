@@ -18,14 +18,17 @@ public class Fornecedor {
 	@Column(name="razao_social", nullable = false)
 	private String razaoSocial;
 
-	@Column(unique = true, nullable = false)
+	@Column(unique = true, nullable = false, name="cnpj")
 	private String cnpj;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name="email")
 	private String email;
 
 	@Column(name = "fl_inativo")
 	private boolean flInativo = true; // flag inativo
+	
+	@Column(name="telefone")
+	private String telefone;
     
 	@OneToMany(mappedBy="fornecedor")
     private List<Endereco> enderecos;
@@ -78,6 +81,14 @@ public class Fornecedor {
 
 	public void setFlInativo(boolean flInativo) {
 		this.flInativo = flInativo;
+	}
+	
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 
 	public List<Endereco> getEnderecos() {
