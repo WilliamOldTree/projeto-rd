@@ -1,203 +1,3 @@
-<<<<<<< HEAD
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Cadastro de Categorias</title>
-<link rel="stylesheet" href="./css/base.css">
-<link rel="stylesheet" href="./css/formCategoria.css">
-<link rel="stylesheet"
-	href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<%
-if (session.getAttribute("email") == null) {
-	response.sendRedirect("index.jsp");
-}
-%>
-</head>
-<body>
-	<header>
-		<!-- header superior -->
-
-		<div class="container-fluid" id="header-up">
-			<div class="container" id="cont1">
-				<div class="row row-up">
-					<div class="col-2" id="canvas">
-						<button id="btn-canvas" type="button " data-bs-toggle="offcanvas"
-							data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">
-							<img src="./images/menu.png" alt="" width="70%">
-						</button>
-
-						<div class="offcanvas offcanvas-start" tabindex="-1"
-							id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
-							<div class="offcanvas-header">
-								<h5 id="offcanvasLeftLabel">POLITEÍSMO SHOP</h5>
-								<button type="button" class="btn-close text-reset"
-									data-bs-dismiss="offcanvas" aria-label="Close"></button>
-							</div>
-							<div class="container">
-								<div class="container" id="menu-canvas">
-									<div class="row row-canvas">
-										<div class="login-canvas">
-											<a href="#"> <a class="user_adm"><%=session.getAttribute("email")%></a>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class=menu-list1>
-									<a class="nav-link active" id="navbar-brand"
-										aria-current="page" href="HomeController">Menu
-										<hr width="160">
-									</a> <a class="nav-link active" id="navbar-brand"
-										aria-current="page" href="DepartamentoController">Departamentos
-										<hr width="160">
-									</a> <a class="nav-link active" id="navbar-brand"
-										aria-current="page" href="FormCategoriaController">Categorias
-										<hr width="160"> <a class="nav-link active"
-										id="navbar-brand" aria-current="page" href="ProdutoController">Produtos
-											<hr width="160">
-									</a> <a class="nav-link active" id="navbar-brand"
-										aria-current="page" href="FornecedorController">Fornecedores
-											<hr width="160">
-									</a> <a class="nav-link active" id="navbar-brand"
-										aria-current="page" href="ClienteFisicaController">Clientes
-											Fisícos
-											<hr width="160">
-									</a> <a class="nav-link active" id="navbar-brand"
-										aria-current="page" href="ClienteJuridicaController">Clientes
-											Juridicos
-											<hr width="160">
-									</a> <a class="nav-link active" id="navbar-brand"
-										aria-current="page" href="PedidosController">Pedidos
-											<hr width="160">
-									</a>
-										<form action="CategoriaController" method="post">
-											<button name="option" value="sair" type="submit"
-												style="background: white; border: none; margin-left: 9px; color: #516673;">
-												Sair</button>
-										</form>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-8" id="nav-itens">
-						<nav>
-					</div>
-					<div class="col-2" id="cep">
-						<div>
-							<img src="./images/logo2.png" alt="" width="70%">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<div class="container">
-		<h2 class="title">Cadastro de Categorias</h2>
-		<div class="container-form">
-
-
-			<div class="form">
-				<form action="CategoriaController" method="post">
-					<c:choose>
-						<c:when test="${categoria == null }">
-
-
-							<label class="form-label">Categoria:</label>
-							<input style="" class="form-control" type="text" name="nome"
-								required />
-							<br>
-
-							</a>
-
-							<button class="btn formbtn" type="button" data-bs-toggle="modal"
-								data-bs-target="#modal-delete-${categoria.id}"
-								style="margin-right: 10px;">Salvar</button>
-							<div class="modal fade" id="modal-delete-${categoria.id }"
-								tabindex="-1" aria-labelledby="inicioModal" aria-hidden="true">
-								<form action="CategoriaController" method="post">
-
-
-
-									<input id="categoria" name="categoria" type="hidden" value="" />
-
-									<div class="modal-dialog ">
-										<div class="modal-content ">
-											<div class="modal-body">
-												<div class="text-center px-3 py-3">
-													<p class=" text-success">A categoria foi inserida com
-														sucesso</p>
-												</div>
-												<div
-													class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
-													<button class="btn formbtn ok" type="submit" name="option"
-														value="insert">OK!</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
-
-						</c:when>
-						<c:otherwise>
-							<input type="hidden" name="id" value="${categoria.id}" />
-							<label class="form-label">Categoria:</label>
-							<input style="" class="form-control" type="text" name="nome"
-								value="${categoria.nome}" required />
-							<br>
-							<button class="btn formbtn" type="button" data-bs-toggle="modal"
-								data-bs-target="#modal-delete-${categoria.id}"
-								style="margin-right: 10px;">Salvar</button>
-							<div class="modal fade" id="modal-delete-${categoria.id }"
-								tabindex="-1" aria-labelledby="inicioModal" aria-hidden="true">
-								<form action="CategoriaController" method="post">
-
-
-									<input id="categoria" name="categoria" type="hidden" value="" />
-
-									<div class="modal-dialog ">
-										<div class="modal-content ">
-											<div class="modal-body">
-												<div class="text-center px-3 py-3">
-													<p class=" text-success">A categoria foi atualizada com
-														sucesso</p>
-												</div>
-												<div
-													class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
-													<button class="btn formbtn ok" id="arrumar" type="submit"
-														name="option" value="update">OK!</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
-
-
-						</c:otherwise>
-					</c:choose>
-				</form>
-			</div>
-		</div>
-	</div>
-
-	<script
-		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-		integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-		integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-		crossorigin="anonymous"></script>
-
-</body>
-
-</html>
-=======
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
         <!DOCTYPE html>
@@ -205,7 +5,7 @@ if (session.getAttribute("email") == null) {
 
         <head>
             <meta charset="ISO-8859-1">
-            <title>Cadastro de Categorias</title>
+            <title>Categorias</title>
             <link rel="stylesheet" href="./css/base.css">
             <link rel="stylesheet" href="./css/formCategoria.css">
             <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
@@ -294,7 +94,6 @@ if (session.getAttribute("email") == null) {
                 </div>
             </header>
             <div class="container">
-                <h2 class="title">Cadastro de Categorias</h2>
                 <div class="container-form">
 
 
@@ -302,6 +101,7 @@ if (session.getAttribute("email") == null) {
                         <form action="CategoriaController" method="post">
                             <c:choose>
                                 <c:when test="${categoria == null }">
+                                <h2 class="title">Cadastro de Categorias</h2>
 
 
                                     <label class="form-label">Categoria:</label><input style="" class="form-control"
@@ -326,8 +126,7 @@ if (session.getAttribute("email") == null) {
                                                 <div class="modal-content ">
                                                     <div class="modal-body">
                                                         <div class="text-center px-3 py-3">
-                                                            <p class=" text-success"> A categoria foi inserida com
-                                                                sucesso </p>
+                                                            <p class=" text-success">Cadastro Realizado com Sucesso!</p>
                                                         </div>
                                                         <div
                                                             class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
@@ -342,6 +141,9 @@ if (session.getAttribute("email") == null) {
 
                                 </c:when>
                                 <c:otherwise>
+                                               
+                                    <h2 class="title">Editar de Categorias</h2>
+                                
                                     <input type="hidden" name="id" value="${categoria.id}" />
                                     <label class="form-label">Categoria:</label><input style="" class="form-control"
                                         type="text" name="nome" value="${categoria.nome}" required />
@@ -361,8 +163,7 @@ if (session.getAttribute("email") == null) {
                                                 <div class="modal-content ">
                                                     <div class="modal-body">
                                                         <div class="text-center px-3 py-3">
-                                                            <p class=" text-success"> A categoria foi atualizada com
-                                                                sucesso</p>
+                                                            <p class=" text-success">  Dados Atualizados com Sucesso!</p>
                                                         </div>
                                                         <div
                                                             class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
@@ -393,4 +194,3 @@ if (session.getAttribute("email") == null) {
         </body>
 
         </html>
->>>>>>> 647b63eda594e92c6bc4d3079b1c4fb2f17e1d3b

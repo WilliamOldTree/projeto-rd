@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 //
->>>>>>> 647b63eda594e92c6bc4d3079b1c4fb2f17e1d3b
 //package br.com.rd.dao;
 //
 //import java.sql.Connection;

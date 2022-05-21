@@ -158,12 +158,12 @@
                                                     <div class="modal-content ">
                                                         <div class="text-center px-3 py-3">
                                                             <p class=" text-danger">DESEJA EXCLUIR O REGISTRO (
-                                                                <c:out value="${categoria.nome}" />)?
+                                                                <c:out value="${categoria.nome}" /> )?
                                                             </p>
                                                         </div>
                                                         <div
                                                             class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
-                                                            <button class="btn formCrud1" name="option"
+                                                            <button class="btn formCancel" name="option"
                                                                 value="Entrou">Cancelar</button>
                                                             <button class="btn formCrud1" type="submit" name="option"
                                                                 value="delete">Deletar</button>

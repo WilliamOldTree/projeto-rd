@@ -147,13 +147,12 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Descrição</th>
-					<th>Volume</th>
-					<th>Peso</th>
-					<th>Preço</th>
+					<th>Nome:</th>
 					<th>Quantidade</th>
-		            <th>Desconto</th>
-					
+                    <th>Preço</th>
+					<th>Categoria</th>
+		            <th>Departamento</th>
+					<th>Fornecedor</th>
 					<th>Ações</th>
 				</tr>
 			</thead>
@@ -165,12 +164,12 @@
 								<c:out value="${produto.id}"/>
 								<input type="hidden" name="id" value="${produto.id}"/>
 							</td>
-							<td data-label="Descrição" ><c:out value="${produto.descricao}"/></td>
-							<td data-label="Volume"> <span class="money2"><c:out  value="${produto.volume}"/></span></td>
-							<td data-label="Peso"><span class="money2"><c:out value="${produto.peso}"/></span></td>
+							<td data-label="Nome" ><c:out value="${produto.nome}"/></td>
+							<td data-label="Quantidade"> <span class="money2"><c:out  value="${produto.estoque}"/></span></td>
 							<td data-label="Preço"><span class="money2"><c:out value="${produto.preco}"/></span></td>
-							<td data-label="Quantidade"><c:out value="${produto.quantidade}"/></td>
-						    <td data-label="Desconto"><c:out value="${produto.desconto}"/></td>
+							<td data-label="Categoria"><span class="money2"><c:out value="${produto.nomeCategoria}"/></span></td>
+							<td data-label="Departamento"><c:out value="${produto.nomeDepartamento}"/></td>
+						    <td data-label="Fornecedor"><c:out value="${produto.nomeFornecedor}"/></td>
 							
                             <td data-label="Ações">
 	
@@ -187,10 +186,10 @@
 										<div class="modal-dialog ">
 											<div class="modal-content ">
 												<div class="text-center px-3 py-3">
-													<p class=" text-danger">DESEJA EXCLUIR O REGISTRO (<c:out value="${produto.descricao}"/>)?</p>
+													<p class=" text-danger">DESEJA EXCLUIR O REGISTRO ( <c:out value="${produto.nome}"/> )?</p>
 												</div>
 												<div class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
-													<button  class="btn formCrud1" name="option" value="Entrou">Cancelar</button>
+													<button  class="btn formCancel" name="option" value="Entrou">Cancelar</button>
   													<button class="btn formCrud1" type="submit" name="option" value="delete">Deletar</button>
 												</div>
 											</div>

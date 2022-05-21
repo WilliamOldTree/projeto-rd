@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import br.com.rd.dao.CadastroDao;
 import br.com.rd.dao.HomeDao;
+import br.com.rd.dao.ProdutoDao;
 import br.com.rd.model.UserADM;
 
 /**
@@ -16,7 +17,7 @@ import br.com.rd.model.UserADM;
 @WebServlet("/HomeController")
 public class HomeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	//ProdutoDao prod;
+	ProdutoDao prod;
 	HomeDao usuario;
 	//ClienteFisicaDao cfisica;
 	//ClienteJuridicaDao cjuridica;
@@ -27,7 +28,7 @@ public class HomeController extends HttpServlet {
 	public HomeController() {
     	super();
  
-        //this.prod = new ProdutoDao();
+        this.prod = new ProdutoDao();
         this.usuario = new HomeDao();
         //this.cfisica = new ClienteFisicaDao();
         //this.cjuridica = new ClienteJuridicaDao();
@@ -111,7 +112,7 @@ public class HomeController extends HttpServlet {
 	}
 	
 	private void selectAllUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		//request.setAttribute("listaProduto", this.prod.selectAll());
+		request.setAttribute("listaProduto", this.prod.selectAll());
 		//request.setAttribute("listaClienteFisica", this.cfisica.selectAll());
 		//request.setAttribute("listaClienteJuridica", this.cjuridica.selectAll());
 		request.setAttribute("listaUser", this.user.selectAll());
