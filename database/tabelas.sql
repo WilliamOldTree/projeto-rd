@@ -240,3 +240,44 @@ FOREIGN KEY	(FAVORITOS_ID_FAVORITOS) REFERENCES FAVORITOS (ID_FAVORITOS)
 
 SHOW TABLES;
 
+
+SELECT * FROM  CLIENTE;
+
+SELECT
+C.ID_CLIENTE,
+C.NOME,
+C.EMAIL,
+CONCAT(SUBSTR(F.ID_CPF, 1,9), '-', SUBSTR(F.ID_CPF, 10,11)) AS 'CPF',
+DATE_FORMAT(F.NASCIMENTO, '%d-%m-%Y') AS 'NASCIMENTO',
+S.DESCRICAO,
+T.DDD,
+T.CELULAR,
+E.TIPO_LOGRADOURO,
+E.NOME_LOGRADOURO,
+E.NUMERO,
+E.CEP,
+E.CIDADE,
+//					+ "ES.SIGLA\r\n"
+//					+ "FROM\r\n"
+//					+ "CLIENTE C\r\n"
+//					+ "JOIN\r\n"
+//					+ "FISICA F\r\n"
+//					+ "ON\r\n"
+//					+ "C.ID_CLIENTE  = F.CLIENTE_ID_CLIENTE\r\n"
+//					+ "JOIN \r\n"
+//					+ "SEXO S\r\n"
+//					+ "ON \r\n"
+//					+ "S.ID_SEXO = F.SEXO_ID_SEXO\r\n"
+//					+ "JOIN \r\n"
+//					+ "TELEFONE T\r\n"
+//					+ "ON \r\n"
+//					+ "T.ID_TELEFONE = F.CLIENTE_ID_CLIENTE\r\n"
+//					+ "JOIN \r\n"
+//					+ "ENDERECO E\r\n"
+//					+ "ON \r\n"
+//					+ "E.ID_ENDERECO = F.CLIENTE_ID_CLIENTE\r\n"
+//					+ "JOIN\r\n"
+//					+ "ESTADO ES\r\n"
+//					+ "ON \r\n"
+//					+ "ES.ID_ESTADO = F.CLIENTE_ID_CLIENTE; ");
+
