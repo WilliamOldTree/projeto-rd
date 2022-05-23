@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Cadastro Usuário</title>
+<title>Usuário</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./css/base.css">
 <link rel="stylesheet" href="./css/formCategoria.css">
@@ -28,12 +28,13 @@
     </div>
 </header>
     <div class="container">
-    <h2 class="title">Cadastro de Usuário</h2>
         <div class="container-form">
             <div class="form">
 	<form action="HomeController" method="post">
 		<c:choose>
 			<c:when test="${usuario == null }">
+			    <h2 class="title">Cadastro de Usuário</h2>
+			
 				<label class="form-label">Nome:</label><input style="" class="form-control" type="text" name="nome" required/>
 				<label class="form-label">Cargo:</label><input style="" class="form-control" type="text" name="cargo"  required/>
 				<label class="form-label">Email:</label><input style="" class="form-control" type="email" name="email"  required/>
@@ -42,6 +43,7 @@
 				<button class="btn formbtn"  type="submit" name="option" value="insert" role="button">Cadastrar</button>
 			</c:when>
 			<c:otherwise>
+			    <h2 class="title">Editar Usuário</h2>
 			
 				<input type="hidden" name="id" value="${usuario.id}"/>
 				<label class="form-label">Nome:</label><input style="" class="form-control" type="text" name="nome" value="${usuario.nome}" />

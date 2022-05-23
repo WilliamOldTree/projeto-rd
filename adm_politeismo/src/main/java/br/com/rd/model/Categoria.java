@@ -44,9 +44,5 @@ public class Categoria {
 		this.flInativo = flInativo;
 	}
 	
-
-
-
-	
 		
 }//end Categoria
