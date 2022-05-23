@@ -1,37 +1,53 @@
+import React, { useState, useEffect } from 'react'
+import { baseUrl } from '../../environments'
+import axios from 'axios'
 import Cartao from '../../components/asserts/icons/cartao-do-banco-home.png'
 import Master from '../../components/asserts/icons/master.png'
 import './Modal_Cartoes.css'
 import {Modal, Button, Container} from 'react-bootstrap'
-import { baseUrl } from '../../environments'
-import axios from 'axios'
-import React, { useState, useEffect } from 'react'
+import { useParams, useHistory } from 'react-router-dom'
 
-function Modal_Cartoes_Add (props) {
-   
-     const [cartoes,setCartoes] = useState([]) 
-     const [successRegister,setSuccessRegister] = useState(false)
-    
-     
-    
-     const register=()=>{
-        cartoes.states =
-        axios.post(`${baseUrl}/cartoes`,cartoes).then(response =>{
-            setSuccessRegister(true)
-            alert('cartão adicionado recarregue a pagina')
-        })
 
-     }
-      
+
+function Modal_Cartoes_Edit (props) {
+
+    const { id } = useParams()
+    let history = useHistory();
+    const URL='http://localhost:8080/cartoes'
+
     const [show, setShow] = useState(false);
+    useEffect(() => {
+        getCartoes()
+    }, [])
+
+    useEffect(() => {
+        getCartoes()
+    }, [])
     
+    const editCartoes  = (id) => {
+
+        axios.put(`${URL}/${id}`,cartoes)
+        .then((response) => {
+            alert('cartão alterado')
+        })
+    }
+
+    const [cartoes, setCartoes] = useState([])
+
+
+    const getCartoes = (id) => {
+        axios.get(`${URL}/${id}`)
+            .then((response) => {
+                setCartoes(response.data)
+            })
+    }
+
+    
+
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-
     
-   
-
 return (
         <>
             <Container>
@@ -110,7 +126,7 @@ return (
                         </form>
                         </Modal.Body>
                         <Modal.Footer>
-                        <Button variant="primary"    className='ModalCartãoButton1' type='submit' onClick={register}>SALVAR</Button>
+                        <Button variant="primary"    className='ModalCartãoButton1'  onClick={() => editCartoes(cartoes.id_cartao)}>SALVAR</Button>
                         </Modal.Footer>
                     </Modal>           
                 </div>             
@@ -122,4 +138,4 @@ return (
 
 }
 
-export default Modal_Cartoes_Add
+export default Modal_Cartoes_Edit

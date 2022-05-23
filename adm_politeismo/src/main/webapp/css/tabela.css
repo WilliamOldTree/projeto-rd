@@ -44,6 +44,14 @@
          margin-bottom: 20px;
     }
     
+     .btn.formCancel, .btn.formCancel:hover{
+         background-color: #5a5959;
+         color: #FFFFFF;
+         font-weight: 500;
+         width:90px;
+         margin-bottom: 10px;
+    }
+    
     button{
     align-items: center;
     }

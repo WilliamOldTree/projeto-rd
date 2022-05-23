@@ -1,4 +1,4 @@
-INSERT INTO cliente (id_cliente, cpf, nome, email, password, nascimento, genero) 
+INSERT INTO cliente (id_cliente, cpf, nome, email, senha, nascimento, genero) 
 VALUES(1, '55555555-55', 'leia','leia@hotmail.com' , '123','2000-02-01','FEMININO');
 
 INSERT INTO endereco (ID_ENDERECO, apelido, NOME_LOGRADOURO, TIPO_LOGRADO, numero, cep, estado, cidade, bairro) 
@@ -63,7 +63,7 @@ values ('Bíblia Sagrada','Buda Dourado: Peça Dourada, Peça Confeccionada em R
 insert into PRODUTO (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
 values ('Terço Nossa Senhora','Terço Nossa Senhora: Em Madeira, Detalhes em Branco e Cristais Azuis', 'https://static.lvartigosreligiosos.com.br/public/liriodovale/imagens/produtos/terco-madeira-pau-brasil-com-entremeio-de-nossa-senhora-das-gracas-8mm-5172.jpg', 100, '0.1', '20.15', '0.5', 17, 1, 1, 1, 1);
 
-insert into ENTREGA (DATA, VALOR_FRETE, STATUS_ENTREGA, FORMA_ENTREGA)
+insert into ENTREGA (prazo, VALOR_FRETE, STATUS_ENTREGA, FORMA_ENTREGA)
 values ('2022-03-22', 15.3, 'OBJETO_POSTADO', 'CORREIOS');
 
 insert into PEDIDO (DATA_PEDIDO, VALOR_TOTAL, STATUS_PEDIDO, FK_ID_CLIENTE, FK_ID_ENTREGA)
