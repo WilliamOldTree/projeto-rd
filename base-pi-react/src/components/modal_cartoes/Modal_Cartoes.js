@@ -1,17 +1,37 @@
-import React, { useState } from 'react' 
 import Cartao from '../../components/asserts/icons/cartao-do-banco-home.png'
 import Master from '../../components/asserts/icons/master.png'
 import './Modal_Cartoes.css'
 import {Modal, Button, Container} from 'react-bootstrap'
+import { baseUrl } from '../../environments'
+import axios from 'axios'
+import React, { useState, useEffect } from 'react'
 
+function Modal_Cartoes_Add (props) {
+   
+     const [cartoes,setCartoes] = useState([]) 
+     const [successRegister,setSuccessRegister] = useState(false)
+    
+     
+    
+     const register=()=>{
+        cartoes.states =
+        axios.post(`${baseUrl}/cartoes`,cartoes).then(response =>{
+            setSuccessRegister(true)
+            alert('cartão adicionado recarregue a pagina')
+        })
 
-function Modal_Cartoes (props) {
-
+     }
+      
     const [show, setShow] = useState(false);
+    
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+
     
+   
+
 return (
         <>
             <Container>
@@ -31,38 +51,66 @@ return (
                             <Modal.Title> Cartão De Crédito </Modal.Title>            
                         </Modal.Header>
                         <Modal.Body>
-                        <form className="row g-3">
+                        <form className="row g-3"  >
+                       
                             <div className="col-md-12">
                                 <label for="labelCartao" className="form-label">Número do
                                     Cartão *</label>
-                                <input type="text" className="form-control" id="inputCartao" placeholder="4407 5678 7685 9526"/>
+                                <input type="text" className="form-control" id="inputCartao" placeholder="4407 5678 7685 9526"
+                                value={cartoes.numero_cartao}
+                                onChange={(e)=>setCartoes({...cartoes, numero_cartao: e.target.value })}/>
                                 <img src={Master} alt="" width="6%" />
                             </div>
                             <div className="col-md-12">
                                 <label for="labelTitular" className="form-label">Nome do
                                     Titular *</label>
                                 <input type="text" className="form-control"
-                                    id="inputTitular" placeholder="José Da Silva"/> 
+                                     value={cartoes.titular_cartao}
+                                     onChange={(e)=>setCartoes({...cartoes, titular_cartao: e.target.value })}
+                                     id="inputTitular" placeholder="José Da Silva"/> 
                             </div>
 
                             <div className="col-md-5">
                                 <label for="labelVencimento" className="form-label">Data de
                                     Vencimento *</label>
                                 <input type="text" className="form-control" id="inputCity"
+                                    value={cartoes.validade_cartao}
+                                    onChange={(e)=>setCartoes({...cartoes, validade_cartao: e.target.value })}
                                     placeholder="01/2025"/>
                             </div>
 
                             <div className="col-md-2">
                                 <label for="labelCVV" className="form-label">CVV *</label>
                                 <input type="text" className="form-control" id="inputZip"
+                                 value={cartoes.cvv_cartao}
+                                 onChange={(e)=>setCartoes({...cartoes, cvv_cartao: e.target.value })}
                                     placeholder="123"/>
                             </div>
+
+                            
+                            <div className="col-md-2">
+                                <label for="labelCVV" className="form-label">ID_Cliente</label>
+                                <input type="text" className="form-control" id="inputZip"
+                                 value={cartoes.cliente}
+                                 onChange={(e)=>setCartoes({...cartoes, cliente: e.target.value })}
+                                    />
+                            </div>
+
+                            
+                            <div className="col-md-2">
+                                <label for="labelCVV" className="form-label">Id Forma</label>
+                                <input type="text" className="form-control" id="inputZip"
+                                 value={cartoes.forma}
+                                 onChange={(e)=>setCartoes({...cartoes, forma: e.target.value })}
+                                   />
+                            </div>
+
+
 
                         </form>
                         </Modal.Body>
                         <Modal.Footer>
-
-                        <Button variant="primary"    className='ModalCartãoButton1'>SALVAR</Button>
+                        <Button variant="primary"    className='ModalCartãoButton1' type='submit' onClick={register}>SALVAR</Button>
                         </Modal.Footer>
                     </Modal>           
                 </div>             
@@ -74,4 +122,4 @@ return (
 
 }
 
-export default Modal_Cartoes
+export default Modal_Cartoes_Add

@@ -6,7 +6,6 @@ function ProcessoEnvio() {
     return (
         <>
             <Header />
-            
             {/* Início Página de Envio */}
             <div class="container">
                 <h2 class="title">Envio</h2>

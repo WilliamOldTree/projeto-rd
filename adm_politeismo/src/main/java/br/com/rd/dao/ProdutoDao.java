@@ -13,13 +13,18 @@ public class ProdutoDao {
 		Connection con = c.getConnection();
 		
 		try {
-			PreparedStatement p = con.prepareStatement("insert into PRODUTO (DESCRICAO, VOLUME, PESO, PRECO, ESTOQUE_PRODUTO, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE, STATUS_PRODUTO) values (?, ?, ?, ?, ?, ?, true)");
-			p.setString(1, produto.getDescricao());
-			p.setDouble(2, produto.getVolume());
-			p.setDouble(3, produto.getPeso());
-			p.setDouble(4, produto.getPreco());
-			p.setInt(5, produto.getQuantidade());
-			p.setDouble(6, produto.getDesconto());
+			PreparedStatement p = con.prepareStatement("insert into PRODUTO (NOME, DESCRICAO, URL_PRODUTO, VOLUME, PESO, PRECO, ESTOQUE, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, true)");
+			p.setString(1, produto.getNome());
+			p.setString(2, produto.getDescricao());
+			p.setString(3, produto.getUrlProduto());
+			p.setDouble(4, produto.getVolume());
+			p.setDouble(5, produto.getPeso());
+			p.setDouble(6, produto.getPreco());
+			p.setDouble(7, produto.getEstoque());
+			p.setInt(8, produto.getCategoria());
+			p.setInt(9, produto.getDepartamento());
+			p.setInt(10, produto.getFornecedor());
+			p.setDouble(11, produto.getProdutoDestaque());
 			System.out.println(p);
 			p.executeUpdate();
 			System.out.println("Comando executado");
@@ -35,21 +40,20 @@ public class ProdutoDao {
 		Connection con = c.getConnection();
 		ArrayList<Produto> lista = new ArrayList<Produto>();
 		try {
-			PreparedStatement p = con.prepareStatement("SELECT P.ID_PRODUTO, P.DESCRICAO, P.VOLUME, P.PESO, P.PRECO, E.QUANTIDADE, PD.DESCONTO FROM PRODUTO P join ESTOQUE E on P.ESTOQUE_PRODUTO = E.ID_ESTOQUE join PRODUTO_DESTAQUE PD on P.PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE = PD.ID_PRODUTO_DESTAQUE WHERE P.STATUS_PRODUTO != 0\r\n"
-					 +"order by p.id_produto;");
+			PreparedStatement p = con.prepareStatement("select P.ID_PRODUTO, P.NOME, P.ESTOQUE, P.PRECO, C.NOME, D.NOME, F.RAZAO_SOCIAL FROM PRODUTO P join CATEGORIA C on P.FK_ID_CATEGORIA = C.ID_CATEGORIA join DEPARTAMENTO D on P.FK_ID_DEPARTAMENTO = D.ID_DEPARTAMENTO join FORNECEDOR F on P.FK_ID_FORNECEDOR =  F.ID_FORNECEDOR WHERE P.FL_INATIVO != 0\r\n");
 			
 			ResultSet r = p.executeQuery();			
 			
 			while (r.next()) {
 				Integer id = r.getInt("ID_PRODUTO");
-				String descricao = r.getString("DESCRICAO");
-				Double volume = r.getDouble("VOLUME");
-				Double peso = r.getDouble("PESO");
+				String nome = r.getString("NOME");
+				Integer estoque = r.getInt("ESTOQUE");
 				Double preco = r.getDouble("PRECO");
-				Integer quantidade = r.getInt("QUANTIDADE");
-				Double destaque = r.getDouble("DESCONTO");
+				String categoria = r.getString("C.NOME");
+				String departamento = r.getString("D.NOME");
+				String fornecedor = r.getString("RAZAO_SOCIAL");
 
-				Produto pod = new Produto(descricao, volume, peso, preco, quantidade, destaque);
+				Produto pod = new Produto(nome, estoque, preco, categoria, departamento, fornecedor);
 				pod.setId(id);
 				lista.add(pod);
 			}
@@ -84,14 +88,19 @@ public class ProdutoDao {
 		Connection con = c.getConnection();
 		
 		try {
-			PreparedStatement p = con.prepareStatement("update PRODUTO set DESCRICAO = ?, VOLUME = ?, PESO = ?, PRECO = ?, ESTOQUE_PRODUTO = ?, PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE = ? where ID_PRODUTO = ? ");
-			p.setString(1, updateProduto.getDescricao());
-			p.setDouble(2, updateProduto.getVolume());
-			p.setDouble(3, updateProduto.getPeso());
-			p.setDouble(4, updateProduto.getPreco());
-			p.setInt(5, updateProduto.getQuantidade());
-			p.setDouble(6, updateProduto.getDesconto());
-			p.setInt(7, updateProduto.getId());
+			PreparedStatement p = con.prepareStatement("update PRODUTO set NOME = ?, DESCRICAO =?, URL_PRODUTO =?, VOLUME = ?, PESO=?, PRECO =?, ESTOQUE = ?, FK_ID_DEPARTAMENTO = ?, FK_ID_CATEGORIA = ?, FK_ID_FORNECEDOR = ?, FK_ID_PRODUTO_DESTAQUE = ? where ID_PRODUTO = ? ");
+			p.setString(1, updateProduto.getNome());
+			p.setString(2, updateProduto.getDescricao());
+			p.setString(3, updateProduto.getUrlProduto());
+			p.setDouble(4, updateProduto.getVolume());
+			p.setDouble(5, updateProduto.getPeso());
+			p.setDouble(6, updateProduto.getPreco());
+			p.setDouble(7, updateProduto.getEstoque());
+			p.setInt(8, updateProduto.getDepartamento());
+			p.setInt(9, updateProduto.getCategoria());
+			p.setInt(10, updateProduto.getFornecedor());
+			p.setDouble(11, updateProduto.getProdutoDestaque());
+			p.setInt(12, updateProduto.getId());
 			
 			System.out.println(p);
 			p.executeUpdate();
@@ -113,16 +122,22 @@ public class ProdutoDao {
 			ResultSet r = p.executeQuery();			
 			
 			while (r.next()) {
+				String nome = r.getString("NOME");
 				String descricao = r.getString("DESCRICAO");
+				String urlProduto = r.getString("URL_PRODUTO");
 				Double volume = r.getDouble("VOLUME");
 				Double peso = r.getDouble("PESO");
 				Double preco = r.getDouble("PRECO");
-				Integer quantidade = r.getInt("ESTOQUE_PRODUTO");
-				Double destaque = r.getDouble("PRODUTO_DESTAQUE_ID_PRODUTO_DESTAQUE");
+				Integer quantidade = r.getInt("ESTOQUE");
+				Integer departamento = r.getInt("FK_ID_DEPARTAMENTO");
+				Integer categoria = r.getInt("FK_ID_CATEGORIA");
+				Integer fornecedor = r.getInt("FK_ID_FORNECEDOR");
+				Double destaque = r.getDouble("FK_ID_PRODUTO_DESTAQUE");
 
-				pod = new Produto(descricao, volume, peso, preco, quantidade, destaque);
+				pod = new Produto(nome, descricao,urlProduto, volume,peso, preco, quantidade, departamento, categoria,fornecedor,destaque);
 				pod.setId(id);
 			}
+			
 			r.close();
 			p.close();
 		} catch (SQLException e) {
@@ -137,7 +152,7 @@ public class ProdutoDao {
 		Connection con = c.getConnection();
 		
 		try {
-			PreparedStatement p = con.prepareStatement("update PRODUTO set STATUS_PRODUTO = 0 where ID_PRODUTO = ?");
+			PreparedStatement p = con.prepareStatement("update PRODUTO set FL_INATIVO = 0 where ID_PRODUTO = ?");
 			p.setInt(1, id);
 			System.out.println(p);
 			p.executeUpdate();

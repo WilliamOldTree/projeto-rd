@@ -3,75 +3,54 @@ package br.com.rd.model;
 public class Fornecedor {
 
 	private Integer id;
-	private String razao;
+	private String razaoSocial;
 	private String cnpj;
 	private String email;
-	private Boolean status_fornecedor;
-
-
-	public Fornecedor(String razao, String cnpj, String email) {
-		super();
-		this.razao = razao;
+	private String telefone;
+	private Boolean flInativo;
+	
+	public Fornecedor(String razaoSocial, String cnpj, String email, String telefone) {
+		this.razaoSocial = razaoSocial;
 		this.cnpj = cnpj;
 		this.email = email;
+		this.telefone = telefone;
+		
 	}
-
-
 	public Integer getId() {
 		return id;
 	}
-
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-
-	public String getRazao() {
-		return razao;
+	public String getRazaoSocial() {
+		return razaoSocial;
 	}
-
-
-	public void setRazao(String razao) {
-		this.razao = razao;
+	public void setRazaoSocial(String razaoSocial) {
+		this.razaoSocial = razaoSocial;
 	}
-
-
 	public String getCnpj() {
 		return cnpj;
 	}
-
-
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
-
-
 	public String getEmail() {
 		return email;
 	}
-
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-
-	
-	public String toString() {
-		return "Fornecedor [id=" + id + ", razao=" + razao + ", cnpj=" + cnpj + ", email=" + email + "]";
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	public Boolean getFlInativo() {
+		return flInativo;
+	}
+	public void setFlInativo(Boolean flInativo) {
+		this.flInativo = flInativo;
 	}
 
-
-	public Boolean getStatus_fornecedor() {
-		return status_fornecedor;
-	}
-
-
-	public void setStatus_fornecedor(Boolean status_fornecedor) {
-		this.status_fornecedor = status_fornecedor;
-	}
-	
-	
-	
 }

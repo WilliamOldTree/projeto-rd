@@ -17,10 +17,11 @@ public void insert(Fornecedor fornecedor) {
 	Connection con = c.getConnection();
 	
 	try {
-		PreparedStatement p = con.prepareStatement("insert into FORNECEDOR (RAZAO_SOCIAL,CNPJ,EMAIL, STATUS_FORNECEDOR) values (?,?,?,true)");
-		p.setString(1, fornecedor.getRazao());
+		PreparedStatement p = con.prepareStatement("insert into FORNECEDOR (RAZAO_SOCIAL, CNPJ, EMAIL, TELEFONE, FL_INATIVO) values (?,?,?,?,true)");
+		p.setString(1, fornecedor.getRazaoSocial());
 		p.setString(2, fornecedor.getCnpj());
 		p.setString(3, fornecedor.getEmail());
+		p.setString(4, fornecedor.getTelefone());
 		System.out.println(p);
 		p.executeUpdate();
 		System.out.println("Comando executado");
@@ -37,7 +38,7 @@ public ArrayList<Fornecedor> selectAll(){
 	Connection con = c.getConnection();
 	ArrayList<Fornecedor> lista = new ArrayList<Fornecedor>();
 	try {
-		PreparedStatement p = con.prepareStatement("select * from fornecedor where status_fornecedor != 0 order by id_fornecedor;");
+		PreparedStatement p = con.prepareStatement("select * from fornecedor where fl_inativo != 0 order by id_fornecedor;");
 		ResultSet r = p.executeQuery();			
 		
 		while (r.next()) {
@@ -45,9 +46,10 @@ public ArrayList<Fornecedor> selectAll(){
 			String razao_social = r.getString("razao_social");
 			String CNPJ = r.getString("cnpj");
 			String email = r.getString("email");
-			Fornecedor u = new Fornecedor(razao_social, CNPJ, email);
-			u.setId(id);
-			lista.add(u);
+			String telefone = r.getString("telefone");
+			Fornecedor f = new Fornecedor(razao_social, CNPJ, email, telefone);
+			f.setId(id);
+			lista.add(f);
 		}
 		r.close();
 		p.close();
@@ -80,11 +82,12 @@ public void updateFornecedor(Fornecedor updateFornecedor) {
 	Connection con = c.getConnection();
 	
 	try {
-		PreparedStatement p = con.prepareStatement("UPDATE FORNECEDOR SET RAZAO_SOCIAL = ?, CNPJ= ?, EMAIL= ? WHERE id_fornecedor = ?");
-		p.setString(1, updateFornecedor.getRazao());
+		PreparedStatement p = con.prepareStatement("UPDATE FORNECEDOR SET RAZAO_SOCIAL = ?, CNPJ= ?, EMAIL= ?, TELEFONE = ? WHERE id_fornecedor = ?");
+		p.setString(1, updateFornecedor.getRazaoSocial());
 		p.setString(2, updateFornecedor.getCnpj());
 		p.setString(3, updateFornecedor.getEmail());
-		p.setInt(4, updateFornecedor.getId());
+		p.setString(4, updateFornecedor.getTelefone());
+		p.setInt(5, updateFornecedor.getId());
 		System.out.println(p);
 		p.executeUpdate();
 		System.out.println("Comando executado");
@@ -110,7 +113,9 @@ public Fornecedor selectById(Integer id) {
 			String razao_social = r.getString("razao_social");
 			String CNPJ = r.getString("cnpj");
 			String email = r.getString("email");
-			 fc = new Fornecedor(razao_social, CNPJ, email);
+			String telefone = r.getString("telefone");
+
+			 fc = new Fornecedor(razao_social, CNPJ, email, telefone);
 			 fc.setId(id);
 		}
 		r.close();
@@ -127,7 +132,7 @@ public void exclusionFornecedor(Integer id) {
 	Connection con = c.getConnection();
 	
 	try {
-		PreparedStatement p = con.prepareStatement("update fornecedor set status_fornecedor = 0 where id_fornecedor = ?");
+		PreparedStatement p = con.prepareStatement("update fornecedor set fl_inativo = 0 where id_fornecedor = ?");
 		p.setInt(1, id);
 		System.out.println(p);
 		p.executeUpdate();

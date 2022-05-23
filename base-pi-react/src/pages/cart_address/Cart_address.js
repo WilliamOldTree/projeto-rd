@@ -9,8 +9,16 @@ import BudaMedit from '../../components/asserts/images/cart-images/buda-meditand
 import ListCompra from "../../components/list_compra/ListCompra";
 import ResumoCompra from "../../components/resumo_compra/ResumoCompra";
 import { Container, Row, Col } from 'react-bootstrap'
+import CartContext from '../../context/cart.provider'
+import React, { useEffect, useContext } from 'react';
 
 function Cart_address() {
+    const { cart, getCart, deleteCart } = useContext(CartContext)
+
+    useEffect(() => {
+        getCart()
+    }, [])
+
     return (
         <>
             {/* BEGINNER ADDRESS*/}
@@ -53,13 +61,20 @@ function Cart_address() {
                     <Col lg={7}>
                        <h2>Resumo da compra</h2>
                             <div>
-                                <ListCompra>
-                                    <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                                    <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                                    <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                                    <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                                </ListCompra>
-
+                            <ListCompra >
+                            {cart.map((item) => {
+                                return (
+                                    <ResumoCompra key={item.id} 
+                                        product_img={item.urlProduto} 
+                                        descricao={item.nome} 
+                                        valor={item.preco} 
+                                        quantidade={item.qty} 
+                                        trash_img={TrashIcon} 
+                                        deletar={deleteCart} 
+                                        item={item} />
+                                )
+                            })}
+                        </ListCompra>
 
                                 <div className='cart_address_total mt-3 p-3'>
                                     <h5>Produtos = R$ 120,00</h5>

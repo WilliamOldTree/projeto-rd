@@ -2,17 +2,6 @@
     color: #261C1A;
 }
 
-.btn-principal-cart, .btn-principal-cart:hover, .btn-principal-cart:focus {
-    background-color: #E5E5E5;
-    border:none;
-}
-
-
-.btn-principal-cart:hover {
-    background-color: #E5E5E5;
-    border:none;
-}
-
 .title-modal-cart {
     margin-left: 155px;
     font-weight: bold;
@@ -59,7 +48,10 @@
     margin-right: -130px;
 }
 
-
+.btn-cart-lixeira{
+    background-color: #FFFFFF;
+    border: none;
+}
 
 .btnFinal:hover {
     background-color: darkorange;

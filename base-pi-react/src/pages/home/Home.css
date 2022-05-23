@@ -77,6 +77,10 @@ margin-top: 10px;
     margin-right: 5px;
 }
 
+.ul-card{
+    list-style: none;
+}
+
 @media (max-width: 767px) {
     .img-end {
         display: none;

@@ -6,9 +6,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import br.com.rd.dao.CategoriaDao;
+import br.com.rd.dao.DepartamentoDao;
+import br.com.rd.dao.FornecedorDao;
 import br.com.rd.dao.ProdutoDao;
 import br.com.rd.model.Produto;
-
 
 /**
  * Servlet implementation class ProdutoController
@@ -17,16 +20,20 @@ import br.com.rd.model.Produto;
 public class ProdutoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     ProdutoDao prod;
+    CategoriaDao categoria;
+    DepartamentoDao departamento;
+    FornecedorDao fornecedor;
     
+
     
-	public ProdutoController() {
-    	super();
- 
+	public ProdutoController() { 
         this.prod = new ProdutoDao();
+        this.categoria = new CategoriaDao();
+        this.departamento = new DepartamentoDao();
+        this.fornecedor = new FornecedorDao();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		
 		doPost(request, response);
 	}
@@ -67,10 +74,17 @@ public class ProdutoController extends HttpServlet {
 	
 
 	private void showInsertProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.setAttribute("listCategoria", this.categoria.selectAll());
+		request.setAttribute("listDepartamento", this.departamento.selectAll());
+		request.setAttribute("listFornecedor", this.fornecedor.selectAll());
+
 		request.getRequestDispatcher("formProduto.jsp").forward(request, response);
 	}
 	
 	private void showUpdateProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.setAttribute("listCategoria", this.categoria.selectAll());
+		request.setAttribute("listDepartamento", this.departamento.selectAll());
+		request.setAttribute("listFornecedor", this.fornecedor.selectAll());
 		Integer id = Integer.parseInt(request.getParameter("id"));
 		Produto p = this.prod.selectById(id);
 		request.setAttribute("produto", p);
@@ -78,23 +92,32 @@ public class ProdutoController extends HttpServlet {
 	}
 	
 	private void insertProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		String nomeBack = request.getParameter("nome");
 		String descricaoBack = request.getParameter("descricao");
+		String urlProdutoBack = request.getParameter("urlProduto");
 		String volumeBack = request.getParameter("volume");
+		String estoqueBack = request.getParameter("quantidade");
 		String pesoBack = request.getParameter("peso");
 		String precoBack = request.getParameter("preco");
-		String quantidadeBack = request.getParameter("quantidade");
-		String descontoBack = request.getParameter("desconto");
-		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (precoBack != null) && (quantidadeBack != null)  && (descontoBack != null) ){
-			if (!descricaoBack.equals("")){
-				
-			     Double volume2 = Double.parseDouble(volumeBack.replace(",", "."));
-			     Double preco2 = Double.parseDouble(precoBack.replace(",", "."));
-			     Double peso2 = Double.parseDouble(pesoBack.replace(",", "."));
+		String categoriaBack = request.getParameter("categoria");
+		String destaqueBack = request.getParameter("desconto");
+		String departamentoBack = request.getParameter("departamento");
+		String fornecedorBack = request.getParameter("fornecedor");
+		
+		if ((nomeBack != null) && (descricaoBack != null) && (urlProdutoBack != null) && (volumeBack != null) && (estoqueBack != null) 
+				&& (pesoBack != null)  && (precoBack != null) && (categoriaBack != null) && (departamentoBack != null) && (fornecedorBack != null) && (destaqueBack != null)){
+			if (!nomeBack.equals("")){
+			
+				Integer estoqueBack1 = Integer.parseInt(estoqueBack);
+				Double precoBack1 = Double.parseDouble(precoBack);
+				Double pesoBack1 = Double.parseDouble(pesoBack);
+				Double volumeBack1 = Double.parseDouble(volumeBack);
+				Integer categoriaBack1 = Integer.parseInt(categoriaBack);
+				Double destaqueBack1 = Double.parseDouble(destaqueBack);
+				Integer departamentoBack1 = Integer.parseInt(departamentoBack);
+				Integer fornecedorBack1 = Integer.parseInt(fornecedorBack);
 
-				Integer quantidadeBack1 = Integer.parseInt(quantidadeBack);
-				Double descontoBack1 = Double.parseDouble(descontoBack);
-				
-				Produto prod1 = new Produto(descricaoBack, volume2, peso2, preco2, quantidadeBack1, descontoBack1);
+				Produto prod1 = new Produto(nomeBack, descricaoBack, urlProdutoBack, volumeBack1,pesoBack1 , precoBack1, estoqueBack1, departamentoBack1, categoriaBack1, fornecedorBack1, destaqueBack1);
 				this.prod.insert(prod1);
 			}
 		}
@@ -117,32 +140,39 @@ public class ProdutoController extends HttpServlet {
 	}
 	
 	private void updateProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String nomeBack = request.getParameter("nome");
 		String descricaoBack = request.getParameter("descricao");
+		String urlProdutoBack = request.getParameter("urlProduto");
 		String volumeBack = request.getParameter("volume");
+		String estoqueBack = request.getParameter("quantidade");
 		String pesoBack = request.getParameter("peso");
 		String precoBack = request.getParameter("preco");
-		String quantidadeBack = request.getParameter("quantidade");
-		String descontoBack = request.getParameter("desconto");
-
+		String categoriaBack = request.getParameter("categoria");
+		String destaqueBack = request.getParameter("desconto");
+		String departamentoBack = request.getParameter("departamento");
+		String fornecedorBack = request.getParameter("fornecedor");
 		String idBack = request.getParameter("id");
-		if ((descricaoBack != null) && (volumeBack != null) && (pesoBack != null) && (quantidadeBack != null) && (precoBack != null) && (descontoBack != null)) {
-			if (!descricaoBack.equals("")){
-	             
+		if ((nomeBack != null) && (descricaoBack != null) && (urlProdutoBack != null) && (volumeBack != null) && (estoqueBack != null) 
+				&& (pesoBack != null)  && (precoBack != null) && (categoriaBack != null) && (departamentoBack != null) && (fornecedorBack != null) && (destaqueBack != null)){
+			if (!nomeBack.equals("")){
 				
-				Double volume2 = Double.parseDouble(volumeBack.replace(",", "."));
-			     Double preco2 = Double.parseDouble(precoBack.replace(",", "."));
-			     Double peso2 = Double.parseDouble(pesoBack.replace(",", "."));
-			     
-				
-				Integer quantidadeBack1 = Integer.parseInt(quantidadeBack);
-				Double descontoBack1 = Double.parseDouble(descontoBack);
-
 				Integer id = Integer.parseInt(idBack);
-				Produto prod1 = new Produto(descricaoBack, volume2, peso2, preco2, quantidadeBack1, descontoBack1);
+
+				Integer estoqueBack1 = Integer.parseInt(estoqueBack);
+				Double precoBack1 = Double.parseDouble(precoBack);
+				Double pesoBack1 = Double.parseDouble(pesoBack);
+				Double volumeBack1 = Double.parseDouble(volumeBack);
+				Integer categoriaBack1 = Integer.parseInt(categoriaBack);
+				Integer departamentoBack1 = Integer.parseInt(departamentoBack);
+				Integer fornecedorBack1 = Integer.parseInt(fornecedorBack);
+				Double destaqueBack1 = Double.parseDouble(destaqueBack);
+
+				Produto prod1 = new Produto(nomeBack, descricaoBack, urlProdutoBack, volumeBack1,pesoBack1 , precoBack1, estoqueBack1, departamentoBack1, categoriaBack1, fornecedorBack1, destaqueBack1);
 				prod1.setId(id);
 				this.prod.updateProduto(prod1);
 			}
 		}
+		
 		response.sendRedirect("ProdutoController");
 	}
 }

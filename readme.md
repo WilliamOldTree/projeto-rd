@@ -29,6 +29,7 @@
 - [:heavy_check_mark:] Spring Data
 - [:heavy_check_mark:] Spring MVC
 
+<<<<<<< HEAD
 # Projeto Integrador Raia Drogasil
 
 ## Programa Quero ser Dev - Turma 7
@@ -67,3 +68,5 @@
 - [:heavy_check_mark:] Spring Data
 - [:heavy_check_mark:] Spring MVC
 >>>>>>> 4103b4cb40f0677349d6a3638353fede96d12bb9
+=======
+>>>>>>> 4c080c22c4c7cdd9603e7a8907c133b2dea15553

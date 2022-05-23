@@ -1,6 +1,7 @@
-package br.com.rd.controller;
+	package br.com.rd.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,10 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.rd.dao.CadastroDao;
-import br.com.rd.dao.ClienteFisicaDao;
-import br.com.rd.dao.ClienteJuridicaDao;
 import br.com.rd.dao.HomeDao;
-import br.com.rd.dao.PedidosDao;
 import br.com.rd.dao.ProdutoDao;
 import br.com.rd.model.UserADM;
 
@@ -23,10 +21,10 @@ public class HomeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	ProdutoDao prod;
 	HomeDao usuario;
-	ClienteFisicaDao cfisica;
-	ClienteJuridicaDao cjuridica;
+	//ClienteFisicaDao cfisica;
+	//ClienteJuridicaDao cjuridica;
 	CadastroDao user;
-	PedidosDao pedidos;
+	//PedidosDao pedidos;
     
     
 	public HomeController() {
@@ -34,10 +32,10 @@ public class HomeController extends HttpServlet {
  
         this.prod = new ProdutoDao();
         this.usuario = new HomeDao();
-        this.cfisica = new ClienteFisicaDao();
-        this.cjuridica = new ClienteJuridicaDao();
+        //this.cfisica = new ClienteFisicaDao();
+        //this.cjuridica = new ClienteJuridicaDao();
         this.user = new CadastroDao();
-        this.pedidos = new PedidosDao();
+        //this.pedidos = new PedidosDao();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -117,10 +115,10 @@ public class HomeController extends HttpServlet {
 	
 	private void selectAllUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.setAttribute("listaProduto", this.prod.selectAll());
-		request.setAttribute("listaClienteFisica", this.cfisica.selectAll());
-		request.setAttribute("listaClienteJuridica", this.cjuridica.selectAll());
+		//request.setAttribute("listaClienteFisica", this.cfisica.selectAll());
+		//request.setAttribute("listaClienteJuridica", this.cjuridica.selectAll());
 		request.setAttribute("listaUser", this.user.selectAll());
-		request.setAttribute("listaDetalhes", this.pedidos.selectAll());
+		//request.setAttribute("listaDetalhes", this.pedidos.selectAll());
 		request.getRequestDispatcher("home.jsp").forward(request, response);
 	}
 	

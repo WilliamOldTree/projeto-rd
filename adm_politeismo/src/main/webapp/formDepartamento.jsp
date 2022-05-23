@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Cadastro de Departamentos</title>
+<title>Departamentos</title>
 <link rel="stylesheet" href="./css/base.css">
 <link rel="stylesheet" href="./css/formDepartamento.css">
 <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
@@ -99,12 +99,13 @@
         </div>
     </header>
     <div class="container">
-    <h2 class="title">Cadastro de Departamentos</h2>
         <div class="container-form">
             <div class="form ipt">
 	<form action="DepartamentoController" method="post">
 		<c:choose>
 			<c:when test="${departamento == null }">
+			    <h2 class="title">Cadastro de Departamentos</h2>
+			
 				<label class="form-label">Departamento:</label><input style="" class="form-control" type="text" name="nome" required/>
 			     <br>
 			     
@@ -121,7 +122,7 @@
 											<div class="modal-content ">
 												<div class="modal-body">
 												<div class="text-center px-3 py-3">
-													<p class=" text-success"> Departamento  foi inserido  com sucesso</p>
+													<p class=" text-success">Cadastro Realizado com Sucesso!</p>
 												</div>
 												<div class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
   													<button class="btn formbtn ok" type="submit" name="option" value="insert">OK!</button>
@@ -134,11 +135,13 @@
 									
 			</c:when>
 			<c:otherwise>
+			    <h2 class="title">Editar Departamentos</h2>
+			
 				<input type="hidden" name="id" value="${departamento.id}"/>
 				<label class="form-label">Departamento:</label><input style="" class="form-control" type="text" name="nome" value="${departamento.nome}" required/>
 			    <br>
 			    
-<button class="btn formbtn" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete-${departamento.id}"  style="margin-right: 10px;">Salvar                   
+              <button class="btn formbtn" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete-${departamento.id}"  style="margin-right: 10px;">Salvar                   
                                       </button>	 	
                                       	<div class="modal fade" id="modal-delete-${departamento.id }" tabindex="-1" aria-labelledby="inicioModal" aria-hidden="true">
 									<form action="DepartamentoController" method="post">
@@ -150,7 +153,7 @@
 											<div class="modal-content ">
 												<div class="modal-body">
 												<div class="text-center px-3 py-3">
-													<p class=" text-success"> Departamento  foi atualizado  com sucesso</p>
+													<p class=" text-success"> Dados Atualizados com Sucesso!</p>
 												</div>
 												<div class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
   													<button class="btn formbtn ok" type="submit" name="option" value="update">OK!</button>

@@ -4,12 +4,22 @@ import Footer from '../../components/footer/Footer'
 import Title from '../../components/title/Title'
 import CartIcon from '../../components/asserts/icons/cart.png'
 import TrashIcon from '../../components/asserts/icons/lixeira.png'
-import BudaMedit from '../../components/asserts/images/cart-images/buda-meditando.png'
 import { Link } from "react-router-dom"
 import ListCompra from '../../components/list_compra/ListCompra'
 import ResumoCompra from '../../components/resumo_compra/ResumoCompra'
 import { Col, Container, Row } from 'react-bootstrap'
+import CartContext from '../../context/cart.provider'
+import React, { useEffect, useContext } from 'react';
+
+
 function Cart() {
+
+    const { cart, getCart, deleteCart } = useContext(CartContext)
+
+
+    useEffect(() => {
+        getCart()
+    }, [])
 
     return (
         <>
@@ -33,10 +43,18 @@ function Cart() {
                 <Row>
                     <Col>
                         <ListCompra >
-                            <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                            <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                            <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                            <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
+                            {cart.map((item) => {
+                                return (
+                                    <ResumoCompra key={item.id} 
+                                        product_img={item.urlProduto} 
+                                        descricao={item.nome} 
+                                        valor={item.preco} 
+                                        quantidade={item.qty} 
+                                        trash_img={TrashIcon} 
+                                        deletar={deleteCart} 
+                                        item={item} />
+                                )
+                            })}
                         </ListCompra>
                     </Col>
                 </Row>
