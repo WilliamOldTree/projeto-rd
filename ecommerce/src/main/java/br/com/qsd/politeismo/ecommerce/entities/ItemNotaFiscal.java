@@ -1,6 +1,9 @@
 package br.com.qsd.politeismo.ecommerce.entities;
 
+<<<<<<< HEAD
 import javax.persistence.Column;
+=======
+>>>>>>> 29b5b77eea07f6485c978e0cab6c6e22791a6025
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -23,11 +26,15 @@ public class ItemNotaFiscal {
 	private NotaFiscal idNotaFiscal;
 	
 	private Long quantidade;
+<<<<<<< HEAD
 	
 	@Column(name = "percentual_icms")
 	private Long percentulamIMC;
 	
 	@Column(name = "valor_imc")
+=======
+	private Long percentuamIMC;
+>>>>>>> 29b5b77eea07f6485c978e0cab6c6e22791a6025
 	private Long valorIMC;
 	
 	public ProdutoNotaFiscalID getProdutoNotaFiscalID() {
@@ -55,12 +62,20 @@ public class ItemNotaFiscal {
 	public void setQuantidade(Long quantidade) {
 		this.quantidade = quantidade;
 	}
+<<<<<<< HEAD
 
 	public Long getPercentulamIMC() {
 		return percentulamIMC;
 	}
 	public void setPercentulamIMC(Long percentulamIMC) {
 		this.percentulamIMC = percentulamIMC;
+=======
+	public Long getPercentuamIMC() {
+		return percentuamIMC;
+	}
+	public void setPercentuamIMC(Long percentuamIMC) {
+		this.percentuamIMC = percentuamIMC;
+>>>>>>> 29b5b77eea07f6485c978e0cab6c6e22791a6025
 	}
 	public Long getValorIMC() {
 		return valorIMC;
@@ -70,4 +85,8 @@ public class ItemNotaFiscal {
 	}
 	
 	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 29b5b77eea07f6485c978e0cab6c6e22791a6025
