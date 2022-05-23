@@ -16,16 +16,53 @@ public class Produto {
 	private Boolean fl_inativo;
 	
 	
-	public Produto(String nome, Integer estoque, Double preco, Integer categoria, Integer departamento,
-			Integer fornecedor) {
+	private String nomeCategoria;
+	private String nomeDepartamento;
+	private String nomeFornecedor;
+	
+	public Produto(String nome, Integer estoque, Double preco, String categoria, String departamento,
+			String fornecedor) {
 		this.nome = nome;
 		this.estoque = estoque;
 		this.preco = preco;
-		this.categoria = categoria;
-		this.departamento = departamento;
-		this.fornecedor = fornecedor;
+		this.nomeCategoria = categoria;
+		this.nomeDepartamento = departamento;
+		this.nomeFornecedor = fornecedor;
 	}
-	
+
+	public Produto(String nomeBack, String descricaoBack, String urlProdutoBack, Double volumeBack1, Double pesoBack1,
+			Double precoBack1, Integer estoqueBack1, Integer departamentoBack1, Integer categoriaBack1,
+			Double destaqueBack1, Integer fornecedorBack1) {
+		
+		this.nome = nomeBack;
+		this.descricao = descricaoBack;
+		this.urlProduto = urlProdutoBack;
+		this.volume = volumeBack1;
+		this.peso = pesoBack1;
+		this.preco = precoBack1;
+		this.estoque = estoqueBack1;
+		this.departamento = departamentoBack1;
+		this.categoria = categoriaBack1;
+		this.produtoDestaque = destaqueBack1;
+		this.fornecedor = fornecedorBack1;	
+	}
+
+
+	public Produto(String nome2, String descricao2, String urlProduto2, Double volume2, Double peso2, Double preco2,
+			Integer quantidade, Integer departamento2, Integer categoria2, Integer fornecedor2, Double destaque) {
+		this.nome = nome2;
+		this.descricao = descricao2;
+		this.urlProduto=urlProduto2;
+		this.volume=volume2;
+		this.peso=peso2;
+		this.preco=preco2;
+		this.estoque = quantidade;
+		this.departamento= departamento2;
+		this.categoria = categoria2;
+		this.fornecedor=fornecedor2;
+		this.produtoDestaque= destaque;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -104,4 +141,29 @@ public class Produto {
 	public void setFl_inativo(Boolean fl_inativo) {
 		this.fl_inativo = fl_inativo;
 	}
+
+	public String getNomeCategoria() {
+		return nomeCategoria;
+	}
+
+	public void setNomeCategoria(String nomeCategoRia) {
+		this.nomeCategoria = nomeCategoRia;
+	}
+
+	public String getNomeDepartamento() {
+		return nomeDepartamento;
+	}
+
+	public void setNomeDepartamento(String nomeDepartamento) {
+		this.nomeDepartamento = nomeDepartamento;
+	}
+
+	public String getNomeFornecedor() {
+		return nomeFornecedor;
+	}
+
+	public void setNomeFornecedor(String nomeFornecedor) {
+		this.nomeFornecedor = nomeFornecedor;
+	}
+
 }

@@ -5,7 +5,7 @@
 
         <head>
             <meta charset="ISO-8859-1">
-            <title>Cadastro de Fornecedores</title>
+            <title>Fornecedores</title>
             <link rel="stylesheet" href="./css/base.css">
             <link rel="stylesheet" href="./css/formFornecedor.css">
             <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
@@ -114,7 +114,6 @@
             </header>
 
             <div class="container">
-                <h2 class="title">Cadastro de Fornecedores</h2>
                 <div class=" container-form">
 
                     <div class="form">
@@ -123,6 +122,7 @@
                         <form action="FornecedorController" method="post">
                             <c:choose>
                                 <c:when test="${fornecedor == null }">
+                                  <h2 class="title">Cadastro de Fornecedores</h2>
 
                                     <label class="form-label">Razão Social:</label><input style="" class="form-control"
                                         type="text" name="razao" required />
@@ -150,8 +150,7 @@
                                                 <div class="modal-content ">
                                                     <div class="modal-body">
                                                         <div class="text-center px-3 py-3">
-                                                            <p class=" text-success"> Fornecedor cadastrado com
-                                                                sucesso!.</p>
+                                                            <p class=" text-success">Cadastro Realizado com Sucesso!</p>
                                                         </div>
                                                         <div
                                                             class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
@@ -166,6 +165,7 @@
                                     </div>
                                 </c:when>
                                 <c:otherwise>
+                                <h2 class="title">Editar Fornecedores</h2>
                                 
                                     <input type="hidden" name="id" value="${fornecedor.id}" />
                                     
@@ -196,10 +196,9 @@
                                                 <div class="modal-content ">
                                                     <div class="modal-body">
                                                         <div class="text-center px-3 py-3">
-                                                            <p class=" text-success"> Dados de fornecedor atualizados
-                                                                com sucesso!..</p>
+                                                            <p class=" text-success"> Dados Atualizados com Sucesso!</p>
                                                         </div>
-                                                        <div
+                                                        <divDados Atualizados com Sucesso
                                                             class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
                                                             <button class="btn formbtn ok" type="submit" name="option"
                                                                 value="update">OK!</button>

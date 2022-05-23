@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Cadastro de Produto</title>
+<title>Produtos</title>
 <link rel="stylesheet" href="./css/base.css">
 <link rel="stylesheet" href="./css/formProduto.css">
 <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
@@ -115,7 +115,6 @@
     </header>
     <div class="container">
     
-        <h2 class="title">Cadastro de Produtos</h2>
         <div class="container-form">
             
             <div class="form">
@@ -123,37 +122,50 @@
 	<form action="ProdutoController" method="post">
 		<c:choose>
 			<c:when test="${produto == null }">
-				<label class="form-label">Nome:</label><input style="" class="form-control" type="text" name="descricao"   required/>
-				<label class="form-label">Volume:</label><input style="" class=" form-control money3" type="text" name="volume"  required />
-				<label class="form-label">Peso:</label><input style="" class="form-control money4" type="text" name="peso"  required />
-				<label class="form-label" required>Situação:</label>
-				<select class="form-select" name="situacao" required>
-                 <option>ATIVO</option>
-                 <option>INATIVO</option>
-                </select>
-				<label class="form-label">Preço:</label><input style="" class="form-control  money2" type="text" name="preco" id="money4" required/>
-				<label class="form-label">Quantidade:</label>
-				<select class="form-select" name="quantidade" required>
-				 <option selected>Selecione...</option>
-                 <option value="1">50 Unidades</option>
-                 <option value="2">150 Unidades</option>
-                 <option value="3">250 Unidades</option>
-                 <option value="4">350 Unidades</option>
-                 <option value="5">450 Unidades</option>
-                 <option value="6">550 Unidades</option>                 
-                </select>
+			    <h2 class="title">Cadastro de Produtos</h2>
+			
+				<label class="form-label">Nome:</label><input style="" class="form-control" type="text" name="nome"   required/>
+				<label class="form-label">Descrição:</label><input style="" class=" form-control" type="text" name="descricao"  required />
+				<label class="form-label">URL do Produto:</label><input style="" class="form-control" type="text" name="urlProduto"  required />
+				<label class="form-label">Volume:</label><input style="" class="form-control" type="text" name="volume"  required />
+				<label class="form-label">Peso:</label><input style="" class="form-control" type="text" name="peso"  required />
+				<label class="form-label">Preço:</label><input style="" class="form-control" type="text" name="preco"  required />
+				<label class="form-label">Quantidade:</label><input style="" class="form-control" type="text" name="quantidade"  required />
+				
+               <label class="form-label" required>Departamento:</label>
+				<select class="form-select form-select-lg mb-3 fs-6" name="departamento" required>
+				<option selected>Selecione o Departamento..</option>
+					<c:forEach var="d" items="${listDepartamento}">
+						<option value="${d.id}">${d.nome}</option>
+					</c:forEach>
+				</select>
+				
+			   <label class="form-label" required>Categoria:</label>
+				<select class="form-select form-select-lg mb-3 fs-6" name="categoria" required>
+				<option selected>Selecione a Categoria..</option>
+					<c:forEach var="c" items="${listCategoria}">
+						<option value="${c.id}">${c.nome}</option>
+					</c:forEach>
+				</select>
                 
-				<label class="form-label">Desconto:</label>
-				<select class="form-select" name="desconto" required>
-				 <option selected>Selecione...</option>
+                <label class="form-label" required>Fornecedor:</label>
+				<select class="form-select form-select-lg mb-3 fs-6" name="fornecedor" required>
+				<option selected>Selecione o Fornecedor..</option>
+					<c:forEach var="f" items="${listFornecedor}">
+						<option value="${f.id}">${f.razaoSocial}</option>
+					</c:forEach>
+				</select>
+				
+		       <label class="form-label">Desconto:</label>
+				<select class="form-select" name="desconto" >
+				 <option value= null>(Apenas para produtos em Destaque)..</option>
                  <option value="1">0,5</option>
                  <option value="2">0,10</option>
                  <option value="3">0,15</option>
                 </select>
 			     <br>	
 			     			
-<button class="btn formbtn" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete-${produto.id}"  style="margin-right: 10px;">Salvar                   
-                                      </button>	 	
+             <button class="btn formbtn" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete-${produto.id}"  style="margin-right: 10px;">Salvar</button>	 	
                                       	<div class="modal fade" id="modal-delete-${produto.id }" tabindex="-1" aria-labelledby="inicioModal" aria-hidden="true">
 									<form action="ProdutoController" method="post">
 									
@@ -164,7 +176,7 @@
 											<div class="modal-content ">
 												<div class="modal-body">
 												<div class="text-center px-3 py-3">
-													<p class=" text-success"> Produto adicionado com sucesso!.</p>
+													<p class=" text-success"> Cadastro Realizado com Sucesso!</p>
 												</div>
 												<div class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
   													<button class="btn formbtn ok" type="submit" name="option" value="insert">OK!</button>
@@ -172,35 +184,53 @@
 												</div>
 											</div>
 										</div>
-													</c:when>
+			</c:when>
 			<c:otherwise>
+				<h2 class="title">Editar de Produtos</h2>
 				<input type="hidden" name="id" value="${produto.id}"/>
 				
-				<label class="form-label">Nome:</label><input style="" class="form-control" type="text" name="descricao"   value="${produto.descricao}"required/>
-				<label class="form-label">Volume:</label><input style="" class=" form-control money2" type="text" name="volume" value="${produto.volume}" required />
-				<label class="form-label">Peso:</label><input style="" class="form-control money3" type="text" name="peso" value="${produto.peso}"  required />
-				<label class="form-label">Preço:</label><input style="" class="form-control money4" type="text" name="preco"  value="${produto.preco}" required/>
-				<label class="form-label" >Quantidade:</label>
-				<select class="form-select" name="quantidade" value="${produto.quantidade}" required>
-				 <option selected>Selecione...</option>
-                 <option value="1">50 Unidades</option>
-                 <option value="2">150 Unidades</option>
-                 <option value="3">250 Unidades</option>
-                 <option value="4">350 Unidades</option>
-                 <option value="5">450 Unidades</option>
-                 <option value="6">550 Unidades</option>                 
-                </select>
+				<label class="form-label">Nome:</label><input style="" class="form-control" type="text" name="nome" value="${produto.nome}"/>
+				<label class="form-label">Descrição:</label><input style="" class=" form-control" type="text" name="descricao" value="${produto.descricao}" />
+				<label class="form-label">URL do Produto:</label><input style="" class="form-control" type="text" name="urlProduto" value="${produto.urlProduto}" />
+				<label class="form-label">Volume:</label><input style="" class="form-control" type="text" name="volume" value="${produto.volume}"   />
+				<label class="form-label">Peso:</label><input style="" class="form-control" type="text" name="peso" value="${produto.peso}"  />
+				<label class="form-label">Preço:</label><input style="" class="form-control" type="text" name="preco"  value="${produto.preco}" />
+				<label class="form-label">Quantidade:</label><input style="" class="form-control" type="text" name="quantidade"  value="${produto.estoque}" />
+               
+               <label class="form-label" >Departamento:</label>
+				<select class="form-select form-select-lg mb-3 fs-6" name="departamento" >
+				<option selected>Selecione o Departamento..</option>
+					<c:forEach var="d" items="${listDepartamento}">
+						<option value="${d.id}">${d.nome}</option>
+					</c:forEach>
+				</select>
+				
+			   <label class="form-label" >Categoria:</label>
+				<select class="form-select form-select-lg mb-3 fs-6" name="categoria" >
+				<option selected>Selecione a Categoria..</option>
+					<c:forEach var="c" items="${listCategoria}">
+						<option value="${c.id}">${c.nome}</option>
+					</c:forEach>
+				</select>
                 
-				<label class="form-label">Desconto:</label>
-                <select class="form-select" name="desconto" value="${produto.desconto}" required>
-                 <option selected>Selecione...</option>
+                <label class="form-label" >Fornecedor:</label>
+				<select class="form-select form-select-lg mb-3 fs-6" name="fornecedor" >
+				<option selected  value="">Selecione a Categoria..</option>
+					<c:forEach var="f" items="${listFornecedor}">
+						<option value="${f.id}">${f.razaoSocial}</option>
+					</c:forEach>
+				</select>
+				
+		       <label class="form-label">Desconto:</label>
+				<select class="form-select" name="desconto" >
+				 <option selected>(Apenas para produtos em Destaque)</option>
                  <option value="1">0,5</option>
                  <option value="2">0,10</option>
                  <option value="3">0,15</option>
                 </select>
-			    <br>
+			     <br>
 			    
-<button class="btn formbtn" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete-${produto.id}"  style="margin-right: 10px;">Salvar                   
+         <button class="btn formbtn" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete-${produto.id}"  style="margin-right: 10px;">Salvar                   
                                       </button>	 	
                                       	<div class="modal fade" id="modal-delete-${produto.id }" tabindex="-1" aria-labelledby="inicioModal" aria-hidden="true">
 									<form action="ProdutoController" method="post">
@@ -212,15 +242,16 @@
 											<div class="modal-content ">
 												<div class="modal-body">
 												<div class="text-center px-3 py-3">
-													<p class=" text-success"> Dados do produto  atualizados com sucesso!.</p>
+													<p class=" text-success"> Dados Atualizados com Sucesso!</p>
 												</div>
 												<div class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
   													<button class="btn formbtn ok" type="submit" name="option" value="update">OK!</button>
 												</div>
 												</div>
 											</div>
-										</div>			</c:otherwise>
-		</c:choose>
+										</div>			
+					</c:otherwise>
+		  </c:choose>
 	</form>
             </div>
         </div>

@@ -5,7 +5,7 @@
 
         <head>
             <meta charset="ISO-8859-1">
-            <title>Cadastro de Categorias</title>
+            <title>Categorias</title>
             <link rel="stylesheet" href="./css/base.css">
             <link rel="stylesheet" href="./css/formCategoria.css">
             <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
@@ -94,7 +94,6 @@
                 </div>
             </header>
             <div class="container">
-                <h2 class="title">Cadastro de Categorias</h2>
                 <div class="container-form">
 
 
@@ -102,6 +101,7 @@
                         <form action="CategoriaController" method="post">
                             <c:choose>
                                 <c:when test="${categoria == null }">
+                                <h2 class="title">Cadastro de Categorias</h2>
 
 
                                     <label class="form-label">Categoria:</label><input style="" class="form-control"
@@ -126,8 +126,7 @@
                                                 <div class="modal-content ">
                                                     <div class="modal-body">
                                                         <div class="text-center px-3 py-3">
-                                                            <p class=" text-success"> A categoria foi inserida com
-                                                                sucesso </p>
+                                                            <p class=" text-success">Cadastro Realizado com Sucesso!</p>
                                                         </div>
                                                         <div
                                                             class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
@@ -142,6 +141,9 @@
 
                                 </c:when>
                                 <c:otherwise>
+                                               
+                                    <h2 class="title">Editar de Categorias</h2>
+                                
                                     <input type="hidden" name="id" value="${categoria.id}" />
                                     <label class="form-label">Categoria:</label><input style="" class="form-control"
                                         type="text" name="nome" value="${categoria.nome}" required />
@@ -161,8 +163,7 @@
                                                 <div class="modal-content ">
                                                     <div class="modal-body">
                                                         <div class="text-center px-3 py-3">
-                                                            <p class=" text-success"> A categoria foi atualizada com
-                                                                sucesso</p>
+                                                            <p class=" text-success">  Dados Atualizados com Sucesso!</p>
                                                         </div>
                                                         <div
                                                             class="d-grid gap-2 d-md-flex justify-content-md-center px-3 py-3">
