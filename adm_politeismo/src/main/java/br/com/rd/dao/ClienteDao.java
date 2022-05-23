@@ -1,13 +1,14 @@
 package br.com.rd.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import br.com.rd.model.Cliente;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.time.LocalDate;
+import br.com.rd.model.Endereco;
 
 public class ClienteDao {
 
@@ -25,8 +26,17 @@ public class ClienteDao {
 					+ "C.SENHA,\n"
 					+ "DATE_FORMAT(NASCIMENTO, '%d-%m-%Y') AS 'NASCIMENTO',\n"
 					+ "C.FIXO,\n"
-					+ "C.CELULAR\n"
-					+ "FROM CLIENTE C;");
+					+ "C.CELULAR,\n"
+					+ "E.APELIDO,\n"
+					+ "CONCAT(E.TIPO_LOGRADOURO, '-', E.NOME_LOGRADOURO, 'Nº ', E.NUMERO) AS 'ENDERECO',\n"
+					+ "E.CEP,\n"
+					+ "E.CIDADE,\n"
+					+ "E.BAIRRO,\n"
+					+ "E.ESTADO\n"
+					+ "FROM CLIENTE C\n"
+					+ "JOIN ENDERECO E\n"
+					+ "ON\n"
+					+ "E.ID_ENDERECO = C.ID_CLIENTE;");
 			ResultSet r = p.executeQuery();			
 			
 			while (r.next()) {
@@ -39,9 +49,18 @@ public class ClienteDao {
 				LocalDate nascimento = LocalDate.parse(r.getString("NASCIMENTO"));
 				String fixo = r.getString("FIXO");
 				String celular = r.getString("CELULAR");
+				String apelido = r.getString("APELIDO");
+				String tipoLogradouro = r.getString("TIPO_LOGRADOURO");
+				String nomeLogradouro =  r.getString("NOME_LOGRADOURO");
+				String numero = r.getString("NUMERO");
+				String cep = r.getString("CEP");
+				String cidade = r.getString("CIDADE");
+				String bairro = r.getString("BAIRRO");
+				String estado = r.getString("ESTADO");
 				
 				
-				Cliente cliente = new Cliente(id, nome, cpf, email, senha, nascimento, fixo, celular);
+				Endereco endereco = new Endereco(apelido, tipoLogradouro,nomeLogradouro, numero, cep, cidade, bairro, estado);
+				Cliente cliente = new Cliente(id, nome, cpf, email, senha, nascimento, fixo, celular, endereco);
 				cliente.setId(id);
 				listaCliente.add(cliente);
 			}
@@ -55,14 +74,6 @@ public class ClienteDao {
 		return listaCliente;
 	}
 	
-	
-	public ArrayList<Endereco> selectDetalhesCliente(){
-		Conexao c = Conexao.getInstance();
-		Connection con = c.getConnection();
-		ArrayList<Cliente> listaCliente = new ArrayList<Cliente>();
-	
-	Cliente cliente = new Cliente();
-	cliente.getEndereco().getBairro()
 	
 }//end class
 
