@@ -29,11 +29,6 @@
 - [:heavy_check_mark:] Spring Data
 - [:heavy_check_mark:] Spring MVC
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 421972d200574f03f92aadedc3dc360b4ac2d26c
 # Projeto Integrador Raia Drogasil
 
 ## Programa Quero ser Dev - Turma 7
@@ -54,13 +49,6 @@
 - Sérgio Cauê Gomes
 - Denis William Nery Barbosa
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 51339e269bf6af23064318a01eb496c03ad908e7
-=======
->>>>>>> 0ab49c0ee4e5dd03ad0be2c66998e2408fad1570
->>>>>>> c49ea13a38cff82faef4ea782aee4233423b373a
-=======
 ### *_Tecnonologias desenvolvidas_*
 - [:heavy_check_mark:] Prototipagem Figman
 - [:heavy_check_mark:] Front-end - HTML, Bootstrap, CSS e Java Script
@@ -71,10 +59,3 @@
 - [:heavy_check_mark:] Spring Boot
 - [:heavy_check_mark:] Spring Data
 - [:heavy_check_mark:] Spring MVC
->>>>>>> 4103b4cb40f0677349d6a3638353fede96d12bb9
-<<<<<<< HEAD
->>>>>>> 29b5b77eea07f6485c978e0cab6c6e22791a6025
-=======
-=======
->>>>>>> 4c080c22c4c7cdd9603e7a8907c133b2dea15553
->>>>>>> 421972d200574f03f92aadedc3dc360b4ac2d26c
