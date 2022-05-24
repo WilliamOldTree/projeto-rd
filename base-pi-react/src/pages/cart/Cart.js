@@ -43,18 +43,17 @@ function Cart() {
                 <Row>
                     <Col>
                         <ListCompra >
-                            {cart.map((item) => {
-                                return (
-                                    <ResumoCompra key={item.id} 
-                                        product_img={item.urlProduto} 
-                                        descricao={item.nome} 
-                                        valor={item.preco} 
-                                        quantidade={item.qty} 
-                                        trash_img={TrashIcon} 
-                                        deletar={deleteCart} 
-                                        item={item} />
-                                )
-                            })}
+                            {cart.length == 0 ? <h3 className="cartVazio">Carrinho Vazio</h3> : 
+                            cart.map((item) => { return (<ResumoCompra key={item.id} 
+                                product_img={item.urlProduto} 
+                                descricao={item.nome} 
+                                valor={item.preco} 
+                                quantidade={item.qty} 
+                                trash_img={TrashIcon} 
+                                deletar={deleteCart} 
+                                item={item} 
+                            />) })}
+
                         </ListCompra>
                     </Col>
                 </Row>
