@@ -21,7 +21,7 @@ public class ItemNotaFiscal {
 	
 	@ManyToOne @JoinColumn(name = "id_nota_fiscal", insertable = false, updatable = false) 
 	private NotaFiscal idNotaFiscal;
-	
+	  
 	@Column(name="quantidade")
 	private Long quantidade;
 	

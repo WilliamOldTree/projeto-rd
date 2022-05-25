@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import br.com.qsd.politeismo.ecommerce.enums.Operation;
+import br.com.qsd.politeismo.ecommerce.enums.Operacao;
 
 
 @Entity
@@ -44,9 +44,9 @@ public class NotaFiscal {
 	private BigDecimal valor;
 	
 	@Enumerated(EnumType.STRING)
-	private Operation operation;
+	private Operacao operacao;
 
-	@JsonIgnore @OneToMany(mappedBy="id_nota_fiscal") 
+	@JsonIgnore @OneToMany(mappedBy="idNotaFiscal") 
 	private List<ItemNotaFiscal> itemNotaFiscal; 
 	
 	@OneToOne(cascade = { CascadeType.DETACH })
@@ -96,12 +96,12 @@ public class NotaFiscal {
 		this.valor = valor;
 	}
 
-	public Operation getOperacao() {
-		return operation;
+	public Operacao getOperacao() {
+		return operacao;
 	}
 
-	public void setOperacao(Operation operation) {
-		this.operation =operation;
+	public void setOperacao(Operacao operacao) {
+		this.operacao = operacao;
 	}
 
 	public List<ItemNotaFiscal> getItemNotaFiscal() {

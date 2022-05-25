@@ -30,7 +30,7 @@ public class Cliente {
     private String cpf;
     private String nome;
     private String email;
-    private String senha;
+	private String password;
     private String celular;
     private String fixo;
     
@@ -94,15 +94,16 @@ public class Cliente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	 public String getPassword() {
+			return password;
+		}
 
-	public String getPassword() {
-		return senha;
-	}
+		public void setPassword(String password) {
+			this.password = password;
+		}
 
-	public void setPassword(String password) {
-		this.senha = senha;
-	}
-
+	
 	public LocalDate getNascimento() {
 		return nascimento;
 	}
@@ -153,6 +154,7 @@ public class Cliente {
 
 	public List<Pedido> getPedido() {
 		return pedido;
+		
 	}
 	
 }// end class
