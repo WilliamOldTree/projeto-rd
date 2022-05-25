@@ -1,10 +1,9 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 package br.com.qsd.politeismo.ecommerce.entities;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -16,16 +15,19 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import br.com.qsd.politeismo.ecommerce.enums.Genero;
 
 @Entity
 @Table(name = "CLIENTE")
-public class Cliente {
-	
-    @Id
+public class Cliente implements UserDetails{
+
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id_cliente")
     private Long id;
@@ -60,6 +62,10 @@ public class Cliente {
 	@OneToMany(mappedBy="cliente")
 	List<Favoritos> favoritos;
 	
+	@Fetch(FetchMode.SELECT)
+	@ManyToMany(fetch = FetchType.EAGER)
+	private List<Perfil> perfis = new ArrayList<>();
+
 	
 	public Cliente() {
 		
@@ -95,10 +101,6 @@ public class Cliente {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
 	}
 
 	public void setPassword(String password) {
@@ -156,330 +158,34 @@ public class Cliente {
 	public List<Pedido> getPedido() {
 		return pedido;
 	}
-	
-}// end class
-=======
-=======
->>>>>>> 421972d200574f03f92aadedc3dc360b4ac2d26c
-package br.com.qsd.politeismo.ecommerce.entities;
 
-import java.time.LocalDate;
-import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import br.com.qsd.politeismo.ecommerce.enums.Genero;
-
-@Entity
-@Table(name = "CLIENTE")
-public class Cliente {
-	
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="id_cliente")
-    private Long id;
-    private String cpf;
-    private String nome;
-    private String email;
-    private String password;
-    private String celular;
-    private String fixo;
-    
-    private LocalDate nascimento;
-    
-	@Enumerated(EnumType.STRING)
-    private Genero genero;
-	
-	@ManyToMany(mappedBy="clientes",fetch = FetchType.EAGER)
-	private List<Endereco> enderecos;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy="cliente")
-	List<Cartao> cartao;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy="cliente")
-	List<Forma> forma;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy="cliente")
-	List<Pedido> pedido;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy="cliente")
-	List<Favoritos> favorito;
-	
-	
-	public Cliente() {
-		
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return this.perfis;
 	}
 
-	public Long getId() {
-		return id;
+	public String getUsername() {
+		return this.email;
 	}
 	
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public String getPassword() {
-		return password;
+		return this.password;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public boolean isAccountNonExpired() {
+		return true;
 	}
 
-	public LocalDate getNascimento() {
-		return nascimento;
+	public boolean isAccountNonLocked() {
+		return true;
 	}
 
-	public void setNascimento(LocalDate nascimento) {
-		this.nascimento = nascimento;
+	public boolean isCredentialsNonExpired() {
+		return true;
 	}
 
-	public Genero getGenero() {
-		return genero;
-	}
-
-	public void setGenero(Genero genero) {
-		this.genero = genero;
-	}
-	
-	public String getCelular() {
-		return celular;
-	}
-
-	public void setCelular(String celular) {
-		this.celular = celular;
-	}
-
-	public String getFixo() {
-		return fixo;
-	}
-
-	public void setFixo(String fixo) {
-		this.fixo = fixo;
-	}
-
-	public List<Endereco> getEnderecos() {
-		return enderecos;
-	}
-
-	public void setEnderecos(List<Endereco> enderecos) {
-		this.enderecos = enderecos;
-	}
-
-	public List<Cartao> getCartao() {
-		return cartao;
-	}
-
-	public List<Forma> getForma() {
-		return forma;
-	}
-
-	public List<Pedido> getPedido() {
-		return pedido;
+	public boolean isEnabled() {
+		return true;
 	}
 	
 }// end class
-<<<<<<< HEAD
->>>>>>> 29b5b77eea07f6485c978e0cab6c6e22791a6025
-=======
-=======
-package br.com.qsd.politeismo.ecommerce.entities;
-
-import java.time.LocalDate;
-import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import br.com.qsd.politeismo.ecommerce.enums.Genero;
-
-@Entity
-@Table(name = "CLIENTE")
-public class Cliente {
-	
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="id_cliente")
-    private Long id;
-    private String cpf;
-    private String nome;
-    private String email;
-    private String senha;
-    private String celular;
-    private String fixo;
-    
-    private LocalDate nascimento;
-    
-	@Enumerated(EnumType.STRING)
-    private Genero genero;
-	
-	@ManyToMany(mappedBy="clientes",fetch = FetchType.EAGER)
-	private List<Endereco> enderecos;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy="cliente")
-	List<Cartao> cartao;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy="cliente")
-	List<Forma> forma;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy="cliente")
-	List<Pedido> pedido;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy="cliente")
-	List<Favoritos> favoritos;
-	
-	
-	public Cliente() {
-		
-	}
-
-	public Long getId() {
-		return id;
-	}
-	
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPassword() {
-		return senha;
-	}
-
-	public void setPassword(String password) {
-		this.senha = senha;
-	}
-
-	public LocalDate getNascimento() {
-		return nascimento;
-	}
-
-	public void setNascimento(LocalDate nascimento) {
-		this.nascimento = nascimento;
-	}
-
-	public Genero getGenero() {
-		return genero;
-	}
-
-	public void setGenero(Genero genero) {
-		this.genero = genero;
-	}
-	
-	public String getCelular() {
-		return celular;
-	}
-
-	public void setCelular(String celular) {
-		this.celular = celular;
-	}
-
-	public String getFixo() {
-		return fixo;
-	}
-
-	public void setFixo(String fixo) {
-		this.fixo = fixo;
-	}
-
-	public List<Endereco> getEnderecos() {
-		return enderecos;
-	}
-
-	public void setEnderecos(List<Endereco> enderecos) {
-		this.enderecos = enderecos;
-	}
-
-	public List<Cartao> getCartao() {
-		return cartao;
-	}
-
-	public List<Forma> getForma() {
-		return forma;
-	}
-
-	public List<Pedido> getPedido() {
-		return pedido;
-	}
-	
-}// end class
->>>>>>> 4c080c22c4c7cdd9603e7a8907c133b2dea15553
->>>>>>> 421972d200574f03f92aadedc3dc360b4ac2d26c
