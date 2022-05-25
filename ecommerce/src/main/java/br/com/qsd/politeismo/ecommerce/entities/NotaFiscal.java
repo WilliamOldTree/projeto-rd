@@ -23,8 +23,8 @@ import br.com.qsd.politeismo.ecommerce.enums.Operacao;
 @Table(name="nota_fiscal")
 public class NotaFiscal {
 	
-	
-	@Id @Column(name = "id_nota_fiscal") 
+	@Id 
+	@Column(name = "id_nota_fiscal") 
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private Long id;
 	
@@ -42,7 +42,8 @@ public class NotaFiscal {
 	@Enumerated(EnumType.STRING)
 	private Operacao operacao;
 
-	@JsonIgnore @OneToMany(mappedBy="idNotaFiscal") 
+	@JsonIgnore 
+	@OneToMany(mappedBy="idNotaFiscal") 
 	private List<ItemNotaFiscal> itemNotaFiscal; 
 	
 	@OneToOne(cascade = { CascadeType.DETACH })
