@@ -1,6 +1,8 @@
 package br.com.qsd.politeismo.ecommerce.controller.form;
 
+import java.util.List;
 
+import br.com.qsd.politeismo.ecommerce.enums.FormaPagamento;
 import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 
 public class FormPedido {
@@ -8,17 +10,21 @@ public class FormPedido {
 	private String data;
 	
 	private String valor;
-	
-	private StatusPedido statusPedido;
-	
+		
 	private String cliente;
 	
-	private String entrega;
+	private StatusPedido statusPedido;
+
+	private FormaPagamento formaPagamento;
+	
+	private String endereco;
+	
+	private List<String> itens;
+	
 	
 	public FormPedido() {
 		
 	}
-
 	
 	public String getData() {
 		return data;
@@ -36,14 +42,6 @@ public class FormPedido {
 		this.valor = valor;
 	}
 
-	public StatusPedido getStatusPedido() {
-		return statusPedido;
-	}
-
-	public void setStatusPedido(StatusPedido statusPedido) {
-		this.statusPedido = statusPedido;
-	}
-
 	public String getCliente() {
 		return cliente;
 	}
@@ -52,13 +50,39 @@ public class FormPedido {
 		this.cliente = cliente;
 	}
 
-	public String getEntrega() {
-		return entrega;
+	public FormaPagamento getFormaPagamento() {
+		return formaPagamento;
 	}
 
-	public void setEntrega(String entrega) {
-		this.entrega = entrega;
+	public void setFormaPagamento(FormaPagamento formaPagamento) {
+		this.formaPagamento = formaPagamento;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public StatusPedido getStatusPedido() {
+		return statusPedido;
+	}
+
+	public void setStatusPedido(StatusPedido statusPedido) {
+		this.statusPedido = statusPedido;
+	}
+
+	public List<String> getItens() {
+		return itens;
+	}
+
+	public void setItens(List<String> itens) {
+		this.itens = itens;
 	}
 	
+	
+
 	
 }

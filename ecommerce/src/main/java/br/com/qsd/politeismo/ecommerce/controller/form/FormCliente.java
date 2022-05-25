@@ -1,11 +1,7 @@
 package br.com.qsd.politeismo.ecommerce.controller.form;
 
-import java.time.LocalDate;
-
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-
-import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.enums.Genero;
 
 public class FormCliente {
@@ -14,7 +10,9 @@ public class FormCliente {
     private String nome;
     private String email;
     private String password;
-    private LocalDate nascimento;
+    private String celular;
+    private String fixo;
+    private String nascimento;
     
 	@Enumerated(EnumType.STRING)
     private Genero genero;
@@ -23,24 +21,26 @@ public class FormCliente {
 		
 	}
 
-	public FormCliente(String cpf, String nome, String email, String password, LocalDate nascimento, Genero genero) {
+	
+	
+
+
+
+
+	public FormCliente(String cpf, String nome, String email, String password, String celular, String fixo,
+			String nascimento, Genero genero) {
 		super();
 		this.cpf = cpf;
 		this.nome = nome;
 		this.email = email;
 		this.password = password;
+		this.celular = celular;
+		this.fixo = fixo;
 		this.nascimento = nascimento;
 		this.genero = genero;
 	}
-	
-	public FormCliente(Cliente entity) {
-		cpf = entity.getCpf();
-		nome = entity.getNome();
-		email = entity.getEmail();
-		password = entity.getPassword();
-		nascimento = entity.getNascimento();
-		genero = entity.getGenero();
-	}
+
+
 
 	public String getCpf() {
 		return cpf;
@@ -74,11 +74,11 @@ public class FormCliente {
 		this.password = password;
 	}
 
-	public LocalDate getNascimento() {
+	public String getNascimento() {
 		return nascimento;
 	}
 
-	public void setNascimento(LocalDate nascimento) {
+	public void setNascimento(String nascimento) {
 		this.nascimento = nascimento;
 	}
 
@@ -89,6 +89,21 @@ public class FormCliente {
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
-	
-	
+
+	public String getCelular() {
+		return celular;
+	}
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+
+	public String getFixo() {
+		return fixo;
+	}
+
+	public void setFixo(String fixo) {
+		this.fixo = fixo;
+	}
+
 }

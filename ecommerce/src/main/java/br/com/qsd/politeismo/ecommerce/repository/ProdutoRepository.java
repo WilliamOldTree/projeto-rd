@@ -4,13 +4,16 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
 import br.com.qsd.politeismo.ecommerce.controller.dto.ProdutoCardDTO;
 import br.com.qsd.politeismo.ecommerce.entities.Produto;
 
-public interface ProdutoRepository  extends JpaRepository<Produto, Long>{
+@Repository
+public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 	
 	@Query(value = "select p from Produto p where upper(trim(p.nome)) like %?1%")
-	List<ProdutoCardDTO> buscarPorNome (String name);
+	List<ProdutoCardDTO> buscarPorNome (String nome);
 	
 	@Query(value = "select p from Produto p where upper(trim(p.descricao)) like %?1%")
 	List<ProdutoCardDTO> buscarPorDescricao (String descricao);
@@ -19,10 +22,18 @@ public interface ProdutoRepository  extends JpaRepository<Produto, Long>{
 //			+ " where c.nome = :categoria", nativeQuery = true)
 //	List<Produto> findProdutosPorCategoria(@Param("categoria")String categoria); 
 	
-//	@Query(value = "select p from produto p JOIN FETCH p.categoria where p.idProduto = :id")
-//	List<Produto> findProdutosPorCategoria(@Param("id")Long id); 
+	//@Query(value = "select p from produto p JOIN FETCH p.categoria where p.idProduto = :id")
+	List<ProdutoCardDTO> findByCategoriaNome(String nome); 
+	
+	List<ProdutoCardDTO> findByDescricao(String nome); 
+    
+	List<ProdutoCardDTO> findByProdutoDestaqueId(Long id); 
 
-       
+	List<ProdutoCardDTO> findByCategoriaIdCategoria(Long id); 
+
+	List<ProdutoCardDTO> findByDepartamentoIdDepartamento(Long id); 
+
+
 }
 
 

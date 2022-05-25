@@ -1,8 +1,14 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package br.com.qsd.politeismo.ecommerce.entities;
 
 import java.util.List;
 
+=======
+package br.com.qsd.politeismo.ecommerce.entities;
+
+import java.util.List;
+>>>>>>> bf78065b9461cca12f96c1fc45cae2a7bc334ede
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,12 +31,17 @@ public class Produto {
 	@Column(name = "id_produto")
 	private Long idProduto;
 
+<<<<<<< HEAD
 	@Column(nullable = false, name= "nome")
+=======
+	@Column(nullable = false)
+>>>>>>> bf78065b9461cca12f96c1fc45cae2a7bc334ede
 	private String nome;
 	
 	@Column(name= "url_produto", nullable = true)
 	private String urlProduto;
 	
+<<<<<<< HEAD
 	@Column(nullable = false, name="descricao")
 	private String descricao;
 
@@ -38,20 +49,40 @@ public class Produto {
 	private String volume;
 	
 	@Column(nullable = false, name="peso")
+=======
+	@Column(nullable = false)
+	private String descricao;
+
+	@Column(nullable = false)
+	private String volume;
+	
+	@Column(nullable = false)
+>>>>>>> bf78065b9461cca12f96c1fc45cae2a7bc334ede
 	private String peso;
 	
 	@Column(name = "fl_inativo")
 	private boolean flInativo = true; // flag inativo
 	
+<<<<<<< HEAD
 	@Column(nullable = false, name="preco")
 	private String preco;
 	
 	@Column(nullable = false, name="estoque")
+=======
+	@Column(nullable = false)
+	private String preco;
+	
+	@Column(nullable = false)
+>>>>>>> bf78065b9461cca12f96c1fc45cae2a7bc334ede
 	private Integer estoque;
 	
 	@JsonIgnore
 	@ManyToOne
+<<<<<<< HEAD
 	@JoinColumn(name = "fk_id_produto_destaque",nullable = false)
+=======
+	@JoinColumn(name = "fk_id_produto_destaque")
+>>>>>>> bf78065b9461cca12f96c1fc45cae2a7bc334ede
 	private ProdutoDestaque produtoDestaque;
 	
 	@JsonIgnore
@@ -79,7 +110,11 @@ public class Produto {
 	
 	
 	@JsonIgnore 
+<<<<<<< HEAD
 	@OneToMany(mappedBy="idProduto") 
+=======
+	@OneToMany(mappedBy="idNotaFiscal") 
+>>>>>>> bf78065b9461cca12f96c1fc45cae2a7bc334ede
 	private List<ItemNotaFiscal> itemNotaFiscal; 
 	
 	public Produto() {
@@ -196,6 +231,7 @@ public class Produto {
 	
 	
 
+<<<<<<< HEAD
 =======
 package br.com.qsd.politeismo.ecommerce.entities;
 
@@ -373,4 +409,6 @@ public class Produto {
 	}	
 
 >>>>>>> 2a13be4dd739321b0ff51abb2a3466b580a8a98a
+=======
+>>>>>>> bf78065b9461cca12f96c1fc45cae2a7bc334ede
 }// end

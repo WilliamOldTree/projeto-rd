@@ -1,4 +1,5 @@
 package br.com.qsd.politeismo.ecommerce.entities;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -38,16 +39,21 @@ public class Cartao {
 	private Forma formaPagamento;
 	
 	
-    
-
-
 	public Cartao() {
-		super();
+		
+	}
+
+	public Cartao(Long id, String titular_cartao, String numero_cartao, String cvv_cartao, String validade_cartao,
+			Cliente cliente, Forma formaPagamento) {
+		this.id = id;
 		this.titular_cartao = titular_cartao;
 		this.numero_cartao = numero_cartao;
 		this.cvv_cartao = cvv_cartao;
 		this.validade_cartao = validade_cartao;
+		this.cliente = cliente;
+		this.formaPagamento = formaPagamento;
 	}
+
 
 	public Long getId() {
 		return id;
