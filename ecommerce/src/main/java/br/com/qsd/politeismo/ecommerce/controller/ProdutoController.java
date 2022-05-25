@@ -99,5 +99,23 @@ public class ProdutoController {
 		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
 	}
 	
+	/* BUSCAR CATEGORIA POR ID */
+
+	@GetMapping(value = "categoria") /* Mapeia a URL */
+	public ResponseEntity<List<ProdutoCardDTO>> findByCategoriaIdCategoria(@RequestParam(name = "id") Long id) {
+
+		List<ProdutoCardDTO> produto = produtoRepository.findByCategoriaIdCategoria(id);
+		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
+	}
+	
+	/* BUSCAR DEPARTAMENTO POR ID */
+	
+	@GetMapping(value = "departamento") /* Mapeia a URL */
+	public ResponseEntity<List<ProdutoCardDTO>> findByDepartamentoIdDepartamento(@RequestParam(name = "id") Long id) {
+
+		List<ProdutoCardDTO> produto = produtoRepository.findByDepartamentoIdDepartamento(id);
+		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
+	}
+
 	
 }
