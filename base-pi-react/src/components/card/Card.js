@@ -5,14 +5,8 @@ import { Link } from 'react-router-dom';
 import { baseUrl } from '../../environments'
 import axios from 'axios'
 
-
-
 function Card(props) {
     
-  
-
-    const { addToCart } = useContext(CartContext)
-    const produto = props.produto || {}
     const [produtos, setProdutos] = useState([])
 
     useEffect(() => {
@@ -25,16 +19,23 @@ function Card(props) {
                 setProdutos(response.data)
             })
     }
-    
+
+
+    const { addToCart } = useContext(CartContext)
+    const produto = props.produto || {}
 
     return (
         <>
 
+
             <div className='card'>
                 
                 <div className='img'>
-                   
-                <Link to={`product/${produto.idProduto}`}> <img src={props.img} alt='' /></Link>
+                <Link className="my-2 mx-1 btn btn-secondary" to={`product/${produto.idProduto}`}>
+                                                    
+                                                 
+                <img src={props.img} alt='' />
+                </Link> 
                 </div>
                     <div className='content'>
                         <div className='title-card'>{props.nomeProduto}</div>

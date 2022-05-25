@@ -7,17 +7,17 @@ public class FormCartao {
 	private String cvv_cartao;
 	private String validade_cartao;
 	private Long cliente;
-	private Long forma;
+
 	
     
 	public FormCartao(String titular_cartao, String numero_cartao, String cvv_cartao, String validade_cartao,
-			String cliente, String forma) {
+			String cliente) {
 		this.titular_cartao = titular_cartao;
 		this.numero_cartao = numero_cartao;
 		this.cvv_cartao = cvv_cartao;
 		this.validade_cartao = validade_cartao;
 		this.cliente =Long.parseLong(cliente) ;
-		this.forma = Long.parseLong(forma);
+	
 	}
 
 	public FormCartao() {
@@ -32,13 +32,7 @@ public class FormCartao {
 		this.cliente = cliente;
 	}
 
-	public Long getForma() {
-		return forma;
-	}
-
-	public void setForma(Long forma) {
-		this.forma = forma;
-	}
+	
 
 	public String getTitular_cartao() {
 		return titular_cartao;
