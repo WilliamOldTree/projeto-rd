@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "cartao")
@@ -26,17 +27,14 @@ public class Cartao {
 	@Column(nullable = false)
 	private String titular_cartao;
 	private String numero_cartao;
-	private String cvv_cartao;
 	private String validade_cartao;
 	
-
+	@Transient
+	private String cvv_cartao;
+	
 	@ManyToOne(fetch =FetchType.LAZY)
 	@JoinColumn(name = "cliente_id_cliente", nullable = true)
 	private Cliente cliente;
-	
-	@ManyToOne(fetch =FetchType.LAZY)
-	@JoinColumn(name="forma_id_forma", nullable = true)
-	private Forma formaPagamento;
 	
 	
 	public Cartao() {
@@ -44,14 +42,13 @@ public class Cartao {
 	}
 
 	public Cartao(Long id, String titular_cartao, String numero_cartao, String cvv_cartao, String validade_cartao,
-			Cliente cliente, Forma formaPagamento) {
+			Cliente cliente) {
 		this.id = id;
 		this.titular_cartao = titular_cartao;
 		this.numero_cartao = numero_cartao;
 		this.cvv_cartao = cvv_cartao;
 		this.validade_cartao = validade_cartao;
 		this.cliente = cliente;
-		this.formaPagamento = formaPagamento;
 	}
 
 
@@ -95,13 +92,6 @@ public class Cartao {
 		this.cliente = cliente;
 	}
 
-	public Forma getFormaPagamento() {
-		return formaPagamento;
-	}
-
-	public void setFormaPagamento(Forma formaPagamento) {
-		this.formaPagamento = formaPagamento;
-	}
 
 	public String getNumero_cartao() {
 		return numero_cartao;
@@ -110,5 +100,6 @@ public class Cartao {
 	public void setNumero_cartao(String numero_cartao) {
 		this.numero_cartao = numero_cartao;
 	}
-}
+	
+}//end class
 	

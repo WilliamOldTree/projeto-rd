@@ -2,13 +2,8 @@ package br.com.qsd.politeismo.ecommerce.controller.form;
 
 import java.util.List;
 
-<<<<<<< HEAD
-import java.util.List;
-
-import br.com.qsd.politeismo.ecommerce.entities.ItemPedido;
-=======
 import br.com.qsd.politeismo.ecommerce.enums.FormaPagamento;
->>>>>>> bf78065b9461cca12f96c1fc45cae2a7bc334ede
+
 import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 
 public class FormPedido {
@@ -28,12 +23,9 @@ public class FormPedido {
 	private List<String> itens;
 	
 
-	
-	
 	private String entrega;
 
-	
-	
+		
 	public FormPedido() {
 		
 	}
@@ -99,5 +91,5 @@ public class FormPedido {
 
 
 	
-}
+
 

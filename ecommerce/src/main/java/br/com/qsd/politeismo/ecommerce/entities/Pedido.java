@@ -67,6 +67,11 @@ public class Pedido {
 	@OneToMany(mappedBy="idPedido")
 	private List<ItemPedido> itensPedido;
 	
+	@JsonIgnore
+	@OneToMany(mappedBy="pedido")
+	private List<Pagamento> pagamentos;
+	
+	
 	public Pedido() {
 		
 	}
