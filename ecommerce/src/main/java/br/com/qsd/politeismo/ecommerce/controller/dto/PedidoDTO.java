@@ -3,8 +3,9 @@ package br.com.qsd.politeismo.ecommerce.controller.dto;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
-import br.com.qsd.politeismo.ecommerce.entities.Entrega;
+import br.com.qsd.politeismo.ecommerce.entities.Endereco;
 import br.com.qsd.politeismo.ecommerce.entities.Pedido;
+import br.com.qsd.politeismo.ecommerce.enums.FormaPagamento;
 import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 
 public class PedidoDTO {
@@ -19,7 +20,9 @@ public class PedidoDTO {
 	
 	private Cliente cliente;
 	
-	private Entrega entrega;
+	private FormaPagamento formaPagamento;
+	
+	private Endereco endereco;
 	
 	public PedidoDTO() {
 		
@@ -31,7 +34,8 @@ public class PedidoDTO {
 		valor = pedido.getValor();
 		statusPedido = pedido.getStatusPedido();
 		cliente = pedido.getCliente();
-		entrega = pedido.getEntrega();
+		formaPagamento = pedido.getFormaPagamento();
+		endereco = pedido.getEndereco();
  	}
 
 	public Long getIdPedido() {
@@ -74,14 +78,20 @@ public class PedidoDTO {
 		this.cliente = cliente;
 	}
 
-	public Entrega getEntrega() {
-		return entrega;
+	public FormaPagamento getFormaPagamento() {
+		return formaPagamento;
 	}
 
-	public void setEntrega(Entrega entrega) {
-		this.entrega = entrega;
+	public void setFormaPagamento(FormaPagamento formaPagamento) {
+		this.formaPagamento = formaPagamento;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 	
-	
-
 }

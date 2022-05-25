@@ -1,8 +1,9 @@
 package br.com.qsd.politeismo.ecommerce.entities;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -14,23 +15,26 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import br.com.qsd.politeismo.ecommerce.enums.Genero;
 
 @Entity
 @Table(name = "CLIENTE")
-public class Cliente {
-	
-    @Id
+public class Cliente implements UserDetails{
+
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id_cliente")
     private Long id;
     private String cpf;
     private String nome;
     private String email;
-    private String senha;
+    private String password;
     private String celular;
     private String fixo;
     
@@ -58,6 +62,10 @@ public class Cliente {
 	@OneToMany(mappedBy="cliente")
 	List<Favoritos> favoritos;
 	
+	@Fetch(FetchMode.SELECT)
+	@ManyToMany(fetch = FetchType.EAGER)
+	private List<Perfil> perfis = new ArrayList<>();
+
 	
 	public Cliente() {
 		
@@ -95,12 +103,8 @@ public class Cliente {
 		this.email = email;
 	}
 
-	public String getPassword() {
-		return senha;
-	}
-
 	public void setPassword(String password) {
-		this.senha = senha;
+		this.password = password;
 	}
 
 	public LocalDate getNascimento() {
@@ -153,6 +157,35 @@ public class Cliente {
 
 	public List<Pedido> getPedido() {
 		return pedido;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return this.perfis;
+	}
+
+	public String getUsername() {
+		return this.email;
+	}
+	
+	public String getPassword() {
+		return this.password;
+	}
+
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	public boolean isEnabled() {
+		return true;
 	}
 	
 }// end class

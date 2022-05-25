@@ -55,17 +55,7 @@ function Product(props) {
     }
 
 
-    useEffect(() => {
-        getProdutosId()
-    }, [])
-
-
-    const getProdutosId = () => {
-        axios.get(`http://localhost:8080/produtos/categoria?id=${id}`)
-            .then((response) => {
-                setProdutosRelacionados(response.data)
-            })
-    }
+    
     return (
 
 

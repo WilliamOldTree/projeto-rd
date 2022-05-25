@@ -12,11 +12,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 //import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import br.com.qsd.politeismo.ecommerce.enums.FormaEntrega;
 import br.com.qsd.politeismo.ecommerce.enums.StatusEntrega;
@@ -30,8 +28,8 @@ public class Entrega {
     @Column(name ="id_entrega")
 	private Long id;
 	
-	@Column(nullable = false, name="prazo")
-	private LocalDate prazo;
+	@Column(nullable = false)
+	private LocalDate data;
 	
 	@Column(nullable = false, name = "valor_frete")
 	private BigDecimal valor;
@@ -44,23 +42,23 @@ public class Entrega {
 	@Column(nullable = false)
 	private FormaEntrega formaEntrega;
 	
-	@JsonIgnore
-	@Enumerated(EnumType.STRING)
-	@OneToMany(mappedBy = "entrega")
-	private List<Pedido>pedidos;
+//	@JsonIgnore
+//	@Enumerated(EnumType.STRING)
+//	@OneToMany(mappedBy = "entrega")
+//	private List<Pedido>pedidos;
 	
 	public Entrega() {
 		
 	}
 
-	public Entrega(Long id, LocalDate prazo, BigDecimal valor, StatusEntrega statusEntrega, FormaEntrega formaEntrega,
+	public Entrega(Long id, LocalDate data, BigDecimal valor, StatusEntrega statusEntrega, FormaEntrega formaEntrega,
 			List<Pedido> pedidos) {
 		this.id = id;
-		this.prazo = prazo;
+		this.data = data;
 		this.valor = valor;
 		this.statusEntrega = statusEntrega;
 		this.formaEntrega = formaEntrega;
-		this.pedidos = pedidos;
+		//this.pedidos = pedidos;
 	}
 
 	public Long getId() {
@@ -72,11 +70,11 @@ public class Entrega {
 	}
 
 	public LocalDate getData() {
-		return prazo;
+		return data;
 	}
 
-	public void setData(LocalDate prazo) {
-		this.prazo = prazo;
+	public void setData(LocalDate data) {
+		this.data = data;
 	}
 
 	public BigDecimal getValor() {
@@ -103,9 +101,7 @@ public class Entrega {
 		this.formaEntrega = formaEntrega;
 	}
 
-	public List<Pedido> getPedidos() {
-		return pedidos;
-	}
+
 	
 
 }//end class

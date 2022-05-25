@@ -3,36 +3,36 @@
 /* BEGINNER CART-TITLE */
 
 #cart_title {
-    display    : flex;
+    display: flex;
     align-items: center;
 }
 
 
 .title-cart {
-    color      : #261C1A;
+    color: #261C1A;
     font-weight: bold;
 
-    display   : flex;
+    display: flex;
     margin-top: 16px;
 }
 
 .title h3 {
-    margin      : 0px;
-    display     : flex;
-    align-items : center;
+    margin: 0px;
+    display: flex;
+    align-items: center;
     padding-left: 20px;
-    font-size   : 35px;
+    font-size: 35px;
 }
 
 .line-1 {
-    width     : 100%;
-    border    : 1px solid;
+    width: 100%;
+    border: 1px solid;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
 
 .iconCart {
-    width : 8%;
+    width: 8%;
     height: 4%;
 
 }
@@ -43,23 +43,23 @@
 
 /* BEGINNER LIST-CART */
 
-.cart-title-table{
+.cart-title-table {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.cart-title-content-table{
+.cart-title-content-table {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.cart-title-content-table td{
+.cart-title-content-table td {
     border-bottom: none;
 }
 
-#cart_total{
+#cart_total {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -67,8 +67,7 @@
 
 }
 
-.btnComprar 
-{
+.btnComprar {
     width: 200px;
     height: 50px;
     background-color: #F27507;
@@ -76,15 +75,16 @@
     color: white;
     font-weight: 800;
     font-size: 22px;
-    
-} 
-.btnComprar:hover{
+
+}
+
+.btnComprar:hover {
     background-color: darkorange;
     color: white;
     border: 1px solid #F27507;
 }
-.btnContCompra
-{
+
+.btnContCompra {
     width: 200px;
     height: 50px;
     background-color: #00A846;
@@ -93,17 +93,24 @@
     font-weight: 900;
     padding-top: 15px;
 }
-.btnContCompra:hover{
+
+.btnContCompra:hover {
     background-color: #34d175;
     color: white;
     border: 1px solid #00A846;
 }
 
-@media(max-width: 500px){
-	#cart_total{
-		margin-right: 20px;
-	}
+.cartVazio {
+    font-weight: 500;
+    color: #261C1A;
+    margin-top: 20px;
+    text-align: center;
 }
 
+@media(max-width: 500px) {
+    #cart_total {
+        margin-right: 20px;
+    }
 
 
+}

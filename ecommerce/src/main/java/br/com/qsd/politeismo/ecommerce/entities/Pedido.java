@@ -3,23 +3,33 @@ package br.com.qsd.politeismo.ecommerce.entities;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+//import java.util.Objects;
 
-import javax.persistence.CascadeType;
+//import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+//import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.JoinTable;
+//import javax.persistence.ManyToMany;
+//import javax.persistence.ManyToOne;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
+//import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import br.com.qsd.politeismo.ecommerce.enums.FormaPagamento;
 import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 
 @Entity
@@ -31,37 +41,35 @@ public class Pedido {
 	@Column(name="id_pedido")
 	private Long idPedido;
 	
-	@Column(nullable = false, name = "data_pedido" )
+	@Column(nullable = false, name = "data_pedido")
 	private LocalDate data;
 	
-	@Column(nullable = false, name = "valor_total" )
+	@Column(nullable = false, name = "valor_total")
 	private BigDecimal valor;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(nullable = false, name = "status_pedido" )
+	@Column(nullable = false, name = "status_pedido")
 	private StatusPedido statusPedido;
 	
 	@ManyToOne
 	@JoinColumn(name = "fk_id_cliente", nullable = true)
 	private Cliente cliente;
 	
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false, name = "forma_pagamento")
+	private FormaPagamento formaPagamento;
+	
 	@ManyToOne
-	@JoinColumn(name="fk_id_entrega",nullable = false)
-	private Entrega entrega;
+	@JoinColumn(name = "fk_id_endereco", nullable = true)
+	private Endereco endereco;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="idPedido")
 	private List<ItemPedido> itensPedido;
 	
-	@OneToOne(cascade = { CascadeType.DETACH })
-	@JoinColumn(name="id_nota_fiscal")
-	private NotaFiscal notaFiscal;
-	
-	
 	public Pedido() {
 		
 	}
-
 
 	public Long getIdPedido() {
 		return idPedido;
@@ -104,13 +112,26 @@ public class Pedido {
 		this.cliente = cliente;
 	}
 
-	public Entrega getEntrega() {
-		return entrega;
+
+	public FormaPagamento getFormaPagamento() {
+		return formaPagamento;
 	}
 
-	public void setEntrega(Entrega entrega) {
-		this.entrega = entrega;
+
+	public void setFormaPagamento(FormaPagamento formaPagamento) {
+		this.formaPagamento = formaPagamento;
 	}
+
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
 
 	public List<ItemPedido> getItensPedido() {
 		return itensPedido;

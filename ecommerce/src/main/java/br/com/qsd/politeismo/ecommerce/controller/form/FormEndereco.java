@@ -89,6 +89,5 @@ public class FormEndereco {
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
-	
 
 }

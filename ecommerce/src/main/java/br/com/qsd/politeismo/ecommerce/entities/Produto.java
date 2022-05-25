@@ -1,13 +1,13 @@
 package br.com.qsd.politeismo.ecommerce.entities;
 
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -49,7 +49,7 @@ public class Produto {
 	
 	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name = "fk_id_produto_destaque",nullable = false)
+	@JoinColumn(name = "fk_id_produto_destaque")
 	private ProdutoDestaque produtoDestaque;
 	
 	@JsonIgnore
@@ -70,6 +70,10 @@ public class Produto {
 	@JsonIgnore
 	@OneToMany(mappedBy="idProduto")
 	private List<ItemPedido> itensPedido;
+	
+	@JsonIgnore
+	@ManyToMany(mappedBy="produtos")
+	private List<Favoritos> favoritos;
 	
 	
 	@JsonIgnore 

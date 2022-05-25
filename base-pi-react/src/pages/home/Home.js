@@ -49,7 +49,7 @@ function Home() {
     }, [])
 
     const getProdutos = () => {
-        axios.get(`${baseUrl}/produtos`)
+        axios.get(`${baseUrl}/produtos/destaque?id=1`)
             .then((response) => {
                 setProdutos(response.data)
             })
