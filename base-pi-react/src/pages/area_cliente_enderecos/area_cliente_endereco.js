@@ -5,7 +5,6 @@ import Menu from '../../components/menu/Menu'
 import Title from '../../components/title/Title'
 import User from '../../components/asserts/icons/user.png'
 import Lixeira from '../../components/asserts/icons/lixeira.png'
-import MeusEnderecos from '../../components/modal_meus_enderecos/Modal_Meus_Enderecos'
 import React from 'react'
 import { useState, useEffect } from 'react'
 import {baseUrl} from '../../environments'
@@ -72,9 +71,7 @@ function AreaEndereco(props) {
                                 <li className='DadosEnderecos'><nobr>{enderecos.apelido}</nobr></li>
                                 <li className='DadosEnderecos'><nobr>{enderecos.cidade}</nobr></li>
                             </ul>
-
-                            <MeusEnderecos classEnderecos={"editarEnderecos"} textButtonEnderecos="ALTERAR" />
-                            <MeusEnderecos classEnderecos={"addEnderecos"} textButtonEnderecos="ADICIONAR" />
+                            
                             <img width="25" className='LixeiraAreaEndereco' src={Lixeira} />
                             
                         </>

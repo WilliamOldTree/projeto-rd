@@ -1,18 +1,15 @@
-import './Modal_Meus_Enderecos.css'
+import './Modal_Enderecos.css'
 import React, { useState, useEffect } from 'react'
 import {baseUrl} from '../../environments'
 import axios from 'axios'
 import { Modal, Button, Form, Container, Row, Col } from 'react-bootstrap'
 import { useParams, useHistory } from 'react-router-dom'
 
-function MeusEnderecos(props) {
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
+function MeusEnderecosAdd(props) {
+    
     const [states, setStates] = useState([])
     const [enderecos, setEnderecos] = useState([])
-    const [successRegister, SetSuccessRegister] = useState(false)
+    const [successRegister, setSuccessRegister] = useState(false)
     const { id } = useParams()
     let history = useHistory();
 
@@ -24,13 +21,14 @@ function MeusEnderecos(props) {
     }
    
 
-    const register = () => {
-        enderecos.states =
-        axios.post(`${baseUrl}/enderecos`)
-            .then((response) => {
-                SetSuccessRegister(true)
-            })
-    }
+    const register=()=>{
+        cartoes.states =
+        axios.post(`${baseUrl}/enderecos`, enderecos).then(response =>{
+            setSuccessRegister(true)
+            alert('cartão adicionado recarregue a pagina')
+        })
+
+     }
 
     useEffect(() => {
         getEnderecos()
@@ -156,4 +154,4 @@ function MeusEnderecos(props) {
     );
 }
 
-export default MeusEnderecos
+export default MeusEnderecosAdd
