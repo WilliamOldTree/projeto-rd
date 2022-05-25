@@ -3,7 +3,6 @@ package br.com.qsd.politeismo.ecommerce.entities;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,18 +15,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import br.com.qsd.politeismo.ecommerce.enums.Operation;
+import br.com.qsd.politeismo.ecommerce.enums.Operacao;
 
 
 @Entity
 @Table(name="nota_fiscal")
 public class NotaFiscal {
 	
-	
-	@Id @Column(name = "id_nota_fiscal") 
+	@Id 
+	@Column(name = "id_nota_fiscal") 
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private Long id;
 	
@@ -40,13 +37,15 @@ public class NotaFiscal {
 	@Column(name = "numero_serie") 
 	private Long numeroSerie;
 	
-	@Column(name="valor")
 	private BigDecimal valor;
 	
 	@Enumerated(EnumType.STRING)
-	private Operation operation;
+	private Operacao operacao;
 
-	@JsonIgnore @OneToMany(mappedBy="idNotaFiscal") 
+
+	@JsonIgnore
+	@OneToMany(mappedBy="idNotaFiscal") 
+
 	private List<ItemNotaFiscal> itemNotaFiscal; 
 	
 	@OneToOne(cascade = { CascadeType.DETACH })
@@ -96,12 +95,12 @@ public class NotaFiscal {
 		this.valor = valor;
 	}
 
-	public Operation getOperacao() {
-		return operation;
+	public Operacao getOperacao() {
+		return operacao;
 	}
 
-	public void setOperacao(Operation operation) {
-		this.operation =operation;
+	public void setOperacao(Operacao operacao) {
+		this.operacao = operacao;
 	}
 
 	public List<ItemNotaFiscal> getItemNotaFiscal() {

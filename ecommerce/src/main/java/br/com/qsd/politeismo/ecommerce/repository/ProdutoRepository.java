@@ -29,7 +29,11 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>{
     
 	List<ProdutoCardDTO> findByProdutoDestaqueId(Long id); 
 
-       
+	List<ProdutoCardDTO> findByCategoriaIdCategoria(Long id); 
+
+	List<ProdutoCardDTO> findByDepartamentoIdDepartamento(Long id); 
+
+
 }
 
 

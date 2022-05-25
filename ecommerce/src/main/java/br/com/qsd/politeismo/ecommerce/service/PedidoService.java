@@ -12,14 +12,14 @@ import javax.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import br.com.qsd.politeismo.ecommerce.controller.dto.PedidoDTO;
 import br.com.qsd.politeismo.ecommerce.controller.form.FormPedido;
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
-import br.com.qsd.politeismo.ecommerce.entities.Entrega;
+import br.com.qsd.politeismo.ecommerce.entities.Endereco;
 import br.com.qsd.politeismo.ecommerce.entities.Pedido;
+import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
-import br.com.qsd.politeismo.ecommerce.repository.EntregaRepository;
+import br.com.qsd.politeismo.ecommerce.repository.EnderecoRepository;
 import br.com.qsd.politeismo.ecommerce.repository.PedidoRepository;
 
 @Service
@@ -34,7 +34,7 @@ public class PedidoService {
 	private ClienteRepository clienteRepository;
 	
 	@Autowired
-	private EntregaRepository entregaRepository;
+	private EnderecoRepository enderecoRepository;
 	
 	@Transactional(readOnly = true)
 	public List<PedidoDTO> findAll(){
@@ -52,26 +52,26 @@ public class PedidoService {
 	@Transactional
 	public PedidoDTO insert(FormPedido form) {
 		Pedido entity = new Pedido();
+		
 	
         entity.setData(LocalDate.parse(form.getData(), formatter));
         entity.setValor(new BigDecimal(form.getValor()));
-        entity.setStatusPedido(form.getStatusPedido());
+        entity.setStatusPedido(StatusPedido.AGUARDANDO_PAGAMENTO);
+		entity.setFormaPagamento(form.getFormaPagamento());
 		Optional<Cliente> cliente = clienteRepository.findById(Long.parseLong(form.getCliente()));
-		Optional<Entrega> entrega = entregaRepository.findById(Long.parseLong(form.getCliente()));
+		Optional<Endereco> endereco = enderecoRepository.findById(Long.parseLong(form.getEndereco()));
 		
-		if (cliente.isPresent() && entrega.isPresent()) {
+		
+		if (cliente.isPresent() && endereco.isPresent()) {
 			entity.setCliente(cliente.get());
-			entity.setEntrega(entrega.get());	
+			entity.setEndereco(endereco.get());
 			entity = pedidoRepository.save(entity);
 		}else {
 			cliente.orElseThrow();
-			entrega.orElseThrow();
 		}
 		
 		return new PedidoDTO(entity);
-
 	}
-	
 	
 	public PedidoDTO update(Long id, FormPedido dto) {
 		try {

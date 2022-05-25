@@ -67,6 +67,7 @@ function Header() {
         </Popover>
     );
 
+    
     return (
         <>
             {/* BEGINNER HEADER */}
@@ -86,12 +87,12 @@ function Header() {
                             </div>
                             <div className="col-7" id="nav-itens">
                                 <nav>
-                                    <Link to="/">Católica</Link>
-                                    <Link to="/">Evangélica</Link>
-                                    <Link to="/">Espírita</Link>
-                                    <Link to="/">Africana</Link>
-                                    <Link to="/">Budista</Link>
-                                    <Link to="/">Judaica</Link>
+                                    <Link to="/Departamentos/Catolica/Catolica">Católica</Link>
+                                    <Link to="/Departamentos/Evangelica/Evangelica">Evangélica</Link>
+                                    <Link to="/Departamentos/Espirita/Espirita">Espírita</Link>
+                                    <Link to="/Departamentos/Africana/Africana">Africana</Link>
+                                    <Link to="/Departamentos/Budista/Budista">Budista</Link>
+                                    <Link to="/Departamentos/Judaica/Judaica">Judaica</Link>
                                 </nav>
                             </div>
                             <div className="col-3" id="canvas">

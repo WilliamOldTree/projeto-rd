@@ -25,13 +25,11 @@ function CartProvider(props) {
       
             
          //Método para retirar a duplicidade , para futuras correções   
-        //  if(cartList.length >1  ){
-        //    return false;
-        //  }
+        
 
-       item.qty = 1
-        setQuantidade(quantidade+1)
         cartList.push(item)
+        item.qty = 1
+        setQuantidade(quantidade)
         localStorage.setItem("cart", JSON.stringify(cartList))
         localStorage.setItem("qtyCart", JSON.stringify(cartList.length))
         setCart(cartList)
@@ -49,10 +47,7 @@ function CartProvider(props) {
         setCartQty(cartList.length)
     }
 
-<<<<<<< HEAD
-   
- 
-=======
+
 
     const deleteCart =(item,quantidade) => {
         let cartList = localStorage.getItem('cart')
@@ -68,9 +63,6 @@ function CartProvider(props) {
     setCartQty(cartList.length)
     }
        
-
-
->>>>>>> c93915ae3b8fd6d40583e1b182fa0792cc5d6fd9
     return (
         <CartContext.Provider value={{ cart, cartQty, quantidade, addToCart, getCartQty, getCart,deleteCart }}>
             {props.children}

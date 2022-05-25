@@ -29,6 +29,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import br.com.qsd.politeismo.ecommerce.enums.FormaPagamento;
 import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 
 @Entity
@@ -54,9 +55,13 @@ public class Pedido {
 	@JoinColumn(name = "fk_id_cliente", nullable = true)
 	private Cliente cliente;
 	
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false, name = "forma_pagamento")
+	private FormaPagamento formaPagamento;
+	
 	@ManyToOne
-	@JoinColumn(name="fk_id_entrega",nullable = false)
-	private Entrega entrega;
+	@JoinColumn(name = "fk_id_endereco", nullable = true)
+	private Endereco endereco;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="idPedido")
@@ -65,7 +70,6 @@ public class Pedido {
 	public Pedido() {
 		
 	}
-
 
 	public Long getIdPedido() {
 		return idPedido;
@@ -108,13 +112,26 @@ public class Pedido {
 		this.cliente = cliente;
 	}
 
-	public Entrega getEntrega() {
-		return entrega;
+
+	public FormaPagamento getFormaPagamento() {
+		return formaPagamento;
 	}
 
-	public void setEntrega(Entrega entrega) {
-		this.entrega = entrega;
+
+	public void setFormaPagamento(FormaPagamento formaPagamento) {
+		this.formaPagamento = formaPagamento;
 	}
+
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
 
 	public List<ItemPedido> getItensPedido() {
 		return itensPedido;

@@ -1,10 +1,8 @@
 package br.com.qsd.politeismo.ecommerce.entities;
 
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,33 +23,33 @@ public class Produto {
 	@Column(name = "id_produto")
 	private Long idProduto;
 
-	@Column(nullable = false, name= "nome")
+	@Column(nullable = false)
 	private String nome;
 	
 	@Column(name= "url_produto", nullable = true)
 	private String urlProduto;
 	
-	@Column(nullable = false, name="descricao")
+	@Column(nullable = false)
 	private String descricao;
 
-	@Column(nullable = false, name="volume")
+	@Column(nullable = false)
 	private String volume;
 	
-	@Column(nullable = false, name="peso")
+	@Column(nullable = false)
 	private String peso;
 	
 	@Column(name = "fl_inativo")
 	private boolean flInativo = true; // flag inativo
 	
-	@Column(nullable = false, name="preco")
+	@Column(nullable = false)
 	private String preco;
 	
-	@Column(nullable = false, name="estoque")
+	@Column(nullable = false)
 	private Integer estoque;
 	
 	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name = "fk_id_produto_destaque",nullable = false)
+	@JoinColumn(name = "fk_id_produto_destaque")
 	private ProdutoDestaque produtoDestaque;
 	
 	@JsonIgnore
@@ -79,7 +77,7 @@ public class Produto {
 	
 	
 	@JsonIgnore 
-	@OneToMany(mappedBy="id_nota_fiscal") 
+	@OneToMany(mappedBy="idNotaFiscal") 
 	private List<ItemNotaFiscal> itemNotaFiscal; 
 	
 	public Produto() {
