@@ -45,4 +45,12 @@ public class ProdutoNotaFiscalID implements Serializable {
 	
 	
 	
+<<<<<<< HEAD
 }
+=======
+}
+<<<<<<< HEAD
+>>>>>>> 29b5b77eea07f6485c978e0cab6c6e22791a6025
+=======
+>>>>>>> 4c080c22c4c7cdd9603e7a8907c133b2dea15553
+>>>>>>> 421972d200574f03f92aadedc3dc360b4ac2d26c

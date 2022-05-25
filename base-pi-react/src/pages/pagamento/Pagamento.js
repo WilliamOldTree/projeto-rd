@@ -14,11 +14,22 @@ import Boleto from '../../components/asserts/icons/boleto.PNG';
 import CartaoCredito from "../../components/asserts/icons/carta.jpg";
 import PayPal from "../../components/asserts/icons/paypal.png";
 import PixPix from "../../components/asserts/icons/pix1.PNG";
+import CartContext from '../../context/cart.provider'
+import React, { useEffect, useContext } from 'react';
+
 
 
 
 
 function Pagamento() {
+    const { cart, getCart, deleteCart } = useContext(CartContext)
+
+
+    useEffect(() => {
+        getCart()
+    }, [])
+
+
     return (
         <>
             {/* BEGINNER ADDRESS*/}
@@ -173,12 +184,20 @@ function Pagamento() {
                         <h2 className="titleresumo">Resumo da compra</h2>
                         <br></br>
                         <div>
-                            <ListCompra>
-                                <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                                <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                                <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                                <ResumoCompra product_img={BudaMedit} descricao='Imagem Buda' valor='R$ 30,00' quantidade='2' trash_img={TrashIcon} />
-                            </ListCompra>
+                        <ListCompra >
+                            {cart.map((item) => {
+                                return (
+                                    <ResumoCompra key={item.id} 
+                                        product_img={item.urlProduto} 
+                                        descricao={item.nome} 
+                                        valor={item.preco} 
+                                        quantidade={item.qty} 
+                                        trash_img={TrashIcon} 
+                                        deletar={deleteCart} 
+                                        item={item} />
+                                )
+                            })}
+                        </ListCompra>
                         </div>
                     </Col>
                 </Row>

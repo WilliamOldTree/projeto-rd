@@ -17,7 +17,6 @@ import br.com.qsd.politeismo.ecommerce.repository.EnderecoRepository;
 
 @Service
 public class EnderecoService {
-	
 	@Autowired
 	private EnderecoRepository repository;
 	
@@ -37,7 +36,6 @@ public class EnderecoService {
 		return dto;
 	}
 
-	@Transactional
 	public Endereco insert(FormEndereco dto){
 	    Endereco obj = new Endereco ();
 		List<Cliente> clientes = new ArrayList<>();

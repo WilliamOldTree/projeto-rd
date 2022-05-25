@@ -49,20 +49,20 @@
 }
 .LixeiraAreaCartoes{
     position: relative;
-    top: -20px;
+    top:  20px;
     left: 90%;
 }
 
 .VisaAreaCartoes{
     position: relative;
-    top: -20px;
-    left: 30%;
+    top: 20px;
+    left: 26%;
 }
 
 .CartaoVisaAreaCartoes{
     position: relative;
-    top: -20px;
-    left: 22%;
+    top: 20px;
+    left: 12%;
 }
 
 #AreaCredito{
@@ -91,6 +91,7 @@
     font-size: 18px;
     font-weight: 700;
     list-style: none;
+    
    }
 
 
@@ -99,13 +100,26 @@
     color: #979797;
     font-weight: 500;
     list-style: none;
+    margin-left: 13%;
+    margin-top: -5%;
 }
+
+.DadosCartoes1{
+    font-size: 15px;
+    color: #979797;
+    font-weight: 500;
+    list-style: none;
+    margin-left: 66%;
+    position: relative;
+    top: -20px;
+}
+
 
    .listaCartoes{
        display: flex;
        justify-content: space-around;
        margin-top:5%;
-       margin-left: 6%;
+       margin-left: -60%;
        color: #261C1A;
        list-style: none;
        font-weight: 700;
@@ -113,18 +127,22 @@
    .Cartoes1{
     display: flex;
     justify-content: space-around;
-    margin-left: 5%;
-   
+    margin-left: 35%;
+    color: #261C1A;
+    list-style: none;
+    font-weight: 700;
+    position: relative;
+    top: -35px;
 }
 
 .editarCartoes{
     width: 105px;
     height: 50px;
-    margin-left: 48%;
+    margin-left: 30%;
     margin-top: -10%;
     position: relative;
-    top: -180px;
-    left: 260px;
+    top: 20px;
+    left: 240px;
     justify-content: center;
     background: #F27507;
     border-radius: 10px;
@@ -146,8 +164,8 @@
         margin-left: 48%;
         margin-top: -10%;
         position: relative;
-        top: -205px;
-        left: 125px;
+        top: 85px;
+        left: 210px;
         justify-content: center;
         background: #34A853;
         border-radius: 10px;
@@ -165,6 +183,20 @@
     
 
     @media (max-width:1024px){
+
+        #container-Cartoes{
+           
+            border       : 2px solid #261C1A;
+            box-sizing   : border-box;
+            border-radius: 5px;
+            width        : 60%;
+            margin-top: 20%;
+            position: relative;
+            top: -80px;
+            left: 115px;
+        }
+
+
 
         .MenuAreaAlinhamento5{
          display: none;
@@ -221,17 +253,7 @@
             text-align: left;
             left: 200px;
         }
-        #container-Cartoes{
-           
-            border       : 2px solid #261C1A;
-            box-sizing   : border-box;
-            border-radius: 5px;
-            width        : 60%;
-            margin-top: 20%;
-            position: relative;
-            top: -80px;
-            left: 115px;
-        }
+      
         
         
         
@@ -247,20 +269,41 @@
             font-size: 15px;
             color: #979797;
             font-weight: 500;
+            list-style: none;
+            margin-left: 8%;
+            margin-top: -8%;
         }
         
-           .listaCartoes{
-               display: flex;
-               justify-content: space-around;
-               margin-top:5%;
-               margin-left: -12%;
-           }
-           .Cartoes1{
+        .DadosCartoes1{
+            font-size: 15px;
+            color: #979797;
+            font-weight: 500;
+            list-style: none;
+            margin-left: 66%;
+            position: relative;
+            top: -20px;
+        }
+        
+        .listaCartoes{
             display: flex;
             justify-content: space-around;
-            margin-left: -12%;
-           
+            margin-top:5%;
+            margin-left: -60%;
+            color: #261C1A;
+            list-style: none;
+            font-weight: 700;
         }
+        .Cartoes1{
+         display: flex;
+         justify-content: space-around;
+         margin-left: 35%;
+         color: #261C1A;
+         list-style: none;
+         font-weight: 700;
+         position: relative;
+         top: -35px;
+     }
+     
         
         .editarCartoes{
             width: 105px;
@@ -268,8 +311,8 @@
             margin-left: 40%;
             margin-top: -10%;
             position: relative;
-            top: -40px;
-            left: 120px;
+            top: 40px;
+            left: 110px;
             justify-content: center;
             background: #F27507;
             border-radius: 10px;
@@ -288,8 +331,8 @@
                 margin-left: 48%;
                 margin-top: -10%;
                 position: relative;
-                top: -65px;
-                left: -65px;
+                top: 75px;
+                left: 70px;
                 justify-content: center;
                 background: #34A853;
                 border-radius: 10px;
@@ -305,132 +348,166 @@
  
    
     @media (max-width:667px){
+
+
+
         .MenuAreaAlinhamento5{
             display: none;
         }
            
 
+        #container-Cartoes{
+           
+            border       : 2px solid #261C1A;
+            box-sizing   : border-box;
+            border-radius: 5px;
+            width        : 100%;
+            margin-top: 40%;
+            position: relative;
+            top: -80px;
+            left: 0px;
+        }
+        hr{
+            width: 15%;
+        }
+        
+        .tituloCartao{
+            color: #261C1A;
+            margin-top: -27px;
+            margin-left: 20%;
+            position: relative;
+            top: 150px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        #line_Area_Cartoes{
+            width: 100%;
+            border: 1px solid;
+            margin-top: 15%;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .UserAreaClienteCartao{
+            position: relative;
+            top:100px;
+            left: 10%;
+        }
+        .LixeiraAreaCartoes{
+            position: relative;
+            top: 20px;
+            left: 85%;
+        }
+        
         .VisaAreaCartoes{
             position: relative;
-            top: 45px;
-            left: -40%;
+            top: 20px;
+            left: 16%;
         }
         
         .CartaoVisaAreaCartoes{
             position: relative;
-            top: 45px;
-            left: -68%;
+            top: 20px;
+            left: 4%;
         }
- 
-        .addCartoes{
+        
+      
+      
+        
+        
+        
+        .AreaClienteLista{
+            color: #261C1A;
+            font-size: 18px;
+            font-weight: 700;
+            list-style: none;
+           }
+        
+        
+           .DadosCartoes{
+            font-size: 15px;
+            color: #979797;
+            font-weight: 500;
+            list-style: none;
+            position: relative;
+            top: -20px;
+            margin-left: 5%;
+            margin-top: -8%;
+        }
+        
+        .DadosCartoes1{
+            font-size: 15px;
+            color: #979797;
+            font-weight: 500;
+            list-style: none;
+            margin-left: 64%;
+            position: relative;
+            top: -40px;
+        }
+        
+        .listaCartoes{
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+            top: 5px;
+            margin-top:5%;
+            margin-left: -60%;
+            color: #261C1A;
+            list-style: none;
+            font-weight: 700;
+        }
+        .Cartoes1{
+         display: flex;
+         justify-content: space-around;
+         margin-left: 35%;
+         color: #261C1A;
+         list-style: none;
+         font-weight: 700;
+         position: relative;
+         top: -35px;
+     }
+     
+        
+        .editarCartoes{
             width: 105px;
             height: 50px;
-            margin-left: 70%;
-            margin-top: -150%;
+            margin-left: 40%;
+            margin-top: -10%;
             position: relative;
-            top: 150px;
-            left: -170px;
+            top: 0px;
+            left: 20px;
             justify-content: center;
-            background: #34A853;
+            background: #F27507;
             border-radius: 10px;
             border: none;
             font-weight: bold;
             color: #FFFFFF;
             }
-       
-     
-       
-
-        .UserAreaClienteCartao{
-            position: relative;
-            top: -40px;
-            left: 20%;
-            width: 50px;
-        }
         
-
-        .LixeiraAreaCartoes{
-            position: relative;
-            top:220px;
-            left: -1%;
-        }
-
- 
-    #line_Area_Cartoes{
-        width: 100%;
-        margin-top: -10%;
-    }
-        
-        .tituloCartao{
-            color: #261C1A;
-            margin-top: 27px;
-            margin-left: 166px;
-            position: relative;
-            top: 10px;
-            left:-8%;
-            text-align: center;
-            font-weight: bold;
-            font-size: 25px;
-        }
-     
-        
-        
-        #container-Cartoes{
-            width: 300px;
-            height: 571px;
-            background: #FFFFFF;
-            border: 2px solid #261C1A;
-            box-sizing: border-box;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 30px;
-            margin-top: 60%;
-            margin-left: -25%;
-            display: flex;
-            align-items: center;
-         
-        }
-
-        .editarCartoes{
-                    width: 105px;
-                    height: 50px;
-                    position: relative;
-                    top: -55px;
-                    left: 13%;
-                    align-items: center;
-                    background: #F27507;
-                    border-radius: 10px;
-                    border: none;
-                    font-weight: bold;
-                  
-     
+            .editarCartoes:hover{
+              background-color: darkorange;
                 }
-
-                .listaCartoes{
-                    display: inline-block;
-                    margin-top:-105%;
-                    line-height: 120px;
-                    margin-left: 6%;
-                    position: relative;
-                    left: -16px;
-                }
-                .Cartoes1{
-                 display: inline-block;
-                 justify-content: space-around;
-                 margin-left: -60%;
-                 margin-top: -90%;
-                 line-height: 60px;
-                
-             }
-           
-             #AreaCredito{
-                margin-left: 5%;
+        
+            .addCartoes{
+                width: 105px;
+                height: 50px;
+                margin-left: 48%;
+                margin-top: -10%;
                 position: relative;
-                top: 120px;
-                text-align: left;
-                left: -115px;
-            }
-  
-
+                top: 75px;
+                left: 40px;
+                justify-content: center;
+                background: #34A853;
+                border-radius: 10px;
+                border: none;
+                font-weight: bold;
+                color: #FFFFFF;
+                }
+                .addCartoes:hover{
+                    background-color: #34d175;
+                }
+        
+           
+ 
+   
                 
     }
 

@@ -1,11 +1,13 @@
-package br.com.rd.controller;
+	package br.com.rd.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import br.com.rd.dao.CadastroDao;
 import br.com.rd.dao.HomeDao;
 import br.com.rd.dao.ProdutoDao;

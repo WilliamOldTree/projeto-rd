@@ -1,5 +1,6 @@
 package br.com.qsd.politeismo.ecommerce.controller.dto;
-
+import java.util.List;
+import java.util.stream.Collectors;
 import br.com.qsd.politeismo.ecommerce.entities.Cartao;
 
 

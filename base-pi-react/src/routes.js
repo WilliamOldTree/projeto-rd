@@ -21,7 +21,19 @@ import Categoria from "./pages/category/Category";
 import Cart_address from "./pages/cart_address/Cart_address"
 import Pagamento from "./pages/pagamento/Pagamento"
 import Checkout_carrinho from "./pages/checkout_carrinho/Checkout_carrinho";
+import Africana from "./pages/Departamentos/Africana/Africana";
+import Budista from "./pages/Departamentos/Budista/Budista";
+import Catolica from "./pages/Departamentos/Catolica/Catolica";
+import Espirita from "./pages/Departamentos/Espirita/Espirita";
+import Evangelica from "./pages/Departamentos/Evangelica/Evangelica";
+import Judaica from "./pages/Departamentos/Judaica/Judaica";
 
+// import Africana from './pages/Departamentos/Africana'
+// import Budista from './pages/Departamentos/Budista'
+// import Catolica from './pages/Departamentos/Catolica'
+// import Espirita from './pages/Departamentos/Espirita'
+// import Evangelica from './pages/Departamentos/Evangelica'
+// import Judaica from './pages/Departamentos/Judaica'
 
 
 export const Routes = () => {
@@ -54,6 +66,19 @@ export const Routes = () => {
             <Route path="/cart_address" component={Cart_address}/>
             <Route path="/pagamento" component={Pagamento} />
             <Route path="/checkout_carrinho" component={Checkout_carrinho} />
+
+            <Route path="/Departamentos/Africana/Africana" component={Africana} />
+            <Route path="/Departamentos/Budista/Budista" component={Budista} />
+            <Route path="/Departamentos/Catolica/Catolica" component={Catolica} />
+            <Route path="/Departamentos/Espirita/Espirita" component={Espirita} />
+            <Route path="/Departamentos/Evangelica/Evangelica" component={Evangelica} />
+            <Route path="/Departamentos/Judaica/Judaica" component={Judaica} />
+
+
+
+
+
+
         </Switch>
     );
 }

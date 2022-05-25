@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 import br.com.qsd.politeismo.ecommerce.controller.dto.ProdutoCardDTO;
 import br.com.qsd.politeismo.ecommerce.controller.dto.ProdutoDTO;
 import br.com.qsd.politeismo.ecommerce.entities.Produto;
+import br.com.qsd.politeismo.ecommerce.repository.CategoriaRepository;
 import br.com.qsd.politeismo.ecommerce.repository.ProdutoRepository;
 
 @RestController
@@ -21,7 +23,11 @@ public class ProdutoController {
 	
 	@Autowired
 	private ProdutoRepository produtoRepository;
+	
+	@Autowired
+	private CategoriaRepository categoriaRepository;
   
+	
 	/* LISTAR TODOS */
 	
 	@GetMapping	
@@ -67,14 +73,14 @@ public class ProdutoController {
 	/* BUSCAR POR NOME */
 	
 	@GetMapping(value = "buscarpornome") /* Mapeia a URL */
-	public ResponseEntity<List<ProdutoCardDTO>> buscarpornome(@RequestParam(name = "nome") String nome) {
+	public ResponseEntity<List<ProdutoCardDTO>> buscarpornome(@RequestParam(name = "name") String name) {
 
-		List<ProdutoCardDTO> produto = produtoRepository.buscarPorNome(nome.trim().toUpperCase());
+		List<ProdutoCardDTO> produto = produtoRepository.buscarPorNome(name.trim().toUpperCase());
 		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "buscarpordescricao") /* Mapeia a URL */
-	public ResponseEntity<List<ProdutoCardDTO>> findByDescricao(@RequestParam(name = "descricao") String descricao) {
+	public ResponseEntity<List<ProdutoCardDTO>> buscarpordescricao(@RequestParam(name = "descricao") String descricao) {
 
 		List<ProdutoCardDTO> produto = produtoRepository.buscarPorDescricao(descricao.trim().toUpperCase());
 		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
@@ -83,21 +89,7 @@ public class ProdutoController {
 	
 	/* BUSCAR POR CATEGORIA */
 	
-	@GetMapping("/buscarpornomecategoria") /* Mapeia a URL */
-	public ResponseEntity<List<ProdutoCardDTO>> findByCategoriaNome (String nome) {
 
-		List<ProdutoCardDTO> produto = produtoRepository.findByCategoriaNome(nome.trim().toUpperCase());
-		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
-	}
-	
-	/* BUSCAR POR DESCONTO (PRODUTOS DESTAQUE) */
-
-	@GetMapping(value = "destaque") /* Mapeia a URL */
-	public ResponseEntity<List<ProdutoCardDTO>> findByProdutoDestaqueId(@RequestParam(name = "id") Long id) {
-
-		List<ProdutoCardDTO> produto = produtoRepository.findByProdutoDestaqueId(id);
-		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
-	}
-	
+	/* BUSCAR POR PRODUTO E CATEGORIA */
 	
 }

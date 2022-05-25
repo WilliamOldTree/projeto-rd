@@ -7,11 +7,43 @@ import User from '../../components/asserts/icons/user.png'
 import Visa from '../../components/asserts/icons/visa.png'
 import Cartao from '../../components/asserts/icons/cartao-do-banco-home.png'
 import Lixeira from '../../components/asserts/icons/lixeira.png'
-import Modal_Cartoes from '../../components/modal_cartoes/Modal_Cartoes'
+import React, { useState, useEffect } from 'react'
+import { baseUrl } from '../../environments'
+import axios from 'axios'
+import Modal_Cartoes_Add from '../../components/modal_cartoes/Modal_Cartoes'
+import Modal_Cartoes_Edit from '../../components/modal_cartoes/Modal_Cartoes_Edit'
+
+
 
 function AreaCartoes() {
+    const [cartoes, setCartoes] = useState([])
+    
+    useEffect(() => {
+        getCartoes()
+    }, [])
+    
+    const getCartoes = () => {
+        axios.get(`${baseUrl}/cartoes`)
+            .then((response) => {
+                setCartoes(response.data)
+            })
+    }
+const URL='http://localhost:8080/cartoes'
+
+    
+    function deleteCartao (id)  {
+        axios.delete(`${URL}/${id}`)
+        .then((response) => {
+            getCartoes()
+        })
+    }
+
+
+
+
     return (
         <>
+    
             <Header />
             <div className='container'>
 
@@ -19,33 +51,55 @@ function AreaCartoes() {
                 
                 <div className='MenuAreaAlinhamento5'>
             <Menu />
+
+            
             </div>
 
-               
-
+           
                 <div id='container-Cartoes'>
 
-                    <ul className='listaCartoes'>
+                        
+            {cartoes.map((cartao) => {
+                            return (
+
+                                <>
+                                   <ul className='listaCartoes'>
                         <li><nobr>Número do Cartão</nobr></li>
-                        <li>Validade</li>
+                       
                     </ul>
 
                     <ul className='Cartoes1'>
-                        <li className='DadosCartoes'>****-****_****_9526</li>
-                        <li className='DadosCartoes'>09/28</li>
+                    <li>Validade</li>
+                     
                     </ul>
 
-                    <h2 className='DadosCartoes' id='AreaCredito'>CRÉDITO</h2>
 
-                 
-
-                    <img width="25" className='LixeiraAreaCartoes' src={Lixeira} />
+                                <li className='DadosCartoes' key={cartao.id_cartao}>
+                                    {cartao.numero_cartao} 
+                                </li>
+                                <li className='DadosCartoes1' key={cartao.id_cartao}>
+                                    {cartao.validade_cartao} 
+                                </li>
+                             <button onClick={()=>deleteCartao(cartao.id_cartao)} className='LixeiraAreaCartoes'>  <img   width="25"  src={Lixeira}/></button>
+                              
+                             <Modal_Cartoes_Edit textoBotao='ALTERAR' className='editarCartoes' />
+                             
                     <img width="55" className='CartaoVisaAreaCartoes' src={Cartao} />
                     <img width="45" className='VisaAreaCartoes' src={Visa} />
+                    
 
+</>
+                            )
+                            
+                        })}
+
+                                <Modal_Cartoes_Add textoBotao='ADICIONAR' className='addCartoes' />
+                 
+                 
+
+                   
                 </div>
-                <Modal_Cartoes textoBotao='ALTERAR' className='editarCartoes'/>
-                    <Modal_Cartoes textoBotao='ADICIONAR' className='addCartoes'/>
+           
             </div>
 
             <Footer />
