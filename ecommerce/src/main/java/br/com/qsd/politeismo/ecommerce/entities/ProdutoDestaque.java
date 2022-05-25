@@ -17,7 +17,7 @@ public class ProdutoDestaque {
   @Id
   @Column(name = "id_produto_destaque")
   @GeneratedValue(strategy = GenerationType.IDENTITY) 
-  private Long id;
+  private Long id_produto_destaque;
 
   @Column(nullable = false)
   private Double desconto;
@@ -30,17 +30,15 @@ public class ProdutoDestaque {
 	
   }
 
+  public Long getId_produto_destaque() {
+	return id_produto_destaque;
+  }
 
+  public void setId_produto_destaque(Long id_produto_destaque) {
+	this.id_produto_destaque = id_produto_destaque;
+  }
 
-  public Long getId() {
-	return id;
-}
-
-public void setId(Long id) {
-	this.id = id;
-}
-
-public Double getDesconto() {
+  public Double getDesconto() {
 	return desconto;
   }
 
