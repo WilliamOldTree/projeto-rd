@@ -52,12 +52,12 @@ function Footer() {
                             <div className="col-12 col-md-6 col-lg-3" id="sociais">
                                 <ul>
                                     <h5>Redes Sociais</h5>
-                                    <li><Link to="/"><img src={Facebook} className="imgFace" alt="Facebook"
-                                        width="9%" />Facebook</Link></li>
-                                    <li><Link to="/"><img src={Instagram} className="imgInsta" alt="Instagram"
-                                        width="9%" />Instagram</Link></li>
-                                    <li><Link to="/"><img src={Twitter} className="imgTwitter" alt="Twitter"
-                                        width="9%" />Twitter</Link>
+                                    <li><a href="https://www.facebook.com/"><img src={Facebook} className="imgFace" alt="Facebook"
+                                        width="9%" />Facebook</a></li>
+                                    <li><a href="https://www.instagram.com/"><img src={Instagram} className="imgInsta" alt="Instagram"
+                                        width="9%" />Instagram</a></li>
+                                    <li><a href="https://twitter.com/"><img src={Twitter} className="imgTwitter" alt="Twitter"
+                                        width="9%" />Twitter</a>
                                     </li>
                                 </ul>
                             </div>
@@ -65,13 +65,14 @@ function Footer() {
                             <div className="col-12 col-md-6 col-lg-3" id="sac">
                                 <ul>
                                     <h5>Atendimento</h5>
-                                    <li><Link to="/"><img src={Whatsapp} alt="WhatsApp"
-                                        width="9%" />WhatsApp</Link></li>
-                                    <li><Link to="/"><img src={Email} className="imgEmail" alt="Email"
-                                        width="9%" />Email</Link></li>
-                                    <li><Link to="/"><img src={Telefone} className="imgFone"
-                                        alt="Telefones" width="9%" />Telefone</Link></li>
-                                </ul>
+                                    <li><a href="https://api.whatsapp.com/send/?phone=5511952901633&text=Boas-vindas+a+Polite%C3%ADsmo+Shop%21+Como+posso+te+ajudar%3F+Me+conta+o+que+aconteceu+e+o+que+voc%C3%AA+precisa+%3F&app_absent=0"><img src={Whatsapp} alt="WhatsApp"
+                                        width="9%" />WhatsApp</a></li>
+                                    <li><a href="mailto:politeismoshop@hotmail.com?Body=Ol%E1%2C%20deixe%20sua%20mensagem%20para%20n%F3s%21"><img src={Email} className="imgEmail" alt="Email"
+                                        width="9%" />Email</a></li>
+                                    <li><a href ="tel:+5511952901633"><img src={Telefone} className="imgFone"
+                                        alt="Telefones" width="9%" />Telefone
+                                        <p>(11)95290-1633</p></a> </li>
+                                          </ul>
                             </div>
 
                             <div className="col-12 col-md-6 col-lg-3" id="pagamentos">

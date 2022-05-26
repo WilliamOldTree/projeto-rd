@@ -25,7 +25,7 @@ function CartProvider(props) {
       
             
          //Método para retirar a duplicidade , para futuras correções   
-        
+      
 
         cartList.push(item)
         item.qty = 1
@@ -46,8 +46,10 @@ function CartProvider(props) {
         let cartList = getCartStorage()
         setCartQty(cartList.length)
     }
-
-
+    const getCartQtyPreco = (item) => {
+        let cartList = getCartStorage()
+        setCartQty(cartList.length*item)
+    }
 
     const deleteCart =(item,quantidade) => {
         let cartList = localStorage.getItem('cart')

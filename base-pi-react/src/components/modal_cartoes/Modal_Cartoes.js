@@ -79,13 +79,6 @@ return (
                                     placeholder="01/2025"/>
                             </div>
 
-                            <div className="col-md-2">
-                                <label for="labelCVV" className="form-label">CVV *</label>
-                                <input type="text" className="form-control" id="inputZip"
-                                 value={cartoes.cvv_cartao}
-                                 onChange={(e)=>setCartoes({...cartoes, cvv_cartao: e.target.value })}
-                                    placeholder="123"/>
-                            </div>
 
                             
                             <div className="col-md-2">
@@ -97,13 +90,7 @@ return (
                             </div>
 
                             
-                            <div className="col-md-2">
-                                <label for="labelCVV" className="form-label">Id Forma</label>
-                                <input type="text" className="form-control" id="inputZip"
-                                 value={cartoes.forma}
-                                 onChange={(e)=>setCartoes({...cartoes, forma: e.target.value })}
-                                   />
-                            </div>
+                  
 
 
 

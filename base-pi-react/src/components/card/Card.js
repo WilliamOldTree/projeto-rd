@@ -8,6 +8,8 @@ import axios from 'axios'
 function Card(props) {
     
     const [produtos, setProdutos] = useState([])
+    const [buscaproduto, setBuscaProduto] = useState([])
+
 
     useEffect(() => {
         getProdutos()
@@ -17,6 +19,10 @@ function Card(props) {
         axios.get(`${baseUrl}/produtos`)
             .then((response) => {
                 setProdutos(response.data)
+            })
+            axios.get(`${baseUrl}/produtos/destaque?id=1`)
+            .then((response) => {
+                setBuscaProduto(response.data)
             })
     }
 
@@ -31,11 +37,11 @@ function Card(props) {
             <div className='card'>
                 
                 <div className='img'>
-                <Link className="my-2 mx-1 btn btn-secondary" to={`product/${produto.idProduto}`}>
+                <Link  to={`product/${produto.idProduto}`}>  <img src={props.img} alt='' /> </Link> 
                                                     
                                                  
-                <img src={props.img} alt='' />
-                </Link> 
+              
+               
                 </div>
                     <div className='content'>
                         <div className='title-card'>{props.nomeProduto}</div>

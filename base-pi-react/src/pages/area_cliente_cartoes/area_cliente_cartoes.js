@@ -81,9 +81,8 @@ const URL='http://localhost:8080/cartoes'
                                     {cartao.validade_cartao} 
                                 </li>
                              <button onClick={()=>deleteCartao(cartao.id_cartao)} className='LixeiraAreaCartoes'>  <img   width="25"  src={Lixeira}/></button>
-                              
-                             <Modal_Cartoes_Edit textoBotao='ALTERAR' className='editarCartoes' />
-                             
+                             <Modal_Cartoes_Edit textoBotao='ALTERAR' className='editarCartoes'/>
+                           
                     <img width="55" className='CartaoVisaAreaCartoes' src={Cartao} />
                     <img width="45" className='VisaAreaCartoes' src={Visa} />
                     
@@ -92,7 +91,6 @@ const URL='http://localhost:8080/cartoes'
                             )
                             
                         })}
-
                                 <Modal_Cartoes_Add textoBotao='ADICIONAR' className='addCartoes' />
                  
                  

@@ -27,6 +27,7 @@ import Catolica from "./pages/Departamentos/Catolica/Catolica";
 import Espirita from "./pages/Departamentos/Espirita/Espirita";
 import Evangelica from "./pages/Departamentos/Evangelica/Evangelica";
 import Judaica from "./pages/Departamentos/Judaica/Judaica";
+import Search from "./components/search/Search";
 
 // import Africana from './pages/Departamentos/Africana'
 // import Budista from './pages/Departamentos/Budista'
@@ -73,6 +74,8 @@ export const Routes = () => {
             <Route path="/Departamentos/Espirita/Espirita" component={Espirita} />
             <Route path="/Departamentos/Evangelica/Evangelica" component={Evangelica} />
             <Route path="/Departamentos/Judaica/Judaica" component={Judaica} />
+            <Route path="/busca/:textobusca" component={Search} />
+          
 
 
 

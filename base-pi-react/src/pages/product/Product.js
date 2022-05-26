@@ -39,20 +39,29 @@ function Product(props) {
 
     const { addToCart } = useContext(CartContext)
     const { id } = useParams()
+    
     const [produtos, setProdutos] = useState({})
     const [produtosRelacionados, setProdutosRelacionados] = useState({})
 
     useEffect(() => {
-        getProdutos()
-    }, [])
 
-
-    const getProdutos = () => {
         axios.get(`http://localhost:8080/produtos/${id}`)
             .then((response) => {
                 setProdutos(response.data)
             })
-    }
+
+
+            axios.get(`http://localhost:8080/produtos/categoria?id=${id}`)
+            .then((response) => {
+                setProdutosRelacionados(response.data)
+            })
+    }, [])
+    
+
+
+
+    
+
 
 
     
@@ -202,8 +211,9 @@ function Product(props) {
 
                 <div className='col-12 imagensCaixa1'>
                     <div className='row g-1'>
+                        
                         <div className='col-12 col-md-6 col-lg-3'>
-                            <Card nomeProduto='Terço Pérola Negra' preco='22,76' parcela='3x' valorParcela='7,58' img={RELACIONADO1} />
+                            <Card nomeProduto={produtosRelacionados.urlProduto} preco='22,76' parcela='3x' valorParcela='7,58' img={RELACIONADO1} />
                         </div>
                     </div>
                 </div>
