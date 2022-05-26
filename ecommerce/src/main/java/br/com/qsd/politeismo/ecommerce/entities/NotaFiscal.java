@@ -17,29 +17,14 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import br.com.qsd.politeismo.ecommerce.enums.Operacao;
-<<<<<<< HEAD
-=======
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
->>>>>>> 29b5b77eea07f6485c978e0cab6c6e22791a6025
-=======
-
-<<<<<<< HEAD
-import br.com.qsd.politeismo.ecommerce.enums.Operacao;
-=======
-import com.fasterxml.jackson.annotation.JsonIgnore;
->>>>>>> 421972d200574f03f92aadedc3dc360b4ac2d26c
->>>>>>> 2a13be4dd739321b0ff51abb2a3466b580a8a98a
-=======
->>>>>>> bf78065b9461cca12f96c1fc45cae2a7bc334ede
 
 
 @Entity
 @Table(name="nota_fiscal")
 public class NotaFiscal {
 	
-	@Id 
-	@Column(name = "id_nota_fiscal") 
+	
+	@Id @Column(name = "id_nota_fiscal") 
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private Long id;
 	
@@ -56,27 +41,8 @@ public class NotaFiscal {
 	
 	@Enumerated(EnumType.STRING)
 	private Operacao operacao;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 421972d200574f03f92aadedc3dc360b4ac2d26c
-	private Long codigoAcessoChave;
-	private Date dataNotaFiscal;
-	private Long numeroSerie;
-	private BigDecimal valor;
-	private String operacao;
-<<<<<<< HEAD
->>>>>>> 29b5b77eea07f6485c978e0cab6c6e22791a6025
-=======
->>>>>>> 421972d200574f03f92aadedc3dc360b4ac2d26c
->>>>>>> 2a13be4dd739321b0ff51abb2a3466b580a8a98a
-=======
->>>>>>> bf78065b9461cca12f96c1fc45cae2a7bc334ede
 
-	@JsonIgnore 
-	@OneToMany(mappedBy="idNotaFiscal") 
+	@JsonIgnore @OneToMany(mappedBy="idNotaFiscal") 
 	private List<ItemNotaFiscal> itemNotaFiscal; 
 	
 	@OneToOne(cascade = { CascadeType.DETACH })
@@ -131,54 +97,6 @@ public class NotaFiscal {
 	}
 
 	public void setOperacao(Operacao operacao) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> 421972d200574f03f92aadedc3dc360b4ac2d26c
-	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public Long getCodigoAcessoChave() {
-		return codigoAcessoChave;
-	}
-	public void setCodigoAcessoChave(Long codigoAcessoChave) {
-		this.codigoAcessoChave = codigoAcessoChave;
-	}
-	public Date getDataNotaFiscal() {
-		return dataNotaFiscal;
-	}
-	public void setDataNotaFiscal(Date dataNotaFiscal) {
-		this.dataNotaFiscal = dataNotaFiscal;
-	}
-	public Long getNumeroSerie() {
-		return numeroSerie;
-	}
-	public void setNumeroSerie(Long numeroSerie) {
-		this.numeroSerie = numeroSerie;
-	}
-	public BigDecimal getValor() {
-		return valor;
-	}
-	public void setValor(BigDecimal valor) {
-		this.valor = valor;
-	}
-	public String getOperacao() {
-		return operacao;
-	}
-	public void setOperacao(String operacao) {
-<<<<<<< HEAD
->>>>>>> 29b5b77eea07f6485c978e0cab6c6e22791a6025
-=======
->>>>>>> 421972d200574f03f92aadedc3dc360b4ac2d26c
->>>>>>> 2a13be4dd739321b0ff51abb2a3466b580a8a98a
-=======
->>>>>>> bf78065b9461cca12f96c1fc45cae2a7bc334ede
 		this.operacao = operacao;
 	}
 

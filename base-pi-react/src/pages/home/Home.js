@@ -170,7 +170,7 @@ function Home() {
                         {produtos.map((produto) => {
                             return (
                                 <li className='col-12 col-md-6 col-lg-3' key={produto.id}>
-                                    <Card produto = {produto} nomeProduto={produto.nome} preco={produto.preco} parcela="3x" valorParcela="10,00" img={produto.urlProduto} />
+                                    <Card produto = {produto} nomeProduto={produto.nome} preco={produto.preco}  parcela="3x" valorParcela="10,00" img={produto.urlProduto} />
                                 </li>
                             )
                         })}
