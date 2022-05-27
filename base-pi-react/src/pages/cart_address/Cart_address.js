@@ -13,7 +13,7 @@ import CartContext from '../../context/cart.provider'
 import React, { useEffect, useContext } from 'react';
 
 function Cart_address() {
-    const { cart, getCart, deleteCart } = useContext(CartContext)
+    const { cart, getCart, deleteCart, valorTotal} = useContext(CartContext)
 
     useEffect(() => {
         getCart()
@@ -77,9 +77,9 @@ function Cart_address() {
                         </ListCompra>
 
                                 <div className='cart_address_total mt-3 p-3'>
-                                    <h5>Produtos = R$ 120,00</h5>
+                                    <h5>Produtos = R${valorTotal},00 </h5>
                                     <h5>Frete = R$ 15,00</h5>
-                                    <h2>Total = 135,00</h2>
+                                    <h2>Total = R${15 + valorTotal},00</h2>
                                 </div>
                             </div>
                         

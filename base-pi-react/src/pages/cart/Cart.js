@@ -14,7 +14,7 @@ import React, { useEffect, useContext } from 'react';
 
 function Cart() {
 
-    const { cart, getCart, deleteCart } = useContext(CartContext)
+    const { cart, getCart, deleteCart, valorTotal } = useContext(CartContext)
 
 
     useEffect(() => {
@@ -60,8 +60,9 @@ function Cart() {
 
                 <Row>
                     <Col className='mt-5' id='cart_total'>
-                        <h3>Total = R$ 90,00</h3>
-                        <h6>Parcelas 3 x R$ 30,00</h6>
+                        <h3>Total = R$ {valorTotal} </h3>
+                      <h6>Parcelas 4 x R$ {valorTotal / 4}</h6>
+                      <p></p>
                         <Link to="/cart_address" className="btn btn-default btnComprar mb-2" type="button">COMPRAR</Link>
                         <Link to="/" className="btn btn-default btnContCompra mb-5" type="button">CONTINUAR COMPRANDO</Link>
                     </Col>
