@@ -39,6 +39,8 @@ import React, { useState, useEffect } from 'react'
 import { baseUrl } from '../../environments'
 import axios from 'axios'
 
+
+
 function Home() {
 
     const [produtos, setProdutos] = useState([])
@@ -48,13 +50,14 @@ function Home() {
     }, [])
 
     const getProdutos = () => {
-        axios.get(`${baseUrl}/produtos/destaque?id=1`)
+        axios.get(`${baseUrl}/produtos`)
             .then((response) => {
                 setProdutos(response.data)
             })
+            
     }
 
-
+   
 
     return (
         <>
@@ -171,7 +174,8 @@ function Home() {
                         {produtos.map((produto) => {
                             return (
                                 <li className='col-12 col-md-6 col-lg-3' key={produto.id}>
-                                    <Card produto = {produto} nomeProduto={produto.nome} preco={produto.preco} parcela="3x" valorParcela="10,00" img={produto.urlProduto} />
+                                    
+                                <Card produto = {produto} nomeProduto={produto.nome} preco={produto.preco} parcela="3x" valorParcela="10,00" img={produto.urlProduto} />  
                                 </li>
                             )
                         })}

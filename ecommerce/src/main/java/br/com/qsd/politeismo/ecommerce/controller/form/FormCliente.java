@@ -21,11 +21,6 @@ public class FormCliente {
 		
 	}
 
-	
-	
-
-
-
 
 	public FormCliente(String cpf, String nome, String email, String password, String celular, String fixo,
 			String nascimento, Genero genero) {
@@ -106,4 +101,4 @@ public class FormCliente {
 		this.fixo = fixo;
 	}
 
-}
+}//end class

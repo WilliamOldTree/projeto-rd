@@ -42,8 +42,10 @@ public class NotaFiscal {
 	@Enumerated(EnumType.STRING)
 	private Operacao operacao;
 
-	@JsonIgnore 
+
+	@JsonIgnore
 	@OneToMany(mappedBy="idNotaFiscal") 
+
 	private List<ItemNotaFiscal> itemNotaFiscal; 
 	
 	@OneToOne(cascade = { CascadeType.DETACH })

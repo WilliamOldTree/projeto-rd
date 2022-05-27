@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import './Header.css'
 import Local from '../asserts/icons/local.png'
 import Login from '../asserts/icons/login.png'
@@ -13,8 +13,19 @@ import Sagrada from '../asserts/images/images-home/imagem-resina-sagrada-familia
 import ModalCarrinho from '../modal_cart/Modal_Cart'
 import Lixeira from '../../components/asserts/icons/lixeira.png';
 import { Popover, OverlayTrigger } from "react-bootstrap"
+import React, { useState, useEffect } from 'react';
+import { baseUrl } from '../../environments';
 
-function Header() {
+
+
+function Header(props) {
+    
+    const [busca, setBusca] = useState('')
+    let history = useHistory()
+
+    const buscar = () => {
+        history.push(`/busca/${busca}`)
+    }
 
     const popover = (
         <Popover id="popover-basic">
@@ -67,7 +78,10 @@ function Header() {
         </Popover>
     );
 
-    
+
+
+
+
     return (
         <>
             {/* BEGINNER HEADER */}
@@ -111,10 +125,13 @@ function Header() {
                                 <Link to="/"><img src={Logo} alt="LOGO" width="100%" /></Link>
                             </div>
                             <div className="col-7" id="search">
-                                <input type="text" className="form-control" placeholder="O que você está procurando? "
+
+                                <input type="text" value={busca} onChange={(event) =>setBusca(event.target.value)}
+                                className="form-control" placeholder="O que você está procurando? "
                                     aria-label="Recipient's username" aria-describedby="button-addon2" />
+                                   
                                 <button className="btn btn-outline-secondary" type="button" id="button-addon2"><img
-                                    src={Lupa} width="20px" alt="" /></button>
+                                    src={Lupa} width="20px" alt="" onClick= {buscar}/></button>
                             </div>
                             <div className="col-3" id="icons">
                                 <div className="col-3">

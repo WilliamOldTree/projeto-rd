@@ -13,16 +13,17 @@ public class ClienteDTO {
     private LocalDate nascimento;
     private String celular;
     private String fixo;
+    
+    
     public ClienteDTO () {
     	
     }
 
 
 
-
 	public ClienteDTO(Long id_cliente, String cpf, String nome, String email, LocalDate nascimento, String celular,
 			String fixo) {
-		super();
+		
 		this.id_cliente = id_cliente;
 		this.cpf = cpf;
 		this.nome = nome;
@@ -30,6 +31,7 @@ public class ClienteDTO {
 		this.nascimento = nascimento;
 		this.celular = celular;
 		this.fixo = fixo;
+		
 	}
 
 

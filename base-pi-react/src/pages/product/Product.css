@@ -155,6 +155,15 @@
     font-size    : 22px;
     margin-bottom: 20px;
 }
+.linkproduct{
+    color        : #FFFFFF;
+   text-decoration: none;
+}
+
+.linkproduct:hover{
+    color        : #FFFFFF;
+   text-decoration: none;
+}
 
 .btn.compra:hover {
     background: darkorange;

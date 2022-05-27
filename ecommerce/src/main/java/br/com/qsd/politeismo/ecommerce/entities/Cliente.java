@@ -31,6 +31,7 @@ public class Cliente implements UserDetails{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id_cliente")
     private Long id;
+	
     private String cpf;
     private String nome;
     private String email;
@@ -50,10 +51,7 @@ public class Cliente implements UserDetails{
 	@OneToMany(mappedBy="cliente")
 	List<Cartao> cartao;
 	
-	@JsonIgnore
-	@OneToMany(mappedBy="cliente")
-	List<Forma> forma;
-	
+		
 	@JsonIgnore
 	@OneToMany(mappedBy="cliente")
 	List<Pedido> pedido;
@@ -65,7 +63,16 @@ public class Cliente implements UserDetails{
 	@Fetch(FetchMode.SELECT)
 	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Perfil> perfis = new ArrayList<>();
-
+	
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="cliente")
+	private List<Pix>pixs;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="cliente")
+	private List<Boleto>boletos;
+	
 	
 	public Cliente() {
 		
@@ -151,9 +158,6 @@ public class Cliente implements UserDetails{
 		return cartao;
 	}
 
-	public List<Forma> getForma() {
-		return forma;
-	}
 
 	public List<Pedido> getPedido() {
 		return pedido;

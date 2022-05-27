@@ -13,6 +13,9 @@ import CATEGORIA3 from '../../components/asserts/images/images-produto/04.06447.
 import CATEGORIA4 from '../../components/asserts/images/images-produto/04.06496-frente.jpg';
 
 function Category() {
+    
+
+
     return (
         <>
             <Header />
@@ -154,6 +157,15 @@ function Category() {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className="card">
+                {produtos.map((item) => {
+                    return (
+                        <card></card>
+                    )
+
+                })}
             </div>
 
             <Footer />
