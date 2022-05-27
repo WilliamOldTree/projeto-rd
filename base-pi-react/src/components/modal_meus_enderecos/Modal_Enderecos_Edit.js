@@ -49,7 +49,7 @@ function MeusEnderecosEdit(props) {
                 backdrop="static"
                 keyboard={false}>
                 <Modal.Header closeButton>
-                    <Modal.Title className="title-form-enderecos">Meus Endereços</Modal.Title>
+                    <Modal.Title className="title-form-enderecos">Editar Endereço</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="show-grid">
                     <Container>
