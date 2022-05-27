@@ -9,22 +9,13 @@ import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 public class FormPedido {
 		
 	private String data;
-	
 	private String valor;
-		
 	private String cliente;
-	
 	private StatusPedido statusPedido;
-
 	private FormaPagamento formaPagamento;
-	
 	private String endereco;
-	
 	private List<String> itens;
-	
-
 	private String entrega;
-
 		
 	public FormPedido() {
 		
