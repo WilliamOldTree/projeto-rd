@@ -5,25 +5,26 @@ import Menu from '../../components/menu/Menu'
 import Title from '../../components/title/Title'
 import User from '../../components/asserts/icons/user.png'
 import Lixeira from '../../components/asserts/icons/lixeira.png'
-import MeusEnderecos from '../../components/modal_meus_enderecos/Modal_Meus_Enderecos'
-import React from 'react'
-import { useState, useEffect } from 'react'
-import {baseUrl} from '../../environments'
+import { Form, Row, Col, Button } from 'react-bootstrap'
+
+import React, { useState, useEffect } from 'react'
+import { baseUrl } from '../../environments'
 import axios from 'axios'
 
-function AreaEndereco(props) {
-    
-    const [enderecos, setEnderecos] = useState([])
-    
 
-    
+
+
+
+function AreaEndereco(props) {
+
+    const [enderecos, setEnderecos] = useState([])
+
     function getEnderecos() {
         axios.get(`${baseUrl}/enderecos`)
             .then((response) => {
                 setEnderecos(response.data)
             })
     }
-
 
     useEffect(() => {
         getEnderecos()
@@ -42,45 +43,57 @@ function AreaEndereco(props) {
                 </div>
 
                 <div id='container-Enderecos'>
-                
-                {enderecos.map((enderecos) => {
-                    
-                    return (
-                        <>
-                            <ul className='listaEnderecos1'>
-                                <li className='AreaClienteLista'><nobr>CEP</nobr></li>
-                                <li className='AreaClienteLista'><nobr>Endereço</nobr></li>
-                                <li className='AreaClienteLista'><nobr>Numero</nobr></li>
-                                <li className='AreaClienteLista'><nobr>Bairro</nobr></li>
-                            </ul>
 
-                            <ul className='listaEnderecos2'>
-                                <li className='AreaClienteLista'><nobr>Estado</nobr></li>
-                                <li className='AreaClienteLista'><nobr>Complemento</nobr></li>
-                                <li className='AreaClienteLista'><nobr>Cidade</nobr></li>
-                            </ul>
+                    {enderecos.map((enderecos) => {
 
-                            <ul className='Enderecos1'>
-                                <li className='DadosEnderecos'><nobr>{enderecos.cep}</nobr></li>
-                                <li className='DadosEnderecos'><nobr>{enderecos.nomeLougradouro}</nobr></li>
-                                <li className='DadosEnderecos'><nobr>{enderecos.numero}</nobr></li>
-                                <li className='DadosEnderecos'><nobr>{enderecos.bairro}</nobr></li>
-                            </ul>
-
-                            <ul className='Enderecos2'>
-                                <li className='DadosEnderecos'><nobr>{enderecos.estado}</nobr></li>
-                                <li className='DadosEnderecos'><nobr>{enderecos.apelido}</nobr></li>
-                                <li className='DadosEnderecos'><nobr>{enderecos.cidade}</nobr></li>
-                            </ul>
-
-                            <MeusEnderecos classEnderecos={"editarEnderecos"} textButtonEnderecos="ALTERAR" />
-                            <MeusEnderecos classEnderecos={"addEnderecos"} textButtonEnderecos="ADICIONAR" />
-                            <img width="25" className='LixeiraAreaEndereco' src={Lixeira} />
-                            
-                        </>
-                    )
-                })} 
-                   
+                        return (
+                            <>
+                                <Form>
+                                    <Row>
+                                        <Col>
+                                            <ul className='listaEnderecos1'>
+                                                <li className='AreaClienteLista'><nobr>Endereço</nobr></li>
+                                                <li className='AreaClienteLista'><nobr>Complemento</nobr></li>
+                                                <li className='AreaClienteLista'><nobr>Bairro</nobr></li>
+                                                <li className='AreaClienteLista'><nobr>Estado</nobr></li>
+                                            </ul>
+                                        </Col>
+                                        <Col>
+                                            <ul className='listaEnderecos2'>
+                                                <li className='AreaClienteLista'><nobr>Numero</nobr></li>
+                                                <li className='AreaClienteLista'><nobr>CEP</nobr></li>
+                                                <li className='AreaClienteLista'><nobr>Cidade</nobr></li>
+                                            </ul>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col>
+                                            <ul className='Enderecos1'>
+                                                <li className='DadosEnderecos'><nobr>{enderecos.nomeLougradouro}</nobr></li>
+                                                <li className='DadosEnderecos'><nobr>{enderecos.apelido}</nobr></li>
+                                                <li className='DadosEnderecos'><nobr>{enderecos.bairro}</nobr></li>
+                                                <li className='DadosEnderecos'><nobr>{enderecos.estado}</nobr></li>
+                                            </ul>
+                                        </Col>
+                                        <Col>
+                                            <ul className='Enderecos2'>
+                                                <li className='DadosEnderecos'><nobr>{enderecos.numero}</nobr></li>
+                                                <li className='DadosEnderecos'><nobr>{enderecos.cep}</nobr></li>
+                                                <li className='DadosEnderecos'><nobr>{enderecos.cidade}</nobr></li>
+                                            </ul>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <img className='LixeiraAreaEndereco' src={Lixeira} />
+                                    </Row>
+                                    <div className='btns'>
+                                        
+                                    </div>
+                                   
+                                </Form>
+                            </>
+                        )
+                    })}
                 </div>
 
             </div>

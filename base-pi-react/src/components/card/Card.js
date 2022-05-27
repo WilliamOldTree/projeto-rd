@@ -1,17 +1,47 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import './Card.css';
 import CartContext from '../../context/cart.provider'
+import { Link } from 'react-router-dom';
+import { baseUrl } from '../../environments'
+import axios from 'axios'
 
 function Card(props) {
+    
+    const [produtos, setProdutos] = useState([])
+    const [buscaproduto, setBuscaProduto] = useState([])
+
+
+    useEffect(() => {
+        getProdutos()
+    }, [])
+
+    const getProdutos = () => {
+        axios.get(`${baseUrl}/produtos`)
+            .then((response) => {
+                setProdutos(response.data)
+            })
+            axios.get(`${baseUrl}/produtos/destaque?id=1`)
+            .then((response) => {
+                setBuscaProduto(response.data)
+            })
+    }
+
 
     const { addToCart } = useContext(CartContext)
     const produto = props.produto || {}
 
     return (
         <>
+
+
             <div className='card'>
+                
                 <div className='img'>
-                    <img src={props.img} alt='' />
+                <Link  to={`product/${produto.idProduto}`}>  <img src={props.img} alt='' /> </Link> 
+                                                    
+                                                 
+              
+               
                 </div>
                     <div className='content'>
                         <div className='title-card'>{props.nomeProduto}</div>

@@ -5,7 +5,7 @@ import axios from 'axios'
 import { Modal, Button, Form, Container, Row, Col } from 'react-bootstrap'
 import { useParams, useHistory } from 'react-router-dom'
 
-function MeusEnderecos(props) {
+function MeusEnderecosAdd(props) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -40,7 +40,7 @@ function MeusEnderecos(props) {
     return (
         <>
             <Button className={props.classEnderecos} onClick={handleShow}>
-                {props.textButtonEnderecos}
+                {props.textBotao}
             </Button>
 
             <Modal className="modal-form-enderecos"
@@ -156,4 +156,4 @@ function MeusEnderecos(props) {
     );
 }
 
-export default MeusEnderecos
+export default MeusEnderecosAdd
