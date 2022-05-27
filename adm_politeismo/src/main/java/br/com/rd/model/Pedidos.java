@@ -4,70 +4,51 @@ public class Pedidos {
 	
 	private Integer codigo;
 	private String dataPedido;
-	private String nome;
-	private String cpfCnpj;
-	private String email;
-	private String contato;
-	private String produto;
-	private String volume;
-	private String peso;
-	private String preco;
-	private Double quantidade;
-	private Double total;
-	private String endereco;
-	private String cep;
-	private String municipio;
+	private String formaPagamento;
 	private String statusPedido;
-	private String statusPagamento;
-	private String instituicao;
-	private Double valorPago;
-	private String dataPagamento;
-	private String entregador;
-	private String prazoEntrega;
-	private Double valorFrete;
-	private String statusEntrega;
-	private String dataEntrega;
-	private String entrega;
-
-
-
-
-
-	public Pedidos(Integer codigo, String dataPedido, String nome, String cpfCnpj, String email, String contato,
-			String produto, String volume, String peso, String preco, Double quantidade, Double total, String entrega,
-			String endereco, String cep, String municipio, String statusPedido, String statusPagamento,
-			String instituicao, Double valorPago, String dataPagamento, String entregador, String prazoEntrega, Double valorfrete, String statusEntrega, String dataEntrega){
-
-		super();
+	private Double valorTotal;
+	private String nomeCliente;
+	private String cpf;
+	private String email;
+	private String fixo;
+	private String celular;
+	private String apelido;
+	private String endereco;
+	private String cidade;
+	private String bairro;
+	private String estado;
+	private String cep;
+	private String nomeProduto;
+	private Double precoUnt;
+	private Double volume;
+	private Double peso;
+	private Integer quantidade;
+	
+	public Pedidos(Integer codigo, String dataPedido, String formaPagamento, String statusPedido, Double valorTotal,
+			String nomeCliente, String cpf, String email, String fixo, String celular, String apelido, String cidade,
+			String bairro, String estado, String cep, String nomeProduto, Double precoUnt, Double volume, Double peso,
+			Integer quantidade, String endereco) {
 		this.codigo = codigo;
 		this.dataPedido = dataPedido;
-		this.nome = nome;
-		this.cpfCnpj = cpfCnpj;
+		this.formaPagamento = formaPagamento;
+		this.statusPedido = statusPedido;
+		this.valorTotal = valorTotal;
+		this.nomeCliente = nomeCliente;
+		this.cpf = cpf;
 		this.email = email;
-		this.contato = contato;
-		this.produto = produto;
+		this.fixo = fixo;
+		this.celular = celular;
+		this.apelido = apelido;
+		this.cidade = cidade;
+		this.bairro = bairro;
+		this.estado = estado;
+		this.cep = cep;
+		this.nomeProduto = nomeProduto;
+		this.precoUnt = precoUnt;
 		this.volume = volume;
 		this.peso = peso;
-		this.preco = preco;
-		this.total = total;
 		this.quantidade = quantidade;
-		this.total = total;
-		this.entrega = entrega;
-		this.endereco = endereco;
-		this.cep = cep;
-		this.municipio = municipio;
-		this.statusPedido = statusPedido;
-		this.statusPagamento = statusPagamento;
-		this.instituicao = instituicao;
-		this.valorPago = valorPago;
-		this.dataPagamento = dataPagamento;
-		this.entregador = entregador;
-		this.prazoEntrega = prazoEntrega;
-		this.statusEntrega = statusEntrega;
-
-		this.dataEntrega = dataEntrega;
 	}
-
 
 	public Integer getCodigo() {
 		return codigo;
@@ -76,24 +57,55 @@ public class Pedidos {
 	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
+
 	public String getDataPedido() {
 		return dataPedido;
 	}
+
 	public void setDataPedido(String dataPedido) {
 		this.dataPedido = dataPedido;
 	}
-	public String getNome() {
-		return nome;
+
+	public String getFormaPagamento() {
+		return formaPagamento;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+
+	public void setFormaPagamento(String formaPagamento) {
+		this.formaPagamento = formaPagamento;
 	}
-	public String getCpfCnpj() {
-		return cpfCnpj;
+
+	public String getStatusPedido() {
+		return statusPedido;
 	}
-	public void setCpfCnpj(String cpfCnpj) {
-		this.cpfCnpj = cpfCnpj;
+
+	public void setStatusPedido(String statusPedido) {
+		this.statusPedido = statusPedido;
 	}
+
+	public Double getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(Double valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+
+	public String getNomeCliente() {
+		return nomeCliente;
+	}
+
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -102,78 +114,53 @@ public class Pedidos {
 		this.email = email;
 	}
 
-
-
-	public String getContato() {
-		return contato;
-	}
-	public void setContato(String contato) {
-		this.contato = contato;
+	public String getFixo() {
+		return fixo;
 	}
 
-	public String getProduto() {
-		return produto;
+	public void setFixo(String fixo) {
+		this.fixo = fixo;
 	}
 
-	public void setProduto(String produto) {
-		this.produto = produto;
-	}
-	public String getVolume() {
-		return volume;
-	}
-	public void setVolume(String volume) {
-		this.volume = volume;
-	}
-	public String getPeso() {
-
-		return peso;
+	public String getCelular() {
+		return celular;
 	}
 
-	public void setPeso(String peso) {
-		this.peso = peso;
+	public void setCelular(String celular) {
+		this.celular = celular;
 	}
 
-	public String getPreco() {
-		return preco;
+	public String getApelido() {
+		return apelido;
 	}
 
-	public void setPreco(String preco) {
-		this.preco = preco;
+	public void setApelido(String apelido) {
+		this.apelido = apelido;
 	}
 
-
-	public Double getQuantidade() {
-		return quantidade;
+	public String getCidade() {
+		return cidade;
 	}
 
-
-	public void setQuantidade(Double quantidade) {
-		this.quantidade = quantidade;
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
 
-	public Double getTotal() {
-		return total;
-	}
-	public void setTotal(Double total) {
-		this.total = total;
+	public String getBairro() {
+		return bairro;
 	}
 
-	public String getEntrega() {
-		return entrega;
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
 	}
 
-	public void setEntrega(String entrega) {
-		this.entrega = entrega;
+	public String getEstado() {
+		return estado;
 	}
 
-	public String getEndereco() {
-		return endereco;
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
-
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-
 
 	public String getCep() {
 		return cep;
@@ -183,82 +170,55 @@ public class Pedidos {
 		this.cep = cep;
 	}
 
-	public String getMunicipio() {
-		return municipio;
+	public String getNomeProduto() {
+		return nomeProduto;
 	}
 
-	public void setMunicipio(String municipio) {
-		this.municipio = municipio;
-	}
-	public String getStatusPedido() {
-		return statusPedido;
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
 
-	public void setStatusPedido(String statusPedido) {
-		this.statusPedido = statusPedido;
+	public Double getPrecoUnt() {
+		return precoUnt;
 	}
 
-	public String getStatusPagamento() {
-		return statusPagamento;
+	public void setPrecoUnt(Double precoUnt) {
+		this.precoUnt = precoUnt;
 	}
 
-	public void setStatusPagamento(String statusPagamento) {
-		this.statusPagamento = statusPagamento;
-	}
-	public String getInstituicao() {
-		return instituicao;
+	public Double getVolume() {
+		return volume;
 	}
 
-	public void setInstituicao(String instituicao) {
-		this.instituicao = instituicao;
-	}
-	public Double getValorPago() {
-		return valorPago;
-	}
-	public void setValorPago(Double valorPago) {
-		this.valorPago = valorPago;
-	}
-	public String getDataPagamento() {
-
-		return dataPagamento;
-	}
-	public void setDataPagamento(String dataPagamento) {
-		this.dataPagamento = dataPagamento;
+	public void setVolume(Double volume) {
+		this.volume = volume;
 	}
 
-	public String getEntregador() {
-		return entregador;
-	}
-	public void setEntregador(String entregador) {
-		this.entregador = entregador;
+	public Double getPeso() {
+		return peso;
 	}
 
-	public String getPrazoEntrega() {
-		return prazoEntrega;
+	public void setPeso(Double peso) {
+		this.peso = peso;
 	}
 
-	public void setPrazoEntrega(String prazoEntrega) {
-		this.prazoEntrega = prazoEntrega;
+	public Integer getQuantidade() {
+		return quantidade;
 	}
 
-
-	public Double getValorFrete() {
-		return valorFrete;
-	}
-	public void setValorFrete(Double valorFrete) {
-		this.valorFrete = valorFrete;
-	}
-	public String getStatusEntrega() {
-		return statusEntrega;
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
 	}
 
-	public void setStatusEntrega(String statusEntrega) {
-		this.statusEntrega = statusEntrega;
+	public String getEndereco() {
+		return endereco;
 	}
-	public String getDataEntrega() {
-		return dataEntrega;
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
-	public void setDataEntrega(String dataEntrega) {
-		this.dataEntrega = dataEntrega;
-	}		
+	
+	
+	
+
 }//end class

@@ -1,250 +1,93 @@
-//package br.com.rd.dao;
-//
-//import java.sql.Connection;
-//import java.sql.PreparedStatement;
-//import java.sql.ResultSet;
-//import java.sql.SQLException;
-//import java.util.ArrayList;
-//
-//import br.com.rd.model.Pedidos;
-//
-//public class PedidosDao {
-//
-//	
-//	public ArrayList<Pedidos> selectAll(){	
-//		Conexao c = Conexao.getInstance();
-//		Connection con = c.getConnection();
-//		ArrayList<Pedidos> listAll = new ArrayList<Pedidos>();
-//		
-//		try {
-//			PreparedStatement ps = con.prepareStatement("SELECT\n"
-//					+ "P.ID_PEDIDO AS CODIGO,\n"
-//					+ "DATE_FORMAT(P.DATA_PEDIDO, '%d-%m-%Y') AS 'DATA',\n"
-//					+ "J.RAZAO_SOCIAL AS NOME,\n"
-//					+ "CONCAT(SUBSTR(J.ID_CNPJ, 1,9),'/', SUBSTR(J.ID_CNPJ, 10,14))  AS 'CPF/CNPJ',\n"
-//					+ "C.EMAIL AS EMAIL,\n"
-//					+ "CONCAT(T.DDD, ' ', SUBSTR(T.FIXO, 1,4),'-', SUBSTR(T.FIXO, 5,8)) AS CONTATO,\n"
-//					+ "PD.DESCRICAO AS PRODUTO,\n"
-//					+ "PD.VOLUME AS VOLUME,\n"
-//					+ "PD.PESO AS PESO,\n"
-//					+ "PD.PRECO AS PRECO,\n"
-//					+ "IP.QUANTIDADE AS QUANTIDADE , \n"
-//					+ "P.VALOR_TOTAL AS TOTAL,\n"
-//					+ "E.APELIDO AS ENTREGA,\n"
-//					+ "CONCAT(E.TIPO_LOGRADOURO,' ', E.NOME_LOGRADOURO, ' ','-', ' ', E.NUMERO) AS ENDERECO,\n"
-//					+ "CONCAT(SUBSTR(E.CEP, 1,5), '-', SUBSTR(E.CEP, 6,9) ) AS CEP,\n"
-//					+ "CONCAT(E.CIDADE,'-',ES.SIGLA) AS MUNICIPIO, \n"
-//					+ "SP.DESCRICAO AS STATUS_PEDIDO,\n"
-//					+ "PG.STATUS_PAGAMENTO AS STATUS_PAGAMENTO,\n"
-//					+ "FP.INSTITUICAO AS INSTITUICAO,\n"
-//					+ "PG.VALOR_PAGAMENTO AS VALOR_PAGO,\n"
-//					+ "DATE_FORMAT(PG.DATA_PAGAMENTO, '%d-%m-%Y') AS 'DATA',\n"
-//					+ "FENT.EMPRESA AS ENTREGADOR,\n"
-//					+ "ENT.PRAZO_ESTIMADO AS PRAZO_ENTREGA,\n"
-//					+ "ENT.VALOR AS FRETE,\n"
-//					+ "TSE.DESCRICAO AS STATUS_ENTREGA,\n"
-//					+ "DATE_FORMAT(SE.DATA_ENTREGA, '%d-%m-%Y') AS 'DATA'    \n"
-//					+ "FROM\n"
-//					+ "PEDIDO P\n"
-//					+ "INNER JOIN\n"
-//					+ "ITEM_PEDIDO IP\n"
-//					+ "ON\n"
-//					+ "IP.PEDIDO_ID_PEDIDO = P.ID_PEDIDO\n"
-//					+ "INNER JOIN \n"
-//					+ "PRODUTO PD\n"
-//					+ "ON \n"
-//					+ "IP.PRODUTO_ID_PRODUTO = PD.ID_PRODUTO\n"
-//					+ "INNER JOIN\n"
-//					+ "STATUS_PEDIDO SP\n"
-//					+ "ON \n"
-//					+ "SP.PEDIDO_ID_PEDIDO = P.ID_PEDIDO\n"
-//					+ "INNER JOIN\n"
-//					+ "CLIENTE C\n"
-//					+ "ON \n"
-//					+ "P.CLIENTE_ID_CLIENTE = C.ID_CLIENTE\n"
-//					+ "INNER JOIN\n"
-//					+ "JURIDICA J  \n"
-//					+ "ON\n"
-//					+ "J.CLIENTE_ID_CLIENTE  = C.ID_CLIENTE\n"
-//					+ "INNER JOIN\n"
-//					+ "TELEFONE T\n"
-//					+ "ON\n"
-//					+ "T.CLIENTE_ID_CLIENTE = C.ID_CLIENTE \n"
-//					+ "INNER JOIN \n"
-//					+ "CLIENTE_ENDERECO CE\n"
-//					+ "ON\n"
-//					+ "CE.CLIENTE_ID_ENDERECO = C.ID_CLIENTE\n"
-//					+ "INNER JOIN \n"
-//					+ "ENDERECO E\n"
-//					+ "ON\n"
-//					+ "CE.ENDERECO_ID_ENDERECO = E.ID_ENDERECO\n"
-//					+ "INNER JOIN\n"
-//					+ "ESTADO ES\n"
-//					+ "ON\n"
-//					+ "E.ESTADO_ID_ESTADO = ES.ID_ESTADO\n"
-//					+ "INNER JOIN\n"
-//					+ "PAGAMENTO PG\n"
-//					+ "ON\n"
-//					+ "PG.PEDIDO_ID_PEDIDO = P.ID_PEDIDO\n"
-//					+ "INNER JOIN\n"
-//					+ "FORMA FP\n"
-//					+ "ON\n"
-//					+ "PG.FORMA_ID_FORMA = FP.ID_FORMA\n"
-//					+ "INNER JOIN\n"
-//					+ "ENTREGA ENT\n"
-//					+ "ON\n"
-//					+ "P.ENTREGA_ID_ENTREGA  = ENT.ID_ENTREGA\n"
-//					+ "INNER JOIN\n"
-//					+ "FORMA_ENTREGA FENT\n"
-//					+ "ON \n"
-//					+ "ENT.FORMA_ENTREGA_ID_FORMA_ENTREGA = FENT.ID_FORMA_ENTREGA\n"
-//					+ "INNER JOIN\n"
-//					+ "STATUS_ENTREGA SE \n"
-//					+ "ON\n"
-//					+ "SE.ENTREGA_ID_ENTREGA = ENT.ID_ENTREGA\n"
-//					+ "INNER JOIN\n"
-//					+ "TIPO_STATUS_ENTREGA TSE\n"
-//					+ "ON\n"
-//					+ "TSE.STATUS_ENTREGA_ID_STATUS_ENTREGA = SE.ID_STATUS_ENTREGA	\n"
-//					+ "UNION\n"
-//					+ "SELECT\n"
-//					+ "P.ID_PEDIDO AS CODIGO,\n"
-//					+ "DATE_FORMAT(P.DATA_PEDIDO,  '%d-%m-%Y') AS 'DATA',\n"
-//					+ "C.NOME AS NOME,\n"
-//					+ "CONCAT(SUBSTR(F.ID_CPF, 1,9), '-', SUBSTR(F.ID_CPF, 10,11)) AS 'CPF/CNPJ',\n"
-//					+ "C.EMAIL AS EMAIL,\n"
-//					+ "CONCAT(T.DDD, ' ', SUBSTR(T.CELULAR, 1,5),'-', SUBSTR(T.CELULAR, 6,9)) AS CONTATO,\n"
-//					+ "PD.DESCRICAO AS PRODUTO,\n"
-//					+ "PD.VOLUME AS VOLUME,\n"
-//					+ "PD.PESO AS PESO,\n"
-//					+ "PD.PRECO AS PRECO,\n"
-//					+ "IP.QUANTIDADE AS QUANTIDADE,\n"
-//					+ "P.VALOR_TOTAL AS TOTAL,\n"
-//					+ "E.APELIDO AS ENTREGA,\n"
-//					+ "CONCAT(E.TIPO_LOGRADOURO,' ', E.NOME_LOGRADOURO, ' ','-', ' ', E.NUMERO) AS ENDERECO, \n"
-//					+ "CONCAT(SUBSTR(E.CEP, 1,5), '-', SUBSTR(E.CEP, 6,9) ) AS CEP,\n"
-//					+ "CONCAT(E.CIDADE,'-',ES.SIGLA) AS MUNICIPIO,\n"
-//					+ "SP.DESCRICAO AS STATUS_PEDIDO,\n"
-//					+ "PG.STATUS_PAGAMENTO AS STATUS_PAGAMENTO,\n"
-//					+ "FP.INSTITUICAO AS INSTITUICAO,\n"
-//					+ "PG.VALOR_PAGAMENTO AS VALOR_PAGO,\n"
-//					+ "DATE_FORMAT(PG.DATA_PAGAMENTO, '%d-%m-%Y') AS 'DATA',\n"
-//					+ "FENT.EMPRESA AS ENTREGADOR,\n"
-//					+ "ENT.PRAZO_ESTIMADO AS PRAZO_ENTREGA,\n"
-//					+ "ENT.VALOR AS FRETE,\n"
-//					+ "TSE.DESCRICAO AS STATUS_ENTREGA,\n"
-//					+ "DATE_FORMAT(SE.DATA_ENTREGA, '%d-%m-%Y') AS 'DATA'\n"
-//					+ "FROM\n"
-//					+ "PEDIDO P\n"
-//					+ "INNER JOIN\n"
-//					+ "ITEM_PEDIDO IP\n"
-//					+ "ON\n"
-//					+ "IP.PEDIDO_ID_PEDIDO = P.ID_PEDIDO\n"
-//					+ "INNER JOIN \n"
-//					+ "PRODUTO PD\n"
-//					+ "ON \n"
-//					+ "IP.PRODUTO_ID_PRODUTO = PD.ID_PRODUTO\n"
-//					+ "INNER JOIN\n"
-//					+ "STATUS_PEDIDO SP\n"
-//					+ "ON \n"
-//					+ "SP.PEDIDO_ID_PEDIDO = P.ID_PEDIDO\n"
-//					+ "INNER JOIN\n"
-//					+ "CLIENTE C\n"
-//					+ "ON \n"
-//					+ "P.CLIENTE_ID_CLIENTE = C.ID_CLIENTE\n"
-//					+ "INNER JOIN\n"
-//					+ "FISICA F \n"
-//					+ "ON\n"
-//					+ "F.CLIENTE_ID_CLIENTE  = C.ID_CLIENTE\n"
-//					+ "INNER JOIN\n"
-//					+ "TELEFONE T\n"
-//					+ "ON\n"
-//					+ "T.CLIENTE_ID_CLIENTE = C.ID_CLIENTE\n"
-//					+ "INNER JOIN \n"
-//					+ "CLIENTE_ENDERECO CE\n"
-//					+ "ON\n"
-//					+ "CE.CLIENTE_ID_ENDERECO = C.ID_CLIENTE\n"
-//					+ "INNER JOIN \n"
-//					+ "ENDERECO E\n"
-//					+ "ON\n"
-//					+ "CE.ENDERECO_ID_ENDERECO = E.ID_ENDERECO\n"
-//					+ "INNER JOIN\n"
-//					+ "ESTADO ES\n"
-//					+ "ON\n"
-//					+ "E.ESTADO_ID_ESTADO = ES.ID_ESTADO\n"
-//					+ "INNER JOIN\n"
-//					+ "PAGAMENTO PG\n"
-//					+ "ON\n"
-//					+ "PG.PEDIDO_ID_PEDIDO = P.ID_PEDIDO\n"
-//					+ "INNER JOIN\n"
-//					+ "FORMA FP\n"
-//					+ "ON\n"
-//					+ "PG.FORMA_ID_FORMA = FP.ID_FORMA\n"
-//					+ "INNER JOIN\n"
-//					+ "ENTREGA ENT\n"
-//					+ "ON\n"
-//					+ "P.ENTREGA_ID_ENTREGA  = ENT.ID_ENTREGA\n"
-//					+ "INNER JOIN\n"
-//					+ "FORMA_ENTREGA FENT\n"
-//					+ "ON \n"
-//					+ "ENT.FORMA_ENTREGA_ID_FORMA_ENTREGA = FENT.ID_FORMA_ENTREGA\n"
-//					+ "INNER JOIN\n"
-//					+ "STATUS_ENTREGA SE \n"
-//					+ "ON\n"
-//					+ "SE.ENTREGA_ID_ENTREGA = ENT.ID_ENTREGA\n"
-//					+ "INNER JOIN\n"
-//					+ "TIPO_STATUS_ENTREGA TSE\n"
-//					+ "ON\n"
-//				    + "TSE.STATUS_ENTREGA_ID_STATUS_ENTREGA = SE.ID_STATUS_ENTREGA "
-//				    + "ORDER BY CODIGO DESC;\r\n");
-//
-//			
-//			ResultSet rs = ps.executeQuery();
-//			while(rs.next()) {
-//				Integer codigo = rs.getInt("CODIGO");
-//				String dataPedido = rs.getString("DATA");
-//				String nome = rs.getString("NOME");
-//				String cpfCnpj = rs.getString("CPF/CNPJ");
-//				String email = rs.getString("EMAIL");
-//				String contato = rs.getString("CONTATO");
-//				String produto = rs.getString("PRODUTO");
-//				String volume =rs.getString("VOLUME");
-//				String peso = rs.getString("PESO");
-//				String preco = rs.getString("PRECO");
-//				Double quantidade = rs.getDouble("QUANTIDADE");
-//				Double total = rs.getDouble("TOTAL");
-//				String entrega = rs.getString("ENTREGA");
-//				String endereco = rs.getString("ENDERECO");
-//				String cep = rs.getString("CEP");
-//				String municipo = rs.getString("MUNICIPIO");
-//				String statusPedido = rs.getString("STATUS_PEDIDO");
-//				String statusPagamento = rs.getString("STATUS_PAGAMENTO");
-//				String instituicao = rs.getString("INSTITUICAO");
-//				Double valorPago = rs.getDouble("VALOR_PAGO");
-//				String dataPgamento = rs.getString("DATA");
-//				String entregador = rs.getString("ENTREGADOR");
-//				String prazoEntrega = rs.getString("PRAZO_ENTREGA");
-//				Double valorFrete = rs.getDouble("FRETE");
-//				String statusEntrega = rs.getString("STATUS_ENTREGA");
-//				String dataEntrega = rs.getString("DATA");
-//				Pedidos pDet = new Pedidos(codigo, dataPedido, nome, cpfCnpj, email, contato, produto, volume, peso, preco, quantidade, total, entrega, endereco, cep, municipo, statusPedido, statusPagamento, instituicao, valorPago, dataPgamento, entregador, prazoEntrega, valorFrete, statusEntrega, dataEntrega);
-//				pDet.setCodigo(codigo);
-//				listAll.add(pDet);
-//				
-//			}
-//			
-//			rs.close();
-//			ps.close();
-//		
-//		} catch (SQLException e) {
-//			
-//			e.printStackTrace();
-//		}
-//		
-//		return listAll;
-//	}//end selectAll
-//
-//}// end class
+package br.com.rd.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import br.com.rd.model.Pedidos;
+
+public class PedidosDao {
+	
+	public ArrayList<Pedidos> selectAll(){	
+		
+		Conexao c = Conexao.getInstance();
+		Connection con = c.getConnection();
+		ArrayList<Pedidos> listAll = new ArrayList<Pedidos>();
+		
+		try {
+			PreparedStatement ps = con.prepareStatement(""
+					+ "SELECT P.ID_PEDIDO, \r\n"
+					+ "DATE_FORMAT(P.DATA_PEDIDO, '%d-%m-%Y') AS 'DATA_PEDIDO',\r\n"
+					+ "P.FORMA_PAGAMENTO,\r\n"
+					+ "P.STATUS_PEDIDO,\r\n"
+					+ "P.VALOR_TOTAL,\r\n"
+					+ "C.NOME as NOME_CLIENTE,\r\n"
+					+ "C.CPF,\r\n"
+					+ "C.EMAIL,\r\n"
+					+ "C.FIXO,\r\n"
+					+ "C.CELULAR,\r\n"
+					+ "E.APELIDO,\r\n"
+					+ "CONCAT(E.TIPO_LOGRADOURO,' ', E.NOME_LOGRADOURO, ' ','-', ' ', E.NUMERO) AS ENDERECO,\r\n"
+					+ "E.CIDADE,\r\n"
+					+ "E.BAIRRO,\r\n"
+					+ "E.ESTADO,\r\n"
+					+ "E.CEP,\r\n"
+					+ "PD.NOME as NOME_PRODUTO,\r\n"
+					+ "PD.PRECO as PRECO_UNT,\r\n"
+					+ "PD.VOLUME,\r\n"
+					+ "PD.PESO,\r\n"
+					+ "IP.QUANTIDADE AS QUANTIDADE \r\n"
+					+ "FROM PEDIDO P \r\n"
+					+ "INNER JOIN CLIENTE C ON P.FK_ID_CLIENTE = C.ID_CLIENTE\r\n"
+					+ "INNER JOIN ENDERECO E ON P.FK_ID_ENDERECO = E.ID_ENDERECO\r\n"
+					+ "INNER JOIN ITEM_PEDIDO IP ON IP.ID_PEDIDO = P.ID_PEDIDO \r\n"
+					+ "INNER JOIN PRODUTO PD ON IP.ID_PRODUTO = PD.ID_PRODUTO \r\n"
+				    + "ORDER BY ID_PEDIDO DESC; \r\n"
+				);
+            
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				Integer id = rs.getInt("ID_PEDIDO");
+				String dataPedido = rs.getString("DATA_PEDIDO");
+				String nome = rs.getString("NOME_CLIENTE");
+				String cpf = rs.getString("CPF");
+				String formaPagamento = rs.getString("FORMA_PAGAMENTO");
+				String statusPedido = rs.getString("STATUS_PEDIDO");
+				Double valorTotal = rs.getDouble("VALOR_TOTAL");
+				String email = rs.getString("EMAIL");
+				String fixo = rs.getString("FIXO");
+				String celular = rs.getString("CELULAR");
+				String apelido = rs.getString("APELIDO");
+				String endereco = rs.getString("ENDERECO");
+				String cidade = rs.getString("CIDADE");
+				String bairro = rs.getString("BAIRRO");
+				String estado = rs.getString("ESTADO");
+				String cep = rs.getString("CEP");
+				String nomeProduto = rs.getString("NOME_PRODUTO");
+				Double preco = rs.getDouble("PRECO_UNT");
+				Double volume = rs.getDouble("VOLUME");
+				Double peso = rs.getDouble("PESO");
+				Integer quantidade = rs.getInt("QUANTIDADE");
+
+				Pedidos pDet = new Pedidos(id, dataPedido, formaPagamento, statusPedido, valorTotal, nome, cpf, email, fixo, celular, apelido, cidade, bairro, estado, cep, nomeProduto, preco, volume, peso, quantidade, endereco);
+				pDet.setCodigo(id);
+				listAll.add(pDet);
+			}
+			
+			rs.close();
+			ps.close();
+		
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return listAll;
+	}//end selectAll
+
+}// end class
 
 	
 

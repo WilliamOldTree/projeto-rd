@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lista de Clientes Físicos</title>
+<title>Lista de Clientes</title>
 <link rel="stylesheet" href="./css/base.css">
 <link rel="stylesheet" href="./css/tabela.css">
 <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
@@ -46,8 +46,15 @@
                                     </div>
                                 </div>
                                 <div class=menu-list1>
-                               <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
                                     <hr width="160">
+                                                     <%
+    
+ String usuario = (String) session.getAttribute("email");
+    
+   if(usuario == null){
+	   response.sendRedirect("index.jsp");
+   }       %>
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="DepartamentoController">Departamentos
                                     <hr width="160">
@@ -61,19 +68,9 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="FornecedorController">Fornecedores
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteFisicaController">Clientes Fisícos
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteController">Clientes
                                     <hr width="160">
-                                                     <%
-    
- String usuario = (String) session.getAttribute("email");
-    
-   if(usuario == null){
-	   response.sendRedirect("index.jsp");
-   }       %>
                                  </a>
-                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteJuridicaController">Clientes Juridicos
-                                    <hr width="160">
-                                </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController">Pedidos
                                     <hr width="160">
                                 </a>
@@ -107,7 +104,7 @@
     
     
 <div class="container">
-    <h1 class="title">Lista de Clientes Físicos</h1>
+    <h1 class="title">Lista de Clientes</h1>
 
     <table class="table table-hover">
         <thead>
@@ -116,15 +113,15 @@
                 <th>Nome</th>
                 <th>Email</th>
                 <th>CPF</th>
-                <th>Sexo</th>
+                <th>Gênero</th>
                 <th>Nascimento</th>
                 <th>Mais Informações</th>
             </tr>
         </thead>
         <tbody>
-            <c:forEach var="cliente" items="${listaClienteFisica}">
+            <c:forEach var="cliente" items="${listaCliente}">
                 <tr>
-                    <form action="ClienteFisicaController" method="post">
+                    <form action="ClienteController" method="post">
                         <td data-label="ID">
                             <c:out value="${cliente.id}" />
                             <input type="hidden" name="id" value="${cliente.id}" />
@@ -142,9 +139,10 @@
                             <c:out value="${cliente.cpf}" />
                         </td>
                         
-                        <td data-label="Sexo">
-                            <c:out value="${cliente.sexo}" />
+                        <td data-label="CPF">
+                            <c:out value="${cliente.genero}" />
                         </td>
+                        
                         <td data-label="Nascimento">
                             <c:out value="${cliente.nascimento}" />
                         </td>
@@ -152,9 +150,7 @@
                         <td data-label="Detalhes">
                           
                          <!-- Button trigger modal -->
-                         <button type="button" class="btn formCrud3" data-bs-toggle="modal" data-bs-target="#modal-${cliente.id}">
-                         Detalhes
-                         </button>
+                         <button type="button" class="btn formCrud3" data-bs-toggle="modal" data-bs-target="#modal-${cliente.id}"> Detalhes</button>
  
                         <!-- Modal -->
                        <div class="modal fade" id="modal-${cliente.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -167,7 +163,7 @@
                         </div>
                         <div class="modal-body">
       
-                        <form action="ClienteFisicaController" method="post">
+                        <form action="ClienteController" method="post">
 									
 					    <input id="cliente" name="cliente" type="hidden" value="" />
 					    
@@ -178,26 +174,35 @@
                                             <p><strong>CPF:</strong>
                                                 <c:out value="${cliente.cpf}" />
                                             </p>
-                                            <p><strong>DDD:</strong>
-                                                <c:out value="${cliente.ddd}" />
+                                            <p><strong>DATA DE NASCIMMENTO:</strong>
+                                                <c:out value="${cliente.nascimento}" />
                                             </p>
-                                            <p><strong>CELULAR:</strong>
+                                            <p><strong>TELEFONE(FIXO):</strong>
+                                                <c:out value="${cliente.fixo}" />
+                                            </p>
+                                            <p><strong>TELEFONE(CELULAR):</strong>
                                                 <c:out value="${cliente.celular}" />
                                             </p>
-                                            <p><strong>LOGRADOURO:</strong>
+                                            <p><strong>APELIDO</strong>
+                                                <c:out value="${cliente.apelido}" />
+                                            </p>
+                                            <p><strong>LOGRADOURO/TIPO</strong>
+                                                <c:out value="${cliente.tipo}" />
+                                            </p>
+                                            <p><strong>LOGRADOURO/NOME</strong>
                                                 <c:out value="${cliente.logradouro}" />
                                             </p>
-                                            <p><strong>TIPO DO LOGRADOURO:</strong>
-                                                <c:out value="${cliente.tipo_logradouro}" />
-                                            </p>
-                                            <p><strong>NUMERO:</strong>
-                                                <c:out value="${cliente.numeracao}" />
+                                            <p><strong>Nº</strong>
+                                                <c:out value="${cliente.numero}" />
                                             </p>
                                             <p><strong>CEP:</strong>
                                                 <c:out value="${cliente.cep}" />
                                             </p>
                                             <p><strong>CIDADE:</strong>
                                                 <c:out value="${cliente.cidade}" />
+                                            </p>
+                                           <p><strong>BAIRRO:</strong>
+                                                <c:out value="${cliente.bairro}" />
                                             </p>
                                             <p><strong>ESTADO:</strong>
                                                 <c:out value="${cliente.estado}" />
