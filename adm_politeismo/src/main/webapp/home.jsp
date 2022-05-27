@@ -64,12 +64,9 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="FornecedorController">Fornecedores
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteFisicaController">Clientes Fisícos
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteController">Clientes
                                     <hr width="160">
                                  </a>
-                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteJuridicaController">Clientes Juridicos
-                                    <hr width="160">
-                                </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController">Pedidos
                                     <hr width="160">
                                 </a>
@@ -78,9 +75,7 @@
                                    border: none;
                                    margin-left: 9px;
                                    color:  #516673;
-                                   ">
-                                 Sair
-                                          </button> 
+                                   ">Sair</button> 
                              </form> 
                                 </div>
                             </div>
@@ -117,7 +112,7 @@
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-4">
                         <form action="HomeController" method="post">
-                            <h3 class="counter text-right m-t-15 text-primary">${listaClienteFisica.size() + listaClienteJuridica.size()}</h3>
+                            <h3 class="counter text-right m-t-15 text-primary">${listaCliente.size()}</h3>
                         </form>
                         </div>
                     </div>

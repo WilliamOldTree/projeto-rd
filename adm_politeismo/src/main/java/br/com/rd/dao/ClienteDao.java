@@ -4,11 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
-
 import br.com.rd.model.Cliente;
-import br.com.rd.model.Endereco;
 
 public class ClienteDao {
 
@@ -27,8 +24,11 @@ public class ClienteDao {
 					+ "DATE_FORMAT(NASCIMENTO, '%d-%m-%Y') AS 'NASCIMENTO',\n"
 					+ "C.FIXO,\n"
 					+ "C.CELULAR,\n"
+					+ "C.GENERO,\n"
 					+ "E.APELIDO,\n"
-					+ "CONCAT(E.TIPO_LOGRADOURO, '-', E.NOME_LOGRADOURO, 'Nº ', E.NUMERO) AS 'ENDERECO',\n"
+					+ "E.TIPO_LOGRADOURO,\n"
+					+ "E.NOME_LOGRADOURO,\n"
+					+ "E.NUMERO,\n"
 					+ "E.CEP,\n"
 					+ "E.CIDADE,\n"
 					+ "E.BAIRRO,\n"
@@ -37,16 +37,17 @@ public class ClienteDao {
 					+ "JOIN ENDERECO E\n"
 					+ "ON\n"
 					+ "E.ID_ENDERECO = C.ID_CLIENTE;");
+			
 			ResultSet r = p.executeQuery();			
 			
 			while (r.next()) {
 				
 				Long id = r.getLong("ID_CLIENTE");
-				String nome = r.getString("C.NOME");
+				String nome = r.getString("NOME");
 				String cpf = r.getString("CPF");
 				String email = r.getString("EMAIL");
-				String senha = r.getString(" SENHA");
-				LocalDate nascimento = LocalDate.parse(r.getString("NASCIMENTO"));
+				String senha = r.getString("SENHA");
+				String nascimento = (r.getString("NASCIMENTO"));
 				String fixo = r.getString("FIXO");
 				String celular = r.getString("CELULAR");
 				String apelido = r.getString("APELIDO");
@@ -57,10 +58,10 @@ public class ClienteDao {
 				String cidade = r.getString("CIDADE");
 				String bairro = r.getString("BAIRRO");
 				String estado = r.getString("ESTADO");
-				
-				
-				Endereco endereco = new Endereco(apelido, tipoLogradouro,nomeLogradouro, numero, cep, cidade, bairro, estado);
-				Cliente cliente = new Cliente(id, nome, cpf, email, senha, nascimento, fixo, celular, endereco);
+				String genero = r.getString("GENERO");
+
+				Cliente cliente = new Cliente(id,cpf, nome, email,senha, nascimento, fixo, celular, apelido,nomeLogradouro,
+						tipoLogradouro,numero,cep,cidade,bairro,estado,genero);
 				cliente.setId(id);
 				listaCliente.add(cliente);
 			}
