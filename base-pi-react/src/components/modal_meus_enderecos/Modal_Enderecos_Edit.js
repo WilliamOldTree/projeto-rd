@@ -5,11 +5,9 @@ import axios from 'axios'
 import { Modal, Button, Form, Container, Row, Col } from 'react-bootstrap'
 import { useParams, useHistory } from 'react-router-dom'
 
-<<<<<<< HEAD:base-pi-react/src/components/modal_meus_enderecos/Modal_Enderecos_Edit.js
+
 function MeusEnderecosEdit(props) {
-=======
-function MeusEnderecosAdd(props) {
->>>>>>> 8a65bc0dacaec1789229d59d0729889fd9b3a9ed:base-pi-react/src/components/modal_meus_enderecos/Modal_Meus_Enderecos_Add.js
+
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -23,8 +21,8 @@ function MeusEnderecosAdd(props) {
     function getEnderecos() {
         axios.get(`${baseUrl}/enderecos`)
             .then((response) => {
-                setEnderecos(response.data)
-            })
+            setEnderecos(response.data)
+        })
     }
    
 
@@ -160,8 +158,5 @@ function MeusEnderecosAdd(props) {
     );
 }
 
-<<<<<<< HEAD:base-pi-react/src/components/modal_meus_enderecos/Modal_Enderecos_Edit.js
+
 export default MeusEnderecosEdit
-=======
-export default MeusEnderecosAdd
->>>>>>> 8a65bc0dacaec1789229d59d0729889fd9b3a9ed:base-pi-react/src/components/modal_meus_enderecos/Modal_Meus_Enderecos_Add.js
