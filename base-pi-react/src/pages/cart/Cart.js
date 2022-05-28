@@ -14,11 +14,19 @@ import React, { useEffect, useContext } from 'react';
 
 function Cart() {
 
-    const { cart, getCart, deleteCart, valorTotal } = useContext(CartContext)
+    const { cart, getCart, deleteCart, valorTotalAmem, getCartQty,cartQty } = useContext(CartContext)
 
+    const totalCarrinho = JSON.parse(localStorage.getItem('cart'))
+
+    const valorTotal = totalCarrinho.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
+
+    var atualTotal = valorTotal
+    var totalFormat = atualTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 });
 
     useEffect(() => {
         getCart()
+        getCartQty()
+        valorTotalAmem()
     }, [])
 
     return (
@@ -53,19 +61,17 @@ function Cart() {
                                         trash_img={TrashIcon}
                                         deletar={deleteCart}
                                         item={item}
-                                    />
-                                    
-                                    )
+                                    />)
                                 })}
 
                         </ListCompra>
                     </Col>
                 </Row>
-               
+
                 <Row>
                     <Col className='mt-5' id='cart_total'>
-                        <h3><strong> TOTAL:</strong> R${valorTotal} </h3>
-                        <h6><strong> Parcelas 4 x R$ </strong>{valorTotal / 4}</h6>
+                        <h3>TOTAL DE ITENS: {cartQty}</h3>
+                        <h3>SUBTOTAL: R$ {totalFormat} </h3>
                         <p></p>
                         <Link to="/cart_address" className="btn btn-default btnComprar mb-2" type="button">COMPRAR</Link>
                         <Link to="/" className="btn btn-default btnContCompra mb-5" type="button">CONTINUAR COMPRANDO</Link>

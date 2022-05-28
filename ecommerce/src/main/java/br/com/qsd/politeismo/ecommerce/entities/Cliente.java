@@ -31,11 +31,10 @@ public class Cliente implements UserDetails{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id_cliente")
     private Long id;
-	
     private String cpf;
     private String nome;
     private String email;
-    private String password;
+    private String senha;
     private String celular;
     private String fixo;
     
@@ -51,7 +50,6 @@ public class Cliente implements UserDetails{
 	@OneToMany(mappedBy="cliente")
 	List<Cartao> cartao;
 	
-		
 	@JsonIgnore
 	@OneToMany(mappedBy="cliente")
 	List<Pedido> pedido;
@@ -63,16 +61,7 @@ public class Cliente implements UserDetails{
 	@Fetch(FetchMode.SELECT)
 	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Perfil> perfis = new ArrayList<>();
-	
-	
-	@JsonIgnore
-	@OneToMany(mappedBy="cliente")
-	private List<Pix>pixs;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy="cliente")
-	private List<Boleto>boletos;
-	
+
 	
 	public Cliente() {
 		
@@ -110,8 +99,12 @@ public class Cliente implements UserDetails{
 		this.email = email;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public LocalDate getNascimento() {
@@ -158,7 +151,6 @@ public class Cliente implements UserDetails{
 		return cartao;
 	}
 
-
 	public List<Pedido> getPedido() {
 		return pedido;
 	}
@@ -173,7 +165,7 @@ public class Cliente implements UserDetails{
 	}
 	
 	public String getPassword() {
-		return this.password;
+		return this.senha;
 	}
 
 	public boolean isAccountNonExpired() {

@@ -10,7 +10,6 @@ function Card(props) {
     const [produtos, setProdutos] = useState([])
     const [buscaproduto, setBuscaProduto] = useState([])
 
-
     useEffect(() => {
         getProdutos()
     }, [])
@@ -39,9 +38,6 @@ function Card(props) {
                 <div className='img'>
                 <Link  to={`product/${produto.idProduto}`}>  <img src={props.img} alt='' /> </Link> 
                                                     
-                                                 
-              
-               
                 </div>
                     <div className='content'>
                         <div className='title-card'>{props.nomeProduto}</div>

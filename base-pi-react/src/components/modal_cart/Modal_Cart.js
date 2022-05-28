@@ -11,15 +11,20 @@ function ModalCarrinho(props) {
 
     const { cart, getCart, valorTotalAmem } = useContext(CartContext)
     const { cartQty, getCartQty, soma } = useContext(CartContext)
-    const { deleteCart, tira , valorTotal} = useContext(CartContext)
+    const { deleteCart, tira } = useContext(CartContext)
+
+    const totalCarrinho = JSON.parse(localStorage.getItem('cart')) 
+
+    const valorTotal = totalCarrinho.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
+    
+    var atualTotal = valorTotal
+    var totalFormat = atualTotal.toLocaleString('pt-br', {minimumFractionDigits: 2});
 
     useEffect(() => {
         getCart()
         getCartQty()
         valorTotalAmem()
     }, [])
-
- 
 
     return (
         <>
@@ -30,12 +35,12 @@ function ModalCarrinho(props) {
                     placement={placement}
                     overlay={
                         <Popover id={`popover-positioned-${placement}`}>
-                            <Popover.Header style={{ textAlign: "center" }} as="h1"><strong>{`${"Meu Carrinho"}`}</strong></Popover.Header>
+                            <Popover.Header style={{ textAlign: "center" }} as="h3">{`${"Meu Carrinho"}`}</Popover.Header>
                             <Popover.Body>
 
                                 <Container>
                                     {cart.length == 0
-                                        ? <h6>Carrinho Vazio</h6>
+                                        ? <h5>Carrinho Vazio</h5>
                                         : cart.map((item) => {
                                             return (
                                                 <Row className="div-modal-cart" key={item.id}>
@@ -59,29 +64,25 @@ function ModalCarrinho(props) {
 
                                                             <Col xs={4} md={4} className="divMais">
                                                                 <button className="btnMais" onClick={() => soma(item)}><strong>+</strong></button>
-                                                                
+
                                                             </Col>
                                                         </Row>
                                                         <button className="btn-cart-lixeira" onClick={() => deleteCart(item)}><img className="modal-cart-lixeira" src={Lixeira} /></button>
                                                     </Col>
 
                                                     <hr />
-
-                                                    <Col md={12} lg={12} className="div-footer-cart" >
-                                      {/*  <h6><strong>TOTAL DE ITENS: {cartQty}</strong></h6> */}
-                                        <h7><strong> SUBTOTAL: R${valorTotal}</strong></h7>
+                                                </Row>
+                                            )
+                                        })}
+                                    <Col md={12} lg={12} className="div-footer-cart" >
+                                        {/*  <h6><strong>TOTAL DE ITENS: {cartQty}</strong></h6> */}
+                                        <h6><strong> TOTAL DE ITENS: {cartQty}</strong></h6>
+                                        <h6><strong> SUBTOTAL: R${totalFormat}</strong></h6>
                                     </Col>
-        
-                                    <br></br>
                                     <br></br>
                                     <Col md={12} lg={12} className="div-btn-cart">
                                         <Link to="/cart"><Button className="btnFinal">VER CARRINHO</Button></Link>
                                     </Col>
-
-                                                </Row>
-                                            )
-                                        })}
-                                  
                                 </Container>
 
                             </Popover.Body>

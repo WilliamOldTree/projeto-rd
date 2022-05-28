@@ -17,7 +17,6 @@ import javax.persistence.Transient;
 
 public class Cartao {
 
-
 	@Id
 	@Column(name = "id_cartao_numero")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,24 +32,8 @@ public class Cartao {
 	private String cvv_cartao;
 	
 	@ManyToOne(fetch =FetchType.LAZY)
-	@JoinColumn(name = "cliente_id_cliente", nullable = true)
+	@JoinColumn(name = "fk_id_cliente", nullable = true)
 	private Cliente cliente;
-	
-	
-	public Cartao() {
-		
-	}
-
-	public Cartao(Long id, String titular_cartao, String numero_cartao, String cvv_cartao, String validade_cartao,
-			Cliente cliente) {
-		this.id = id;
-		this.titular_cartao = titular_cartao;
-		this.numero_cartao = numero_cartao;
-		this.cvv_cartao = cvv_cartao;
-		this.validade_cartao = validade_cartao;
-		this.cliente = cliente;
-	}
-
 
 	public Long getId() {
 		return id;
@@ -68,12 +51,12 @@ public class Cartao {
 		this.titular_cartao = titular_cartao;
 	}
 
-	public String getCvv_cartao() {
-		return cvv_cartao;
+	public String getNumero_cartao() {
+		return numero_cartao;
 	}
 
-	public void setCvv_cartao(String cvv_cartao) {
-		this.cvv_cartao = cvv_cartao;
+	public void setNumero_cartao(String numero_cartao) {
+		this.numero_cartao = numero_cartao;
 	}
 
 	public String getValidade_cartao() {
@@ -84,6 +67,14 @@ public class Cartao {
 		this.validade_cartao = validade_cartao;
 	}
 
+	public String getCvv_cartao() {
+		return cvv_cartao;
+	}
+
+	public void setCvv_cartao(String cvv_cartao) {
+		this.cvv_cartao = cvv_cartao;
+	}
+
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -91,15 +82,9 @@ public class Cartao {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+	
+	
+	
 
-
-	public String getNumero_cartao() {
-		return numero_cartao;
-	}
-
-	public void setNumero_cartao(String numero_cartao) {
-		this.numero_cartao = numero_cartao;
-	}
 	
 }//end class
-	

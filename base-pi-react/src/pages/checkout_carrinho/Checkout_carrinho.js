@@ -1,6 +1,6 @@
 
 import "./Checkout_carrinho.css"
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Title from "../../components/title/Title";
 import Footer from "../../components/footer/Footer";
@@ -10,27 +10,63 @@ import TrashIcon from '../../components/asserts/icons/lixeira.png'
 import BudaMedit from '../../components/asserts/images/cart-images/buda-meditando.png'
 import ListCompra from "../../components/list_compra/ListCompra";
 import ResumoCompra from "../../components/resumo_compra/ResumoCompra";
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Button } from 'react-bootstrap'
 import CartContext from '../../context/cart.provider'
 import React, { useEffect, useContext } from 'react';
+import { baseUrl } from '../../environments'
+import axios from 'axios'
 
 function Checkout_carrinho() {
-    const { cart, getCart, deleteCart } = useContext(CartContext)
+    const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty } = useContext(CartContext)
 
+    const totalCarrinho = JSON.parse(localStorage.getItem('cart'))
+
+    const valorTotal = totalCarrinho.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
+
+    var atualTotal = valorTotal
+    var totalFormat = atualTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 });
+
+    useEffect(() => {
+        getCart()
+        getCartQty()
+        valorTotalAmem()
+    }, [])    
+    
+    
+    let history = useHistory();
+
+    const finalizarPedido = () => {
+        const pedido = {
+            data: "20/04/2022",
+            valor: 15.30,
+            cliente: 1,
+            formaPagamento: "BOLETO",
+            endereco: 1
+        }
+        
+        //const [pedido, setPedidos] = useState([])
+
+        axios.post(`${baseUrl}/pedidos`, pedido)
+        .then(response => {
+            console.log(response.data)
+            history.push(`/cart_success/${response.data.idPedido}`) //
+        })
+    }
 
     useEffect(() => {
         getCart()
     }, [])
+
     return (
         <>
             <Header />
             <Container>
-               
-                    
-                <Title titleIcon={Check} titleText="Resumo da Compra" />
-                    
 
-                
+
+                <Title titleIcon={Check} titleText="Resumo da Compra" />
+
+
+
                 <Row className="dados">
                     <Col md={6} lg={6} className="dados1_compra_card">
                         <h2>Forma de pagamento</h2>
@@ -43,19 +79,19 @@ function Checkout_carrinho() {
                         </ul>
                     </Col>
 
-                    <Col md={6} lg={6} className="dados1_compra_address">                        
-                            <h2>Endereço entrega</h2>
-                            <ul className="cart_list_itens">
-                                <li className="cart_list_itens">Cep - 03694-900</li>
-                                <li className="cart_list_itens">Logradouro - Avenida Aguia de Haia, 2970</li>
-                                <li className="cart_list_itens">Complemento - Predio</li>
-                                <li className="cart_list_itens">Bairro - A.E Carvalho</li>
-                                <li className="cart_list_itens">Cidade - São Paulo</li>
-                                <li className="cart_list_itens">Estado - SP</li>
-                            </ul>                        
+                    <Col md={6} lg={6} className="dados1_compra_address">
+                        <h2>Endereço entrega</h2>
+                        <ul className="cart_list_itens">
+                            <li className="cart_list_itens">Cep - 03694-900</li>
+                            <li className="cart_list_itens">Logradouro - Avenida Aguia de Haia, 2970</li>
+                            <li className="cart_list_itens">Complemento - Predio</li>
+                            <li className="cart_list_itens">Bairro - A.E Carvalho</li>
+                            <li className="cart_list_itens">Cidade - São Paulo</li>
+                            <li className="cart_list_itens">Estado - SP</li>
+                        </ul>
                     </Col>
                 </Row>
-                
+
 
                 <Row>
                     <Col>
@@ -63,13 +99,13 @@ function Checkout_carrinho() {
                         <ListCompra >
                             {cart.map((item) => {
                                 return (
-                                    <ResumoCompra key={item.id} 
-                                        product_img={item.urlProduto} 
-                                        descricao={item.nome} 
-                                        valor={item.preco} 
-                                        quantidade={item.qty} 
-                                        trash_img={TrashIcon} 
-                                        deletar={deleteCart} 
+                                    <ResumoCompra key={item.id}
+                                        product_img={item.urlProduto}
+                                        descricao={item.nome}
+                                        valor={item.preco}
+                                        quantidade={item.quantidade}
+                                        trash_img={TrashIcon}
+                                        deletar={deleteCart}
                                         item={item} />
                                 )
                             })}
@@ -79,10 +115,9 @@ function Checkout_carrinho() {
 
                 <Row>
                     <Col className="totalPedido mb-5">
-                        <h4>Produtos = R$ 120,00</h4>
-                        <h4>Frete = R$ 15,00</h4>
-                        <h2>Total = 135,00</h2>
-                        <h5>Parcelas 3 x R$ 45,00</h5><img src={Visa} alt="" />
+                        <h4>Frete: R$ 0,00</h4>
+                        <h2>Total: R$ {totalFormat}</h2>
+                        <h5>Parcelas 1 x R$ {totalFormat}</h5><img src={Visa} alt="" />
                     </Col>
                 </Row>
 
@@ -90,7 +125,7 @@ function Checkout_carrinho() {
 
                 <Row>
                     <Col className="totalPedidoBtn">
-                        <Link to="/cart_success" className="btn btn-default btnComprar mb-3" type="button">CONFIRMAR</Link>
+                        <Button onClick={finalizarPedido} className="btn btn-default btnComprar mb-3" type="button">CONFIRMAR</Button>
                     </Col>
                 </Row>
 
