@@ -68,7 +68,7 @@ function Cart_address() {
                                         product_img={item.urlProduto} 
                                         descricao={item.nome} 
                                         valor={item.preco} 
-                                        quantidade={item.qty} 
+                                        quantidade={item.quantidade} 
                                         trash_img={TrashIcon} 
                                         deletar={deleteCart} 
                                         item={item} />
@@ -77,9 +77,9 @@ function Cart_address() {
                         </ListCompra>
 
                                 <div className='cart_address_total mt-3 p-3'>
-                                    <h5>Produtos = R${valorTotal},00 </h5>
+                                    <h5>Produtos = R${valorTotal} </h5>
                                     <h5>Frete = R$ 15,00</h5>
-                                    <h2>Total = R${15 + valorTotal},00</h2>
+                                    <h2>Total = R${15 + valorTotal}</h2>
                                 </div>
                             </div>
                         

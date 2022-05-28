@@ -43,26 +43,30 @@ function Cart() {
                 <Row>
                     <Col>
                         <ListCompra >
-                            {cart.length == 0 ? <h3 className="cartVazio">Carrinho Vazio</h3> : 
-                            cart.map((item) => { return (<ResumoCompra key={item.id} 
-                                product_img={item.urlProduto} 
-                                descricao={item.nome} 
-                                valor={item.preco} 
-                                quantidade={item.qty} 
-                                trash_img={TrashIcon} 
-                                deletar={deleteCart} 
-                                item={item} 
-                            />) })}
+                            {cart.length == 0 ? <h3 className="cartVazio">Carrinho Vazio</h3> :
+                                cart.map((item) => {
+                                    return (<ResumoCompra key={item.id}
+                                        product_img={item.urlProduto}
+                                        descricao={item.nome}
+                                        valor={item.preco}
+                                        quantidade={item.quantidade}
+                                        trash_img={TrashIcon}
+                                        deletar={deleteCart}
+                                        item={item}
+                                    />
+                                    
+                                    )
+                                })}
 
                         </ListCompra>
                     </Col>
                 </Row>
-
+               
                 <Row>
                     <Col className='mt-5' id='cart_total'>
-                        <h3>Total = R$ {valorTotal} </h3>
-                      <h6>Parcelas 4 x R$ {valorTotal / 4}</h6>
-                      <p></p>
+                        <h3><strong> TOTAL:</strong> R${valorTotal} </h3>
+                        <h6><strong> Parcelas 4 x R$ </strong>{valorTotal / 4}</h6>
+                        <p></p>
                         <Link to="/cart_address" className="btn btn-default btnComprar mb-2" type="button">COMPRAR</Link>
                         <Link to="/" className="btn btn-default btnContCompra mb-5" type="button">CONTINUAR COMPRANDO</Link>
                     </Col>
