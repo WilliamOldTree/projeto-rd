@@ -67,11 +67,13 @@ body {
 .fisico-container{
     display: flex;
     justify-content: center;
+    margin-top: 30px;
 }
+
 .cadastroPessoaF.fisico {
     position     : relative;
     width        : 873px;
-    height       : 836px;
+    height       : 720px;
     background   : #FFFFFF;
     border       : 2px solid #261C1A;
     box-sizing   : border-box;
@@ -279,36 +281,13 @@ select.form-select.fisico {
     border-radius: 10px;
 }
 
-.form-label8.fisico {
-    position   : absolute;
-    width      : 164px;
-    height     : 29px;
-    left       : 123px;
-    top        : 454px;
-    font-weight: 700;
-    font-size  : 14px;
-    display    : flex;
-    align-items: center;
-    color      : #3C4043;
-}
-
-#email2_ClienteFisico {
-    position     : absolute;
-    width        : 627px;
-    height       : 40px;
-    left         : 123px;
-    top          : 493px;
-    border       : 1px solid #979797;
-    box-sizing   : border-box;
-    border-radius: 10px;
-}
 
 .form-label9.fisico {
     position   : absolute;
-    width      : 244px;
-    height     : 29px;
-    left       : 123px;
-    top        : 542px;
+    width: 244px;
+    height: 29px;
+    left: 121px;
+    top: 445px;    
     font-weight: 700;
     font-size  : 14px;
     display    : flex;
@@ -318,59 +297,14 @@ select.form-select.fisico {
 
 #senha1_ClienteFisico {
     position     : absolute;
-    width        : 279px;
-    height       : 40px;
-    left         : 121px;
-    top          : 586px;
+    width: 395px;
+    height: 40px;
+    left: 123px;
+    top: 480px;
+    
     border       : 1px solid #979797;
     box-sizing   : border-box;
     border-radius: 10px;
-}
-
-.form-label10.fisico {
-    position   : absolute;
-    width      : 202px;
-    height     : 29px;
-    left       : 472px;
-    top        : 542px;
-    font-weight: 700;
-    font-size  : 14px;
-    display    : flex;
-    align-items: center;
-    color      : #3C4043;
-}
-
-#senha2_ClienteFisico {
-    position     : absolute;
-    width        : 279px;
-    height       : 40px;
-    left         : 472px;
-    top          : 586px;
-    border       : 1px solid #979797;
-    box-sizing   : border-box;
-    border-radius: 10px;
-}
-
-#exampleCheck1_ClienteFisico {
-    position     : absolute;
-    width        : 20px;
-    height       : 18px;
-    left         : 150px;
-    top          : 641px;
-    border-radius: 5px;
-}
-
-.form-check-label.fisico {
-    position   : absolute;
-    width      : 318px;
-    height     : 22px;
-    left       : 156px;
-    top        : 642px;
-    font-weight: normal;
-    font-size  : 14px;
-    display    : flex;
-    align-items: center;
-    color      : #666666;
 }
 
 .aviso-privacidade.fisico {
@@ -378,7 +312,7 @@ select.form-select.fisico {
     width      : 611px;
     height     : 33px;
     left       : 131px;
-    top        : 682px;
+    top        : 550px;
     font-weight: 700;
     font-size  : 16px;
     display    : flex;
@@ -399,7 +333,7 @@ em:hover {
     position     : absolute;
     width        : 255px;
     height       : 55px;
-    top          : 746px;
+    top          : 620px;
     background   : #F27507;
     border       : 1px solid #F27507;
     box-sizing   : border-box;
@@ -415,7 +349,10 @@ em:hover {
     background: darkorange;
     color     : #FFFFFF;
 }
-
+.alert-register{
+    font-weight:bold;
+    text-align: center;
+}
 
 
 /* MENU RESPONSIVO */
@@ -424,7 +361,7 @@ em:hover {
 
     .cadastroPessoaF.fisico {
         width : 630px;
-        height: 769px;
+        height: 670px;
     }
 
     .campostopo {
@@ -546,47 +483,20 @@ em:hover {
         top   : 366px;
     }
 
-    .form-label8.fisico {
-        width : 145px;
-        height: 20px;
-        left  : 37px;
-        top   : 419px;
-    }
-
-    #email2_ClienteFisico {
-        width : 550px;
-        height: 40px;
-        left  : 37px;
-        top   : 448px
-    }
-
     .form-label9.fisico {
         width : 244px;
         height: 29px;
         left  : 34px;
-        top   : 499px;
+        top   : 415px;
     }
 
     #senha1_ClienteFisico {
         width : 235px;
         height: 40px;
         left  : 37px;
-        top   : 532px;
+        top   : 450px;
     }
 
-    .form-label10.fisico {
-        width : 202px;
-        height: 29px;
-        left  : 316px;
-        top   : 499px;
-    }
-
-    #senha2_ClienteFisico {
-        width : 235px;
-        height: 40px;
-        left  : 316px;
-        top   : 532px;
-    }
 
     #exampleCheck1_ClienteFisico {
         width : 20px;
@@ -607,14 +517,14 @@ em:hover {
         width    : 545px;
         height   : 33px;
         left     : 34px;
-        top      : 632px;
+        top      : 510px;
         font-size: 14px;
     }
 
     .btn.formcadastroF {
         width    : 255px;
         height   : 55px;
-        top      : 688px;
+        top      : 580px;
         font-size: 20px;
         left: 187px;
 
@@ -637,7 +547,7 @@ em:hover {
 
     .cadastroPessoaF.fisico {
         width : 334px;
-        height: 1306px;
+        height: 1090px;
         left  : 10px;
     }
 
@@ -763,26 +673,11 @@ em:hover {
         top: 744px;
     }
 
-    .form-label8.fisico {
-        width    : 140px;
-        height   : 20px;
-        left: 21px;
-        top: 819px;
-        font-size: 14px;
-    }
-
-    #email2_ClienteFisico {
-        width: 296px;
-        height: 50px;
-        left: 19px;
-        top: 841px;
-    }
-
     .form-label9.fisico {
         width    : 174px;
         height   : 18px;
         left: 21px;
-        top: 916px;
+        top: 825px;
         font-size: 14px;
     }
 
@@ -790,28 +685,7 @@ em:hover {
         width: 295px;
         height: 50px;
         left: 19px;
-        top: 939px;
-    }
-
-    .form-label10.fisico {
-        width    : 128px;
-        height   : 18px;
-        left: 21px;
-        top: 1014px;
-        font-size: 14px;
-    }
-
-
-    #senha2_ClienteFisico {
-        width: 295px;
-        height: 50px;
-        left: 19px;
-        top: 1037px;
-    }
-
-    #exampleCheck1_ClienteFisico {
-        left: 43px;
-        top: 1112px;
+        top: 850px;
     }
 
     .form-check-label.fisico {
@@ -826,7 +700,7 @@ em:hover {
         width: 237px;
         height: 16px;
         left: 22px;
-        top: 1175px;
+        top: 940px;
         font-size : 12px;
         text-align: end;
     }
@@ -835,7 +709,7 @@ em:hover {
         width    : 220px;
         height   : 45px;
         left: 57px;
-        top: 1220px;
+        top: 1000px;
         font-size: 18px;
     }
 }

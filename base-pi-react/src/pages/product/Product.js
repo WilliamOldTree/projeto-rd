@@ -57,13 +57,6 @@ function Product(props) {
             })
     }, [])
     
-
-
-
-    
-
-
-
     
     return (
 
@@ -82,7 +75,7 @@ function Product(props) {
 
                             <figure className='col-md-6 mb-3 '>
 
-                                <img width='90%' className='imgproduto1 img-fluid' src={produtos.urlProduto} />
+                                <img width='80%' className='imgproduto1 img-fluid' src={produtos.urlProduto} />
 
                             </figure>
 
@@ -102,7 +95,6 @@ function Product(props) {
                                 <article className='produtos-preco'>
 
                                     <article className='d-flex align-items-center'>
-                                        <strong className='preco'>{produtos.estoque}</strong>
                                         <strong className='preco'>R$ {produtos.preco} </strong>
                                         <span className='parcela'>Em até 12x sem Juros</span>
 
@@ -114,9 +106,7 @@ function Product(props) {
                                     <a className='verDetalhes flex-column' href='#detalhes'>Mais Detalhes</a>
                                     <Link to={'/cart'} className='linkproduct'>
                                         <button className='btn compra' onClick={() => addToCart(produtos)}>
-
                                             COMPRAR
-
                                         </button>
                                     </Link>
                                     <button className='btn favoritar' type='submit'>

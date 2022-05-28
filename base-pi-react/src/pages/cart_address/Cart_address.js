@@ -13,10 +13,19 @@ import CartContext from '../../context/cart.provider'
 import React, { useEffect, useContext } from 'react';
 
 function Cart_address() {
-    const { cart, getCart, deleteCart, valorTotal} = useContext(CartContext)
+    const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty } = useContext(CartContext)
+
+    const totalCarrinho = JSON.parse(localStorage.getItem('cart'))
+
+    const valorTotal = totalCarrinho.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
+
+    var atualTotal = valorTotal
+    var totalFormat = atualTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 });
 
     useEffect(() => {
         getCart()
+        getCartQty()
+        valorTotalAmem()
     }, [])
 
     return (
@@ -34,12 +43,17 @@ function Cart_address() {
                 </Row>
 
                 {/* BEGING CONTEUDO */}
-                <Row>
+                <Row className="div-cart-pag">
                     <Col lg={5} className='cart_address_list'>
+                        <h2>Endereço entrega</h2>
 
                         <div className='cart_address_actualAddress px-2'>
-                            <h2>Endereço entrega</h2>
-
+                            <div class="form-check">
+                                <input class="form-check-input" name="endereco" type="radio" value="" id="defaultCheck1" />
+                                <label class="form-check-label" for="defaultCheck1">
+                                    *Selecione a opção de Endereço para Entrega.
+                                </label>
+                            </div>
                             <ul className="cart_list_itens">
                                 <li className="cart_list_itens">Cep - 03694-900</li>
                                 <li className="cart_list_itens">Logradouro - Avenida Aguia de Haia, 2970</li>
@@ -49,40 +63,68 @@ function Cart_address() {
                                 <li className="cart_list_itens">Estado - SP</li>
                             </ul>
 
-                            <div className="cart_address_alterar_add">
+                            {/* <div className="cart_address_alterar_add">
                                 <Link className="other_address " to="/area_cliente_endereco"><h6>Deseja alterar endereço ?</h6></Link>
                                 <Link className="other_send_company" to="./entregas"><h6>Conheca outras forma de envio</h6></Link>
+                            </div> */}
+
+                        </div>
+
+                        <div >
+
+                            <h2>Forma de Pagamento</h2>
+
+                            <div class="form-check">
+                                <input class="form-check-input" name="pagamento" type="radio" value="PIX" id="defaultCheck1" />
+                                <label class="form-check-label" for="defaultCheck1">
+                                    PIX
+                                </label>
                             </div>
 
+                            <div class="form-check">
+                                <input class="form-check-input" name="pagamento" type="radio" value="BOLETO" id="defaultCheck1" />
+                                <label class="form-check-label" for="defaultCheck1">
+                                    BOLETO
+                                </label>
+
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" name="pagamento" type="radio" value="CARTAO" id="defaultCheck1" />
+                                <label class="form-check-label" for="defaultCheck1">
+                                    CARTÃO
+                                </label>
+                            </div>
                         </div>
 
                     </Col>
 
                     <Col lg={7}>
-                       <h2>Resumo da compra</h2>
-                            <div>
+                        <h2>Resumo da compra</h2>
+                        <div>
                             <ListCompra >
-                            {cart.map((item) => {
-                                return (
-                                    <ResumoCompra key={item.id} 
-                                        product_img={item.urlProduto} 
-                                        descricao={item.nome} 
-                                        valor={item.preco} 
-                                        quantidade={item.qty} 
-                                        trash_img={TrashIcon} 
-                                        deletar={deleteCart} 
-                                        item={item} />
-                                )
-                            })}
-                        </ListCompra>
+                                {cart.map((item) => {
+                                    return (
+                                        <ResumoCompra key={item.id}
+                                            product_img={item.urlProduto}
+                                            descricao={item.nome}
+                                            valor={item.preco}
+                                            quantidade={item.quantidade}
+                                            trash_img={TrashIcon}
+                                            deletar={deleteCart}
+                                            item={item} />
+                                    )
+                                })}
+                            </ListCompra>
 
-                                <div className='cart_address_total mt-3 p-3'>
-                                    <h5>Produtos = R${valorTotal},00 </h5>
-                                    <h5>Frete = R$ 15,00</h5>
-                                    <h2>Total = R${15 + valorTotal},00</h2>
-                                </div>
+                            <div className='cart_address_total mt-3 p-3'>
+                                <h5>TOTAL DE ITENS: {cartQty}</h5>
+                                <h5>SUBTOTAL: R${totalFormat},00 </h5>
+                                <h5>VALOR DO FRETE: R$ 0,00</h5>
+                                <h2>TOTAL: R${totalFormat},00</h2>
                             </div>
-                        
+                        </div>
+
 
                     </Col>
 
@@ -90,9 +132,10 @@ function Cart_address() {
 
                 </Row>
 
+
                 <Row>
                     <Col className='cart_address_buttons'>
-                        <Link to="/pagamento" className="btn btn-default btnComprar " type="button">PAGAMENTO</Link>
+                        <Link to="/checkout_carrinho" className="btn btn-default btnComprar " type="button">PAGAMENTO</Link>
                     </Col>
                 </Row>
 

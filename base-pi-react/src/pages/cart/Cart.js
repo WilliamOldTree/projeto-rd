@@ -14,11 +14,19 @@ import React, { useEffect, useContext } from 'react';
 
 function Cart() {
 
-    const { cart, getCart, deleteCart, valorTotal } = useContext(CartContext)
+    const { cart, getCart, deleteCart, valorTotalAmem, getCartQty,cartQty } = useContext(CartContext)
 
+    const totalCarrinho = JSON.parse(localStorage.getItem('cart'))
+
+    const valorTotal = totalCarrinho.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
+
+    var atualTotal = valorTotal
+    var totalFormat = atualTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 });
 
     useEffect(() => {
         getCart()
+        getCartQty()
+        valorTotalAmem()
     }, [])
 
     return (
@@ -43,16 +51,18 @@ function Cart() {
                 <Row>
                     <Col>
                         <ListCompra >
-                            {cart.length == 0 ? <h3 className="cartVazio">Carrinho Vazio</h3> : 
-                            cart.map((item) => { return (<ResumoCompra key={item.id} 
-                                product_img={item.urlProduto} 
-                                descricao={item.nome} 
-                                valor={item.preco} 
-                                quantidade={item.qty} 
-                                trash_img={TrashIcon} 
-                                deletar={deleteCart} 
-                                item={item} 
-                            />) })}
+                            {cart.length == 0 ? <h3 className="cartVazio">Carrinho Vazio</h3> :
+                                cart.map((item) => {
+                                    return (<ResumoCompra key={item.id}
+                                        product_img={item.urlProduto}
+                                        descricao={item.nome}
+                                        valor={item.preco}
+                                        quantidade={item.quantidade}
+                                        trash_img={TrashIcon}
+                                        deletar={deleteCart}
+                                        item={item}
+                                    />)
+                                })}
 
                         </ListCompra>
                     </Col>
@@ -60,9 +70,9 @@ function Cart() {
 
                 <Row>
                     <Col className='mt-5' id='cart_total'>
-                        <h3>Total = R$ {valorTotal} </h3>
-                      <h6>Parcelas 4 x R$ {valorTotal / 4}</h6>
-                      <p></p>
+                        <h3>TOTAL DE ITENS: {cartQty}</h3>
+                        <h3>SUBTOTAL: R$ {totalFormat} </h3>
+                        <p></p>
                         <Link to="/cart_address" className="btn btn-default btnComprar mb-2" type="button">COMPRAR</Link>
                         <Link to="/" className="btn btn-default btnContCompra mb-5" type="button">CONTINUAR COMPRANDO</Link>
                     </Col>
