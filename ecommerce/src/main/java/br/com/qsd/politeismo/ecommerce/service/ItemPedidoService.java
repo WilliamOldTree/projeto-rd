@@ -18,7 +18,7 @@ public class ItemPedidoService {
 	private ItemPedidoRepository itemRepository;
 	
 	@Transactional(readOnly = true)
-	public List<ItemPedidoDTO> findAll(){
+	public List<ItemPedidoDTO> findAll() {
 		List <ItemPedido> list = itemRepository.findAll();
 		return list.stream().map(x-> new ItemPedidoDTO(x)).collect(Collectors.toList());
 	}
@@ -36,7 +36,6 @@ public class ItemPedidoService {
 		entity = itemRepository.save(entity);
 	
 		return new ItemPedidoDTO(entity);
-
 	}
 	
 	
