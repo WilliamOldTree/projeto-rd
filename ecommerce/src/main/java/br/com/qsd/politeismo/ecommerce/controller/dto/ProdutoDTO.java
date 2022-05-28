@@ -19,7 +19,8 @@ public class ProdutoDTO {
 	
 	private String peso;
 		
-	private String preco;
+	private String preco; 
+
 
 	private Integer estoque;
     

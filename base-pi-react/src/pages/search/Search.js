@@ -2,9 +2,9 @@ import './Search.css'
 
 /* LINK PAGES */
 import { Link, useParams } from 'react-router-dom'
-import Header from '../header/Header';
-import Footer from '../footer/Footer';
-import Card from '../card/Card';
+import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
+import Card from '../../components/card/Card';
 import axios from 'axios';
 import { baseUrl } from '../../environments';
 import React, { useState, useEffect } from 'react';

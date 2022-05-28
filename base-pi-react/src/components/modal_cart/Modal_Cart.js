@@ -9,17 +9,17 @@ import CartContext from '../../context/cart.provider'
 
 function ModalCarrinho(props) {
 
-    const { cart, getCart } = useContext(CartContext)
-    const { cartQty, getCartQty } = useContext(CartContext)
-    const { deleteCart } = useContext(CartContext)
+    const { cart, getCart, valorTotalAmem } = useContext(CartContext)
+    const { cartQty, getCartQty, soma } = useContext(CartContext)
+    const { deleteCart, tira , valorTotal} = useContext(CartContext)
 
     useEffect(() => {
         getCart()
+        getCartQty()
+        valorTotalAmem()
     }, [])
 
-    useEffect(() => {
-        getCartQty()
-    }, [])
+ 
 
     return (
         <>
@@ -50,15 +50,16 @@ function ModalCarrinho(props) {
                                                     <Col xs={3} md={3} className="div-input-cart">
                                                         <Row className="row-modal-cart">
                                                             <Col xs={4} md={4} className="btnMenos">
-                                                                <button className="btnMenos"><strong>-</strong></button>
+                                                                <button className="btnMenos" onClick={() => tira(item)}><strong>-</strong></button>
                                                             </Col>
 
                                                             <Col xs={4} md={4} className="div-quantidade-cart">
-                                                                <Form.Control className="input-modal-qtd" type="text" placeholder="1" />
+                                                                <Form.Control className="input-modal-qtd" type="text" placeholder={item.quantidade} />
                                                             </Col>
 
                                                             <Col xs={4} md={4} className="divMais">
-                                                                <button className="btnMais"><strong>+</strong></button>
+                                                                <button className="btnMais" onClick={() => soma(item)}><strong>+</strong></button>
+                                                                
                                                             </Col>
                                                         </Row>
                                                         <button className="btn-cart-lixeira" onClick={() => deleteCart(item)}><img className="modal-cart-lixeira" src={Lixeira} /></button>
@@ -69,8 +70,8 @@ function ModalCarrinho(props) {
                                             )
                                         })}
                                     <Col md={12} lg={12} className="div-footer-cart" >
-                                        <h6><strong>TOTAL DE ITENS: {cartQty}</strong></h6>
-                                        <h6><strong>SUBTOTAL: R$ 60,00</strong></h6>
+                                      {/*  <h6><strong>TOTAL DE ITENS: {cartQty}</strong></h6> */}
+                                        <h6><strong> SUBTOTAL: R${valorTotal}</strong></h6>
                                     </Col>
                                     <br></br>
                                     <Col md={12} lg={12} className="div-btn-cart">

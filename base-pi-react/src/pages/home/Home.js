@@ -34,6 +34,7 @@ import Categoria4 from '../../components/asserts/images/images-home/categoria4.p
 
 /* IMAGES BANNER END*/
 import BannerEnd from '../../components/asserts/images/images-home/banner-end.png';
+
 import React, { useState, useEffect } from 'react'
 import { baseUrl } from '../../environments'
 import axios from 'axios'

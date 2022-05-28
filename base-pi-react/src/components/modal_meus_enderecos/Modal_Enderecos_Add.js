@@ -1,18 +1,19 @@
-import './Modal_Meus_Enderecos.css'
+import './Modal_Enderecos.css'
 import React, { useState, useEffect } from 'react'
-import {baseUrl} from '../../environments'
+import { baseUrl } from '../../environments'
 import axios from 'axios'
 import { Modal, Button, Form, Container, Row, Col } from 'react-bootstrap'
 import { useParams, useHistory } from 'react-router-dom'
 
-function MeusEnderecosEdit(props) {
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
+function MeusEnderecosAdd(props) {
+
+    const [show, setShow] = useState(false); 
+    const handleClose = () => setShow(false); 
     const handleShow = () => setShow(true);
 
     const [states, setStates] = useState([])
     const [enderecos, setEnderecos] = useState([])
-    const [successRegister, SetSuccessRegister] = useState(false)
+    const [successRegister, setSuccessRegister] = useState(false)
     const { id } = useParams()
     let history = useHistory();
 
@@ -22,14 +23,15 @@ function MeusEnderecosEdit(props) {
                 setEnderecos(response.data)
             })
     }
-   
+
 
     const register = () => {
         enderecos.states =
-        axios.post(`${baseUrl}/enderecos`)
-            .then((response) => {
-                SetSuccessRegister(true)
+            axios.post(`${baseUrl}/enderecos`, enderecos).then(response => {
+                setSuccessRegister(true)
+                alert('cartão adicionado recarregue a pagina')
             })
+
     }
 
     useEffect(() => {
@@ -40,7 +42,7 @@ function MeusEnderecosEdit(props) {
     return (
         <>
             <Button className={props.classEnderecos} onClick={handleShow}>
-                {props.textBotao}
+                {props.textButtonEnderecos}
             </Button>
 
             <Modal className="modal-form-enderecos"
@@ -49,7 +51,7 @@ function MeusEnderecosEdit(props) {
                 backdrop="static"
                 keyboard={false}>
                 <Modal.Header closeButton>
-                    <Modal.Title className="title-form-enderecos">Meus Endereços</Modal.Title>
+                    <Modal.Title className="title-form-enderecos">Adicionar Endereço</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="show-grid">
                     <Container>
@@ -58,8 +60,8 @@ function MeusEnderecosEdit(props) {
                                 <Form.Group controlId="formBasic">
                                     <Form.Label className="label-form-enderecos">Endereço:</Form.Label>
                                     <Form.Control className="input-form-enderecos" type="text"
-                                    value={enderecos.nomeLougradouro}
-                                    onChange={(event) => { setEnderecos({...enderecos, nomeLougradouro: event.target.value}) }} />
+                                        value={enderecos.nomeLougradouro}
+                                        onChange={(event) => { setEnderecos({ ...enderecos, nomeLougradouro: event.target.value }) }} />
                                 </Form.Group>
                             </Col>
                             <Row>
@@ -67,16 +69,16 @@ function MeusEnderecosEdit(props) {
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Cidade:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                        value={enderecos.cidade}
-                                        onChange={(event) => { setEnderecos({...enderecos, cidade: event.target.value}) }} />
+                                            value={enderecos.cidade}
+                                            onChange={(event) => { setEnderecos({ ...enderecos, cidade: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
                                 <Col md={6} lg={6} className="div-form-enderecos">
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">CEP:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                        value={enderecos.cep}
-                                        onChange={(event) => { setEnderecos({...enderecos, cep: event.target.value}) }} />
+                                            value={enderecos.cep}
+                                            onChange={(event) => { setEnderecos({ ...enderecos, cep: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
                             </Row>
@@ -85,8 +87,8 @@ function MeusEnderecosEdit(props) {
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Complemento:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                        value={enderecos.apelido}
-                                        onChange={(event) => { setEnderecos({...enderecos, apelido: event.target.value}) }} />
+                                            value={enderecos.apelido}
+                                            onChange={(event) => { setEnderecos({ ...enderecos, apelido: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
                                 <Col md={4} lg={4} className="div-form-enderecos">
@@ -131,16 +133,16 @@ function MeusEnderecosEdit(props) {
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Bairro:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                        value={enderecos.bairro}
-                                        onChange={(event) => { setEnderecos({...enderecos, bairro: event.target.value}) }} />
+                                            value={enderecos.bairro}
+                                            onChange={(event) => { setEnderecos({ ...enderecos, bairro: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
                                 <Col md={4} lg={4} className="div-form-enderecos">
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Nº:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                        value={enderecos.numero}
-                                        onChange={(event) => { setEnderecos({...enderecos, numero: event.target.value}) }} />
+                                            value={enderecos.numero}
+                                            onChange={(event) => { setEnderecos({ ...enderecos, numero: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
                             </Row>
@@ -156,4 +158,4 @@ function MeusEnderecosEdit(props) {
     );
 }
 
-export default MeusEnderecosEdit
+export default MeusEnderecosAdd

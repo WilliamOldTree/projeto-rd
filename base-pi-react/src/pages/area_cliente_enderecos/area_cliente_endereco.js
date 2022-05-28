@@ -1,4 +1,4 @@
-import './area_cliente_endereco.css'
+import './area_cliente_enderecos.css'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import Menu from '../../components/menu/Menu'
@@ -6,7 +6,8 @@ import Title from '../../components/title/Title'
 import User from '../../components/asserts/icons/user.png'
 import Lixeira from '../../components/asserts/icons/lixeira.png'
 import { Form, Row, Col, Button } from 'react-bootstrap'
-
+import MeusEnderecosAdd from '../../components/modal_meus_enderecos/Modal_Enderecos_Add'
+import MeusEnderecosEdit from '../../components/modal_meus_enderecos/Modal_Enderecos_Edit'
 import React, { useState, useEffect } from 'react'
 import { baseUrl } from '../../environments'
 import axios from 'axios'
@@ -84,10 +85,17 @@ function AreaEndereco(props) {
                                         </Col>
                                     </Row>
                                     <Row>
+                                        
                                         <img className='LixeiraAreaEndereco' src={Lixeira} />
                                     </Row>
                                     <div className='btns'>
-                                        
+                                        <div>
+                                            <MeusEnderecosAdd  textoBotao='ADICIONAR' className='adicionarEnderecos' />
+                                        </div>
+                                        <div>
+                                            <MeusEnderecosEdit textoBotao='ALTERAR' className='editarEnderecos' />
+                                        </div>
+
                                     </div>
                                    
                                 </Form>

@@ -1,11 +1,13 @@
-import './Modal_Meus_Enderecos.css'
+import './Modal_Enderecos.css'
 import React, { useState, useEffect } from 'react'
 import {baseUrl} from '../../environments'
 import axios from 'axios'
 import { Modal, Button, Form, Container, Row, Col } from 'react-bootstrap'
 import { useParams, useHistory } from 'react-router-dom'
 
-function MeusEnderecosAdd(props) {
+
+function MeusEnderecosEdit(props) {
+
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -19,8 +21,8 @@ function MeusEnderecosAdd(props) {
     function getEnderecos() {
         axios.get(`${baseUrl}/enderecos`)
             .then((response) => {
-                setEnderecos(response.data)
-            })
+            setEnderecos(response.data)
+        })
     }
    
 
@@ -49,7 +51,7 @@ function MeusEnderecosAdd(props) {
                 backdrop="static"
                 keyboard={false}>
                 <Modal.Header closeButton>
-                    <Modal.Title className="title-form-enderecos">Meus Endereços</Modal.Title>
+                    <Modal.Title className="title-form-enderecos">Editar Endereço</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="show-grid">
                     <Container>
@@ -156,4 +158,5 @@ function MeusEnderecosAdd(props) {
     );
 }
 
-export default MeusEnderecosAdd
+
+export default MeusEnderecosEdit

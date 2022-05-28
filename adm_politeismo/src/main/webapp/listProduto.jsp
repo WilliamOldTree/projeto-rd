@@ -75,8 +75,15 @@
                                     </div>
                                 </div>
                                 <div class=menu-list1>
-                               <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
                                     <hr width="160">
+                                                     <%
+    
+ String usuario = (String) session.getAttribute("email");
+    
+   if(usuario == null){
+	   response.sendRedirect("index.jsp");
+   }       %>
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="DepartamentoController">Departamentos
                                     <hr width="160">
@@ -84,27 +91,15 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="CategoriaController">Categorias
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ProdutoController
-                                "
-                                                                    <%
-    
- String usuario = (String) session.getAttribute("email");
-    
-   if(usuario == null){
-	   response.sendRedirect("index.jsp");
-   }       %>
-                                >Produtos
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ProdutoController">Produtos
                                     <hr width="160">
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="FornecedorController">Fornecedores
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteFisicaController">Clientes Fisícos
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteController">Clientes
                                     <hr width="160">
                                  </a>
-                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteJuridicaController">Clientes Juridicos
-                                    <hr width="160">
-                                </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController">Pedidos
                                     <hr width="160">
                                 </a>

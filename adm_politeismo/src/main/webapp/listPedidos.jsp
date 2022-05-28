@@ -43,8 +43,15 @@
                                     </div>
                                 </div>
                                 <div class=menu-list1>
-                             <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
                                     <hr width="160">
+                                                     <%
+    
+ String usuario = (String) session.getAttribute("email");
+    
+   if(usuario == null){
+	   response.sendRedirect("index.jsp");
+   }       %>
                                 </a>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="DepartamentoController">Departamentos
                                     <hr width="160">
@@ -58,22 +65,10 @@
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="FornecedorController">Fornecedores
                                     <hr width="160">
                                 </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteFisicaController">Clientes Fisícos
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteController">Clientes
                                     <hr width="160">
                                  </a>
-                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="ClienteJuridicaController">Clientes Juridicos
-                                    <hr width="160">
-                                </a>
-                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController"
-                             
-              >Pedidos
-                 <%
-    
- String usuario = (String) session.getAttribute("email");
-    
-   if(usuario == null){
-	   response.sendRedirect("index.jsp");
-   }       %>
+                                <a class="nav-link active" id="navbar-brand" aria-current="page" href="PedidosController">Pedidos
                                     <hr width="160">
                                 </a>
                                  <form action="PedidosController" method="post">    
@@ -115,7 +110,7 @@
                 <th>ID</th>
                 <th>Data</th>
                 <th>Nome</th>
-                <th>CPF/CNPJ</th>
+                <th>CPF</th>
                 <th>Email</th>
                 <th>Contato</th>
                 <th>Mais Informações</th>
@@ -133,16 +128,16 @@
                             <c:out value="${detalhes.dataPedido}" />
                         </td>
                         <td data-label="Nome">
-                            <c:out value="${detalhes.nome}" />
+                            <c:out value="${detalhes.nomeProduto}" />
                         </td>
-                        <td data-label="CPF/CNPJ">
-                            <c:out value="${detalhes.cpfCnpj}" />
+                        <td data-label="CPF">
+                            <c:out value="${detalhes.cpf}" />
                         </td>
                         <td data-label="Email">
                             <c:out value="${detalhes.email}" />
                         </td>
                         <td data-label="Contato">
-                            <c:out value="${detalhes.contato}" />
+                            <c:out value="${detalhes.celular}" />
                         </td>
                         <td data-label="Mais Informações">
                          <button type="button" class="btn formCrud3" data-bs-toggle="modal" data-bs-target="#modal-${detalhes.codigo}">Detalhes</button>
@@ -157,8 +152,7 @@
       </div>
       <div class="modal-body">
       
-      <form action="PedidosController" method="post">
-									
+      <form action="PedidosController" method="post">				
 									
 									<input id="detalhes" name="detalhes" type="hidden" value="" />
 									
@@ -166,37 +160,43 @@
                                                 <c:out value="${detalhes.dataPedido}" />
                                             </p>
                                             <p><strong>NOME:</strong>
-                                                <c:out value="${detalhes.nome}" />
+                                                <c:out value="${detalhes.nomeProduto}" />
                                             </p>
-                                            <p><strong>CPF/CNPJ:</strong>
-                                                <c:out value="${detalhes.cpfCnpj}" />
+                                            <p><strong>CPF:</strong>
+                                                <c:out value="${detalhes.cpf}" />
                                             </p>
                                             <p><strong>EMAIL:</strong>
                                                 <c:out value="${detalhes.email}" />
                                             </p>
-                                            <p><strong>CONTATO:</strong>
-                                                <c:out value="${detalhes.contato}" />
+                                            <p><strong>TELEFONE:</strong>
+                                                <c:out value="${detalhes.fixo}" />
+                                            </p>
+                                            <p><strong>CELULAR:</strong>
+                                                <c:out value="${detalhes.celular}" />
                                             </p>
                                             <p><strong>PRODUTO:</strong>
-                                                <c:out value="${detalhes.produto}" />
+                                                <c:out value="${detalhes.nomeProduto}" />
                                             </p>
                                             <p><strong>VOLUME:</strong>
                                                 <c:out value="${detalhes.volume}" />
                                             </p>
-                                            <p><strong>PESO:</strong>
-                                                <c:out value="${detalhes.peso}" />
+                                            <p><strong>PESO: </strong>
+                                                <c:out value="${detalhes.peso}"/> (g)
                                             </p>
-                                            <p><strong>PREÇO: R$</strong>
-                                                <c:out value="${detalhes.preco}" />
+                                            <p><strong>PREÇO UNT: R$</strong>
+                                                <c:out value="${detalhes.precoUnt}" /> (cm)
                                             </p>
                                             <p><strong>QUANTIDADE:</strong>
                                                 <c:out value="${detalhes.quantidade}" />
                                             </p>
                                             <p><strong>TOTAL: R$</strong>
-                                                <c:out value="${detalhes.total}" />
+                                                <c:out value="${detalhes.valorTotal}" />
                                             </p>
-                                            <p><strong>ENTREGA:</strong>
-                                                <c:out value="${detalhes.entrega}" />
+                                              <p><strong>FORMA DE PAGAMENTO</strong>
+                                                <c:out value="${detalhes.formaPagamento}" />
+                                            </p>
+                                            <p><strong>ENTREGA/APELIDO:</strong>
+                                                <c:out value="${detalhes.apelido}" />
                                             </p>
                                             <p><strong>ENDEREÇO: </strong>
                                                 <c:out value="${detalhes.endereco}"/>
@@ -204,38 +204,17 @@
                                             <p><strong>CEP:</strong>
                                                 <c:out value="${detalhes.cep}" />
                                             </p>
-                                            <p><strong>MUNICÍPIO:</strong>
-                                                <c:out value="${detalhes.municipio}" />
+                                            <p><strong>ESTADO:</strong>
+                                                <c:out value="${detalhes.estado}" />
                                             </p>
-                                            <p><strong>STATUS DO PEDIDO:</strong>
+                                            <p><strong>CIDADE:</strong>
+                                                <c:out value="${detalhes.cidade}" />
+                                            </p>
+                                            <p><strong>BAIRRO:</strong>
+                                                <c:out value="${detalhes.bairro}" />
+                                            </p>         
+                                          <p><strong>STATUS DO PEDIDO:</strong>
                                                 <c:out value="${detalhes.statusPedido}" />
-                                            </p>
-                                            <p><strong>STATUS PAGAMENTO:</strong>
-                                                <c:out value="${detalhes.statusPagamento}" />
-                                            </p>
-                                            <p><strong>INSTITUIÇÃO:</strong>
-                                                <c:out value="${detalhes.instituicao}" />
-                                            </p>
-                                            <p><strong>VALOR PAGO: R$</strong>
-                                                <c:out value="${detalhes.valorPago}" />
-                                            </p>
-                                            <p><strong>DATA DE PAGAMENTO:</strong>
-                                                <c:out value="${detalhes.dataPagamento}" />
-                                            </p>
-                                            <p><strong>ENTREGADOR:</strong>
-                                                <c:out value="${detalhes.entregador}" />
-                                            </p>
-                                            <p><strong>PRAZO DE ENTREGA:</strong>
-                                                <c:out value="${detalhes.prazoEntrega}" />
-                                            </p>
-                                            <p><strong>VALOR DE FRETE: </strong>
-                                                <c:out value="${detalhes.valorFrete}" />
-                                            </p>
-                                            <p><strong>STATUS DE ENTREGA:</strong>
-                                                <c:out value="${detalhes.statusEntrega}" />
-                                            </p>
-                                            <p><strong>DATA DE ENTREGA:</strong>
-                                                <c:out value="${detalhes.dataEntrega}" />
                                             </p>
       </div>
     </div>
