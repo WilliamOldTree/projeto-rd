@@ -179,8 +179,8 @@ function Product(props) {
                         </p>
 
                         <p className='descricao-produto'>
-                            <li type='none'>Peso: {produtos.peso};</li>
-                            <li type='none'>Volume:{produtos.volume}</li>
+                            <li type='none'>Peso: {produtos.peso} (g);</li>
+                            <li type='none'>Volume:{produtos.volume} (cm)</li>
                         </p>
                     </li>
 
