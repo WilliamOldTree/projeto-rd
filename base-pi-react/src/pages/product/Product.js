@@ -75,7 +75,7 @@ function Product(props) {
 
                             <figure className='col-md-6 mb-3 '>
 
-                                <img width='80%' className='imgproduto1 img-fluid' src={produtos.urlProduto} />
+                                <img width='85%' className='imgproduto1 img-fluid' src={produtos.urlProduto} />
 
                             </figure>
 
@@ -97,7 +97,6 @@ function Product(props) {
                                     <article className='d-flex align-items-center'>
                                         <strong className='preco'>R$ {produtos.preco} </strong>
                                         <span className='parcela'>Em até 12x sem Juros</span>
-
                                     </article>
 
                                 </article>
@@ -203,8 +202,18 @@ function Product(props) {
                     <div className='row g-1'>
                         
                         <div className='col-12 col-md-6 col-lg-3'>
-                            <Card nomeProduto={produtosRelacionados.urlProduto} preco='22,76' parcela='3x' valorParcela='7,58' img={RELACIONADO1} />
+                            <Card nomeProduto='Terço Prata São José' preco={produtos.preco} parcela='1x' valorParcela={produtos.preco} img={RELACIONADO1} />
                         </div>
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto='Terço Nossa Senhora Dourado' preco={produtos.preco} parcela='1x' valorParcela={produtos.preco} img={RELACIONADO2} />
+                        </div>
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto='Terço Perola Dourado' preco={produtos.preco} parcela='1x' valorParcela={produtos.preco} img={RELACIONADO3} />
+                        </div>
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto='Terço Madeira Pequeno' preco={produtos.preco} parcela='1x' valorParcela={produtos.preco} img={RELACIONADO4} />
+                        </div>
+
                     </div>
                 </div>
             </div>

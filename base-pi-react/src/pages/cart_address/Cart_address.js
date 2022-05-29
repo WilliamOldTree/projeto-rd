@@ -13,14 +13,14 @@ import CartContext from '../../context/cart.provider'
 import React, { useEffect, useContext } from 'react';
 
 function Cart_address() {
-    const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty } = useContext(CartContext)
+    const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty, valorTotal } = useContext(CartContext)
 
-    const totalCarrinho = JSON.parse(localStorage.getItem('cart'))
+    //const totalCarrinho = JSON.parse(localStorage.getItem('cart'))
 
-    const valorTotal = totalCarrinho.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
+    //const valorTotal = totalCarrinho.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
 
-    var atualTotal = valorTotal
-    var totalFormat = atualTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 });
+   // var atualTotal = valorTotal
+   // var totalFormat = atualTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 });
 
     useEffect(() => {
         getCart()
@@ -128,9 +128,9 @@ function Cart_address() {
 
                             <div className='cart_address_total mt-3 p-3'>
                                 <h5>TOTAL DE ITENS: {cartQty}</h5>
-                                <h5>SUBTOTAL: R${totalFormat},00 </h5>
+                                <h5>SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })} </h5>
                                 <h5>VALOR DO FRETE: R$ 0,00</h5>
-                                <h2>TOTAL: R${totalFormat},00</h2>
+                                <h2>TOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</h2>
                             </div>
                         </div>
 

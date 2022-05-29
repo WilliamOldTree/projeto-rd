@@ -31,10 +31,10 @@ function Card(props) {
     const { addToCart } = useContext(CartContext)
     const produto = props.produto || {}
 
-
     var atual = props.preco
     const converter = (atual) => {
         return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(atual)
+        
     }
     console.log(converter)
 
@@ -49,7 +49,7 @@ function Card(props) {
                 <div className='content'>
                     <div className='title-card'>{props.nomeProduto}</div>
                     <div className='sub-title'>R$ {converter(atual)}</div>
-                    <div className='sub-title2'>ou {props.parcela} de R$ {props.valorParcela} Sem juros</div>
+                    <div className='sub-title2'>ou {props.parcela} de R$ {converter(atual)} Sem juros</div>
                     <div className='btn-card'>
                         <button onClick={() => addToCart(produto)}>ADICIONAR AO CARRINHO</button>
                     </div>
