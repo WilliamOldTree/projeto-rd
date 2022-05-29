@@ -26,6 +26,15 @@ function ModalCarrinho(props) {
         valorTotalAmem()
     }, [])
 
+    const precoShow = (number) => {
+        let precoConvertido = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number)
+        return(
+            <>
+               <strong>{precoConvertido}</strong>
+            </>
+        )
+    }
+    
     return (
         <>
             {['bottom'].map((placement) => (
@@ -49,7 +58,7 @@ function ModalCarrinho(props) {
                                                     </Col>
                                                     <Col xs={6} md={6} class="boda">
                                                         <p>{item.nome}</p>
-                                                        <strong>{item.preco}</strong>
+                                                        {precoShow(item.preco)}
                                                     </Col>
 
                                                     <Col xs={3} md={3} className="div-input-cart">

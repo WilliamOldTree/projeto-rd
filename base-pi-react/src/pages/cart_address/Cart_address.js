@@ -28,6 +28,15 @@ function Cart_address() {
         valorTotalAmem()
     }, [])
 
+    const precoShow = (number) => {
+        let precoConvertido = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number)
+        return(
+            <>
+               {precoConvertido}
+            </>
+        )
+    }
+
     return (
         <>
             {/* BEGINNER ADDRESS*/}
@@ -108,7 +117,7 @@ function Cart_address() {
                                         <ResumoCompra key={item.id}
                                             product_img={item.urlProduto}
                                             descricao={item.nome}
-                                            valor={item.preco}
+                                            valor={precoShow(item.preco)}
                                             quantidade={item.quantidade}
                                             trash_img={TrashIcon}
                                             deletar={deleteCart}

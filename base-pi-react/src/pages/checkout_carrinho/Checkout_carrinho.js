@@ -57,15 +57,21 @@ function Checkout_carrinho() {
         getCart()
     }, [])
 
+    const precoShow = (number) => {
+        let precoConvertido = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number)
+        return(
+            <>
+               {precoConvertido}
+            </>
+        )
+    }
+
     return (
         <>
             <Header />
             <Container>
 
-
                 <Title titleIcon={Check} titleText="Resumo da Compra" />
-
-
 
                 <Row className="dados">
                     <Col md={6} lg={6} className="dados1_compra_card">
@@ -102,7 +108,7 @@ function Checkout_carrinho() {
                                     <ResumoCompra key={item.id}
                                         product_img={item.urlProduto}
                                         descricao={item.nome}
-                                        valor={item.preco}
+                                        valor={precoShow(item.preco)}
                                         quantidade={item.quantidade}
                                         trash_img={TrashIcon}
                                         deletar={deleteCart}
