@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class UserAdm {
 	
 	@Id
-	@Column(name = "id_cartao_numero")
+	@Column(name = "id_adm")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;

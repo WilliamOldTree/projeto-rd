@@ -50,7 +50,7 @@ public class ClienteController extends HttpServlet {
 	
 	private void selectCliente(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.setAttribute("listaCliente", this.clienteDao.selectCliente());
-		request.getRequestDispatcher("listaCliente.jsp").forward(request, response);
+		request.getRequestDispatcher("listClienteFisico.jsp").forward(request, response);
 	}
 	
 	

@@ -57,13 +57,6 @@ function Product(props) {
             })
     }, [])
     
-
-
-
-    
-
-
-
     
     return (
 
@@ -82,7 +75,7 @@ function Product(props) {
 
                             <figure className='col-md-6 mb-3 '>
 
-                                <img width='90%' className='imgproduto1 img-fluid' src={produtos.urlProduto} />
+                                <img width='85%' className='imgproduto1 img-fluid' src={produtos.urlProduto} />
 
                             </figure>
 
@@ -102,10 +95,8 @@ function Product(props) {
                                 <article className='produtos-preco'>
 
                                     <article className='d-flex align-items-center'>
-                                        <strong className='preco'>{produtos.estoque}</strong>
                                         <strong className='preco'>R$ {produtos.preco} </strong>
                                         <span className='parcela'>Em até 12x sem Juros</span>
-
                                     </article>
 
                                 </article>
@@ -114,9 +105,7 @@ function Product(props) {
                                     <a className='verDetalhes flex-column' href='#detalhes'>Mais Detalhes</a>
                                     <Link to={'/cart'} className='linkproduct'>
                                         <button className='btn compra' onClick={() => addToCart(produtos)}>
-
                                             COMPRAR
-
                                         </button>
                                     </Link>
                                     <button className='btn favoritar' type='submit'>
@@ -190,8 +179,8 @@ function Product(props) {
                         </p>
 
                         <p className='descricao-produto'>
-                            <li type='none'>Peso: {produtos.peso};</li>
-                            <li type='none'>Volume:{produtos.volume}</li>
+                            <li type='none'>Peso: {produtos.peso} (g);</li>
+                            <li type='none'>Volume:{produtos.volume} (cm)</li>
                         </p>
                     </li>
 
@@ -213,8 +202,18 @@ function Product(props) {
                     <div className='row g-1'>
                         
                         <div className='col-12 col-md-6 col-lg-3'>
-                            <Card nomeProduto={produtosRelacionados.urlProduto} preco='22,76' parcela='3x' valorParcela='7,58' img={RELACIONADO1} />
+                            <Card nomeProduto='Terço Prata São José' preco={produtos.preco} parcela='1x' valorParcela={produtos.preco} img={RELACIONADO1} />
                         </div>
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto='Terço Nossa Senhora Dourado' preco={produtos.preco} parcela='1x' valorParcela={produtos.preco} img={RELACIONADO2} />
+                        </div>
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto='Terço Perola Dourado' preco={produtos.preco} parcela='1x' valorParcela={produtos.preco} img={RELACIONADO3} />
+                        </div>
+                        <div className='col-12 col-md-6 col-lg-3'>
+                            <Card nomeProduto='Terço Madeira Pequeno' preco={produtos.preco} parcela='1x' valorParcela={produtos.preco} img={RELACIONADO4} />
+                        </div>
+
                     </div>
                 </div>
             </div>

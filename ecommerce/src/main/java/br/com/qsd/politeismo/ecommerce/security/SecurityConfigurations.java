@@ -18,7 +18,8 @@ import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
 
 @EnableWebSecurity
 @Configuration
-public class SecurityConfigurations extends WebSecurityConfigurerAdapter{
+public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
+	
 	@Autowired
 	private AutenticacaoService autenticacaoService;
 	
@@ -31,7 +32,6 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(autenticacaoService).passwordEncoder(new BCryptPasswordEncoder());
-		
 	}
 	
 	@Override
@@ -49,7 +49,13 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter{
 		.antMatchers(HttpMethod.GET , "/categorias/*").permitAll()
 		.antMatchers(HttpMethod.POST , "/clientes").permitAll()
 		.antMatchers(HttpMethod.POST , "/auth").permitAll()
-		.anyRequest().authenticated()
+		.antMatchers(HttpMethod.GET , "/pedidos/*").permitAll()
+		.antMatchers(HttpMethod.GET , "/pedidos").permitAll()
+		.antMatchers(HttpMethod.POST , "/pedidos").permitAll()
+		.antMatchers(HttpMethod.GET , "/itensPedido/*").permitAll()
+		.antMatchers(HttpMethod.GET , "/itensPedido").permitAll()
+		.antMatchers(HttpMethod.POST , "/itensPedido").permitAll()
+		.anyRequest().authenticated().and().cors()
 		.and().csrf().disable()
 		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		.and().addFilterBefore(new AutenticacaoViaTokenFilter(tokenService , clienteRepository) , UsernamePasswordAuthenticationFilter.class);
@@ -58,7 +64,6 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter{
 	@Override
 	public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/h2-console/**");
-
 	}
 	
 }

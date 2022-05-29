@@ -74,7 +74,7 @@ public class CartaoService {
 
 	}
 
-	// deletar po id
+	// deletar por id
 	public void deletar(Long id) {
 		repository.deleteById(id);
 	}

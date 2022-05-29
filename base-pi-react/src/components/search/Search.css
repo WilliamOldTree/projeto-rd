@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.title-category{
+    color      : #261C1A;
+    margin-top : 27px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.line-category{
+    width     : 100%;
+    border    : 1px solid;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.line-category-itens{
+    width: 150px;
+    margin-top: 0px;
+}
+
+.form-select.selectCat{
+    display: none;
+
+}
+.listaCat ul li {
+    list-style: none;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.listaCat a{
+    text-decoration: none;
+    color: #261C1A;
+}
+
+.listaCat ul li a:hover{
+    color: #AF9787;
+    text-decoration: underline;
+}
+
+.ulListaCat{
+    padding: 0px;
+    
+}
+
+.cardCat{
+    padding: 0px;
+}
+
+.row.category{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    
+}
+
+@media (max-width: 995px) {
+    .line-category-itens{
+        width: 90px;
+    }
+}
+
+@media (max-width: 770px) {
+    .listaCat{
+        display: none;
+    }
+
+    .form-select.selectCat{
+        display: block;
+        width: 60%;
+        background-color: #AF9787;
+        color:#FFFFFF;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        text-align: center;
+        font-weight: 700;
+        height: 50px;
+    }
+
+    .form-select.selectCat.selected{
+        font-size: 20px;
+    }
+
+    .selectCat-container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .row.category{
+        display: flex;
+        justify-content: center;
+    }
+}
