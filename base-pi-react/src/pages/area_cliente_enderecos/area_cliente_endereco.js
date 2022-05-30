@@ -5,7 +5,7 @@ import Menu from '../../components/menu/Menu'
 import Title from '../../components/title/Title'
 import User from '../../components/asserts/icons/user.png'
 import Lixeira from '../../components/asserts/icons/lixeira.png'
-import { Form, Row, Col, Button } from 'react-bootstrap'
+import { Form, Row, Col } from 'react-bootstrap'
 import MeusEnderecosAdd from '../../components/modal_meus_enderecos/Modal_Enderecos_Add'
 import MeusEnderecosEdit from '../../components/modal_meus_enderecos/Modal_Enderecos_Edit'
 import React, { useState, useEffect } from 'react'
@@ -24,7 +24,7 @@ function AreaEndereco(props) {
         axios.get(`${baseUrl}/enderecos`)
             .then((response) => {
                 setEnderecos(response.data)
-            })
+        })
     }
 
     useEffect(() => {
@@ -84,28 +84,21 @@ function AreaEndereco(props) {
                                             </ul>
                                         </Col>
                                     </Row>
-                                    <Row>
-                                        
+                                    <Row>    
                                         <img className='LixeiraAreaEndereco' src={Lixeira} />
                                     </Row>
                                     <div className='btns'>
                                         <div>
                                             <MeusEnderecosAdd  textoBotao='ADICIONAR' className='adicionarEnderecos' />
-                                        </div>
-                                        <div>
                                             <MeusEnderecosEdit textoBotao='ALTERAR' className='editarEnderecos' />
                                         </div>
-
                                     </div>
-                                   
                                 </Form>
                             </>
                         )
                     })}
                 </div>
-
             </div>
-
             <Footer />
         </>
     )

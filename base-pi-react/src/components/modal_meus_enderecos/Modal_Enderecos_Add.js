@@ -7,8 +7,8 @@ import { useParams, useHistory } from 'react-router-dom'
 
 function MeusEnderecosAdd(props) {
 
-    const [show, setShow] = useState(false); 
-    const handleClose = () => setShow(false); 
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     const [states, setStates] = useState([])
@@ -41,8 +41,8 @@ function MeusEnderecosAdd(props) {
 
     return (
         <>
-            <Button className={props.classEnderecos} onClick={handleShow}>
-                {props.textButtonEnderecos}
+            <Button className='adicionarEnderecos' variant="primary" onClick={handleShow}>
+                {props.textoBotao}
             </Button>
 
             <Modal className="modal-form-enderecos"
