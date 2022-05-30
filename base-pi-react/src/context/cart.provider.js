@@ -30,6 +30,7 @@ function CartProvider(props) {
                 element.quantidade++
                 element.total = element.preco * element.quantidade
                 isInCart = true
+                
             }
         });
 
@@ -37,6 +38,7 @@ function CartProvider(props) {
             item.quantidade = 1
             item.total = item.preco * item.quantidade
             cartList.push(item)
+
         }
 
         localStorage.setItem("cart", JSON.stringify(cartList))
@@ -99,7 +101,6 @@ function CartProvider(props) {
         localStorage.setItem("cart", JSON.stringify(novoArray))
         setCart(novoArray)
         setCartQty(novoArray.length)
-
     }
 
 
@@ -122,8 +123,6 @@ function CartProvider(props) {
                 
 
                 element.total = element.preco * element.quantidade
-
-                
            
             }
         });

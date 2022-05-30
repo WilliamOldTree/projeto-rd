@@ -17,14 +17,14 @@ import { baseUrl } from '../../environments'
 import axios from 'axios'
 
 function Checkout_carrinho() {
-    const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty } = useContext(CartContext)
+    const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty, valorTotal } = useContext(CartContext)
 
-    const totalCarrinho = JSON.parse(localStorage.getItem('cart'))
+   // const totalCarrinho = JSON.parse(localStorage.getItem('cart'))
 
-    const valorTotal = totalCarrinho.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
+    //const valorTotal = totalCarrinho.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
 
-    var atualTotal = valorTotal
-    var totalFormat = atualTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 });
+    //var atualTotal = valorTotal
+    //var totalFormat = atualTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 });
 
     useEffect(() => {
         getCart()
@@ -57,15 +57,21 @@ function Checkout_carrinho() {
         getCart()
     }, [])
 
+    const precoShow = (number) => {
+        let precoConvertido = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number)
+        return(
+            <>
+               {precoConvertido}
+            </>
+        )
+    }
+
     return (
         <>
             <Header />
             <Container>
 
-
                 <Title titleIcon={Check} titleText="Resumo da Compra" />
-
-
 
                 <Row className="dados">
                     <Col md={6} lg={6} className="dados1_compra_card">
@@ -102,7 +108,7 @@ function Checkout_carrinho() {
                                     <ResumoCompra key={item.id}
                                         product_img={item.urlProduto}
                                         descricao={item.nome}
-                                        valor={item.preco}
+                                        valor={precoShow(item.preco)}
                                         quantidade={item.quantidade}
                                         trash_img={TrashIcon}
                                         deletar={deleteCart}
@@ -116,8 +122,8 @@ function Checkout_carrinho() {
                 <Row>
                     <Col className="totalPedido mb-5">
                         <h4>Frete: R$ 0,00</h4>
-                        <h2>Total: R$ {totalFormat}</h2>
-                        <h5>Parcelas 1 x R$ {totalFormat}</h5><img src={Visa} alt="" />
+                        <h2>Total: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</h2>
+                        <h5>Parcelas 1 x R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</h5><img src={Visa} alt="" />
                     </Col>
                 </Row>
 

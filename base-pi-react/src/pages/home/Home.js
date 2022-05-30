@@ -57,6 +57,7 @@ function Home() {
     }
 
 
+
     return (
         <>
             <Header />
@@ -173,14 +174,17 @@ function Home() {
                             return (
                                 <li className='col-12 col-md-6 col-lg-3' key={produto.id}>
                                     
-                                <Card produto = {produto} nomeProduto={produto.nome} preco={produto.preco} parcela="1x" valorParcela={produto.preco} img={produto.urlProduto} />  
+                                <Card produto = {produto} nomeProduto={produto.nome} 
+                                preco={produto.preco} 
+                                parcela="1x" 
+                                valorParcela={produto.preco}
+                                img={produto.urlProduto} />  
                                 </li>
+                                
                             )
                         })}
                     </ul>
                 </div>
-
-
 
                 {/* BANNER FINAL HOME */}
                 <img className='img-end' src={BannerEnd} />

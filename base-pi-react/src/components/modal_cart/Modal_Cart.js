@@ -11,14 +11,12 @@ function ModalCarrinho(props) {
 
     const { cart, getCart, valorTotalAmem } = useContext(CartContext)
     const { cartQty, getCartQty, soma } = useContext(CartContext)
-    const { deleteCart, tira } = useContext(CartContext)
+    const { deleteCart, tira, valorTotal} = useContext(CartContext)
 
-    const totalCarrinho = JSON.parse(localStorage.getItem('cart')) 
-
-    const valorTotal = totalCarrinho.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
-    
-    var atualTotal = valorTotal
-    var totalFormat = atualTotal.toLocaleString('pt-br', {minimumFractionDigits: 2});
+    //const totalCarrinho = JSON.parse(localStorage.getItem('cart')) 
+    //const valorTotal = totalCarrinho.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
+    //var atualTotal = valorTotal
+    //var totalFormat = atualTotal.toLocaleString('pt-br', {minimumFractionDigits: 2});
 
     useEffect(() => {
         getCart()
@@ -26,6 +24,15 @@ function ModalCarrinho(props) {
         valorTotalAmem()
     }, [])
 
+    const precoShow = (number) => {
+        let precoConvertido = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number)
+        return(
+            <>
+               <strong>{precoConvertido}</strong>
+            </>
+        )
+    }
+    
     return (
         <>
             {['bottom'].map((placement) => (
@@ -49,7 +56,7 @@ function ModalCarrinho(props) {
                                                     </Col>
                                                     <Col xs={6} md={6} class="boda">
                                                         <p>{item.nome}</p>
-                                                        <strong>{item.preco}</strong>
+                                                        {precoShow(item.preco)}
                                                     </Col>
 
                                                     <Col xs={3} md={3} className="div-input-cart">
@@ -77,7 +84,7 @@ function ModalCarrinho(props) {
                                     <Col md={12} lg={12} className="div-footer-cart" >
                                         {/*  <h6><strong>TOTAL DE ITENS: {cartQty}</strong></h6> */}
                                         <h6><strong> TOTAL DE ITENS: {cartQty}</strong></h6>
-                                        <h6><strong> SUBTOTAL: R${totalFormat}</strong></h6>
+                                        <h6><strong> SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</strong></h6>
                                     </Col>
                                     <br></br>
                                     <Col md={12} lg={12} className="div-btn-cart">
