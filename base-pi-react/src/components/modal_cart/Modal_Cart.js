@@ -76,20 +76,20 @@ function ModalCarrinho(props) {
                                                         </Row>
                                                         <button className="btn-cart-lixeira" onClick={() => deleteCart(item)}><img className="modal-cart-lixeira" src={Lixeira} /></button>
                                                     </Col>
-
                                                     <hr />
-                                                </Row>
-                                            )
-                                        })}
-                                    <Col md={12} lg={12} className="div-footer-cart" >
-                                        {/*  <h6><strong>TOTAL DE ITENS: {cartQty}</strong></h6> */}
-                                        <h6><strong> TOTAL DE ITENS: {cartQty}</strong></h6>
+
+                                                    <Col md={12} lg={12} className="div-footer-cart" >
                                         <h6><strong> SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</strong></h6>
                                     </Col>
                                     <br></br>
                                     <Col md={12} lg={12} className="div-btn-cart">
                                         <Link to="/cart"><Button className="btnFinal">VER CARRINHO</Button></Link>
                                     </Col>
+                                                </Row>
+                                                
+                                            )
+                                        })}
+                                
                                 </Container>
 
                             </Popover.Body>
