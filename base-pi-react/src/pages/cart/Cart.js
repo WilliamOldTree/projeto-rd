@@ -91,8 +91,6 @@ function Cart() {
                     </Col>
                 </Row>
 
-
-
             </Container>
             {/* END-CART */}
 

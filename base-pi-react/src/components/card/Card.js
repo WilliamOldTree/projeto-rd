@@ -48,7 +48,7 @@ function Card(props) {
                 </div>
                 <div className='content'>
                     <div className='title-card'>{props.nomeProduto}</div>
-                    <div className='sub-title'>R$ {converter(atual)}</div>
+                    <div className='sub-title'> {converter(atual)}</div>
                     <div className='sub-title2'>ou {props.parcela} de R$ {converter(atual)} Sem juros</div>
                     <div className='btn-card'>
                         <button onClick={() => addToCart(produto)}>ADICIONAR AO CARRINHO</button>
