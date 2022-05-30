@@ -39,7 +39,7 @@ function Product(props) {
 
     const { addToCart } = useContext(CartContext)
     const { id } = useParams()
-    
+
     const [produtos, setProdutos] = useState({})
     const [produtosRelacionados, setProdutosRelacionados] = useState({})
 
@@ -50,17 +50,23 @@ function Product(props) {
                 setProdutos(response.data)
             })
 
-
-            axios.get(`http://localhost:8080/produtos/categoria?id=${id}`)
+        axios.get(`http://localhost:8080/produtos/categoria?id=${id}`)
             .then((response) => {
                 setProdutosRelacionados(response.data)
             })
     }, [])
-    
-    
+
+    const precoShow = (number) => {
+        let precoConvertido = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number)
+        return (
+            <>
+                <strong className='preco'>{precoConvertido} </strong>
+
+            </>
+        )
+    }
+
     return (
-
-
         <>
             <Header />
 
@@ -93,9 +99,8 @@ function Product(props) {
                                 </article>
 
                                 <article className='produtos-preco'>
-
                                     <article className='d-flex align-items-center'>
-                                        <strong className='preco'>R$ {produtos.preco} </strong>
+                                        {precoShow(produtos.preco)}
                                         <span className='parcela'>Em até 12x sem Juros</span>
                                     </article>
 
@@ -200,7 +205,7 @@ function Product(props) {
 
                 <div className='col-12 imagensCaixa1'>
                     <div className='row g-1'>
-                        
+
                         <div className='col-12 col-md-6 col-lg-3'>
                             <Card nomeProduto='Terço Prata São José' preco={produtos.preco} parcela='1x' valorParcela={produtos.preco} img={RELACIONADO1} />
                         </div>
