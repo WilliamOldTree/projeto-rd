@@ -1,5 +1,8 @@
 import './Cart_Success.css'
-
+import { useParams } from "react-router-dom";
+import {useEffect, useState} from 'react'
+import { baseUrl } from '../../environments'
+import axios from 'axios'
 /* LINK PAGES */
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
@@ -12,7 +15,21 @@ import Frete from '../../components/asserts/icons/caminhao-frete-home.png';
 import SagradaFamilia from '../../components/asserts/images/images-home/imagem-resina-sagrada-familia.jpg';
 import Biblia from '../../components/asserts/images/images-home/b_blia-sagrada-cnbb.jpg';
 
+
 function Cart_Success() {
+ 
+    const {idPedido} = useParams();
+
+    const [pedido, setPedido] =  useState({});
+
+    useEffect(() => {
+        axios.get(`${baseUrl}/pedidos/${idPedido}`)
+        .then(response => {
+            console.log(response.data)
+            setPedido(response.data)
+        })
+    }, [])
+
     return (
         <>
             <Header/>
@@ -25,7 +42,7 @@ function Cart_Success() {
                     <div className='sucesso'>
                         <div className='row container-pedido'>
 
-                            <h3 className='pedido'>Pedido: #00</h3><a className='link-pedido' href='#'>Clique aqui e veja detalhes do Pedido</a>
+                            <h3 className='pedido'>Pedido: {pedido.idPedido}</h3><a className='link-pedido' href='#'>Clique aqui e veja detalhes do Pedido</a>
                             <figure className='col-md-2 mb-3'>
                                 <img width='90%' src={SagradaFamilia} />
                             </figure>

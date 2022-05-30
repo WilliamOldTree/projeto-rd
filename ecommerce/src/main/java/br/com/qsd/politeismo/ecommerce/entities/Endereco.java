@@ -35,7 +35,7 @@ public class Endereco {
 	@Column(nullable = false, name = "NOME_LOGRADOURO")
 	private String nomeLougradouro;
 
-	@Column(nullable = false, name = "TIPO_LOGRADO")
+	@Column(nullable = false, name = "TIPO_LOGRADOURO")
 	private String tipoLougradouro;
 
 	@Column(nullable = false, name = "NUMERO")

@@ -1,33 +1,49 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import Header from '../../../components/header/Header'
-import Footer from '../../../components/footer/Footer'
-import { baseUrl } from '../../../environments'
-import axios from 'axios'
-import Card from '../../../components/card/Card'
-import '../../category/Category.css'
+import './Search.css'
+
+/* LINK PAGES */
+import { Link, useParams } from 'react-router-dom'
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
+import Card from '../card/Card';
+import axios from 'axios';
+import { baseUrl } from '../../environments';
+import React, { useState, useEffect } from 'react';
 
 
-function Judaica(props) {
 
-    const [judaica, setJudaica] = useState([])
+/* IMAGES CARDS CATEGORY */
+//import CATEGORIA1 from '../../components/asserts/images/images-produto/04.06209.1.jpg';
+//import CATEGORIA2 from '../../components/asserts/images/images-produto/04.06333.jpg';
+//import CATEGORIA3 from '../../components/asserts/images/images-produto/04.06447.1.jpg';
+//import CATEGORIA4 from '../../components/asserts/images/images-produto/04.06496-frente.jpg';
+
+function Search() {
+
+    const { textobusca } = useParams()
+    const [busca, setBusca] = useState([])
 
     useEffect(() => {
-        getJudaica()
-    }, [])
+        getBusca()
+    }, [textobusca]);
 
-    function getJudaica() {
-        axios.get(`${baseUrl}/produtos/departamento?id=6`)
+    const getBusca = () => {
+        axios.get(`${baseUrl}/produtos/buscarpornome?nome=${textobusca}`)
             .then((response) => {
-                setJudaica(response.data)
+                console.log(response.data)
+                setBusca(response.data)
+            })
+            .catch((error) => {
+                console.error("Não Encontrado!" + error)
             })
     }
+
+
 
     return (
         <>
             <Header />
             <div className='container'>
-                <h2 class="title-category">Judaica</h2>
+                <h2 class="title-category">Resultados</h2>
                 <hr class="line-category" />
 
 
@@ -136,27 +152,29 @@ function Judaica(props) {
 
                     <div className='col-10 col-sm-10 col-xs-10 cardCat-container'>
                         <div className='row'>
-                            {judaica.map((produto) => {
-                                return (
-                                    <div className='col-md-6 col-lg-3 cardCat'>
-                                        <ul className='row g-1 ul-card'>
-                                            <li key={produto.id}>
-                                                <Card produto={produto}
-                                                    nomeProduto={produto.nome}
-                                                    preco={produto.preco} parcela="3x"
-                                                    valorParcela="10,00" img={produto.urlProduto} />
-                                            </li>
-                                        </ul>
-                                    </div>
-                                )
-                            })}
+                            {
+                                busca.map(item => {
+                                    return (
+                                        <div className='col-md-6 col-lg-3 cardCat'>
+                                            <Card nomeProduto={item.nome} preco={item.preco} parcela='3x' valorParcela='7,58' img={item.urlProduto} />
+                                        </div>
+
+                                    )
+                                })
+
+                            }
+
+
+
                         </div>
                     </div>
                 </div>
             </div>
 
+
+
             <Footer />
         </>
     );
 }
-export default Judaica;
+export default Search;

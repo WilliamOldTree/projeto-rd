@@ -59,10 +59,12 @@ public class PedidoService {
 	@Transactional
 	public PedidoDTO insert(FormPedido form) {
 		
+
 		
 		Pedido entity = new Pedido();
 //		ItemPedido itens = new ItemPedido();
 	
+
         entity.setData(LocalDate.parse(form.getData(), formatter));
         entity.setValor(new BigDecimal(form.getValor()));
         entity.setStatusPedido(StatusPedido.AGUARDANDO_PAGAMENTO);
@@ -70,7 +72,6 @@ public class PedidoService {
 //		Optional<ItemPedido> itens = itemPedidoRepository.findById(Long.parseLong(form.getItens()));
 		Optional<Cliente> cliente = clienteRepository.findById(Long.parseLong(form.getCliente()));
 		Optional<Endereco> endereco = enderecoRepository.findById(Long.parseLong(form.getEndereco()));
-		
 		
 		if (cliente.isPresent() && endereco.isPresent()) {
 			entity.setCliente(cliente.get());

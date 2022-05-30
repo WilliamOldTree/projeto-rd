@@ -5,6 +5,11 @@
     flex-direction: column;
 }
 
+.btn-cart-lixeira {
+    background: none;
+    border: none;
+}
+
 @media(max-width: 500px){
 	.tr_listCompra{
 		display: block;

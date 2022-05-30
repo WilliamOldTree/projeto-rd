@@ -50,7 +50,7 @@ public class ClienteService {
 	// inclusao
 	public ClienteDTO insert(FormCliente form) {
 		Cliente entity = new Cliente();
-		entity.setPassword(this.passwordEncoder.encode(form.getPassword()));
+		entity.setSenha(this.passwordEncoder.encode(form.getPassword()));
 		entity.setCpf(form.getCpf());
 		entity.setNome(form.getNome());
 		entity.setEmail(form.getEmail()); 
@@ -83,7 +83,7 @@ public class ClienteService {
 		entity.setCpf(dto.getCpf());
 		entity.setNome(dto.getNome());
 		entity.setEmail(dto.getEmail());
-		entity.setPassword(this.passwordEncoder.encode(dto.getPassword()));
+		entity.setSenha(this.passwordEncoder.encode(dto.getPassword()));
 		entity.setNascimento(LocalDate.parse(dto.getNascimento(), formatter));
 		entity.setGenero(dto.getGenero());
 		entity.setFixo(dto.getFixo());

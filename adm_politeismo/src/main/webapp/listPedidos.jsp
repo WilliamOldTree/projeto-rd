@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -109,10 +111,10 @@
             <tr>
                 <th>ID</th>
                 <th>Data</th>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>Email</th>
-                <th>Contato</th>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Valor Total</th>
+                <th>Contato/Cliente</th>
                 <th>Mais Informações</th>
             </tr>
         </thead>
@@ -127,17 +129,17 @@
                         <td data-label="Data">
                             <c:out value="${detalhes.dataPedido}" />
                         </td>
-                        <td data-label="Nome">
+                        <td data-label="Produto">
                             <c:out value="${detalhes.nomeProduto}" />
                         </td>
-                        <td data-label="CPF">
-                            <c:out value="${detalhes.cpf}" />
+                        <td data-label="Quantidade">
+                           <c:out value="${detalhes.quantidade}" />
                         </td>
-                        <td data-label="Email">
+                        <td data-label="Valor Total">
+                          <fmt:setLocale value="pt-BR"/><fmt:formatNumber value="${detalhes.valorTotal}" type="currency"/>
+                        </td>
+                        <td data-label="Contato - Cliente">
                             <c:out value="${detalhes.email}" />
-                        </td>
-                        <td data-label="Contato">
-                            <c:out value="${detalhes.celular}" />
                         </td>
                         <td data-label="Mais Informações">
                          <button type="button" class="btn formCrud3" data-bs-toggle="modal" data-bs-target="#modal-${detalhes.codigo}">Detalhes</button>
@@ -159,7 +161,7 @@
                                             <p><strong>DATA DO PEDIDO:</strong>
                                                 <c:out value="${detalhes.dataPedido}" />
                                             </p>
-                                            <p><strong>NOME:</strong>
+                                            <p><strong>PRODUTO:</strong>
                                                 <c:out value="${detalhes.nomeProduto}" />
                                             </p>
                                             <p><strong>CPF:</strong>
@@ -168,7 +170,7 @@
                                             <p><strong>EMAIL:</strong>
                                                 <c:out value="${detalhes.email}" />
                                             </p>
-                                            <p><strong>TELEFONE:</strong>
+                                            <p><strong>TELEFONE :</strong>
                                                 <c:out value="${detalhes.fixo}" />
                                             </p>
                                             <p><strong>CELULAR:</strong>
@@ -189,8 +191,8 @@
                                             <p><strong>QUANTIDADE:</strong>
                                                 <c:out value="${detalhes.quantidade}" />
                                             </p>
-                                            <p><strong>TOTAL: R$</strong>
-                                                <c:out value="${detalhes.valorTotal}" />
+                                            <p><strong>TOTAL: </strong>
+                                                <fmt:setLocale value="pt-BR"/><fmt:formatNumber value="${detalhes.valorTotal}" type="currency"/>
                                             </p>
                                               <p><strong>FORMA DE PAGAMENTO</strong>
                                                 <c:out value="${detalhes.formaPagamento}" />

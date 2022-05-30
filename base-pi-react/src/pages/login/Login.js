@@ -14,30 +14,31 @@ import Check from '../../components/asserts/icons/check.png';
 
 
 function Login() {
-    function validar(){
-        var novaSenha=document.getElementById('senha').value;
-     
-  
-       
-        
-        if (novaSenha == ""){
-          document.getElementById('ErroLoginSenhaNova').innerHTML = "Informe uma senha!";
-          document.getElementById('senha').focus();
-          
-          return false;
-      }else{
-        document.getElementById('ErroLoginSenhaNova').innerHTML = "";
-      }
-  
-    }
-     
+    
+    function validar() {
+        var novaSenha = document.getElementById('senha').value;
 
+        if (novaSenha == "") {
+            document.getElementById('ErroLoginSenhaNova').innerHTML = "Informe uma senha!";
+            document.getElementById('senha').focus();
+            return false;
+        } else {
+            document.getElementById('ErroLoginSenhaNova').innerHTML = "";
+        }
+    }
+
+    /*const login = () => {
+        clientes.states =
+            axios.post('http://localhost:8080/auth')
+                .then((response) => {
+                })
+    }*/
 
     return (
         <>
-            <Header/>
+            <Header />
             <div className='container'>
-            <Title titleIcon={User} titleText="Identificação e Login"/>
+                <Title titleIcon={User} titleText="Identificação e Login" />
 
                 <div className='container-login-cadastro'>
 
@@ -47,14 +48,14 @@ function Login() {
                             <h4 className='title-login'>Já é cliente Politeísmo Shop?</h4>
                             <div className='mb-3'>
                                 <label for='email' className='form-label email-login'>E-mail</label>
-                                <input type='email' className='form-control' id='email' required/>
-                                <div className ='mb-3'>
-                                <label for='senha' className ='form-label senha-login'  >Senha</label>
-                                <input type ='password' className ='form-control' id='senha' required onMouseOver={validar}/>
-                                <span id='ErroLoginSenhaNova' className='AlterarSenhaVermelho'></span>
+                                <input type='email' className='form-control' id='email' required />
+                                <div className='mb-3'>
+                                    <label for='senha' className='form-label senha-login'  >Senha</label>
+                                    <input type='password' className='form-control' id='senha' required onMouseOver={validar} />
+                                    <span id='ErroLoginSenhaNova' className='AlterarSenhaVermelho'></span>
                                 </div>
-                                <button className ='btn formlogin' type ='submit'>ENTRAR</button>
-                                <p className ='link-senha'>Esqueceu a sua senha?</p>
+                                <button className='btn formlogin' type='submit'>ENTRAR</button>
+                                <p className='link-senha'>Esqueceu a sua senha?</p>
                             </div>
                         </form>
                     </div>
@@ -67,11 +68,11 @@ function Login() {
                             <h4 className='title-cadastro'>Ainda não é nosso cliente?</h4>
                             <h6 className='subtitle-cadastro'>O cadastro em nossa loja é simples e rápido.</h6>
 
-                            <p className='list-cadastro'><img width='18' className='imgcheck' src={Check}/> Localize seus pedidos
+                            <p className='list-cadastro'><img width='18' className='imgcheck' src={Check} /> Localize seus pedidos
                             </p>
-                            <p className='list-cadastro'><img width='18' className='imgcheck' src={Check}/> Favorite produtos
+                            <p className='list-cadastro'><img width='18' className='imgcheck' src={Check} /> Favorite produtos
                             </p>
-                            <p className='list-cadastro'><img width='18' className='imgcheck' src={Check}/> Receba Ofertas e ganhe descontos
+                            <p className='list-cadastro'><img width='18' className='imgcheck' src={Check} /> Receba Ofertas e ganhe descontos
                             </p>
 
                             <Link to="/cadastro_ClienteFisico" className='btn formcadastro' type='submit' role="button">CADASTRE-SE</Link>
@@ -81,7 +82,7 @@ function Login() {
                 </div>
             </div>
 
-            <Footer/>
+            <Footer />
         </>
     );
 }
