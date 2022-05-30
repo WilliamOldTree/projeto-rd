@@ -1,0 +1,42 @@
+#ErroNome{
+    color: red;
+     position: relative;
+     left: 30%; 
+     top: 50px; 
+}
+#ErroCpf{
+    color: red;
+     position: relative;
+     left: 20%; 
+     top: 130px; 
+}
+#ErroSenha{
+    color: red;
+     position: relative;
+     left: 35%; 
+     top: 435px; 
+}
+#ErroEmail{
+    color: red;
+     position: relative;
+     left: 25%; 
+     top: 347px; 
+}
+#ErroTel{
+    color: red;
+     position: relative;
+     left: 65%; 
+     top: 215px; 
+}
+#ErroCel{
+    color: red;
+    position: relative;
+    left: 15%; 
+    top: 235px; 
+}
+#Campos{
+    color: red;
+    position: relative;
+    left: 15%; 
+    top: 235px; 
+}
