@@ -117,7 +117,7 @@ function Cart_address() {
                                         <ResumoCompra key={item.id}
                                             product_img={item.urlProduto}
                                             descricao={item.nome}
-                                            valor={precoShow(item.preco)}
+                                            valor= {precoShow(item.preco)}
                                             quantidade={item.quantidade}
                                             trash_img={TrashIcon}
                                             deletar={deleteCart}

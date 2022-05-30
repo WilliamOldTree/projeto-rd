@@ -17,9 +17,9 @@ function Judaica(props) {
     }, [])
 
     function getJudaica() {
-        axios.get(`${baseUrl}/produtos/departamento?id=6 `)
+        axios.get(`${baseUrl}/produtos/departamento?id=6`)
             .then((response) => {
-                setCatolica(response.data)
+                setJudaica(response.data)
             })
     }
 
