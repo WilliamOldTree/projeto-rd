@@ -47,7 +47,7 @@ export const Routes = () => {
             <Route path="/login" component={Login} />
             <Route path="/cadastro_ClienteFisico" component={ClienteFisico} />
             <Route path="/cadastro_ClienteJuridico" component={ClienteJuridico} />
-            <Route path="/cart_success" component={Cart_Success} />
+            <Route path="/cart_success/:idPedido" component={Cart_Success} />
             <Route path="/rec_senha" component={RecSenha} />
             <Route path="/rec_senha_nova" component={RecSenhaNova} />
             <Route path="/area_cliente_favoritos" component={AreaFavoritos} />

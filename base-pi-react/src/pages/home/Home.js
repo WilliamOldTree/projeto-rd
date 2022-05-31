@@ -34,7 +34,6 @@ import Categoria4 from '../../components/asserts/images/images-home/categoria4.p
 
 /* IMAGES BANNER END*/
 import BannerEnd from '../../components/asserts/images/images-home/banner-end.png';
-
 import React, { useState, useEffect } from 'react'
 import { baseUrl } from '../../environments'
 import axios from 'axios'
@@ -50,14 +49,11 @@ function Home() {
     }, [])
 
     const getProdutos = () => {
-        axios.get(`${baseUrl}/produtos`)
+        axios.get(`${baseUrl}/produtos/destaque?id=1`)
             .then((response) => {
                 setProdutos(response.data)
             })
-            
     }
-
-   
 
     return (
         <>
@@ -175,14 +171,17 @@ function Home() {
                             return (
                                 <li className='col-12 col-md-6 col-lg-3' key={produto.id}>
                                     
-                                <Card produto = {produto} nomeProduto={produto.nome} preco={produto.preco} parcela="3x" valorParcela="10,00" img={produto.urlProduto} />  
+                                <Card produto = {produto} nomeProduto={produto.nome} 
+                                preco={produto.preco} 
+                                parcela="1x" 
+                                valorParcela={produto.preco}
+                                img={produto.urlProduto} />  
                                 </li>
+
                             )
                         })}
                     </ul>
                 </div>
-
-
 
                 {/* BANNER FINAL HOME */}
                 <img className='img-end' src={BannerEnd} />

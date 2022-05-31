@@ -58,7 +58,7 @@ public class EnderecoService {
 			obj.setClientes(clientes);
 		    obj = repository.save(obj);
 		}else {
-			cliente = Optional.empty();
+			//cliente = Optional.empty();
 			cliente.orElseThrow();
 		}
 		

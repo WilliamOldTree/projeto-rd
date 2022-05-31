@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -161,13 +162,12 @@
 							</td>
 							<td data-label="Nome" ><c:out value="${produto.nome}"/></td>
 							<td data-label="Quantidade"> <span class="money2"><c:out  value="${produto.estoque}"/></span></td>
-							<td data-label="Preço"><span class="money2"><c:out value="${produto.preco}"/></span></td>
+							<td data-label="Preço"><span class="money2"> <fmt:setLocale value="pt-BR"/><fmt:formatNumber value="${produto.preco}" type="currency"/></span></td>
 							<td data-label="Categoria"><span class="money2"><c:out value="${produto.nomeCategoria}"/></span></td>
 							<td data-label="Departamento"><c:out value="${produto.nomeDepartamento}"/></td>
 						    <td data-label="Fornecedor"><c:out value="${produto.nomeFornecedor}"/></td>
 							
                             <td data-label="Ações">
-	
 	
 	
                             <button class="btn formCrud1" type="button" style="margin: 5px;" data-bs-toggle="modal" data-bs-target="#modal-delete-${produto.id}" >Deletar</button>		 	
