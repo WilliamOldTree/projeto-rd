@@ -1,4 +1,4 @@
-import './area_cliente_endereco.css'
+import './area_cliente_enderecos.css'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import Menu from '../../components/menu/Menu'
@@ -92,7 +92,6 @@ function AreaEndereco(props) {
                                             <MeusEnderecosAdd  textoBotao='ADICIONAR' className='adicionarEnderecos' />
                                             <MeusEnderecosEdit textoBotao='ALTERAR' className='editarEnderecos' />
                                         </div>
-
                                     </div>
                                 </Form>
                             </>
