@@ -5,9 +5,12 @@ import Menu from '../../components/menu/Menu'
 import Title from '../../components/title/Title'
 import User from '../../components/asserts/icons/user.png'
 import MeusDados from '../../components/modal_meus_dados/Modal_Meus_Dados'
-
+import { AuthContext } from '../../context/login.provider'
+import React, { useState, useContext, useEffect } from 'react'
 
 function AreaDados() {
+
+
     return (
         <>
 
@@ -15,11 +18,11 @@ function AreaDados() {
 
             <div className='container'>
 
-            <Title titleIcon={User} titleText="Meus Dados" />
+                <Title titleIcon={User} titleText="Meus Dados" />
 
-            <div className='MenuAreaAlinhamento'>
-         <Menu />
-         </div>
+                <div className='MenuAreaAlinhamento'>
+                    <Menu />
+                </div>
 
 
 
@@ -48,9 +51,9 @@ function AreaDados() {
                         <li className='DadosConta'><nobr>15/02/1991</nobr></li>
                         <li className='DadosConta'><nobr>(11) 97895-2074</nobr></li>
                     </ul>
-                    
+
                     <div>
-                    <MeusDados textButton="ALTERAR" className='editarDados'/>
+                        <MeusDados textButton="ALTERAR" className='editarDados' />
                     </div>
                 </div>
 

@@ -1,6 +1,6 @@
 
 import "./Checkout_carrinho.css"
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Title from "../../components/title/Title";
 import Footer from "../../components/footer/Footer";
@@ -53,9 +53,6 @@ function Checkout_carrinho() {
         })
     }
 
-    useEffect(() => {
-        getCart()
-    }, [])
 
     const precoShow = (number) => {
         let precoConvertido = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number)
