@@ -41,9 +41,6 @@
 .editarEnderecos {
     width          : 105px;
     height         : 50px;
-    margin-left    : 48%;
-    margin-top     : -10%;
-    position       : relative;
     top            : -186px;
     left           : 240px;
     justify-content: center;
@@ -59,14 +56,11 @@
     background-color: darkorange;
 }
 
-.addEnderecos {
+.adicionarEnderecos {
     width          : 105px;
     height         : 50px;
-    margin-left    : 48%;
-    margin-top     : -10%;
+    margin-right: 20px;
     position       : relative;
-    top            : -210px;
-    left           : 110px;
     justify-content: center;
     background     : #34A853;
     border-radius  : 10px;
@@ -75,8 +69,8 @@
     color          : #FFFFFF;
 }
 
-.addEnderecos:hover,
-.addEnderecos:focus {
+.adicionarEnderecos:hover,
+.adicionarEnderecos:focus {
     background-color: #34d175;
 }
 

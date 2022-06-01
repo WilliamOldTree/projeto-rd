@@ -45,6 +45,7 @@ function CartProvider(props) {
         localStorage.setItem("qtyCart", JSON.stringify(cartList.length))
         setCart(cartList)
         setCartQty(cartList.length)
+        valorTotalAmem()
     }
 
     const getCart = () => {
