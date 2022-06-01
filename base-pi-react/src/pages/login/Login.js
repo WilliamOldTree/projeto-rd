@@ -46,7 +46,7 @@ function Login() {
             <Header />
             <div className='container'>
                 <Title titleIcon={User} titleText="Identificação e Login" />
-                    <p>{String(authenticaded)}</p>
+                  {/** <p>{String(authenticaded)}</p>*/} 
                 <div className='container-login-cadastro'>
 
                     {/* INÍCIO FORM DE LOGIN */}
