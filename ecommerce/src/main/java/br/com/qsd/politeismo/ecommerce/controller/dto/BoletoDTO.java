@@ -1,35 +1,29 @@
-package br.com.qsd.politeismo.ecommerce.entities;
+package br.com.qsd.politeismo.ecommerce.controller.dto;
 
+import br.com.qsd.politeismo.ecommerce.entities.Boleto;
+import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="boleto")
-public class Boleto {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_boleto")
-	private Long id;
+public class BoletoDTO {
 	
+	private Long id;
 	private String nome;
 	private String cpf;
 	private String codigoBarra;
 	private Double valor;
-	
-	@ManyToOne
-	@JoinColumn(name="fk_id_cliente", nullable = false)
 	private Cliente cliente;
 
-	public Boleto () {
+	public BoletoDTO () {
+		
+	}
+	
+	public BoletoDTO(Boleto boleto) {
+		
+		this.id = boleto.getId();
+		this.nome = boleto.getNome();
+		this.cpf = boleto.getCpf();
+		this.codigoBarra =  boleto.getCodigoBarra();
+		this.valor = boleto.getValor();
+		this.cliente = boleto.getCliente();
 		
 	}
 
@@ -80,5 +74,6 @@ public class Boleto {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-			
+
 }//end class
+

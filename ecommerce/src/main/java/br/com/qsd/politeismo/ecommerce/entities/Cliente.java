@@ -67,93 +67,175 @@ public class Cliente implements UserDetails{
 		
 	}
 
+	
+
 	public Long getId() {
 		return id;
 	}
-	
+
+
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+
 
 	public String getCpf() {
 		return cpf;
 	}
 
+
+
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+
+
 
 	public String getNome() {
 		return nome;
 	}
 
+
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+
 
 	public String getEmail() {
 		return email;
 	}
 
+
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+
 
 	public String getSenha() {
 		return senha;
 	}
 
+
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 
-	public LocalDate getNascimento() {
-		return nascimento;
-	}
 
-	public void setNascimento(LocalDate nascimento) {
-		this.nascimento = nascimento;
-	}
 
-	public Genero getGenero() {
-		return genero;
-	}
-
-	public void setGenero(Genero genero) {
-		this.genero = genero;
-	}
-	
 	public String getCelular() {
 		return celular;
 	}
+
+
 
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
 
+
+
 	public String getFixo() {
 		return fixo;
 	}
+
+
 
 	public void setFixo(String fixo) {
 		this.fixo = fixo;
 	}
 
+
+
+	public LocalDate getNascimento() {
+		return nascimento;
+	}
+
+
+
+	public void setNascimento(LocalDate nascimento) {
+		this.nascimento = nascimento;
+	}
+
+
+
+	public Genero getGenero() {
+		return genero;
+	}
+
+
+
+	public void setGenero(Genero genero) {
+		this.genero = genero;
+	}
+
+
+
 	public List<Endereco> getEnderecos() {
 		return enderecos;
 	}
+
+
 
 	public void setEnderecos(List<Endereco> enderecos) {
 		this.enderecos = enderecos;
 	}
 
+
+
 	public List<Cartao> getCartao() {
 		return cartao;
 	}
 
+
+
+	public void setCartao(List<Cartao> cartao) {
+		this.cartao = cartao;
+	}
+
+
+
 	public List<Pedido> getPedido() {
 		return pedido;
 	}
+
+
+
+	public void setPedido(List<Pedido> pedido) {
+		this.pedido = pedido;
+	}
+
+
+
+	public List<Favoritos> getFavoritos() {
+		return favoritos;
+	}
+
+
+
+	public void setFavoritos(List<Favoritos> favoritos) {
+		this.favoritos = favoritos;
+	}
+
+
+
+	public List<Perfil> getPerfis() {
+		return perfis;
+	}
+
+
+
+	public void setPerfis(List<Perfil> perfis) {
+		this.perfis = perfis;
+	}
+
+
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

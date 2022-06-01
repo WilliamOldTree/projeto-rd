@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import br.com.qsd.politeismo.ecommerce.entities.Pedido;
 
 @Repository
-public interface PedidoRepository extends JpaRepository<Pedido, Long>{
+public interface PedidoRepository extends JpaRepository<Pedido, Long> {
 
 }

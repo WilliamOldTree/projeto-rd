@@ -2,6 +2,11 @@ package br.com.qsd.politeismo.ecommerce.controller.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.entities.Endereco;
 import br.com.qsd.politeismo.ecommerce.entities.Pedido;
@@ -11,18 +16,13 @@ import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 public class PedidoDTO {
 	
 	private Long idPedido;
-	
 	private LocalDate data;
-	
 	private BigDecimal valor;
-	
 	private StatusPedido statusPedido;
-	
 	private Cliente cliente;
-	
 	private FormaPagamento formaPagamento;
-	
 	private Endereco endereco;
+	
 	
 	public PedidoDTO() {
 		
@@ -42,56 +42,31 @@ public class PedidoDTO {
 		return idPedido;
 	}
 
-	public void setIdPedido(Long idPedido) {
-		this.idPedido = idPedido;
-	}
-
 	public LocalDate getData() {
 		return data;
-	}
-
-	public void setData(LocalDate data) {
-		this.data = data;
 	}
 
 	public BigDecimal getValor() {
 		return valor;
 	}
 
-	public void setValor(BigDecimal valor) {
-		this.valor = valor;
-	}
-
 	public StatusPedido getStatusPedido() {
 		return statusPedido;
-	}
-
-	public void setStatusPedido(StatusPedido statusPedido) {
-		this.statusPedido = statusPedido;
 	}
 
 	public Cliente getCliente() {
 		return cliente;
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
 	public FormaPagamento getFormaPagamento() {
 		return formaPagamento;
-	}
-
-	public void setFormaPagamento(FormaPagamento formaPagamento) {
-		this.formaPagamento = formaPagamento;
 	}
 
 	public Endereco getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
-	
+	public static List<PedidoDTO> converter(List<Pedido> pedidos) {
+		return pedidos.stream().map(PedidoDTO::new).collect(Collectors.toList());
+		} 
 }

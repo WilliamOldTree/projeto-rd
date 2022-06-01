@@ -5,24 +5,28 @@ import "./Cart_address.css";
 import Frete from "../../components/asserts/icons/caminhao-frete-home.png"
 import { Link } from "react-router-dom"
 import TrashIcon from '../../components/asserts/icons/lixeira.png'
-import BudaMedit from '../../components/asserts/images/cart-images/buda-meditando.png'
 import ListCompra from "../../components/list_compra/ListCompra";
 import ResumoCompra from "../../components/resumo_compra/ResumoCompra";
 import { Container, Row, Col } from 'react-bootstrap'
 import CartContext from '../../context/cart.provider'
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
+import { baseUrl } from '../../environments'
+import axios from 'axios'
 
-function Cart_address() {
+function Cart_address(props) {
+
     const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty, valorTotal } = useContext(CartContext)
+    const [enderecos, setEnderecos] = useState([])
 
-    //const totalCarrinho = JSON.parse(localStorage.getItem('cart'))
-
-    //const valorTotal = totalCarrinho.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
-
-   // var atualTotal = valorTotal
-   // var totalFormat = atualTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 });
+    function getEnderecos() {
+        axios.get(`${baseUrl}/enderecos`)
+            .then((response) => {
+                setEnderecos(response.data)
+            })
+    }
 
     useEffect(() => {
+        getEnderecos()
         getCart()
         getCartQty()
         valorTotalAmem()
@@ -30,18 +34,20 @@ function Cart_address() {
 
     const precoShow = (number) => {
         let precoConvertido = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number)
-        return(
+        return (
             <>
-               {precoConvertido}
+                {precoConvertido}
             </>
         )
     }
+
+
 
     return (
         <>
             {/* BEGINNER ADDRESS*/}
 
-            <Header />
+            <Header/>
             <Container>
                 <Row>
                     {/* BEGING ADDRESS-TITLE */}
@@ -56,28 +62,34 @@ function Cart_address() {
                     <Col lg={5} className='cart_address_list'>
                         <h2>Endereço entrega</h2>
 
-                        <div className='cart_address_actualAddress px-2'>
-                            <div class="form-check">
-                                <input class="form-check-input" name="endereco" type="radio" value="" id="defaultCheck1" />
-                                <label class="form-check-label" for="defaultCheck1">
-                                    *Selecione a opção de Endereço para Entrega.
-                                </label>
-                            </div>
-                            <ul className="cart_list_itens">
-                                <li className="cart_list_itens">Cep - 03694-900</li>
-                                <li className="cart_list_itens">Logradouro - Avenida Aguia de Haia, 2970</li>
-                                <li className="cart_list_itens">Complemento - Predio</li>
-                                <li className="cart_list_itens">Bairro - A.E Carvalho</li>
-                                <li className="cart_list_itens">Cidade - São Paulo</li>
-                                <li className="cart_list_itens">Estado - SP</li>
-                            </ul>
+                        {enderecos.map((enderecos) => {
+                            return (
+                                <div className='cart_address_actualAddress px-2' key={enderecos.idEndereco}>
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="endereco" type="radio" value="" id="defaultCheck1"/>
+                                            
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            <strong>*Selecione a opção de Endereço para Entrega.</strong>
+                                        </label>
 
-                            {/* <div className="cart_address_alterar_add">
-                                <Link className="other_address " to="/area_cliente_endereco"><h6>Deseja alterar endereço ?</h6></Link>
-                                <Link className="other_send_company" to="./entregas"><h6>Conheca outras forma de envio</h6></Link>
-                            </div> */}
+                                    </div>
+                                    <ul className="cart_list_itens">
+                                        <li className="cart_list_itens"><strong>CEP:</strong> {enderecos.cep}</li>
+                                        <li className="cart_list_itens"><strong>Logradouro:</strong> {enderecos.tipoLougradouro}, {enderecos.nomeLougradouro}</li>
+                                        <li className="cart_list_itens"><strong>Complemento:</strong> {enderecos.apelido}</li>
+                                        <li className="cart_list_itens"><strong>Bairro:</strong> {enderecos.bairro}</li>
+                                        <li className="cart_list_itens"><strong>Cidade:</strong> {enderecos.cidade}</li>
+                                        <li className="cart_list_itens"><strong>Estado:</strong> {enderecos.estado}</li>
+                                    </ul>
 
-                        </div>
+                                    {/* <div className="cart_address_alterar_add">
+                                     <Link className="other_address " to="/area_cliente_endereco"><h6>Deseja alterar endereço ?</h6></Link>
+                                     <Link className="other_send_company" to="./entregas"><h6>Conheca outras forma de envio</h6></Link>
+                                    </div> */}
+
+                                </div>
+                            )
+                        })}
 
                         <div >
 
@@ -95,7 +107,6 @@ function Cart_address() {
                                 <label class="form-check-label" for="defaultCheck1">
                                     BOLETO
                                 </label>
-
                             </div>
 
                             <div class="form-check">
@@ -117,7 +128,7 @@ function Cart_address() {
                                         <ResumoCompra key={item.id}
                                             product_img={item.urlProduto}
                                             descricao={item.nome}
-                                            valor= {precoShow(item.preco)}
+                                            valor={precoShow(item.preco)}
                                             quantidade={item.quantidade}
                                             trash_img={TrashIcon}
                                             deletar={deleteCart}

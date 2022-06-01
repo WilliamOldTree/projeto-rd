@@ -1,275 +1,462 @@
-DROP TABLE ;
-DROP DATABASE bd_politeismo;
---ATENCAO APAGA TODO O BANCO
-SHOW TABLES;
-create database bd_politeismo;
-use bd_politeismo;
---                                                         TABLES
+-- DROP TABLE ;
+-- DROP DATABASE bd_politeismo;
+-- create database bd_politeismo;
+-- -- 
+-- use bd_politeismo;
+show tables;
+
+-- TABELAS
+
+-- CREATE TABLE USER_ADM
+-- (
+-- ID_ADM								  INT													NOT NULL				AUTO_INCREMENT,
+-- NOME                                   VARCHAR(255)                                         NOT NULL,
+-- CARGO                                  VARCHAR(255)                                         NOT NULL,
+-- EMAIL                                  VARCHAR(255)                                         NOT NULL,
+-- SENHA                                  CHAR(100)  											NOT NULL,
+-- PRIMARY KEY							  (ID_ADM)		
+-- );
+-- 
+-- CREATE TABLE CATEGORIA
+-- (
+-- ID_CATEGORIA							    INT										NOT NULL				AUTO_INCREMENT,
+-- NOME									    VARCHAR(50)								NOT NULL,
+-- FL_INATIVO                               BOOLEAN                                 NOT NULL,
+-- PRIMARY KEY								(ID_CATEGORIA)
+-- );
+-- 
+-- CREATE TABLE DEPARTAMENTO
+-- (
+-- ID_DEPARTAMENTO							INT										NOT NULL				AUTO_INCREMENT,
+-- NOME									    VARCHAR(50)								NOT NULL,
+-- FL_INATIVO                               BOOLEAN                                 NOT NULL,
+-- PRIMARY KEY								(ID_DEPARTAMENTO)
+-- );
+-- 
+-- 
+-- CREATE TABLE PRODUTO_DESTAQUE
+-- (
+-- ID_PRODUTO_DESTAQUE						INT													NOT NULL				AUTO_INCREMENT,
+-- DESCONTO								    DOUBLE												NOT NULL,
+-- PRIMARY KEY								(ID_PRODUTO_DESTAQUE)
+-- );
+-- 
+-- CREATE TABLE FORNECEDOR
+-- (
+-- ID_FORNECEDOR							INT										NOT NULL				AUTO_INCREMENT,
+-- RAZAO_SOCIAL							    VARCHAR(100)							NOT NULL,
+-- CNPJ									    VARCHAR(19)								NOT NULL				UNIQUE KEY,
+-- EMAIL									VARCHAR(100)							NOT NULL,
+-- TELEFONE                                 VARCHAR(100)							NOT NULL,
+-- FL_INATIVO                               BOOLEAN                                 NOT NULL,
+-- PRIMARY KEY								(ID_FORNECEDOR)
+-- );
+-- 
+-- CREATE TABLE PRODUTO					
+-- (
+-- ID_PRODUTO								INT										NOT NULL 				AUTO_INCREMENT,
+-- NOME 								    VARCHAR(255) 							NOT NULL,
+-- URL_PRODUTO                              VARCHAR(255) 							NOT NULL,
+-- DESCRICAO								VARCHAR(255) 							NOT NULL,
+-- VOLUME									VARCHAR(255) 							NULL,
+-- PESO									    VARCHAR(255) 							NULL,
+-- PRECO									VARCHAR(255) 							NOT NULL,
+-- ESTOQUE	                                INT										NOT NULL,
+-- FK_ID_DEPARTAMENTO	                    INT										NOT NULL,
+-- FK_ID_CATEGORIA	                        INT										NOT NULL,
+-- FK_ID_PRODUTO_DESTAQUE	                INT										NULL,
+-- FK_ID_FORNECEDOR	                        INT										NOT NULL,
+-- FL_INATIVO                               BOOLEAN                                 NOT NULL,
+-- PRIMARY KEY 							    (ID_PRODUTO),
+-- FOREIGN KEY								(FK_ID_DEPARTAMENTO)			 	    REFERENCES				DEPARTAMENTO	    (ID_DEPARTAMENTO),  
+-- FOREIGN KEY								(FK_ID_CATEGORIA)                       REFERENCES 				CATEGORIA	        (ID_CATEGORIA),
+-- FOREIGN KEY								(FK_ID_PRODUTO_DESTAQUE)                REFERENCES 				PRODUTO_DESTAQUE	(ID_PRODUTO_DESTAQUE),
+-- FOREIGN KEY								(FK_ID_FORNECEDOR)                      REFERENCES 				FORNECEDOR	        (ID_FORNECEDOR)
+-- );
+-- 
+-- CREATE TABLE CLIENTE
+-- (
+-- ID_CLIENTE 					            INT        		NOT NULL,
+-- CPF	 					                VARCHAR(14)     NOT NULL 			UNIQUE,		
+-- NOME 						            VARCHAR(255)    NOT NULL,
+-- EMAIL 					                VARCHAR(255)    NOT NULL,
+-- SENHA 					                VARCHAR(255)    NOT NULL,
+-- NASCIMENTO 					            DATE       		NOT NULL,
+-- FIXO	 					                VARCHAR(11) 	NULL,
+-- CELULAR 					                VARCHAR (12)	NULL,
+-- GENERO 						            VARCHAR(255)    NULL,
+-- PRIMARY KEY (ID_CLIENTE)
+-- );
+-- 
+-- 
+-- CREATE TABLE ENDERECO
+-- (
+-- ID_ENDERECO 				    INT            		NOT NULL 		AUTO_INCREMENT,
+-- APELIDO 					    VARCHAR(255)       	NOT NULL,
+-- NOME_LOGRADOURO 			    VARCHAR(255) 		NOT NULL,
+-- TIPO_LOGRADOURO 			    VARCHAR(255) 		NOT NULL,
+-- NUMERO 						VARCHAR(5)         	NOT NULL,
+-- CEP 						    VARCHAR(10)         NOT NULL,
+-- CIDADE 						VARCHAR(50)       	NOT NULL,
+-- BAIRRO						VARCHAR(255)		NOT NULL,
+-- ESTADO						VARCHAR(255)		NOT NULL,
+-- FK_ID_FORNECEDOR 			INT         	    NULL,
+-- PRIMARY KEY (ID_ENDERECO),
+-- FOREIGN KEY	(FK_ID_FORNECEDOR) REFERENCES FORNECEDOR (ID_FORNECEDOR)
+-- );
+-- 
+-- CREATE TABLE CLIENTE_ENDERECO
+-- (
+-- CLIENTE_ID_CLIENTE 			INT		NOT NULL,
+-- ENDERECO_ID_ENDERECO 			INT 		NOT NULL,
+-- FOREIGN KEY (CLIENTE_ID_CLIENTE)  REFERENCES CLIENTE 	(ID_CLIENTE),
+-- FOREIGN KEY (ENDERECO_ID_ENDERECO)REFERENCES ENDERECO	(ID_ENDERECO)
+-- );
+
+-- SELECT *from user_adm; 
+
+-- ADMINISTARDORES
+insert into user_adm (NOME, CARGO, EMAIL, SENHA) values ('Muryllo Soares','Gerente','m.soares21@politeismo.com.br',MD5('123'));
+insert into user_adm (NOME, CARGO, EMAIL, SENHA) values ('Denis William','Gerente','dwbarbosa@politeismo.com.br', MD5('123'));
+insert into user_adm (NOME, CARGO, EMAIL, SENHA) values ('Sergio Caue','Gerente','sgomes@politeismo.com.br',MD5('123'));
+insert into user_adm (NOME, CARGO, EMAIL, SENHA) values ('Léia Borges','Gerente','lbsjesus@politeismo.com.br',MD5('123'));
+insert into user_adm (NOME, CARGO, EMAIL, SENHA) values ('Fabiola de Carvalho','Gerente','facarvalho@politeismo.com.br',MD5('123'));
+--
+
+-- FORNECEDORES
+insert into fornecedor (ID_FORNECEDOR, RAZAO_SOCIAL, CNPJ, EMAIL,TELEFONE, FL_INATIVO) values (1, 'Francisco e Clara LTDA', '15.012.705/0001-04', 'franciscoeclara@hotmail.com','3296-3455', true);
+insert into fornecedor (ID_FORNECEDOR, RAZAO_SOCIAL, CNPJ, EMAIL,TELEFONE, FL_INATIVO) values (2,'Gospel Atacado Evangelico', '31.451.211/0001-74', 'gospelatacado@gmail.com', '3296-3455',true);
+insert into fornecedor (ID_FORNECEDOR, RAZAO_SOCIAL, CNPJ, EMAIL,TELEFONE, FL_INATIVO) values (3,'Casa do cigano artigos religiosos', '15.336.171/0003-25', 'sac@casadocigano.com.br','3296-3455', true);
+insert into fornecedor (ID_FORNECEDOR, RAZAO_SOCIAL, CNPJ, EMAIL,TELEFONE, FL_INATIVO) values (4,'Andre Luiz - Mundo Maior', '65.080.616/0001-65', 'sacmundomaior@feal.com.br','3296-3455', true);
+insert into fornecedor (ID_FORNECEDOR, RAZAO_SOCIAL, CNPJ, EMAIL,TELEFONE, FL_INATIVO) values (5,'Conto de Fadas Distribuidora', '08.892.821/0001-91', 'contodefadas@distribuidora.com.br', '3296-3455',true);
+insert into fornecedor (ID_FORNECEDOR, RAZAO_SOCIAL, CNPJ, EMAIL,TELEFONE, FL_INATIVO) values (6,' cristaos e judaico messianico', '33.977.029/0001-87', 'camiyla-seeber@hotmail.com','3296-3455', true);
 
 
-show tables; 
+--
+
+-- PRODUTO_DESTAQUE
+insert into produto_destaque (ID_PRODUTO_DESTAQUE, DESCONTO) values (1, 0.05);
+insert into produto_destaque (ID_PRODUTO_DESTAQUE, DESCONTO) values (2, 0.10);
+insert into produto_destaque (ID_PRODUTO_DESTAQUE, DESCONTO) values (3, 0.15);
+
+--
 
 
-CREATE TABLE USER_ADM
-(
-ID_ADM			INT				NOT NULL 					AUTO_INCREMENT,
-NOME			VARCHAR(255)	NOT NULL,
-CARGO			VARCHAR(255) 	NOT NULL,
-EMAIL   		VARCHAR(255) 	NOT NULL,
-SENHA   		VARCHAR(100) 	NOT NULL,
-PRIMARY KEY (ID_ADM)	
-);
+-- DEPARTAMENTOS
+insert into departamento (ID_DEPARTAMENTO, NOME, FL_INATIVO) values (1, 'CATOLICA', 1);
+insert into departamento (ID_DEPARTAMENTO, NOME, FL_INATIVO) values (2, 'EVANGÉLICA',1);
+insert into departamento (ID_DEPARTAMENTO, NOME, FL_INATIVO) values (3, 'ESPIRITA', 1);
+insert into departamento (ID_DEPARTAMENTO, NOME, FL_INATIVO) values (4, 'AFRICANA', 1);
+insert into departamento (ID_DEPARTAMENTO, NOME, FL_INATIVO) values (5, 'BUDISTA', 1);
+insert into departamento (ID_DEPARTAMENTO, NOME, FL_INATIVO) values (6, 'JUDAICA', 1);
 
-CREATE TABLE PRODUTO_DESTAQUE
-(
-ID_PRODUTO_DESTAQUE			INT				NOT NULL 		AUTO_INCREMENT,
-DESCONTO 					DOUBLE			NOT NULL,
-PRIMARY KEY	(ID_PRODUTO_DESTAQUE)
-);
-
-CREATE TABLE CATEGORIA
-(
-ID_CATEGORIA 		INT			 		NOT NULL 			AUTO_INCREMENT,
-NOME 				VARCHAR(50)				NOT NULL,
-FL_INATIVO			BOOLEAN				NOT NULL,
-PRIMARY KEY (ID_CATEGORIA)
-);
-
-CREATE TABLE DEPARTAMENTO
-(
-ID_DEPARTAMENTO		INT					NOT NULL 			AUTO_INCREMENT,
-NOME 				VARCHAR(50)				NOT NULL,
-FL_INATIVO			BOOLEAN				NULL,
-PRIMARY KEY	(ID_DEPARTAMENTO)
-);
-
-CREATE TABLE FORNECEDOR
-(
-ID_FORNECEDOR 		INT 				NOT NULL 			AUTO_INCREMENT,
-RAZAO_SOCIAL 		VARCHAR(100) 		NOT NULL,
-CNPJ 				VARCHAR(14) 		NOT NULL 			UNIQUE,
-EMAIL 			VARCHAR(100) 		NOT NULL,
-FL_INATIVO			BOOLEAN	 		NULL,
-TELEFONE 			varchar(250) 		NOT NULL,
-PRIMARY KEY (ID_FORNECEDOR)
-);
-
-CREATE TABLE PRODUTO					
-(
-ID_PRODUTO 					INT					NOT NULL 			AUTO_INCREMENT,
-DESCRICAO 					VARCHAR(255)			NOT NULL,
-NOME 						VARCHAR (255) 			NOT NULL,
-URL 						VARCHAR (255) 			NOT NULL,
-VOLUME 					DOUBLE 				NULL,
-PESO						DOUBLE 				NULL,
-PRECO 					DOUBLE 				NOT NULL,
-STATUS 					BOOLEAN 				NOT NULL,
-ESTOQUE 					INT 					NULL,
-FK_ID_PRODUTO_DESTAQUE 			INT					NULL,
-FK_ID_CATEGORIA				INT					NULL,
-FK_ID_DEPARTAMENTO 			INT 					NULL,
-FK_ID_FORNECEDOR 				INT 					NULL,
-PRIMARY KEY	(ID_PRODUTO),
-FOREIGN KEY	(FK_ID_PRODUTO_DESTAQUE) REFERENCES PRODUTO_DESTAQUE (ID_PRODUTO_DESTAQUE),
-FOREIGN KEY	(FK_ID_CATEGORIA)        REFERENCES CATEGORIA (ID_CATEGORIA),
-FOREIGN KEY	(FK_ID_DEPARTAMENTO)     REFERENCES DEPARTAMENTO (ID_DEPARTAMENTO),
-FOREIGN KEY (FK_ID_FORNECEDOR)       REFERENCES FORNECEDOR (ID_FORNECEDOR)
-);
+--
 
 
-CREATE TABLE CLIENTE
-(
-ID_CLIENTE 					INT        		NOT NULL,
-CPF	 					VARCHAR(14)      	NOT NULL 			UNIQUE,		
-NOME 						VARCHAR(255)     	NOT NULL,
-EMAIL 					VARCHAR(255)    	NOT NULL,
-SENHA 					VARCHAR(255)    	NOT NULL,
-NASCIMENTO 					DATE       		NOT NULL,
-FIXO	 					VARCHAR(11) 	NULL,
-CELULAR 					VARCHAR (12)	NULL,
-PRIMARY KEY (ID_CLIENTE)
-);
+-- CATEGORIAS
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (1, 'ARTIGOS', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (2, 'ADESIVOS', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (3, 'ADORNOS', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (4, 'ANEIS', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (5, 'BIBLIAS', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (6, 'BENTA', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (7, 'CALICES', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (8, 'CHAVEIROS', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (9, 'COLARES', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (10, 'CRUCIFIXOS', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (11, 'DIVERSOS', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (12, 'ESCAPULÁRIOS', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (13, 'IMAGENS', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (14, 'LIVROS', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (15, 'MANTAS', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (16, 'SACOLAS / MOCHILAS', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (17, 'TERÇOS', 1);
+insert into categoria (ID_CATEGORIA, NOME, FL_INATIVO) values (18, 'VESTUÁRIO', 1);
+
+--
 
 
-CREATE TABLE ENDERECO
-(
-ID_ENDERECO 				INT            		NOT NULL 		AUTO_INCREMENT,
-APELIDO 					VARCHAR(255)       	NOT NULL,
-NOME_LOGRADOURO 			VARCHAR(255) 		NOT NULL,
-TIPO_LOGRADOURO 			VARCHAR(255) 		NOT NULL,
-NUMERO 						VARCHAR(5)         	NOT NULL,
-CEP 						VARCHAR(10)         NOT NULL,
-CIDADE 						VARCHAR(50)       	NOT NULL,
-BAIRRO						VARCHAR(255)		NOT NULL,
-ESTADO						VARCHAR(255)		NOT NULL,
-FK_ID_FORNECEDOR 			INT         		NOT NULL,
-PRIMARY KEY (ID_ENDERECO),
-FOREIGN KEY	(FK_ID_FORNECEDOR) REFERENCES FORNECEDOR (ID_FORNECEDOR)
-);
+-- PRODUTOS
+-- (Católica)
+insert into produto (NOME,DESCRICAO, URL_PRODUTO,ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Imagem de Nossa Senhora Aparecida','IMAGEM DE NOSSA SENHORA APARECIDA EM RESINA: Imagem de Nossa Senhora Aparecida em resina nacional, pintada a mão.
+Resistente e bonita.', 'https://images.tcdn.com.br/img/img_prod/660433/nossa_senhora_aparecida_30_cm_475_1_20191204154033.jpg', 100, '1.2', '149.00', '0.30', 13, 1, 1, null, 1);
 
-CREATE TABLE CLIENTE_ENDERECO
-(
-CLIENTE_ID_CLIENTE 			INT		NOT NULL,
-ENDERECO_ID_ENDERECO 			INT 		NOT NULL,
-FOREIGN KEY (CLIENTE_ID_CLIENTE)  REFERENCES CLIENTE 	(ID_CLIENTE),
-FOREIGN KEY (ENDERECO_ID_ENDERECO)REFERENCES ENDERECO	(ID_ENDERECO)
-);
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Imagem de São Miguel','IMAGEM EM RESINA DE SÃO MIGUEL ARCANJO: Imagem de São Miguel Arcanjo em resina nacional, pintada a mão.
+Resistente e bonita.', 'https://images.tcdn.com.br/img/img_prod/660433/imagem_de_sao_miguel_20_cm_883_1_c33f8c34c50b4148edcba0532b5f5cc5.jpg', 100, '1.0', '69.00', '0.20', 13, 1, 1, null, 1);
 
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Livro Novena de Santa Dulce dos Pobres','NOVENA DE SANTA DULCE DOS POBRES: Irmã Dulce foi uma pessoa muito admirada no Brasil do século XX. Chamada de “O Anjo bom da Bahia”. Foi indicada para o Prêmio Nobel da Paz em 1988. Irmã Dulce faleceu aos 77 anos, em 1992.', 'https://images.tcdn.com.br/img/img_prod/660433/livro_novena_de_santa_dulce_dos_pobres_1661_1_632349cf5adcc8ff1a5c6579f6c7af8a.jpg', 100, '0.1', '9.90', '0.01', 14, 1, 1, null, 1);
 
-CREATE TABLE BOLETO
-(
-ID_BOLETO 				INT                NOT NULL,
-BANCO 				VARCHAR(50)        NOT NULL,
-VENCIMENTO 				DATE	             NOT NULL,
-BENEFICIARIO 			VARCHAR(50) 	 NOT NULL,
-NUMERO_DOCUMENTO 			VARCHAR(50) 	 NOT NULL,
-DATA_PROCESSAMENTO 		DATE		       NOT NULL,
-VALOR_COBRADO 			DOUBLE		 NOT NULL,
-FK_ID_CLIENTE 			INT		       NOT NULL,
-PRIMARY KEY (ID_BOLETO),
-FOREIGN KEY (FK_ID_CLIENTE) REFERENCES CLIENTE (ID_CLIENTE)
-);
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Capelinha de Santa Rita','CAPELINHA DE SANTA RITA: Capelinha em madeira natural, com imagem e oração de Santa Rita.
+Essa linda capelinha é formada por duas partes de madeira, unidas por dobradiças.', 'https://images.tcdn.com.br/img/img_prod/660433/capelinha_de_santa_rita_1481_2_70896de00dbec8f85a264eb09f4ceb01.jpg', 100, '0.5', '29.60', '7.05', 1, 1, 1, null, 1);
 
-CREATE TABLE PIX
-(
-ID_PIX 					INT		       NOT NULL,
-CHAVE 					VARCHAR(255)	 NOT NULL,
-FK_ID_CLIENTE 				INT  			 NOT NULL,
-PRIMARY KEY (ID_PIX),
-FOREIGN KEY (FK_ID_CLIENTE) REFERENCES CLIENTE (ID_CLIENTE)
-);
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Capelinha em Madeira Presépio Natal','CAPELINHA DE MADEIRA PRESÉPIO NATAL: Capelinha em madeira natural na cor clara, com imagem do presépio. Essa linda capelinha é formada por duas partes de madeira, unidas por dobradiças. ', 'https://images.tcdn.com.br/img/img_prod/660433/capelinha_em_madeira_presepio_natal_1611_1_70433b50a6c5e233660ded47f67651b7.jpg', 100, '0.5', '37.60', '7.05', 1, 1, 1, null, 1);
 
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Terço Missionário','TERÇO MISSIONÁRIO: Terço em Madeira com as cores dos 5 continentes: branco, verde, amarelo, vermelho e azul.
+Produto feito em madeira natural de reflorestamento, 100% nacional.', 'https://images.tcdn.com.br/img/img_prod/660433/terco_missionario_153_1_9df688974172e47dfd4a927e9c11eaa2.jpg', 100, '0.3', '37.60', '7.50', 13, 1, 1, 1, 1);
 
-CREATE TABLE CARTAO
-(
-ID_CARTAO_NUMERO 			INT 			NOT NULL,
-TITULAR_CARTAO 			VARCHAR(50)  	NOT NULL,
-NUMERO_CARTAO			VARCHAR(20)		NOT NULL,
-VALIDADE_CARTAO 			DATE        	NOT NULL,
-FK_ID_CLIENTE 			INT			NOT NULL,
-PRIMARY KEY (ID_CARTAO_NUMERO),
-FOREIGN KEY (FK_ID_CLIENTE) REFERENCES CLIENTE (ID_CLIENTE) 
-);
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR,FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Terço de São Bento Premium','TERÇO DE SÃO BENTO: O Terço de São Bento é um terço único, todo em madeira e com um sofisticado crucifixo com os cantos arredondados, fresado e com medalha de São Bento Colorida, o que dá um aspecto clássico ao terço.', 'https://images.tcdn.com.br/img/img_prod/660433/terco_de_sao_bento_premium_3_1_2ec5831dcdcbe94fab2fe5752dc2195b.jpg', 100, '0.3', '23.50', '0.43', 13, 1, 1,1, 1);
 
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Vela Aromática Nossa Senhora de Fátima','VELA AROMÁTICA NOSSA SENHORA DE FÁTIMA COPO REDONDO: Vela artesanal aromática no copo de vidro redondo, com o tema de Nossa Senhora de Fátima.
+Essa vela aromática vem com a imagem de Nossa Senhora de Fátima e com as inscrições.', 'https://images.tcdn.com.br/img/img_prod/660433/vela_aromatica_nossa_senhora_de_fatima_copo_redondo_1165_1_57fbbaf7368ada436a064ac0a361c281.png', 100, '0.3', '27.20', '0.43', 1, 1, 1, null, 1);
 
-CREATE TABLE ENTREGA 
-(
-ID_ENTREGA 				INT              			NOT NULL		 AUTO_INCREMENT,
-PRAZO 				DATE	           			NOT NULL,
-VALOR 				DOUBLE          	   		NOT NULL,
-FORMA_ENTREGA 			VARCHAR(255)			NOT NULL, 
-STATUS_ENTREGA 			VARCHAR(255)			NOT NULL,
-PRIMARY KEY (ID_ENTREGA)
-);
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Vela Aromática Sagrado','VELA AROMÁTICA SAGRADO CORAÇÃO DE JESUS COPO REDONDO: Vela artesanal aromática no copo de vidro redondo, com o tema do Sagrado Coração de Jesus.
+Essa vela aromática vem com a imagem dp Sagrado Coração de Jesus e com a oração.', 'https://images.tcdn.com.br/img/img_prod/660433/vela_aromatica_sagrado_coracao_de_jesus_copo_redondo_1765_1_6eeced7a9593d2af9d61f369e29aff58.png', 100, '0.2', '34.00', '0.5', 1, 1, 1, null, 1);
 
-CREATE TABLE PEDIDO
-(
-ID_PEDIDO 				INT			        NOT NULL 		AUTO_INCREMENT,
-DATA_PEDIDO 			DATE			        NOT NULL,
-VALOR_TOTAL 			DOUBLE        		  NOT NULL,
-STATUS_PEDIDO 			VARCHAR(50) 		  NOT NULL,
-FK_ID_CLIENTE 		INT    			  NOT NULL,
-FK_ID_ENTREGA 		INT    			  NOT NULL,
-PRIMARY KEY (ID_PEDIDO),
-FOREIGN KEY	(FK_ID_CLIENTE) REFERENCES CLIENTE (ID_CLIENTE),
-FOREIGN KEY (FK_ID_ENTREGA) REFERENCES ENTREGA (ID_ENTREGA)
-);
+-- (Evangélica)
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Bíblia de Estudo Matthew Henry','BÍBLIA DE ESTUDO MATTHEW HENRY: A Bíblia de Estudo Matthew Henry, cujos estudos há mais de 300 anos vêm auxiliando cristãos a compreenderem a Bíblia, relacionando seus ensinamentos.
+Introdução a cada um dos livros bíblicos.', 'https://shalomloja.com.br/wp-content/uploads/2018/10/7899938403877_arc085bemhsbb_01.jpg', 100, '0.2', '265.16', '0.5', 5, 2, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Bíblia da Mulher','A BÍBLIA DA MULHER: Uma das bíblias mais vendidas para o publico feminino, que buscam o conhecimento através das escrituras, com uma nova edição mais feminina delicada, florida na capa e borda. Seus textos são contextualizados à realidade da mulher.', 'https://shalomloja.com.br/wp-content/uploads/2018/08/2.jpg', 100, '0.2', '34.00', '0.5', 5, 2, 1, 1, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Bíblia da Pregadora Pentencostal','BÍBLIA DA PREGADORA PENTECOSTAL: Esta edição, especialmente voltada ao público feminino, traz ainda um encarte especial sobre as mulheres da Bíblia. 1002 sermões, Curso básico na Teologia com 12 matérias', 'https://shalomloja.com.br/wp-content/uploads/2018/08/60.jpg', 100, '0.2', '275.00', '0.5', 5, 2, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Harpa Cristã','HARPA CRISTÃ: Hinos da Harpa Cristã, sem notas musicais.', 'https://shalomloja.com.br/wp-content/uploads/2018/10/7898521814083_hcmpop_01.jpg', 100, '0.2', '12.00', '0.5', 14, 2, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Harpa Cristã','HARPA CRISTÃ: Hinos da Harpa Cristã, sem notas musicais.', 'https://shalomloja.com.br/wp-content/uploads/2018/10/7898521814106_hcmpop_01.jpg', 100, '0.2', '12.00', '0.5', 14, 2, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Harpa Cristã MI BEMOL(EB)','HARPA CRISTÃ MI BEMOL (EB): IDIOMA: Português ; FORMATO: Grande; CAPA: Ilustrada', 'https://shalomloja.com.br/wp-content/uploads/2018/12/WhatsApp-Image-2018-12-13-at-14.58.13.jpeg', 100, '0.2', '75.00', '0.5', 14, 2, 1, 1, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Camiseta Leão da Cruz','CAMISETA LEÃO DA CRUZ: IDIOMA:Camiseta Masculina Fé Preta, disponível em tamanhos variados. 100% algodão, NÃO passar ferro quente diretamente na estampa, de preferência a camisa deve ser passada ao avesso.
+Para maior durabilidade do produto.', 'https://shalomloja.com.br/wp-content/uploads/2018/11/WhatsApp-Image-2018-11-07-at-16.39.40.jpeg', 100, '0.2', '49.00', '0.7', 14, 2, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Camiseta Leão da Tribo de Judá','CAMISETA LEÃO DA TRIBO DE JUDÁ: IDIOMA:Camiseta Masculina Fé Preta, disponível em tamanhos variados. 100% algodão, NÃO passar ferro quente diretamente na estampa, de preferência a camisa deve ser passada ao avesso.
+Para maior durabilidade do produto.', 'https://shalomloja.com.br/wp-content/uploads/2018/11/WhatsApp-Image-2018-11-07-at-16.38.36.jpeg', 100, '0.2', '49.00', '0.7', 14, 2, 1, null, 1);
 
 
-CREATE TABLE ITEM_PEDIDO
-(
-ID_PRODUTO	 		INT 				NOT NULL,
-ID_PEDIDO 			INT  				NOT NULL,
-QUANTIDADE			INT         		NOT NULL,
-FOREIGN KEY	(ID_PRODUTO)  REFERENCES PRODUTO (ID_PRODUTO),
-FOREIGN KEY (ID_PEDIDO)   REFERENCES PEDIDO (ID_PEDIDO)
-);
+-- (Espirita)
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Quartzo Rosa','Significado: Essencialmente é a pedra do amor. É a personificação do amor Universal, ligado a Deus. É uma pedra sutil, leve e delicada. Libera mágoas do passado, ressentimentos, medo e raiva acumulada.', 'https://loja.simbolika.com.br/media/catalog/product/cache/37a9a8f3002fee25759059124a331b12/l/g/lgp042-quartzo-rosa.jpg', 100, '0.20', '8.60', '0.3', 1, 3, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Ametista','Significado: É o símbolo do 3º olho, acalma a mente e os nervos, com seu efeito profundo e tranqüilizador. É facilitador da meditação e da viagem astral. Desencadeia o crescimento interior nos dando lições de humanidade com sabedoria e discernimento.', 'https://loja.simbolika.com.br/media/catalog/product/cache/37a9a8f3002fee25759059124a331b12/l/g/lgp038-ametista.jpg', 100, '0.20', '13.60', '0.3', 1, 3, 1, 1, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Jasper Vermelho','Significado: Esta pedra nos torna pessoas mais praticas e objetivas. Proporciona uma visão de como aproveitar melhor as oportunidades ligadas á sobrevivência. Ela nos ajuda a termos idéias criativas e práticas de modo realizador.', 'https://loja.simbolika.com.br/media/catalog/product/cache/37a9a8f3002fee25759059124a331b12/l/g/lgp041-jaspe-vermelho.jpg', 100, '0.20', '6.70', '0.3', 1, 3, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Malaquita','Significado: Útil para o relaxamento e desordens neurológicas, assim como para regeneração de tecidos. Atua contra doenças mentais, além de ser benéfica nos casos de dislexia. Simboliza o crescimento do Ser Espiritual.', 'https://loja.simbolika.com.br/media/catalog/product/cache/37a9a8f3002fee25759059124a331b12/l/g/lgp063-malaquita.jpg', 100, '0.80', '30.00', '0.3', 1, 3, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Kit Toalha + Bolsa - 7 Chakras','Esta toalha pode ser usada em altares e para consultas de oráculos como Tarô, Runas, Búzios e I Ching por exemplo. Ela forma o solo sagrado para práticas ritualísticas, criando conexão entre você e o universo.', 'https://loja.simbolika.com.br/media/catalog/product/cache/37a9a8f3002fee25759059124a331b12/m/l/mlu10-kit-toalha-bolsa-sacola-7-chakras-roxa.jpg', 100, '0.80', '78.20', '0.3', 1, 3, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Incenso Massala Opium Satya','O Incenso Massala Opium Satya foi produzido artesanalmente por uma das principais empresas do ramo, Shrinivas Sugandhalaya. Conhecidos mundialmente por seus incensos com fragrâncias únicas.', 'https://loja.simbolika.com.br/media/catalog/product/cache/37a9a8f3002fee25759059124a331b12/i/n/incenso-massala-opium-satya.jpg', 100, '0.50', '17.80', '0.3', 1, 3, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Incenso Artesanal in Natura - Palo Santo','Quantidade: 1 pacotinho com 50 gramas de Palo Santo in natura; Composição: Madeira de palo santo', 'https://loja.simbolika.com.br/media/catalog/product/cache/37a9a8f3002fee25759059124a331b12/i/n/ina13-incenso-artesanal-in-natura-palo-santo.jpg', 100, '0.50', '22.00', '0.3', 1, 3, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Kit Toalha + Bolsa - Zodiacal - A Mandala','Esta toalha pode ser usada em altares e para consultas de oráculos como Tarô, Runas, Búzios e I Ching por exemplo. Ela forma o solo sagrado para práticas ritualísticas, criando conexão entre você e o universo.', 'https://loja.simbolika.com.br/media/catalog/product/cache/37a9a8f3002fee25759059124a331b12/m/l/mlu62-kit-bolsa-_-toalha-zodiacal-a-mandala.jpg', 100, '0.50', '78.00', '0.3', 1, 3, 1, 1, 1);
+
+-- (Africana)
 
 
-CREATE TABLE NOTA_FISCAL
-(
-ID_NOTA_FISCAL 			INT       			NOT NULL		 AUTO_INCREMENT,
-CODIGO_ACESSO_CHAVE 		INT  				NOT NULL,
-DATA_NOTA_FISCAL 			DATE    			NOT NULL,
-NUMERO_SERIE 			INT         		NOT NULL,
-VALOR 				DOUBLE             	NOT NULL,
-ID_PEDIDO	 			INT     			NOT NULL,
-PRIMARY KEY (ID_NOTA_FISCAL),
-FOREIGN KEY	(ID_PEDIDO)     REFERENCES PEDIDO (ID_PEDIDO)
-);
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Jogo de Iemanjá Branco', 'Por ser um item feito artesanalmente pode haver mudanças em alguns detalhes e vir com pequenas variações nas cores.', 'https://www.mercadaodeniteroi.com.br/wp-content/uploads/2017/06/Iemanja-Branco-600x600.jpg', 100, '0.5', '220.00', '0.4', 1, 4, 1, 1, 1);
 
-CREATE TABLE ITEM_NOTA_FISCAL
-(
-ID_PRODUTO		 				INT         	NOT NULL,
-ID_NOTA_FISCAL		 			INT 			NOT NULL,
-QUANTIDADE 						INT   	      NOT NULL,
-PERCENTUAL_ICMS					DOUBLE            NOT NULL,
-VALOR_ICMS 						DOUBLE            NOT NULL,
-PRIMARY KEY (ID_PRODUTO,ID_NOTA_FISCAL),
-FOREIGN KEY	(ID_PRODUTO)    		REFERENCES PRODUTO (ID_PRODUTO),
-FOREIGN KEY (ID_NOTA_FISCAL) 		REFERENCES NOTA_FISCAL (ID_NOTA_FISCAL)
-);
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Jogo de Oxum Luxo', 'Por ser um item feito artesanalmente pode haver mudanças em alguns detalhes e vir com pequenas variações nas cores.', 'https://www.mercadaodeniteroi.com.br/wp-content/uploads/2017/07/Oxum-600x600.jpg', 100, '0.5', '350.00', '0.4', 1, 4, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Jogos de Oxumarê', 'Por ser um item feito artesanalmente pode haver mudanças em alguns detalhes e vir com pequenas variações nas cores.', 'https://www.mercadaodeniteroi.com.br/wp-content/uploads/2017/04/Oxumare-600x600.jpg', 100, '0.5', '220.00', '0.4', 1, 4, 1, null, 1);
 
 
-CREATE TABLE PAGAMENTO
-(
-ID_PAGAMENTO 					INT 		NOT NULL 		AUTO_INCREMENT,
-DATA_PAGAMENTO 					DATE 		NOT NULL,
-FL_PAGAMENTO	 				VARCHAR(50) NOT NULL,
-VALOR_PAGAMENTO 					DOUBLE      NOT NULL,
-PEDIDO_ID_PEDIDO 					INT         NOT NULL,
-PRIMARY KEY (ID_PAGAMENTO),
-FOREIGN KEY	(PEDIDO_ID_PEDIDO) REFERENCES PEDIDO (ID_PEDIDO)
-);
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Escultura Iemanjá', 'Imagem de gesso', 'https://www.mercadaodeniteroi.com.br/wp-content/uploads/2021/03/PicsArt_03-02-11.26.22-600x600.jpg', 100, '1.2', '176.00', '0.9', 13, 4, 1, null, 1);
 
-CREATE TABLE FAVORITOS 
-(
-ID_FAVORITOS 				INT			   NOT NULL,
-ID_CLIENTE		 			INT,
-PRIMARY KEY (ID_FAVORITOS),
-FOREIGN KEY (ID_CLIENTE) REFERENCES CLIENTE (ID_CLIENTE)
-);
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Adja com 3 Bocas Aço Cabo de Madeira', 'Por ser um item feito artesanalmente pode haver mudanças em alguns detalhes e vir com variação de tonalidades(mais claro ou mais escuro).', 'https://www.mercadaodeniteroi.com.br/wp-content/uploads/2017/05/Adja-chapa-a%C3%A7o-cabo-madeira-1-600x600.jpg', 100, '1.2', '49.00', '0.9', 1, 4, 1, null, 1);
 
-CREATE TABLE PRODUTOS_FAVORITOS
-(
-PRODUTO_ID_PRODUTO 			INT			   NOT NULL,
-FAVORITOS_ID_FAVORITOS 			INT			   NOT NULL,
-PRIMARY KEY (PRODUTO_ID_PRODUTO, FAVORITOS_ID_FAVORITOS),
-FOREIGN KEY	(PRODUTO_ID_PRODUTO)     REFERENCES PRODUTO (ID_PRODUTO),
-FOREIGN KEY	(FAVORITOS_ID_FAVORITOS) REFERENCES FAVORITOS (ID_FAVORITOS)
-);
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Abebé Aramado Dourado Perola', 'Por ser um item feito artesanalmente pode haver mudanças em alguns detalhes e vir com variação de tonalidades(mais claro ou mais escuro).', 'https://www.mercadaodeniteroi.com.br/wp-content/uploads/2017/05/Abebe-aramado-dourado-600x600.jpg', 100, '1.2', '138.00', '0.9', 1, 4, 1, null, 1);
 
-SHOW TABLES;
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Adaga Aramada Cobre', 'Observação: banhada.', 'https://www.mercadaodeniteroi.com.br/wp-content/uploads/2017/05/adaga-aramada-cobre-1-600x600.jpg', 100, '0.5', '129.00', '0.4', 1, 4, 1, null, 1);
 
-SELECT * FROM  CLIENTE;
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Orixá Oxum de madeira', 'Por serem feitas artesanalmente, podem vir com variações nos detalhes talhados na madeira.', 'https://www.mercadaodeniteroi.com.br/wp-content/uploads/2021/03/PicsArt_02-26-11.31.48-600x600.jpg', 100, '0.5', '169.00', '0.4', 1, 4, 1, 1, 1);
 
-SELECT 
-C.ID_CLIENTE,
-C.NOME,
-CONCAT(SUBSTR(CPF, 1,9), '-', SUBSTR(CPF, 10,11)) AS 'CPF',
-C.EMAIL,
-C.SENHA,
-DATE_FORMAT(NASCIMENTO, '%d-%m-%Y') AS 'NASCIMENTO',
-C.FIXO,
-C.CELULAR,
-E.APELIDO,
-CONCAT(E.TIPO_LOGRADOURO, '-', E.NOME_LOGRADOURO, 'Nº ', E.NUMERO) AS 'ENDERECO',
-E.CEP,
-E.CIDADE,
-E.BAIRRO,
-E.ESTADO
-FROM CLIENTE C
-JOIN ENDERECO E
-ON
-E.ID_ENDERECO = C.ID_CLIENTE;
 
-SELECT 
-C.ID_CLIENTE,
-C.NOME,
-CONCAT(SUBSTR(CPF, 1,9), '-', SUBSTR(CPF, 10,11)) AS 'CPF',
-C.EMAIL,
-C.SENHA,
-DATE_FORMAT(NASCIMENTO, '%d-%m-%Y') AS 'NASCIMENTO',
-C.FIXO,
-C.CELULAR
-FROM CLIENTE C;
+-- (Budista)
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Sino Tibetano Especial', 'Acessório para meditação, rituais e preces dentro do budismo tibetano, os címbalos, hoje também são usados em processos de cura e terapias vibracionais no Ocidente.', 'https://images.tcdn.com.br/img/img_prod/720512/sino_tibetano_orin_excelente_sonoridade_para_terapia_do_som_10_cm_3593_1_4cbbfb3ac8fb22b1fececf7caeeb4933.jpg', 100, '0.9', '489.00', '0.4', 1, 5, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Ganesha Dançando Turquesa', 'De acordo com o Hinduísmo, é o Deus elefante, filho de Shiva e Parvati. Conhecido como Deus dos comerciantes, da prosperidade, da política e da sagacidade. Possui quatro braços.', 'https://images.tcdn.com.br/img/img_prod/720512/ganesha_dancando_turquesa_1m_2287_1_ffc46cecdf05386bc7de9206d7e58d2e.jpg', 100, '0.9', '645.00', '0.4', 1, 5, 1, 1, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Japamala De Madeira Com Açai', 'A prática do japamala consiste em entoar o mantra, uma oração e repeti-la utilizando o cordão para contabilizar o número de repetições.', 'https://http2.mlstatic.com/D_NQ_NP_886182-MLB45281404599_032021-O.webp', 100, '0.9', '28.00', '0.4', 1, 5, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Colar Japamala Olho D Tigre', 'Lindo Japamala de Pedra Olho de Tigre com pedra Hematita, 108 contas ambas de 8 mm.', 'https://http2.mlstatic.com/D_NQ_NP_833227-MLB46200567576_052021-O.webp', 100, '0.9', '134.00', '0.4', 1, 5, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Buda Tibetano', 'Buda Tibetano Estatueta Meditação Oferenda 18 X 10 Cm 4022 Material: Resina Tamanho: 18 X 10 Cm Cor: Dourado Contém: 1 Unidade.', 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSsQohpfDXkPjPdJAphXYC8jpeknLf6sXvFPIur24v7V2SfPWXCXeGcOFTyNUkzpSVmjqTMCbKEkH1TYCUAiTcRpSRYZ8_hsrmcYLfLEB0Zy__UsW0awlXn6g&usqp=CAE', 100, '0.9', '98.20', '0.4', 1, 5, 1, 1, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Estátua de Buda Hindu', 'Marca: MANDALA DE LUZ; Material: Resina; Cor: Dourado', 'https://m.media-amazon.com/images/I/71Elte1F7QL._AC_SX425_.jpg', 100, '0.9', '79.00', '0.4', 1, 5, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Lioobo – Tigela tibetana', 'A nota musical sustentada cria o estado perfeito para meditação profunda, pensamento criativo e mensagens intuitivas.', 'https://m.media-amazon.com/images/I/51y+KKKk7JL._AC_SX522_.jpg', 100, '0.9', '162.00', '0.4', 1, 5, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Estátua Buda Chinês', 'Estátua Buda Chinês Sorridente Riqueza Prata E Dourado 16Cm', 'https://product-hub-prd.madeiramadeira.com.br/4215568/images/7da6d9e3-90f4-4137-b4c2-f1bcc0ba28c611536134estatuabudachinessorridenteriquezaprataedourado16cmprd0rmwoz54z42tp1791600x600.jpg?width=500&canvas=1:1&bg-color=FFF', 100, '0.9', '79.00', '0.4', 1, 5, 1, null, 1);
+
+-- (Judaica)
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Hanukkah Menorah - Chanucá', 'BRTAGG Hanukkah Menorah - Chanucá Menorá - Castiçais judeus de 9 ramos (17 cm, prata)', 'https://m.media-amazon.com/images/I/41q+3Osxq2L._AC_SX425_.jpg', 100, '0.9', '162.00', '0.4', 1, 6, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Menorá Knesset média esmaltada', 'Menorá dourada e esmaltada , decorada com os símbolos das doze tribos de Israel, no pé contém a palavra Jerusalém escrita . disponíveis em azul e branco. Mede 17 x 13 cm.', 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcThMDQ49ovzO1VCxjBETCJKP78vzEDArXFwVULtETYZNZw6BNimkZuXlNPv9i30gtvNwAfWlIn-KsXrZOTO4_57mYqG6pgpMVn9CXgZpyPfLJGcYeXLsmcCBMwI&usqp=CAE', 100, '0.9', '200.00', '0.4', 1, 6, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Talit de Poliéster com Listras Pretas', 'Xale de oração de Poliéster com listras pretas. Importado de Israel, disponível nos tamanhos assinalados. Imagem meramente ilustrativa, podendo variar alguns detalhes. Importado de Israel.', 'https://http2.mlstatic.com/D_NQ_NP_610879-MLB49470276279_032022-O.webp', 100, '0.9', '580.00', '0.4', 1, 6, 1, 1, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Talit de Poliéster com Listras Azuis', 'Xale de oração de Poliéster com listras azuis. Importado de Israel, disponível nos tamanhos assinalados. Imagem meramente ilustrativa, listras azuis e frisos dourados ou prateados Importado de Israel.', 'https://http2.mlstatic.com/D_NQ_NP_630054-MLB49470243657_032022-O.webp', 100, '0.9', '580.00', '0.4', 1, 6, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Kipa Judaico Cetim Com Estrela De Davi', 'Kipá de cetim branca com borda, feita a maquina. Mede aproximadamente 17 cm de diâmetro.', 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQUehA2KwwHWksYkhiHHPtomCsEcfbdJ9kcGzHienyOZ7ZdqENFK4GnOHOZFYC84fUFMjaApwyLEweiPK1xbZX87k4gXkGdM1AlMbieK5EvIKtN-6fYL7icxw&usqp=CAE', 100, '0.9', '42.90', '0.4', 1, 6, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Kipa Judaico Cetim Com Forro Interno Preto', 'Kipá de cetim preto com borda, feita a maquina. Mede aproximadamente 17 cm de diâmetro.', 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR74zanlrhFtyB9nw8foZU7xpzmdQGwoTyr7yR957Uqu8mYHlISscU3YV1vwd8WqGz-Sy6xBsBIAHLQtOAlz9Y0JH7RDpTe-nDgxgvx2i5NzGFexwwDFzcBIg&usqp=CAE', 100, '0.9', '36.90', '0.4', 1, 6, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Copo Para Vinho Judaico', 'Cálice de kidush sem pé, prateado, decorado com detalhes em alto relevo, tanto no copo como no pires.', 'https://http2.mlstatic.com/D_NQ_NP_627590-MLB48987957400_012022-O.webp', 100, '0.9', '199.90', '0.4', 1, 6, 1, null, 1);
+
+insert into produto (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Taça De Santa Ceia Prata Kidush', 'Este elegante copo de Kiddush banhado a prata e a placa correspondente adicionarão elegância a qualquer mesa de Shabat.', 'https://http2.mlstatic.com/D_NQ_NP_719282-MLB48802839874_012022-O.webp', 100, '0.9', '290.90', '0.4', 1, 6, 1, 1, 1);
+
+-- ENDERECOS
+INSERT INTO endereco (ID_ENDERECO, apelido, NOME_LOGRADOURO, TIPO_LOGRADOURO, numero, cep, estado, cidade, bairro) 
+VALUES(1, 'Casa', 'independencia', 'Rua' , '123','43700-000', 'BA','Salvador', 'CIA 2');
+
+INSERT INTO endereco (ID_ENDERECO, apelido, NOME_LOGRADOURO, TIPO_LOGRADOURO, numero, cep, estado, cidade, bairro) 
+VALUES(2, 'Trabalho', 'Jardim Das Margaridas', 'Avenioda' , '26','8900-000', 'SP','São Paulo', 'Oceania');
+
+-- 
+
+
+-- CLIENTES COM ENDERECOS 
+INSERT INTO cliente (id_cliente, cpf, nome, email, senha, nascimento, genero, fixo, celular) 
+VALUES(1, '111.222.333-44', 'Ana Vitória de Melo','vitoria@hotmail.com' , '123','2000-02-01','FEMININO', '(11) 83490-3943', '(11) 83490-3943');
+
+INSERT INTO cliente_endereco (fk_cliente, fk_endereco) 
+VALUES(1, 1);
+
+INSERT INTO cliente (id_cliente, cpf, nome, email, senha, nascimento, genero, fixo, celular) 
+VALUES(2, '2222.444.555-66', 'Lucas Costa Santos','lucas@hotmail.com' , '123','2002-02-01','MASCULINO', '(11) 83490-3943', '(11) 83490-3943');
+
+INSERT INTO cliente_endereco (fk_cliente, fk_endereco) 
+VALUES(2, 2);
+
+-- 
+
+
+-- PEDIDOS
+INSERT INTO pedido (id_pedido, data_pedido , forma_pagamento, status_pedido, valor_total, fk_id_cliente, fk_id_endereCo) 
+VALUES(1, '2000-02-01', 'PIX','AGUARDANDO_PAGAMENTO', '45.6', 1, 1);
+
+INSERT INTO item_pedido (id_pedido, id_produto, quantidade) 
+VALUES(1, 1,5);
+
+INSERT INTO pedido (id_pedido, data_pedido , forma_pagamento, status_pedido, valor_total, fk_id_cliente, fk_id_endereCo) 
+VALUES(2, '2000-02-01', 'CARTAO','AGUARDANDO_PAGAMENTO', '45.6', 2, 1);
+
+INSERT INTO item_pedido (id_pedido, id_produto, quantidade) 
+VALUES(2, 2,1);
+
+
+SELECT *  FROM pedido p ;
+-- 
+
+
+-- select * from endereco;
+--  
+-- 
+-- -- Query's
+-- SELECT 
+-- C.ID_CLIENTE,
+-- C.NOME,
+-- CONCAT(SUBSTR(CPF, 1,9), '-', SUBSTR(CPF, 10,11)) AS 'CPF',
+-- C.EMAIL,
+-- C.SENHA,
+-- DATE_FORMAT(NASCIMENTO, '%d-%m-%Y') AS 'NASCIMENTO',
+-- C.FIXO,
+-- C.CELULAR
+-- FROM CLIENTE C;
+-- 
+-- SELECT 
+-- C.ID_CLIENTE,
+-- C.NOME,
+-- CONCAT(SUBSTR(CPF, 1,9), '-', SUBSTR(CPF, 10,11)) AS 'CPF',
+-- C.EMAIL,
+-- C.SENHA,
+-- DATE_FORMAT(NASCIMENTO, '%d-%m-%Y') AS 'NASCIMENTO',
+-- C.FIXO,
+-- C.CELULAR,
+-- C.GENERO,
+-- E.APELIDO,
+-- E.TIPO_LOGRADOURO,
+-- E.NOME_LOGRADOURO,
+-- E.NUMERO,
+-- E.CEP,
+-- E.CIDADE,
+-- E.BAIRRO,
+-- E.ESTADO
+-- FROM CLIENTE C
+-- JOIN ENDERECO E
+-- ON
+-- E.ID_ENDERECO = C.ID_CLIENTE;
+-- 
+-- 
+-- select * from pedido;
+-- select P.ID_PEDIDO, 
+-- DATE_FORMAT(P.DATA_PEDIDO, '%d-%m-%Y') AS 'DATA_PEDIDO',
+-- P.FORMA_PAGAMENTO,
+-- P.STATUS_PEDIDO,
+-- P.VALOR_TOTAL,
+-- C.NOME AS NOME_CLIENTE,
+-- C.CPF,
+-- C.EMAIL,
+-- C.FIXO,
+-- C.CELULAR,
+-- E.APELIDO,
+-- CONCAT(E.TIPO_LOGRADOURO,' ', E.NOME_LOGRADOURO, ' ','-', ' ', E.NUMERO) AS ENDERECO,
+-- E.CIDADE,
+-- E.BAIRRO,
+-- E.ESTADO,
+-- E.CEP,
+-- PD.NOME AS NOME_PRODUTO,
+-- PD.PRECO AS PRECO_UNT,
+-- PD.VOLUME,
+-- PD.PESO,
+-- IP.QUANTIDADE AS QUANTIDADE
+-- FROM PEDIDO P  
+-- inner JOIN CLIENTE C ON P.FK_ID_CLIENTE = C.ID_CLIENTE
+-- inner JOIN ENDERECO E ON P.FK_ID_ENDERECO = E.ID_ENDERECO
+-- INNER JOIN ITEM_PEDIDO IP ON IP.ID_PEDIDO = P.ID_PEDIDO 
+-- INNER JOIN PRODUTO PD ON IP.ID_PRODUTO = PD.ID_PRODUTO;
+
+-- select P.ID_PRODUTO, P.NOME, P.ESTOQUE, P.PRECO, C.NOME, D.NOME, F.RAZAO_SOCIAL FROM PRODUTO P join CATEGORIA C on P.FK_ID_CATEGORIA = C.ID_CATEGORIA join DEPARTAMENTO D on P.FK_ID_DEPARTAMENTO = D.ID_DEPARTAMENTO join FORNECEDOR F on P.FK_ID_FORNECEDOR =  F.ID_FORNECEDOR WHERE P.FL_INATIVO != 0;

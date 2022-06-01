@@ -12,14 +12,17 @@ import javax.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import br.com.qsd.politeismo.ecommerce.controller.dto.PedidoDTO;
 import br.com.qsd.politeismo.ecommerce.controller.form.FormPedido;
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.entities.Endereco;
+import br.com.qsd.politeismo.ecommerce.entities.ItemPedido;
 import br.com.qsd.politeismo.ecommerce.entities.Pedido;
 import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
 import br.com.qsd.politeismo.ecommerce.repository.EnderecoRepository;
+import br.com.qsd.politeismo.ecommerce.repository.ItemPedidoRepository;
 import br.com.qsd.politeismo.ecommerce.repository.PedidoRepository;
 
 @Service
@@ -36,6 +39,10 @@ public class PedidoService {
 	@Autowired
 	private EnderecoRepository enderecoRepository;
 	
+	@Autowired
+	private ItemPedidoRepository itemPedidoRepository;
+	
+	
 	@Transactional(readOnly = true)
 	public List<PedidoDTO> findAll(){
 		List <Pedido> list = pedidoRepository.findAll();
@@ -51,8 +58,12 @@ public class PedidoService {
 	
 	@Transactional
 	public PedidoDTO insert(FormPedido form) {
-		Pedido entity = new Pedido();
 		
+
+		
+		Pedido entity = new Pedido();
+
+
         entity.setData(LocalDate.parse(form.getData(), formatter));
         entity.setValor(new BigDecimal(form.getValor()));
         entity.setStatusPedido(StatusPedido.AGUARDANDO_PAGAMENTO);
