@@ -62,14 +62,12 @@ public class PedidoService {
 
 		
 		Pedido entity = new Pedido();
-//		ItemPedido itens = new ItemPedido();
-	
+
 
         entity.setData(LocalDate.parse(form.getData(), formatter));
         entity.setValor(new BigDecimal(form.getValor()));
         entity.setStatusPedido(StatusPedido.AGUARDANDO_PAGAMENTO);
 		entity.setFormaPagamento(form.getFormaPagamento());
-//		Optional<ItemPedido> itens = itemPedidoRepository.findById(Long.parseLong(form.getItens()));
 		Optional<Cliente> cliente = clienteRepository.findById(Long.parseLong(form.getCliente()));
 		Optional<Endereco> endereco = enderecoRepository.findById(Long.parseLong(form.getEndereco()));
 		

@@ -1,30 +1,27 @@
 package br.com.qsd.politeismo.ecommerce.controller;
 
 import java.net.URI;
-import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
-import javax.transaction.Transactional;
-import javax.validation.Valid;
 
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.qsd.politeismo.ecommerce.controller.dto.PedidoDTO;
 import br.com.qsd.politeismo.ecommerce.controller.form.FormPedido;
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.entities.Pedido;
+import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
 import br.com.qsd.politeismo.ecommerce.repository.PedidoRepository;
 import br.com.qsd.politeismo.ecommerce.service.PedidoService;
@@ -37,7 +34,7 @@ public class PedidoController {
 	private PedidoService pedidoService;
 	
 	@Autowired
-    ClienteRepository clienteRepository;
+    private ClienteRepository clienteRepository;
 	
 	@Autowired
 	private PedidoRepository pedidoRepository;
@@ -49,40 +46,42 @@ public class PedidoController {
     }
 	
 	@GetMapping(value = "/{id}")
-	public PedidoDTO findById(@PathVariable Long id) {
+	public PedidoDTO findById(@PathVariable ("id") Long id) {
 		return pedidoService.findById(id);
     }
 	
-	@PostMapping
+	@PostMapping(value="/novo")
 	public ResponseEntity <PedidoDTO> insert (@RequestBody FormPedido dto){
 	    try { 
 	    	PedidoDTO obj = pedidoService.insert(dto);
-	        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getIdPedido()).toUri();
+	        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/pedidos/{id}").buildAndExpand(obj.getIdPedido()).toUri();
 	        return ResponseEntity.created(uri).body(obj);
 	     } catch (ServiceException e) {
 	           return ResponseEntity.unprocessableEntity().build();
 	     }
 	}
 	
-//	@PostMapping("{id}/cadastrar")
-//	@Transactional
-//	public ResponseEntity<PedidoDTO> cadastrar(@PathVariable("id") Long id , @RequestBody @Valid FormPedido pedidoForm , 
-//			UriComponentsBuilder uriBuilder) throws ParseException{
-//	Optional<Cliente> cliente = clienteRepository.findById(id);
-//	Optional<Cliente> endereço = clienteRepository.findById(id);
-//	Pedido pedido = pedidoForm.converter(clienteRepository , freteRepository, enderecoRepository);
-//	pedidoRepository.save(pedido);
-//	pedidoForm.cadastrar(pedido, cliente.get() , pedidoRepository );
-//	
-//	URI uri = uriBuilder.path("/pedido/{id}").buildAndExpand(pedido.getCodPedido()).toUri();
-//	return ResponseEntity.created(uri).body(new PedidoDTO(pedido));
-//
-//}
-
-	
-	@PutMapping(value = "/{id}")
-	public ResponseEntity<PedidoDTO> update(@Valid @PathVariable Long id, @RequestBody FormPedido dto){
-		PedidoDTO obj = pedidoService.update(id, dto);
-		return ResponseEntity.ok().body(obj);
+	@PostMapping(value="/{idCliente}/{idPedido}")
+	@Transactional
+	public ResponseEntity<?> cancelar (@PathVariable ("idCliente") Long idCliente, @PathVariable("idPedido")Long idPedido ){
+		Optional<Cliente> cliente = clienteRepository.findById(idCliente);
+		Optional<Pedido> pedido= pedidoRepository.findById(idPedido);
+		
+		if (pedido.isPresent() && cliente.isPresent()) {
+			List <Pedido> pedidos = new ArrayList<Pedido>();
+			pedidos = cliente.get().getPedido();
+			pedido.get().setStatusPedido(StatusPedido.CANCELADO);
+			pedidos.add(pedido.get());
+			cliente.get().setPedido(pedidos);
+			clienteRepository.save(cliente.get());
+			pedidoRepository.save(pedido.get());
+			
+			return ResponseEntity.ok().build(); 
+		}
+		
+			
+			return ResponseEntity.notFound().build();
 	}
-}
+	
+			
+}//end class
