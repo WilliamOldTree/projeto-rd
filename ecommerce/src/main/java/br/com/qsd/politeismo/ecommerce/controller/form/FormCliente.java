@@ -21,14 +21,9 @@ public class FormCliente {
 		
 	}
 
-	
-	
-
-
-
 
 	public FormCliente(String cpf, String nome, String email, String password, String celular, String fixo,
-			String nascimento, Genero genero) {
+			String nascimento, String genero) {
 		super();
 		this.cpf = cpf;
 		this.nome = nome;
