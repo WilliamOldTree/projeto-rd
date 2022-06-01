@@ -6,7 +6,7 @@ import java.sql.SQLException;
 public class Conexao {
 	private String url = "jdbc:mysql://localhost:3306/bd_politeismo?useSSL=false";
 	private String username = "admin";
-	private String password = "";
+	private String password = "admin";
 	private static Connection connection = null;
 	private static Conexao instance = null;
 	

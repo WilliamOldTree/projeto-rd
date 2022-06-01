@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import br.com.qsd.politeismo.ecommerce.controller.dto.ProdutoCardDTO;
+import br.com.qsd.politeismo.ecommerce.controller.dto.ProdutoDTO;
 import br.com.qsd.politeismo.ecommerce.entities.Produto;
 
 @Repository
@@ -27,7 +28,7 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 	
 	List<ProdutoCardDTO> findByDescricao(String nome); 
     
-	List<ProdutoCardDTO> findByProdutoDestaqueId(Long id); 
+	List<ProdutoDTO> findByProdutoDestaqueId(Long id); 
 
 	List<ProdutoCardDTO> findByCategoriaIdCategoria(Long id); 
 

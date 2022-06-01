@@ -93,10 +93,10 @@ public class ProdutoController {
 	/* BUSCAR DESCONTO POR ID (PRODUTOS DESTAQUE) */
 
 	@GetMapping(value = "destaque") /* Mapeia a URL */
-	public ResponseEntity<List<ProdutoCardDTO>> findByProdutoDestaqueId(@RequestParam(name = "id") Long id) {
+	public ResponseEntity<List<ProdutoDTO>> findByProdutoDestaqueId(@RequestParam(name = "id") Long id) {
 
-		List<ProdutoCardDTO> produto = produtoRepository.findByProdutoDestaqueId(id);
-		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
+		List<ProdutoDTO> produto = produtoRepository.findByProdutoDestaqueId(id);
+		return new ResponseEntity<List<ProdutoDTO>>(produto, HttpStatus.OK);
 	}
 	
 	/* BUSCAR CATEGORIA POR ID */
