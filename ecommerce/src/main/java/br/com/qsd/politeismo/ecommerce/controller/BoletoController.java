@@ -38,7 +38,7 @@ public class BoletoController {
     }
 	
 	
-	@PostMapping
+	@PostMapping (value = "/novo")
 	public ResponseEntity<BoletoDTO> insert (@RequestBody FormBoleto dto){
 	    try { 
 	    	BoletoDTO entity = boleto.insert(dto);

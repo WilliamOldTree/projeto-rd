@@ -11,7 +11,7 @@ import Title from '../../components/title/Title';
 import User from '../../components/asserts/icons/user.png';
 import Check from '../../components/asserts/icons/check.png';
 import React, { useEffect, useContext, useState } from 'react';
-import { AuthContext } from '../../context/login.provider'
+//import { AuthContext } from '../../context/login.provider'
 
 
 function Login() {
