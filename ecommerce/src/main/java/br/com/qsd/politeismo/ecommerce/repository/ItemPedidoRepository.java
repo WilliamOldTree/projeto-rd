@@ -8,6 +8,6 @@ import br.com.qsd.politeismo.ecommerce.entities.PedidoProdutoID;
 @Repository
 public interface ItemPedidoRepository extends JpaRepository<ItemPedido, PedidoProdutoID>{
 	
-    //ItemPedido findByIdPedidoAndIdProduto(Long idProduto, Long idPedido);
+    
 
 }

@@ -1,7 +1,7 @@
 package br.com.qsd.politeismo.ecommerce.entities;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 //import java.util.Objects;
 import java.util.Objects;
@@ -11,21 +11,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 //import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.JoinColumn;
-//import javax.persistence.JoinTable;
-//import javax.persistence.ManyToMany;
-//import javax.persistence.ManyToOne;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.GenerationType;
-//import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -43,7 +36,7 @@ public class Pedido {
 	private Long idPedido;
 	
 	@Column(nullable = false, name = "data_pedido")
-	private LocalDate data;
+	private Date data;
 	
 	@Column(nullable = false, name = "valor_total")
 	private BigDecimal valor;
@@ -53,7 +46,7 @@ public class Pedido {
 	private StatusPedido statusPedido;
 	
 	
-	@ManyToOne
+	@ManyToOne(fetch =FetchType.LAZY) 
 	@JoinColumn(name = "fk_id_cliente", nullable = true)
 	private Cliente cliente;
 	
@@ -61,7 +54,7 @@ public class Pedido {
 	@Column(nullable = false, name = "forma_pagamento")
 	private FormaPagamento formaPagamento;
 	
-	@ManyToOne
+	@ManyToOne(fetch =FetchType.LAZY) 
 	@JoinColumn(name = "fk_id_endereco", nullable = true)
 	private Endereco endereco;
 	
@@ -74,7 +67,7 @@ public class Pedido {
 	
 	}
 
-	public Pedido(LocalDate data, BigDecimal valor, StatusPedido statusPedido, Cliente cliente,
+	public Pedido(Date data, BigDecimal valor, StatusPedido statusPedido, Cliente cliente,
 			FormaPagamento formaPagamento, Endereco endereco) {
 		
 		this.data = data;
@@ -97,11 +90,11 @@ public class Pedido {
 		this.idPedido = idPedido;
 	}
 
-	public LocalDate getData() {
+	public Date getData() {
 		return data;
 	}
 
-	public void setData(LocalDate data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 

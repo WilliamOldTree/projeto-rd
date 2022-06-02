@@ -11,8 +11,7 @@ import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 @Repository
 public interface ClienteRepository extends CrudRepository<Cliente, Long>, JpaRepository<Cliente, Long> {
 
-	Optional<Cliente> findById(String cliente);
-
-	Optional<Cliente> findByEmail(String email);
-
+	Optional<Cliente> findByEmail(String username);
+//	Optional<Cliente>findById(String cliente);
+	
 }

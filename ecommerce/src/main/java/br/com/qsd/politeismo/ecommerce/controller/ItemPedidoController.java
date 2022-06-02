@@ -25,9 +25,7 @@ public class ItemPedidoController {
     	return ResponseEntity.ok(list);
     }
 	
-	
-	
-	@PostMapping
+	@PostMapping("/novo")
 	public ResponseEntity <ItemPedidoDTO> insert (@RequestBody List<FormItemPedido> dto){
 		
 		for(int i = 0; i < dto.size(); i++) {	
@@ -37,15 +35,5 @@ public class ItemPedidoController {
 		return null;
 	}
 
-//	@PostMapping
-//	public ResponseEntity <ItemPedidoDTO> insert (@RequestBody FormItemPedido dto){
-//	    try { 
-//	    	ItemPedidoDTO entity = itemService.insert(dto);
-//	        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(entity.getPedidoProdutoID()).toUri();
-//	        
-//	        return ResponseEntity.created(uri).body(entity);
-//	     } catch (ServiceException e) {
-//	           return ResponseEntity.unprocessableEntity().build();
-//	     }
-//	}
-}
+
+}//end class

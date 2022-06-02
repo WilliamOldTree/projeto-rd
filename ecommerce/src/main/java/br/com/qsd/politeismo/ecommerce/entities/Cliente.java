@@ -24,6 +24,7 @@ import br.com.qsd.politeismo.ecommerce.enums.Genero;
 
 @Entity
 @Table(name = "CLIENTE")
+
 public class Cliente implements UserDetails{
 
 	private static final long serialVersionUID = 1L;
@@ -43,6 +44,7 @@ public class Cliente implements UserDetails{
 	@Enumerated(EnumType.STRING)
     private Genero genero;
 	
+	@JsonIgnore
 	@ManyToMany(mappedBy="clientes",fetch = FetchType.EAGER)
 	private List<Endereco> enderecos;
 	
@@ -67,55 +69,37 @@ public class Cliente implements UserDetails{
 		
 	}
 
-	
-
 	public Long getId() {
 		return id;
 	}
-
-
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-
-
 	public String getCpf() {
 		return cpf;
 	}
-
-
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
-
-
 	public String getNome() {
 		return nome;
 	}
-
-
 
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-
-
 	public String getEmail() {
 		return email;
 	}
 
-
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-
 
 	public String getSenha() {
 		return senha;

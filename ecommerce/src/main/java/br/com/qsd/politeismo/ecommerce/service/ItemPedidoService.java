@@ -28,8 +28,9 @@ public class ItemPedidoService {
 		ItemPedido entity = new ItemPedido();
 		PedidoProdutoID id = new PedidoProdutoID();
         
-		id.setIdPedido(Long.parseLong(form.getIdPedido()));
-		id.setIdProduto(Long.parseLong(form.getIdProduto()));
+		id.setIdPedido(Long.parseLong(form.getPedido()));
+		id.setIdProduto(Long.parseLong(form.getProduto()));
+		
 
 		entity.setPedidoProdutoID(id);
 		entity.setQuantidade(Integer.parseInt(form.getQuantidade()));

@@ -1,14 +1,14 @@
 package br.com.qsd.politeismo.ecommerce.controller.dto;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.entities.Endereco;
+import br.com.qsd.politeismo.ecommerce.entities.ItemPedido;
 import br.com.qsd.politeismo.ecommerce.entities.Pedido;
 import br.com.qsd.politeismo.ecommerce.enums.FormaPagamento;
 import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
@@ -16,12 +16,13 @@ import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 public class PedidoDTO {
 	
 	private Long idPedido;
-	private LocalDate data;
+	private Date data;
 	private BigDecimal valor;
 	private StatusPedido statusPedido;
 	private Cliente cliente;
 	private FormaPagamento formaPagamento;
 	private Endereco endereco;
+	private List<ItemPedido> itensPedido;
 	
 	
 	public PedidoDTO() {
@@ -42,8 +43,11 @@ public class PedidoDTO {
 		return idPedido;
 	}
 
-	public LocalDate getData() {
-		return data;
+	public String getData() {
+		
+		SimpleDateFormat dataAtual= new SimpleDateFormat("dd/MM/yyyy");
+		String today = dataAtual.format(data);
+		return today;
 	}
 
 	public BigDecimal getValor() {
@@ -66,6 +70,13 @@ public class PedidoDTO {
 		return endereco;
 	}
 
+	
+	public List<ItemPedidoDTO> getItensPedido() {
+		List<ItemPedidoDTO> list = ItemPedidoDTO.converter(itensPedido);
+		return list;
+	}
+	
+	
 	public static List<PedidoDTO> converter(List<Pedido> pedidos) {
 		return pedidos.stream().map(PedidoDTO::new).collect(Collectors.toList());
 		} 

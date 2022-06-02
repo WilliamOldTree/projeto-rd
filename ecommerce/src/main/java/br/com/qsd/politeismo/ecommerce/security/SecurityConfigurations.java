@@ -57,13 +57,16 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 //		.antMatchers(HttpMethod.POST , "/itensPedido").permitAll()
 		
 		
-		
+		.antMatchers(HttpMethod.GET , "/*").permitAll()
+		.antMatchers(HttpMethod.POST , "/*").permitAll()
 		.antMatchers(HttpMethod.GET , "/pedidos/*").permitAll()
 		.antMatchers(HttpMethod.GET , "/pedidos").permitAll()
+		.antMatchers(HttpMethod.POST , "/pedidos/*/*").permitAll()
 		.antMatchers(HttpMethod.POST , "/pedidos").permitAll()
+		.antMatchers(HttpMethod.POST , "/pedidos/novo").permitAll()
 		.antMatchers(HttpMethod.GET , "/itensPedido/*").permitAll()
 		.antMatchers(HttpMethod.GET , "/itensPedido").permitAll()
-		.antMatchers(HttpMethod.POST , "/itensPedido").permitAll()
+		.antMatchers(HttpMethod.POST , "/itensPedido/*").permitAll()
 		
 		
 		.anyRequest().authenticated().and().cors()

@@ -388,7 +388,7 @@ INSERT INTO item_pedido (id_pedido, id_produto, quantidade)
 VALUES(2, 2,1);
 
 
-SELECT *  FROM pedido p ;
+SELECT *  FROM item_pedido ;
 -- 
 
 

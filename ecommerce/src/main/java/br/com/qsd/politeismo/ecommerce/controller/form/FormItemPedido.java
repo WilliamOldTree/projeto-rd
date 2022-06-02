@@ -2,30 +2,12 @@ package br.com.qsd.politeismo.ecommerce.controller.form;
 
 public class FormItemPedido {
 	
-	private String idPedido;	
-	
-	private String idProduto;	
-	
 	private String quantidade;
+	private String produto;
+	private String pedido;
 	
 	public FormItemPedido() {
 		
-	}
-
-	public String getIdPedido() {
-		return idPedido;
-	}
-
-	public void setIdPedido(String idPedido) {
-		this.idPedido = idPedido;
-	}
-
-	public String getIdProduto() {
-		return idProduto;
-	}
-
-	public void setIdProduto(String idProduto) {
-		this.idProduto = idProduto;
 	}
 
 	public String getQuantidade() {
@@ -36,4 +18,22 @@ public class FormItemPedido {
 		this.quantidade = quantidade;
 	}
 
-}
+	public String getProduto() {
+		return produto;
+	}
+
+	public void setProduto(String produto) {
+		this.produto = produto;
+	}
+
+	public String getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(String pedido) {
+		this.pedido = pedido;
+	}
+	
+	
+	
+}//end class

@@ -1,24 +1,5 @@
 package br.com.qsd.politeismo.ecommerce.entities;
 
-
-//import java.util.List;
-
-//import javax.persistence.FetchType;
-//import javax.persistence.ManyToMany;
-//
-//public class ItemPedido {
-//
-//	private Long id;
-////	private List<Produto> produtos;
-//
-//	public Long getId() {
-//		return id;
-//	}
-//
-//	public void setId(Long id) {
-//		this.id = id;
-//	}
-
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -45,36 +26,66 @@ public class ItemPedido {
 
 	public ItemPedido() {
 	}
+	
+	
+
+	public ItemPedido(Pedido idPedido, Produto idProduto, Integer quantidade) {
+		
+		this.idPedido = idPedido;
+		this.idProduto = idProduto;
+		this.quantidade = quantidade;
+		
+	}
+
+
 
 	public PedidoProdutoID getPedidoProdutoID() {
 		return pedidoProdutoID;
 	}
 
+
+
 	public void setPedidoProdutoID(PedidoProdutoID pedidoProdutoID) {
 		this.pedidoProdutoID = pedidoProdutoID;
 	}
+
+
 
 	public Pedido getIdPedido() {
 		return idPedido;
 	}
 
+
+
 	public void setIdPedido(Pedido idPedido) {
 		this.idPedido = idPedido;
 	}
+
+
 
 	public Produto getIdProduto() {
 		return idProduto;
 	}
 
+
+
 	public void setIdProduto(Produto idProduto) {
 		this.idProduto = idProduto;
 	}
+
+
 
 	public Integer getQuantidade() {
 		return quantidade;
 	}
 
+
+
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
 	}
-}
+
+	
+
+	
+}//end class
