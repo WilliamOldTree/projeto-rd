@@ -13,10 +13,9 @@ import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.entities.Endereco;
 import br.com.qsd.politeismo.ecommerce.entities.ItemPedido;
 import br.com.qsd.politeismo.ecommerce.entities.Pedido;
-import br.com.qsd.politeismo.ecommerce.enums.FormaPagamento;
-import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
 import br.com.qsd.politeismo.ecommerce.repository.EnderecoRepository;
+import br.com.qsd.politeismo.ecommerce.repository.ItemPedidoRepository;
 import br.com.qsd.politeismo.ecommerce.repository.PedidoRepository;
 
 public class FormPedido {
@@ -24,27 +23,20 @@ public class FormPedido {
 	private Date data;
 	private SimpleDateFormat dataAtual = new SimpleDateFormat("dd/MM/yyyy");
 	private BigDecimal valor;
-	private StatusPedido statusPedido;
+	private String statusPedido;
 	private Long cliente;
-	private FormaPagamento formaPagamento;
+	private String formaPagamento;
 	private Long endereco;
 	private List<ItemPedido> itensPedido;
 
-	
-
 	public FormPedido(String data, String valor, String statusPedido, String cliente, String formaPagamento,
 			String endereco) throws ParseException {
-
-			this.data = dataAtual.parse(data);
-			this.valor = new BigDecimal(valor);
-			StatusPedido statusPedidoEnum = StatusPedido.valueOf(statusPedido);
-			this.statusPedido = statusPedidoEnum;
-			this.cliente = Long.parseLong(cliente);
-			FormaPagamento formaPagamentoEnum = FormaPagamento.valueOf(formaPagamento);
-			this.formaPagamento = formaPagamentoEnum;
-			this.endereco = Long.parseLong(endereco);
-			
-			
+		this.data = dataAtual.parse(data);
+		this.valor = new BigDecimal(valor);
+		this.statusPedido = statusPedido;
+		this.cliente = Long.parseLong(cliente);
+		this.formaPagamento = formaPagamento;
+		this.endereco = Long.parseLong(endereco);
 
 	}
 
@@ -72,11 +64,11 @@ public class FormPedido {
 		this.valor = valor;
 	}
 
-	public StatusPedido getStatusPedido() {
+	public String getStatusPedido() {
 		return statusPedido;
 	}
 
-	public void setStatusPedido(StatusPedido statusPedido) {
+	public void setStatusPedido(String statusPedido) {
 		this.statusPedido = statusPedido;
 	}
 
@@ -88,11 +80,11 @@ public class FormPedido {
 		this.cliente = cliente;
 	}
 
-	public FormaPagamento getFormaPagamento() {
+	public String getFormaPagamento() {
 		return formaPagamento;
 	}
 
-	public void setFormaPagamento(FormaPagamento formaPagamento) {
+	public void setFormaPagamento(String formaPagamento) {
 		this.formaPagamento = formaPagamento;
 	}
 
@@ -111,31 +103,31 @@ public class FormPedido {
 	public void setItensPedido(List<ItemPedido> itensPedido) {
 		this.itensPedido = itensPedido;
 	}
-	
-	
-//	public Pedido converter (ClienteRepository clienteRepository, EnderecoRepository enderecoRepository) {
-//		
-//		Optional<Cliente> cliente = clienteRepository.findById(this.cliente);
-//		Optional<Endereco> endereco =  enderecoRepository.findById(this.endereco);
-//		
-//		List <ItemPedido> itensPedido = new ArrayList<ItemPedido>();
-//		
-//		Pedido pedido = new Pedido (data, valor, statusPedido, cliente.get(),formaPagamento, endereco.get());
-//		
-//		return pedido;
-//	}
-	
-//	public List<PedidoDTO> cadastrar(Pedido pedido, Cliente cliente, PedidoRepository pedidoRepository){
-//		
-//		List<Pedido> pedidos;
-//		pedidos = cliente.getPedido();
-//		pedidos.add(pedido);
-//		cliente.setPedido(pedidos);
-//		pedidoRepository.save(cliente);
-//				
-//		return PedidoDTO.converter(pedidos);
-//	
-//	}
-	
-	
+
+	public Pedido converter(PedidoRepository pedidoRepository, ClienteRepository clienteRepository,
+			EnderecoRepository enderecoRepository, ItemPedidoRepository itemPedidoRepository) {
+
+		Optional<Cliente> cliente = clienteRepository.findById(this.cliente);
+		Optional<Endereco> endereco = enderecoRepository.findById(this.endereco);
+		List<ItemPedido> items = new ArrayList<ItemPedido>();
+		items.add((ItemPedido) this.itensPedido);
+
+		Pedido pedido = new Pedido(data,valor, statusPedido,cliente.get(),formaPagamento, endereco.get());
+		System.out.println(pedido);
+		return pedido;
+		
+
+	}
+
+	public List<PedidoDTO> cadastrarPedido(Pedido pedido, Cliente cliente, PedidoRepository pedidoRepository) {
+		List<Pedido> pedidos;
+
+		pedidos = cliente.getPedido();
+		pedidos.add(pedido);
+		cliente.setPedido(pedidos);
+		pedidoRepository.save(cliente);
+		return PedidoDTO.converter(pedidos);
+
+	}
+
 }// end class

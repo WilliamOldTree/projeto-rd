@@ -23,11 +23,7 @@ public class ItemPedido {
 	
 	private Integer quantidade;
 
-
-	public ItemPedido() {
-	}
-	
-	
+	public ItemPedido() {}
 
 	public ItemPedido(Pedido idPedido, Produto idProduto, Integer quantidade) {
 		
@@ -37,55 +33,40 @@ public class ItemPedido {
 		
 	}
 
-
+	public ItemPedido(Integer quantidade) {
+		this.quantidade = quantidade;
+	}
 
 	public PedidoProdutoID getPedidoProdutoID() {
 		return pedidoProdutoID;
 	}
 
-
-
 	public void setPedidoProdutoID(PedidoProdutoID pedidoProdutoID) {
 		this.pedidoProdutoID = pedidoProdutoID;
 	}
-
-
 
 	public Pedido getIdPedido() {
 		return idPedido;
 	}
 
-
-
 	public void setIdPedido(Pedido idPedido) {
 		this.idPedido = idPedido;
 	}
-
-
 
 	public Produto getIdProduto() {
 		return idProduto;
 	}
 
-
-
 	public void setIdProduto(Produto idProduto) {
 		this.idProduto = idProduto;
 	}
-
-
 
 	public Integer getQuantidade() {
 		return quantidade;
 	}
 
-
-
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
 	}
-
-	
-
 	
 }//end class

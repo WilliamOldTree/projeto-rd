@@ -5,38 +5,32 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.entities.Endereco;
-import br.com.qsd.politeismo.ecommerce.entities.ItemPedido;
 import br.com.qsd.politeismo.ecommerce.entities.Pedido;
-import br.com.qsd.politeismo.ecommerce.enums.FormaPagamento;
-import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
+
 
 public class PedidoDTO {
 	
 	private Long idPedido;
 	private Date data;
 	private BigDecimal valor;
-	private StatusPedido statusPedido;
+	private String statusPedido;
 	private Cliente cliente;
-	private FormaPagamento formaPagamento;
+	private String formaPagamento;
 	private Endereco endereco;
-	private List<ItemPedido> itensPedido;
 	
 	
-	public PedidoDTO() {
-		
-	}
+	public PedidoDTO() {}
 
 	public PedidoDTO(Pedido pedido) {
-		idPedido = pedido.getIdPedido();
-		data = pedido.getData();
-		valor = pedido.getValor();
-		statusPedido = pedido.getStatusPedido();
-		cliente = pedido.getCliente();
-		formaPagamento = pedido.getFormaPagamento();
-		endereco = pedido.getEndereco();
+		this.idPedido = pedido.getIdPedido();
+		this.data = pedido.getData();
+		this.valor = pedido.getValor();
+		this.statusPedido = pedido.getStatusPedido();
+		this.cliente = pedido.getCliente();
+		this.formaPagamento = pedido.getFormaPagamento();
+		this.endereco = pedido.getEndereco();
  	}
 
 	public Long getIdPedido() {
@@ -54,7 +48,7 @@ public class PedidoDTO {
 		return valor;
 	}
 
-	public StatusPedido getStatusPedido() {
+	public String getStatusPedido() {
 		return statusPedido;
 	}
 
@@ -62,7 +56,7 @@ public class PedidoDTO {
 		return cliente;
 	}
 
-	public FormaPagamento getFormaPagamento() {
+	public String getFormaPagamento() {
 		return formaPagamento;
 	}
 
@@ -70,14 +64,9 @@ public class PedidoDTO {
 		return endereco;
 	}
 
-	
-	public List<ItemPedidoDTO> getItensPedido() {
-		List<ItemPedidoDTO> list = ItemPedidoDTO.converter(itensPedido);
-		return list;
-	}
-	
-	
+
 	public static List<PedidoDTO> converter(List<Pedido> pedidos) {
 		return pedidos.stream().map(PedidoDTO::new).collect(Collectors.toList());
 		} 
-}
+	
+}//end class

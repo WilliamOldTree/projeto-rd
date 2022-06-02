@@ -23,13 +23,11 @@ public class ItemPedidoDTO {
 		quantidade = itemPedido.getQuantidade();
  	}
 	
-	public PedidoProdutoID getPedidoProdutoID() {
-		return pedidoProdutoID;
-	}
+	
 
-	public void setPedidoProdutoID(PedidoProdutoID pedidoProdutoID) {
-		this.pedidoProdutoID = pedidoProdutoID;
-	}
+//	public void setPedidoProdutoID(PedidoProdutoID pedidoProdutoID) {
+//		this.pedidoProdutoID = pedidoProdutoID;
+//	}
 
 	public Integer getQuantidade() {
 		return quantidade;
@@ -39,8 +37,7 @@ public class ItemPedidoDTO {
 		this.quantidade = quantidade;
 	}
 	
-	public static List <ItemPedidoDTO> converter(List<ItemPedido> itensPedido){
-		
+	public static List <ItemPedidoDTO> converter(List<ItemPedido> itensPedido){	
 		return itensPedido.stream().map(ItemPedidoDTO::new).collect(Collectors.toList());
 		
 	}

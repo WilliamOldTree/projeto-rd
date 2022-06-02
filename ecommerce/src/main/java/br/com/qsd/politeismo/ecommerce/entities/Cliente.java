@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import br.com.qsd.politeismo.ecommerce.enums.Genero;
 
 @Entity
-@Table(name = "CLIENTE")
+@Table(name = "cliente")
 
 public class Cliente implements UserDetails{
 
@@ -54,12 +54,13 @@ public class Cliente implements UserDetails{
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="cliente")
-	List<Pedido> pedido;
+	List<Pedido> idPedido;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="cliente")
 	List<Favoritos> favoritos;
 	
+	@JsonIgnore
 	@Fetch(FetchMode.SELECT)
 	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Perfil> perfis = new ArrayList<>();
@@ -186,13 +187,13 @@ public class Cliente implements UserDetails{
 
 
 	public List<Pedido> getPedido() {
-		return pedido;
+		return idPedido;
 	}
 
 
 
 	public void setPedido(List<Pedido> pedido) {
-		this.pedido = pedido;
+		this.idPedido = pedido;
 	}
 
 
