@@ -5,7 +5,7 @@ import Menu from '../../components/menu/Menu'
 import Title from '../../components/title/Title'
 import User from '../../components/asserts/icons/user.png'
 import Lixeira from '../../components/asserts/icons/lixeira.png'
-import { Form, Row, Col, Card, Modal } from 'react-bootstrap'
+import { Form, Row, Col, Card, Modal, Alert } from 'react-bootstrap'
 import MeusEnderecosAdd from '../../components/modal_meus_enderecos/Modal_Enderecos_Add'
 import React, { useState, useEffect } from 'react'
 import { baseUrl } from '../../environments'
@@ -14,14 +14,13 @@ import axios from 'axios'
 
 
 
-
 function AreaEndereco(props) {
 
     const [enderecos, setEnderecos] = useState([])
     
-
+    let idCLienteLogado = localStorage.getItem("id")
     function getEnderecos() {
-        axios.get(`${baseUrl}/enderecos`)
+        axios.get(`${baseUrl}/enderecos/${idCLienteLogado}/enderecos`)
             .then((response) => {
                 setEnderecos(response.data)
         })

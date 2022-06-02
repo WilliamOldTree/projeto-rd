@@ -6,11 +6,11 @@ import Cart from '../asserts/icons/cart.png';
 //import BudaMedit from '../../components/asserts/images/cart-images/buda-meditando.png';
 import Lixeira from '../../components/asserts/icons/lixeira.png';
 import CartContext from '../../context/cart.provider'
+import ClientContext from '../../context/login.provider'
 
 function ModalCarrinho(props) {
 
     const { cart, getCart, valorTotalAmem, getCartQty, soma, deleteCart, tira, valorTotal } = useContext(CartContext)
-
 
     useEffect(() => {
         getCart()
@@ -26,6 +26,9 @@ function ModalCarrinho(props) {
             </>
         )
     }
+
+    const { Autorizado } = useContext(ClientContext)
+
 
     return (
         <>
@@ -76,12 +79,16 @@ function ModalCarrinho(props) {
                                                         <h6><strong> SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</strong></h6>
                                                     </Col>
                                                     <br></br>
-
-                                                    <Col md={12} lg={12} className="div-btn-cart">
-                                                        <Link to="/cart"><Button className="btnFinal">VER CARRINHO</Button></Link>
-                                                    </Col>
-
-
+                                                    {Autorizado
+                                                        ?
+                                                        <Col md={12} lg={12} className="div-btn-cart">
+                                                            <Link to="/cart"><Button className="btnFinal">VER CARRINHO</Button></Link>
+                                                        </Col>
+                                                        :
+                                                        ''
+                                                    }
+                                                 
+                                                    
                                                 </Row>
 
                                             )
