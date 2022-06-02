@@ -13,6 +13,7 @@ public class ClienteDTO {
     private LocalDate nascimento;
     private String celular;
     private String fixo;
+    
     public ClienteDTO () {
     	
     }
@@ -97,6 +98,4 @@ public class ClienteDTO {
 		this.fixo = fixo;
 	}
 
-    
-	
-}
+}//end class

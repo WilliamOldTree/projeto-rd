@@ -53,11 +53,11 @@ public class ProdutoController {
 	}
 	
 	@GetMapping("cards/{id}")
-	public ResponseEntity<ProdutoCardDTO> listarCardPorID(@PathVariable("id") Long id) {
+	public ResponseEntity<ProdutoDTO> listarCardPorID(@PathVariable("id") Long id) {
 		Optional<Produto> produto = produtoRepository.findById(id);
 
 		if (produto.isPresent()) {
-			return ResponseEntity.ok(new ProdutoCardDTO(produto.get()));
+			return ResponseEntity.ok(new ProdutoDTO(produto.get()));
 		}
 
 		return ResponseEntity.notFound().build();
@@ -67,54 +67,54 @@ public class ProdutoController {
 	/* BUSCAR POR NOME */
 	
 	@GetMapping(value = "buscarpornome") /* Mapeia a URL */
-	public ResponseEntity<List<ProdutoCardDTO>> buscarpornome(@RequestParam(name = "nome") String nome) {
+	public ResponseEntity<List<ProdutoDTO>> buscarpornome(@RequestParam(name = "nome") String nome) {
 
-		List<ProdutoCardDTO> produto = produtoRepository.buscarPorNome(nome.trim().toUpperCase());
-		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
+		List<ProdutoDTO> produto = produtoRepository.buscarPorNome(nome.trim().toUpperCase());
+		return new ResponseEntity<List<ProdutoDTO>>(produto, HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "buscarpordescricao") /* Mapeia a URL */
-	public ResponseEntity<List<ProdutoCardDTO>> findByDescricao(@RequestParam(name = "descricao") String descricao) {
+	public ResponseEntity<List<ProdutoDTO>> findByDescricao(@RequestParam(name = "descricao") String descricao) {
 
-		List<ProdutoCardDTO> produto = produtoRepository.buscarPorDescricao(descricao.trim().toUpperCase());
-		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
+		List<ProdutoDTO> produto = produtoRepository.buscarPorDescricao(descricao.trim().toUpperCase());
+		return new ResponseEntity<List<ProdutoDTO>>(produto, HttpStatus.OK);
 	}
 	
 	
 	/* BUSCAR CATEGORIA POR NOME */
 	
 	@GetMapping("/buscarpornomecategoria") /* Mapeia a URL */
-	public ResponseEntity<List<ProdutoCardDTO>> findByCategoriaNome (String nome) {
+	public ResponseEntity<List<ProdutoDTO>> findByCategoriaNome (String nome) {
 
-		List<ProdutoCardDTO> produto = produtoRepository.findByCategoriaNome(nome.trim().toUpperCase());
-		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
+		List<ProdutoDTO> produto = produtoRepository.findByCategoriaNome(nome.trim().toUpperCase());
+		return new ResponseEntity<List<ProdutoDTO>>(produto, HttpStatus.OK);
 	}
 	
 	/* BUSCAR DESCONTO POR ID (PRODUTOS DESTAQUE) */
 
 	@GetMapping(value = "destaque") /* Mapeia a URL */
-	public ResponseEntity<List<ProdutoCardDTO>> findByProdutoDestaqueId(@RequestParam(name = "id") Long id) {
+	public ResponseEntity<List<ProdutoDTO>> findByProdutoDestaqueId(@RequestParam(name = "id") Long id) {
 
-		List<ProdutoCardDTO> produto = produtoRepository.findByProdutoDestaqueId(id);
-		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
+		List<ProdutoDTO> produto = produtoRepository.findByProdutoDestaqueId(id);
+		return new ResponseEntity<List<ProdutoDTO>>(produto, HttpStatus.OK);
 	}
 	
 	/* BUSCAR CATEGORIA POR ID */
 
 	@GetMapping(value = "categoria") /* Mapeia a URL */
-	public ResponseEntity<List<ProdutoCardDTO>> findByCategoriaIdCategoria(@RequestParam(name = "id") Long id) {
+	public ResponseEntity<List<ProdutoDTO>> findByCategoriaIdCategoria(@RequestParam(name = "id") Long id) {
 
-		List<ProdutoCardDTO> produto = produtoRepository.findByCategoriaIdCategoria(id);
-		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
+		List<ProdutoDTO> produto = produtoRepository.findByCategoriaIdCategoria(id);
+		return new ResponseEntity<List<ProdutoDTO>>(produto, HttpStatus.OK);
 	}
 	
 	/* BUSCAR DEPARTAMENTO POR ID */
 	
 	@GetMapping(value = "departamento") /* Mapeia a URL */
-	public ResponseEntity<List<ProdutoCardDTO>> findByDepartamentoIdDepartamento(@RequestParam(name = "id") Long id) {
+	public ResponseEntity<List<ProdutoDTO>> findByDepartamentoIdDepartamento(@RequestParam(name = "id") Long id) {
 
-		List<ProdutoCardDTO> produto = produtoRepository.findByDepartamentoIdDepartamento(id);
-		return new ResponseEntity<List<ProdutoCardDTO>>(produto, HttpStatus.OK);
+		List<ProdutoDTO> produto = produtoRepository.findByDepartamentoIdDepartamento(id);
+		return new ResponseEntity<List<ProdutoDTO>>(produto, HttpStatus.OK);
 	}
 	
 	

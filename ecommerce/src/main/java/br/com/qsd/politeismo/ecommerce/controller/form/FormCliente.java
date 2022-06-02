@@ -100,5 +100,6 @@ public class FormCliente {
 	public void setFixo(String fixo) {
 		this.fixo = fixo;
 	}
+	
 
 }
