@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import br.com.qsd.politeismo.ecommerce.controller.dto.TokenDTO;
 import br.com.qsd.politeismo.ecommerce.controller.form.FormLogin;
+import br.com.qsd.politeismo.ecommerce.entities.Cliente;
+import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
 import br.com.qsd.politeismo.ecommerce.security.TokenService;
 
 @RestController
@@ -25,6 +27,9 @@ public class AutenticacaoController {
 	
 	@Autowired
 	private TokenService tokenService;
+	
+	@Autowired
+	private ClienteRepository clienteRepository;
 
 	
 	@PostMapping
@@ -33,7 +38,11 @@ public class AutenticacaoController {
 		try {
 			Authentication authentication = authManager.authenticate(dadosLogin);
 			String token = tokenService.gerarToken(authentication);
-			return ResponseEntity.ok(new TokenDTO(token , "Bearer"));
+			
+			Cliente usuario = new Cliente();
+			
+			usuario = clienteRepository.getClienteByEmail(form.getEmail());
+			return ResponseEntity.ok(new TokenDTO(usuario, token , "Bearer"));
 			
 		} catch (AuthenticationException e) {
 			return ResponseEntity.badRequest().build();

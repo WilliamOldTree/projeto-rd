@@ -4,4 +4,8 @@ public enum Genero {
     MASCULINO,
     FEMININO,
     OUTROS;
+	
+	
+
 }
+

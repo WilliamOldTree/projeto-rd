@@ -11,7 +11,7 @@ public class LoginDao {
 
 	private String dbUrl = "jdbc:mysql://localhost:3306/bd_politeismo?useSSL=false";
 	private String dbUname = "root";
-	private String dbPassword = "root";
+	private String dbPassword = "@Pgdr8688";
 	private String dbDriver = "com.mysql.cj.jdbc.Driver";
 	
 	public void loadDriver(String dbDriver)

@@ -1,9 +1,9 @@
+import modelEndereco from './modelEndereco/modelEndereco'
 import './Modal_Enderecos.css'
 import React, { useState, useEffect } from 'react'
 import { baseUrl } from '../../environments'
 import axios from 'axios'
 import { Modal, Button, Form, Container, Row, Col } from 'react-bootstrap'
-import { useParams, useHistory } from 'react-router-dom'
 
 function MeusEnderecosAdd(props) {
 
@@ -12,33 +12,36 @@ function MeusEnderecosAdd(props) {
     const handleShow = () => setShow(true);
 
     const [states, setStates] = useState([])
-    const [enderecos, setEnderecos] = useState([])
+    const [endd, setEndd] = useState({
+        apelido: "",
+        nomeLougradouro: "",
+        tipoLougradouro: "",
+        numero: "",
+        cep: "",
+        estado: "",
+        cidade: "",
+        bairro: "",
+        cliente: 0,
+    })
+
     const [successRegister, setSuccessRegister] = useState(false)
-    const { id } = useParams()
-    let history = useHistory();
-
-    function getEnderecos() {
-        axios.get(`${baseUrl}/enderecos`)
-            .then((response) => {
-                setEnderecos(response.data)
-            })
-    }
-
+    let idCLienteLogado = localStorage.getItem("id")
 
     const register = () => {
-        enderecos.states =
-            axios.post(`${baseUrl}/enderecos`, enderecos).then(response => {
+        axios.post(`${baseUrl}/enderecos`, endd)
+            .then(response => {
                 setSuccessRegister(true)
-                alert('cartão adicionado recarregue a pagina')
-            })
+                alert('Endereço adicionado recarregue a pagina')
+                getEnderecos()
 
+            })
     }
 
     useEffect(() => {
-        getEnderecos()
+        setEndd({ ...endd, cliente: JSON.parse(localStorage.getItem("id")) })
     }, [])
 
-
+    console.log(endd)
     return (
         <>
             <Button className='adicionarEnderecos' variant="primary" onClick={handleShow}>
@@ -58,27 +61,38 @@ function MeusEnderecosAdd(props) {
                         <Form>
                             <Col xs={12} md={12}>
                                 <Form.Group controlId="formBasic">
-                                    <Form.Label className="label-form-enderecos">Endereço:</Form.Label>
+                                    <Form.Label className="label-form-enderecos">Tipo Lougradouro:</Form.Label>
                                     <Form.Control className="input-form-enderecos" type="text"
-                                        value={enderecos.nomeLougradouro}
-                                        onChange={(event) => { setEnderecos({ ...enderecos, nomeLougradouro: event.target.value }) }} />
+                                        onChange={(event) => { setEndd({ ...endd, tipoLougradouro: event.target.value }) }} />
                                 </Form.Group>
+
                             </Col>
+                            <Row>
+                                <Col xs={12} md={12}>
+                                    <Form.Group controlId="formBasic">
+                                        <Form.Label className="label-form-enderecos">Endereço:</Form.Label>
+                                        <Form.Control className="input-form-enderecos" type="text"
+
+                                            onChange={(event) => { setEndd({ ...endd, nomeLougradouro: event.target.value }) }} />
+                                    </Form.Group>
+
+                                </Col>
+                            </Row>
                             <Row>
                                 <Col md={6} lg={6} className="div-form-enderecos">
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Cidade:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                            value={enderecos.cidade}
-                                            onChange={(event) => { setEnderecos({ ...enderecos, cidade: event.target.value }) }} />
+
+                                            onChange={(event) => { setEndd({ ...endd, cidade: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
                                 <Col md={6} lg={6} className="div-form-enderecos">
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">CEP:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                            value={enderecos.cep}
-                                            onChange={(event) => { setEnderecos({ ...enderecos, cep: event.target.value }) }} />
+
+                                            onChange={(event) => { setEndd({ ...endd, cep: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
                             </Row>
@@ -87,42 +101,45 @@ function MeusEnderecosAdd(props) {
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Complemento:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                            value={enderecos.apelido}
-                                            onChange={(event) => { setEnderecos({ ...enderecos, apelido: event.target.value }) }} />
+
+                                            onChange={(event) => { setEndd({ ...endd, apelido: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
                                 <Col md={4} lg={4} className="div-form-enderecos">
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Estado:</Form.Label>
-                                        <Form.Select className="input-form-enderecos" defaultValue="Choose...">
+                                        <Form.Select className="input-form-enderecos" defaultValue="Choose..."
+                                            onChange={(event) => {
+                                                setEndd({ ...endd, estado: event.target.value })
+                                            }}>
                                             <option>Selecione...</option>
-                                            <option>AC</option>
-                                            <option>AL</option>
-                                            <option>AP</option>
-                                            <option>AM</option>
-                                            <option>BA</option>
-                                            <option>CE</option>
-                                            <option>DF</option>
-                                            <option>ES</option>
-                                            <option>GO</option>
-                                            <option>MA</option>
-                                            <option>MT</option>
-                                            <option>MS</option>
-                                            <option>AG</option>
-                                            <option>PA</option>
-                                            <option>PB</option>
-                                            <option>PR</option>
-                                            <option>PE</option>
-                                            <option>PI</option>
-                                            <option>RJ</option>
-                                            <option>RN</option>
-                                            <option>RS</option>
-                                            <option>RO</option>
-                                            <option>RR</option>
-                                            <option>SC</option>
-                                            <option>SP</option>
-                                            <option>SE</option>
-                                            <option>TO</option>
+                                            <option value="AC">AC</option>
+                                            <option value="AL">AL</option>
+                                            <option value="AP">AP</option>
+                                            <option value="AM">AM</option>
+                                            <option value="BA">BA</option>
+                                            <option value="CE">CE</option>
+                                            <option value="ES">ES</option>
+                                            <option value="GO">GO</option>
+                                            <option value="MA">MA</option>
+                                            <option value="MT">MT</option>
+                                            <option value="MS">MS</option>
+                                            <option value="MG">MG</option>
+                                            <option value="PA">PA</option>
+                                            <option value="PB">PB</option>
+                                            <option value="PR">PR</option>
+                                            <option value="PE">PE</option>
+                                            <option value="PI">PI</option>
+                                            <option value="RJ">RJ</option>
+                                            <option value="RN">RN</option>
+                                            <option value="RS">RS</option>
+                                            <option value="RO">RO</option>
+                                            <option value="RR">RR</option>
+                                            <option value="SC">SC</option>
+                                            <option value="SP">SP</option>
+                                            <option value="SE">SE</option>
+                                            <option value="TO">TO</option>
+                                            <option value="DF">DF</option>
                                         </Form.Select>
                                     </Form.Group>
                                 </Col>
@@ -133,16 +150,16 @@ function MeusEnderecosAdd(props) {
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Bairro:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                            value={enderecos.bairro}
-                                            onChange={(event) => { setEnderecos({ ...enderecos, bairro: event.target.value }) }} />
+
+                                            onChange={(event) => { setEndd({ ...endd, bairro: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
                                 <Col md={4} lg={4} className="div-form-enderecos">
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Nº:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                            value={enderecos.numero}
-                                            onChange={(event) => { setEnderecos({ ...enderecos, numero: event.target.value }) }} />
+
+                                            onChange={(event) => { setEndd({ ...endd, numero: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
                             </Row>
@@ -151,7 +168,11 @@ function MeusEnderecosAdd(props) {
                 </Modal.Body>
                 <Modal.Footer>
                     {successRegister ? <h3>Endereco cadastrado com sucesso</h3> : ''}
-                    <Button className="btn-form-enderecos" onClick={register}>SALVAR</Button>
+                    <Button className="btn-form-enderecos" onClick={() => {
+                        register()
+                        handleClose()
+                        getEnderecos()
+                    }} >SALVAR</Button>
                 </Modal.Footer>
             </Modal>
         </>
