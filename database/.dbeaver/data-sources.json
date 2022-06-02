@@ -1,0 +1,40 @@
+{
+	"folders": {},
+	"connections": {
+		"mysql8-18124d11e24-4681e18efc673e4d": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "bd_politeismo",
+			"save-password": true,
+			"navigator-show-only-entities": true,
+			"navigator-hide-folders": true,
+			"navigator-hide-virtual": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "bd_politeismo",
+				"url": "jdbc:mysql://localhost:3306/bd_politeismo",
+				"home": "C:\\Program Files\\MySQL\\MySQL Server 8.0",
+				"type": "dev",
+				"properties": {
+					"connectTimeout": "20000",
+					"rewriteBatchedStatements": "true",
+					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2"
+				},
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
