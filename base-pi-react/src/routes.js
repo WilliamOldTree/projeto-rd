@@ -28,16 +28,13 @@ import Espirita from "./pages/Departamentos/Espirita/Espirita";
 import Evangelica from "./pages/Departamentos/Evangelica/Evangelica";
 import Judaica from "./pages/Departamentos/Judaica/Judaica";
 import Search from "./pages/search/Search";
-import { useContext } from 'react'
+import { ClientProvider } from './context/login.provider'
+
 
 export const Routes = () => {
-
-
-  
-
     return (
         <Switch>
-         
+            <ClientProvider>
                 <Route path="/" component={Home} exact />
                 <Route path="/product/:id" component={Product} />
                 <Route path="/category" component={Categoria} />
@@ -57,8 +54,6 @@ export const Routes = () => {
                 <Route path="/institucional/processopagamento" component={ProcessoPagamento} />
                 <Route path="/institucional/seguranca" component={Seguranca} />
                 <Route path="/atendimento_ao_cliente" component={AtendimentoCliente} />
-
-
                 <Route path="/cart" component={Cart} />
                 <Route path="/cart_success/:idPedido" component={Cart_Success} />
                 <Route path="/rec_senha" component={RecSenha} />
@@ -73,7 +68,7 @@ export const Routes = () => {
                 <Route path="/cart_address" component={Cart_address} />
                 <Route path="/pagamento" component={Pagamento} />
                 <Route path="/checkout_carrinho" component={Checkout_carrinho} />
-           
+            </ClientProvider>
         </Switch>
     );
 }

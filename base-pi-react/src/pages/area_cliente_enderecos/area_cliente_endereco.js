@@ -14,14 +14,13 @@ import axios from 'axios'
 
 
 
-
 function AreaEndereco(props) {
 
     const [enderecos, setEnderecos] = useState([])
     
-
+    let idCLienteLogado = localStorage.getItem("id")
     function getEnderecos() {
-        axios.get(`${baseUrl}/enderecos`)
+        axios.get(`${baseUrl}/enderecos/${idCLienteLogado}/enderecos`)
             .then((response) => {
                 setEnderecos(response.data)
         })
