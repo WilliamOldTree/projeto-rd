@@ -43,6 +43,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
+		
 		.antMatchers(HttpMethod.GET , "/produtos").permitAll()
 		.antMatchers(HttpMethod.GET , "/produtos/*").permitAll()
 		.antMatchers(HttpMethod.POST , "/produtos/**").permitAll()
@@ -50,6 +51,18 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.GET , "/departamentos/*").permitAll()
 		.antMatchers(HttpMethod.POST , "/clientes").permitAll()
 		.antMatchers(HttpMethod.POST , "/auth").permitAll()
+		.antMatchers(HttpMethod.GET , "/pedidos/*").permitAll()
+		.antMatchers(HttpMethod.GET , "/pedidos").permitAll()
+		.antMatchers(HttpMethod.POST , "/pedidos/*/*").permitAll()
+		.antMatchers(HttpMethod.POST , "/pedidos").permitAll()
+		.antMatchers(HttpMethod.POST , "/pedidos/novo").permitAll()
+		.antMatchers(HttpMethod.GET , "/itensPedido/*").permitAll()
+		.antMatchers(HttpMethod.GET , "/itensPedido/*/*").permitAll()
+		.antMatchers(HttpMethod.GET , "/itensPedido").permitAll()
+		.antMatchers(HttpMethod.POST , "/itensPedido/*").permitAll()
+
+
+
 		.anyRequest().authenticated().and().cors()
 		.and().csrf().disable()
 		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
