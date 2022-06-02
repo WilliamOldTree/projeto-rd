@@ -27,8 +27,10 @@ function AreaEndereco(props) {
         })
     }
 
+    const URL='http://localhost:8080/enderecos'
+
     const deleteEnderecos = (id) => {
-        axios.delete(`${baseUrl}/enderecos/${id}`)
+        axios.delete(`${URL}/${id}`)
             .then((response) => {
                 alert('item removido com sucesso')
                 getEnderecos()

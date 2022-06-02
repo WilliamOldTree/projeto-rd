@@ -1,20 +1,14 @@
 import { Link } from 'react-router-dom'
 import './Menu.css';
-import { AuthContext } from '../../context/login.provider'
 import { useContext } from 'react'
 
 function Menu() {
 
-    const { logout, authenticaded } = useContext(AuthContext)
-
-    const handleLogout = () => {
-        logout()
-    }
 
 
     return (
         <>
-            {authenticaded ?
+      
                 <div className='menu-component'>
                     <Link className='menu-component-itens' to='area_cliente_dados'>Meus Dados
                         <hr className='menu-component-lines' />
@@ -34,14 +28,10 @@ function Menu() {
                     <Link className='menu-component-itens' to='area_cliente_senha' >Alterar Senha
                         <hr className='menu-component-lines' />
                     </Link>
-                    <Link className='menu-component-itens' onClick={handleLogout} href=''>Sair
+                    <Link className='menu-component-itens' href=''>Sair
                     </Link>
                 </div>
-                :
-                <Link to="/login" className="dropdown-item">
-                    <span className="font-menu" data-bs-dismiss="offcanvas">Faça seu Login</span>
-                </Link>
-                }
+            
         </>
     );
 }

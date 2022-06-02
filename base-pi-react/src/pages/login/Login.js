@@ -11,7 +11,7 @@ import Title from '../../components/title/Title';
 import User from '../../components/asserts/icons/user.png';
 import Check from '../../components/asserts/icons/check.png';
 import React, { useEffect, useContext, useState } from 'react';
-import { AuthContext } from '../../context/login.provider'
+
 
 
 function Login() {
@@ -29,18 +29,7 @@ function Login() {
     }
 
 
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-
-
-    const { authenticaded, login } = useContext(AuthContext)
-
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        console.log("submit", {email,password})
-        login(email, password) // integração do meu contexto c/ api
-    }
-
+   
     return (
         <>
             <Header />
@@ -51,18 +40,16 @@ function Login() {
 
                     {/* INÍCIO FORM DE LOGIN */}
                     <div className='login'>
-                        <form className='form-login' onSubmit={handleSubmit}>
+                        <form className='form-login'>
                             <h4 className='title-login'>Já é cliente Politeísmo Shop?</h4>
                             <div className='mb-3'>
                                 <label for='email' className='form-label email-login'>E-mail</label>
                                 <input type='email' className='form-control' name="email" id='email' required
-                                    value={email}
-                                    onChange={(event) => { setEmail(event.target.value) }} />
+                                  />
                                 <div className='mb-3'>
                                     <label for='senha' className='form-label senha-login'  >Senha</label>
                                     <input type='password' name="password" className='form-control' id='senha' required onMouseOver={validar} 
-                                    value={password}
-                                    onChange={(event) => { setPassword(event.target.value) }}/>
+                        />
                                     <span id='ErroLoginSenhaNova' className='AlterarSenhaVermelho'></span>
                                 </div>
                                 <button className='btn formlogin' type='submit'>ENTRAR</button>

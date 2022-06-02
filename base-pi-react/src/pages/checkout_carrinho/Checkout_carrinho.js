@@ -15,6 +15,7 @@ import CartContext from '../../context/cart.provider'
 import React, { useEffect, useContext } from 'react';
 import { baseUrl } from '../../environments'
 import axios from 'axios'
+import { useHistory } from "react-router-dom";
 
 function Checkout_carrinho() {
     const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty, valorTotal } = useContext(CartContext)

@@ -14,7 +14,6 @@ import ModalCarrinho from '../modal_cart/Modal_Cart'
 import Lixeira from '../../components/asserts/icons/lixeira.png';
 import { Popover, OverlayTrigger } from "react-bootstrap"
 import { baseUrl } from '../../environments';
-import { AuthContext } from '../../context/login.provider'
 import React, { useState, useContext, useEffect } from 'react'
 
 
@@ -28,15 +27,13 @@ function Header(props) {
     }
 
 
-    const { authenticaded } = useContext(AuthContext)
 
 
     const popover = (
         <Popover id="popover-basic">
 
             <Popover.Header as="h3" style={{ textAlign: "center" }}>Meus Favoritos</Popover.Header>
-            {authenticaded
-                ?
+          
                 <Popover.Body>
                     <div className="modal-body">
                         <div className="carrinho">
@@ -83,11 +80,9 @@ function Header(props) {
                     </div>
 
                 </Popover.Body>
-                :
-                <Popover.Body>
-                    <p className="favorito-aut">Realize seu Login</p>
-                </Popover.Body>
-            }
+                
+             
+            
         </Popover>
     );
 
