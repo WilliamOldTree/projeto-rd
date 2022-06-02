@@ -42,7 +42,7 @@ function MeusEnderecosAdd(props) {
         axios.post(`${baseUrl}/enderecos`, endd)
             .then(response => {
                 setSuccessRegister(true)
-                alert('Endereço adicionado recarregue a pagina')
+                Alert('Endereço adicionado recarregue a pagina')
                 getEnderecos()
             })
     }
@@ -181,6 +181,7 @@ function MeusEnderecosAdd(props) {
                     <Button className="btn-form-enderecos" onClick={()=>{
                         register()
                         handleClose()
+                        getEnderecos()
 
                     }} >SALVAR</Button>
                 </Modal.Footer>
