@@ -6,17 +6,12 @@ import Cart from '../asserts/icons/cart.png';
 //import BudaMedit from '../../components/asserts/images/cart-images/buda-meditando.png';
 import Lixeira from '../../components/asserts/icons/lixeira.png';
 import CartContext from '../../context/cart.provider'
+import { AuthContext } from '../../context/login.provider'
 
 function ModalCarrinho(props) {
 
-    const { cart, getCart, valorTotalAmem } = useContext(CartContext)
-    const { cartQty, getCartQty, soma } = useContext(CartContext)
-    const { deleteCart, tira, valorTotal} = useContext(CartContext)
-
-    //const totalCarrinho = JSON.parse(localStorage.getItem('cart')) 
-    //const valorTotal = totalCarrinho.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
-    //var atualTotal = valorTotal
-    //var totalFormat = atualTotal.toLocaleString('pt-br', {minimumFractionDigits: 2});
+    const { cart, getCart, valorTotalAmem, getCartQty, soma, deleteCart, tira, valorTotal } = useContext(CartContext)
+    const { authenticaded } = useContext(AuthContext)
 
     useEffect(() => {
         getCart()
@@ -26,13 +21,13 @@ function ModalCarrinho(props) {
 
     const precoShow = (number) => {
         let precoConvertido = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number)
-        return(
+        return (
             <>
-               <strong>{precoConvertido}</strong>
+                <strong>{precoConvertido}</strong>
             </>
         )
     }
-    
+
     return (
         <>
             {['bottom'].map((placement) => (
@@ -79,17 +74,22 @@ function ModalCarrinho(props) {
                                                     <hr />
 
                                                     <Col md={12} lg={12} className="div-footer-cart" >
-                                        <h6><strong> SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</strong></h6>
-                                    </Col>
-                                    <br></br>
-                                    <Col md={12} lg={12} className="div-btn-cart">
-                                        <Link to="/cart"><Button className="btnFinal">VER CARRINHO</Button></Link>
-                                    </Col>
+                                                        <h6><strong> SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</strong></h6>
+                                                    </Col>
+                                                    <br></br>
+                                                    {authenticaded
+                                                        ?
+                                                        <Col md={12} lg={12} className="div-btn-cart">
+                                                            <Link to="/cart"><Button className="btnFinal">VER CARRINHO</Button></Link>
+                                                        </Col>
+                                                        :
+                                                        ''
+                                                    }
                                                 </Row>
-                                                
+
                                             )
                                         })}
-                                
+
                                 </Container>
 
                             </Popover.Body>

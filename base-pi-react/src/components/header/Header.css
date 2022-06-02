@@ -303,3 +303,11 @@ html, header, body, footer {
     margin-top: 40px;
     margin-left: 5px;
 }
+
+.favorito-aut{
+    font-size: 18px;
+    font-weight: 700;
+    color: #212529;
+
+
+}

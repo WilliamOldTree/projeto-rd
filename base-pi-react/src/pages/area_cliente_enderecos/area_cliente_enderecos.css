@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
     width: 100%;
+
+}
+.containerEnderecoGeral {
+    height: auto;
 }
 
 .MenuAreaAlinhamento1 {
@@ -53,83 +57,97 @@
 
 #container-Enderecos {
 
-    width: 720px;
+    width: 100%;
     height: auto;
-    align-items: center;
-    margin-top: -12%;
-    margin-left: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    margin-top: -310px;
+    margin-left: 200px;
     background: #FFFFFF;
-    border: 2px solid #261C1A;
-    box-sizing: border-box;
+    /* border: 2px solid #261C1A; */
+    /* box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
+    border-radius: 30px; */
     position: relative;
-    top: -120px;
+
 }
 
 .listaEnderecos1 {
+    font-size: 12px;
     list-style: none;
-    text-align: start;
-    line-height: 120px;
-    margin-left: 30px;
+    text-align: left;
+    line-height: 115px;
+    margin-left: -40px;
+    margin-top: -40px;
 }
 
 .listaEnderecos2 {
     list-style: none;
     text-align: start;
-    line-height: 120px;
-    margin-left: 60px;
+    line-height: 115px;
+    margin-left: -20px;
+    margin-top: -40px;
 }
 
 .AreaClienteLista {
     color: #261C1A;
     font-size: 18px;
     font-weight: 700;
+    margin-bottom: -30px;
 }
 
 .Enderecos1 {
     list-style: none;
     text-align: start;
-    line-height: 120px;
-    margin-top: -450px;
-    margin-left: 30px;
+    line-height: 115px;
+    margin-top: -330px;
+    margin-left: -40px;
 }
 
 .Enderecos2 {
     list-style: none;
     text-align: start;
-    line-height: 120px;
-    margin-top: -450px;
-    margin-left: 60px;
+    line-height: 115px;
+    margin-top: -330px;
+    margin-left: -20px;
 }
 
 .DadosEnderecos {
     font-size: 18px;
     color: #504f4f;
+    margin-bottom: -30px;
 }
 
-.LixeiraAreaEndereco {
+
+
+.LixeiraAreaEnderecos {
     position: absolute;
     width: 50px;
     height: auto;
-    margin-top: -90px;
-    margin-left: 460px;
+    margin-top: -55px;
+    margin-left: 165px;
+    cursor: pointer;
 }
 
 .btns {
     margin-top: 0px;
-    margin-left: 460px;
+    margin-left: 215px;
     margin-bottom: 20px;
 }
 
+.cardEnd {
+    margin-right: 10px;
+    height: auto;
+}
 
-@media (max-width:667px) {
+@media (max-width:1000px) {
 
     #container-Enderecos {
         width: 100%;
         margin: 0;
-
-        margin-top: 150px;
+        margin-left: 10px;
+        
     }
 
 
@@ -144,6 +162,31 @@
         width: 50px;
     }
 
+    
+
+    .btns {
+        margin-left: 25px;
+    }
+
+}
+
+@media (max-width:667px) {
+
+    #container-Enderecos {
+        width: 100%;  
+    }
+
+
+    .MenuAreaAlinhamento1 {
+        display: none;
+    }
+
+    .UserAreaClienteEndereco {
+        position: absolute;
+        top: -40px;
+        width: 50px;
+    }
+
     .LixeiraAreaEndereco {
         position: relative;
         top: 420px;
@@ -155,36 +198,8 @@
         margin-top: -10%;
     }
 
-    .tituloEndereco {
-        color: #261C1A;
-        margin-top: 27px;
-        margin-left: 166px;
-        position: relative;
-        top: 10px;
-        left: -8%;
-        text-align: center;
-        font-weight: bold;
-        font-size: 25px;
-    }
-
-    editarEnderecos {
-        width: 105px;
-        height: 50px;
-        position: relative;
-        top: 56%;
-        left: -15%;
-        align-items: center;
-        background: #F27507;
-        border-radius: 10px;
-        border: none;
-        font-weight: bold;
-    }
-
-    .LixeiraAreaEndereco img {
-
-        margin-top: -510px;
-        width: 50px;
-        height: 40px;
+    .btns {
+        margin-left: 65px;
     }
 
 }
