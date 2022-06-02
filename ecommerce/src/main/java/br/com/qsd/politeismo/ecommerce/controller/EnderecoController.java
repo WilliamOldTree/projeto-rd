@@ -45,7 +45,7 @@ public class EnderecoController {
 	public ResponseEntity <Endereco> insert (@RequestBody FormEndereco dto){
 	    try { 
 	    	Endereco obj = service.insert(dto);
-	        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getIdEndereco()).toUri();
+	        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId_endereco()).toUri();
 	        return ResponseEntity.created(uri).body(obj);
 	     } catch (ServiceException e) {
 	           return ResponseEntity.unprocessableEntity().build();
@@ -58,10 +58,10 @@ public class EnderecoController {
 		return ResponseEntity.ok().body(obj);
 	}
 	
+	
 	@DeleteMapping(value= "/{id}")
 	public ResponseEntity<Void> deletar(@PathVariable Long id){
 		service.deletar(id);
 		return ResponseEntity.noContent().build();
 	}
-	
 }

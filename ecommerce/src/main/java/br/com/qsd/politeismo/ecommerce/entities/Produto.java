@@ -1,15 +1,12 @@
 package br.com.qsd.politeismo.ecommerce.entities;
 
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -49,7 +46,7 @@ public class Produto {
 	
 	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name = "fk_id_produto_destaque")
+	@JoinColumn(name = "fk_id_produto_destaque",nullable = false)
 	private ProdutoDestaque produtoDestaque;
 	
 	@JsonIgnore
@@ -67,18 +64,6 @@ public class Produto {
 	@JoinColumn(name = "fk_id_fornecedor", nullable = false)
 	private Fornecedor fornecedor;
 	
-	@JsonIgnore
-	@OneToMany(mappedBy="idProduto")
-	private List<ItemPedido> itensPedido;
-	
-	@JsonIgnore
-	@ManyToMany(mappedBy="produtos")
-	private List<Favoritos> favoritos;
-	
-	
-	@JsonIgnore 
-	@OneToMany(mappedBy="idNotaFiscal") 
-	private List<ItemNotaFiscal> itemNotaFiscal; 
 	
 	public Produto() {
 		
@@ -186,12 +171,6 @@ public class Produto {
 
 	public void setFornecedor(Fornecedor fornecedor) {
 		this.fornecedor = fornecedor;
-	}
-
-	public List<ItemPedido> getItensPedido() {
-		return itensPedido;
 	}	
-	
-	
 
 }// end

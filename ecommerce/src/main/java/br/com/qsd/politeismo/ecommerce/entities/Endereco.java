@@ -13,11 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import br.com.qsd.politeismo.ecommerce.enums.Estado;
 
 @Entity
@@ -35,7 +31,7 @@ public class Endereco {
 	@Column(nullable = false, name = "NOME_LOGRADOURO")
 	private String nomeLougradouro;
 
-	@Column(nullable = false, name = "TIPO_LOGRADOURO")
+	@Column(nullable = false, name = "TIPO_LOGRADO")
 	private String tipoLougradouro;
 
 	@Column(nullable = false, name = "NUMERO")
@@ -63,22 +59,17 @@ public class Endereco {
 	@JoinColumn(name = "fk_id_fornecedor", nullable = true)
 	private Fornecedor fornecedor;
 	
-	@JsonIgnore
-	@OneToMany(mappedBy="endereco")
-	private List<Pedido> pedidos;
-	
 	public Endereco() {
 		
 	}
 	
-	public Long getIdEndereco() {
+	public Long getId_endereco() {
 		return idEndereco;
 	}
 
-	public void setIdEndereco(Long idEndereco) {
-		this.idEndereco = idEndereco;
+	public void setId_endereco(Long id_endereco) {
+		this.idEndereco = id_endereco;
 	}
-
 
 	public String getApelido() {
 		return apelido;
@@ -151,20 +142,5 @@ public class Endereco {
 	public void setClientes(List<Cliente> clientes) {
 		this.clientes = clientes;
 	}
-
-
-	public Fornecedor getFornecedor() {
-		return fornecedor;
-	}
-
-	public void setFornecedor(Fornecedor fornecedor) {
-		this.fornecedor = fornecedor;
-	}
-
-	public List<Pedido> getPedidos() {
-		return pedidos;
-	}
-	
-	
 
 }

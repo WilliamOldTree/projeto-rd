@@ -1,13 +1,9 @@
 package br.com.qsd.politeismo.ecommerce.controller.dto;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import br.com.qsd.politeismo.ecommerce.entities.Endereco;
 import br.com.qsd.politeismo.ecommerce.enums.Estado;
 
 public class EnderecoDTO {
-	private Long id;
 	private String apelido;
 	private String nomeLougradouro;
 	private String tipoLougradouro;
@@ -22,11 +18,7 @@ public class EnderecoDTO {
 	}
 
 	
-	
-
-
 	public EnderecoDTO(Endereco entity) {
-		id = entity.getIdEndereco();
 		apelido= entity.getApelido();
 		nomeLougradouro= entity.getNomeLougradouro();
 		tipoLougradouro= entity.getTipoLougradouro();
@@ -38,16 +30,7 @@ public class EnderecoDTO {
 		
 	}
 
-	
-	public Long getId() {
-		return id;
-	}
 
-
-	public void setId(Long id) {
-		this.id = id;
-	}	
-	
 	public String getApelido() {
 		return apelido;
 	}
@@ -111,9 +94,5 @@ public class EnderecoDTO {
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
-	
-	public static List<EnderecoDTO> converter (List <Endereco> enderecos ) {
-		return enderecos.stream().map(EnderecoDTO::new).collect(Collectors.toList()); 
-	}
-	
+
 }

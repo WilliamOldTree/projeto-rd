@@ -1,8 +1,13 @@
-INSERT INTO cliente (id_cliente, cpf, nome, email, senha, celular, fixo) 
-VALUES(1, '55555555-55', 'leia','leia@hotmail.com' , '123','20000201','22005566');
+INSERT INTO cliente (id_cliente, cpf, nome, email, password, nascimento, genero) 
+VALUES(1, '55555555-55', 'leia','leia@hotmail.com' , '123','2000-02-01','FEMININO');
 
-INSERT INTO endereco (ID_ENDERECO, apelido, NOME_LOGRADOURO, TIPO_LOGRADOURO, numero, cep, estado, cidade, bairro) 
+INSERT INTO endereco (ID_ENDERECO, apelido, NOME_LOGRADOURO, TIPO_LOGRADO, numero, cep, estado, cidade, bairro) 
 VALUES(1, 'Casa', 'independencia', 'Rua' , '123','43700-000', 'BA','Salvador', 'CIA 2');
+
+insert into Forma (Instituicao, cliente_id_cliente)
+VALUES ('Outros','1');
+
+
 
 -- INSERTS PARA TESTES DE RELACIONAMENTO COM PRODUTO 
 
@@ -45,14 +50,6 @@ insert into CATEGORIA (ID_CATEGORIA, NOME, FL_INATIVO) values (15, 'MANTAS', 1);
 insert into CATEGORIA (ID_CATEGORIA, NOME, FL_INATIVO) values (16, 'SACOLAS / MOCHILAS', 1);
 insert into CATEGORIA (ID_CATEGORIA, NOME, FL_INATIVO) values (17, 'TERÇOS', 1);
 insert into CATEGORIA (ID_CATEGORIA, NOME, FL_INATIVO) values (18, 'VESTUÁRIO', 1);
-insert into PRODUTO (NOME,DESCRICAO, URL_PRODUTO,ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
-values ('Buda Dourado','Buda Dourado: Peça Dourada, Peça Confeccionada em Resina de Alta Qualidade ', 'https://m.media-amazon.com/images/I/71Elte1F7QL._AC_SL1280_.jpg', 295, '0.2', '23.50', '1.0', 13, 5, 3, 1, 1);
 
-insert into PRODUTO (NOME,DESCRICAO, URL_PRODUTO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
-values ('Terço Nossa Senhora','Terço Nossa Senhora: Em Madeira, Detalhes em Branco e Cristais Azuis', 'https://static.lvartigosreligiosos.com.br/public/liriodovale/imagens/produtos/terco-madeira-pau-brasil-com-entremeio-de-nossa-senhora-das-gracas-8mm-5172.jpg', 100, '0.1', '20.15', '0.5', 17, 1, 1, 1, 1);
-
- insert into ENTREGA (DATA, VALOR_FRETE, STATUS_ENTREGA, FORMA_ENTREGA)
- values ('2022-03-22', 15.3, 'OBJETO_POSTADO', 'CORREIOS');
-
- insert into PEDIDO (DATA_PEDIDO, VALOR_TOTAL, STATUS_PEDIDO, FK_ID_CLIENTE, FK_ID_ENTREGA)
- values ('2022-03-20', 15.3, 'SEPARAÇÃO', 1, 1);
+insert into PRODUTO (NOME,DESCRICAO, ESTOQUE, PESO, PRECO, VOLUME, FK_ID_CATEGORIA, FK_ID_DEPARTAMENTO, FK_ID_FORNECEDOR, FK_ID_PRODUTO_DESTAQUE, FL_INATIVO)
+values ('Buda Dourado','Lorem Ipson', 295, '0.2', '23.50', '1.0', 13, 5, 3, 1, 1);
