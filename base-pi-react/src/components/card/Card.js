@@ -36,7 +36,7 @@ function Card(props) {
         return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(atual)
         
     }
-    console.log(converter)
+    //console.log(converter)
 
     return (
         <>

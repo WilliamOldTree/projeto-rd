@@ -10,9 +10,19 @@
 
 .menu-component-itens:hover {
     text-decoration: underline;
-    color: #AF9787;
+    color          : #AF9787;
 }
 
-.menu-component-lines{
+.menu-component-lines {
     width: 160px;
+}
+
+.dropdown-item {
+    text-align: center;
+}
+
+.font-menu {
+    font-size  : 20px;
+    color      : #261C1A;
+    font-weight: 700;
 }
