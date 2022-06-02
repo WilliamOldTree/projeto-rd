@@ -141,13 +141,13 @@
     height: auto;
 }
 
-@media (max-width:667px) {
+@media (max-width:1000px) {
 
     #container-Enderecos {
         width: 100%;
         margin: 0;
-
-        margin-top: 150px;
+        margin-left: 10px;
+        
     }
 
 
@@ -162,6 +162,31 @@
         width: 50px;
     }
 
+    
+
+    .btns {
+        margin-left: 25px;
+    }
+
+}
+
+@media (max-width:667px) {
+
+    #container-Enderecos {
+        width: 100%;  
+    }
+
+
+    .MenuAreaAlinhamento1 {
+        display: none;
+    }
+
+    .UserAreaClienteEndereco {
+        position: absolute;
+        top: -40px;
+        width: 50px;
+    }
+
     .LixeiraAreaEndereco {
         position: relative;
         top: 420px;
@@ -173,36 +198,8 @@
         margin-top: -10%;
     }
 
-    .tituloEndereco {
-        color: #261C1A;
-        margin-top: 27px;
-        margin-left: 166px;
-        position: relative;
-        top: 10px;
-        left: -8%;
-        text-align: center;
-        font-weight: bold;
-        font-size: 25px;
-    }
-
-    editarEnderecos {
-        width: 105px;
-        height: 50px;
-        position: relative;
-        top: 56%;
-        left: -15%;
-        align-items: center;
-        background: #F27507;
-        border-radius: 10px;
-        border: none;
-        font-weight: bold;
-    }
-
-    .LixeiraAreaEndereco img {
-
-        margin-top: -510px;
-        width: 50px;
-        height: 40px;
+    .btns {
+        margin-left: 65px;
     }
 
 }
