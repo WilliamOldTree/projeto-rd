@@ -43,23 +43,14 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-<<<<<<< HEAD
-//		.antMatchers(HttpMethod.GET , "/produtos").permitAll()
-//		.antMatchers(HttpMethod.GET , "/produtos/*").permitAll()
-//		.antMatchers(HttpMethod.GET , "/categorias").permitAll()
-//		.antMatchers(HttpMethod.GET , "/categorias/*").permitAll()
-//		.antMatchers(HttpMethod.POST , "/clientes").permitAll()
-//		.antMatchers(HttpMethod.POST , "/auth").permitAll()
-//		.antMatchers(HttpMethod.GET , "/pedidos/*").permitAll()
-//		.antMatchers(HttpMethod.GET , "/pedidos").permitAll()
-//		.antMatchers(HttpMethod.POST , "/pedidos").permitAll()
-//		.antMatchers(HttpMethod.GET , "/itensPedido/*").permitAll()
-//		.antMatchers(HttpMethod.GET , "/itensPedido").permitAll()
-//		.antMatchers(HttpMethod.POST , "/itensPedido").permitAll()
 		
-		
-		.antMatchers(HttpMethod.GET , "/*").permitAll()
-		.antMatchers(HttpMethod.POST , "/*").permitAll()
+		.antMatchers(HttpMethod.GET , "/produtos").permitAll()
+		.antMatchers(HttpMethod.GET , "/produtos/*").permitAll()
+		.antMatchers(HttpMethod.POST , "/produtos/**").permitAll()
+		.antMatchers(HttpMethod.GET , "/departamentos").permitAll()
+		.antMatchers(HttpMethod.GET , "/departamentos/*").permitAll()
+		.antMatchers(HttpMethod.POST , "/clientes").permitAll()
+		.antMatchers(HttpMethod.POST , "/auth").permitAll()
 		.antMatchers(HttpMethod.GET , "/pedidos/*").permitAll()
 		.antMatchers(HttpMethod.GET , "/pedidos").permitAll()
 		.antMatchers(HttpMethod.POST , "/pedidos/*/*").permitAll()
@@ -68,18 +59,8 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.GET , "/itensPedido/*").permitAll()
 		.antMatchers(HttpMethod.GET , "/itensPedido/*/*").permitAll()
 		.antMatchers(HttpMethod.GET , "/itensPedido").permitAll()
-		.antMatchers(HttpMethod.POST , "/itensPedido/*").permitAll()
+		.antMatchers(HttpMethod.POST , "/itensPedido/*").permitAll()		
 		
-		
-=======
-		.antMatchers(HttpMethod.GET , "/produtos").permitAll()
-		.antMatchers(HttpMethod.GET , "/produtos/*").permitAll()
-		.antMatchers(HttpMethod.POST , "/produtos/**").permitAll()
-		.antMatchers(HttpMethod.GET , "/departamentos").permitAll()
-		.antMatchers(HttpMethod.GET , "/departamentos/*").permitAll()
-		.antMatchers(HttpMethod.POST , "/clientes").permitAll()
-		.antMatchers(HttpMethod.POST , "/auth").permitAll()
->>>>>>> 955bc3b69e1378e89cea6b984af3ec473700e377
 		.anyRequest().authenticated().and().cors()
 		.and().csrf().disable()
 		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
