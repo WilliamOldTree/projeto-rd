@@ -5,8 +5,6 @@ import { baseUrl } from '../../environments'
 import axios from 'axios'
 import { Modal, Button, Form, Container, Row, Col } from 'react-bootstrap'
 
-
-
 function MeusEnderecosAdd(props) {
 
     const [show, setShow] = useState(false);
@@ -24,31 +22,22 @@ function MeusEnderecosAdd(props) {
         cidade: "",
         bairro: "",
         cliente: 0,
+    })
 
-    }
-    )
     const [successRegister, setSuccessRegister] = useState(false)
-
-
-    function getEnderecos() {
-        axios.get(`${baseUrl}/enderecos`)
-            .then((response) => {
-               props.get()
-            })
-    }
-
+    let idCLienteLogado = localStorage.getItem("id")
 
     const register = () => {
         axios.post(`${baseUrl}/enderecos`, endd)
             .then(response => {
                 setSuccessRegister(true)
                 alert('Endereço adicionado recarregue a pagina')
-                getEnderecos()
+                props.get()
             })
     }
 
     useEffect(() => {
-        setEndd({ ...endd, cliente: JSON.parse(localStorage.getItem("cliente")) })
+        setEndd({ ...endd, cliente: JSON.parse(localStorage.getItem("id")) })
     }, [])
 
     console.log(endd)
@@ -82,7 +71,7 @@ function MeusEnderecosAdd(props) {
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Endereço:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                            
+
                                             onChange={(event) => { setEndd({ ...endd, nomeLougradouro: event.target.value }) }} />
                                     </Form.Group>
 
@@ -93,7 +82,7 @@ function MeusEnderecosAdd(props) {
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Cidade:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                            
+
                                             onChange={(event) => { setEndd({ ...endd, cidade: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
@@ -101,7 +90,7 @@ function MeusEnderecosAdd(props) {
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">CEP:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                            
+
                                             onChange={(event) => { setEndd({ ...endd, cep: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
@@ -111,7 +100,7 @@ function MeusEnderecosAdd(props) {
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Complemento:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                            
+
                                             onChange={(event) => { setEndd({ ...endd, apelido: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
@@ -160,7 +149,7 @@ function MeusEnderecosAdd(props) {
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Bairro:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                            
+
                                             onChange={(event) => { setEndd({ ...endd, bairro: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
@@ -168,7 +157,7 @@ function MeusEnderecosAdd(props) {
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Nº:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                            
+
                                             onChange={(event) => { setEndd({ ...endd, numero: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
@@ -178,10 +167,10 @@ function MeusEnderecosAdd(props) {
                 </Modal.Body>
                 <Modal.Footer>
                     {successRegister ? <h3>Endereco cadastrado com sucesso</h3> : ''}
-                    <Button className="btn-form-enderecos" onClick={()=>{
+                    <Button className="btn-form-enderecos" onClick={() => {
                         register()
                         handleClose()
-
+                        props.get()
                     }} >SALVAR</Button>
                 </Modal.Footer>
             </Modal>

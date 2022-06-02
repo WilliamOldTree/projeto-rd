@@ -5,6 +5,7 @@ import Menu from '../../components/menu/Menu'
 import Title from '../../components/title/Title'
 import User from '../../components/asserts/icons/user.png'
 import MeusDados from '../../components/modal_meus_dados/Modal_Meus_Dados'
+import { AuthContext } from '../../context/login.provider'
 import React, { useState, useContext, useEffect } from 'react'
 
 function AreaDados() {

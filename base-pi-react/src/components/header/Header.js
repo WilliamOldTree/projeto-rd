@@ -14,8 +14,9 @@ import ModalCarrinho from '../modal_cart/Modal_Cart'
 import Lixeira from '../../components/asserts/icons/lixeira.png';
 import { Popover, OverlayTrigger } from "react-bootstrap"
 import { baseUrl } from '../../environments';
+import { AuthContext } from '../../context/login.provider'
 import React, { useState, useContext, useEffect } from 'react'
-
+import ClientContext from '../../context/login.provider'
 
 function Header(props) {
 
@@ -23,72 +24,68 @@ function Header(props) {
     let history = useHistory()
 
     const buscar = () => {
-        history.push(`/busca/${ busca }`)
+        history.push(`/busca/${busca}`)
     }
 
-
-
+    const { Autorizado } = useContext(ClientContext)
 
     const popover = (
         <Popover id="popover-basic">
-
             <Popover.Header as="h3" style={{ textAlign: "center" }}>Meus Favoritos</Popover.Header>
-
-            <Popover.Body>
-                <div className="modal-body">
-                    <div className="carrinho">
-                        <div className="row">
+            {Autorizado ?
+                <Popover.Body>
+                    <div className="modal-body">
+                        <div className="carrinho">
                             <div className="row">
-                                <div className="imgSagrada col-3">
-                                    <img src={Sagrada} width="100px" />
+                                <div className="row">
+                                    <div className="imgSagrada col-3">
+                                        <img src={Sagrada} width="100px" />
+                                    </div>
+                                    <div className="sFamilia col-7">
+                                        <p>Imagem Sagrada Família Resina</p>
+                                        <strong>R$ 30,00</strong>
+                                    </div>
+                                    <div className=" lixeira col-1">
+                                        <button className="btn-lixeira"><img className="lixeira"
+                                            src={Lixeira}
+                                            alt="" /></button>
+                                    </div>
                                 </div>
-                                <div className="sFamilia col-7">
-                                    <p>Imagem Sagrada Família Resina</p>
-                                    <strong>R$ 30,00</strong>
-                                </div>
-                                <div className=" lixeira col-1">
-                                    <button className="btn-lixeira"><img className="lixeira"
-                                        src={Lixeira}
-                                        alt="" /></button>
-                                </div>
-                            </div>
-                            <p></p>
-                            <hr />
-                            <div className="row">
-                                <div className="imgBiblia col-3">
-                                    <img src={Biblia}
-                                        width="90px" />
-                                </div>
-                                <div className="BibliaS col-7">
-                                    <p>Bíblia Sagrada de Bolso Ave Maria</p>
-                                    <strong>R$ 40,00</strong>
-                                </div>
-                                <div className=" lixeira col-1">
-                                    <button className="btn-lixeira"><img className="lixeira2"
-                                        src={Lixeira}
-                                        alt="" /></button>
-                                </div>
+                                <p></p>
                                 <hr />
+                                <div className="row">
+                                    <div className="imgBiblia col-3">
+                                        <img src={Biblia}
+                                            width="90px" />
+                                    </div>
+                                    <div className="BibliaS col-7">
+                                        <p>Bíblia Sagrada de Bolso Ave Maria</p>
+                                        <strong>R$ 40,00</strong>
+                                    </div>
+                                    <div className=" lixeira col-1">
+                                        <button className="btn-lixeira"><img className="lixeira2"
+                                            src={Lixeira}
+                                            alt="" /></button>
+                                    </div>
+                                    <hr />
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-12">
-                            <div><a href="area_cliente_favoritos">
-                                <button className="btnFinalFavoritos">VER FAVORITOS</button></a>
+                            <div className="col-12">
+                                <div><a href="area_cliente_favoritos">
+                                    <button className="btnFinalFavoritos">VER FAVORITOS</button></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-            </Popover.Body>
-
-
-
+                </Popover.Body>
+                :
+                <Popover.Body>
+                    <p className="favorito-aut">Realize seu Login</p>
+                </Popover.Body>
+            }
         </Popover>
     );
-
-
-
-
 
     return (
         <>

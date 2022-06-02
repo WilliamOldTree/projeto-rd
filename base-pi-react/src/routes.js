@@ -28,52 +28,47 @@ import Espirita from "./pages/Departamentos/Espirita/Espirita";
 import Evangelica from "./pages/Departamentos/Evangelica/Evangelica";
 import Judaica from "./pages/Departamentos/Judaica/Judaica";
 import Search from "./pages/search/Search";
-import { useContext } from 'react'
+import { ClientProvider } from './context/login.provider'
+
 
 export const Routes = () => {
-
-
-
-
     return (
         <Switch>
-
-            <Route path="/" component={Home} exact />
-            <Route path="/product/:id" component={Product} />
-            <Route path="/category" component={Categoria} />
-            <Route path="/Departamentos/Africana/Africana" component={Africana} />
-            <Route path="/Departamentos/Budista/Budista" component={Budista} />
-            <Route path="/Departamentos/Catolica/Catolica" component={Catolica} />
-            <Route path="/Departamentos/Espirita/Espirita" component={Espirita} />
-            <Route path="/Departamentos/Evangelica/Evangelica" component={Evangelica} />
-            <Route path="/Departamentos/Judaica/Judaica" component={Judaica} />
-            <Route path="/busca/:textobusca" component={Search} />
-            <Route path="/login" component={Login} />
-            <Route path="/cadastro_ClienteFisico" component={ClienteFisico} />
-            <Route path="/institucional/empresa" component={Empresa} />
-            <Route path="/institucional/processocompra" component={ProcessoCompra} />
-            <Route path="/institucional/processoenvio" component={ProcessoEnvio} />
-            <Route path="/institucional/processogarantia" component={ProcessoGarantia} />
-            <Route path="/institucional/processopagamento" component={ProcessoPagamento} />
-            <Route path="/institucional/seguranca" component={Seguranca} />
-            <Route path="/atendimento_ao_cliente" component={AtendimentoCliente} />
-
-
-            <Route path="/cart" component={Cart} />
-            <Route path="/cart_success/:idPedido" component={Cart_Success} />
-            <Route path="/rec_senha" component={RecSenha} />
-            <Route path="/rec_senha_nova" component={RecSenhaNova} />
-            <Route path="/area_cliente_favoritos" component={AreaFavoritos} />
-            <Route path="/area_cliente_pedidos" component={AreaPedidos} />
-            <Route path="/area_cliente_senha" component={AreaSenha} />
-            <Route path="/area_cliente_dados" component={AreaDados} />
-            <Route path="/area_cliente_cartoes" component={AreaCartoes} />
-            <Route path="/area_cliente_endereco" component={AreaEndereco} />
-            <Route path="/area_cliente_detalhesPedido" component={AreaDetalhesPedido} />
-            <Route path="/cart_address" component={Cart_address} />
-            <Route path="/pagamento" component={Pagamento} />
-            <Route path="/checkout_carrinho" component={Checkout_carrinho} />
-
+            <ClientProvider>
+                <Route path="/" component={Home} exact />
+                <Route path="/product/:id" component={Product} />
+                <Route path="/category" component={Categoria} />
+                <Route path="/Departamentos/Africana/Africana" component={Africana} />
+                <Route path="/Departamentos/Budista/Budista" component={Budista} />
+                <Route path="/Departamentos/Catolica/Catolica" component={Catolica} />
+                <Route path="/Departamentos/Espirita/Espirita" component={Espirita} />
+                <Route path="/Departamentos/Evangelica/Evangelica" component={Evangelica} />
+                <Route path="/Departamentos/Judaica/Judaica" component={Judaica} />
+                <Route path="/busca/:textobusca" component={Search} />
+                <Route path="/login" component={Login} />
+                <Route path="/cadastro_ClienteFisico" component={ClienteFisico} />
+                <Route path="/institucional/empresa" component={Empresa} />
+                <Route path="/institucional/processocompra" component={ProcessoCompra} />
+                <Route path="/institucional/processoenvio" component={ProcessoEnvio} />
+                <Route path="/institucional/processogarantia" component={ProcessoGarantia} />
+                <Route path="/institucional/processopagamento" component={ProcessoPagamento} />
+                <Route path="/institucional/seguranca" component={Seguranca} />
+                <Route path="/atendimento_ao_cliente" component={AtendimentoCliente} />
+                <Route path="/cart" component={Cart} />
+                <Route path="/cart_success/:idPedido" component={Cart_Success} />
+                <Route path="/rec_senha" component={RecSenha} />
+                <Route path="/rec_senha_nova" component={RecSenhaNova} />
+                <Route path="/area_cliente_favoritos" component={AreaFavoritos} />
+                <Route path="/area_cliente_pedidos" component={AreaPedidos} />
+                <Route path="/area_cliente_senha" component={AreaSenha} />
+                <Route path="/area_cliente_dados" component={AreaDados} />
+                <Route path="/area_cliente_cartoes" component={AreaCartoes} />
+                <Route path="/area_cliente_endereco" component={AreaEndereco} />
+                <Route path="/area_cliente_detalhesPedido" component={AreaDetalhesPedido} />
+                <Route path="/cart_address" component={Cart_address} />
+                <Route path="/pagamento" component={Pagamento} />
+                <Route path="/checkout_carrinho" component={Checkout_carrinho} />
+            </ClientProvider>
         </Switch>
     );
 }
