@@ -1,6 +1,6 @@
 
 import "./Checkout_carrinho.css"
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Title from "../../components/title/Title";
 import Footer from "../../components/footer/Footer";
@@ -12,53 +12,23 @@ import ListCompra from "../../components/list_compra/ListCompra";
 import ResumoCompra from "../../components/resumo_compra/ResumoCompra";
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import CartContext from '../../context/cart.provider'
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import { baseUrl } from '../../environments'
 import axios from 'axios'
 
 function Checkout_carrinho() {
     const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty, valorTotal } = useContext(CartContext)
-
-   // const totalCarrinho = JSON.parse(localStorage.getItem('cart'))
-
-    //const valorTotal = totalCarrinho.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
-
-    //var atualTotal = valorTotal
-    //var totalFormat = atualTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 });
-
     useEffect(() => {
         getCart()
         getCartQty()
         valorTotalAmem()
-    }, [])    
-    
-    
-    let history = useHistory();
-
-    const finalizarPedido = () => {
-        const pedido = {
-            data: "20/04/2022",
-            valor: 15.30,
-            cliente: 1,
-            formaPagamento: "BOLETO",
-            endereco: 1
-        }
-        
-        //const [pedido, setPedidos] = useState([])
-
-        axios.post(`${baseUrl}/pedidos`, pedido)
-        .then(response => {
-            console.log(response.data)
-            history.push(`/cart_success/${response.data.idPedido}`) //
-        })
-    }
-
+    }, [])
 
     const precoShow = (number) => {
         let precoConvertido = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number)
-        return(
+        return (
             <>
-               {precoConvertido}
+                {precoConvertido}
             </>
         )
     }
@@ -109,7 +79,8 @@ function Checkout_carrinho() {
                                         quantidade={item.quantidade}
                                         trash_img={TrashIcon}
                                         deletar={deleteCart}
-                                        item={item} />
+                                        item={item}
+                                    />
                                 )
                             })}
                         </ListCompra>
@@ -124,11 +95,9 @@ function Checkout_carrinho() {
                     </Col>
                 </Row>
 
-
-
                 <Row>
                     <Col className="totalPedidoBtn">
-                        <Button onClick={finalizarPedido} className="btn btn-default btnComprar mb-3" type="button">CONFIRMAR</Button>
+                        <Button className="btn btn-default btnComprar mb-3" type="button">CONFIRMAR</Button>
                     </Col>
                 </Row>
 

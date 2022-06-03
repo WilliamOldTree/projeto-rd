@@ -16,8 +16,8 @@ public interface ClienteRepository extends CrudRepository<Cliente, Long>, JpaRep
 	Optional<Cliente> findById(String cliente);
 
 	Optional<Cliente> findByEmail(String email);
-
+	
 	@Query("SELECT ec FROM Cliente ec WHERE ec.email = :email")
-	Cliente getClienteByEmail(@Param("email") String email);
+	Cliente getClienteByEmail(@Param("email")String email);
 
 }
