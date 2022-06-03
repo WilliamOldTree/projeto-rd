@@ -3,20 +3,26 @@ import Footer from "../../components/footer/Footer";
 import Title from "../../components/title/Title";
 import "./Cart_address.css";
 import Frete from "../../components/asserts/icons/caminhao-frete-home.png"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import TrashIcon from '../../components/asserts/icons/lixeira.png'
 import ListCompra from "../../components/list_compra/ListCompra";
 import ResumoCompra from "../../components/resumo_compra/ResumoCompra";
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Button } from 'react-bootstrap'
 import CartContext from '../../context/cart.provider'
 import React, { useEffect, useContext, useState } from 'react';
 import { baseUrl } from '../../environments'
 import axios from 'axios'
+import modelPedido from '../cart_address/modelPedido/modelPedido'
+
 
 function Cart_address(props) {
 
     const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty, valorTotal } = useContext(CartContext)
     const [enderecos, setEnderecos] = useState([])
+    //const [pedido, setPedido] = useState({ modelPedido })
+    //const clienteStorage = parseInt(localStorage.getItem('id'))
+    const clienteStorage = parseInt(localStorage.getItem('id'))
+    const valorStorage = parseInt(localStorage.getItem('valor'))
 
     let idCLienteLogado = localStorage.getItem("id")
     function getEnderecos() {
@@ -43,13 +49,39 @@ function Cart_address(props) {
         )
     }
 
+    const [pedido, setPedido] = useState({
+        data: "02/06/2022",
+        valor: valorStorage,
+        cliente: clienteStorage,
+        formaPagamento: "",
+        endereco: 0,
+        statusPedido: "SEPARACAO"
+    })
+
+    console.log(pedido)
+
+    const finalizarPedido = () => {
+        axios.post(`${baseUrl}/pedidos/novo`, pedido)
+            .then(response => {
+                console.log(response.data)
+                history.push(`/cart_success/${response.data.idPedido}`) //
+            }).catch((error) => {
+                console.error(error.messege)
+            })
+    }
+
+    const onChangeValueEndereco = (e) => {
+        setPedido({ ...pedido, endereco: e.target.value })
+        console.log("Endereço:::", e.target.value);
+        console.log(pedido)
+    }
 
 
     return (
         <>
             {/* BEGINNER ADDRESS*/}
 
-            <Header/>
+            <Header />
             <Container>
                 <Row>
                     {/* BEGING ADDRESS-TITLE */}
@@ -63,62 +95,68 @@ function Cart_address(props) {
                 <Row className="div-cart-pag">
                     <Col lg={5} className='cart_address_list'>
                         <h2>Endereço entrega</h2>
+                        <span>
+                            {enderecos.map((enderecos) => {
+                                return (
+                                    <div className='cart_address_actualAddress px-2' key={enderecos.id}>
+                                        <div class="form-check" >
+                                            <input class="form-check-input" name="endereco" type="radio" value={enderecos.id} id="defaultCheck1"
+                                                onClick={() => {
+                                                    setPedido({ ...pedido, endereco: enderecos.id })
+                                                }}
+                                            />
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                <strong>*Selecione a opção de Endereço para Entrega.</strong>
+                                            </label>
+                                        </div>
+                                        <ul className="cart_list_itens">
+                                            <li className="cart_list_itens"><strong>CEP:</strong> {enderecos.cep}</li>
+                                            <li className="cart_list_itens"><strong>Logradouro:</strong> {enderecos.tipoLougradouro}, {enderecos.nomeLougradouro}</li>
+                                            <li className="cart_list_itens"><strong>Complemento:</strong> {enderecos.apelido}</li>
+                                            <li className="cart_list_itens"><strong>Bairro:</strong> {enderecos.bairro}</li>
+                                            <li className="cart_list_itens"><strong>Cidade:</strong> {enderecos.cidade}</li>
+                                            <li className="cart_list_itens"><strong>Estado:</strong> {enderecos.estado}</li>
+                                        </ul>
 
-                        {enderecos.map((enderecos) => {
-                            return (
-                                <div className='cart_address_actualAddress px-2' key={enderecos.idEndereco}>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="endereco" type="radio" value="" id="defaultCheck1"/>
-                                            
-                                        <label class="form-check-label" for="defaultCheck1">
-                                            <strong>*Selecione a opção de Endereço para Entrega.</strong>
-                                        </label>
-
-                                    </div>
-                                    <ul className="cart_list_itens">
-                                        <li className="cart_list_itens"><strong>CEP:</strong> {enderecos.cep}</li>
-                                        <li className="cart_list_itens"><strong>Logradouro:</strong> {enderecos.tipoLougradouro}, {enderecos.nomeLougradouro}</li>
-                                        <li className="cart_list_itens"><strong>Complemento:</strong> {enderecos.apelido}</li>
-                                        <li className="cart_list_itens"><strong>Bairro:</strong> {enderecos.bairro}</li>
-                                        <li className="cart_list_itens"><strong>Cidade:</strong> {enderecos.cidade}</li>
-                                        <li className="cart_list_itens"><strong>Estado:</strong> {enderecos.estado}</li>
-                                    </ul>
-
-                                    {/* <div className="cart_address_alterar_add">
+                                        {/* <div className="cart_address_alterar_add">
                                      <Link className="other_address " to="/area_cliente_endereco"><h6>Deseja alterar endereço ?</h6></Link>
                                      <Link className="other_send_company" to="./entregas"><h6>Conheca outras forma de envio</h6></Link>
                                     </div> */}
 
-                                </div>
-                            )
-                        })}
-
-                        <div >
-
+                                    </div>
+                                )
+                            })}
+                        </span>
+                        <div>
                             <h2>Forma de Pagamento</h2>
-
                             <div class="form-check">
-                                <input class="form-check-input" name="pagamento" type="radio" value="PIX" id="defaultCheck1" />
+                                <input class="form-check-input" name="pagamento" type="radio" value="PIX" id="defaultCheck1"
+                                    onClick={(event) => {
+                                        setPedido({ ...pedido, formaPagamento: event.target.value })
+                                    }} />
                                 <label class="form-check-label" for="defaultCheck1">
                                     PIX
                                 </label>
                             </div>
-
                             <div class="form-check">
-                                <input class="form-check-input" name="pagamento" type="radio" value="BOLETO" id="defaultCheck1" />
+                                <input class="form-check-input" name="pagamento" type="radio" value="BOLETO" id="defaultCheck1"
+                                    onClick={(event) => {
+                                        setPedido({ ...pedido, formaPagamento: event.target.value })
+                                    }} />
                                 <label class="form-check-label" for="defaultCheck1">
                                     BOLETO
                                 </label>
                             </div>
-
                             <div class="form-check">
-                                <input class="form-check-input" name="pagamento" type="radio" value="CARTAO" id="defaultCheck1" />
+                                <input class="form-check-input" name="pagamento" type="radio" value="CARTAO" id="defaultCheck1"
+                                    onClick={(event) => {
+                                        setPedido({ ...pedido, formaPagamento: event.target.value })
+                                    }} />
                                 <label class="form-check-label" for="defaultCheck1">
                                     CARTÃO
                                 </label>
                             </div>
                         </div>
-
                     </Col>
 
                     <Col lg={7}>
@@ -146,18 +184,13 @@ function Cart_address(props) {
                                 <h2>TOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</h2>
                             </div>
                         </div>
-
-
                     </Col>
-
                     {/* FINISH CONTEUDO  */}
-
                 </Row>
-
 
                 <Row>
                     <Col className='cart_address_buttons'>
-                        <Link to="/checkout_carrinho" className="btn btn-default btnComprar " type="button">PAGAMENTO</Link>
+                        <Button className="btn btn-default btnComprar " onClick={finalizarPedido} type="button">PAGAMENTO</Button>
                     </Col>
                 </Row>
 
