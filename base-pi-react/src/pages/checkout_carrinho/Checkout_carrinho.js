@@ -18,7 +18,6 @@ import axios from 'axios'
 
 function Checkout_carrinho() {
     const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty, valorTotal } = useContext(CartContext)
-
     useEffect(() => {
         getCart()
         getCartQty()
@@ -65,6 +64,7 @@ function Checkout_carrinho() {
                         </ul>
                     </Col>
                 </Row>
+
 
                 <Row>
                     <Col>
