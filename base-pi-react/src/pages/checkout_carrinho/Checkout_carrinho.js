@@ -1,4 +1,3 @@
-
 import "./Checkout_carrinho.css"
 import { Link, useHistory } from "react-router-dom";
 import Header from "../../components/header/Header";
@@ -15,11 +14,9 @@ import CartContext from '../../context/cart.provider'
 import React, { useEffect, useContext, useState } from 'react';
 import { baseUrl } from '../../environments'
 import axios from 'axios'
-import { useHistory } from "react-router-dom";
 
 function Checkout_carrinho() {
     const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty, valorTotal } = useContext(CartContext)
-
 
     useEffect(() => {
         getCart()
@@ -99,9 +96,7 @@ function Checkout_carrinho() {
 
                 <Row>
                     <Col className="totalPedidoBtn">
-
-                       <Link to={'/area_cliente_pedidos'} className="btn btn-default btnComprar mb-3" type="button">CONFIRMAR </Link> 
-
+                        <Button className="btn btn-default btnComprar mb-3" type="button">CONFIRMAR</Button>
                     </Col>
                 </Row>
 
