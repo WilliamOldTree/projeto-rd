@@ -1,15 +1,17 @@
 package br.com.qsd.politeismo.ecommerce.service;
 
+import java.beans.Transient;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
 import javax.persistence.EntityNotFoundException;
-import javax.transaction.Transactional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.qsd.politeismo.ecommerce.controller.dto.PixDTO;
 import br.com.qsd.politeismo.ecommerce.controller.form.FormPix;

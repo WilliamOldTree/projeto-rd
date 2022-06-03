@@ -5,7 +5,7 @@
 
 }
 .containerEnderecoGeral {
-    height: auto;
+    height: 700px;
 }
 
 .MenuAreaAlinhamento1 {
@@ -86,7 +86,7 @@
     list-style: none;
     text-align: start;
     line-height: 115px;
-    margin-left: -20px;
+    margin-left: 50px;
     margin-top: -40px;
 }
 
@@ -110,11 +110,11 @@
     text-align: start;
     line-height: 115px;
     margin-top: -330px;
-    margin-left: -20px;
+    margin-left: -40px;
 }
 
 .DadosEnderecos {
-    font-size: 18px;
+    font-size: 16px;
     color: #504f4f;
     margin-bottom: -30px;
 }
@@ -126,7 +126,7 @@
     width: 50px;
     height: auto;
     margin-top: -55px;
-    margin-left: 165px;
+    margin-left: 270px;
     cursor: pointer;
 }
 
