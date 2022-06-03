@@ -1,40 +1,29 @@
 package br.com.qsd.politeismo.ecommerce.entities;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 //import java.util.Objects;
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
 //import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 //import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.JoinColumn;
-//import javax.persistence.JoinTable;
-//import javax.persistence.ManyToMany;
-//import javax.persistence.ManyToOne;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.GenerationType;
-//import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import br.com.qsd.politeismo.ecommerce.enums.FormaPagamento;
-import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
-
 @Entity
-@Table(name="pedido")
+@Table(name = "pedido")
 public class Pedido {
 	
 	@Id	
@@ -43,25 +32,25 @@ public class Pedido {
 	private Long idPedido;
 	
 	@Column(nullable = false, name = "data_pedido")
-	private LocalDate data;
+	private Date data;
 	
 	@Column(nullable = false, name = "valor_total")
 	private BigDecimal valor;
 	
-	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, name = "status_pedido")
-	private StatusPedido statusPedido;
+	private String statusPedido;
 	
-	
-	@ManyToOne
+	@JsonIgnore
+	@ManyToOne(fetch =FetchType.EAGER, cascade = CascadeType.ALL) 
 	@JoinColumn(name = "fk_id_cliente", nullable = true)
 	private Cliente cliente;
 	
-	@Enumerated(EnumType.STRING)
+
 	@Column(nullable = false, name = "forma_pagamento")
-	private FormaPagamento formaPagamento;
+	private String formaPagamento;
 	
-	@ManyToOne
+	@JsonIgnore
+	@ManyToOne(fetch =FetchType.EAGER, cascade = CascadeType.ALL) 
 	@JoinColumn(name = "fk_id_endereco", nullable = true)
 	private Endereco endereco;
 	
@@ -69,25 +58,17 @@ public class Pedido {
 	@OneToMany(mappedBy="idPedido")
 	private List<ItemPedido> itensPedido;
 
-	public Pedido() {
-		
-	
-	}
+	public Pedido() {}
 
-	public Pedido(LocalDate data, BigDecimal valor, StatusPedido statusPedido, Cliente cliente,
-			FormaPagamento formaPagamento, Endereco endereco) {
-		
+	public Pedido(Date data, BigDecimal valor, String statusPedido, Cliente cliente,
+			String formaPagamento, Endereco endereco) {		
 		this.data = data;
 		this.valor = valor;
 		this.statusPedido = statusPedido;
 		this.cliente = cliente;
 		this.formaPagamento = formaPagamento;
-		this.endereco = endereco;
-		
-		
+		this.endereco = endereco;		
 	}
-
-
 
 	public Long getIdPedido() {
 		return idPedido;
@@ -97,11 +78,11 @@ public class Pedido {
 		this.idPedido = idPedido;
 	}
 
-	public LocalDate getData() {
+	public Date getData() {
 		return data;
 	}
 
-	public void setData(LocalDate data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 
@@ -113,11 +94,11 @@ public class Pedido {
 		this.valor = valor;
 	}
 
-	public StatusPedido getStatusPedido() {
+	public String getStatusPedido() {
 		return statusPedido;
 	}
 
-	public void setStatusPedido(StatusPedido statusPedido) {
+	public void setStatusPedido(String statusPedido) {
 		this.statusPedido = statusPedido;
 	}
 
@@ -129,11 +110,11 @@ public class Pedido {
 		this.cliente = cliente;
 	}
 
-	public FormaPagamento getFormaPagamento() {
+	public String getFormaPagamento() {
 		return formaPagamento;
 	}
 
-	public void setFormaPagamento(FormaPagamento formaPagamento) {
+	public void setFormaPagamento(String formaPagamento) {
 		this.formaPagamento = formaPagamento;
 	}
 

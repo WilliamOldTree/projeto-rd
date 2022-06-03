@@ -1,6 +1,7 @@
  package br.com.qsd.politeismo.ecommerce.entities;
 
 import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -13,7 +14,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreType;
+
 import br.com.qsd.politeismo.ecommerce.enums.Estado;
 
 @Entity
@@ -31,7 +37,7 @@ public class Endereco {
 	@Column(nullable = false, name = "NOME_LOGRADOURO")
 	private String nomeLougradouro;
 
-	@Column(nullable = false, name = "TIPO_LOGRADO")
+	@Column(nullable = false, name = "TIPO_LOGRADOURO")
 	private String tipoLougradouro;
 
 	@Column(nullable = false, name = "NUMERO")
@@ -50,26 +56,32 @@ public class Endereco {
 	@Column(nullable = false, name = "BAIRRO")
 	private String bairro;
 	
+	@JsonIgnore
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "cliente_endereco", joinColumns = {
     @JoinColumn(name = "fk_endereco") }, inverseJoinColumns = { @JoinColumn(name = "fk_cliente") })
 	private List<Cliente> clientes;	
 	
-	@ManyToOne
+	@ManyToOne(fetch =FetchType.LAZY) 
 	@JoinColumn(name = "fk_id_fornecedor", nullable = true)
 	private Fornecedor fornecedor;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="endereco")
+	private List<Pedido> pedidos;
 	
 	public Endereco() {
 		
 	}
 	
-	public Long getId_endereco() {
+	public Long getIdEndereco() {
 		return idEndereco;
 	}
 
-	public void setId_endereco(Long id_endereco) {
-		this.idEndereco = id_endereco;
+	public void setIdEndereco(Long idEndereco) {
+		this.idEndereco = idEndereco;
 	}
+
 
 	public String getApelido() {
 		return apelido;
@@ -142,5 +154,20 @@ public class Endereco {
 	public void setClientes(List<Cliente> clientes) {
 		this.clientes = clientes;
 	}
+
+
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
+	}
+
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+	
+	
 
 }

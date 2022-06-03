@@ -32,7 +32,8 @@ function MeusEnderecosAdd(props) {
             .then(response => {
                 setSuccessRegister(true)
                 alert('Endereço adicionado recarregue a pagina')
-                props.get()
+                getEnderecos()
+
             })
     }
 
@@ -170,7 +171,7 @@ function MeusEnderecosAdd(props) {
                     <Button className="btn-form-enderecos" onClick={() => {
                         register()
                         handleClose()
-                        props.get()
+                        getEnderecos()
                     }} >SALVAR</Button>
                 </Modal.Footer>
             </Modal>
