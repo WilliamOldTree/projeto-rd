@@ -14,13 +14,13 @@ import React, { useEffect, useContext } from 'react';
 
 function Cart() {
 
-    const { cart, getCart, deleteCart, valorTotalAmem, getCartQty,cartQty, valorTotal } = useContext(CartContext)
+    const { cart, getCart, deleteCart, valorTotalAmem, getCartQty, cartQty, valorTotal } = useContext(CartContext)
 
     //const totalCarrinho = JSON.parse(localStorage.getItem('cart'))
 
     //const valorTotal = totalCarrinho.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
 
-   // var atualTotal = valorTotal
+    // var atualTotal = valorTotal
     //var totalFormat = atualTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 });
 
     useEffect(() => {
@@ -30,10 +30,11 @@ function Cart() {
     }, [])
 
     const precoShow = (number) => {
-        let precoConvertido = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number)
-        return(
+        let precoConvertido = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
+            .format(number)
+        return (
             <>
-               {precoConvertido}
+                {precoConvertido}
             </>
         )
     }
@@ -73,20 +74,22 @@ function Cart() {
                                     />)
                                 })}
 
+                            <Row>
+                                <Col className='mt-5' id='cart_total'>
+                                    {/* <h3>TOTAL DE ITENS: {cartQty}</h3>*/}
+                                    <h5>SUBTOTAL: R$ {valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })} </h5>
+                                    <p></p>
+                                    <Link to="/cart_address" className="btn btn-default btnComprar mb-2" type="button">COMPRAR</Link>
+                                    <Link to="/" className="btn btn-default btnContCompra mb-5" type="button">CONTINUAR COMPRANDO</Link>
+                                </Col>
+                            </Row>
+                            {/* FINISH CART-LIST */}
+
+
+
                         </ListCompra>
                     </Col>
                 </Row>
-
-                <Row>
-                    <Col className='mt-5' id='cart_total'>
-                        <h3>TOTAL DE ITENS: {cartQty}</h3>
-                        <h3>SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })} </h3>
-                        <p></p>
-                        <Link to="/cart_address" className="btn btn-default btnComprar mb-2" type="button">COMPRAR</Link>
-                        <Link to="/" className="btn btn-default btnContCompra mb-5" type="button">CONTINUAR COMPRANDO</Link>
-                    </Col>
-                </Row>
-                {/* FINISH CART-LIST */}
 
             </Container>
             {/* END-CART */}

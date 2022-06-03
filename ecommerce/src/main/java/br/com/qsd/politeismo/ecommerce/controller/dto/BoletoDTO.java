@@ -15,7 +15,7 @@ public class BoletoDTO {
 	public BoletoDTO () {
 		
 	}
-	
+		
 	public BoletoDTO(Boleto boleto) {
 		
 		this.id = boleto.getId();
@@ -74,6 +74,5 @@ public class BoletoDTO {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-
-}//end class
+}//End Class
 

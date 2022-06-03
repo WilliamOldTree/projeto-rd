@@ -51,10 +51,30 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.GET , "/departamentos/*").permitAll()
 		.antMatchers(HttpMethod.POST , "/clientes").permitAll()
 		.antMatchers(HttpMethod.POST , "/auth").permitAll()
+		.antMatchers(HttpMethod.GET , "/pedidos/*").permitAll()
+		.antMatchers(HttpMethod.GET , "/pedidos").permitAll()
+		.antMatchers(HttpMethod.POST , "/pedidos/*/*").permitAll()
+		.antMatchers(HttpMethod.POST , "/pedidos").permitAll()
+		.antMatchers(HttpMethod.POST , "/pedidos/novo").permitAll()
+		.antMatchers(HttpMethod.GET , "/itensPedido/*").permitAll()
+		.antMatchers(HttpMethod.GET , "/itensPedido").permitAll()
+		.antMatchers(HttpMethod.POST , "/itensPedido").permitAll()
+		.antMatchers(HttpMethod.GET , "/itensPedido/*/*").permitAll()
+		.antMatchers(HttpMethod.GET , "/itensPedido").permitAll()
+		.antMatchers(HttpMethod.POST , "/itensPedido/*").permitAll()
+		.antMatchers(HttpMethod.GET , "/boleto").permitAll()
+		.antMatchers(HttpMethod.POST , "/boleto").permitAll()
+		.antMatchers(HttpMethod.GET , "/boleto/novo").permitAll()
+		.antMatchers(HttpMethod.POST , "/boleto/novo").permitAll()
+		.antMatchers(HttpMethod.PUT , "/boleto/novo").permitAll()
 		.anyRequest().authenticated().and().cors()
 		.and().csrf().disable()
 		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		.and().addFilterBefore(new AutenticacaoViaTokenFilter(tokenService , clienteRepository) , UsernamePasswordAuthenticationFilter.class);
+		
+
+
+
 	}
 	
 	@Override
