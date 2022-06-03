@@ -32,7 +32,8 @@ function MeusEnderecosAdd(props) {
             .then(response => {
                 setSuccessRegister(true)
                 alert('Endereço adicionado recarregue a pagina')
-                props.get()
+                getEnderecos()
+
             })
     }
 
@@ -66,14 +67,7 @@ function MeusEnderecosAdd(props) {
                                 </Form.Group>
 
                             </Col>
-                            <Col xs={12} md={12}>
-                                <Form.Group controlId="formBasic">
-                                    <Form.Label className="label-form-enderecos">Id Cliente:</Form.Label>
-                                    <Form.Control className="input-form-enderecos" type="text"
-                                        onChange={(event) => { setEndd({ ...endd, cliente: event.target.value }) }} />
-                                </Form.Group>
-
-                            </Col>
+                          
                             <Row>
                                 <Col xs={12} md={12}>
                                     <Form.Group controlId="formBasic">
@@ -178,7 +172,7 @@ function MeusEnderecosAdd(props) {
                     <Button className="btn-form-enderecos" onClick={() => {
                         register()
                         handleClose()
-                        props.get()
+                        getEnderecos()
                     }} >SALVAR</Button>
                 </Modal.Footer>
             </Modal>

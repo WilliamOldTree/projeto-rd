@@ -18,12 +18,14 @@ function Cart_address(props) {
     const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty, valorTotal } = useContext(CartContext)
     const [enderecos, setEnderecos] = useState([])
 
+    let idCLienteLogado = localStorage.getItem("id")
     function getEnderecos() {
-        axios.get(`${baseUrl}/enderecos`)
+        axios.get(`${baseUrl}/enderecos/${idCLienteLogado}/enderecos`)
             .then((response) => {
                 setEnderecos(response.data)
-            })
+        })
     }
+
 
     useEffect(() => {
         getEnderecos()

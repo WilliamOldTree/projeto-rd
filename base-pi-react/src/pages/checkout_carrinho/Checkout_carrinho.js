@@ -27,6 +27,8 @@ function Checkout_carrinho() {
     //var atualTotal = valorTotal
     //var totalFormat = atualTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 });
 
+     
+
     useEffect(() => {
         getCart()
         getCartQty()
