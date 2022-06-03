@@ -131,7 +131,7 @@ function Checkout_carrinho() {
 
                 <Row>
                     <Col className="totalPedidoBtn">
-                        <Button onClick={finalizarPedido} className="btn btn-default btnComprar mb-3" type="button">CONFIRMAR</Button>
+                       <Link to={'/area_cliente_pedidos'} className="btn btn-default btnComprar mb-3" type="button">CONFIRMAR </Link> 
                     </Col>
                 </Row>
 

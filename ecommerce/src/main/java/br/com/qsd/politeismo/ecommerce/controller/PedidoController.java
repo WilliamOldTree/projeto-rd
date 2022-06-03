@@ -17,10 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import br.com.qsd.politeismo.ecommerce.controller.dto.EnderecoDTO;
 import br.com.qsd.politeismo.ecommerce.controller.dto.PedidoDTO;
 import br.com.qsd.politeismo.ecommerce.controller.dto.PedidoDetalheDTO;
 import br.com.qsd.politeismo.ecommerce.controller.form.FormPedido;
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
+import br.com.qsd.politeismo.ecommerce.entities.Endereco;
 import br.com.qsd.politeismo.ecommerce.entities.Pedido;
 import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
 import br.com.qsd.politeismo.ecommerce.repository.EnderecoRepository;
@@ -58,6 +60,15 @@ public class PedidoController {
 		Optional<Pedido> pedido = pedidoRepository.findById(id);
 		return new PedidoDetalheDTO(pedido.get());
 	}
+	
+	@GetMapping("/{id}/pedidos")
+	public List<PedidoDTO> listaEndereco(@PathVariable Long id) {
+		Optional<Cliente> cliente = clienteRepository.findById(id);
+		
+		List<Pedido> pedido = cliente.get().getPedido();
+		
+		return PedidoDTO.converter(pedido);
+    }
 
 	@PostMapping("/novo")
 	@Transactional

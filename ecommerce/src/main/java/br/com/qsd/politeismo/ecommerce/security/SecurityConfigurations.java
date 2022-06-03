@@ -67,6 +67,8 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.GET , "/boleto/novo").permitAll()
 		.antMatchers(HttpMethod.POST , "/boleto/novo").permitAll()
 		.antMatchers(HttpMethod.PUT , "/boleto/novo").permitAll()
+		.antMatchers(HttpMethod.PUT , "/pedidos/*").permitAll()
+
 		.anyRequest().authenticated().and().cors()
 		.and().csrf().disable()
 		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
