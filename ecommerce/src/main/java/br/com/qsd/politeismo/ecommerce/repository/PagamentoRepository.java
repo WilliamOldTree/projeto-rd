@@ -3,9 +3,9 @@ package br.com.qsd.politeismo.ecommerce.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.qsd.politeismo.ecommerce.entities.Boleto;
+import br.com.qsd.politeismo.ecommerce.entities.Pagamento;
 
 @Repository
-public interface BoletoRepository extends JpaRepository<Boleto, Long>{
+public interface PagamentoRepository extends JpaRepository<Pagamento, Long>{
 
 }
