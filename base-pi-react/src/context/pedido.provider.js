@@ -35,5 +35,6 @@ function PedidoProvider(props) {
         </PedidoContext.Provider>
     )
 }
+
 export { PedidoProvider }
 export default PedidoContext

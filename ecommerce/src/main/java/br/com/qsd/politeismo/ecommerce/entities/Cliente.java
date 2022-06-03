@@ -23,7 +23,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import br.com.qsd.politeismo.ecommerce.enums.Genero;
 
 @Entity
-@Table(name = "CLIENTE")
+@Table(name = "cliente")
+
 public class Cliente implements UserDetails{
 
 	private static final long serialVersionUID = 1L;
@@ -43,6 +44,7 @@ public class Cliente implements UserDetails{
 	@Enumerated(EnumType.STRING)
     private Genero genero;
 	
+	@JsonIgnore
 	@ManyToMany(mappedBy="clientes",fetch = FetchType.EAGER)
 	private List<Endereco> enderecos;
 	
@@ -52,12 +54,13 @@ public class Cliente implements UserDetails{
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="cliente")
-	List<Pedido> pedido;
+	List<Pedido> idPedido;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="cliente")
 	List<Favoritos> favoritos;
 	
+	@JsonIgnore
 	@Fetch(FetchMode.SELECT)
 	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Perfil> perfis = new ArrayList<>();
@@ -67,55 +70,37 @@ public class Cliente implements UserDetails{
 		
 	}
 
-	
-
 	public Long getId() {
 		return id;
 	}
-
-
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-
-
 	public String getCpf() {
 		return cpf;
 	}
-
-
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
-
-
 	public String getNome() {
 		return nome;
 	}
-
-
 
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-
-
 	public String getEmail() {
 		return email;
 	}
 
-
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-
 
 	public String getSenha() {
 		return senha;
@@ -202,13 +187,13 @@ public class Cliente implements UserDetails{
 
 
 	public List<Pedido> getPedido() {
-		return pedido;
+		return idPedido;
 	}
 
 
 
 	public void setPedido(List<Pedido> pedido) {
-		this.pedido = pedido;
+		this.idPedido = pedido;
 	}
 
 

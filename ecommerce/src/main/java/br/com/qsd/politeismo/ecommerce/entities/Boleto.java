@@ -1,7 +1,5 @@
 package br.com.qsd.politeismo.ecommerce.entities;
 
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,25 +10,25 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="boleto")
+@Table(name = "boleto")
 public class Boleto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_boleto")
+	@Column(name = "id_boleto")
 	private Long id;
-	
+
 	private String nome;
 	private String cpf;
 	private String codigoBarra;
 	private Double valor;
-	
+
 	@ManyToOne
-	@JoinColumn(name="fk_id_cliente", nullable = false)
+	@JoinColumn(name = "fk_id_cliente", nullable = false)
 	private Cliente cliente;
 
-	public Boleto () {
-		
+	public Boleto() {
+
 	}
 
 	public Long getId() {
@@ -80,5 +78,5 @@ public class Boleto {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-			
-}//end class
+
+}//End Class

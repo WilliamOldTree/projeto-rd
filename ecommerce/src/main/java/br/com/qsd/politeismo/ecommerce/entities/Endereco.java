@@ -1,6 +1,7 @@
  package br.com.qsd.politeismo.ecommerce.entities;
 
 import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -17,6 +18,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreType;
 
 import br.com.qsd.politeismo.ecommerce.enums.Estado;
 
@@ -54,12 +56,13 @@ public class Endereco {
 	@Column(nullable = false, name = "BAIRRO")
 	private String bairro;
 	
+	@JsonIgnore
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "cliente_endereco", joinColumns = {
     @JoinColumn(name = "fk_endereco") }, inverseJoinColumns = { @JoinColumn(name = "fk_cliente") })
 	private List<Cliente> clientes;	
 	
-	@ManyToOne
+	@ManyToOne(fetch =FetchType.LAZY) 
 	@JoinColumn(name = "fk_id_fornecedor", nullable = true)
 	private Fornecedor fornecedor;
 	

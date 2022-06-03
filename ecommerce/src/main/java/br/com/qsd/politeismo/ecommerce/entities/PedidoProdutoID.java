@@ -1,6 +1,8 @@
 package br.com.qsd.politeismo.ecommerce.entities;
 
 import java.io.Serializable;
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -40,4 +42,22 @@ public class PedidoProdutoID implements Serializable{
 		this.idProduto = idProduto;
 	}
 
-}
+	@Override
+	public int hashCode() {
+		return Objects.hash(idPedido, idProduto);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PedidoProdutoID other = (PedidoProdutoID) obj;
+		return Objects.equals(idPedido, other.idPedido) && Objects.equals(idProduto, other.idProduto);
+	}
+
+	
+}//end class

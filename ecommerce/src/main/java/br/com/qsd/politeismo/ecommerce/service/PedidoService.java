@@ -1,35 +1,24 @@
 package br.com.qsd.politeismo.ecommerce.service;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
 import javax.persistence.EntityNotFoundException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import br.com.qsd.politeismo.ecommerce.controller.dto.PedidoDTO;
 import br.com.qsd.politeismo.ecommerce.controller.form.FormPedido;
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.entities.Endereco;
-import br.com.qsd.politeismo.ecommerce.entities.ItemPedido;
 import br.com.qsd.politeismo.ecommerce.entities.Pedido;
-import br.com.qsd.politeismo.ecommerce.enums.StatusPedido;
 import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
 import br.com.qsd.politeismo.ecommerce.repository.EnderecoRepository;
-import br.com.qsd.politeismo.ecommerce.repository.ItemPedidoRepository;
 import br.com.qsd.politeismo.ecommerce.repository.PedidoRepository;
 
 @Service
 public class PedidoService {
-	
-	private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-	
+		
 	@Autowired
 	private PedidoRepository pedidoRepository;
 	
@@ -38,11 +27,7 @@ public class PedidoService {
 	
 	@Autowired
 	private EnderecoRepository enderecoRepository;
-	
-	@Autowired
-	private ItemPedidoRepository itemPedidoRepository;
-	
-	
+		
 	@Transactional(readOnly = true)
 	public List<PedidoDTO> findAll(){
 		List <Pedido> list = pedidoRepository.findAll();
@@ -58,19 +43,14 @@ public class PedidoService {
 	
 	@Transactional
 	public PedidoDTO insert(FormPedido form) {
-		
 
-		
 		Pedido entity = new Pedido();
-
-
-        entity.setData(LocalDate.parse(form.getData(), formatter));
-        entity.setValor(new BigDecimal(form.getValor()));
-        entity.setStatusPedido(StatusPedido.AGUARDANDO_PAGAMENTO);
+        entity.setData(form.getData());
+        entity.setValor(form.getValor());
+        entity.setStatusPedido(form.getStatusPedido());
 		entity.setFormaPagamento(form.getFormaPagamento());
-		Optional<Cliente> cliente = clienteRepository.findById(Long.parseLong(form.getCliente()));
-		Optional<Endereco> endereco = enderecoRepository.findById(Long.parseLong(form.getEndereco()));
-		
+		Optional<Cliente> cliente = clienteRepository.findById(form.getCliente());
+		Optional<Endereco> endereco = enderecoRepository.findById(form.getEndereco());		
 		if (cliente.isPresent() && endereco.isPresent()) {
 			entity.setCliente(cliente.get());
 			entity.setEndereco(endereco.get());
