@@ -8,7 +8,7 @@ public class PixDTO {
 	
 	
 	private Long id;
-	private String chave;
+	private String chave = "88faa317-c217-4c29-8228-38f3d978bb6f";
 	private String urlImagem;
 	private Cliente cliente;
 	
