@@ -66,7 +66,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.POST , "/boleto").permitAll()
 		.antMatchers(HttpMethod.GET , "/boleto/novo").permitAll()
 		.antMatchers(HttpMethod.POST , "/boleto/novo").permitAll()
-		.antMatchers(HttpMethod.PUT , "/boleto/{id}").permitAll()
+		.antMatchers(HttpMethod.PUT , "/boleto/novo").permitAll()
 		.antMatchers(HttpMethod.PUT , "/pedidos/*").permitAll()
 		.antMatchers(HttpMethod.GET , "/pix").permitAll()
 		.antMatchers(HttpMethod.POST , "/pix/novo").permitAll()
