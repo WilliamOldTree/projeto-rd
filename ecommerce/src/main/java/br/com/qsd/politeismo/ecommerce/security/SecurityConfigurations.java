@@ -19,72 +19,59 @@ import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
 @EnableWebSecurity
 @Configuration
 public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
-	
+
 	@Autowired
 	private AutenticacaoService autenticacaoService;
-	
+
 	@Autowired
 	private TokenService tokenService;
-	
+
 	@Autowired
 	private ClienteRepository clienteRepository;
-	
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(autenticacaoService).passwordEncoder(new BCryptPasswordEncoder());
 	}
-	
+
 	@Override
 	@Bean
 	protected AuthenticationManager authenticationManager() throws Exception {
 		return super.authenticationManager();
 	}
-	
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-		.antMatchers(HttpMethod.GET , "/produtos").permitAll()
-		.antMatchers(HttpMethod.GET , "/pedidos").permitAll()
-		.antMatchers(HttpMethod.GET , "/produtos/*").permitAll()
-		.antMatchers(HttpMethod.POST , "/produtos/**").permitAll()
-		.antMatchers(HttpMethod.GET , "/departamentos").permitAll()
-		.antMatchers(HttpMethod.GET , "/departamentos/*").permitAll()
-		.antMatchers(HttpMethod.POST , "/clientes").permitAll()
-		.antMatchers(HttpMethod.POST , "/auth").permitAll()
-		.antMatchers(HttpMethod.GET , "/pedidos/*").permitAll()
-		.antMatchers(HttpMethod.GET , "/pedidos").permitAll()
-		.antMatchers(HttpMethod.POST , "/pedidos/*/*").permitAll()
-		.antMatchers(HttpMethod.POST , "/pedidos").permitAll()
-		.antMatchers(HttpMethod.POST , "/pedidos/novo").permitAll()
-		.antMatchers(HttpMethod.GET , "/itensPedido/*").permitAll()
-		.antMatchers(HttpMethod.GET , "/itensPedido").permitAll()
-		.antMatchers(HttpMethod.POST , "/itensPedido").permitAll()
-		.antMatchers(HttpMethod.GET , "/itensPedido/*/*").permitAll()
-		.antMatchers(HttpMethod.GET , "/itensPedido").permitAll()
-		.antMatchers(HttpMethod.POST , "/itensPedido/*").permitAll()
-		.antMatchers(HttpMethod.GET , "/boleto").permitAll()
-		.antMatchers(HttpMethod.POST , "/boleto").permitAll()
-		.antMatchers(HttpMethod.GET , "/boleto/novo").permitAll()
-		.antMatchers(HttpMethod.POST , "/boleto/novo").permitAll()
-		.antMatchers(HttpMethod.PUT , "/boleto/novo").permitAll()
-		.antMatchers(HttpMethod.PUT , "/pedidos/*").permitAll()
-		.antMatchers(HttpMethod.GET , "/pix").permitAll()
-		.antMatchers(HttpMethod.POST , "/pix/novo").permitAll()
-		.antMatchers(HttpMethod.PUT , "/pix/novo").permitAll()
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/produtos").permitAll()
+				.antMatchers(HttpMethod.GET, "/pedidos").permitAll().antMatchers(HttpMethod.GET, "/produtos/*")
+				.permitAll().antMatchers(HttpMethod.POST, "/produtos/**").permitAll()
+				.antMatchers(HttpMethod.GET, "/departamentos").permitAll()
+				.antMatchers(HttpMethod.GET, "/departamentos/*").permitAll().antMatchers(HttpMethod.POST, "/clientes")
+				.permitAll().antMatchers(HttpMethod.POST, "/auth").permitAll().antMatchers(HttpMethod.GET, "/pedidos/*")
+				.permitAll().antMatchers(HttpMethod.GET, "/pedidos").permitAll()
+				.antMatchers(HttpMethod.POST, "/pedidos/*/*").permitAll().antMatchers(HttpMethod.POST, "/pedidos")
+				.permitAll().antMatchers(HttpMethod.POST, "/pedidos/novo").permitAll()
+				.antMatchers(HttpMethod.GET, "/itensPedido/*").permitAll().antMatchers(HttpMethod.GET, "/itensPedido")
+				.permitAll().antMatchers(HttpMethod.POST, "/itensPedido").permitAll()
+				.antMatchers(HttpMethod.GET, "/itensPedido/*/*").permitAll().antMatchers(HttpMethod.GET, "/itensPedido")
+				.permitAll().antMatchers(HttpMethod.POST, "/itensPedido/*").permitAll()
+				.antMatchers(HttpMethod.GET, "/boleto").permitAll().antMatchers(HttpMethod.POST, "/boleto").permitAll()
+				.antMatchers(HttpMethod.GET, "/boleto/novo").permitAll().antMatchers(HttpMethod.POST, "/boleto/novo")
+				.permitAll().antMatchers(HttpMethod.PUT, "/boleto/novo").permitAll()
+				.antMatchers(HttpMethod.PUT, "/pedidos/*").permitAll().antMatchers(HttpMethod.GET, "/pix").permitAll()
+				.antMatchers(HttpMethod.POST, "/pix/novo").permitAll().antMatchers(HttpMethod.PUT, "/pix/novo")
+				.permitAll()
 
-		.anyRequest().authenticated().and().cors()
-		.and().csrf().disable()
-		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-		.and().addFilterBefore(new AutenticacaoViaTokenFilter(tokenService , clienteRepository) , UsernamePasswordAuthenticationFilter.class);
-		
-
-
+				.anyRequest().authenticated().and().cors().and().csrf().disable().sessionManagement()
+				.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+				.addFilterBefore(new AutenticacaoViaTokenFilter(tokenService, clienteRepository),
+						UsernamePasswordAuthenticationFilter.class);
 
 	}
-	
+
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/h2-console/**");
+		web.ignoring().antMatchers("/h2-console/**");
 	}
-	
+
 }
