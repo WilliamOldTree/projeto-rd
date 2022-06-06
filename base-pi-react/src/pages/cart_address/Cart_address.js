@@ -2,18 +2,16 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Title from "../../components/title/Title";
 import "./Cart_address.css";
-import Frete from "../../components/asserts/icons/caminhao-frete-home.png"
-import { Link, useHistory } from "react-router-dom"
-import TrashIcon from '../../components/asserts/icons/lixeira.png'
+import Frete from "../../components/asserts/icons/caminhao-frete-home.png";
+import { Link, useHistory } from "react-router-dom";
+import TrashIcon from '../../components/asserts/icons/lixeira.png';
 import ListCompra from "../../components/list_compra/ListCompra";
 import ResumoCompra from "../../components/resumo_compra/ResumoCompra";
-import { Container, Row, Col, Button } from 'react-bootstrap'
-import CartContext from '../../context/cart.provider'
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import CartContext from '../../context/cart.provider';
 import React, { useEffect, useContext, useState } from 'react';
-import { baseUrl } from '../../environments'
-import axios from 'axios'
-import modelPedido from '../cart_address/modelPedido/modelPedido'
-
+import { baseUrl } from '../../environments';
+import axios from 'axios';
 
 function Cart_address(props) {
 
@@ -26,11 +24,12 @@ function Cart_address(props) {
     const history = useHistory();
 
 
+    let idCLienteLogado = localStorage.getItem("id")
     function getEnderecos() {
-        axios.get(`${baseUrl}/enderecos`)
+        axios.get(`${baseUrl}/enderecos/${idCLienteLogado}/enderecos`)
             .then((response) => {
                 setEnderecos(response.data)
-            })
+        })
     }
 
     useEffect(() => {
@@ -78,9 +77,7 @@ function Cart_address(props) {
             })
     }
 
-
-    
-    function addItemPedido(pedidoId) {
+    function addItemPedido(idPedido) {
         const lista = []
         //percorre a lista salva na memoria
         cart.map((value) => {
@@ -88,7 +85,7 @@ function Cart_address(props) {
             lista.push({
                 quantidade: value.quantidade,
                 produto: value.idProduto,
-                pedido:  pedidoId
+                pedido:  idPedido
             })
         })
         console.log(lista)
@@ -97,14 +94,14 @@ function Cart_address(props) {
     }
 
     // ultimo passo para finalizar o pedido
-    const postItemPedido = (idItemPedido, pedidoId) => {
+    const postItemPedido = (idItemPedido, idPedido) => {
         axios.post(`${baseUrl}/itensPedido/novo`, idItemPedido)
             .then(() => {
                 console.log("fluxo finalizado")
                 localStorage.removeItem("cart")
                 localStorage.removeItem("vator")
                 localStorage.removeItem("qtyCart")
-                history.push("/cart_success/" + pedidoId)
+                history.push("/cart_success/" + idPedido)
             })
             .catch((error) => {
                 console.error(error.messege)
