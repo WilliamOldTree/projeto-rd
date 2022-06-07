@@ -13,11 +13,8 @@
     "context-api": "^0.0.2",
     "correios-brasil": "^2.2.2",
     "react": "^17.0.2",
-<<<<<<< HEAD
     "react-bootstrap": "^2.2.1",
-=======
-    "react-bootstrap": "^2.4.0",
->>>>>>> 107d9c6cf03eb1832610a01bb230a5e75e3fa431
+
     "react-currency-format": "^1.1.0",
     "react-dom": "^17.0.2",
     "react-input-mask": "^2.0.4",
@@ -42,14 +39,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-<<<<<<< HEAD
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "keywords": [],
   "author": "",
   "license": "ISC"
-=======
-  }
->>>>>>> 107d9c6cf03eb1832610a01bb230a5e75e3fa431
+
 }
