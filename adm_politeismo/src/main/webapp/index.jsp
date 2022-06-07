@@ -42,12 +42,7 @@
 				<button class="btn formbtn" type="submit"  role="button">Entrar</button>
     
 	          </form>
-	          <form action="HomeController" method="post">
-	      
-	<a href="formCadastro.jsp" style="text-decoration: none;
-	     color: darkblue; 
-	     "  id="texto">Cadastre-se</a>     
-	</form>
+
             </div>
         </div>
     </div>

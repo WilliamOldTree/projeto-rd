@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="./css/tabela.css">
 <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css">
 </head>
+
 <body>
     <header>
         <!-- header superior -->
@@ -47,8 +48,7 @@
                                 <div class=menu-list1>
                                 <a class="nav-link active" id="navbar-brand" aria-current="page" href="HomeController">Menu
                                     <hr width="160">
-                                                     <%
-    
+           <%
  String usuario = (String) session.getAttribute("email");
     
    if(usuario == null){

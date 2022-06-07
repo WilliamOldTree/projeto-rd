@@ -17,12 +17,9 @@ function Cart_address(props) {
 
     const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty, valorTotal } = useContext(CartContext)
     const [enderecos, setEnderecos] = useState([])
-    //const [pedido, setPedido] = useState({ modelPedido })
-    //const clienteStorage = parseInt(localStorage.getItem('id'))
     const clienteStorage = parseInt(localStorage.getItem('id'))
     const valorStorage = parseInt(localStorage.getItem('valor'))
     const history = useHistory();
-
 
     let idCLienteLogado = localStorage.getItem("id")
     function getEnderecos() {
@@ -56,7 +53,7 @@ function Cart_address(props) {
     var dataAtual = dia + '/' + mes + '/' + ano
 
     const [pedido, setPedido] = useState({
-        
+
         data: dataAtual,
         valor: valorStorage,
         cliente: clienteStorage,
@@ -64,8 +61,8 @@ function Cart_address(props) {
         endereco: 0,
         statusPedido: "SEPARACAO"
     })
-    console.log(pedido)
 
+    console.log(pedido)
 
     const finalizarPedido = (event) => {
         axios.post(`${baseUrl}/pedidos/novo`, pedido)
@@ -86,12 +83,12 @@ function Cart_address(props) {
             lista.push({
                 quantidade: value.quantidade,
                 produto: value.idProduto,
-                pedido:  idPedido
+                pedido: idPedido
             })
         })
         console.log(lista)
         // chama o ultimo metodo para finalizar 
-        postItemPedido(lista, pedido)
+        postItemPedido(lista, idPedido)
     }
 
     // ultimo passo para finalizar o pedido
@@ -102,20 +99,20 @@ function Cart_address(props) {
                 localStorage.removeItem("cart")
                 localStorage.removeItem("vator")
                 localStorage.removeItem("qtyCart")
-                history.push("/cart_success/" + idPedido)
+                history.push("/cart_success/" + idPedido)             
             })
             .catch((error) => {
                 console.error(error.messege)
             })
     }
 
-
     return (
         <>
             {/* BEGINNER ADDRESS*/}
 
-            <Header />
+            <Header />/
             <Container>
+
                 <Row>
                     {/* BEGING ADDRESS-TITLE */}
                     <Col>
