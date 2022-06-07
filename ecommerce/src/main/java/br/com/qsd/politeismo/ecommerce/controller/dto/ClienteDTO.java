@@ -1,8 +1,11 @@
 package br.com.qsd.politeismo.ecommerce.controller.dto;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
+import br.com.qsd.politeismo.ecommerce.entities.Pedido;
 
 public class ClienteDTO {
 	
@@ -97,5 +100,7 @@ public class ClienteDTO {
 	public void setFixo(String fixo) {
 		this.fixo = fixo;
 	}
+	
+
 
 }//end class

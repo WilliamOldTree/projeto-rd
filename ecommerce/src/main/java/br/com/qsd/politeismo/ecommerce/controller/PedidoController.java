@@ -62,14 +62,19 @@ public class PedidoController {
 	}
 	
 	@GetMapping("/{id}/pedidos")
-	public List<PedidoDTO> listaEndereco(@PathVariable Long id) {
+	public List<PedidoDTO> listaPedido(@PathVariable Long id) {
 		Optional<Cliente> cliente = clienteRepository.findById(id);
-		
 		List<Pedido> pedido = cliente.get().getPedido();
-		
 		return PedidoDTO.converter(pedido);
     }
+	@GetMapping("/{id}/enderecos")
+	public List<PedidoDTO> listaPedid(@PathVariable Long id) {
+		Optional<Endereco> endereco = enderecoRepository.findById(id);
+		List<Pedido> enderecos = endereco.get().getPedidos();
+		return PedidoDTO.converter(enderecos);
+    }
 
+	
 	@PostMapping("/novo")
 	@Transactional
 	public ResponseEntity<PedidoDTO> cadastrar(@RequestBody @Valid FormPedido pedidoForm,

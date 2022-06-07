@@ -174,7 +174,7 @@
                                             <p><strong>CPF:</strong>
                                                 <c:out value="${cliente.cpf}" />
                                             </p>
-                                            <p><strong>DATA DE NASCIMMENTO:</strong>
+                                            <p><strong>DATA DE NASCIMENTO:</strong>
                                                 <c:out value="${cliente.nascimento}" />
                                             </p>
                                             <p><strong>TELEFONE(FIXO):</strong>

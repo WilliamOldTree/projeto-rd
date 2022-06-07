@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
 .containerEndereco {
     margin: 0;
     padding: 0;
@@ -146,8 +149,8 @@
     #container-Enderecos {
         width: 100%;
         margin: 0;
-
-        margin-top: 150px;
+        margin-left: 10px;
+        
     }
 
 
@@ -162,6 +165,31 @@
         width: 50px;
     }
 
+    
+
+    .btns {
+        margin-left: 25px;
+    }
+
+}
+
+@media (max-width:667px) {
+
+    #container-Enderecos {
+        width: 100%;  
+    }
+
+
+    .MenuAreaAlinhamento1 {
+        display: none;
+    }
+
+    .UserAreaClienteEndereco {
+        position: absolute;
+        top: -40px;
+        width: 50px;
+    }
+
     .LixeiraAreaEndereco {
         position: relative;
         top: 420px;
@@ -173,6 +201,7 @@
         margin-top: -10%;
     }
 
+<<<<<<< HEAD
     .tituloEndereco {
         color: #261C1A;
         margin-top: 27px;
@@ -203,6 +232,10 @@
         margin-top: -510px;
         width: 50px;
         height: 40px;
+=======
+    .btns {
+        margin-left: 65px;
+>>>>>>> 107d9c6cf03eb1832610a01bb230a5e75e3fa431
     }
 
 }

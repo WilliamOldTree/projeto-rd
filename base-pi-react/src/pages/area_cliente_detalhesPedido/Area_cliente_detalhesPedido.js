@@ -2,17 +2,65 @@ import './Area_cliente_detalhesPedido.css'
 /* LINK PAGES */
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
-
+import React, { useState, useEffect } from 'react';
+import { baseUrl } from '../../environments';
+import axios from 'axios';
+import { useParams } from 'react-router-dom'
 /* IMAGES DETALHES PEDIDOS*/
 import SagradaFamilia from '../../components/asserts/images/images-home/imagem-resina-sagrada-familia.jpg';
 import Crucifixo from '../../components/asserts/images/images-home/crucifixo_de_parede_c_cristo_em_resina_33_cm_123_1_20200805181826.webp';
 import Visa from '../../components/asserts/icons/visa.png';
 
 function detalhesPedido() {
+    const [pedidos, setPedidos] = useState([])
+    const [pedidosid, setPedidosid] = useState([])
+    const [clientes, setClientes] = useState({})
+    const [enderecos, setEnderecos] = useState([])
+    const { id } = useParams()
+
+    let idCLienteLogado = localStorage.getItem("id")
+    function getPedidos() {
+        axios.get(`${baseUrl}/pedidos/${idCLienteLogado}/pedidos`)
+            .then((response) => {
+                setPedidos(response.data)
+            })
+          
+           
+           
+    }
+    function getClientes(){
+        axios.get(`${baseUrl}/clientes/${idCLienteLogado}`)
+        .then((response) => {
+            setClientes(response.data)
+        })
+    }
+      function getEnderecos() {
+        axios.get(`${baseUrl}/enderecos/${idCLienteLogado}/enderecos`)
+            .then((response) => {
+                setEnderecos(response.data)
+        })
+    }
+
+    useEffect(() => {
+        getPedidos(),
+        getClientes(),
+        getEnderecos(),
+        axios.get(`http://localhost:8080/pedidos/${id}`)
+        .then((response) => {
+            setPedidosid(response.data)
+        })
+    }, [])
+
     return (
+      
+
         <>
             <Header />
+
+         
             <div className="container">
+
+           
                 <div className='detalhesPedidoCliente'>
                     <div className='NumeroPedido'>
                         <table className='table'>
@@ -21,22 +69,27 @@ function detalhesPedido() {
                                     <th className='detalhesPedido-list'>
                                         <div className="status-pedidoDetalhes"></div>
                                     </th>
+                                    
                                     <th className='col-8 col-sm-8 col-xs-8 detalhesPedido-list'>
                                         <h5 className='titulo-pedido-detalhes'> Pedido</h5>
-                                        <h5 className='titulo-pedido-detalhes'>#39978</h5>
-                                        <p className='titulo-pedido-detalhes status'>Status: Pedido em Andamento</p>
+                                        <h5 className='titulo-pedido-detalhes'>#{pedidosid.numeroPedido}</h5>
+                                        <p className='titulo-pedido-detalhes status'>Status: {pedidosid.statusPedido}</p>
                                     </th>
+                                    
                                     <th className='col-4 col-sm-4 col-xs-4 detalhesPedido-list'>
                                         <p className='p-duvidasDetalhes'>Dúvidas sobre esse pedido? Clique aqui</p>
                                     </th>
                                 </tr>
                             </thead>
+                            
                         </table>
+                        
                     </div>
 
                     <div className='detalhesPedido'>
                         <table className='table'>
                             <thead>
+                           
                                 <div className="container caixaDetalhesPedido">
 
                                     <tr className='tr-detalhespedido' >
@@ -80,20 +133,31 @@ function detalhesPedido() {
                         <div className="detalhesEntrega">
                             <div className="detalhesCliente">
                                 <h5 className="titleResumo">Dados do cliente</h5>
-                                <p className="paragrafo-detalhesEntrega">Nome: Jose da Silva</p>
-                                <p className="paragrafo-detalhesEntrega">CPF: 123.008.009-56</p>
-                                <p className="paragrafo-detalhesEntrega">Contato: (11) 96474-9267</p>
+                                <p className="paragrafo-detalhesEntrega">Nome: {clientes.nome}</p>
+                                <p className="paragrafo-detalhesEntrega">CPF:  {clientes.cpf} </p>
+                                <p className="paragrafo-detalhesEntrega">Contato:  {clientes.celular} </p>
                             </div>
-
-                            <div className="detalhesEndereço">
-                                <h5 className="titleResumo">Endereço de entrega</h5>
-                                <p className="paragrafo-detalhesEntrega">Rua Benedito Antônio Gonçalves, 37</p>
-                                <p className="paragrafo-detalhesEntrega">Jardim Nisalves, Itap. da Serra - SP</p>
-                                <p className="paragrafo-detalhesEntrega">CEP: 06851-270</p>
-                                <p className="paragrafo-detalhesEntrega">Complemento: Casa 2</p>
-
-                            </div>
+                              
+                              
+                            {enderecos.map((endereco) => {
+                                return (
+                            <div className="detalhesEndereço" key={endereco.id}  >    
+                            
+                                               
+                                <h5 className="titleResumo">Endereço de entrega  </h5>
+                                <p className="paragrafo-detalhesEntrega">{endereco.nomeLougradouro}, {endereco.numero}</p>
+                                <p className="paragrafo-detalhesEntrega">{endereco.bairro} - {endereco.estado}</p>
+                                <p className="paragrafo-detalhesEntrega">CEP: {endereco.cep}</p>
+                                <p className="paragrafo-detalhesEntrega">{endereco.apelido}</p>
+                                </div>
+                                        
+                                 
+                                        )
+                                    })}
+                           
+                            
                         </div>
+                        
                     </div>
 
                     <div className='col-12 col-md-6 col-lg-6 resumoTotal'>

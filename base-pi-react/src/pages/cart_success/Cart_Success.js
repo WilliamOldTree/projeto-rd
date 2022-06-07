@@ -1,11 +1,12 @@
 import './Cart_Success.css'
 import { useParams } from "react-router-dom";
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import { baseUrl } from '../../environments'
 import axios from 'axios'
 /* LINK PAGES */
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
+import { Link } from "react-router-dom";
 
 /* ICONS CARDS PRINCIPAL */
 import Success from '../../components/asserts/icons/sucesso.png';
@@ -17,33 +18,61 @@ import Biblia from '../../components/asserts/images/images-home/b_blia-sagrada-c
 
 
 function Cart_Success() {
- 
-    const {idPedido} = useParams();
 
-    const [pedido, setPedido] =  useState({});
+    const { idPedido } = useParams();
+    const clienteStorage = parseInt(localStorage.getItem('id'))
+    const valorStorage = parseInt(localStorage.getItem('valor'))
+
+    var data = new Date();
+    var dia = String(data.getDate()).padStart(2, '0');
+    var mes = String(data.getMonth() + 1).padStart(2, '0');
+    var ano = data.getFullYear();
+    var dataAtual = dia + '/' + mes + '/' + ano
+
+    const [pedido, setPedido] = useState({
+        data: dataAtual,
+        valor: valorStorage,
+        cliente: clienteStorage,
+        formaPagamento: "",
+        endereco: 0,
+        statusPedido: "SEPARACAO"
+    })
 
     useEffect(() => {
         axios.get(`${baseUrl}/pedidos/${idPedido}`)
-        .then(response => {
-            console.log(response.data)
-            setPedido(response.data)
-        })
+            .then(response => {
+                console.log("aleluia" , response.data)
+                setPedido({
+                    idPedidoFeito: response.data.numeroPedido,
+                   dataPedidoFeito: response.data.data,
+                    bairro: response.data.endereco.bairro,
+                    rua: response.data.endereco.nomeLougradouro,
+                    estado: response.data.endereco.estado,
+                    cep: response.data.endereco.cep,
+                    numero: response.data.endereco.numero,
+                    complemento: response.data.endereco.apelido
+                })
+            })
     }, [])
+
 
     return (
         <>
-            <Header/>
-
+            <Header />
             <div className='container'>
                 <div className='container-sucesso'>
-                {/* BEGGIN RESUMO DO PEDIDO */}
-                    <h1 className='title-sucesso'>Sua compra foi efetuada com sucesso!<img className='img-sucesso' width='60px' src={Success}/></h1>
+                    {/* BEGGIN RESUMO DO PEDIDO */}
+                    <h1 className='title-sucesso'>Seu pedido foi efetuado com Sucesso!<img className='img-sucesso' width='60px' src={Success} /></h1>
 
                     <div className='sucesso'>
-                        <div className='row container-pedido'>
 
-                            <h3 className='pedido'>Pedido: {pedido.idPedido}</h3><a className='link-pedido' href='#'>Clique aqui e veja detalhes do Pedido</a>
-                            <figure className='col-md-2 mb-3'>
+                        <div className='row container-pedido'>
+                            <h3 className='pedido'>Pedido: #{pedido.idPedidoFeito}</h3>
+                            <h3 className='pedido'>Data do pedido: {pedido.dataPedidoFeito}</h3>
+
+                            <Link to ="/area_cliente_pedidos"className='link-pedido'>Clique aqui e veja seus Pedidos!</Link>
+                        </div>
+                        {/* <figure className='col-md-2 mb-3'>
                                 <img width='90%' src={SagradaFamilia} />
                             </figure>
 
@@ -85,9 +114,9 @@ function Cart_Success() {
                                         </tr>
                                     </tbody>
                                 </table>
-                                <hr className='line-cart-success'/>
+                                <hr className='line-cart-success' />
                             </div>
-                        </div>
+                        </div>*/}
                         {/* END RESUMO DO PEDIDO */}
 
 
@@ -95,15 +124,15 @@ function Cart_Success() {
                         <h4 id='title-entrega'>Endereço de entrega</h4>
                         <div className='row entrega-endereco'>
                             <div className='col-md-2 mb-3'>
-                                <img className='img-entrega' width='90%' src={Frete}/>
+                                <img className='img-entrega' width='90%' src={Frete} />
                             </div>
 
                             <div className='col-md-5 mb-3'>
                                 <p className='paragrafo-entrega'>
-                                    <strong>Bairro:</strong> Jardim Nisalves, Itap. da Serra - SP<br />
-                                    <strong>Rua:</strong> Benedito Antônio Gonçalves, 37<br />
-                                    <strong>CEP:</strong> 06851-270<br />
-                                    <strong>Complemento:</strong> Casa 2<br />
+                                    <strong>Bairro:</strong> {pedido.bairro} - {pedido.estado}<br />
+                                    <strong>Rua:</strong> {pedido.rua}, {pedido.numero}<br />
+                                    <strong>CEP:</strong> {pedido.cep}<br />
+                                    <strong>Complemento:</strong> {pedido.complemento}<br />
                                 </p>
                             </div>
                         </div>

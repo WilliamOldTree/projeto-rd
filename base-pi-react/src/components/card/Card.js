@@ -43,7 +43,7 @@ function Card(props) {
             <div className='card'>
 
                 <div className='img'>
-                    <Link to={`product/${produto.idProduto}`}> <img src={props.img} alt='' /> </Link>
+                    <Link to={`/product/${produto.idProduto}`}> <img src={props.img} alt='' /> </Link>
 
                 </div>
                 <div className='content'>
