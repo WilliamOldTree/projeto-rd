@@ -7,8 +7,28 @@ import User from '../../components/asserts/icons/user.png'
 import MeusDados from '../../components/modal_meus_dados/Modal_Meus_Dados'
 import { AuthContext } from '../../context/login.provider'
 import React, { useState, useContext, useEffect } from 'react'
+import { Card, Container } from 'react-bootstrap'
+import { baseUrl } from '../../environments'
+import axios from 'axios'
 
-function AreaDados() {
+
+
+function AreaDados(props) {
+
+    const [clientes, setClientes] = useState([])
+
+    let idCLienteLogado = localStorage.getItem("id")
+    function getClientes(){ 
+        axios.get(`${baseUrl}/clientes/${idCLienteLogado}`) 
+        .then((response) => { 
+            setClientes(response.data) 
+        })  
+    }
+
+    useEffect(() => {
+        getClientes()
+    }, [])
+
 
 
     return (
@@ -23,45 +43,47 @@ function AreaDados() {
                 <div className='MenuAreaAlinhamento'>
                     <Menu />
                 </div>
+                
+                    
+                <Container className='boxCard'>
+                    <Card border="dark" style={{ width: '40rem', height: '370px' }}>
+                        <Card.Header>Meus Dados</Card.Header>
+                        <Card.Body>           
+                            <Card.Text>
+                                <ul className='listaDados1' key={clientes.id}>
+                                    <li className='AreaClienteLista'><nobr>Nome Completo</nobr></li>
+                                    <li className='AreaClienteLista'><nobr>Email</nobr></li>
+                                    <li className='AreaClienteLista'><nobr>CPF</nobr></li>
+                                </ul>
+
+                                <ul className='listaDados2'>
+                                    <li className='AreaClienteLista'><nobr>Data de Nascimento</nobr></li>
+                                    <li className='AreaClienteLista'><nobr>Contato</nobr></li>
+                                </ul>
 
 
+                                <ul className='Dados1 DadosConta'>
+                                    <li className='DadosConta1'><nobr>{clientes.nome}</nobr></li>
+                                    <li className='DadosConta2'><nobr>{clientes.email}</nobr></li>
+                                    <li className='DadosConta3'><nobr>{clientes.cpf}</nobr></li>
+                                </ul>
 
-                <div id='container-Dados'>
-
-
-                    <ul className='listaDados1'>
-                        <li className='AreaClienteLista'><nobr>Nome Completo</nobr></li>
-                        <li className='AreaClienteLista'><nobr>Email</nobr></li>
-                        <li className='AreaClienteLista'><nobr>CPF</nobr></li>
-                    </ul>
-
-                    <ul className='listaDados2'>
-                        <li className='AreaClienteLista'><nobr>Data de Nascimento</nobr></li>
-                        <li className='AreaClienteLista'><nobr>Contato</nobr></li>
-                    </ul>
-
-
-                    <ul className='Dados1'>
-                        <li className='DadosConta'><nobr>José da Silva</nobr></li>
-                        <li className='DadosConta'><nobr>JosedaSilva@gmail.com</nobr></li>
-                        <li className='DadosConta'><nobr>248.711.140-23</nobr></li>
-                    </ul>
-
-                    <ul className='Dados2'>
-                        <li className='DadosConta'><nobr>15/02/1991</nobr></li>
-                        <li className='DadosConta'><nobr>(11) 97895-2074</nobr></li>
-                    </ul>
-
-                    <div>
-                        <MeusDados textButton="ALTERAR" className='editarDados' />
-                    </div>
-                </div>
-
+                                <ul className='Dados2 DadosConta'>
+                                    <li className='DadosConta4'><nobr>{clientes.nascimento}</nobr></li>
+                                    <li className='DadosConta5'><nobr>{clientes.celular}</nobr></li>
+                                </ul>
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Container>
+               
             </div>
 
             <Footer />
         </>
+
     )
+
 }
 
 export default AreaDados

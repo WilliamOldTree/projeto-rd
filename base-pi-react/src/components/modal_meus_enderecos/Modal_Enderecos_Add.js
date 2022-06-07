@@ -3,7 +3,7 @@ import './Modal_Enderecos.css'
 import React, { useState, useEffect } from 'react'
 import { baseUrl } from '../../environments'
 import axios from 'axios'
-import { Modal, Button, Form, Container, Row, Col } from 'react-bootstrap'
+import { Modal, Button, Form, Container, Row, Col, Alert} from 'react-bootstrap'
 
 function MeusEnderecosAdd(props) {
 
@@ -31,6 +31,7 @@ function MeusEnderecosAdd(props) {
         axios.post(`${baseUrl}/enderecos`, endd)
             .then(response => {
                 setSuccessRegister(true)
+                alert('Endereço adicionado recarregue a pagina')
                 props.get()
             })
     }
@@ -39,7 +40,6 @@ function MeusEnderecosAdd(props) {
         setEndd({ ...endd, cliente: JSON.parse(localStorage.getItem("id")) })
     }, [])
 
-    console.log(endd)
     return (
         <>
             <Button className='adicionarEnderecos' variant="primary" onClick={handleShow}>
@@ -165,7 +165,6 @@ function MeusEnderecosAdd(props) {
                     </Container>
                 </Modal.Body>
                 <Modal.Footer>
-                    
                     <Button className="btn-form-enderecos" onClick={() => {
                         register()
                         handleClose()

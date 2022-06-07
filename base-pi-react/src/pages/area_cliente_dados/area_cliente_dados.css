@@ -73,7 +73,9 @@
 .listaDados1 {
     list-style : none;
     text-align : start;
-    line-height: 120px;
+    line-height: 110px;
+    margin-top: -30px;
+    margin-left: -30px;
 }
 
 .AreaClienteLista {
@@ -85,39 +87,62 @@
 .listaDados2 {
     list-style : none;
     text-align : start;
-    line-height: 120px;
-    margin-top : -55%;
+    line-height: 110px;
+    margin-top : -280px;
     top        : -5px;
     position   : relative;
-    margin-left: 65%;
+    margin-left: 350px;
 
 
 }
 
 .DadosConta {
-    font-size  : 15px;
-    color      : #979797;
+    font-size  : 19px;
+    color      : #8d8d8d;
     font-weight: 500;
+    margin-top: 0px;
+    margin-left: -30px;
 }
 
 .Dados1 {
     list-style : none;
     text-align : start;
-    line-height: 120px;
-    margin-top : -30%;
+    line-height: 115px;
+    margin-top : -190px;
 }
 
 .Dados2 {
     list-style : none;
     text-align : start;
     line-height: 120px;
-    margin-top : 5%;
+    margin-top : 55px;
     position   : relative;
     top        : -400px;
-    margin-left: 65%;
+    margin-left: 350px;
+}
+
+.DadosConta2{
+    margin-top: -35px;
+}
+
+.DadosConta3{
+    margin-top: -37px;
 }
 
 
+.DadosConta4{
+    margin-top: 125px;
+}
+
+.DadosConta5{
+    margin-top: -37px;
+}
+
+.boxCard {
+    margin-left: 170px;
+    margin-top: -310px;
+    margin-bottom: 90px;
+}
 
 @media (max-width:1024px) {
 
