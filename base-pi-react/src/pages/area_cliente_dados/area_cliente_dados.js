@@ -6,7 +6,7 @@ import Title from '../../components/title/Title'
 import User from '../../components/asserts/icons/user.png'
 import MeusDados from '../../components/modal_meus_dados/Modal_Meus_Dados'
 import React, { useState, useContext, useEffect } from 'react'
-import { Card, Container } from 'react-bootstrap'
+import { Card, Container, Row, Col } from 'react-bootstrap'
 import { baseUrl } from '../../environments'
 import axios from 'axios'
 
@@ -45,32 +45,38 @@ function AreaDados(props) {
                 
                     
                 <Container className='boxCard'>
-                    <Card border="dark" style={{ width: '40rem', height: '370px' }}>
+                    <Card border="dark" className="cardDados">
                         <Card.Header>Meus Dados</Card.Header>
                         <Card.Body>           
                             <Card.Text>
-                                <ul className='listaDados1' key={clientes.id}>
-                                    <li className='AreaClienteLista'><nobr>Nome Completo</nobr></li>
-                                    <li className='AreaClienteLista'><nobr>Email</nobr></li>
-                                    <li className='AreaClienteLista'><nobr>CPF</nobr></li>
-                                </ul>
-
-                                <ul className='listaDados2'>
-                                    <li className='AreaClienteLista'><nobr>Data de Nascimento</nobr></li>
-                                    <li className='AreaClienteLista'><nobr>Contato</nobr></li>
-                                </ul>
-
-
-                                <ul className='Dados1 DadosConta'>
-                                    <li className='DadosConta1'><nobr>{clientes.nome}</nobr></li>
-                                    <li className='DadosConta2'><nobr>{clientes.email}</nobr></li>
-                                    <li className='DadosConta3'><nobr>{clientes.cpf}</nobr></li>
-                                </ul>
-
-                                <ul className='Dados2 DadosConta'>
-                                    <li className='DadosConta4'><nobr>{clientes.nascimento}</nobr></li>
-                                    <li className='DadosConta5'><nobr>{clientes.celular}</nobr></li>
-                                </ul>
+                                <Row className='linhaDados'>
+                                    <Col>
+                                        <ul className='listaDados1' key={clientes.id}>
+                                            <li className='AreaClienteLista'><nobr>Nome Completo</nobr></li>
+                                            <li className='AreaClienteLista'><nobr>Email</nobr></li>
+                                            <li className='AreaClienteLista'><nobr>CPF</nobr></li>
+                                        </ul>
+                                    </Col>
+                                    <Col>
+                                        <ul className='listaDados2'>
+                                            <li className='AreaClienteLista'><nobr>Data de Nascimento</nobr></li>
+                                            <li className='AreaClienteLista'><nobr>Contato</nobr></li>
+                                        </ul>
+                                    </Col>
+                                    <Col>
+                                        <ul className='Dados1 DadosConta'>
+                                            <li className='DadosConta1'><nobr>{clientes.nome}</nobr></li>
+                                            <li className='DadosConta2'><nobr>{clientes.email}</nobr></li>
+                                            <li className='DadosConta3'><nobr>{clientes.cpf}</nobr></li>
+                                        </ul>
+                                    </Col>
+                                    <Col>
+                                        <ul className='Dados2 DadosConta'>
+                                            <li className='DadosConta4'><nobr>{clientes.nascimento}</nobr></li>
+                                            <li className='DadosConta5'><nobr>{clientes.celular}</nobr></li>
+                                        </ul>
+                                    </Col>
+                                </Row>
                             </Card.Text>
                         </Card.Body>
                     </Card>
