@@ -66,7 +66,7 @@ function Pedidos(props) {
                                                         <p className='titulo-pedido status'>Status: {pedido.statusPedido}</p>
                                                     </th>
                                                     <th className='col-3 col-sm-3 col-xs-3 pedido-list'>
-                                                        <Link to='/area_cliente_detalhesPedido' className='btn btn-pedidos' role='button'>VER DETALHES</Link>
+                                                        <Link to={`/area_cliente_detalhesPedido/${pedido.idPedido}`} className='btn btn-pedidos' role='button'>VER DETALHES</Link>
                                                     </th>
                                                 </tr>
                                             </div>
