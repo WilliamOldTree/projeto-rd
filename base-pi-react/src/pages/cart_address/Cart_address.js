@@ -2,18 +2,16 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Title from "../../components/title/Title";
 import "./Cart_address.css";
-import Frete from "../../components/asserts/icons/caminhao-frete-home.png"
-import { Link, useHistory } from "react-router-dom"
-import TrashIcon from '../../components/asserts/icons/lixeira.png'
+import Frete from "../../components/asserts/icons/caminhao-frete-home.png";
+import { Link, useHistory } from "react-router-dom";
+import TrashIcon from '../../components/asserts/icons/lixeira.png';
 import ListCompra from "../../components/list_compra/ListCompra";
 import ResumoCompra from "../../components/resumo_compra/ResumoCompra";
-import { Container, Row, Col, Button } from 'react-bootstrap'
-import CartContext from '../../context/cart.provider'
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import CartContext from '../../context/cart.provider';
 import React, { useEffect, useContext, useState } from 'react';
-import { baseUrl } from '../../environments'
-import axios from 'axios'
-import modelPedido from '../cart_address/modelPedido/modelPedido'
-
+import { baseUrl } from '../../environments';
+import axios from 'axios';
 
 function Cart_address(props) {
 
@@ -23,6 +21,8 @@ function Cart_address(props) {
     //const clienteStorage = parseInt(localStorage.getItem('id'))
     const clienteStorage = parseInt(localStorage.getItem('id'))
     const valorStorage = parseInt(localStorage.getItem('valor'))
+    const history = useHistory();
+
 
     let idCLienteLogado = localStorage.getItem("id")
     function getEnderecos() {
@@ -49,31 +49,64 @@ function Cart_address(props) {
         )
     }
 
+    var data = new Date();
+    var dia = String(data.getDate()).padStart(2, '0');
+    var mes = String(data.getMonth() + 1).padStart(2, '0');
+    var ano = data.getFullYear();
+    var dataAtual = dia + '/' + mes + '/' + ano
+
     const [pedido, setPedido] = useState({
-        data: "02/06/2022",
+        
+        data: dataAtual,
         valor: valorStorage,
         cliente: clienteStorage,
         formaPagamento: "",
         endereco: 0,
         statusPedido: "SEPARACAO"
     })
-
     console.log(pedido)
 
-    const finalizarPedido = () => {
+
+    const finalizarPedido = (event) => {
         axios.post(`${baseUrl}/pedidos/novo`, pedido)
             .then(response => {
                 console.log(response.data)
-                history.push(`/cart_success/${response.data.idPedido}`) //
+                addItemPedido(response.data.idPedido)
             }).catch((error) => {
                 console.error(error.messege)
+                //history.push(`/cart_success/${response.data.numeroPedido}`)
             })
     }
 
-    const onChangeValueEndereco = (e) => {
-        setPedido({ ...pedido, endereco: e.target.value })
-        console.log("Endereço:::", e.target.value);
-        console.log(pedido)
+    function addItemPedido(idPedido) {
+        const lista = []
+        //percorre a lista salva na memoria
+        cart.map((value) => {
+            //a cada volta, cria um objeto de item pedido e salva no array acima
+            lista.push({
+                quantidade: value.quantidade,
+                produto: value.idProduto,
+                pedido:  idPedido
+            })
+        })
+        console.log(lista)
+        // chama o ultimo metodo para finalizar 
+        postItemPedido(lista, pedido)
+    }
+
+    // ultimo passo para finalizar o pedido
+    const postItemPedido = (idItemPedido, idPedido) => {
+        axios.post(`${baseUrl}/itensPedido/novo`, idItemPedido)
+            .then(() => {
+                console.log("fluxo finalizado")
+                localStorage.removeItem("cart")
+                localStorage.removeItem("vator")
+                localStorage.removeItem("qtyCart")
+                history.push("/cart_success/" + idPedido)
+            })
+            .catch((error) => {
+                console.error(error.messege)
+            })
     }
 
 
@@ -190,7 +223,11 @@ function Cart_address(props) {
 
                 <Row>
                     <Col className='cart_address_buttons'>
-                        <Button className="btn btn-default btnComprar " onClick={finalizarPedido} type="button">PAGAMENTO</Button>
+                        <Button className="btn btn-default btnComprar " onClick={async () => {
+                            let success = await finalizarPedido()
+                            success ? history.push("/") : ''
+
+                        }} type="button">PAGAMENTO</Button>
                     </Col>
                 </Row>
 

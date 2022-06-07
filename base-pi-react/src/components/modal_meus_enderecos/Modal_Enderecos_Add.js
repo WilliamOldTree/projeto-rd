@@ -31,7 +31,6 @@ function MeusEnderecosAdd(props) {
         axios.post(`${baseUrl}/enderecos`, endd)
             .then(response => {
                 setSuccessRegister(true)
-                alert('Endereço adicionado recarregue a pagina')
                 props.get()
             })
     }
@@ -167,7 +166,7 @@ function MeusEnderecosAdd(props) {
                     </Container>
                 </Modal.Body>
                 <Modal.Footer>
-                    {successRegister ? <h3>Endereco cadastrado com sucesso</h3> : ''}
+                    
                     <Button className="btn-form-enderecos" onClick={() => {
                         register()
                         handleClose()
