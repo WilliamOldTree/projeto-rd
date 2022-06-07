@@ -62,7 +62,7 @@ function Cart_Success() {
             <div className='container'>
                 <div className='container-sucesso'>
                     {/* BEGGIN RESUMO DO PEDIDO */}
-                    <h1 className='title-sucesso'>Sua compra foi efetuada com sucesso!<img className='img-sucesso' width='60px' src={Success} /></h1>
+                    <h1 className='title-sucesso'>Seu pedido foi efetuado com Sucesso!<img className='img-sucesso' width='60px' src={Success} /></h1>
 
                     <div className='sucesso'>
 
