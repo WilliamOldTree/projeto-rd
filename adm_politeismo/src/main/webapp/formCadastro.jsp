@@ -38,7 +38,7 @@
 				<label class="form-label">Nome:</label><input style="" class="form-control" type="text" name="nome" required/>
 				<label class="form-label">Cargo:</label><input style="" class="form-control" type="text" name="cargo"  required/>
 				<label class="form-label">Email:</label><input style="" class="form-control" type="email" name="email"  required/>
-				<label class="form-label">Senha:</label><input style="" class="form-control" type="password" name="senha" required/>
+				<label class="form-label">Senha:</label><input style="" class="form-control" type="password" minlength="8" maxlength="15" required oninvalid="this.setCustomValidity('Senha no mínimo 8 caracteres, Máximo de 15!')" name="senha" required/>
 			     <br>
 				<button class="btn formbtn"  type="submit" name="option" value="insert" role="button">Cadastrar</button>
 			</c:when>
@@ -49,7 +49,7 @@
 				<label class="form-label">Nome:</label><input style="" class="form-control" type="text" name="nome" value="${usuario.nome}" />
 				<label class="form-label">Cargo:</label><input style="" class="form-control" type="text" name="cargo" value="${usuario.cargo}"/>
 				<label class="form-label">Email:</label><input style="" class="form-control" type="email" name="email" value="${usuario.email}" />
-			    <label class="form-label">Senha:</label><input style="" class="form-control" type="password" name="senha" value="${usuario.senha}" required/>
+			    <label class="form-label">Senha:</label><input style="" class="form-control" type="password" name="senha" minlength="8" value="${usuario.senha}" required/>
 				
 			    <br>
 				<button class="btn formbtn" type="submit" name="option" value="update">Atualizar</button>
