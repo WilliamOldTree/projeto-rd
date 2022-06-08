@@ -74,6 +74,33 @@
     background-color: #34d175;
 }
 
+.frmCep{
+    width: 250px;
+}
+
+.frmTipoLog {
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.frmNumero{
+    width: 225px;
+}
+
+.iptComp {
+    width: 175px;
+    margin-left: -50px;
+}
+
+.iptBairro {
+    width: 100%;
+}
+
+.optEstado {
+    width: 230px;
+}
+
 @media (max-width:1024px){
     .editarEnderecos{
         width: 100px;
