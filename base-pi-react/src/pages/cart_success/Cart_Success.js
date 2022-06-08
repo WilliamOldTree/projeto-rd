@@ -35,7 +35,7 @@ function Cart_Success() {
         cliente: clienteStorage,
         formaPagamento: "",
         endereco: 0,
-        statusPedido: "SEPARACAO"
+        statusPedido: "AGUARDANDO_PAGAMENTO"
     })
 
     useEffect(() => {
@@ -54,6 +54,7 @@ function Cart_Success() {
                 })
             })
     }, [])
+
 
 
     return (
@@ -129,10 +130,10 @@ function Cart_Success() {
 
                             <div className='col-md-5 mb-3'>
                                 <p className='paragrafo-entrega'>
-                                    <strong>Bairro:</strong> {pedido.bairro} - {pedido.estado}<br />
-                                    <strong>Rua:</strong> {pedido.rua}, {pedido.numero}<br />
+                                    <strong>Bairro:</strong> {pedido.bairro} - {pedido.estado}<br/>
+                                    <strong>Rua:</strong> {pedido.rua}, {pedido.numero}<br/>
                                     <strong>CEP:</strong> {pedido.cep}<br />
-                                    <strong>Complemento:</strong> {pedido.complemento}<br />
+                                    <strong>Complemento:</strong> {pedido.complemento}<br/>
                                 </p>
                             </div>
                         </div>

@@ -29,7 +29,6 @@ function Cart_address(props) {
         })
     }
 
-
     useEffect(() => {
         getEnderecos()
         getCart()
@@ -59,7 +58,7 @@ function Cart_address(props) {
         cliente: clienteStorage,
         formaPagamento: "",
         endereco: 0,
-        statusPedido: "SEPARACAO"
+        statusPedido: "AGUARDANDO_PAGAMENTO"
     })
 
     console.log(pedido)
@@ -224,7 +223,7 @@ function Cart_address(props) {
                             let success = await finalizarPedido()
                             success ? history.push("/") : ''
 
-                        }} type="button">PAGAMENTO</Button>
+                        }} type="button">FINALIZAR</Button>
                     </Col>
                 </Row>
 

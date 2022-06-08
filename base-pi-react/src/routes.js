@@ -64,7 +64,7 @@ export const Routes = () => {
                 <Route path="/area_cliente_dados" component={AreaDados} />
                 <Route path="/area_cliente_cartoes" component={AreaCartoes} />
                 <Route path="/area_cliente_endereco" component={AreaEndereco} />
-                <Route path="/area_cliente_detalhesPedido/:id" component={AreaDetalhesPedido} />
+                <Route path="/area_cliente_detalhesPedido/:idPedido" component={AreaDetalhesPedido} />
                 <Route path="/cart_address" component={Cart_address} />
                 <Route path="/pagamento" component={Pagamento} />
                 <Route path="/checkout_carrinho" component={Checkout_carrinho} />
