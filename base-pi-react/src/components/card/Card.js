@@ -52,6 +52,7 @@ function Card(props) {
                     <div className='sub-title2'>ou {props.parcela} de R$ {converter(atual)} Sem juros</div>
                     <div className='btn-card'>
                         <button onClick={() => addToCart(produto)}>ADICIONAR AO CARRINHO</button>
+                        
                     </div>
                 </div>
             </div>

@@ -4,17 +4,10 @@ import Local from '../asserts/icons/local.png'
 import Login from '../asserts/icons/login.png'
 import Logo from '../asserts/images/header-img/logo.png'
 import Lupa from '../asserts/icons/pesquisa-de-lupa (1).png'
-import Love from '../asserts/icons/love.png'
 import Sac from '../asserts/icons/sac.png'
-import Cart from '../asserts/icons/cart.png'
 import OffCanvas from '../offCanvas/OffCanvas'
-import Biblia from '../asserts/images/images-home/b_blia-sagrada-cnbb.jpg'
-import Sagrada from '../asserts/images/images-home/imagem-resina-sagrada-familia.jpg'
 import ModalCarrinho from '../modal_cart/Modal_Cart'
-import Lixeira from '../../components/asserts/icons/lixeira.png';
-import { Popover, OverlayTrigger } from "react-bootstrap"
-import { baseUrl } from '../../environments';
-import { AuthContext } from '../../context/login.provider'
+import ModalFavoritos from '../ModalFavoritos/Modal_Favoritos'
 import React, { useState, useContext, useEffect } from 'react'
 import ClientContext from '../../context/login.provider'
 
@@ -29,63 +22,7 @@ function Header(props) {
 
     const { Autorizado } = useContext(ClientContext)
 
-    const popover = (
-        <Popover id="popover-basic">
-            <Popover.Header as="h3" style={{ textAlign: "center" }}>Meus Favoritos</Popover.Header>
-            {Autorizado ?
-                <Popover.Body>
-                    <div className="modal-body">
-                        <div className="carrinho">
-                            <div className="row">
-                                <div className="row">
-                                    <div className="imgSagrada col-3">
-                                        <img src={Sagrada} width="100px" />
-                                    </div>
-                                    <div className="sFamilia col-7">
-                                        <p>Imagem Sagrada Família Resina</p>
-                                        <strong>R$ 30,00</strong>
-                                    </div>
-                                    <div className=" lixeira col-1">
-                                        <button className="btn-lixeira"><img className="lixeira"
-                                            src={Lixeira}
-                                            alt="" /></button>
-                                    </div>
-                                </div>
-                                <p></p>
-                                <hr />
-                                <div className="row">
-                                    <div className="imgBiblia col-3">
-                                        <img src={Biblia}
-                                            width="90px" />
-                                    </div>
-                                    <div className="BibliaS col-7">
-                                        <p>Bíblia Sagrada de Bolso Ave Maria</p>
-                                        <strong>R$ 40,00</strong>
-                                    </div>
-                                    <div className=" lixeira col-1">
-                                        <button className="btn-lixeira"><img className="lixeira2"
-                                            src={Lixeira}
-                                            alt="" /></button>
-                                    </div>
-                                    <hr />
-                                </div>
-                            </div>
-                            <div className="col-12">
-                                <div><a href="area_cliente_favoritos">
-                                    <button className="btnFinalFavoritos">VER FAVORITOS</button></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                </Popover.Body>
-                :
-                <Popover.Body>
-                    <p className="favorito-aut">Realize seu Login</p>
-                </Popover.Body>
-            }
-        </Popover>
-    );
 
     return (
         <>
@@ -149,13 +86,7 @@ function Header(props) {
                                 </div>
                                 <div className="col-3">
                                     {/* Button trigger modal Favoritos */}
-
-                                    <div className="btnfavorito">
-                                        <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
-                                            <button type="button" className="btn"><img src={Love} alt="Favoritos" width="80%" />
-                                            </button>
-                                        </OverlayTrigger>
-                                    </div>
+                                    <ModalFavoritos />
                                 </div>
 
                                 <div className="col-3">
@@ -164,7 +95,7 @@ function Header(props) {
                                         </Link>
                                     </div>
                                 </div>
-
+        
                                 {/* Button trigger modal Carrinho */}
 
                                 {/* Button trigger modal Carrinho */}

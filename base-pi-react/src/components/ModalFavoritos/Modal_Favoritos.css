@@ -7,13 +7,13 @@
     font-weight: bold;
 }
 
-.div-modal-cart-fav {
+.div-modal-cart {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 10px;
-    margin-left: -35px;
+    margin-top: 0px;
+    margin-left: -20px;
 }
 
 .row-modal-cart {
@@ -27,6 +27,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: -20px;
+
 }
 
 .btncarrinho,
@@ -133,6 +135,3 @@
     padding-left: 0px;
 }
 
-.favorito-aut{
-    color: gray;
-}                                                          

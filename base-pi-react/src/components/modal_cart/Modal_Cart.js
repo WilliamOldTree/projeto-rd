@@ -3,7 +3,6 @@ import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom'
 import { Button, Container, Row, Col, Form, Popover, OverlayTrigger } from 'react-bootstrap';
 import Cart from '../asserts/icons/cart.png';
-//import BudaMedit from '../../components/asserts/images/cart-images/buda-meditando.png';
 import Lixeira from '../../components/asserts/icons/lixeira.png';
 import CartContext from '../../context/cart.provider'
 import ClientContext from '../../context/login.provider'
@@ -39,12 +38,12 @@ function ModalCarrinho(props) {
                     placement={placement}
                     overlay={
                         <Popover id={`popover-positioned-${placement}`}>
-                            <Popover.Header style={{ textAlign: "center" }} as="h3">{`${"Meu Carrinho"}`}</Popover.Header>
+                            <Popover.Header style={{ textAlign: "center" }} as="h3"><strong>{`${"Meu Carrinho"}`}</strong> </Popover.Header>
                             <Popover.Body>
 
                                 <Container>
                                     {cart.length == 0
-                                        ? <h5>Carrinho Vazio</h5>
+                                        ?<p className="favorito-aut">Carrinho Vazio</p>
                                         : cart.map((item) => {
                                             return (
                                                 <Row className="div-modal-cart" key={item.id}>
