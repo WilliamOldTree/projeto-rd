@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.entities.Endereco;
 import br.com.qsd.politeismo.ecommerce.entities.ItemPedido;
 import br.com.qsd.politeismo.ecommerce.entities.Pedido;
@@ -14,7 +15,7 @@ public class PedidoDetalheDTO {
 	
 	private Long numeroPedido;
 	private Date data;
-	private String nomeCliente;
+	private Cliente cliente;
 	private String statusPedido;
 	private String formaPagamento;
 	private Endereco endereco;
@@ -27,7 +28,7 @@ public class PedidoDetalheDTO {
 	public PedidoDetalheDTO(Pedido pedido) {
 		this.numeroPedido = pedido.getIdPedido();
 		this.data = pedido.getData();
-		this.nomeCliente = pedido.getCliente().getNome();
+		this.cliente = pedido.getCliente();
 		this.statusPedido = pedido.getStatusPedido();
 		this.formaPagamento = pedido.getFormaPagamento();
 		this.endereco = pedido.getEndereco();		
@@ -43,10 +44,6 @@ public class PedidoDetalheDTO {
 		SimpleDateFormat dataAtual= new SimpleDateFormat("dd/MM/yyyy");
 		String today = dataAtual.format(data);
 		return today;
-	}
-
-	public String getNomeCliente() {
-		return nomeCliente;
 	}
 
 	public String getStatusPedido() {
@@ -65,6 +62,11 @@ public class PedidoDetalheDTO {
 		return valor;
 	}
 	
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+
 	public List<ItemPedidoDetalheDTO> getItens() {
 		List<ItemPedidoDetalheDTO> lista = ItemPedidoDetalheDTO.converter(itens);
 		return lista;
