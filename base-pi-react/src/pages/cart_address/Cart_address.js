@@ -12,12 +12,20 @@ import CartContext from '../../context/cart.provider';
 import React, { useEffect, useContext, useState } from 'react';
 import { baseUrl } from '../../environments';
 import axios from 'axios';
+import Boleto from '../../components/asserts/icons/boleto.PNG';
+import Visa from "../../components/asserts/icons/visa.png"
+import CartaoCredito from "../../components/asserts/icons/carta.png";
+import CodBarra from "../../components/asserts/images/images-pagamento/cod barra.jpg"
+import PixPix from "../../components/asserts/icons/pix1.PNG";
+import qrCode from "../../components/asserts/images/images-pagamento/qrCode.jpg"
 
 function Cart_address(props) {
 
     const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty, valorTotal } = useContext(CartContext)
     const [enderecos, setEnderecos] = useState([])
     const clienteStorage = parseInt(localStorage.getItem('id'))
+    const nomeClienteStorage = localStorage.getItem("nome")
+
     const valorStorage = parseInt(localStorage.getItem('valor'))
     const history = useHistory();
 
@@ -26,7 +34,7 @@ function Cart_address(props) {
         axios.get(`${baseUrl}/enderecos/${idCLienteLogado}/enderecos`)
             .then((response) => {
                 setEnderecos(response.data)
-        })
+            })
     }
 
     useEffect(() => {
@@ -98,20 +106,113 @@ function Cart_address(props) {
                 localStorage.removeItem("cart")
                 localStorage.removeItem("vator")
                 localStorage.removeItem("qtyCart")
-                history.push("/cart_success/" + idPedido)             
+                history.push("/cart_success/" + idPedido)
             })
             .catch((error) => {
                 console.error(error.messege)
             })
     }
 
+    function pagamento() {
+
+        if (pedido.formaPagamento == "BOLETO") {
+            return (
+                <>
+                    {/* Modal Boleto */}
+                    <div className="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabIndex={-1}>
+                        <div className="modal-dialog modal-dialog-centered">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title" id="exampleModalToggleLabel"><img className src={Boleto} width="50px" mundipagg_billet name="payment" data-qa="billet" checked /><strong>Boleto</strong></h5>
+                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+                                </div>
+                                <div className="modal-body">
+                                    <div className="modal-body">
+                                        <ul>
+                                            <li>Pagamento somente à vista.</li>
+                                            <li>O boleto vence em 3 dias úteis.</li>
+                                            <li>É necessário imprimir o boleto ou utilizar o código de
+                                                barras do mesmo para fazer o pagamento.</li>
+                                            <li>Imprima o boleto após a finalização da compra.</li>
+                                            <li>O boleto não será enviado para o seu endereço físico.</li>
+                                            <li>Imprima o boleto bancário após a finalização do pedido.</li>
+                                        </ul>
+                                        <img width="100%" src={CodBarra} />
+
+                                    </div>
+                                    <div className="modal-footer">
+                                        <button type="button" className="btn confirmar" data-bs-dismiss="modal" aria-label="Close">CONFIRMAR</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Button trigger modal Boleto */}
+                    <button type="button" className="btn boleto" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> <a className="btn boleto" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
+                        <img src={Boleto} width="50px" mundipagg_billet name="payment" data-qa="billet" checked />
+                        <b>Gerar Boleto</b></a>
+                    </button>
+                </>
+            )
+        } else if (pedido.formaPagamento == "CARTAO") {
+            return (
+                <>
+                    <div md={6} lg={6} className="dados1_compra_card">
+                        <ul className="cart_list_itens">
+                            <li className="cart_list_itens"><img className src={CartaoCredito} width="50px" />Cartão de crédito</li>
+                            <li className="cart_list_itens">Numero:  **** **** **** 8567</li>
+                            <li className="cart_list_itens">Validade: 07/27</li>
+                            <li className="cart_list_itens">Nome: {nomeClienteStorage}</li>
+                            <li className="cart_list_itens"><img className="pagamento_cartao" src={Visa} alt="Visa" /></li>
+                        </ul>
+                    </div>
+                </>
+            )
+        } else if (pedido.formaPagamento == "PIX") {
+            return (
+                <>
+                    {/* Modal Pix */}
+                    <div className="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabIndex={-1}>
+                        <div className="modal-dialog modal-dialog-centered">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title" id="exampleModalToggleLabel"><img className src={PixPix} width="50px" className="img-pix-adress" mundipagg_billet name="payment" data-qa="billet" checked /><strong>Pix</strong></h5>
+                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+                                </div>
+                                <div className="modal-body">
+                                    <div className="modal-body">
+                                        <img width="100%" src={qrCode} /> <br />
+                                        <div className="input-group input-group-sm mb-3">
+                                            <span className="input-group-text" id="inputGroup-sizing-sm"><strong>Linha Digitável:</strong></span>
+                                            <input type="text" value="88faa317-c217-4c29-8228-38f3d978bb6f" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                        </div>
+                                    </div>
+
+                                    <div className="modal-footer">
+                                        <button type="button" className="btn confirmar" data-bs-dismiss="modal" aria-label="Close">CONFIRMAR</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Button trigger modal Pix */}
+                    <button type="button" className="btn pix" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <a className="btn pix" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
+                            <img src={PixPix} width="35px" className="img-pix-adress" mundipagg_billet name="payment" data-qa="billet" checked />
+                            <b>Gerar Pix</b></a>
+                    </button>
+                </>
+            )
+
+        }
+    }
+
     return (
         <>
             {/* BEGINNER ADDRESS*/}
 
-            <Header />/
+            <Header />
             <Container>
-
                 <Row>
                     {/* BEGING ADDRESS-TITLE */}
                     <Col>
@@ -158,6 +259,7 @@ function Cart_address(props) {
                         </span>
                         <div>
                             <h2>Forma de Pagamento</h2>
+
                             <div class="form-check">
                                 <input class="form-check-input" name="pagamento" type="radio" value="PIX" id="defaultCheck1"
                                     onClick={(event) => {
@@ -176,7 +278,8 @@ function Cart_address(props) {
                                     BOLETO
                                 </label>
                             </div>
-                            <div class="form-check">
+
+                            <div class="form-check final">
                                 <input class="form-check-input" name="pagamento" type="radio" value="CARTAO" id="defaultCheck1"
                                     onClick={(event) => {
                                         setPedido({ ...pedido, formaPagamento: event.target.value })
@@ -185,10 +288,13 @@ function Cart_address(props) {
                                     CARTÃO
                                 </label>
                             </div>
+
+                            {pagamento()}
+
                         </div>
                     </Col>
 
-                    <Col lg={7}>
+                    <Col lg={7} className="div-resumo-adress">
                         <h2>Resumo da compra</h2>
                         <div>
                             <ListCompra >
