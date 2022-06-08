@@ -2,6 +2,7 @@ package br.com.qsd.politeismo.ecommerce.controller;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -19,7 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.qsd.politeismo.ecommerce.controller.dto.ClienteDTO;
+import br.com.qsd.politeismo.ecommerce.controller.dto.PedidoDTO;
 import br.com.qsd.politeismo.ecommerce.controller.form.FormCliente;
+import br.com.qsd.politeismo.ecommerce.entities.Cliente;
+import br.com.qsd.politeismo.ecommerce.entities.Pedido;
+import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
 import br.com.qsd.politeismo.ecommerce.service.ClienteService;
 
 @RestController
@@ -29,6 +34,10 @@ public class ClienteController {
 	@Autowired
 	private ClienteService service;
 	
+	
+
+	@Autowired
+	private ClienteRepository clienteRepository;
 	
 	@GetMapping
     public ResponseEntity<List<ClienteDTO>> findAll(){
@@ -40,6 +49,7 @@ public class ClienteController {
 	public ClienteDTO findById(@PathVariable Long id) {
 		return service.findById(id);
     }
+	
 	
 	@PostMapping
 	public ResponseEntity <ClienteDTO> insert (@RequestBody FormCliente dto){

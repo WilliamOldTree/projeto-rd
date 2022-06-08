@@ -10,6 +10,10 @@ import ModalCarrinho from '../modal_cart/Modal_Cart'
 import ModalFavoritos from '../ModalFavoritos/Modal_Favoritos'
 import React, { useState, useContext, useEffect } from 'react'
 import ClientContext from '../../context/login.provider'
+// import {calcularPrecoPrazo, consultarCep, rastrearEncomendas} from 'correios-brasil';
+
+
+
 
 function Header(props) {
 
@@ -23,6 +27,32 @@ function Header(props) {
     const { Autorizado } = useContext(ClientContext)
 
 
+
+    // const { CepBrasil, CorreiosBrasil, RastreioBrasil } = require('correios-brasil')
+    //     cep = new CepBrasil('05339900')
+    //     cep.consultarCep()
+    //     .then((response) => {
+    //         //console.log(response)
+    //     })
+
+    //     let args = {
+    //         sCepOrigem: '05339900',
+    //         sCepDestino: '',
+    //         nVlPeso: '',
+    //         nCdFormato: '',
+    //         nVlComprimento: '',
+    //         nVlAltura: '',
+    //         nVlLargura: '',
+    //         nCdServico: ['04014', '04510'], //Array com os códigos de serviço
+    //         nVlDiametro: '',
+    //       };
+        
+    //     correios = new CorreiosBrasil(args)
+        
+    //     correios.CalcPrecoPrazo()
+    //         .then((response) => {
+    //             //console.log(response)
+    //         })
 
     return (
         <>
@@ -38,7 +68,8 @@ function Header(props) {
                                 </div>
                                 <div>
                                     <input id="input-cep" type="text" className="form-control" placeholder="Digite seu cep"
-                                        aria-label="Username" aria-describedby="basic-addon1" />
+                                        aria-label="Username" aria-describedby="basic-addon1"
+                                         />
                                 </div>
                             </div>
                             <div className="col-7" id="nav-itens">

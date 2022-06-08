@@ -1,4 +1,3 @@
-
 import React, { useState, useContext, useEffect } from 'react'
 import { Offcanvas } from 'react-bootstrap';
 import Menu from '../menu/Menu';

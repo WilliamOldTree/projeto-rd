@@ -136,6 +136,10 @@ body {
     width: 100%;
 }
 
+.table>:not(:first-child) {
+    border-top: none;
+}
+
 /*responsive*/
 @media(max-width: 770px) {
     .btn-detalhes {

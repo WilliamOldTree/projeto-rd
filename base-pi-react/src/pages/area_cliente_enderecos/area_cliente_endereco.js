@@ -54,7 +54,7 @@ function AreaEndereco(props) {
 
                         return (
                             <>
-                                <Card className="cardEnd" border="dark" style={{ width: '25rem' }}>
+                                <Card className="cardEnd" border="dark" style={{ width: '35rem' }}>
                                     <Card.Header>Endereço</Card.Header>
                                     <Card.Body>
                                         <Card.Text>

@@ -218,7 +218,14 @@
             </div>
 
             <h2 class="title" style="margin-top: 40px;">ADMINISTRADORES</h2>
-           
+
+	
+	    <form action="HomeController" method="post">
+             <button class="btn formCrud" type="submit" >
+                  <a href="formCadastro.jsp" style= "text-decoration: none; color: #FFFFFF;" >Cadastrar novo Funcionário</a>
+             </button>
+        </form>
+        
           <div class="container-table" style=" margin-bottom: 40px;">
             <table class="table table-hover">
                 <thead>
