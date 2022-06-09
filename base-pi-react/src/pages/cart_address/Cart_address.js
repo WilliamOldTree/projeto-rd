@@ -7,7 +7,7 @@ import { Link, useHistory } from "react-router-dom";
 import TrashIcon from '../../components/asserts/icons/lixeira.png';
 import ListCompra from "../../components/list_compra/ListCompra";
 import ResumoCompra from "../../components/resumo_compra/ResumoCompra";
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Alert } from 'react-bootstrap';
 import CartContext from '../../context/cart.provider';
 import React, { useEffect, useContext, useState } from 'react';
 import { baseUrl } from '../../environments';
@@ -18,6 +18,7 @@ import CartaoCredito from "../../components/asserts/icons/carta.png";
 import CodBarra from "../../components/asserts/images/images-pagamento/cod barra.jpg"
 import PixPix from "../../components/asserts/icons/pix1.PNG";
 import qrCode from "../../components/asserts/images/images-pagamento/qrCode.jpg"
+import MeusEnderecosAdd from '../../components/modal_meus_enderecos/Modal_Enderecos_Add'
 
 function Cart_address(props) {
 
@@ -25,6 +26,7 @@ function Cart_address(props) {
     const [enderecos, setEnderecos] = useState([])
     const clienteStorage = parseInt(localStorage.getItem('id'))
     const nomeClienteStorage = localStorage.getItem("nome")
+    const [erroPedido, SetErroPedido] = useState(false)
 
     const valorStorage = parseInt(localStorage.getItem('valor'))
     const history = useHistory();
@@ -79,6 +81,7 @@ function Cart_address(props) {
             }).catch((error) => {
                 console.error(error.messege)
                 //history.push(`/cart_success/${response.data.numeroPedido}`)
+                SetErroPedido(true)
             })
     }
 
@@ -225,6 +228,9 @@ function Cart_address(props) {
                 <Row className="div-cart-pag">
                     <Col lg={5} className='cart_address_list'>
                         <h2>Endereço entrega</h2>
+                        <div className='btnsEndCart'>
+                            <MeusEnderecosAdd get={getEnderecos} textoBotao='ADICIONAR' className='adicionarEnderecos' />
+                        </div>
                         <span>
                             {enderecos.map((enderecos) => {
                                 return (
@@ -257,6 +263,7 @@ function Cart_address(props) {
                                 )
                             })}
                         </span>
+
                         <div>
                             <h2>Forma de Pagamento</h2>
 
@@ -325,7 +332,7 @@ function Cart_address(props) {
 
                 <Row>
                     <Col className='cart_address_buttons'>
-                        <Button className="btn btn-default btnComprar " onClick={async () => {
+                        <Button className="btn btnComprar " onClick={async () => {
                             let success = await finalizarPedido()
                             success ? history.push("/") : ''
 
@@ -338,6 +345,18 @@ function Cart_address(props) {
                         <Link to="/" className="btn btn-default btnContCompra" type="button">CONTINUAR COMPRANDO</Link>
                     </Col>
                 </Row>
+
+                <Container>
+
+                    {erroPedido
+                        ?
+                        <Alert className="alert-register" key='danger' variant='danger'>
+                            <h4>Escolha uma Forma de Pagamento e Endereço para Entrega!</h4>
+                        </Alert>
+                        : ''
+                    }
+
+                </Container>
 
             </Container >
 
