@@ -79,6 +79,7 @@ function Cart() {
 
                 <Row>
                     <Col className='mt-5' id='cart_total'>
+                        
                         <h3>SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })} </h3>
                         <p></p>
                         <Link to="/cart_address" className="btn btn-default btnComprar mb-2" type="button">COMPRAR</Link>

@@ -56,6 +56,11 @@ function Pagamento() {
                                         <div className="card-body">
                                             < div style={{ height: 120 }} >
 
+                                                {/* Button trigger modal Boleto */}
+                                                <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> <a className="btn" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
+                                                    <input type="radio" /><img src={Boleto} width="50px" mundipagg_billet name="payment" data-qa="billet" checked />
+                                                    <b>Boleto Bancário</b></a></button>
+
 
                                                 {/* Modal Boleto */}
 
@@ -85,10 +90,7 @@ function Pagamento() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {/* Button trigger modal Boleto */}
-                                                <button type="button"   className="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> <a className="btn" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
-                                                    <input type="radio" /><img  src={Boleto} width="50px" mundipagg_billet name="payment" data-qa="billet" checked />
-                                                    <b>Boleto Bancário</b></a></button>
+
                                             </div>
                                         </div>
                                     </div>
@@ -99,52 +101,23 @@ function Pagamento() {
                                     <div className="card-pagamento">
                                         <div className="card-body">
                                             <button type="button" className="btn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                                <input type="radio" /><img className src={CartaoCredito} width="50px" mundipagg_billet name="payment" data-qa="billet" checked />
-                                                <b>Cartão De Crédito</b></button>
+                                                <input type="radio" /><img className src={PixPix} width="50px" mundipagg_billet name="payment" data-qa="billet" checked />
+                                                <b>Pix</b></button>
                                             {/* Modal Cartão De Crédito*/}
                                             <div className="modal fade" id="staticBackdrop" tabIndex={-1} aria-labelledby="staticBackdrop" aria-hidden="true">
                                                 <div className="modal-dialog">
                                                     <div className="modal-content">
                                                         <div className="modal-header">
-                                                            <h5 className="modal-title" id="#staticBackdrop">Cartão De Crédito
-                                                            </h5><img className src={CartaoCredito} width="50px" mundipagg_billet name="payment" data-qa="billet" checked />
+                                                            <img className src={PixPix} width="50px" mundipagg_billet name="payment" data-qa="billet" checked /><h5 className="modal-title" id="#staticBackdrop"> Pix
+                                                            </h5>
                                                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
                                                         </div>
                                                         <div className="modal-body">
                                                             {/* Inicio Pagina Pagamento Cartão De Crédito */}
-                                                            <form className="row g-3">
-                                                                <div className="col-md-12">
-                                                                    <label htmlFor="inputEmail4" className="form-label">Número do
-                                                                        Cartão*</label>
-                                                                    <input type="email" className="form-control" id="inputEmail4" placeholder="4407 5678 7685 9526" />
-                                                                    <img src="./images/icons/master.png" alt="" width="6%" />
-                                                                </div>
-                                                                <div className="col-md-12">
-                                                                    <label htmlFor="inputPassword4" className="form-label">Nome do
-                                                                        Titular*</label>
-                                                                    <input type="password" className="form-control" id="inputPassword4" placeholder="José Da Silva" />
-                                                                </div>
-                                                                <div className="col-md-5">
-                                                                    <label htmlFor="inputCity" className="form-label">Data de
-                                                                        Vencimento*</label>
-                                                                    <input type="text" className="form-control" id="inputCity" placeholder="01/2025" />
-                                                                </div>
-                                                                <div className="col-md-2">
-                                                                    <label htmlFor="inputZip" className="form-label">CVV*</label>
-                                                                    <input type="text" className="form-control" id="inputZip" placeholder={123} />
-                                                                </div>
-                                                                <div className="col-md-6">
-                                                                    <label htmlFor="inputState" className="form-label">Nùmero de
-                                                                        Parcelas*</label>
-                                                                    <select id="inputState" className="form-select">
-                                                                        <option selected>1 x de R$ 60,00</option>
-                                                                        <option selected>2 x de R$ 30,00</option>
-                                                                        <option selected>3 x de R$ 20,00</option>
-                                                                        <option>...</option>
-                                                                    </select>
-                                                                </div>
-                                                            </form>
-                                                            {/* Final Pagina Pagamento Cartão De Crédito */}
+
+                                                            <img align-items-center src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Link_pra_pagina_principal_da_Wikipedia-PT_em_codigo_QR_b.svg/1200px-Link_pra_pagina_principal_da_Wikipedia-PT_em_codigo_QR_b.svg.png"
+                                                                width='200px' />
+
                                                         </div>
                                                         <div className="modal-footer">
                                                             <button type="button" className="btn ">CONFIRMAR</button>
@@ -163,9 +136,9 @@ function Pagamento() {
                                                 <b>PayPal</b></button>
                                         </div>
                                     </div>*/}
-                                 
-                                   {/* Button trigger modal Pix
-                                    
+
+                                    {/* Button trigger modal Pix*/}
+
                                     <div className="card">
                                         <div className="card-body">
                                             <button type="button" className="btn " data-bs-toggle="modal" data-bs-target="#">
@@ -174,39 +147,39 @@ function Pagamento() {
                                         </div>
                                     </div>
                                     <br />
-                                    <br />*/}
+                                    <br />
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                     </Col>
 
                     <Col lg={6} className='pay_resumo'>
                         <h2 className="titleresumo">Resumo da compra</h2>
                         <br></br>
                         <div>
-                        <ListCompra >
-                            {cart.map((item) => {
-                                return (
-                                    <ResumoCompra key={item.id} 
-                                        product_img={item.urlProduto} 
-                                        descricao={item.nome} 
-                                        valor={item.preco} 
-                                        quantidade={item.qty} 
-                                        trash_img={TrashIcon} 
-                                        deletar={deleteCart} 
-                                        item={item} />
-                                )
-                            })}
-                        </ListCompra>
+                            <ListCompra >
+                                {cart.map((item) => {
+                                    return (
+                                        <ResumoCompra key={item.id}
+                                            product_img={item.urlProduto}
+                                            descricao={item.nome}
+                                            valor={item.preco}
+                                            quantidade={item.qty}
+                                            trash_img={TrashIcon}
+                                            deletar={deleteCart}
+                                            item={item} />
+                                    )
+                                })}
+                            </ListCompra>
                         </div>
                     </Col>
                 </Row>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
                 <Row className="finalização">
                     <Col className='container mt-3 p-3' id='pay_total'>
                         <h5>Produtos = R$ 120,00</h5>

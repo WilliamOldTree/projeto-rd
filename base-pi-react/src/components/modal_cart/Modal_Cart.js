@@ -43,7 +43,7 @@ function ModalCarrinho(props) {
 
                                 <Container>
                                     {cart.length == 0
-                                        ?<p className="favorito-aut">Carrinho Vazio</p>
+                                        ? <p className="favorito-aut">Carrinho Vazio</p>
                                         : cart.map((item) => {
                                             return (
                                                 <Row className="div-modal-cart" key={item.id}>
@@ -74,25 +74,29 @@ function ModalCarrinho(props) {
                                                     </Col>
                                                     <hr />
 
-                                                    <Col md={12} lg={12} className="div-footer-cart" >
-                                                        <h6><strong> SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</strong></h6>
-                                                    </Col>
-                                                    <br></br>
-                                                    {Autorizado
-                                                        ?
-                                                        <Col md={12} lg={12} className="div-btn-cart">
-                                                            <Link to="/cart"><Button className="btnFinal">VER CARRINHO</Button></Link>
-                                                        </Col>
-                                                        :
-                                                        ''
-                                                    }
-                                                 
-                                                    
+
+
+
                                                 </Row>
 
                                             )
                                         })}
 
+
+                                                <Col md={12} lg={12} className="div-footer-cart" >
+                                                    <h6><strong> SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</strong></h6>
+                                                </Col>
+
+                                            {
+                                                Autorizado
+                                                    ?
+                                                    <Col md={12} lg={12} className="div-btn-cart">
+                                                        <Link to="/cart"><Button className="btnFinal">VER CARRINHO</Button></Link>
+                                                    </Col>
+                                                    :
+                                                    ''
+                                            }
+                             
                                 </Container>
 
                             </Popover.Body>

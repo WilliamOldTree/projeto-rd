@@ -48,7 +48,7 @@ function ModalFavoritos(props) {
                                                     
 
                                                     <Col xs={6} md={6} className="boda">
-                                                       <h6><p>{item.nome}</p></h6>
+                                                       <h6> <p>{item.nome}</p></h6>
                                                     </Col>
                                                    
 
@@ -57,7 +57,14 @@ function ModalFavoritos(props) {
                                                     </Col>
                                                     <hr />
                                                     <br></br>
-                                                    {Autorizado
+                                                  
+                                                 
+                                                    
+                                                </Row>
+
+                                            )
+                                        })}
+                                          {Autorizado
                                                         ?
                                                         <Col md={12} lg={12} className="div-btn-cart">
                                                             <Link to="/area_cliente_favoritos"><Button className="btnFinal">VER FAVORITOS</Button></Link>
@@ -65,12 +72,6 @@ function ModalFavoritos(props) {
                                                         :
                                                         ''
                                                     }
-                                                 
-                                                    
-                                                </Row>
-
-                                            )
-                                        })}
 
                                 </Container>
 

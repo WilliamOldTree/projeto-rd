@@ -1,8 +1,8 @@
 import React from "react";
 import './ListCompra.css'
-import { Container, Row, Col, Table } from "react-bootstrap";
+import { Container, Row, Table } from "react-bootstrap";
 
-const ListCompra = (props) => {
+const ListFav = (props) => {
 
     return (
         <Container>
@@ -18,4 +18,4 @@ const ListCompra = (props) => {
         </Container>
     )
 }
-export default ListCompra
+export default ListFav
