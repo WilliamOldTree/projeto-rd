@@ -18,6 +18,7 @@ import CartaoCredito from "../../components/asserts/icons/carta.png";
 import CodBarra from "../../components/asserts/images/images-pagamento/cod barra.jpg"
 import PixPix from "../../components/asserts/icons/pix1.PNG";
 import qrCode from "../../components/asserts/images/images-pagamento/qrCode.jpg"
+import MeusEnderecosAdd from '../../components/modal_meus_enderecos/Modal_Enderecos_Add'
 
 function Cart_address(props) {
 
@@ -225,7 +226,10 @@ function Cart_address(props) {
                 <Row className="div-cart-pag">
                     <Col lg={5} className='cart_address_list'>
                         <h2>Endereço entrega</h2>
-                        <span>
+                        <div className='btnsEndCart'>
+                            <MeusEnderecosAdd get={getEnderecos} textoBotao='ADICIONAR' className='adicionarEnderecos' />
+                        </div> 
+                      <span>
                             {enderecos.map((enderecos) => {
                                 return (
                                     <div className='cart_address_actualAddress px-2' key={enderecos.id}>
@@ -257,6 +261,7 @@ function Cart_address(props) {
                                 )
                             })}
                         </span>
+ 
                         <div>
                             <h2>Forma de Pagamento</h2>
 
