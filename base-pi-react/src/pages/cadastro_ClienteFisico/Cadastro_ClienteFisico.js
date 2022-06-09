@@ -143,7 +143,6 @@ function ClienteFisico(props) {
     }
 
     return (
-
         <>
             <Header />
             {/* BEGGIN FORMULÁRIO CADASTRO DE CLIENTE FÍSICO*/}
@@ -193,8 +192,6 @@ function ClienteFisico(props) {
                             <option value='MASCULINO'>Masculino</option>
                             <option value='OUTROS'>Outros</option>
                         </select>
-
-
 
                         <div className='mb-3'>
                             <label for='telefone_ClienteFisico' className='form-label5 fisico'>Telefone Fixo ou Comercial:</label>
