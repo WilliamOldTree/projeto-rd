@@ -11,14 +11,11 @@ import ListCompra from "../../components/list_compra/ListCompra";
 import ResumoCompra from "../../components/resumo_compra/ResumoCompra";
 import { Container, Row, Col } from 'react-bootstrap';
 import Boleto from '../../components/asserts/icons/boleto.PNG';
-import CartaoCredito from "../../components/asserts/icons/carta.jpg";
+import CartaoCredito from "../../components/asserts/icons/carta.png";
 import PayPal from "../../components/asserts/icons/paypal.png";
 import PixPix from "../../components/asserts/icons/pix1.PNG";
 import CartContext from '../../context/cart.provider'
 import React, { useEffect, useContext } from 'react';
-
-
-
 
 
 function Pagamento() {
@@ -54,9 +51,7 @@ function Pagamento() {
                                 <div className="col-8">
                                     <div className="card-pagamento">
                                         <div className="card-body">
-                                            < div style={{ height: 120 }} >
-
-
+                                            < div style={{ height: 120 }}>
                                                 {/* Modal Boleto */}
 
                                                 <div className="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabIndex={-1}>

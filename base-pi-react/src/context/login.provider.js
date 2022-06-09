@@ -1,15 +1,15 @@
-import React, { useState, createContext, useEffect } from 'react'
-import { baseUrl } from '../environments'
-import axios from 'axios'
-import { useHistory } from 'react-router-dom'
+import React, { useState, createContext, useEffect } from "react"
+import { baseUrl } from "../environments"
+import axios from "axios"
+import { useHistory } from "react-router-dom"
 
 const ClientContext = createContext({})
 
 function ClientProvider(props) {
 
     const [client, setClient] = useState(null)
-    const [nome, setNome] = useState('')
-    const [token, setToken] = useState('')
+    const [nome, setNome] = useState("")
+    const [token, setToken] = useState("")
     const [clienteDados, setClienteDados] = useState({})
     //const [login, setLogin] = useState({})
     const history = useHistory()
@@ -29,16 +29,18 @@ function ClientProvider(props) {
 
     async function LogarCliente(login) {
         let success = false
-        await axios.post('http://localhost:8080/auth', login)
+        await axios.post("http://localhost:8080/auth", login)
             .then((response) => {
                 console.log("logar")
                 setNome(response.data.nomeCliente)
-                localStorage.setItem('nome', JSON.stringify(response.data.nomeCliente))
+                //localStorage.setItem("nome", JSON.stringify(response.data.nomeCliente))
+                const nomeCliente = response.data.nomeCliente;
+                localStorage.setItem("nome", nomeCliente)
 
                 setClient(response.data.idCliente)
-                localStorage.setItem('id', JSON.stringify(response.data.idCliente))
+                localStorage.setItem("id", JSON.stringify(response.data.idCliente))
                 setToken(response.data.token)
-                localStorage.setItem('token', JSON.stringify(response.data.token))
+                localStorage.setItem("token", JSON.stringify(response.data.token))
                 axios.defaults.headers.common["Authorization"] = `Bearer ${response.data.token}`
                 success = true
                 getCliente(response.data.idCliente)
@@ -50,24 +52,24 @@ function ClientProvider(props) {
     }
 
     function AtualizarNome() {
-        setClienteDados(JSON.parse(localStorage.getItem('cliente')))
-        setNome(JSON.parse(localStorage.getItem('nome')))
-        setClient(JSON.parse(localStorage.getItem('id')))
+        setClienteDados(JSON.parse(localStorage.getItem("cliente")))
+        setNome(JSON.parse(localStorage.getItem("nome")))
+        setClient(JSON.parse(localStorage.getItem("id")))
     }
 
     function getIdCliente() {
-        setClient(JSON.parse(localStorage.getItem('id')))
-        getCliente(JSON.parse(localStorage.getItem('id')))
+        setClient(JSON.parse(localStorage.getItem("id")))
+        getCliente(JSON.parse(localStorage.getItem("id")))
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
     }
 
     function getDadosDoCliente() {
-        setClienteDados(JSON.parse(localStorage.getItem('cliente')))
+        setClienteDados(JSON.parse(localStorage.getItem("cliente")))
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
     }
 
     const getUserStorage = () => {
-        return localStorage.getItem('nome')
+        return localStorage.getItem("nome")
     }
 
     const getUserName = () => {
@@ -84,7 +86,7 @@ function ClientProvider(props) {
 
         axios.defaults.headers.common["Authorization"] = null
         setClient(null)
-        history.push('/login');
+        history.push("/login");
     }
 
     return (

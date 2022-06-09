@@ -58,36 +58,10 @@ function MeusEnderecosAdd(props) {
                 <Modal.Body className="show-grid">
                     <Container>
                         <Form>
-                            <Col xs={12} md={12}>
-                                <Form.Group controlId="formBasic">
-                                    <Form.Label className="label-form-enderecos">Tipo Lougradouro:</Form.Label>
-                                    <Form.Control className="input-form-enderecos" type="text"
-                                        onChange={(event) => { setEndd({ ...endd, tipoLougradouro: event.target.value }) }} />
-                                </Form.Group>
-
-                            </Col>
+                            
                           
                             <Row>
-                                <Col xs={12} md={12}>
-                                    <Form.Group controlId="formBasic">
-                                        <Form.Label className="label-form-enderecos">Endereço:</Form.Label>
-                                        <Form.Control className="input-form-enderecos" type="text"
-
-                                            onChange={(event) => { setEndd({ ...endd, nomeLougradouro: event.target.value }) }} />
-                                    </Form.Group>
-
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col md={6} lg={6} className="div-form-enderecos">
-                                    <Form.Group controlId="formBasic">
-                                        <Form.Label className="label-form-enderecos">Cidade:</Form.Label>
-                                        <Form.Control className="input-form-enderecos" type="text"
-
-                                            onChange={(event) => { setEndd({ ...endd, cidade: event.target.value }) }} />
-                                    </Form.Group>
-                                </Col>
-                                <Col md={6} lg={6} className="div-form-enderecos">
+                                <Col md={6} lg={6} className="div-form-enderecos frmCep">
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">CEP:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
@@ -95,24 +69,67 @@ function MeusEnderecosAdd(props) {
                                             onChange={(event) => { setEndd({ ...endd, cep: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
-                            </Row>
-                            <Row>
-                                <Col md={8} lg={8} className="div-form-enderecos">
+                                <Col xs={12} md={12} className="frmTipoLog">
                                     <Form.Group controlId="formBasic">
+                                        <Form.Label className="label-form-enderecos">Tipo Lougradouro:</Form.Label>
+                                        <Form.Control className="input-form-enderecos" type="text"
+                                            onChange={(event) => { setEndd({ ...endd, tipoLougradouro: event.target.value }) }} />
+                                    </Form.Group>
+                                </Col>
+                                <Col xs={12} md={12}>
+                                    <Form.Group controlId="formBasic">
+                                        <Form.Label className="label-form-enderecos">Endereço:</Form.Label>
+                                        <Form.Control className="input-form-enderecos" type="text"
+
+                                            onChange={(event) => { setEndd({ ...endd, nomeLougradouro: event.target.value }) }} />
+                                    </Form.Group>
+                                </Col>
+                                <Col md={8} lg={8} className="div-form-enderecos" >
+                                    <Form.Group controlId="formBasic" className='frmNumero'>
+                                        <Form.Label className="label-form-enderecos">Nº:</Form.Label>
+                                        <Form.Control className="input-form-enderecos" type="text"
+
+                                            onChange={(event) => { setEndd({ ...endd, numero: event.target.value }) }} />
+                                    </Form.Group>
+                                </Col>
+                                
+                                <Col md={4} lg={4} className="div-form-enderecos">
+                                    <Form.Group controlId="formBasic" className='iptComp'>
                                         <Form.Label className="label-form-enderecos">Complemento:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
 
                                             onChange={(event) => { setEndd({ ...endd, apelido: event.target.value }) }} />
+                                    </Form.Group>    
+                                </Col>
+
+                            </Row>
+                            <Row>
+                                <Col md={8} lg={8} className="div-form-enderecos iptBairro">
+                                    <Form.Group controlId="formBasic">
+                                        <Form.Label className="label-form-enderecos">Bairro:</Form.Label>
+                                        <Form.Control className="input-form-enderecos" type="text"
+
+                                            onChange={(event) => { setEndd({ ...endd, bairro: event.target.value }) }} />
                                     </Form.Group>
                                 </Col>
-                                <Col md={4} lg={4} className="div-form-enderecos">
+                            </Row>
+                            <Row>
+                            <Col md={6} lg={6} className="div-form-enderecos">
+                                <Form.Group controlId="formBasic">
+                                    <Form.Label className="label-form-enderecos">Cidade:</Form.Label>
+                                    <Form.Control className="input-form-enderecos" type="text"
+
+                                        onChange={(event) => { setEndd({ ...endd, cidade: event.target.value }) }} />
+                                </Form.Group>
+                            </Col>
+                            <Col md={4} lg={4} className="div-form-enderecos optEstado">
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Estado:</Form.Label>
                                         <Form.Select className="input-form-enderecos" defaultValue="Choose..."
                                             onChange={(event) => {
                                                 setEndd({ ...endd, estado: event.target.value })
                                             }}>
-                                            <option>Selecione...</option>
+                                            <option>Selecione um Estado</option>
                                             <option value="AC">AC</option>
                                             <option value="AL">AL</option>
                                             <option value="AP">AP</option>
@@ -143,25 +160,8 @@ function MeusEnderecosAdd(props) {
                                         </Form.Select>
                                     </Form.Group>
                                 </Col>
-                            </Row>
 
-                            <Row>
-                                <Col md={8} lg={8} className="div-form-enderecos">
-                                    <Form.Group controlId="formBasic">
-                                        <Form.Label className="label-form-enderecos">Bairro:</Form.Label>
-                                        <Form.Control className="input-form-enderecos" type="text"
-
-                                            onChange={(event) => { setEndd({ ...endd, bairro: event.target.value }) }} />
-                                    </Form.Group>
-                                </Col>
-                                <Col md={4} lg={4} className="div-form-enderecos">
-                                    <Form.Group controlId="formBasic">
-                                        <Form.Label className="label-form-enderecos">Nº:</Form.Label>
-                                        <Form.Control className="input-form-enderecos" type="text"
-
-                                            onChange={(event) => { setEndd({ ...endd, numero: event.target.value }) }} />
-                                    </Form.Group>
-                                </Col>
+                               
                             </Row>
                         </Form>
                     </Container>

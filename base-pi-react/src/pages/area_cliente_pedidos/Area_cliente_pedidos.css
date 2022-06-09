@@ -28,7 +28,7 @@ body {
 }
 
 .area-pedido {
-    border       : 2px solid #261C1A;
+    border       : 1px solid #261C1A;
     box-sizing   : border-box;
     border-radius: 5px;
     padding      : 12px;
