@@ -77,7 +77,7 @@ function detalhesPedido() {
                                 <th className='col-2 col-sm-2 col-xs-2 detalhesPedido-list'> {p.quantidade} unidades</th>
                                 <th className='col-2 col-sm-2 col-xs-2 detalhesPedido-list'>{precoShow(p.preco)}</th>
                                 <th className='col-3 col-sm-3 col-xs-3 detalhesPedido-list'>
-                                    <Link className='btn btn-detalhes' to="/" role='button'>COMPRAR NOVAMENTE</Link>
+                                    <Link className='btn btn-detalhes' to={`/product/${p.codigo_produto}`} role='button'>COMPRAR NOVAMENTE</Link>
                                 </th>
                             </tr>
                         </div>
