@@ -11,7 +11,6 @@ import ListCompra from "../../components/list_compra/ListCompra";
 import ResumoCompra from "../../components/resumo_compra/ResumoCompra";
 import { Container, Row, Col } from 'react-bootstrap';
 import Boleto from '../../components/asserts/icons/boleto.PNG';
-import CartaoCredito from "../../components/asserts/icons/carta.png";
 import PayPal from "../../components/asserts/icons/paypal.png";
 import PixPix from "../../components/asserts/icons/pix1.PNG";
 import CartContext from '../../context/cart.provider'

@@ -76,23 +76,25 @@ function ModalCarrinho(props) {
                                                     <hr />
 
                                                     <Col md={12} lg={12} className="div-footer-cart" >
-                                                        <h6><strong> SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</strong></h6>
+                                                       
                                                     </Col>
                                                     <br></br>
                                                     {Autorizado
                                                         ?
                                                         <Col md={12} lg={12} className="div-btn-cart">
-                                                            <Link to="/cart"><Button className="btnFinal">VER CARRINHO</Button></Link>
                                                         </Col>
                                                         :
                                                         ''
                                                     }
-                                                 
-                                                    
+                                                
+
+
                                                 </Row>
 
                                             )
                                         })}
+                                                  <h6><strong> SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</strong></h6>
+                                                  <Link to="/cart"><Button className="btnFinal">VER CARRINHO</Button></Link>
 
                                 </Container>
 
