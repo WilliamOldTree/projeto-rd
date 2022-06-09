@@ -82,10 +82,10 @@ return (
 
                             
                             <div className="col-md-2">
-                                <label for="labelCVV" className="form-label">ID_Cliente</label>
+                                <label for="labelCVV" className="form-label">CVV</label>
                                 <input type="text" className="form-control" id="inputZip"
-                                 value={cartoes.cliente}
-                                 onChange={(e)=>setCartoes({...cartoes, cliente: e.target.value })}
+                                 value={cartoes.cvv}
+                                 onChange={(e)=>setCartoes({...cartoes, cvv_cartao: e.target.value })}
                                     />
                             </div>
 

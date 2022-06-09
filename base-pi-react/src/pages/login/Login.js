@@ -18,15 +18,7 @@ import ClientContext from '../../context/login.provider'
 function Login() {
 
     function validar() {
-        var novaSenha = document.getElementById('senha').value;
-
-        if (novaSenha == "") {
-            document.getElementById('ErroLoginSenhaNova').innerHTML = "Informe uma senha!";
-            document.getElementById('senha').focus();
-            return false;
-        } else {
-            document.getElementById('ErroLoginSenhaNova').innerHTML = "";
-        }
+      
     }
 
     const { LogarCliente, a } = useContext(ClientContext)

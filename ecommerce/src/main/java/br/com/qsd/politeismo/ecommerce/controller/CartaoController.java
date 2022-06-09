@@ -2,6 +2,8 @@ package br.com.qsd.politeismo.ecommerce.controller;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
+
 import javax.validation.Valid;
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +18,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import br.com.qsd.politeismo.ecommerce.controller.dto.CartaoDTO;
+import br.com.qsd.politeismo.ecommerce.controller.dto.PedidoDTO;
 import br.com.qsd.politeismo.ecommerce.controller.form.FormCartao;
+import br.com.qsd.politeismo.ecommerce.entities.Cartao;
+import br.com.qsd.politeismo.ecommerce.entities.Cliente;
+import br.com.qsd.politeismo.ecommerce.entities.Pedido;
+import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
 import br.com.qsd.politeismo.ecommerce.service.CartaoService;
 
 
@@ -28,6 +35,9 @@ public class CartaoController {
 @Autowired
 private CartaoService fc;
 	
+@Autowired
+private ClienteRepository clienteRepository;
+
 	
 	@GetMapping
     public ResponseEntity<List<CartaoDTO>> findAll(){
@@ -64,6 +74,12 @@ private CartaoService fc;
 		fc.deletar(id);
 		return ResponseEntity.noContent().build();
 	}
+	@GetMapping("/{id}/cartoes")
+	public List<CartaoDTO> listaPedido(@PathVariable Long id) {
+		Optional<Cliente> cliente = clienteRepository.findById(id);
+		List<Cartao> cartao = cliente.get().getCartao();
+		return CartaoDTO.converter(cartao);
+    }
 	
 	
 }//End Class
