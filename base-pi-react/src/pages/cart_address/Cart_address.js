@@ -14,10 +14,9 @@ import { baseUrl } from '../../environments';
 import axios from 'axios';
 import Boleto from '../../components/asserts/icons/boleto.PNG';
 import Visa from "../../components/asserts/icons/visa.png"
-import CartaoCredito from "../../components/asserts/icons/carta.png";
-import CodBarra from "../../components/asserts/images/images-pagamento/cod barra.jpg"
+import CartaoCredito from "../../components/asserts/icons/carta.jpg"
+import CodBarra from "../../components/asserts/icons/codigo-de-barras.png"
 import PixPix from "../../components/asserts/icons/pix1.PNG";
-import qrCode from "../../components/asserts/images/images-pagamento/qrCode.jpg"
 
 function Cart_address(props) {
 
@@ -176,7 +175,7 @@ function Cart_address(props) {
                         <div className="modal-dialog modal-dialog-centered">
                             <div className="modal-content">
                                 <div className="modal-header">
-                                    <h5 className="modal-title" id="exampleModalToggleLabel"><img className src={PixPix} width="50px" className="img-pix-adress" mundipagg_billet name="payment" data-qa="billet" checked /><strong>Pix</strong></h5>
+                                    <h5 className="modal-title" id="exampleModalToggleLabel"><img  src={PixPix} width="50px" className="img-pix-adress" mundipagg_billet name="payment" data-qa="billet" checked /><strong>Pix</strong></h5>
                                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
                                 </div>
                                 <div className="modal-body">

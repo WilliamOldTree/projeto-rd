@@ -2,4 +2,5 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="br.com.qsd.politeismo.ecommerce.controller.dto.CartaoDTO"/>
     <fullyQualifiedTypeName name="br.com.qsd.politeismo.ecommerce.entities.Cartao"/>
+    <fullyQualifiedTypeName name="br.com.qsd.politeismo.ecommerce.controller.form.FormPix"/>
 </qualifiedTypeNameHistroy>

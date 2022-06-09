@@ -23,6 +23,7 @@ function ClientProvider(props) {
                 localStorage.cliente = JSON.stringify(response.data)
             })
             .catch((error) => {
+                
                 console.error(error.messege)
             })
     }
@@ -46,8 +47,14 @@ function ClientProvider(props) {
                 getCliente(response.data.idCliente)
             })
             .catch((error) => {
+               
                 console.error(error.messege)
             })
+
+
+            
+
+
         return success
     }
 
