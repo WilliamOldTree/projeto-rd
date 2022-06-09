@@ -11,6 +11,8 @@ import React, { useState, useEffect } from 'react'
 import { baseUrl } from '../../environments'
 import axios from 'axios'
 
+
+
 function AreaEndereco(props) {
 
     const [enderecos, setEnderecos] = useState([])

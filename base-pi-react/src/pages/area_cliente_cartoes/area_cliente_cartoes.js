@@ -22,8 +22,9 @@ function AreaCartoes() {
         getCartoes()
     }, [])
     
+    let idCLienteLogado = localStorage.getItem("id")
     const getCartoes = () => {
-        axios.get(`${baseUrl}/cartoes`)
+        axios.get(`${baseUrl}/cartoes/${idCLienteLogado}/cartoes`)
             .then((response) => {
                 setCartoes(response.data)
             })
@@ -81,8 +82,7 @@ const URL='http://localhost:8080/cartoes'
                                     {cartao.validade_cartao} 
                                 </li>
                              <button onClick={()=>deleteCartao(cartao.id_cartao)} className='LixeiraAreaCartoes'>  <img   width="25"  src={Lixeira}/></button>
-                             <Modal_Cartoes_Edit textoBotao='ALTERAR' className='editarCartoes'/>
-                           
+                               
                     <img width="55" className='CartaoVisaAreaCartoes' src={Cartao} />
                     <img width="45" className='VisaAreaCartoes' src={Visa} />
                     

@@ -17,17 +17,10 @@ import ClientContext from '../../context/login.provider'
 
 function Login() {
 
-    function validar() {
-        var novaSenha = document.getElementById('senha').value;
+    
 
-        if (novaSenha == "") {
-            document.getElementById('ErroLoginSenhaNova').innerHTML = "Informe uma senha!";
-            document.getElementById('senha').focus();
-            return false;
-        } else {
-            document.getElementById('ErroLoginSenhaNova').innerHTML = "";
-        }
-    }
+
+
 
     const { LogarCliente, a } = useContext(ClientContext)
 
@@ -47,25 +40,33 @@ function Login() {
                 <div className='container-login-cadastro'>
 
                     {/* INÍCIO FORM DE LOGIN */}
+                    
                     <div className='login'>
 
                         <h4 className='title-login'>Já é cliente Politeísmo Shop?</h4>
                         <div className='mb-3'>
+                        <span id='ErroEmail'></span>
                             <label for='email' className='form-label email-login'>E-mail</label>
-                            <input type='email' className='form-control' name="email" id='email' required
-                                onChange={(e) => { setLogin({ ...login, email: e.target.value }) }} />
+                            <input type='email' className='form-control' name="email" id='email' 
+                                onChange={(e) => { setLogin({ ...login, email: e.target.value }) 
+                            }}
+                                />
+                                
+                            
                             <div className='mb-3'>
                                 <label for='senha' className='form-label senha-login'  >Senha</label>
-                                <input type='password' name="password" className='form-control' id='senha' required onMouseOver={validar}
+                                <input type='password' name="password" className='form-control' id='senha'  
                                     onChange={(e) => { setLogin({ ...login, password: e.target.value }) }} />
-                                <span id='ErroLoginSenhaNova' className='AlterarSenhaVermelho'></span>
+                                <span id='ErroLogin' hidden>Email ou senha inválidos tente novamente!</span>
                             </div>
-                            <button className='btn formlogin'
+                            <button className='btn formlogin'  type='submit'
                                 onClick={async () => {
                                     let success = await LogarCliente(login)
-                                    if (success) history.push("/")
+                                    if (success ==true) history.push("/")
+                                    if (success ==false) document.getElementById('ErroLogin').hidden=false;
                                 }}> ENTRAR
                             </button>
+                            
                             <p className='link-senha'>Esqueceu a sua senha?</p>
                         </div>
                     </div>

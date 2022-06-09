@@ -179,7 +179,7 @@ function Cart_address(props) {
                         <div className="modal-dialog modal-dialog-centered">
                             <div className="modal-content">
                                 <div className="modal-header">
-                                    <h5 className="modal-title" id="exampleModalToggleLabel"><img className src={PixPix} width="50px" className="img-pix-adress" mundipagg_billet name="payment" data-qa="billet" checked /><strong>Pix</strong></h5>
+                                    <h5 className="modal-title" id="exampleModalToggleLabel"><img  src={PixPix} width="50px" className="img-pix-adress" mundipagg_billet name="payment" data-qa="billet" checked /><strong>Pix</strong></h5>
                                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
                                 </div>
                                 <div className="modal-body">
