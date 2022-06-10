@@ -11,8 +11,10 @@ function ClientProvider(props) {
     const [nome, setNome] = useState("")
     const [token, setToken] = useState("")
     const [clienteDados, setClienteDados] = useState({})
+  
     //const [login, setLogin] = useState({})
     const history = useHistory()
+    
 
 
     const getCliente = (idcliente) => {

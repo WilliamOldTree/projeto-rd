@@ -18,11 +18,7 @@ import ClientContext from '../../context/login.provider'
 function Login() {
 
     
-
-
-
-
-    const { LogarCliente, a } = useContext(ClientContext)
+    const { LogarCliente, a } = useContext(ClientContext)   
 
     const [login, setLogin] = useState({
         email: '',
