@@ -3,6 +3,7 @@ import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom'
 import { Button, Container, Row, Col, Form, Popover, OverlayTrigger } from 'react-bootstrap';
 import Cart from '../asserts/icons/cart.png';
+//import BudaMedit from '../../components/asserts/images/cart-images/buda-meditando.png';
 import Lixeira from '../../components/asserts/icons/lixeira.png';
 import CartContext from '../../context/cart.provider'
 import ClientContext from '../../context/login.provider'
@@ -38,12 +39,12 @@ function ModalCarrinho(props) {
                     placement={placement}
                     overlay={
                         <Popover id={`popover-positioned-${placement}`}>
-                            <Popover.Header style={{ textAlign: "center" }} as="h3"><strong>{`${"Meu Carrinho"}`}</strong> </Popover.Header>
+                            <Popover.Header style={{ textAlign: "center" }} as="h3">{`${"Meu Carrinho"}`}</Popover.Header>
                             <Popover.Body>
 
                                 <Container>
                                     {cart.length == 0
-                                        ? <p className="favorito-aut">Carrinho Vazio</p>
+                                        ? <h5>Carrinho Vazio</h5>
                                         : cart.map((item) => {
                                             return (
                                                 <Row className="div-modal-cart" key={item.id}>
@@ -74,29 +75,27 @@ function ModalCarrinho(props) {
                                                     </Col>
                                                     <hr />
 
-
+                                                    <Col md={12} lg={12} className="div-footer-cart" >
+                                                       
+                                                    </Col>
+                                                    <br></br>
+                                                    {Autorizado
+                                                        ?
+                                                        <Col md={12} lg={12} className="div-btn-cart">
+                                                        </Col>
+                                                        :
+                                                        ''
+                                                    }
+                                                
 
 
                                                 </Row>
 
                                             )
                                         })}
+                                                  <h6><strong> SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</strong></h6>
+                                                  <Link to="/cart"><Button className="btnFinal">VER CARRINHO</Button></Link>
 
-
-                                                <Col md={12} lg={12} className="div-footer-cart" >
-                                                    <h6><strong> SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</strong></h6>
-                                                </Col>
-
-                                            {
-                                                Autorizado
-                                                    ?
-                                                    <Col md={12} lg={12} className="div-btn-cart">
-                                                        <Link to="/cart"><Button className="btnFinal">VER CARRINHO</Button></Link>
-                                                    </Col>
-                                                    :
-                                                    ''
-                                            }
-                             
                                 </Container>
 
                             </Popover.Body>

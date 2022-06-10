@@ -71,14 +71,14 @@
     width: 200px;
     height: 50px;
     background-color: #F27507;
-    border-bottom-style: solid #261C1A;
+    border: none;
     color: white;
     font-weight: 800;
     font-size: 22px;
 
 }
 
-.btnComprar:hover {
+.btnComprar:hover, .btnComprar:focus {
     background-color: darkorange;
     color: white;
     border: 1px solid #F27507;

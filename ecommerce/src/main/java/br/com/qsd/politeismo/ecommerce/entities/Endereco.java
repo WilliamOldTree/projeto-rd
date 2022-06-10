@@ -66,7 +66,6 @@ public class Endereco {
 	@JoinColumn(name = "fk_id_fornecedor", nullable = true)
 	private Fornecedor fornecedor;
 	
-	@JsonIgnore
 	@OneToMany(mappedBy="endereco")
 	private List<Pedido> pedidos;
 	

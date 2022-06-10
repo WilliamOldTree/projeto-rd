@@ -1,11 +1,13 @@
 import modelEndereco from './modelEndereco/modelEndereco'
 import './Modal_Enderecos.css'
+import './validEndereco.css'
 import React, { useState, useEffect } from 'react'
 import { baseUrl } from '../../environments'
 import axios from 'axios'
 import { Modal, Button, Form, Container, Row, Col, Alert} from 'react-bootstrap'
 
 function MeusEnderecosAdd(props) {
+
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -31,7 +33,6 @@ function MeusEnderecosAdd(props) {
         axios.post(`${baseUrl}/enderecos`, endd)
             .then(response => {
                 setSuccessRegister(true)
-                alert('Endereço adicionado recarregue a pagina')
                 props.get()
             })
     }
@@ -39,6 +40,21 @@ function MeusEnderecosAdd(props) {
     useEffect(() => {
         setEndd({ ...endd, cliente: JSON.parse(localStorage.getItem("id")) })
     }, [])
+
+    function mascaraCEP(){
+        var cep= document.getElementById('maskCep')
+        if(cep.value.length == 5 ){
+            cep.value += '-'
+        }
+        
+        
+
+ 
+
+    }
+
+
+
 
     return (
         <>
@@ -64,41 +80,47 @@ function MeusEnderecosAdd(props) {
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">CEP:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-
-                                            onChange={(event) => { setEndd({ ...endd, cep: event.target.value }) }} />
+                                            
+                                            onChange={(event) => { setEndd({ ...endd, cep: event.target.value }) }} id="maskCep" 
+                                            onKeyUp={mascaraCEP} maxLength={9}
+                                           />
+                                             <span id='ErroCEP' hidden>Informe seu CEP</span>
                                     </Form.Group>
+                                   
                                 </Col>
                                 <Col xs={12} md={12} className="frmTipoLog">
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Tipo Lougradouro:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-                                            onChange={(event) => { setEndd({ ...endd, tipoLougradouro: event.target.value }) }} />
+                                            onChange={(event) => { setEndd({ ...endd, tipoLougradouro: event.target.value }) }}  id="Tipo" />
                                     </Form.Group>
+                                    <span id='ErroTipo'></span>
                                 </Col>
                                 <Col xs={12} md={12}>
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Endereço:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
 
-                                            onChange={(event) => { setEndd({ ...endd, nomeLougradouro: event.target.value }) }} />
+                                            onChange={(event) => { setEndd({ ...endd, nomeLougradouro: event.target.value }) }} id="Endereco" />
                                     </Form.Group>
+                                    <span id='ErroEndereco'></span>
                                 </Col>
                                 <Col md={8} lg={8} className="div-form-enderecos" >
                                     <Form.Group controlId="formBasic" className='frmNumero'>
                                         <Form.Label className="label-form-enderecos">Nº:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-
-                                            onChange={(event) => { setEndd({ ...endd, numero: event.target.value }) }} />
+                                            onChange={(event) => { setEndd({ ...endd, numero: event.target.value }) }} id="Numero" />
                                     </Form.Group>
+                                    <span id='ErroNumero'></span>
                                 </Col>
                                 
                                 <Col md={4} lg={4} className="div-form-enderecos">
                                     <Form.Group controlId="formBasic" className='iptComp'>
                                         <Form.Label className="label-form-enderecos">Complemento:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-
-                                            onChange={(event) => { setEndd({ ...endd, apelido: event.target.value }) }} />
+                                            onChange={(event) => { setEndd({ ...endd, apelido: event.target.value }) }} id="Complemento" />
                                     </Form.Group>    
+                                    <span id='ErroComplemento'></span>
                                 </Col>
 
                             </Row>
@@ -107,9 +129,9 @@ function MeusEnderecosAdd(props) {
                                     <Form.Group controlId="formBasic">
                                         <Form.Label className="label-form-enderecos">Bairro:</Form.Label>
                                         <Form.Control className="input-form-enderecos" type="text"
-
-                                            onChange={(event) => { setEndd({ ...endd, bairro: event.target.value }) }} />
+                                            onChange={(event) => { setEndd({ ...endd, bairro: event.target.value }) }} id="Bairro" />
                                     </Form.Group>
+                                    <span id='ErroBairro'></span>
                                 </Col>
                             </Row>
                             <Row>
@@ -117,9 +139,9 @@ function MeusEnderecosAdd(props) {
                                 <Form.Group controlId="formBasic">
                                     <Form.Label className="label-form-enderecos">Cidade:</Form.Label>
                                     <Form.Control className="input-form-enderecos" type="text"
-
-                                        onChange={(event) => { setEndd({ ...endd, cidade: event.target.value }) }} />
+                                        onChange={(event) => { setEndd({ ...endd, cidade: event.target.value }) }} id="Cidade" />
                                 </Form.Group>
+                                <span id='ErroCidade'></span>
                             </Col>
                             <Col md={4} lg={4} className="div-form-enderecos optEstado">
                                     <Form.Group controlId="formBasic">
@@ -127,8 +149,8 @@ function MeusEnderecosAdd(props) {
                                         <Form.Select className="input-form-enderecos" defaultValue="Choose..."
                                             onChange={(event) => {
                                                 setEndd({ ...endd, estado: event.target.value })
-                                            }}>
-                                            <option>Selecione um Estado</option>
+                                            }} >
+                                            <option value="selecione">Selecione um Estado</option>
                                             <option value="AC">AC</option>
                                             <option value="AL">AL</option>
                                             <option value="AP">AP</option>
@@ -158,6 +180,8 @@ function MeusEnderecosAdd(props) {
                                             <option value="DF">DF</option>
                                         </Form.Select>
                                     </Form.Group>
+                                    <span id='ErroEstado'></span>
+                                    <span id='CamposEnd'></span>
                                 </Col>
 
                                

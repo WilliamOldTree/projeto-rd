@@ -1,6 +1,10 @@
 package br.com.qsd.politeismo.ecommerce.controller.dto;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import br.com.qsd.politeismo.ecommerce.entities.Cartao;
+import br.com.qsd.politeismo.ecommerce.entities.Pedido;
 
 
 public class CartaoDTO {
@@ -75,5 +79,9 @@ public void setCliente(String cliente) {
 	this.cliente = cliente;
 }
 
+
+public static List<CartaoDTO> converter(List<Cartao> cartoes) {
+	return cartoes.stream().map(CartaoDTO::new).collect(Collectors.toList());
+	} 
 
 }

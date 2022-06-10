@@ -11,6 +11,8 @@ import React, { useState, useEffect } from 'react'
 import { baseUrl } from '../../environments'
 import axios from 'axios'
 
+
+
 function AreaEndereco(props) {
 
     const [enderecos, setEnderecos] = useState([])
@@ -26,7 +28,6 @@ function AreaEndereco(props) {
     const deleteEnderecos = (id) => {
         axios.delete(`${baseUrl}/enderecos/${id}`)
             .then((response) => {
-                alert('item removido com sucesso')
                 getEnderecos()
             })
     }
@@ -39,7 +40,6 @@ function AreaEndereco(props) {
     return (
         <>
             <Header />
-
             <div className='container containerEnderecoGeral'>
 
                 <Title titleIcon={User} titleText="Meus Endereços" />
@@ -48,10 +48,9 @@ function AreaEndereco(props) {
                     <Menu />
                 </div>
 
-                <div id='container-Enderecos'>
+                <div id='containerEnderecos'>
 
                     {enderecos.map((enderecos) => {
-
                         return (
                             <>
                                 <Card className="cardEnd" border="dark" style={{ width: '35rem' }}>
@@ -103,18 +102,20 @@ function AreaEndereco(props) {
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
-
                             </>
                         )
                     })}
-                </div>
-                <div className='btns'>
-                    <MeusEnderecosAdd get={getEnderecos} textoBotao='ADICIONAR' className='adicionarEnderecos' />
+                    <div className='btns'>
+                        <MeusEnderecosAdd get={getEnderecos} textoBotao='ADICIONAR' className='adicionarEnderecos' />
+                    </div>
                 </div>
             </div>
+
             <Footer />
         </>
+
     )
+
 }
 
 export default AreaEndereco
