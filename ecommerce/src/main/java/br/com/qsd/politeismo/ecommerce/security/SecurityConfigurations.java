@@ -18,7 +18,9 @@ import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
 
 @EnableWebSecurity
 @Configuration
-public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
+
+public class SecurityConfigurations<SecurityFilterChain> extends WebSecurityConfigurerAdapter {
+	
 
 	@Autowired
 	private AutenticacaoService autenticacaoService;
@@ -74,6 +76,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring().antMatchers("/h2-console/**");
 	}
+
 
 
 }
