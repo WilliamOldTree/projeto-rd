@@ -65,6 +65,9 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.PUT, "/pedidos/*").permitAll().antMatchers(HttpMethod.GET, "/pix").permitAll()
 				.antMatchers(HttpMethod.POST, "/pix/novo").permitAll().antMatchers(HttpMethod.PUT, "/pix/novo")
 				.permitAll()
+				.antMatchers(HttpMethod.POST, "/pedidos/*/*").permitAll().antMatchers(HttpMethod.GET , "/pedidos/*/*")
+				.permitAll()
+				
 
 				.anyRequest().authenticated().and().cors().and().csrf().disable().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()

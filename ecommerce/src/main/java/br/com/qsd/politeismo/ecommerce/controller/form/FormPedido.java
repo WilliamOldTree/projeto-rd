@@ -11,10 +11,12 @@ import java.util.Optional;
 import br.com.qsd.politeismo.ecommerce.controller.dto.PedidoDTO;
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.entities.Endereco;
+import br.com.qsd.politeismo.ecommerce.entities.Entrega;
 import br.com.qsd.politeismo.ecommerce.entities.ItemPedido;
 import br.com.qsd.politeismo.ecommerce.entities.Pedido;
 import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
 import br.com.qsd.politeismo.ecommerce.repository.EnderecoRepository;
+import br.com.qsd.politeismo.ecommerce.repository.EntregaRepository;
 import br.com.qsd.politeismo.ecommerce.repository.ItemPedidoRepository;
 import br.com.qsd.politeismo.ecommerce.repository.PedidoRepository;
 
@@ -27,16 +29,18 @@ public class FormPedido {
 	private Long cliente;
 	private String formaPagamento;
 	private Long endereco;
+	private Long entrega;
 	private List<ItemPedido> itensPedido;
 
 	public FormPedido(String data, String valor, String statusPedido, String cliente, String formaPagamento,
-			String endereco) throws ParseException {
+			String endereco, String entrega) throws ParseException {
 		this.data = dataAtual.parse(data);
 		this.valor = new BigDecimal(valor);
 		this.statusPedido = statusPedido;
 		this.cliente = Long.parseLong(cliente);
 		this.formaPagamento = formaPagamento;
 		this.endereco = Long.parseLong(endereco);
+		this.entrega =Long.parseLong(entrega);
 
 	}
 
@@ -96,6 +100,14 @@ public class FormPedido {
 		this.endereco = endereco;
 	}
 
+	public Long getEntrega() {
+		return entrega;
+	}
+
+	public void setEntrega(Long entrega) {
+		this.entrega = entrega;
+	}
+
 	public List<ItemPedido> getItensPedido() {
 		return itensPedido;
 	}
@@ -105,14 +117,15 @@ public class FormPedido {
 	}
 
 	public Pedido converter(PedidoRepository pedidoRepository, ClienteRepository clienteRepository,
-			EnderecoRepository enderecoRepository, ItemPedidoRepository itemPedidoRepository) {
+			EnderecoRepository enderecoRepository, ItemPedidoRepository itemPedidoRepository, EntregaRepository entregaRepository) {
 
 		Optional<Cliente> cliente = clienteRepository.findById(this.cliente);
 		Optional<Endereco> endereco = enderecoRepository.findById(this.endereco);
+		Optional<Entrega> entrega = entregaRepository.findById(this.entrega);
 		List<ItemPedido> items = new ArrayList<ItemPedido>();
 		items.add((ItemPedido) this.itensPedido);
 
-		Pedido pedido = new Pedido(data,valor, statusPedido,cliente.get(),formaPagamento, endereco.get());
+		Pedido pedido = new Pedido(data,valor, statusPedido,cliente.get(),formaPagamento, endereco.get(), entrega.get());
 		System.out.println(pedido);
 		return pedido;
 		
