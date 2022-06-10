@@ -43,7 +43,16 @@
     border: none;
     font-weight: bolder;
     font-size: 14px;
+    position: relative;
+    left: 25%;
+    top: 10px;
 }
+
+#subtotal{
+    position: relative;
+    left: 20%;
+}
+
 
 .btn-cart-lixeira {
     background:none;
