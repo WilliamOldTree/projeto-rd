@@ -7,12 +7,13 @@
     font-weight: bold;
 }
 
-.div-modal-cart {
+.div-modal-cart-fav {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin-top: 10px;
+    margin-left: -35px;
 }
 
 .row-modal-cart {
@@ -140,3 +141,7 @@
 .divMais {
     padding-left: 0px;
 }
+
+.favorito-aut{
+    color: gray;
+}                                                          

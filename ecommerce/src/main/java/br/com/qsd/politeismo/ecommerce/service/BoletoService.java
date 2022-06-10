@@ -45,9 +45,7 @@ public class BoletoService {
 
 		Optional<Cliente> cliente = crepository.findById(form.getCliente());
 		entity.setCliente(cliente.get());
-
 		entity = repository.save(entity);
-
 		return new BoletoDTO(entity);
 	}
 
@@ -57,6 +55,7 @@ public class BoletoService {
 			copy(entity, dto);
 			entity = repository.save(entity);
 			return new BoletoDTO(entity);
+			
 		} catch (EntityNotFoundException e) {
 			throw new ResourceNotFoundException("ID não existe");
 		}

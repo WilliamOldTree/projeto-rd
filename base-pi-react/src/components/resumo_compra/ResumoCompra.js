@@ -10,7 +10,7 @@ const ResumoCompra = (props) => {
             <td data-label="Valor" className="text-center align-middle">{props.valor}</td>
             <td data-label="Quantidade" className="text-center align-middle">{props.quantidade}</td>
             <td className="text-center align-middle"><button className="btn-cart-lixeira" onClick={() =>props.deletar(props.item,props.quantidade)}><img alt="excluir" width={20} src={props.trash_img}/></button></td>
-        </tr>
+       </tr>
 
     </>
 }

@@ -33,7 +33,6 @@ function MeusEnderecosAdd(props) {
         axios.post(`${baseUrl}/enderecos`, endd)
             .then(response => {
                 setSuccessRegister(true)
-                alert('Endereço adicionado recarregue a pagina')
                 props.get()
             })
     }

@@ -49,7 +49,7 @@ public class BoletoController {
 	     }
 	}
 	
-	@PutMapping(value = "/{id}")
+	@PutMapping(value = "/novo")
 	public ResponseEntity< BoletoDTO> update(@Valid @PathVariable Long id, @RequestBody FormBoleto dto){
         BoletoDTO obj = boleto.update(id, dto);
 		return ResponseEntity.ok().body(obj);
