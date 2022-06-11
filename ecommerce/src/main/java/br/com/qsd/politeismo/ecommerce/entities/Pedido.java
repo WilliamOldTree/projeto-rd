@@ -55,19 +55,24 @@ public class Pedido {
 	private Endereco endereco;
 	
 	@JsonIgnore
+	@ManyToOne(fetch =FetchType.EAGER, cascade = CascadeType.ALL)
+	private Entrega entrega;
+	
+	@JsonIgnore
 	@OneToMany(mappedBy="idPedido")
 	private List<ItemPedido> itensPedido;
 
 	public Pedido() {}
 
 	public Pedido(Date data, BigDecimal valor, String statusPedido, Cliente cliente,
-			String formaPagamento, Endereco endereco) {		
+			String formaPagamento, Endereco endereco, Entrega entrega) {		
 		this.data = data;
 		this.valor = valor;
 		this.statusPedido = statusPedido;
 		this.cliente = cliente;
 		this.formaPagamento = formaPagamento;
-		this.endereco = endereco;		
+		this.endereco = endereco;	
+		this.entrega = entrega;
 	}
 
 	public Long getIdPedido() {
@@ -124,6 +129,14 @@ public class Pedido {
 
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
+	}
+
+	public Entrega getEntrega() {
+		return entrega;
+	}
+
+	public void setEntrega(Entrega entrega) {
+		this.entrega = entrega;
 	}
 
 	public List<ItemPedido> getItensPedido() {

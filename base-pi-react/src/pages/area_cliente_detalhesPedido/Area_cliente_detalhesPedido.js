@@ -42,7 +42,10 @@ function detalhesPedido() {
                     estado: response.data.endereco.estado,
                     cep: response.data.endereco.cep,
                     numero: response.data.endereco.numero,
-                    complemento: response.data.endereco.apelido
+                    complemento: response.data.endereco.apelido,
+                    formaEntrega: response.data.entrega.formaEntrega,
+                    valorEntrega: response.data.entrega.valor,
+
                 })
                 setItemPedido(
                     response.data.itens,
@@ -145,7 +148,7 @@ function detalhesPedido() {
                             <div className="detalhesCompra">
                                 <p className="paragrafo-resumo">SUBTOTAL: {precoShow(pedido.valorTotal)} <hr className="line-detalhesCompra" /></p>
                                 <p className="paragrafo-resumo">Desconto: R$ 0,00 <hr className="line-detalhesCompra" /></p>
-                                <p className="paragrafo-resumo">Frete: Grátis <hr className="line-detalhesCompra" /></p>
+                                <p className="paragrafo-resumo">Frete: {precoShow(pedido.valorEntrega)} {pedido.formaEntrega}<hr className="line-detalhesCompra" /></p>
                             </div>
                             
                             <h6 className="titleResumo">Data do Pedido: {pedido.dataPedidoFeito}</h6>
