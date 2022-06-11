@@ -111,8 +111,13 @@
     margin-left: 0px;
 }
 
+.cart_address_div_entrega{
+    margin-bottom: 40px;
+}
 
-
+.cart_address_titles{
+    text-align: end;
+}
 
 @media (max-width:995px) {
 
