@@ -250,13 +250,13 @@ VALUES(2, 'Trabalho', 'Jardim Das Margaridas', 'Avenioda' , '26','8900-000', 'SP
 
 -- CLIENTES COM ENDERECOS 
 INSERT INTO cliente (id_cliente, cpf, nome, email, senha, nascimento, genero, fixo, celular) 
-VALUES(1, '111.222.333-44', 'Ana Vitória de Melo','vitoria@hotmail.com' , '123','2000-02-01','FEMININO', '(11) 83490-3943', '(11) 83490-3943');
+VALUES(1, '111.222.333-44', 'Ana Vitória de Melo','vitoria@hotmail.com' , '123','01-02-2000','FEMININO', '(11) 83490-3943', '(11) 83490-3943');
 
 INSERT INTO cliente_endereco (fk_cliente, fk_endereco) 
 VALUES(1, 1);
 
 INSERT INTO cliente (id_cliente, cpf, nome, email, senha, nascimento, genero, fixo, celular) 
-VALUES(2, '2222.444.555-66', 'Lucas Costa Santos','lucas@hotmail.com' , '123','2002-02-01','MASCULINO', '(11) 83490-3943', '(11) 83490-3943');
+VALUES(2, '2222.444.555-66', 'Lucas Costa Santos','lucas@hotmail.com' , '123','01-02-2002','MASCULINO', '(11) 83490-3943', '(11) 83490-3943');
 
 INSERT INTO cliente_endereco (fk_cliente, fk_endereco) 
 VALUES(2, 2);
@@ -285,4 +285,4 @@ INSERT INTO item_pedido (id_pedido, id_produto, quantidade)
 VALUES(2, 2,1);on P.FK_ID_CATEGORIA = C.ID_CATEGORIA join DEPARTAMENTO D on P.FK_ID_DEPARTAMENTO = D.ID_DEPARTAMENTO join FORNECEDOR F on P.FK_ID_FORNECEDOR =  F.ID_FORNECEDOR WHERE P.FL_INATIVO != 0;
 
 
-SELECT * FROM pedido p;
+SELECT * FROM pedido;
