@@ -18,7 +18,9 @@ import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
 
 @EnableWebSecurity
 @Configuration
-public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
+
+public class SecurityConfigurations<SecurityFilterChain> extends WebSecurityConfigurerAdapter {
+	
 
 	@Autowired
 	private AutenticacaoService autenticacaoService;
@@ -63,11 +65,13 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.GET, "/boleto/novo").permitAll().antMatchers(HttpMethod.POST, "/boleto/novo")
 				.permitAll().antMatchers(HttpMethod.PUT, "/boleto/novo").permitAll()
 				.antMatchers(HttpMethod.PUT, "/pedidos/*").permitAll().antMatchers(HttpMethod.GET, "/pix").permitAll()
+
 				.antMatchers(HttpMethod.POST, "/pix/novo").permitAll().antMatchers(HttpMethod.PUT, "/pix/novo")
 				.permitAll()
 				.antMatchers(HttpMethod.POST, "/pedidos/*/*").permitAll().antMatchers(HttpMethod.GET , "/pedidos/*/*")
 				.permitAll()
 				
+
 
 				.anyRequest().authenticated().and().cors().and().csrf().disable().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
@@ -80,5 +84,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring().antMatchers("/h2-console/**");
 	}
+
+
 
 }

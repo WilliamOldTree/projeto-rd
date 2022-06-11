@@ -321,9 +321,14 @@ function Cart_address(props) {
 
                             <div className='cart_address_total mt-3 p-3'>
                                 <h5>TOTAL DE ITENS: {cartQty}</h5>
-                                <h5>SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })} </h5>
+                                {cart.length ==0 ? <h5 >
+                                    <h2></h2> 
+                                </h5>
+                                :<h5>SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}
+                                 <h2>TOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</h2>
+                                </h5>                                
+                            }
                                 <h5>VALOR DO FRETE: R$ 0,00</h5>
-                                <h2>TOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</h2>
                             </div>
                         </div>
                     </Col>

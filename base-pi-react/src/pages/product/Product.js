@@ -42,6 +42,7 @@ function Product(props) {
 
     const [produtos, setProdutos] = useState({})
     const [produtosRelacionados, setProdutosRelacionados] = useState({})
+    const [produtosFavoritos, setProdutosFavoritos] = useState({})
 
     useEffect(() => {
 
@@ -54,6 +55,13 @@ function Product(props) {
             .then((response) => {
                 setProdutosRelacionados(response.data)
             })
+
+            axios.get(`http://localhost:8080/produtos/${id}`)
+            .then((response) => {
+                setProdutosFavoritos(response.data)
+            })
+
+
     }, [])
 
     const precoShow = (number) => {
@@ -113,9 +121,10 @@ function Product(props) {
                                             COMPRAR
                                         </button>
                                     </Link>
-                                    <button className='btn favoritar' type='submit'>
+                                    <Link to={'/area_cliente_favoritos'} className='linkproduct'>
+                                    <button onClick={() => addToCart(produtosFavoritos)} className='btn favoritar' type='submit'>
                                         <img width='22' className='fav' src={Favoritar} /> Adicionar a lista de desejos
-                                    </button>
+                                    </button></Link>
                                 </article>
 
                                 <article id='cep-frete'>

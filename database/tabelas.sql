@@ -266,20 +266,20 @@ VALUES(2, 2);
 INSERT INTO entrega (forma_entrega, valor_frete)
 VALUES ('PADRAO', '13.50');
 INSERT INTO entrega (forma_entrega, valor_frete)
-VALUES ('EXPRESSO', '17.90');
+VALUES ('EXPRESSA', '17.90');
 INSERT INTO entrega (forma_entrega, valor_frete)
 VALUES ('AGENDADA', '22.30');
 
 
 -- PEDIDOS
-INSERT INTO pedido (id_pedido, data_pedido , forma_pagamento, status_pedido, valor_total, fk_id_cliente, fk_id_endereCo) 
-VALUES(1, '2000-02-01', 'PIX','AGUARDANDO_PAGAMENTO', '45.6', 1, 1);
+INSERT INTO pedido (id_pedido, data_pedido , forma_pagamento, status_pedido, valor_total, fk_id_cliente, fk_id_endereCo, entrega_id_entrega) 
+VALUES(1, '2000-02-01', 'PIX','AGUARDANDO_PAGAMENTO', '45.6', 1, 1, 1);
 
 INSERT INTO item_pedido (id_pedido, id_produto, quantidade) 
 VALUES(1, 1,5);
 
-INSERT INTO pedido (id_pedido, data_pedido , forma_pagamento, status_pedido, valor_total, fk_id_cliente, fk_id_endereCo) 
-VALUES(2, '2000-02-01', 'CARTAO','AGUARDANDO_PAGAMENTO', '45.6', 2, 1);
+INSERT INTO pedido (id_pedido, data_pedido , forma_pagamento, status_pedido, valor_total, fk_id_cliente, fk_id_endereCo, entrega_id_entrega) 
+VALUES(2, '2000-02-01', 'CARTAO','AGUARDANDO_PAGAMENTO', '45.6', 2, 1, 3);
 
 INSERT INTO item_pedido (id_pedido, id_produto, quantidade) 
 VALUES(2, 2,1);on P.FK_ID_CATEGORIA = C.ID_CATEGORIA join DEPARTAMENTO D on P.FK_ID_DEPARTAMENTO = D.ID_DEPARTAMENTO join FORNECEDOR F on P.FK_ID_FORNECEDOR =  F.ID_FORNECEDOR WHERE P.FL_INATIVO != 0;

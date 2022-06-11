@@ -10,12 +10,16 @@ import ClientContext from '../../context/login.provider'
 
 function ModalCarrinho(props) {
 
+      
+
+
     const { cart, getCart, valorTotalAmem, getCartQty, soma, deleteCart, tira, valorTotal } = useContext(CartContext)
 
     useEffect(() => {
         getCart()
         getCartQty()
         valorTotalAmem()
+        
     }, [])
 
     const precoShow = (number) => {
@@ -28,7 +32,12 @@ function ModalCarrinho(props) {
     }
 
     const { Autorizado } = useContext(ClientContext)
+  
 
+    function Vazio() {
+        
+    }
+    
 
     return (
         <>
@@ -45,6 +54,7 @@ function ModalCarrinho(props) {
                                 <Container>
                                     {cart.length == 0
                                         ? <h5>Carrinho Vazio</h5>
+                                        
                                         : cart.map((item) => {
                                             return (
                                                 <Row className="div-modal-cart" key={item.id}>
@@ -71,7 +81,7 @@ function ModalCarrinho(props) {
 
                                                             </Col>
                                                         </Row>
-                                                        <button className="btn-cart-lixeira" onClick={() => deleteCart(item)}><img className="modal-cart-lixeira" src={Lixeira} /></button>
+                                                        <button className="btn-cart-lixeira" onClick={() => deleteCart(item) }><img className="modal-cart-lixeira" src={Lixeira} /></button>
                                                     </Col>
                                                     <hr />
 
@@ -86,15 +96,23 @@ function ModalCarrinho(props) {
                                                         :
                                                         ''
                                                     }
-                                                
+                                                 
 
 
                                                 </Row>
 
                                             )
                                         })}
-                                                  <h6><strong> SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</strong></h6>
-                                                  <Link to="/cart"><Button className="btnFinal">VER CARRINHO</Button></Link>
+                                                 {cart.length == 0  ?  <h6><strong></strong></h6>
+                                                      
+                                                 :   <h6>
+                                                    <strong id='subtotal'> SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</strong>
+                                                    <Link to="/cart"><Button className="btnFinal">VER CARRINHO</Button></Link>
+                                                 </h6>
+                                                 }                          
+
+
+                                               
 
                                 </Container>
 
