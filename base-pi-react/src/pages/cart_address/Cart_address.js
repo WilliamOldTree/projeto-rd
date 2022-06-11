@@ -210,6 +210,21 @@ function Cart_address(props) {
         }
     }
 
+    // const [frete, setFrete] = useEffect([])
+
+    // function getFrete() {
+    //     axios.get(`${baseUrl}/`)
+    // } 
+
+
+    function getEnderecos() {
+        axios.get(`${baseUrl}/enderecos/${idCLienteLogado}/enderecos`)
+            .then((response) => {
+                setEnderecos(response.data)
+            })
+    }
+
+
     return (
         <>
             {/* BEGINNER ADDRESS*/}
