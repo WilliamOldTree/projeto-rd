@@ -3,7 +3,6 @@ import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom'
 import { Button, Container, Row, Col, Form, Popover, OverlayTrigger } from 'react-bootstrap';
 import Lixeira from '../../components/asserts/icons/lixeira.png';
-import CartContext from '../../context/cart.provider'
 import ClientContext from '../../context/login.provider'
 import Love from '../asserts/icons/love.png'
 
