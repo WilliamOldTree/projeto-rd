@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.entities.Endereco;
+import br.com.qsd.politeismo.ecommerce.entities.Entrega;
 import br.com.qsd.politeismo.ecommerce.entities.ItemPedido;
 import br.com.qsd.politeismo.ecommerce.entities.Pedido;
 
@@ -19,6 +20,7 @@ public class PedidoDetalheDTO {
 	private String statusPedido;
 	private String formaPagamento;
 	private Endereco endereco;
+	private Entrega entrega;
 	private BigDecimal valor;
 	private List<ItemPedido> itens;
 	
@@ -34,6 +36,7 @@ public class PedidoDetalheDTO {
 		this.endereco = pedido.getEndereco();		
 		this.valor = pedido.getValor();
 		this.itens = pedido.getItensPedido();
+		this.entrega = pedido.getEntrega();
  	}
 
 	public Long getNumeroPedido() {
@@ -66,6 +69,9 @@ public class PedidoDetalheDTO {
 		return cliente;
 	}
 
+	public Entrega getEntrega() {
+		return entrega;
+	}
 
 	public List<ItemPedidoDetalheDTO> getItens() {
 		List<ItemPedidoDetalheDTO> lista = ItemPedidoDetalheDTO.converter(itens);
