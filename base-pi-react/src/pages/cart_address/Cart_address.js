@@ -23,12 +23,15 @@ import MeusEnderecosAdd from '../../components/modal_meus_enderecos/Modal_Endere
 function Cart_address(props) {
 
     const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty, valorTotal } = useContext(CartContext)
-    const [enderecos, setEnderecos] = useState([])
-    const clienteStorage = parseInt(localStorage.getItem('id'))
-    const nomeClienteStorage = localStorage.getItem("nome")
-    const [erroPedido, SetErroPedido] = useState(false)
+    const [enderecos, setEnderecos] = useState([]);
+    const [entregas, setEntregas] = useState([]);
+    const clienteStorage = parseInt(localStorage.getItem('id'));
+    const nomeClienteStorage = localStorage.getItem("nome");
+    const [erroPedido, SetErroPedido] = useState(false);
+    const [freteValor, setFreteValor] = useState(0);
 
-    const valorStorage = parseInt(localStorage.getItem('valor'))
+    const valorFinal = freteValor + valorTotal;
+
     const history = useHistory();
 
     let idCLienteLogado = localStorage.getItem("id")
@@ -39,11 +42,19 @@ function Cart_address(props) {
             })
     }
 
+    const getEntregas = () => {
+        axios.get(`${baseUrl}/entregas`)
+            .then((response) => {
+                setEntregas(response.data)
+            })
+    }
+
     useEffect(() => {
         getEnderecos()
         getCart()
         getCartQty()
         valorTotalAmem()
+        getEntregas()
     }, [])
 
     const precoShow = (number) => {
@@ -64,11 +75,12 @@ function Cart_address(props) {
     const [pedido, setPedido] = useState({
 
         data: dataAtual,
-        valor: valorStorage,
+        valor: valorFinal,
         cliente: clienteStorage,
         formaPagamento: "",
         endereco: 0,
-        statusPedido: "AGUARDANDO_PAGAMENTO"
+        statusPedido: "AGUARDANDO_PAGAMENTO",
+        entrega: 0,
     })
 
     console.log(pedido)
@@ -179,7 +191,7 @@ function Cart_address(props) {
                         <div className="modal-dialog modal-dialog-centered">
                             <div className="modal-content">
                                 <div className="modal-header">
-                                    <h5 className="modal-title" id="exampleModalToggleLabel"><img  src={PixPix} width="50px" className="img-pix-adress" mundipagg_billet name="payment" data-qa="billet" checked /><strong>Pix</strong></h5>
+                                    <h5 className="modal-title" id="exampleModalToggleLabel"><img src={PixPix} width="50px" className="img-pix-adress" mundipagg_billet name="payment" data-qa="billet" checked /><strong>Pix</strong></h5>
                                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
                                 </div>
                                 <div className="modal-body">
@@ -264,6 +276,24 @@ function Cart_address(props) {
                             })}
                         </span>
 
+                        <div className='cart_address_div_entrega'>
+                            <h2>Forma de Entrega</h2>
+                            {entregas.map((entrega) => {
+                                return (
+                                    <div class="form-check" key={entrega.id}>
+                                        <input class="form-check-input" name="frete" type="radio" value={entrega.id} id="defaultCheck1"
+                                            onClick={() => {
+                                                setPedido({ ...pedido, entrega: entrega.id })
+                                                setFreteValor(entrega.valor)
+                                            }} />
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            {entrega.formaEntrega}: {precoShow(entrega.valor)}
+                                        </label>
+                                    </div>
+                                )
+                            })}
+                        </div>
+
                         <div>
                             <h2>Forma de Pagamento</h2>
 
@@ -295,7 +325,6 @@ function Cart_address(props) {
                                     CARTÃO
                                 </label>
                             </div>
-
                             {pagamento()}
 
                         </div>
@@ -320,15 +349,19 @@ function Cart_address(props) {
                             </ListCompra>
 
                             <div className='cart_address_total mt-3 p-3'>
-                                <h5>TOTAL DE ITENS: {cartQty}</h5>
-                                {cart.length ==0 ? <h5 >
-                                    <h2></h2> 
-                                </h5>
-                                :<h5>SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}
-                                 <h2>TOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</h2>
-                                </h5>                                
-                            }
-                                <h5>VALOR DO FRETE: R$ 0,00</h5>
+                                <h5 className='cart_address_titles'>TOTAL DE ITENS: {cartQty}</h5>
+                                <h5 className='cart_address_titles'>VALOR DO FRETE: R${freteValor.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</h5>
+
+                                {cart.length == 0
+                                    ?
+                                    ''
+                                    :
+                                    <div>
+                                        <h5 className='cart_address_titles'>SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</h5>
+                                        <h2 className='cart_address_titles'> TOTAL: R${valorFinal.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</h2>
+                                    </div>
+                                }
+
                             </div>
                         </div>
                     </Col>
@@ -356,7 +389,7 @@ function Cart_address(props) {
                     {erroPedido
                         ?
                         <Alert className="alert-register" key='danger' variant='danger'>
-                            <h4>Escolha uma Forma de Pagamento e Endereço para Entrega!</h4>
+                            <h4>Escolha um Endereço, Forma de Pagamento e Entrega!</h4>
                         </Alert>
                         : ''
                     }
