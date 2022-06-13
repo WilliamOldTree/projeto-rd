@@ -64,16 +64,11 @@ function ModalFavoritos(props) {
 
                                             )
                                         })}
-                                          {Autorizado
-                                                        ?
-                                                        <Col md={12} lg={12} className="div-btn-cart">
-                                                            <Link to="/area_cliente_favoritos"><Button className="btnFinal">VER FAVORITOS</Button></Link>
-                                                        </Col>
-                                                        :
-                                                        ''
-                                                    }
+                                     
 
-                                </Container>
+                                </Container> <Col md={12} lg={12} className="div-btn-cart">
+                                            <Link to="/area_cliente_favoritos"><Button className="btnFinal">VER FAVORITOS</Button></Link>
+                                        </Col>
 
                             </Popover.Body>
 
