@@ -3,6 +3,7 @@ import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom'
 import { Button, Container, Row, Col, Form, Popover, OverlayTrigger } from 'react-bootstrap';
 import Lixeira from '../../components/asserts/icons/lixeira.png';
+import CartContext from '../../context/cart.provider'
 import ClientContext from '../../context/login.provider'
 import Love from '../asserts/icons/love.png'
 
@@ -63,16 +64,11 @@ function ModalFavoritos(props) {
 
                                             )
                                         })}
-                                          {Autorizado
-                                                        ?
-                                                        <Col md={12} lg={12} className="div-btn-cart">
-                                                            <Link to="/area_cliente_favoritos"><Button className="btnFinal">VER FAVORITOS</Button></Link>
-                                                        </Col>
-                                                        :
-                                                        ''
-                                                    }
+                                     
 
-                                </Container>
+                                </Container> <Col md={12} lg={12} className="div-btn-cart">
+                                            <Link to="/area_cliente_favoritos"><Button className="btnFinal">VER FAVORITOS</Button></Link>
+                                        </Col>
 
                             </Popover.Body>
 

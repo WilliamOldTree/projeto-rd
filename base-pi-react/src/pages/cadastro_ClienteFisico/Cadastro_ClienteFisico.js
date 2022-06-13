@@ -23,7 +23,7 @@ function ClienteFisico(props) {
             axios.post('http://localhost:8080/clientes', clientes)
                 .then((response) => {
                     history.push("/login")
-
+                   
                 })
     }
 
@@ -45,15 +45,27 @@ function ClienteFisico(props) {
 
     function mascaraFixo() {
         var fixo = document.getElementById('telefone_ClienteFisico')
-        if (fixo.value.length == 4) {
-            fixo.value += ' - '
+        if (fixo.value.length == 2) {
+            fixo.value += ' +( '
+        }
+        if (fixo.value.length == 8) {
+            fixo.value += ') '
+        }
+        if (fixo.value.length == 14) {
+            fixo.value += '-'
         }
     }
 
     function mascaraCelular() {
         var celular = document.getElementById('celular_ClienteFisico')
-        if (celular.value.length == 5) {
-            celular.value += ' - '
+        if (celular.value.length == 2) {
+            celular.value += ' +( '
+        }
+        if (celular.value.length == 8) {
+            celular.value += ') '
+        }
+        if (celular.value.length == 15) {
+            celular.value += '-'
         }
     }
 
@@ -101,7 +113,7 @@ function ClienteFisico(props) {
             document.getElementById('ErroCel').innerHTML = "Informe seu Número!";
             return false;
         }
-        else if (tel.length < 9) {
+        else if (tel.length < 19) {
             document.getElementById('ErroCel').innerHTML = " Número inválido!";
             return false;
         } else {
@@ -113,7 +125,7 @@ function ClienteFisico(props) {
             return false;
         }
 
-        else if (celular.length < 10) {
+        else if (celular.length < 20) {
             document.getElementById('ErroTel').innerHTML = " Número inválido!";
             return false;
         }
@@ -198,7 +210,7 @@ function ClienteFisico(props) {
                             <input type='text' className='form-control' id='telefone_ClienteFisico'
                                 value={clientes.fixo}
                                 onChange={(event) => { setClientes({ ...clientes, fixo: event.target.value }) }}
-                                maxLength="11" autoComplete='off'
+                                maxLength="19" autoComplete='off'
                                 onKeyUp={mascaraFixo} />
                             <span id='ErroCel' ></span>
                         </div>
@@ -210,7 +222,7 @@ function ClienteFisico(props) {
                             <input type='text' className='form-control' id='celular_ClienteFisico'
                                 value={clientes.celular}
                                 onChange={(event) => { setClientes({ ...clientes, celular: event.target.value }) }}
-                                maxLength="12" autoComplete='off'
+                                maxLength="20" autoComplete='off'
                                 onKeyUp={mascaraCelular} />
                         </div>
 
