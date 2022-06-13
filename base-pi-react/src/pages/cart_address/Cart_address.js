@@ -239,7 +239,7 @@ function Cart_address(props) {
                 {/* BEGING CONTEUDO */}
                 <Row className="div-cart-pag">
                     <Col lg={5} className='cart_address_list'>
-                        <h2>Endereço entrega</h2>
+                        <h2>Entrega</h2>
                         <div className='btnsEndCart'>
                             <MeusEnderecosAdd get={getEnderecos} textoBotao='ADICIONAR' className='adicionarEnderecos' />
                         </div>
@@ -277,7 +277,7 @@ function Cart_address(props) {
                         </span>
 
                         <div className='cart_address_div_entrega'>
-                            <h2>Forma de Entrega</h2>
+                            <h2>Frete</h2>
                             {entregas.map((entrega) => {
                                 return (
                                     <div class="form-check" key={entrega.id}>
@@ -295,7 +295,7 @@ function Cart_address(props) {
                         </div>
 
                         <div>
-                            <h2>Forma de Pagamento</h2>
+                            <h2>Pagamento</h2>
 
                             <div class="form-check">
                                 <input class="form-check-input" name="pagamento" type="radio" value="PIX" id="defaultCheck1"
