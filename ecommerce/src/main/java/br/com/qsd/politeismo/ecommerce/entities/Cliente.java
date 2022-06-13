@@ -1,9 +1,10 @@
 package br.com.qsd.politeismo.ecommerce.entities;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -15,11 +16,14 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import br.com.qsd.politeismo.ecommerce.enums.Genero;
 
 @Entity
@@ -39,7 +43,7 @@ public class Cliente implements UserDetails{
     private String celular;
     private String fixo;
     
-    private LocalDate nascimento;
+    private String nascimento;
     
 	@Enumerated(EnumType.STRING)
     private Genero genero;
@@ -138,13 +142,13 @@ public class Cliente implements UserDetails{
 
 
 
-	public LocalDate getNascimento() {
+	public String getNascimento() {
 		return nascimento;
 	}
 
 
 
-	public void setNascimento(LocalDate nascimento) {
+	public void setNascimento(String nascimento) {
 		this.nascimento = nascimento;
 	}
 

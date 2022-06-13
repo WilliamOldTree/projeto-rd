@@ -1,24 +1,34 @@
 package br.com.qsd.politeismo.ecommerce.controller.dto;
 
-import java.time.LocalDate;
+
+
+
+
+
+
+import java.util.Date;
 
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 
 public class ClienteDTO {
 	
+	
 	private Long id_cliente;
     private String cpf;
     private String nome;
     private String email;
-    private LocalDate nascimento;
+    private String nascimento;
     private String celular;
     private String fixo;
+   
+   
+   
     
     public ClienteDTO () {
     	
     }
 
-	public ClienteDTO(Long id_cliente, String cpf, String nome, String email, LocalDate nascimento, String celular,
+	public ClienteDTO(Long id_cliente, String cpf, String nome, String email, String nascimento, String celular,
 			String fixo) {
 		super();
 		this.id_cliente = id_cliente;
@@ -29,6 +39,9 @@ public class ClienteDTO {
 		this.celular = celular;
 		this.fixo = fixo;
 	}
+
+	
+	
 
 	public ClienteDTO(Cliente cliente) {
 		id_cliente=cliente.getId();
@@ -72,11 +85,13 @@ public class ClienteDTO {
 		this.email = email;
 	}
 
-	public LocalDate getNascimento() {
+	public String getNascimento() {
+		
 		return nascimento;
 	}
 
-	public void setNascimento(LocalDate nascimento) {
+	public void setNascimento(String nascimento) {
+					
 		this.nascimento = nascimento;
 	}
 

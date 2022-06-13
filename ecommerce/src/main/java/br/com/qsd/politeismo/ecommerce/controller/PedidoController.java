@@ -23,9 +23,11 @@ import br.com.qsd.politeismo.ecommerce.controller.dto.PedidoDetalheDTO;
 import br.com.qsd.politeismo.ecommerce.controller.form.FormPedido;
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.entities.Endereco;
+import br.com.qsd.politeismo.ecommerce.entities.Entrega;
 import br.com.qsd.politeismo.ecommerce.entities.Pedido;
 import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
 import br.com.qsd.politeismo.ecommerce.repository.EnderecoRepository;
+import br.com.qsd.politeismo.ecommerce.repository.EntregaRepository;
 import br.com.qsd.politeismo.ecommerce.repository.ItemPedidoRepository;
 import br.com.qsd.politeismo.ecommerce.repository.PedidoRepository;
 import br.com.qsd.politeismo.ecommerce.service.PedidoService;
@@ -45,6 +47,9 @@ public class PedidoController {
 
 	@Autowired
 	private EnderecoRepository enderecoRepository;
+	
+	@Autowired
+	private EntregaRepository entregaRepository;
 
 	@Autowired
 	private ItemPedidoRepository itemPedidoRepository;
@@ -74,6 +79,13 @@ public class PedidoController {
 		return PedidoDTO.converter(enderecos);
     }
 
+	@GetMapping("/{id}/entrega")
+	public List<PedidoDTO>listaPedido1(@PathVariable Long id){
+		Optional<Entrega> entrega =  entregaRepository.findById(id);
+		List<Pedido> entregas = entrega.get().getPedidos();
+				
+		return  PedidoDTO.converter(entregas);
+	}
 	
 	@PostMapping("/novo")
 	@Transactional
@@ -83,7 +95,7 @@ public class PedidoController {
 		Optional<Cliente> cliente = clienteRepository.findById(pedidoForm.getCliente());
 
 		Pedido pedido = pedidoForm.converter(pedidoRepository, clienteRepository, enderecoRepository,
-				itemPedidoRepository);
+				itemPedidoRepository, entregaRepository);
 
 		pedidoRepository.save(pedido);
 		pedidoForm.cadastrarPedido(pedido, cliente.get(), pedidoRepository);

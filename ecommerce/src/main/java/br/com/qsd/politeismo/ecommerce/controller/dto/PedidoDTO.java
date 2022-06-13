@@ -5,8 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
+
 import br.com.qsd.politeismo.ecommerce.entities.Cliente;
 import br.com.qsd.politeismo.ecommerce.entities.Endereco;
+import br.com.qsd.politeismo.ecommerce.entities.Entrega;
 import br.com.qsd.politeismo.ecommerce.entities.Pedido;
 
 
@@ -19,6 +21,7 @@ public class PedidoDTO {
 	private Cliente cliente;
 	private String formaPagamento;
 	private Endereco endereco;
+	private Entrega entrega;
 	
 	
 	public PedidoDTO() {}
@@ -31,6 +34,7 @@ public class PedidoDTO {
 		this.cliente = pedido.getCliente();
 		this.formaPagamento = pedido.getFormaPagamento();
 		this.endereco = pedido.getEndereco();
+		this.entrega = pedido.getEntrega();
  	}
 
 	public Long getIdPedido() {
@@ -63,7 +67,10 @@ public class PedidoDTO {
 	public Endereco getEndereco() {
 		return endereco;
 	}
-
+	
+	public Entrega getEntrega() {
+		return entrega;
+	}
 
 	public static List<PedidoDTO> converter(List<Pedido> pedidos) {
 		return pedidos.stream().map(PedidoDTO::new).collect(Collectors.toList());

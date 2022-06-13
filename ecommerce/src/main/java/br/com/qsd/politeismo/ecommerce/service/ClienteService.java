@@ -1,7 +1,6 @@
 package br.com.qsd.politeismo.ecommerce.service;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,7 +20,7 @@ import br.com.qsd.politeismo.ecommerce.repository.ClienteRepository;
 @Service
 public class ClienteService {
 	
-	private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
 
 	@Autowired
 	private ClienteRepository repository;
@@ -54,7 +53,7 @@ public class ClienteService {
 		entity.setCpf(form.getCpf());
 		entity.setNome(form.getNome());
 		entity.setEmail(form.getEmail()); 
-		entity.setNascimento(LocalDate.parse(form.getNascimento(), formatter));
+		entity.setNascimento(form.getNascimento());
 		entity.setGenero(form.getGenero());
 		entity.setFixo(form.getFixo());
 		entity.setCelular(form.getCelular());
@@ -84,7 +83,7 @@ public class ClienteService {
 		entity.setNome(dto.getNome());
 		entity.setEmail(dto.getEmail());
 		entity.setSenha(this.passwordEncoder.encode(dto.getPassword()));
-		entity.setNascimento(LocalDate.parse(dto.getNascimento(), formatter));
+		entity.setNascimento(dto.getNascimento());
 		entity.setGenero(dto.getGenero());
 		entity.setFixo(dto.getFixo());
 		entity.setCelular(dto.getCelular());
