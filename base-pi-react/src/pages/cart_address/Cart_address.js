@@ -2,7 +2,7 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Title from "../../components/title/Title";
 import "./Cart_address.css";
-import Frete from "../../components/asserts/icons/caminhao-frete-home.png";
+import Check from "../../components/asserts/icons/check.png"
 import { Link, useHistory } from "react-router-dom";
 import TrashIcon from '../../components/asserts/icons/lixeira.png';
 import ListCompra from "../../components/list_compra/ListCompra";
@@ -21,7 +21,7 @@ import qrCode from "../../components/asserts/images/images-pagamento/qrCode.jpg"
 import MeusEnderecosAdd from '../../components/modal_meus_enderecos/Modal_Enderecos_Add'
 
 function Cart_address(props) {
-
+    const history = useHistory();
     const { cart, getCart, deleteCart, valorTotalAmem, cartQty, getCartQty, valorTotal } = useContext(CartContext)
     const [enderecos, setEnderecos] = useState([]);
     const [entregas, setEntregas] = useState([]);
@@ -29,12 +29,9 @@ function Cart_address(props) {
     const nomeClienteStorage = localStorage.getItem("nome");
     const [erroPedido, SetErroPedido] = useState(false);
     const [freteValor, setFreteValor] = useState(0);
-
     const valorFinal = freteValor + valorTotal;
-
-    const history = useHistory();
-
     let idCLienteLogado = localStorage.getItem("id")
+
     function getEnderecos() {
         axios.get(`${baseUrl}/enderecos/${idCLienteLogado}/enderecos`)
             .then((response) => {
@@ -231,7 +228,7 @@ function Cart_address(props) {
                 <Row>
                     {/* BEGING ADDRESS-TITLE */}
                     <Col>
-                        <Title titleIcon={Frete} titleText="Entrega" />
+                        <Title titleIcon={Check} titleText="Checkout Carrinho" />
                     </Col>
                     {/* FINISH ADDRESS-TITLE */}
                 </Row>
@@ -239,7 +236,7 @@ function Cart_address(props) {
                 {/* BEGING CONTEUDO */}
                 <Row className="div-cart-pag">
                     <Col lg={5} className='cart_address_list'>
-                        <h2>Endereço entrega</h2>
+                        <h2>Endereço</h2>
                         <div className='btnsEndCart'>
                             <MeusEnderecosAdd get={getEnderecos} textoBotao='ADICIONAR' className='adicionarEnderecos' />
                         </div>
@@ -277,7 +274,7 @@ function Cart_address(props) {
                         </span>
 
                         <div className='cart_address_div_entrega'>
-                            <h2>Forma de Entrega</h2>
+                            <h2>Frete</h2>
                             {entregas.map((entrega) => {
                                 return (
                                     <div class="form-check" key={entrega.id}>
@@ -285,6 +282,7 @@ function Cart_address(props) {
                                             onClick={() => {
                                                 setPedido({ ...pedido, entrega: entrega.id })
                                                 setFreteValor(entrega.valor)
+                                                setPedido({ ...pedido, valor: valorTotal + entrega.valor })
                                             }} />
                                         <label class="form-check-label" for="defaultCheck1">
                                             {entrega.formaEntrega}: {precoShow(entrega.valor)}
@@ -295,7 +293,7 @@ function Cart_address(props) {
                         </div>
 
                         <div>
-                            <h2>Forma de Pagamento</h2>
+                            <h2>Pagamento</h2>
 
                             <div class="form-check">
                                 <input class="form-check-input" name="pagamento" type="radio" value="PIX" id="defaultCheck1"
@@ -389,7 +387,7 @@ function Cart_address(props) {
                     {erroPedido
                         ?
                         <Alert className="alert-register" key='danger' variant='danger'>
-                            <h4>Escolha um Endereço, Forma de Pagamento e Entrega!</h4>
+                            <h4>Escolha uma opção de Endereço, Frete e Pagamento!</h4>
                         </Alert>
                         : ''
                     }
