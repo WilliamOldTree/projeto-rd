@@ -10,14 +10,14 @@ import Love from '../asserts/icons/love.png'
 
 function ModalFavoritos(props) {
 
-    const { favoritos, deleteFavoritos} = useContext(FavoritosContext)
+    const { favoritos, deleteFavoritos } = useContext(FavoritosContext)
 
     useEffect(() => {
-        
+
 
     }, [])
 
- 
+
     const { Autorizado } = useContext(ClientContext)
 
 
@@ -35,44 +35,50 @@ function ModalFavoritos(props) {
 
                                 <Container>
                                     {favoritos.length == 0
-                                        ?<Popover.Body>
-                                        <p className="favorito-aut">Lista De Desejos Vazia</p>
-                                    </Popover.Body>
-                                    
+                                        ? <Popover.Body>
+                                            <p className="favorito-aut">Lista De Desejos Vazia</p>
+                                        </Popover.Body>
+
                                         : favoritos.map((item) => {
                                             return (
                                                 <Row className="div-modal-cart" key={item.id}>
                                                     <Col xs={4} md={4}>
                                                         <img src={item.urlProduto} width="70px" />
                                                     </Col>
-                                                    
+
 
                                                     <Col xs={6} md={6} className="boda">
-                                                       <h6> <p>{item.nome}</p></h6>
+                                                        <h6> <p>{item.nome}</p></h6>
                                                     </Col>
-                                                   
+
 
                                                     <Col xs={2} md={2} className="div-input-cart">
                                                         <button className="btn-cart-lixeira" onClick={() => deleteFavoritos(item)}><img className="modal-cart-lixeira" src={Lixeira} /></button>
                                                     </Col>
                                                     <hr />
                                                     <br></br>
-                                                  
-                                                 
-                                                    
+
+
+
                                                 </Row>
 
                                             )
                                         })}
-                                     
+                                    <Col md={12} lg={12} className="div-btn-cart">
 
-                                </Container> <Col md={12} lg={12} className="div-btn-cart">
-                                            <Link to="/area_cliente_favoritos"><Button className="btnFinal">VER FAVORITOS</Button></Link>
-                                        </Col>
+                                         
+                                           
+                                                <Link to="/area_cliente_favoritos"><Button className="btnFinalFav">VER FAVORITOS</Button></Link>
+                                          
+                                            
+                                    </Col>
+                                </Container>
+
+
 
                             </Popover.Body>
 
-                
+
                         </Popover>
                     }>
                     <button type="button" className="btn"><img src={Love} alt="Favoritos" width="80%" /></button>
