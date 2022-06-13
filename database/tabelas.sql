@@ -2,9 +2,10 @@
 -- DROP DATABASE bd_politeismo;
 -- create database bd_politeismo;
 -- -- -- 
-use bd_politeismo;
-show tables;
-
+-- use bd_politeismo;
+-- show tables;
+-- 
+-- select *from cliente;
 -- ADMINISTARDORES
 insert into user_adm (NOME, CARGO, EMAIL, SENHA) values ('Muryllo Soares','Gerente','m.soares21@politeismo.com.br',MD5('123'));
 insert into user_adm (NOME, CARGO, EMAIL, SENHA) values ('Denis William','Gerente','dwbarbosa@politeismo.com.br', MD5('123'));
