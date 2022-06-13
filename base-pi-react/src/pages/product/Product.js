@@ -24,6 +24,7 @@ import Pix from '../../components/asserts/icons/pix.png';
 import Boleto from '../../components/asserts/icons/codigo-de-barras.png';
 import React, { useContext, useState, useEffect } from 'react';
 import CartContext from '../../context/cart.provider'
+import FavoritosContext from '../../context/favoritos.provider';
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
@@ -38,6 +39,7 @@ import { Link } from 'react-router-dom';
 function Product(props) {
 
     const { addToCart } = useContext(CartContext)
+    const { addToFavoritos } = useContext(FavoritosContext)
     const { id } = useParams()
 
     const [produtos, setProdutos] = useState({})
@@ -122,7 +124,7 @@ function Product(props) {
                                         </button>
                                     </Link>
                                     <Link to={'/area_cliente_favoritos'} className='linkproduct'>
-                                    <button onClick={() => addToCart(produtosFavoritos)} className='btn favoritar' type='submit'>
+                                    <button onClick={() => addToFavoritos(produtosFavoritos)} className='btn favoritar' type='submit'>
                                         <img width='22' className='fav' src={Favoritar} /> Adicionar a lista de desejos
                                     </button></Link>
                                 </article>

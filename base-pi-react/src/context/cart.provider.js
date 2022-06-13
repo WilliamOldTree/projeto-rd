@@ -4,6 +4,7 @@ const CartContext = createContext({})
 
 function CartProvider(props) {
 
+    
     const [cart, setCart] = useState([])
     const [cartQty, setCartQty] = useState(0)
     const [quantidade, setQuantidade] = useState(0)
@@ -46,6 +47,7 @@ function CartProvider(props) {
         setCart(cartList)
         setCartQty(cartList.length)
         valorTotalAmem()
+
     }
 
     const getCart = () => {

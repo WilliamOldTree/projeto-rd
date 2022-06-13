@@ -5,16 +5,16 @@ import { Button, Container, Row, Col, Form, Popover, OverlayTrigger } from 'reac
 import Lixeira from '../../components/asserts/icons/lixeira.png';
 import CartContext from '../../context/cart.provider'
 import ClientContext from '../../context/login.provider'
+import FavoritosContext from '../../context/favoritos.provider';
 import Love from '../asserts/icons/love.png'
 
 function ModalFavoritos(props) {
 
-    const { cart, getCart, valorTotalAmem, getCartQty, deleteCart} = useContext(CartContext)
+    const { favoritos, deleteFavoritos} = useContext(FavoritosContext)
 
     useEffect(() => {
-        getCart()
-        getCartQty()
-        valorTotalAmem()
+        
+
     }, [])
 
  
@@ -34,12 +34,12 @@ function ModalFavoritos(props) {
                             <Popover.Body>
 
                                 <Container>
-                                    {cart.length == 0
+                                    {favoritos.length == 0
                                         ?<Popover.Body>
                                         <p className="favorito-aut">Lista De Desejos Vazia</p>
                                     </Popover.Body>
                                     
-                                        : cart.map((item) => {
+                                        : favoritos.map((item) => {
                                             return (
                                                 <Row className="div-modal-cart" key={item.id}>
                                                     <Col xs={4} md={4}>
@@ -53,7 +53,7 @@ function ModalFavoritos(props) {
                                                    
 
                                                     <Col xs={2} md={2} className="div-input-cart">
-                                                        <button className="btn-cart-lixeira" onClick={() => deleteCart(item)}><img className="modal-cart-lixeira" src={Lixeira} /></button>
+                                                        <button className="btn-cart-lixeira" onClick={() => deleteFavoritos(item)}><img className="modal-cart-lixeira" src={Lixeira} /></button>
                                                     </Col>
                                                     <hr />
                                                     <br></br>

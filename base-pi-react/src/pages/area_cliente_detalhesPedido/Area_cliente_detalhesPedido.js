@@ -78,7 +78,7 @@ function detalhesPedido() {
                                     {p.produto}
                                 </th>
                                 <th className='col-2 col-sm-2 col-xs-2 detalhesPedido-list'> {p.quantidade} unidades</th>
-                                <th className='col-2 col-sm-2 col-xs-2 detalhesPedido-list'>{precoShow(p.preco)}</th>
+                                <th className='col-2 col-sm-2 col-xs-2 detalhesPedido-list'>{precoShow(p.preco* p.quantidade)}</th>
                                 <th className='col-3 col-sm-3 col-xs-3 detalhesPedido-list'>
                                     <Link className='btn btn-detalhes' to={`/product/${p.codigo_produto}`} role='button'>COMPRAR NOVAMENTE</Link>
                                 </th>
@@ -152,7 +152,7 @@ function detalhesPedido() {
                             </div>
                             
                             <h6 className="titleResumo">Data do Pedido: {pedido.dataPedidoFeito}</h6>
-                            <h6 className="titleResumo">Total do Pedido: {precoShow(pedido.valorTotal)}</h6>
+                            <h6 className="titleResumo">Total do Pedido: {precoShow(pedido.valorTotal+pedido.valorEntrega)}</h6>
                             <h6 className="titleResumo">Forma de Pagamento: {pedido.formaPagamento}</h6>
                             {/*<p className="paragrafo-detalhesEntrega"><img width='50' src={Visa} /> (1x) Sem juros</p>*/}
                         </div>
