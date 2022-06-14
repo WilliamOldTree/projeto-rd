@@ -280,9 +280,8 @@ function Cart_address(props) {
                                     <div class="form-check" key={entrega.id}>
                                         <input class="form-check-input" name="frete" type="radio" value={entrega.id} id="defaultCheck1"
                                             onClick={() => {
-                                                setPedido({ ...pedido, entrega: entrega.id })
+                                                setPedido({ ...pedido, entrega: entrega.id, valor: valorTotal + entrega.valor })
                                                 setFreteValor(entrega.valor)
-                                                setPedido({ ...pedido, valor: valorTotal + entrega.valor })
                                             }} />
                                         <label class="form-check-label" for="defaultCheck1">
                                             {entrega.formaEntrega}: {precoShow(entrega.valor)}

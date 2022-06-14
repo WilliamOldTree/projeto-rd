@@ -152,7 +152,7 @@ function detalhesPedido() {
                             </div>
                             
                             <h6 className="titleResumo">Data do Pedido: {pedido.dataPedidoFeito}</h6>
-                            <h6 className="titleResumo">Total do Pedido: {precoShow(pedido.valorTotal+pedido.valorEntrega)}</h6>
+                            <h6 className="titleResumo">Total do Pedido: {precoShow(pedido.valorTotal)}</h6>
                             <h6 className="titleResumo">Forma de Pagamento: {pedido.formaPagamento}</h6>
                             {/*<p className="paragrafo-detalhesEntrega"><img width='50' src={Visa} /> (1x) Sem juros</p>*/}
                         </div>

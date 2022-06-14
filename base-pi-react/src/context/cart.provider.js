@@ -124,10 +124,6 @@ function CartProvider(props) {
         setCart(novoArray)
         valorTotalAmem()
         setCartQty(novoArray.length)
-        
-        
-       
-   
     }
 
 
