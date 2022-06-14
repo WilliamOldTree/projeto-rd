@@ -38,14 +38,16 @@
     border: none;
 }
 
-.btnFinal,
-.btnFinal:focus {
+.btnFinalCar,
+.btnFinalCar:focus {
     background-color: #F27507;
     color: white;
     border-radius: 10px;
     border: none;
     font-weight: bolder;
     font-size: 14px;
+    position: relative;
+    left: -40%;
 }
 
 .btn-cart-lixeira {
@@ -53,7 +55,7 @@
     border: none;
 }
 
-.btnFinal:hover {
+.btnFinalCar:hover {
     background-color: darkorange;
     color: #FFFFFF;
 }

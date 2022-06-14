@@ -67,7 +67,7 @@ function ModalFavoritos(props) {
                                      
 
                                 </Container> <Col md={12} lg={12} className="div-btn-cart">
-                                            <Link to="/area_cliente_favoritos"><Button className="btnFinal">VER FAVORITOS</Button></Link>
+                                            <Link to="/area_cliente_favoritos"><Button className="btnFinalCar">VER FAVORITOS</Button></Link>
                                         </Col>
 
                             </Popover.Body>
