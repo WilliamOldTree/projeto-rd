@@ -69,9 +69,9 @@ function Footer() {
                                         width="9%" />WhatsApp</a></li>
                                     <li><a href="mailto:politeismoshop@hotmail.com?Body=Ol%E1%2C%20deixe%20sua%20mensagem%20para%20n%F3s%21"><img src={Email} className="imgEmail" alt="Email"
                                         width="9%" />Email</a></li>
-                                    <li><a href ="tel:+5511952901633"><img src={Telefone} className="imgFone"
-                                        alt="Telefones" width="9%" />Telefone
-                                        <p>(11)95290-1633</p></a> </li>
+                                    <li className= "imgA"><a  href ="tel:+5511952901633"><img src={Telefone} className="imgFone"
+                                        alt="Telefones" width="9%"/>(11)95290-1633</a> </li>
+                                        
                                           </ul>
                             </div>
 
