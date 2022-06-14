@@ -45,7 +45,6 @@
     font-weight: bolder;
     font-size: 14px;
     position: relative;
-    left: 25%;
     top: 10px;
 }
 
@@ -89,7 +88,11 @@
     margin-top: 10px;
 }
 
-
+.link-btn-cart{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
 .btnMenos {
     background-color: #AF9787;
     border: none;

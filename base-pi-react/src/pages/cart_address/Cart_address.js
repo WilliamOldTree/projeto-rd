@@ -346,7 +346,7 @@ function Cart_address(props) {
                             </ListCompra>
 
                             <div className='cart_address_total mt-3 p-3'>
-                                <h5 className='cart_address_titles'>TOTAL DE ITENS: {cartQty}</h5>
+                                <h5 className='cart_address_titles'>TOTAL DE PRODUTOS: {cartQty}</h5>
                                 <h5 className='cart_address_titles'>VALOR DO FRETE: R${freteValor.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</h5>
 
                                 {cart.length == 0

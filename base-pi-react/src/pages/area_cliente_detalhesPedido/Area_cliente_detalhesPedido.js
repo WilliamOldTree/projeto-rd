@@ -146,9 +146,9 @@ function detalhesPedido() {
                         <div className="detalhesResumo">
                             <h5 className="titleResumo">Resumo do pedido</h5>
                             <div className="detalhesCompra">
-                                <p className="paragrafo-resumo">SUBTOTAL: {precoShow(pedido.valorTotal)} <hr className="line-detalhesCompra" /></p>
                                 <p className="paragrafo-resumo">Desconto: R$ 0,00 <hr className="line-detalhesCompra" /></p>
                                 <p className="paragrafo-resumo">Frete: {precoShow(pedido.valorEntrega)} {pedido.formaEntrega}<hr className="line-detalhesCompra" /></p>
+                                <p className="paragrafo-resumo">TOTAL: {precoShow(pedido.valorTotal)} <hr className="line-detalhesCompra" /></p>
                             </div>
                             
                             <h6 className="titleResumo">Data do Pedido: {pedido.dataPedidoFeito}</h6>

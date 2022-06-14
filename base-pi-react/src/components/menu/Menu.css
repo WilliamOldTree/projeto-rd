@@ -19,10 +19,19 @@
 
 .dropdown-item {
     text-align: center;
+    
+}
+
+.dropdown-item:hover {
+    text-align: center;
+    background-color:  #AF9787;
+
 }
 
 .font-menu {
     font-size  : 20px;
     color      : #261C1A;
     font-weight: 700;
+    border: none;
+    background: none;
 }
