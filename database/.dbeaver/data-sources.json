@@ -1,7 +1,7 @@
 {
 	"folders": {},
 	"connections": {
-		"mysql8-1814f3cdead-418d0480a65817c7": {
+		"mysql8-18163fef6a0-427c880e6277e22b": {
 			"provider": "mysql",
 			"driver": "mysql8",
 			"name": "bd_politeismo",
