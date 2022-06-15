@@ -58,7 +58,8 @@ function Favoritos() {
                         <ListFav>
                             {favoritos.length == 0 ? <h3 className="cartVazio">Lista De Desejos Vazia</h3> :
                                 favoritos.map((item) => {
-                                    return (<ResumoFavoritos key={item.id}
+                                    return (
+                                    <ResumoFavoritos key={item.id}
                                         product_img={item.urlProduto}
                                         descricao={item.nome}
                                         valor={precoShow(item.preco)}

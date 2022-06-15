@@ -1,17 +1,16 @@
 {
 	"folders": {},
 	"connections": {
-		"mysql8-18125bb468d-475d19dd2c5a7809": {
+		"mysql8-18163fe0865-761823d22da9b17c": {
 			"provider": "mysql",
 			"driver": "mysql8",
-			"name": "bd_politeismo",
+			"name": "localhost",
 			"save-password": true,
 			"read-only": false,
 			"configuration": {
 				"host": "localhost",
 				"port": "3306",
-				"database": "bd_politeismo",
-				"url": "jdbc:mysql://localhost:3306/bd_politeismo",
+				"url": "jdbc:mysql://localhost:3306/",
 				"home": "C:\\Program Files\\MySQL\\MySQL Server 8.0",
 				"type": "dev",
 				"auth-model": "native",
