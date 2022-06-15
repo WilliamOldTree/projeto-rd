@@ -8,7 +8,8 @@ const ResumoFavoritos = (props) => {
 
 
     const { addToCart } = useContext(CartContext)
-    const [produtos] = useState({ Produtos })
+    const [produtos, setProdutos] = useState([])
+    const produto = props.produto || {}
 
 
 
@@ -21,7 +22,7 @@ const ResumoFavoritos = (props) => {
             <td data-label="Quantidade" className="text-center align-middle"></td>
             <td className="text-center align-middle"><button className="btn-cart-lixeira" onClick={() => props.deletar(props.item, props.quantidade)}><img alt="excluir" width={25} src={props.trash_img} /></button></td>
             <th className='col-3 col-sm-3 col-xs-3 area-favoritos' onClick={() => addToCart(produtos)}>
-                <Link to={'/cart'} className='linkproduct'> <a className='btn btn-detalhes' href='#' role='button'>COMPRAR</a> </Link></th>
+                <Link to={`/product/${produto.idProduto}`}className='linkproduct'> <a className='btn btn-detalhes' role='button'>COMPRAR</a> </Link></th>
         </tr>
 
 

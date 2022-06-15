@@ -191,6 +191,7 @@ function ClienteFisico(props) {
                                 onChange={(event) => { setClientes({ ...clientes, nascimento: event.target.value }) }}
                                 maxLength="10" autoComplete='off'
                                 onKeyUp={mascaraData}
+                                placeholder={"dia/mês/ano (ex: 15/06/1997)"}
                             />
                         </div>
 
@@ -211,7 +212,8 @@ function ClienteFisico(props) {
                                 value={clientes.fixo}
                                 onChange={(event) => { setClientes({ ...clientes, fixo: event.target.value }) }}
                                 maxLength="19" autoComplete='off'
-                                onKeyUp={mascaraFixo} />
+                                onKeyUp={mascaraFixo}
+                                placeholder={"55 + (XX) XXXX-XXXX"} />
                             <span id='ErroCel' ></span>
                         </div>
 
@@ -223,7 +225,8 @@ function ClienteFisico(props) {
                                 value={clientes.celular}
                                 onChange={(event) => { setClientes({ ...clientes, celular: event.target.value }) }}
                                 maxLength="20" autoComplete='off'
-                                onKeyUp={mascaraCelular} />
+                                onKeyUp={mascaraCelular}
+                                placeholder={"55 + (XX) XXXXX-XXXX"} />
                         </div>
 
                         <div className='mb-3'>
