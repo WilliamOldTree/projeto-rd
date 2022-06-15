@@ -26,6 +26,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import CartContext from '../../context/cart.provider'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import { Button, Container, Row, Col, Form, Popover, OverlayTrigger } from 'react-bootstrap';
 
 /* IMAGES CARDS RELACIONADOS */
 import RELACIONADO1 from '../../components/asserts/images/images-produto/04.06209.1.jpg';
@@ -37,39 +38,47 @@ import { Link } from 'react-router-dom';
 
 function Product(props) {
 
-    const { addToCart, cart, getCart, valorTotalAmem, getCartQty, soma, deleteCart, tira, valorTotal } = useContext(CartContext)
+    const { addToCart, cart, soma, tira, getCart, valorTotalAmem, getCartQty,valorTotal} = useContext(CartContext)
     const { id } = useParams()
 
     const [produtos, setProdutos] = useState({})
     const [produtosRelacionados, setProdutosRelacionados] = useState({})
     const [produtosFavoritos, setProdutosFavoritos] = useState({})
+    const [produtosQtd, setProdutosQtd] = useState(1)
 
- let numero=0
 
-   function aumenta(){
-    numero++
-   }
-   function diminui(){
-    numero--
-   }
-  
-    useEffect(() => {
+    let quanti=1;
 
+
+    const getProduct = () => {
         axios.get(`http://localhost:8080/produtos/${id}`)
             .then((response) => {
                 setProdutos(response.data)
             })
-
-        axios.get(`http://localhost:8080/produtos/categoria?id=${id}`)
-            .then((response) => {
-                setProdutosRelacionados(response.data)
+            .catch((error) => {
+                console.error(error.messege)
             })
+    }
 
-            axios.get(`http://localhost:8080/produtos/${id}`)
-            .then((response) => {
-                setProdutosFavoritos(response.data)
-            })
+    useEffect(() => {
 
+        axios.get(`http://localhost:8080/produtos/${id}`)
+        .then((response) => {
+            setProdutos(response.data)
+        })
+
+    axios.get(`http://localhost:8080/produtos/categoria?id=${id}`)
+        .then((response) => {
+            setProdutosRelacionados(response.data)
+        })
+
+        axios.get(`http://localhost:8080/produtos/${id}`)
+        .then((response) => {
+            setProdutosFavoritos(response.data)
+        })
+        getCart()
+        getCartQty()
+        valorTotalAmem()
 
     }, [])
 
@@ -82,8 +91,6 @@ function Product(props) {
             </>
         )
     }
-
-
 
     return (
         <>
@@ -112,12 +119,34 @@ function Product(props) {
                                     <hr className='line-processo-produto' />
 
                                     <article className='d-flex align-items-center'>
-                                         
-                   
 
-                                        <button className="btnMaaais" onClick={aumenta()} >+</button>
-                                        <button className="btnMenooos" onClick={diminui()}>-</button>
-                                        <p className='qtd' >0</p>
+                                        <Col xs={3} md={3} className="div-input-cart">
+                                            <Row className="row-modal-cart">
+                                                <Col xs={4} md={4} className="btnMenos">
+                                                    <button className="btnMenos"
+                                                         onClick={() => tira(produtos)}><strong>-</strong></button>
+                                                </Col>
+                                             
+                                                <Col xs={4} md={4} className="div-quantidade-cart">
+                                                {cart.map((item) => {
+   
+                                    return (<>
+                                    
+                                    <Form.Control className="input-modal-qtd" type="text" placeholder={item.quantidade}  />
+                                    
+                                    </>        )
+                                })}
+                                                    
+                                                </Col>
+
+                                                <Col xs={4} md={4} className="divMais">
+                                                    <button className="btnMais"   onClick={() => soma(produtos)}><strong>+</strong></button>
+
+                                                </Col>
+                                            </Row>
+                                        </Col>
+
+                                        <p className='qtd'>Quantidade</p>
                                     </article>
                                 </article>
 
@@ -137,24 +166,23 @@ function Product(props) {
                                         </button>
                                     </Link>
                                     <Link to={'/area_cliente_favoritos'} className='linkproduct'>
-                                    <button onClick={() => addToCart(produtosFavoritos)} className='btn favoritar' type='submit'>
-                                        <img width='22' className='fav' src={Favoritar} /> Adicionar a lista de desejos
-                                    </button></Link>
+                                        <button onClick={() => addToCart(produtosFavoritos)} className='btn favoritar' type='submit'>
+                                            <img width='22' className='fav' src={Favoritar} /> Adicionar a lista de desejos
+                                        </button></Link>
                                 </article>
-                                <h3 id='fret'>Fretes:</h3>
-                                <p id='infofrete'>
-                                    Padrão - 15 dias R$ 20,00<br></br>
-                                    Expresso - 7 dias R$ 35,50<br></br>
-                                    Agendada - o dia em que você quer receber R$ 45,00
-                                </p>
-                        
-                                    {/*   <article className='d-flex justify-content-center'>
+
+                                <article id='cep-frete'>
+                                    <h6 className='infcep1'>Calcule prazo de entrega</h6>
+
+                                    <p className='infcep2'>Informe seu CEP</p>
+
+                                    <article className='d-flex justify-content-center'>
                                         <input type='text' className='form-control' id='entrada-cep' />
                                         <button className='btn cep' type='button' id='button-addon2'>CALCULAR</button>
                                     </article>
 
                                     <a className='infcep3' Link to='https://buscacepinter.correios.com.br/app/endereco/index.php?t'>Não sabe o CEP?</a>
-                                </article> */}
+                                </article>
 
                                 <hr className='line-processo-produto' />
 
@@ -224,7 +252,7 @@ function Product(props) {
 
 
 
-                {/* CARDS PRODUTOS RELACIONADOS
+                {/* CARDS PRODUTOS RELACIONADOS*/}
                 <h3 id='title-pag-produto'>Produtos Relacionados</h3>
                 <hr id='line-pag-produto' />
 
@@ -245,7 +273,7 @@ function Product(props) {
                         </div>
 
                     </div>
-                </div> */}
+                </div>
             </div>
 
             <Footer />

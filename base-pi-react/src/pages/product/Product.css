@@ -341,12 +341,12 @@
 #infofrete{
     position: relative;
     left: -645px;
-    margin-top: -50px;
+    margin-top: -10px;
     top: 35%;
 }
 #fret{
     font-weight: bold;
     position: relative;
     left: -645px;
-    top: 28%;
+    top: 34%;
 }

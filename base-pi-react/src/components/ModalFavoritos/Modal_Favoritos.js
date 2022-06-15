@@ -6,9 +6,12 @@ import Lixeira from '../../components/asserts/icons/lixeira.png';
 import CartContext from '../../context/cart.provider'
 import ClientContext from '../../context/login.provider'
 import Love from '../asserts/icons/love.png'
+import FavoritosContext from '../../context/favoritos.provider';
+
 
 function ModalFavoritos(props) {
 
+    const { favoritos, deleteFavoritos } = useContext(FavoritosContext)
     const { cart, getCart, valorTotalAmem, getCartQty, deleteCart} = useContext(CartContext)
 
     useEffect(() => {
