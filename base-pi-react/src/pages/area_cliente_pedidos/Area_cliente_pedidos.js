@@ -49,7 +49,8 @@ function Pedidos(props) {
                     <div className='col-9 col-sm-9 col-xs-9 PedidosCliente'>
                         <table className='table'>
                             <thead className="thead-pedidos">
-                                {pedidos.map((pedido) => {
+                            {pedidos.length == 0 ? <h3 className="cartVazio">Lista De Pedidos Vazia</h3> :
+                                pedidos.map((pedido) => {
                                     return (
                                         <>
                                             <div className="container area-pedido">

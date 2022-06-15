@@ -79,7 +79,7 @@ function Cart() {
 
                 <Row>
                     <Col className='mt-5' id='cart_total'>
-                        <h3>TOTAL DE ITENS: {cartQty}</h3>
+                        <h3>TOTAL DE PRODUTOS: {cartQty}</h3>
                         {cart.length ==0
                         ?   <h3> </h3>
                         : <h3>SUBTOTAL: R${valorTotal.toLocaleString('pt-br', { minimumFractionDigits: 2 })} </h3>

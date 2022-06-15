@@ -60,9 +60,8 @@ function ModalFavoritos(props) {
 
                                     {Autorizado
                                         ?
-
-                                        <Col md={12} lg={12} className="div-btn-cart">
-                                            <Link to="/area_cliente_favoritos"><Button className="btnFinalFav">VER FAVORITOS</Button></Link>
+                                        <Col md={12} lg={12} className="link-btn-cart">
+                                            <Link  to="/area_cliente_favoritos"><Button className="btnFinalFav">VER FAVORITOS</Button></Link>
                                         </Col>
                                         :
                                         ''

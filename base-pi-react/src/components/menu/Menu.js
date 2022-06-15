@@ -38,7 +38,7 @@ function Menu() {
                 </div>
                 :
                 <Link to="/login" className="dropdown-item">
-                    <span className="font-menu" data-bs-dismiss="offcanvas">Faça seu Login</span>
+                    <button className="font-menu" data-bs-dismiss="offcanvas">Faça seu Login</button>
                 </Link>
                 }
         </>
