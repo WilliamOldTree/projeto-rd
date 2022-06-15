@@ -222,13 +222,6 @@ function Cart_address(props) {
         }
     }
 
-    // const [frete, setFrete] = useEffect([])
-
-    // function getFrete() {
-    //     axios.get(`${baseUrl}/`)
-    // } 
-
-
     function getEnderecos() {
         axios.get(`${baseUrl}/enderecos/${idCLienteLogado}/enderecos`)
             .then((response) => {
@@ -385,6 +378,7 @@ function Cart_address(props) {
 
                 <Row>
                     <Col className='cart_address_buttons'>
+                        
                         <Button className="btn btnComprar " onClick={async () => {
                             let success = await finalizarPedido()
                             success ? history.push("/") : ''

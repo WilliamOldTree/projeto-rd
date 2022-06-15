@@ -232,7 +232,7 @@ function ClienteFisico(props) {
                         </div>
                         <span id='Campos' ></span>
                         <p className='aviso-privacidade fisico'>Ao criar uma conta você está de acordo com nossa <em>Política de Privacidade.</em></p>
-
+                        
                         <button className='btn formcadastroF' onClick={validarTudo} type='submit'>CONCLUIR CADASTRO</button>
                     </div>
                 </div>
