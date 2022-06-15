@@ -133,9 +133,9 @@ function Product(props) {
                                     <h6 className='infcep1'>Opções de Frete</h6>
 
                                     <ul>
-                                        <li>PADRAO: R$ 20,00</li>
-                                        <li>EXPRESSA: R$ 35,50</li>
-                                        <li>AGENDADA: R$ 45,00</li>
+                                        <li className='infcep2'>PADRAO: R$ 20,00</li>
+                                        <li className='infcep2'>EXPRESSA: R$ 35,50</li>
+                                        <li className='infcep2'>AGENDADA: R$ 45,00</li>
                                     </ul>
 
                                     <br></br>
