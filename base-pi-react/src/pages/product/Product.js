@@ -58,7 +58,7 @@ function Product(props) {
                 setProdutosRelacionados(response.data)
             })
 
-            axios.get(`http://localhost:8080/produtos/${id}`)
+        axios.get(`http://localhost:8080/produtos/${id}`)
             .then((response) => {
                 setProdutosFavoritos(response.data)
             })
@@ -124,22 +124,21 @@ function Product(props) {
                                         </button>
                                     </Link>
                                     <Link to={'/area_cliente_favoritos'} className='linkproduct'>
-                                    <button onClick={() => addToFavoritos(produtosFavoritos)} className='btn favoritar' type='submit'>
-                                        <img width='22' className='fav' src={Favoritar} /> Adicionar a lista de desejos
-                                    </button></Link>
+                                        <button onClick={() => addToFavoritos(produtosFavoritos)} className='btn favoritar' type='submit'>
+                                            <img width='22' className='fav' src={Favoritar} /> Adicionar a lista de desejos
+                                        </button></Link>
                                 </article>
 
                                 <article id='cep-frete'>
-                                    <h6 className='infcep1'>Calcule prazo de entrega</h6>
+                                    <h6 className='infcep1'>Opções de Frete</h6>
 
-                                    <p className='infcep2'>Informe seu CEP</p>
+                                    <ul>
+                                        <li>PADRAO: R$ 20,00</li>
+                                        <li>EXPRESSA: R$ 35,50</li>
+                                        <li>AGENDADA: R$ 45,00</li>
+                                    </ul>
 
-                                    <article className='d-flex justify-content-center'>
-                                        <input type='text' className='form-control' id='entrada-cep' />
-                                        <button className='btn cep' type='button' id='button-addon2'>CALCULAR</button>
-                                    </article>
-
-                                    <a className='infcep3' Link to='https://buscacepinter.correios.com.br/app/endereco/index.php?t'>Não sabe o CEP?</a>
+                                    <br></br>
                                 </article>
 
                                 <hr className='line-processo-produto' />
