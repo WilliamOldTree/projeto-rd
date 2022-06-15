@@ -1,7 +1,7 @@
 {
 	"folders": {},
 	"connections": {
-		"mysql8-18124d11e24-4681e18efc673e4d": {
+		"mysql8-18125bb468d-475d19dd2c5a7809": {
 			"provider": "mysql",
 			"driver": "mysql8",
 			"name": "bd_politeismo",
@@ -14,11 +14,6 @@
 				"url": "jdbc:mysql://localhost:3306/bd_politeismo",
 				"home": "C:\\Program Files\\MySQL\\MySQL Server 8.0",
 				"type": "dev",
-				"properties": {
-					"connectTimeout": "20000",
-					"rewriteBatchedStatements": "true",
-					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2"
-				},
 				"auth-model": "native",
 				"handlers": {}
 			}

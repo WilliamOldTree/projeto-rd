@@ -49,8 +49,8 @@ function AreaEndereco(props) {
                 </div>
 
                 <div id='containerEnderecos'>
-
-                    {enderecos.map((enderecos) => {
+                {enderecos.length == 0 ? <h3 className="cartVazio">Lista De Endereços Vazia</h3> :
+                    enderecos.map((enderecos) => {
                         return (
                             <>
                                 <Card className="cardEnd" border="dark" style={{ width: '35rem' }}>

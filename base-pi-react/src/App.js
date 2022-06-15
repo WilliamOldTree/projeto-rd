@@ -4,9 +4,11 @@ import { Routes } from './routes'
 import { CartProvider } from './context/cart.provider'
 import { PedidoProvider } from './context/pedido.provider' 
 import {ClientProvider} from './context/login.provider'
+import {FavoritosProvider} from './context/favoritos.provider'
 
 function App() {
   return (
+    <FavoritosProvider>
     <ClientProvider>
     <CartProvider>
       <PedidoProvider>
@@ -17,6 +19,7 @@ function App() {
       </PedidoProvider>
     </CartProvider>
      </ClientProvider>
+     </FavoritosProvider>
   );
 }
 

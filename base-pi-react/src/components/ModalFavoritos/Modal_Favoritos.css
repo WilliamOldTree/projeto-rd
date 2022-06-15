@@ -1,3 +1,6 @@
+
+
+
 .modal-cart {
     color: #261C1A;
 }
@@ -38,16 +41,15 @@
     border: none;
 }
 
-.btnFinalCar,
-.btnFinalCar:focus {
+.btnFinalFav,
+.btnFinalFav:focus {
     background-color: #F27507;
     color: white;
     border-radius: 10px;
     border: none;
     font-weight: bolder;
     font-size: 14px;
-    position: relative;
-    left: -40%;
+    
 }
 
 .btn-cart-lixeira {
@@ -55,7 +57,7 @@
     border: none;
 }
 
-.btnFinalCar:hover {
+.btnFinalFav:hover {
     background-color: darkorange;
     color: #FFFFFF;
 }
@@ -136,4 +138,3 @@
 .divMais {
     padding-left: 0px;
 }
-

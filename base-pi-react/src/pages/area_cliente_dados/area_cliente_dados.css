@@ -127,6 +127,8 @@
     margin-bottom: 90px;
     width: 100%;
     height: auto;
+    display: flex;
+    justify-content: center;
 }
 .cardDados{
     width: 600px;
