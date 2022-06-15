@@ -30,9 +30,6 @@ function Menu() {
                     <Link className='menu-component-itens' to='area_cliente_favoritos' >Meus Favoritos
                         <hr className='menu-component-lines' />
                     </Link>
-                    <Link className='menu-component-itens' to='area_cliente_senha' >Alterar Senha
-                        <hr className='menu-component-lines' />
-                    </Link>
                     <Link className='menu-component-itens' onClick={handleLogout} href=''>Sair
                     </Link>
                 </div>
