@@ -292,7 +292,7 @@ VALUES(2, 2,1);
 
 -- 
 
-select * from endereco e ;
+select * from cliente c ;
 
 select * from item_pedido ip ;
 
